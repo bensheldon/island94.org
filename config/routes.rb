@@ -1,5 +1,3 @@
-Parklife.application.config.on_404 = :warn
-
 Rails.application.routes.draw do
   get "*path", to: "redirects#show", constraints: ->(req) { Redirect.all.key? req.path.sub(%r{\A/}, "").sub(%r{/\z}, "") }
 
