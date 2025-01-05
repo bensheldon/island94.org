@@ -23,7 +23,7 @@ The language around LLMs and “AI” is fucked up with hype and inappropriate m
 
 That’s it. Those are the only two buckets you need to think about.
 
-### 1. Training
+#### 1. Training
 
 The way AI models get made is to first collect trillions of pages of written text (an example is [Common Crawl](https://commoncrawl.org/) which scrapes the Internet). Then use machine learning to identify probabilistic patterns that can be represented by only several billion variables (floating point numbers). This is called **“Pre Training”**. At this point, you can say “Based on the input data, it’s probablistically likely that the word after “eeny meany miney” is “moe”. 
 
@@ -42,7 +42,7 @@ Here’s how AWS Bedrock, which is how I imagine lots of companies are using AI 
 
 See! It’s all just dead artifacts uploaded into S3, that are then loaded onto EC2 on-demand. A fancy lambda! Nothing more.
 
-### 2. Prompting
+#### 2. Prompting
 
 Prompting is when we give the model input, and then it gives back some output. That’s it. Unless we are specifically collecting trillions of documents, or doing fine-tuning against thousands of examples (which we are NOT!), we are simply writing a prompt, and having the model generate some text based on it. It riffs. The output can be called “completions” because they’re just that: More words.
 
