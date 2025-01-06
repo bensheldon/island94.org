@@ -32,7 +32,7 @@ The process basically was:
 
 3. Scrape this emulsion concoction on the screen very thinly, but enough to fill in the mesh. Let dry a few hours in Dean’s oven—it wasn’t turned on, just a good out of the way place.
 
-4. Print the design out onto a transparency. It has to be monotone-mesh doesn’t do gradients. I tried to get to those little halftone circles like Lichtenstein, but Adobe Illustrator was having none of it-I had designed the thing in [Inkscape](https://inkscape.org/), my preferred drawing program and was working off a PNG.
+4. Print the design out onto a transparency. It has to be monotone-mesh doesn’t do gradients. I tried to get to those little halftone circles like Lichtenstein, but Adobe Illustrator was having none of it-I had designed the thing in [Inkscape](https://web.archive.org/web/20060812120129/http://www.inkscape.org:80/), my preferred drawing program and was working off a PNG.
 
 5. Get the (now) dried emulsion convered screen. It is photosensitive—not sensitive like photographic paper, but just don’t point a spotlight at it.
 
