@@ -28,7 +28,7 @@ I don’t have that in Jekyll. I am definitely handy in Jekyll. I’ve built plu
 
 ### Parklife with Ruby on Rails
 
-I hope I’m not diminishing [Parklife](https://parklife.dev/) by writing that it isn’t _much_ more than `wget`. It’s in Ruby and mounts+crawls a Rack-based web application, does a little bit to rewrite the base URLs, and spits out a directory of static HTML files. That’s it! It’s great!
+I hope I’m not diminishing [Parklife](https://parklife.dev/) by writing that it isn’t functionally _much_ more  than `wget`. It’s in Ruby and mounts+crawls a Rack-based web application, does a little bit to rewrite the base URLs, and spits out a directory of static HTML files. That’s it! It’s great!
 
 It was pretty easy for me to make a lightweight Ruby on Rails app, that loaded up all my markdown-formatted content and frontmatter, and spat them out again as Controllers and ERB Views.
 
