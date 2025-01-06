@@ -5,7 +5,7 @@ published: true
 tags: [meta, jekyll, rails]
 ---
 
-I recently migrated this blog from Jekyll to [Ben Pickle’s Parklife](https://parklife.dev/) and Ruby on Rails, still hosted as a static website on GitHub Pages. I’m pretty happy with the experience.
+I recently migrated this blog from Jekyll to [Ben Pickles’s Parklife](https://parklife.dev/) and Ruby on Rails, still hosted as a static website on GitHub Pages. I’m pretty happy with the experience.
 
 I’m writing this not because I feel any sense of advocacy (do what you want!) but to write down the reasons for myself. Maybe they’ll rhyme for you.
 
