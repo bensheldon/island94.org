@@ -7,7 +7,7 @@
   <title>How I&amp;#39;m thinking about AI (LLMs) | Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="ZLx7VGoPBbXb6BWA0zXyUipjiOHXnebV6yyCcHi8KqIQvsb7YuvO_lobEMvzWqPCg7ryHAT52_WLmJ1eUQmMlQ" />
+<meta name="csrf-token" content="fD4H5DIWAfPiGVLx_hNIS64QidU9cdSX5e04tP-9RZncJRsaQL-f_MOZ6N3kuzswJhwViECnwRYeEGQno3g9oQ" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -113,14 +113,16 @@
 
 <p>The language around LLMs and “AI” is fucked up with hype and inappropriate metaphors. But the general idea is there is two key phases to keep track of:</p>
 
-<p>￼1. Training: Baking the model. At which point it’s done. I don’t know anyone who is actually building models Everyone is using something like OpenAI or Claude or Llama. And even while these things can be “fine tuned” I don’t know anyone doing it; operating at the model level requires input data on the order of tens of thousands of inputs/examples. <br />
-￼2. Prompting: Using the model, giving input and getting output. This is everything the vast majority of developers are doing.</p>
+<ol>
+  <li>Training: Baking the model. At which point it’s done. I don’t know anyone who is actually building models Everyone is using something like OpenAI or Claude or Llama. And even while these things can be “fine tuned” I don’t know anyone doing it; operating at the model level requires input data on the order of tens of thousands of inputs/examples.</li>
+  <li>Prompting: Using the model, giving input and getting output. This is everything the vast majority of developers are doing.</li>
+</ol>
 
 <p>That’s it. Those are the only two buckets you need to think about.</p>
 
 <h4 id="1-training">1. Training</h4>
 
-<p>The way AI models get made is to first collect trillions of pages of written text (an example is <a href="https://commoncrawl.org/">Common Crawl</a> which scrapes the Internet). Then use machine learning to identify probabilistic patterns that can be represented by only several billion variables (floating point numbers). This is called <strong>“Pre Training”</strong>. At this point, you can say “Based on the input data, it’s probablistically likely that the word after “eeny meany miney” is “moe”.</p>
+<p>The way AI models get made is to first collect trillions of pages of written text (an example is <a href="https://commoncrawl.org/">Common Crawl</a> which scrapes the Internet). Then use machine learning to identify probabilistic patterns that can be represented by only several billion variables (floating point numbers). This is called <strong>“Pre Training”</strong>. At this point, you can say “Based on the input data, it’s probabilistically likely that the word after “eeny meany miney” is “moe”.</p>
 
 <p>Then there is the phase of <strong>“Fine Tuning”</strong> which makes sure that longer strings of text input are completed in ways that are intended (never right or wrong, just intended or expected). For example, if the text input is “Write me a Haiku about frogs” you expect a short haiku about frogs and not a treatise on the magic of the written word or amphibians. Fine tuning is largely accomplished by tens of thousands of workers in Africa and South Asia reading examples of inputs and outputs and clicking 👍 or 👎 on their screen. This is then fed back into machine learning models to say, of the billion variables, which variables should get a little more or less oomph when they’re calculating the output. Fine Tuning requires tens of thousands of these scored examples; again, this is probabilistic-scale stuff. This can also be called <strong>RLHF (Reinforcement Learning from Human Feedback)</strong>, though that sometimes also refers to few-shot prompting, which is Prompt-phase (“Learning” is a nonsense word in the AI domain; it has zero salience without clarifying which phase you’re talking about). A lot of the interesting fine-tuning, imo, comes from getting these text generators to:</p>
 
@@ -129,14 +131,14 @@
   <li>Getting structured output, like valid JSON, rather than textual diarrhea</li>
 </ul>
 
-<p>Note: You can mentally slot in words like “parameters”, “dimensions”, “weights” and “layers” into all this. Also whenever someone says “we don’t really know how they work” what they really mean is “there’s a lot of variables and I didn’t specifically look at them all”. But that’s no diffrent than being given an Excel spreasheet with several VLOOKUPS and functions and saying “sure, that looks ok” and copy-pasting the report on to your boss; I mean, you <em>could</em> figure it all out, but it seems to work and you’re a busy person.</p>
+<p>Note: You can mentally slot in words like “parameters”, “dimensions”, “weights” and “layers” into all this. Also whenever someone says “we don’t really know how they work” what they really mean is “there’s a lot of variables and I didn’t specifically look at them all”. But that’s no different than being given an Excel spreadsheet with several VLOOKUPS and functions and saying “sure, that looks ok” and copy-pasting the report on to your boss; I mean, you <em>could</em> figure it all out, but it seems to work and you’re a busy person.</p>
 
-<p>Ok, now we’re done with training. The model at this point is baked and no further modification takes place: no memory, no storage, no “learning” in the sense of a biological process. From this point further they operate as a function: input in, output out, no side efects.</p>
+<p>Ok, now we’re done with training. The model at this point is baked and no further modification takes place: no memory, no storage, no “learning” in the sense of a biological process. From this point further they operate as a function: input in, output out, no side effects.</p>
 
 <p>Here’s how AWS Bedrock, which is how I imagine lots of companies are using AI in their product, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html">describes all this</a>:</p>
 
 <blockquote>
-  <p>￼After delivery of a model from a model provider [Anthropic, OpenAI, Meta] to AWS, Amazon Bedrock will perform a deep copy of a model provider’s inference and training software into those accounts for deployment. Because the model providers don’t have access to those accounts, they don’t have access to Amazon Bedrock logs or to customer prompts and completions.</p>
+  <p>After delivery of a model from a model provider [Anthropic, OpenAI, Meta] to AWS, Amazon Bedrock will perform a deep copy of a model provider’s inference and training software into those accounts for deployment. Because the model providers don’t have access to those accounts, they don’t have access to Amazon Bedrock logs or to customer prompts and completions.</p>
 </blockquote>
 
 <p>See! It’s all just dead artifacts uploaded into S3, that are then loaded onto EC2 on-demand. A fancy lambda! Nothing more.</p>
@@ -158,8 +160,8 @@
 <p>Going back to the Training data, let’s make some conceptual distinctions:</p>
 
 <ul>
-  <li>￼Content: specific facts, statements and assertions that were (possibly) encoded into those billions of probabilities from the training data</li>
-  <li>￼Structure: the overall probablity that a string of words (really fragments of words) comes out again looking like something we expect, which has been adjusted via Fine Tuning</li>
+  <li>Content: specific facts, statements and assertions that were (possibly) encoded into those billions of probabilities from the training data</li>
+  <li>Structure: the overall probability that a string of words (really fragments of words) comes out again looking like something we expect, which has been adjusted via Fine Tuning</li>
 </ul>
 
 <p>Remember, this is just a probabilistic text generator. So there is probabilistic facts, and probabilistic structure. And that probabilistic part is why we have words like “hallucination” and “slop” and “safety”. There’s no there there. It’s just probabilities. There’s no guarantee that a particular fact has been captured in those billions of variables. It’s just a text generator. And it’s been trained on a lot of dumb shit people write. It’s <em>just</em> a text generator. Don’t trust it.</p>
@@ -167,48 +169,50 @@
 <p>So on to some prompting strategies:</p>
 
 <ul>
-  <li><strong>￼Zero-Shot Prompting:</strong> This just means to ask something open-ended and the AI returns something that probabilistical follows:
+  <li><strong>Zero-Shot Prompting:</strong> This just means to ask something open-ended and the AI returns something that probabilistical follows:
     <blockquote>
-      <p>￼￼￼Classify the sentiment of the following review as positive, neutral, or negative: “The quality is amazing, and it exceedd my expectations”</p>
+      <p>Classify the sentiment of the following review as positive, neutral, or negative: “The quality is amazing, and it exceeded my expectations”</p>
     </blockquote>
   </li>
-  <li><strong>￼Few-Shot (or one-shot/multi-shot) Prompting</strong>: This just means to provide one or more examples of “expected” completions in the prompt (remember, this is all prompt, not fine-tuning) to try to narrow down what could probabilistically follow:
+  <li><strong>Few-Shot (or one-shot/multi-shot) Prompting</strong>: This just means to provide one or more examples of “expected” completions in the prompt (remember, this is all prompt, not fine-tuning) to try to narrow down what could probabilistically follow:
     <blockquote>
-      <p>￼￼Task: Classify the sentiment of the following reviews as positive, neutral, or negative.<br />
-￼￼Examples:<br />
-￼￼￼1. “I absolutely adore this product. It’s fantastic!” - positive<br />
-￼￼￼2. “It’s okay, not the best I’ve used.” - neutral<br />
-￼￼￼3. “This is terrible. I regret buying it.” - negative<br />
-￼￼Now classify this review:<br />
-￼￼￼4. “The quality is amazing, and it exceed my expectations” - [it’s blank, for the model to finish]</p>
+      <p>Task: Classify the sentiment of the following reviews as positive, neutral, or negative.<br />
+Examples:</p>
+      <ol>
+        <li>“I absolutely adore this product. It’s fantastic!” - positive</li>
+        <li>“It’s okay, not the best I’ve used.” - neutral</li>
+        <li>“This is terrible. I regret buying it.” - negative<br />
+Now classify this review:</li>
+        <li>“The quality is amazing, and it exceed my expectations” - [it’s blank, for the model to finish]</li>
+      </ol>
     </blockquote>
   </li>
 </ul>
 
-<p><em>Note: Zero/One/Few/Multi-Shot is sometimes called “Learning” instead of “Prompting”. This is a terrible name, because there is no learning (the models are dead!) but is one of those things where the most assume-good-intent explaination is that over the course of the prompt and its incrementally generated completion that the output assumes the desired shape.</em></p>
+<p><em>Note: Zero/One/Few/Multi-Shot is sometimes called “Learning” instead of “Prompting”. This is a terrible name, because there is no learning (the models are dead!) but is one of those things where the most assume-good-intent explanation is that over the course of the prompt and its incrementally generated completion that the output assumes the desired shape.</em></p>
 
 <ul>
-  <li>￼<strong>Chain of Thought Prompting</strong>: The idea here is that the prompt includes a description of how a human might explain what they were doing to complete the prompt. And that boops the completion into filling out those steps, and arriving at a more expected answer:
+  <li><strong>Chain of Thought Prompting</strong>: The idea here is that the prompt includes a description of how a human might explain what they were doing to complete the prompt. And that boops the completion into filling out those steps, and arriving at a more expected answer:
     <blockquote>
-      <p>￼￼Classify the sentiment of the following review as positive, neutral, or negative.<br />
-￼￼“I absolutely adore this product. It’s fantastic!”<br />
-￼￼Analysis 1: How does it describe the product?<br />
-￼￼Analysis 2: How does it describe the functionality of the product?<br />
-￼￼Analysis 3: How does it describe their relationship with the product?<br />
-￼￼Analysis 4: How does it describe how friends, family, or others relate to the product? <br />
-￼￼Overall: Is it positive, neutral, or negative?</p>
+      <p>Classify the sentiment of the following review as positive, neutral, or negative.<br />
+“I absolutely adore this product. It’s fantastic!”<br />
+Analysis 1: How does it describe the product?<br />
+Analysis 2: How does it describe the functionality of the product?<br />
+Analysis 3: How does it describe their relationship with the product?<br />
+Analysis 4: How does it describe how friends, family, or others relate to the product?<br />
+Overall: Is it positive, neutral, or negative?</p>
     </blockquote>
   </li>
 </ul>
 
-<p><em>Note: again, there is no “thought” happening. The point of the prompt is to boop the text competion into giving a more expected answer. There are some new models (as of late 2024) that are supposed to do Chain-of-Thought implicitly; afaik there is just a hidden/unshown prompt that says “break this down into steps” and an intermediate output that takes the output of that and feeds it into another hidden/unshown prompt and then the output of that is shown to you. That’s why they costs more, cause it’s invoking the the LLM twice on your behalf.</em></p>
+<p><em>Note: again, there is no “thought” happening. The point of the prompt is to boop the text completion into giving a more expected answer. There are some new models (as of late 2024) that are supposed to do Chain-of-Thought implicitly; afaik there is just a hidden/unshown prompt that says “break this down into steps” and an intermediate output that takes the output of that and feeds it into another hidden/unshown prompt and then the output of that is shown to you. That’s why they costs more, cause it’s invoking the the LLM twice on your behalf.</em></p>
 
 <ul>
-  <li><strong>￼Chain Prompting</strong>: This simply means that you take the output of one prompt, and then feed that into a new prompt. This can be useful to isolate a specific prompt and output. It might also be necessary because of the length: LLMs can only operate on so many words, so if you need to summarize a long document in a prompt, you’d need to first break it down into smaller chunks, use the LLM to summarize each chunk, and then combine the summaries into a new prompt for the LLM summarize that.</li>
-  <li>￼<strong>RAG (Retrieval Augmented Generation) Prompting</strong>: This means that you look up some info in a database, and then insert that into the prompt before handing it to the LLM. Everything is prompt, there is only prompt.</li>
+  <li><strong>Chain Prompting</strong>: This simply means that you take the output of one prompt, and then feed that into a new prompt. This can be useful to isolate a specific prompt and output. It might also be necessary because of the length: LLMs can only operate on so many words, so if you need to summarize a long document in a prompt, you’d need to first break it down into smaller chunks, use the LLM to summarize each chunk, and then combine the summaries into a new prompt for the LLM summarize that.</li>
+  <li><strong>RAG (Retrieval Augmented Generation) Prompting</strong>: This means that you look up some info in a database, and then insert that into the prompt before handing it to the LLM. Everything is prompt, there is only prompt.</li>
 </ul>
 
-<p><em>Note: <strong>“Embeddings”</strong> are a way of search indexing your text. LLMs take all those trillions of documents and probabilistically boils them down to several billion variables. Embeddings boil down fruther to a couple thousand variables (floating point numbers). Creating an embedding means providing a piece of text, and you get back the values of those thousand floating point numbers that probabilistically describe that text (big brain idea: it is the document’s location in a thousand-dimensional space). That lets you compute across multiple documents “given this document within the n-dimensional space, what are its closest neighboring documents semantically/probabilistically?” Embeddings are useful when you want to do RAG Prompting to pull out relevant documents and insert their text into your prompt before it’s fed to the LLM to generate output.</em></p>
+<p><em>Note: <strong>“Embeddings”</strong> are a way of search indexing your text. LLMs take all those trillions of documents and probabilistically boils them down to several billion variables. Embeddings boil down further to a couple thousand variables (floating point numbers). Creating an embedding means providing a piece of text, and you get back the values of those thousand floating point numbers that probabilistically describe that text (big brain idea: it is the document’s location in a thousand-dimensional space). That lets you compute across multiple documents “given this document within the n-dimensional space, what are its closest neighboring documents semantically/probabilistically?” Embeddings are useful when you want to do RAG Prompting to pull out relevant documents and insert their text into your prompt before it’s fed to the LLM to generate output.</em></p>
 
 <ul>
   <li><strong>Cues and Nudges</strong> There are <a href="https://news.ycombinator.com/item?id=40474716">certain phrases</a>, like “no yapping” or <a href="https://arstechnica.com/information-technology/2023/09/telling-ai-model-to-take-a-deep-breath-causes-math-scores-to-soar-in-study/">“take a deep breath”</a> that change the output. I don’t think there is anything delightful about this; it’s simply trying to boop up the variables you want in your output and words are the only inputs you have. I’m sure there will someday be better ways to do it, but whatever works.</li>
