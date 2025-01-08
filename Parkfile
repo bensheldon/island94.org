@@ -34,6 +34,9 @@ Parklife::Application.prepend(Module.new do
 
     super
 
+    # Test query parameters
+    File.write(Rails.application.root.join("build/?p=hello.html"), "Hello")
+
     FileUtils.mv(Rails.application.root.join("public/assets"), Rails.application.root.join("build/assets"))
     FileUtils.cp_r(Rails.application.root.join("_uploads/."), Rails.application.root.join("build/uploads"))
     FileUtils.cp(Rails.application.root.join("CNAME"), Rails.application.root.join("build/CNAME"))
