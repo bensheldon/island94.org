@@ -10,12 +10,11 @@ Parklife.application.config.base = "https://island94.org"
 
 Parklife.application.routes do
   root crawl: true
+  get "/redirects", crawl: true
+  get "/bookmarks", crawl: true
 
   get "/search"
   get "/search.json"
-
-  get "/redirects", crawl: true
-  get "/bookmarks", crawl: true
 
   get "/feed.xml"
   get "/sitemap.xml"
@@ -33,9 +32,6 @@ Parklife::Application.prepend(Module.new do
     Rake::Task['assets:precompile'].invoke
 
     super
-
-    # Test query parameters
-    File.write(Rails.application.root.join("build/?p=hello.html"), "Hello")
 
     FileUtils.mv(Rails.application.root.join("public/assets"), Rails.application.root.join("build/assets"))
     FileUtils.cp_r(Rails.application.root.join("_uploads/."), Rails.application.root.join("build/uploads"))

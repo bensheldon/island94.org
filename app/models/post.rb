@@ -3,13 +3,13 @@ class Post < ApplicationModel
 
   def self.all
     # Load all files from _posts directory
-    @posts ||= Dir.glob("#{Rails.root}/_posts/*.*").map do |filepath|
+    cache[:all] ||= Dir.glob("#{Rails.root}/_posts/*.*").map do |filepath|
       Post.from_file(filepath)
     end
   end
 
   def self.redirects
-    @redirects ||= all.each_with_object({}) do |post, hash|
+    cache[:redirects] ||= all.each_with_object({}) do |post, hash|
       post.redirects.each do |redirect|
         hash[redirect] = post
       end
@@ -18,11 +18,6 @@ class Post < ApplicationModel
 
   def self.tags
     all.flat_map(&:tags).uniq.sort
-  end
-
-  def self.reset
-    @posts = nil
-    @redirects = nil
   end
 
   def self.from_file(path)
@@ -37,10 +32,7 @@ class Post < ApplicationModel
   end
 
   def slug
-    @slug ||= begin
-      _year, _month, _day, slug = filename.split("-", 4)
-      slug
-    end
+    @slug ||= raw_slug.downcase
   end
 
   def project_filepath
@@ -78,7 +70,9 @@ class Post < ApplicationModel
   end
 
   def redirects
-    frontmatter.fetch("redirect_from", [])
+    frontmatter.fetch("redirect_from", []).tap do |redirects|
+      redirects << RouteHelper.post_path(self, slug: raw_slug, only_path: true) if raw_slug != slug
+    end
   end
 
   def related_posts
@@ -91,5 +85,11 @@ class Post < ApplicationModel
       .sort_by(&:published_at)
       .reverse
       .first(5) # Limit to 5 related posts
+  end
+
+  private
+
+  def raw_slug
+    filename.split("-", 4).last
   end
 end
