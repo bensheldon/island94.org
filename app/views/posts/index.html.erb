@@ -1,3 +1,11 @@
+<%
+  if @page == 1
+    provide :whole_title, "Island94.org : A lost and found"
+  else
+    provide :title, "Island94.org : A lost and found"
+  end
+%>
+
 <% if @page > 1 %>
   <% content_for :head do %>
     <meta name="robots" content="noindex, follow">

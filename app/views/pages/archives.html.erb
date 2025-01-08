@@ -1,3 +1,5 @@
+<% provide :title, "Archives" %>
+
 <h1>Archives</h1>
 
 <% posts_by_year = @posts.group_by { |post| post.published_at.strftime('%Y') } %>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/posts/:page", to: "posts#index", constraints: { page: /\d+/ }, as: :posts
   get "/:year/:month/:slug", to: "posts#show", as: :slugged_post, constraints: { year: /\d*/, month: /\d*/, slug: /.*/, format: /html/ }
   direct :post do |post, options|
-    route_for :slugged_post, post.published_at.year, post.published_at.month, post.slug, **options
+    route_for :slugged_post, year: post.published_at.strftime('%Y'), month: post.published_at.strftime('%m'), slug: post.slug, **options
   end
 
   get "about", to: "pages#about"
