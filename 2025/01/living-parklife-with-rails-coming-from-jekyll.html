@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Living Parklife with Rails, coming from Jekyll | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="mHk2d_E_KSQzlU3PYUh1I_ajqil41F1HE6JYmQvL-L31cEClpECiRpYL_OwaPxLbke8wY_SipTQkHOMK4EO0BA" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script src="/assets/main-57967bd29e3a27ba3099fee5997ee6ec8c59ef209085f949b6eac799b21915b0.js"></script>
+
+  <script>
+    let theme = localStorage.getItem('theme');
+    if (!["light", "dark"].includes(theme)) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  </script>
+
+  
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown">
+          <button id="bs-theme" class="btn btn-link nav-link dropdown-toggle" type="button" aria-expanded="false" data-bs-toggle="dropdown"  aria-label="Theme (Auto)">
+            <i data-bs-theme-active-icon class="bi bi-circle-half"></i>
+            <span data-bs-theme-label>Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bs-theme-text">
+            <li>
+              <button type="button" class="dropdown-item" data-bs-theme-value="light" aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item" data-bs-theme-value="dark" aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item" data-bs-theme-value="auto" aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <input id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+        <button class="visually-hidden" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/A-Commonplace-Book.html">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/01/living-parklife-with-rails-coming-from-jekyll"><p>Living Parklife with Rails, coming from Jekyll</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-01-05T16:12:00-08:00" itemprop="datePublished">January 5, 2025</time>
+
+        • Tagged meta, jekyll, and rails
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently migrated this blog from Jekyll to <a href="https://parklife.dev/">Ben Pickles’s Parklife</a> and Ruby on Rails, still hosted as a static website on GitHub Pages. I’m pretty happy with the experience.</p>
+
+<p>I’m writing this not because I feel any sense of advocacy (do what you want!) but to write down the reasons for myself. Maybe they’ll rhyme for you.</p>
+
+<p>Here’s this blog’s repo if you want to see: <a href="https://github.com/bensheldon/island94.org">https://github.com/bensheldon/island94.org</a></p>
+
+<h3 id="background">Background</h3>
+
+<p>I’ve been blogging here for 20 years and this blog has been through it all: Drupal, Wordpress, Middleman, Jekyll, and now Parklife+Rails.</p>
+
+<p>For the past decade the blog has largely been in markdown files, which I don’t intend to change. Over the past 2 years I also exported 15 years of pinboard/del.icio.us bookmarks, and my Kindle book highlights into markdown-managed files too. I’ve also dialed in some <a href="https://island94.org/2024/1/trigger-github-actions-workflows-from-apple-shortcuts">GitHub Action and Apple Shortcut powered integrations</a>. I’m really happy with Markdown files in a git repo, scripted with Ruby.</p>
+
+<p>…but there’s more than <em>just</em> Ruby.</p>
+<h3 id="mastery">Mastery</h3>
+
+<p>I’m heavily invested in the Ruby on Rails ecosystem. I think it’s fair to say I have mastery in Rails: I’m comfortable building applications with it, navigating and extending the framework code, intuiting the conceptual vision of the core team, and being involved in the life of the comunity where I’ve earned some positive social capital to spend as needed.</p>
+
+<p>I don’t have that in Jekyll. I am definitely handy in Jekyll. I’ve built plugins, I’ve done some wild stuff with liquid. But I’m not involved with Jekyll in the everyday sense like I am with Rails. I <em>feel</em> that when I go to make changes to my blog. There’s a little bit of friction mentally switching over to liquid, and Jekyll’s particular utilities that are <em>similar to but not the same</em> as Action View and Active Support. Jekyll is great; it’s me and the complexity of my website that’s changed.</p>
+
+<p>(I do still maintain some other Jekyll websites; no complaints elsewhere.)</p>
+
+<h3 id="parklife-with-ruby-on-rails">Parklife with Ruby on Rails</h3>
+
+<p>I hope I’m not diminishing <a href="https://parklife.dev/">Parklife</a> by writing that it isn’t functionally <em>much</em> more  than <code>wget</code>. It’s in Ruby and mounts+crawls a Rack-based web application, does a little bit to rewrite the base URLs, and spits out a directory of static HTML files. That’s it! It’s great!</p>
+
+<p>It was pretty easy for me to make a lightweight Ruby on Rails app, that loaded up all my markdown-formatted content and frontmatter, and spat them out again as Controllers and ERB Views.</p>
+
+<p>This blog is about 7k pages. For a complete website artifact:</p>
+
+<ul>
+  <li>Jekyll: takes about 20 seconds to build</li>
+  <li>Parklife with Rails: takes about 20 seconds to build</li>
+</ul>
+
+<p>In addition to the productivity win for me of being able to work with the ERB and Action View helpers I’m familiar with, I also find my development loop with Parklife and Rails is <em>faster</em> than Jekyll: I don’t have to rebuild the entire application to see the result of a single code or template change. I use the Rails development server to develop, not involving Parklife at all. On my M1 MBP a cold boot of Rails takes less than a second, a code reload is less than 100ms, and most pages render in under 10ms.</p>
+
+<p>With Jekyll, even with <code>--incremental</code>, most development changes required a 10+ second rebuild. Not my favorite.</p>
+
+<h3 id="the-technically-novel-bits">The technically novel bits</h3>
+
+<ol>
+  <li>
+    <p>if you want to trigger Rails code reload with any arbitrary set of files, like a directory of markdown files, you use <code>ActiveSupport::FileUpdateChecker</code> (which has a kind of complicated set of arguments):</p>
+
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/application.rb</span>
+<span class="nb">self</span><span class="p">.</span><span class="nf">reloaders</span> <span class="o">&lt;&lt;</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">FileUpdateChecker</span><span class="p">.</span><span class="nf">new</span><span class="p">([],</span> <span class="p">{</span>
+  <span class="s2">"_posts"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"md"</span><span class="p">,</span> <span class="s2">"markdown"</span><span class="p">],</span>
+  <span class="s2">"_bookmarks"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"md"</span><span class="p">,</span> <span class="s2">"markdown"</span><span class="p">],</span>
+<span class="p">})</span> <span class="k">do</span>
+  <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">reload_routes!</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Each of my blog posts has a list of historical redirects stored in their frontmatter (a legacy of so many framework changes). I had to think about how to do a catch-all route to render a static meta-refresh template:</p>
+
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/routes.rb</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="n">get</span> <span class="s2">"*path"</span><span class="p">,</span> <span class="ss">to: </span><span class="s2">"redirects#show"</span><span class="p">,</span> <span class="ss">constraints: </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="p">{</span> <span class="no">Redirect</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">key?</span> <span class="n">req</span><span class="p">.</span><span class="nf">path</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sr">%r{</span><span class="se">\A</span><span class="sr">/}</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nf">sub</span><span class="p">(</span><span class="sr">%r{/</span><span class="se">\z</span><span class="sr">}</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span> <span class="p">}</span>
+  <span class="c1"># ...all the other routes</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="in-conclusion">In conclusion</h3>
+
+<p>Here’s <a href="https://github.com/bensheldon/island94.org/blob/main/Parkfile">this blog’s Parkfile</a>. I did a little bit of convenience monkeypatching of things I intend to contribute upstream to Parklife. I dunno, maybe you’ll like the Parklife too.</p>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on <a href="https://twitter.com/bensheldon"><i class="bi bi-twitter"></i> Twitter</a>
+    or suggest a
+    <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2025-01-05-living-parklife-with-rails-coming-from-jekyll.md"><i class="bi bi-github"></i>
+      change</a>.
+  </div>
+    <hr>
+    <div class="card-body">
+      <h5>Related Posts</h5>
+      <ul>
+          <li><a href="/2024/12/including-rails-view-helpers-concern">Including Rails View Helpers is a concern</a></li>
+          <li><a href="/2024/09/spectator-sport-a-brief-introduction-to-an-upcoming-rails-plugin">Spectator Sport, a brief introduction to an upcoming Rails plugin</a></li>
+          <li><a href="/2024/01/replacing-devise-with-rails-has_secure_password-and-friends">Replacing Devise with Rails `has_secure_password` and friends</a></li>
+          <li><a href="/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory">The answer is in your heap: debugging a big memory increase in Ruby on Rails</a></li>
+          <li><a href="/2023/02/prevent-cdn-poisoning-from-fat-get-head-requests-in-ruby-on-rails">Prevent CDN poisoning from Fat GET/HEAD Requests in Ruby on Rails</a></li>
+      </ul>
+  </div>
+</div>
+
+  </div>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>Sun, 05 Jan 2025 16:12:00 -0800</pubDate>
-    <lastBuildDate>Tue, 07 Jan 2025 19:12:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2025 05:35:35 +0000</lastBuildDate>
     <generator>Ruby on Rails</generator>
       <item>
         <title>Living Parklife with Rails, coming from Jekyll</title>
@@ -83,8 +83,8 @@
 
           ]]>
         </description>
-        <link>https://island94.org/2025/1/living-parklife-with-rails-coming-from-jekyll</link>
-        <guid isPermaLink="true">https://island94.org/2025/1/living-parklife-with-rails-coming-from-jekyll</guid>
+        <link>https://island94.org/2025/01/living-parklife-with-rails-coming-from-jekyll</link>
+        <guid isPermaLink="true">https://island94.org/2025/01/living-parklife-with-rails-coming-from-jekyll</guid>
         <pubDate>Sun, 05 Jan 2025 16:12:00 -0800</pubDate>
       </item>
       <item>
@@ -223,8 +223,8 @@ Overall: Is it positive, neutral, or negative?</p>
 
           ]]>
         </description>
-        <link>https://island94.org/2025/1/how-im-thinking-about-ai-llms</link>
-        <guid isPermaLink="true">https://island94.org/2025/1/how-im-thinking-about-ai-llms</guid>
+        <link>https://island94.org/2025/01/how-im-thinking-about-ai-llms</link>
+        <guid isPermaLink="true">https://island94.org/2025/01/how-im-thinking-about-ai-llms</guid>
         <pubDate>Sun, 05 Jan 2025 14:49:00 -0800</pubDate>
       </item>
       <item>
@@ -604,8 +604,8 @@ Overall: Is it positive, neutral, or negative?</p>
 
           ]]>
         </description>
-        <link>https://island94.org/2024/9/spectator-sport-a-brief-introduction-to-an-upcoming-rails-plugin</link>
-        <guid isPermaLink="true">https://island94.org/2024/9/spectator-sport-a-brief-introduction-to-an-upcoming-rails-plugin</guid>
+        <link>https://island94.org/2024/09/spectator-sport-a-brief-introduction-to-an-upcoming-rails-plugin</link>
+        <guid isPermaLink="true">https://island94.org/2024/09/spectator-sport-a-brief-introduction-to-an-upcoming-rails-plugin</guid>
         <pubDate>Sun, 29 Sep 2024 05:44:00 -0700</pubDate>
       </item>
       <item>
@@ -724,8 +724,8 @@ Overall: Is it positive, neutral, or negative?</p>
 
           ]]>
         </description>
-        <link>https://island94.org/2024/9/seeing-like-a-rails-and-ruby-platform-team</link>
-        <guid isPermaLink="true">https://island94.org/2024/9/seeing-like-a-rails-and-ruby-platform-team</guid>
+        <link>https://island94.org/2024/09/seeing-like-a-rails-and-ruby-platform-team</link>
+        <guid isPermaLink="true">https://island94.org/2024/09/seeing-like-a-rails-and-ruby-platform-team</guid>
         <pubDate>Sat, 21 Sep 2024 08:17:00 -0700</pubDate>
       </item>
       <item>
@@ -781,8 +781,8 @@ Overall: Is it positive, neutral, or negative?</p>
 
           ]]>
         </description>
-        <link>https://island94.org/2024/9/secret-to-rails-database-connection-pool-size</link>
-        <guid isPermaLink="true">https://island94.org/2024/9/secret-to-rails-database-connection-pool-size</guid>
+        <link>https://island94.org/2024/09/secret-to-rails-database-connection-pool-size</link>
+        <guid isPermaLink="true">https://island94.org/2024/09/secret-to-rails-database-connection-pool-size</guid>
         <pubDate>Thu, 19 Sep 2024 07:33:00 -0700</pubDate>
       </item>
       <item>
@@ -849,8 +849,8 @@ Overall: Is it positive, neutral, or negative?</p>
 
           ]]>
         </description>
-        <link>https://island94.org/2024/9/the-novice-problem</link>
-        <guid isPermaLink="true">https://island94.org/2024/9/the-novice-problem</guid>
+        <link>https://island94.org/2024/09/the-novice-problem</link>
+        <guid isPermaLink="true">https://island94.org/2024/09/the-novice-problem</guid>
         <pubDate>Thu, 12 Sep 2024 10:26:00 -0700</pubDate>
       </item>
       <item>
@@ -919,8 +919,8 @@ from code loaded at boot.
 
           ]]>
         </description>
-        <link>https://island94.org/2024/7/on-the-importance-of-rails-code-reloading</link>
-        <guid isPermaLink="true">https://island94.org/2024/7/on-the-importance-of-rails-code-reloading</guid>
+        <link>https://island94.org/2024/07/on-the-importance-of-rails-code-reloading</link>
+        <guid isPermaLink="true">https://island94.org/2024/07/on-the-importance-of-rails-code-reloading</guid>
         <pubDate>Sun, 07 Jul 2024 07:44:00 -0700</pubDate>
       </item>
   </channel>
