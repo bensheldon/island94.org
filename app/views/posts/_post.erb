@@ -9,7 +9,7 @@
       <% end %>
 
       <% if post.tags.any? %>
-        • Tagged <%= to_sentence post.tags %>
+        • Tagged <%= to_sentence post.tags.map { |tag| link_to tag, tag_path(tag.parameterize) } %>
       <% end %>
     </p>
   </header>

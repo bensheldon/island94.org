@@ -16,6 +16,10 @@ class Post < ApplicationModel
     end
   end
 
+  def self.tags
+    all.flat_map(&:tags).uniq.sort
+  end
+
   def self.reset
     @posts = nil
     @redirects = nil

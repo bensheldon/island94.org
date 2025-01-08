@@ -9,6 +9,8 @@ require "action_view/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+require_relative "./middleware/redirect_to_meta_refresh"
+
 module Island94
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -24,13 +26,7 @@ module Island94
 
     config.secret_key_base = "0"
 
-    self.reloaders << ActiveSupport::FileUpdateChecker.new([], {
-      "_posts" => ["md", "markdown"],
-      "_bookmarks" => ["md", "markdown"],
-    }) do
-      Rails.application.reload_routes!
-    end
-
+    config.middleware.insert_before 0, RedirectToMetaRefresh
     config.middleware.use Rack::Static,
       urls: ["/uploads"],
       root: Rails.root.to_s,
@@ -39,6 +35,8 @@ module Island94
       ]
 
     config.default_url_options = {}
+
+
 
     # Configuration for the application, engines, and railties goes here.
     #
