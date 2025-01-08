@@ -8,10 +8,6 @@
 
 <ul class="list-unstyled list-columns">
   <% sorted_tags.each do |tag| %>
-    <% tag_slug = tag.downcase.gsub(' ', '_') %>
-    <li>
-      <%= link_to tag, tag_path(tag_slug) %>
-      (<%= tag_counts[tag] %>)
-    </li>
+    <li><%= link_to tag, tag_path(tag) %> (<%= tag_counts[tag] %>)</li>
   <% end %>
 </ul>

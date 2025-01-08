@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def tag
     tag_slug = params[:tag_slug]
-    @tag = Post.all.flat_map(&:tags).find { |tag| tag.downcase.gsub(' ', '_') == tag_slug }
+    @tag = Post.tags.find { |tag| tag.parameterize == tag_slug }
     raise ActionController::RoutingError, "Not Found" unless @tag
     @posts = Post.all.select { |post| post.tags.include?(@tag) }
   end

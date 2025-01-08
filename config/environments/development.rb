@@ -11,6 +11,14 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # Reload when markdown files change
+  self.reloaders << ActiveSupport::FileUpdateChecker.new([], {
+    "_posts" => ["md", "markdown"],
+    "_bookmarks" => ["md", "markdown"],
+  }) do
+    Rails.application.reload_routes!
+  end
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
