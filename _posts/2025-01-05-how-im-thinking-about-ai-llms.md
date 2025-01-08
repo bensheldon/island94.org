@@ -3,6 +3,8 @@ title: "How I'm thinking about AI (LLMs)"
 date: 2025-01-05 14:49 PST
 published: true
 tags: [ai, opinions]
+redirect_from:
+  - /2025/1/how-im-thinking-about-ai-llms
 ---
 
 With AI, in my context we’re talking about LLMs (Large Language Models), which I simplify down to “text generator”: they take text as input, and they output text.

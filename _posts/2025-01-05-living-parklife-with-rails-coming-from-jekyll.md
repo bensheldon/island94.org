@@ -3,6 +3,8 @@ title: "Living Parklife with Rails, coming from Jekyll"
 date: 2025-01-05 16:12 PST
 published: true
 tags: [meta, jekyll, rails]
+redirect_from:
+  - /2025/1/living-parklife-with-rails-coming-from-jekyll
 ---
 
 I recently migrated this blog from Jekyll to [Ben Pickles’s Parklife](https://parklife.dev/) and Ruby on Rails, still hosted as a static website on GitHub Pages. I’m pretty happy with the experience.
@@ -13,9 +15,9 @@ Here’s this blog’s repo if you want to see: [https://github.com/bensheldon/i
 
 ### Background
 
-I’ve been blogging here for 20 years and this blog has been through it all: Drupal, Wordpress, Middleman, Jekyll, and now Parklife+Rails. 
+I’ve been blogging here for 20 years and this blog has been through it all: Drupal, Wordpress, Middleman, Jekyll, and now Parklife+Rails.
 
-For the past decade the blog has largely been in markdown files, which I don’t intend to change. Over the past 2 years I also exported 15 years of pinboard/del.icio.us bookmarks, and my Kindle book highlights into markdown-managed files too. I’ve also dialed in some [GitHub Action and Apple Shortcut powered integrations](https://island94.org/2024/1/trigger-github-actions-workflows-from-apple-shortcuts). I’m really happy with Markdown files in a git repo, scripted with Ruby. 
+For the past decade the blog has largely been in markdown files, which I don’t intend to change. Over the past 2 years I also exported 15 years of pinboard/del.icio.us bookmarks, and my Kindle book highlights into markdown-managed files too. I’ve also dialed in some [GitHub Action and Apple Shortcut powered integrations](https://island94.org/2024/1/trigger-github-actions-workflows-from-apple-shortcuts). I’m really happy with Markdown files in a git repo, scripted with Ruby.
 
 …but there’s more than _just_ Ruby.
 ### Mastery
@@ -37,14 +39,14 @@ This blog is about 7k pages. For a complete website artifact:
 - Jekyll: takes about 20 seconds to build
 - Parklife with Rails: takes about 20 seconds to build
 
-In addition to the productivity win for me of being able to work with the ERB and Action View helpers I’m familiar with, I also find my development loop with Parklife and Rails is _faster_ than Jekyll: I don’t have to rebuild the entire application to see the result of a single code or template change. I use the Rails development server to develop, not involving Parklife at all. On my M1 MBP a cold boot of Rails takes less than a second, a code reload is less than 100ms, and most pages render in under 10ms. 
+In addition to the productivity win for me of being able to work with the ERB and Action View helpers I’m familiar with, I also find my development loop with Parklife and Rails is _faster_ than Jekyll: I don’t have to rebuild the entire application to see the result of a single code or template change. I use the Rails development server to develop, not involving Parklife at all. On my M1 MBP a cold boot of Rails takes less than a second, a code reload is less than 100ms, and most pages render in under 10ms.
 
 With Jekyll, even with `--incremental`, most development changes required a 10+ second rebuild. Not my favorite.
 
 ### The technically novel bits
 
 1. if you want to trigger Rails code reload with any arbitrary set of files, like a directory of markdown files, you use `ActiveSupport::FileUpdateChecker` (which has a kind of complicated set of arguments):
-   
+
    ```ruby
    # config/application.rb
    self.reloaders << ActiveSupport::FileUpdateChecker.new([], {
@@ -54,7 +56,7 @@ With Jekyll, even with `--incremental`, most development changes required a 10+ 
      Rails.application.reload_routes!
    end
    ```
-   
+
 2. Each of my blog posts has a list of historical redirects stored in their frontmatter (a legacy of so many framework changes). I had to think about how to do a catch-all route to render a static meta-refresh template:
 
    ```ruby
