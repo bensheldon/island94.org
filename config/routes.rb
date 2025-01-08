@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root "posts#index"
 
   get "/posts/:page", to: "posts#index", constraints: { page: /\d+/ }, as: :posts
-  get "/:year/:month/:slug", to: "posts#show", as: :slugged_post, constraints: { year: /\d*/, month: /\d*/, slug: /.*/, format: /html/ }
+  get "/:year/:month/:slug", to: "posts#show", as: :slugged_post, constraints: { year: /\d*/, month: /\d{2}/, slug: /.*/, format: /html/ }
   direct :post do |post, options|
-    route_for :slugged_post, year: post.published_at.strftime('%Y'), month: post.published_at.strftime('%m'), slug: post.slug, **options
+    route_for :slugged_post, { year: post.published_at.strftime('%Y'), month: post.published_at.strftime('%m'), slug: post.slug }.merge(options)
   end
 
   get "about", to: "pages#about"
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "tags", to: "pages#tags"
   get "posts/tags/:tag_slug", to: "posts#tag", as: :_tag
   direct :tag do |tag, options|
-    route_for :_tag, tag_slug: tag.parameterize, **options
+    route_for :_tag, { tag_slug: tag.parameterize }.merge(options)
   end
 
   get "search", to: "pages#search", format: :html
@@ -25,10 +25,9 @@ Rails.application.routes.draw do
   get "redirects", to: "redirects#index"
 
   resources :bookmarks, only: [:index]
-  get "/bookmarks/:year/:month/:slug", to: "bookmarks#show", as: :slugged_bookmark, constraints: { year: /\d*/, month: /\d*/, slug: /.*/, format: /html/ }
-
+  get "/bookmarks/:year/:month/:slug", to: "bookmarks#show", as: :slugged_bookmark, constraints: { year: /\d*/, month: /\d{2}/, slug: /.*/, format: /html/ }
   direct :bookmark do |bookmark, options|
-    route_for :slugged_bookmark, year: bookmark.date.strftime('%Y'), month: bookmark.date.strftime('%m'), slug: bookmark.slug, **options
+    route_for :slugged_bookmark, { year: bookmark.date.strftime('%Y'), month: bookmark.date.strftime('%m'), slug: bookmark.slug }.merge(options)
   end
 
   get 'robots', to: 'robots#robots', as: :robots, format: :txt, defaults: { format: :txt }

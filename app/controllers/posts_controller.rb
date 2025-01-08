@@ -11,8 +11,9 @@ class PostsController < ApplicationController
 
   def show
     # remove any trailing extension
-    slug_param = params[:slug].sub(/\.[^.]*\z/, "").downcase
-    @post = Post.all.find { |post| post.slug.downcase == slug_param }
+    slug_param = params[:slug].sub(/\.[^.]*\z/, "")
+
+    @post = Post.all.find { |post| post.slug == slug_param }
     raise ActionController::RoutingError, "Not Found" unless @post
   end
 
@@ -20,6 +21,7 @@ class PostsController < ApplicationController
     tag_slug = params[:tag_slug]
     @tag = Post.tags.find { |tag| tag.parameterize == tag_slug }
     raise ActionController::RoutingError, "Not Found" unless @tag
+
     @posts = Post.all.select { |post| post.tags.include?(@tag) }
   end
 end

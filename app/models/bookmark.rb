@@ -2,13 +2,9 @@ class Bookmark < ApplicationModel
   attr_reader :filepath, :frontmatter, :body
 
   def self.all
-    @bookmarks ||= Dir.glob("#{Rails.root}/_bookmarks/**/*.*").map do |filepath|
+    cache[:all] ||= Dir.glob("#{Rails.root}/_bookmarks/**/*.*").map do |filepath|
       Bookmark.from_file(filepath)
     end
-  end
-
-  def self.reset
-    @bookmarks = nil
   end
 
   def self.from_file(path)
