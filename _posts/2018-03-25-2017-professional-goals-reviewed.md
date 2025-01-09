@@ -1,4 +1,5 @@
 ---
+title: 2017 Professional Goals Reviewed
 published: true
 ---
 
@@ -20,7 +21,7 @@ The new job had already defined some values ("No blame postmortems") but I wante
 
 ### Career Ladders
 
-One of the last things I championed at my last job was the adoption of engineer career ladders. At my new job, I also pushed heavily on this again. The entire organization adopted them and we got salary bands too. I dunno how much credit I can take, but I sure mentioned it a lot and there it was. 
+One of the last things I championed at my last job was the adoption of engineer career ladders. At my new job, I also pushed heavily on this again. The entire organization adopted them and we got salary bands too. I dunno how much credit I can take, but I sure mentioned it a lot and there it was.
 
 ### Facilitation
 
