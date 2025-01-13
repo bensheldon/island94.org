@@ -20,6 +20,7 @@ gem "puma"
 gem "rake"
 gem "rouge"
 gem "sassc-rails"
+gem "stimulus-rails"
 gem "vernier"
 
 group :development, :test do
@@ -28,3 +29,5 @@ group :development, :test do
   gem "rspec-rails"
   gem 'webrick'
 end
+
+gem "turbo-rails", "~> 2.0"

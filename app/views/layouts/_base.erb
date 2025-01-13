@@ -16,17 +16,22 @@
   <%#= javascript_include_tag "main" %>
 
   <script>
-    let theme = localStorage.getItem('theme');
-    if (!["light", "dark"].includes(theme)) {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
     }
-    document.documentElement.setAttribute('data-bs-theme', theme);
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
   </script>
 
   <%= yield :head %>
 </head>
-<body>
-<%= render "layouts/navbar" %>
-<%= yield %>
+<body data-controller="search">
+  <%= render "layouts/navbar" %>
+  <%= yield %>
 </body>
 </html>

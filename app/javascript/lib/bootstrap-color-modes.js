@@ -59,14 +59,7 @@
     }
   }
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    const storedTheme = getStoredTheme()
-    if (storedTheme !== 'light' && storedTheme !== 'dark') {
-      setTheme(getPreferredTheme())
-    }
-  })
-
-  window.addEventListener('DOMContentLoaded', () => {
+  const updateTheme = () => {
     showActiveTheme(getPreferredTheme())
 
     document.querySelectorAll('[data-bs-theme-value]')
@@ -78,5 +71,15 @@
           showActiveTheme(theme, true)
         })
       })
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
   })
+
+  window.addEventListener('DOMContentLoaded', updateTheme);
+  document.addEventListener('turbo:load', updateTheme);
 })()
