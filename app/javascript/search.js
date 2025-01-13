@@ -1,6 +1,6 @@
-//= require "vendor/lunr.min.js"
+import lunr from "lunr";
 
-(function() {
+(function(lunr) {
   // Adapted from https://aaronluna.dev/blog/add-search-to-static-site-lunrjs-hugo-vanillajs/
   const MAX_SUMMARY_LENGTH = 250;
   const SENTENCE_BOUNDARY_REGEX = /\b\.\s/gm;
@@ -159,4 +159,4 @@
     const searchResults = idx.search(searchQuery);
     resultsEl.innerHTML = formatSearchResults(searchQuery, searchResults, searchIndex);
   });
-})();
+})(lunr);

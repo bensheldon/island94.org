@@ -152,6 +152,10 @@ GEM
     http_parser.rb (0.8.0)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
+    importmap-rails (2.1.0)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.8.0)
     irb (1.14.3)
       rdoc (>= 4.0.0)
@@ -370,6 +374,7 @@ DEPENDENCIES
   csv
   cuprite
   front_matter_parser
+  importmap-rails
   jekyll
   kramdown-parser-gfm
   metainspector (~> 5.15)

@@ -9,4 +9,10 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w[ main.js search.js ]
+Rails.application.config.assets.precompile += %w[
+  bootstrap.min.js
+  popper.js
+
+  main.js
+  search.js
+]

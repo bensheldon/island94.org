@@ -12,7 +12,8 @@
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="<%= feed_url(format: :xml) %>">
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_include_tag "main" %>
+  <%= javascript_importmap_tags %>
+  <%#= javascript_include_tag "main" %>
 
   <script>
     let theme = localStorage.getItem('theme');
