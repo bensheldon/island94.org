@@ -7,26 +7,52 @@
   <title>Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="5m-Gq7jfu4V5I0t-f5NbxmGyEXT1y12ww5HL1wrIekD_y37sIq9Vd1agv0Q3qggpFGdH70GsrSskH1qWdsnNEQ" />
+<meta name="csrf-token" content="VZscgaDQD6hkG9ZkAPDCibnzEQJZqfU9WF79JqdVpzlXUq5od8bP6YR08S26v0I8_M4bX00PYuzsi8KjRfD0qg" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
 
   <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
-  <script src="/assets/main-57967bd29e3a27ba3099fee5997ee6ec8c59ef209085f949b6eac799b21915b0.js"></script>
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-4cfe7c6aaeb9120821760aa53763dff54fbc561e500da6482fc43c54c7384929.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-b335e14b8d62e5d955d3c46cd8f1e9313e7e9b4cffb3b7594a77d626beba18b3.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-4cfe7c6aaeb9120821760aa53763dff54fbc561e500da6482fc43c54c7384929.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
 
   <script>
-    let theme = localStorage.getItem('theme');
-    if (!["light", "dark"].includes(theme)) {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
     }
-    document.documentElement.setAttribute('data-bs-theme', theme);
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
   </script>
 
   
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
   <div class="container">
     <a class="navbar-brand" href="/">Island94.org</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,24 +70,48 @@
           <hr class="d-lg-none my-0 text-light-500">
         </li>
 
-        <li class="nav-item dropdown">
-          <button id="bs-theme" class="btn btn-link nav-link dropdown-toggle" type="button" aria-expanded="false" data-bs-toggle="dropdown"  aria-label="Theme (Auto)">
-            <i data-bs-theme-active-icon class="bi bi-circle-half"></i>
-            <span data-bs-theme-label>Theme</span>
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bs-theme-text">
+          <ul class="dropdown-menu dropdown-menu-end">
             <li>
-              <button type="button" class="dropdown-item" data-bs-theme-value="light" aria-pressed="false">
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
                 <i class="bi bi-sun"></i> Light
               </button>
             </li>
             <li>
-              <button type="button" class="dropdown-item" data-bs-theme-value="dark" aria-pressed="false">
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
                 <i class="bi bi-moon-stars-fill"></i> Dark
               </button>
             </li>
             <li>
-              <button type="button" class="dropdown-item" data-bs-theme-value="auto" aria-pressed="true">
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
                 <i class="bi bi-circle-half"></i> Auto
               </button>
             </li>
@@ -71,7 +121,7 @@
       </ul>
 
       <form id="search" class="d-flex" action="/search" method="get">
-        <input id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+        <input data-search-target="input" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
         <button class="visually-hidden" type="submit">Search</button>
       </form>
     </div>
@@ -83,7 +133,7 @@
   </div>
 </nav>
 
-
+  
   <div class="container container-body">
     <h1>Posts tagged with "authorship"</h1>
 
