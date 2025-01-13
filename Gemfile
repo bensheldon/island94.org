@@ -8,23 +8,26 @@ gem 'octokit'
 
 gem "parklife"
 gem "rails", "~> 8.0.0"
-gem "puma"
+
+gem "bootstrap"
 gem "sprockets-rails"
 gem "bootsnap", require: false
 gem "front_matter_parser"
-gem "bootstrap"
-gem "sassc-rails"
+gem "importmap-rails"
 gem "kramdown-parser-gfm"
-gem "vernier"
+gem "metainspector", "~> 5.15" # for fetching bookmarks
+gem "puma"
+gem "rake"
 gem "rouge"
-
-# for fetching bookmarks
-gem "metainspector", "~> 5.15"
+gem "sassc-rails"
+gem "stimulus-rails"
+gem "vernier"
 
 group :development, :test do
   gem 'capybara'
   gem 'cuprite'
-  gem 'rake'
   gem "rspec-rails"
   gem 'webrick'
 end
+
+gem "turbo-rails", "~> 2.0"
