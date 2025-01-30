@@ -36,10 +36,10 @@ When you create a Ruby thread (`Thread.new`), that thread goes into the back of 
 
 When the thread gets to the front of the queue and gets the GVL, the thread will start running its Ruby code until it gives up the GVL. That can happen for one of two reasons:
 
-- When the thread goes from executing Ruby to doing IO, it releases the GVL (usually; it’s mostly considered a bug in the IO library if it doesn’t). When the thread is done with its IO operation, the Thread gets back at the end of the queue.
+- When the thread goes from executing Ruby to doing IO, it releases the GVL (usually; it’s mostly considered a bug in the IO library if it doesn’t). When the thread is done with its IO operation, the Thread goes to the back of the queue.
 - When the thread has been executing for longer than the length of the thread “quantum”, the Ruby VM takes back the GVL and the thread steps to the back of the queue again.  The Ruby thread quantum default is 100ms (this is configurable via `Thread#priority` or [directly as of Ruby 3.4](https://bugs.ruby-lang.org/issues/20861)).
 
-That second scenario is rather interesting. When a Ruby thread starts running, the Ruby VM uses yet another background thread (at the VM level) that sleeps for 10ms (the “tick”) and then checks how long the Ruby thread has been running for. If the thread has been running for longer then the length of the quantum, the Ruby VM takes back the GVL from the active thread (“preemption”) and gives the GVL to the next thread waiting in the GVL queue. The thread that was previously executing now goes to the back of the queue.
+That second scenario is rather interesting. When a Ruby thread starts running, the Ruby VM uses yet another background thread (at the VM level) that sleeps for 10ms (the “tick”) and then checks how long the Ruby thread has been running for. If the thread has been running for longer then the length of the quantum, the Ruby VM takes back the GVL from the active thread (“preemption”) and gives the GVL to the next thread waiting in the GVL queue. The thread that was previously executing now goes to the back of the queue. In other words: the thread quantum determines how quickly threads shuffle through the queue and no less/faster than the tick. 
 
 That’s it! That’s what happens with Ruby thread contention. It’s all very orderly, it just might take longer than expected or desired.
 
@@ -53,13 +53,13 @@ The dreaded "Tail Latency" of multithreaded behavior can happen, related to the 
 
 * A request that takes 1,000ms and largely spends its time doing string manipulation, for example a background thread that is taking a bunch of complex hashes and arrays and serializing them into a payload to send to a metrics server. Or rendering slow/big/complex views for Turbo Broadcasts (CPU-bound Thread)
 
-⠀.In this scenario, the CPU-bound thread will be very greedy with holding the GVL and it will look like this:
+In this scenario, the CPU-bound thread will be very greedy with holding the GVL and it will look like this:
 
 1. IO-bound Thread: Starts 1ms network request and releases GVL
 2. CPU-bound Thread: Does 100ms of work on the CPU before the GVL is taken back
-3. IO-bound Thread: Gets GVL back and starts next 1ms network request and releases GVL
+3. IO-bound Thread: Gets GVL again and starts next 1ms network request and releases GVL
 4. CPU-bound Thread: Does 100ms of work on the CPU before the GVL is taken back
 5. Repeat … 8 more times…
 6. Now 1,000 ms later, the IO-bound Thread, which ideally would have taken 10ms is finally done. That’s not good!
 
-That’s the worse case in this simple scenario with only two threads. With more threads of different workloads, you have the potential to have even more of a problem. Ivo Anjo also [wrote about this too](https://ivoanjo.me/blog/2023/02/11/ruby-unexpected-io-vs-cpu-unfairness/).
+That’s the worse case in this simple scenario with only two threads. With more threads of different workloads, you have the potential to have even more of a problem. Ivo Anjo also [wrote about this too](https://ivoanjo.me/blog/2023/02/11/ruby-unexpected-io-vs-cpu-unfairness/). You could speed this up by lowering overall thread quantum, or by reducing the priority of the CPU-bound thread (which lowers the thread quantum). This would cause the CPU-bound thread to be more finely sliced, but because the minimum slice is governed by the tick (10ms) you'd never get below a theoretical maximum of 100ms for the IO-bound thread; 10x more than optimal. 
