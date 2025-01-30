@@ -43,6 +43,8 @@ jobs:
           title: "Add post: ${{ github.event.inputs.post_title }}"
           body: ""
           branch-suffix: timestamp
+          add-paths: |
+            _posts/
 
       - name: PR Details
         run: |
