@@ -1,0 +1,53 @@
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/zlib-2.1.1/ext/zlib
+/opt/hostedtoolcache/Ruby/3.4.1/x64/bin/ruby extconf.rb
+checking for deflateReset() in -lz... yes
+checking for zlib.h... yes
+checking for crc32_combine() in zlib.h... yes
+checking for adler32_combine() in zlib.h... yes
+checking for z_crc_t in zlib.h... yes
+creating Makefile
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/zlib-2.1.1/ext/zlib
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-f553qx sitelibdir\=./.gem.20250103-1894-f553qx clean
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/zlib-2.1.1/ext/zlib
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-f553qx sitelibdir\=./.gem.20250103-1894-f553qx
+compiling zlib.c
+zlib.c: In function ‘zstream_discard_input’:
+zlib.c:897:13: warning: ‘rb_gc_force_recycle’ is deprecated: Will be removed soon [-Wdeprecated-declarations]
+  897 |             rb_gc_force_recycle(z->input);
+      |             ^~~~~~~~~~~~~~~~~~~
+In file included from /opt/hostedtoolcache/Ruby/3.4.1/x64/include/ruby-3.4.0/ruby/internal/core/rarray.h:32,
+                 from /opt/hostedtoolcache/Ruby/3.4.1/x64/include/ruby-3.4.0/ruby/internal/core.h:23,
+                 from /opt/hostedtoolcache/Ruby/3.4.1/x64/include/ruby-3.4.0/ruby/ruby.h:29,
+                 from /opt/hostedtoolcache/Ruby/3.4.1/x64/include/ruby-3.4.0/ruby.h:38,
+                 from zlib.c:9:
+/opt/hostedtoolcache/Ruby/3.4.1/x64/include/ruby-3.4.0/ruby/internal/gc.h:827:20: note: declared here
+  827 | static inline void rb_gc_force_recycle(VALUE obj){}
+      |                    ^~~~~~~~~~~~~~~~~~~
+zlib.c: In function ‘zstream_run0’:
+zlib.c:1140:9: warning: ‘rb_gc_force_recycle’ is deprecated: Will be removed soon [-Wdeprecated-declarations]
+ 1140 |         rb_gc_force_recycle(old_input);
+      |         ^~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.1/x64/include/ruby-3.4.0/ruby/internal/gc.h:827:20: note: declared here
+  827 | static inline void rb_gc_force_recycle(VALUE obj){}
+      |                    ^~~~~~~~~~~~~~~~~~~
+zlib.c: In function ‘gzfile_readpartial’:
+zlib.c:2910:9: warning: ‘rb_gc_force_recycle’ is deprecated: Will be removed soon [-Wdeprecated-declarations]
+ 2910 |         rb_gc_force_recycle(dst);
+      |         ^~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.1/x64/include/ruby-3.4.0/ruby/internal/gc.h:827:20: note: declared here
+  827 | static inline void rb_gc_force_recycle(VALUE obj){}
+      |                    ^~~~~~~~~~~~~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+linking shared-object zlib.so
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/zlib-2.1.1/ext/zlib
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-f553qx sitelibdir\=./.gem.20250103-1894-f553qx install
+/usr/bin/install -c -m 0755 zlib.so ./.gem.20250103-1894-f553qx
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/zlib-2.1.1/ext/zlib
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-f553qx sitelibdir\=./.gem.20250103-1894-f553qx clean

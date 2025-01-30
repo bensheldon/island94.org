@@ -1,0 +1,24 @@
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/vernier-1.5.0/ext/vernier
+/opt/hostedtoolcache/Ruby/3.4.1/x64/bin/ruby extconf.rb
+checking for ruby/thread.h... yes
+checking for rb_internal_thread_event_data_t.thread in ruby/thread.h... yes
+checking for rb_profile_thread_frames() in ruby/debug.h... yes
+checking for pthread_setname_np()... yes
+checking for pthread_condattr_setclock()... yes
+creating Makefile
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/vernier-1.5.0/ext/vernier
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-1xgkiq sitelibdir\=./.gem.20250103-1894-1xgkiq clean
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/vernier-1.5.0/ext/vernier
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-1xgkiq sitelibdir\=./.gem.20250103-1894-1xgkiq
+compiling memory.cc
+compiling vernier.cc
+linking shared-object vernier/vernier.so
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/vernier-1.5.0/ext/vernier
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-1xgkiq sitelibdir\=./.gem.20250103-1894-1xgkiq install
+/usr/bin/install -c -m 0755 vernier.so ./.gem.20250103-1894-1xgkiq/vernier
+
+current directory: /home/runner/work/island94.org/island94.org/vendor/bundle/ruby/3.4.0/gems/vernier-1.5.0/ext/vernier
+make DESTDIR\= sitearchdir\=./.gem.20250103-1894-1xgkiq sitelibdir\=./.gem.20250103-1894-1xgkiq clean
