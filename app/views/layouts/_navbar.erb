@@ -67,8 +67,13 @@
       </ul>
 
       <form id="search" class="d-flex" action="/search" method="get">
-        <input data-search-target="input" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
-        <button class="visually-hidden" type="submit">Search</button>
+        <div class="input-group">
+          <input data-search-target="input" data-action="keyup->search#fetchSearchData" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
       </form>
     </div>
   </div>
