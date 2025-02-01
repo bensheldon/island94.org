@@ -1,5 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
-import lunr from "lunr"
+
+// Global variable to store the search index promise
+let globalSearchData = null;
+let globalSearchIndex = null;
 
 export default class extends Controller {
   static targets = ["results", "input"]
@@ -11,7 +14,7 @@ export default class extends Controller {
   #SENTENCE_BOUNDARY_REGEX = /\b\.\s/gm
   #WORD_REGEX = /\b(\w*)[\W|\s|\b]?/gm
 
-  resultsTargetConnected(element) {
+  resultsTargetConnected(_element) {
     const searchQuery = new URLSearchParams(window.location.search).get("q")
     if (!searchQuery) {
       this.resultsTarget.innerHTML = '<p>No search term</p>'
@@ -22,28 +25,42 @@ export default class extends Controller {
     this.#performSearch(searchQuery)
   }
 
+  fetchSearchData() {
+    if (!globalSearchData) {
+      globalSearchData = fetch('/search.json').then(response => response.json())
+    }
+    return globalSearchData;
+  }
+
   async #performSearch(searchQuery) {
-    const searchIndex = await fetch('/search.json').then(response => response.json())
-    const idx = lunr(function() {
-      this.field('id')
-      this.field('title', { boost: 10 })
-      this.field('tags', { boost: 10 })
-      this.field('content')
+    const [{ default: lunr }, searchData] = await Promise.all([
+      import('lunr'),
+      this.fetchSearchData()
+    ])
 
-      for (const key in searchIndex) {
-        const item = searchIndex[key]
-        this.add({
-          'id': key,
-          'title': item.title,
-          'published': item.published,
-          'tags': item.tags,
-          'content': item.content
+    if (!globalSearchIndex) {
+      globalSearchIndex = lunr(function() {
+        this.field('id')
+        this.field('title', { boost: 10 })
+        this.field('tags', { boost: 10 })
+        this.field('content')
+
+        Object.keys(searchData).forEach((key, i) => {
+          const item = searchData[key]
+          this.add({
+            'id': key,
+            'title': item.title,
+            'published': item.published,
+            'tags': item.tags,
+            'content': item.content
+          })
         })
-      }
-    })
+      })
+    }
 
-    const searchResults = idx.search(searchQuery)
-    this.resultsTarget.innerHTML = this.#formatSearchResults(searchQuery, searchResults, searchIndex)
+    searchQuery = searchQuery.trim();
+    const searchResults = globalSearchIndex.search(searchQuery)
+    this.resultsTarget.innerHTML = this.#formatSearchResults(searchQuery, searchResults, searchData)
   }
 
   #createSearchResultBlurb(query, pageContent) {
@@ -142,12 +159,12 @@ export default class extends Controller {
     return input.slice(0, words[maxLength].end) + "..."
   }
 
-  #formatSearchResults(searchQuery, searchResults, searchIndex) {
+  #formatSearchResults(searchQuery, searchResults, searchData) {
     if (searchResults.length) {
       let output = ""
 
       for (const result of searchResults) {
-        const item = searchIndex[result.ref]
+        const item = searchData[result.ref]
         output += '<a href="' + item.url + '"><h2>' + item.title + '</h2></a>'
         output += '<p class="post-meta text-muted">' + item.published + '</p>'
 
