@@ -13,7 +13,7 @@ redirect_from:
 - "?p=2682"
 ---
 
-![](/uploads/2011-06-04-Data-driven-content-first-design/pdfpulltabs-600x342.png "pdfpulltabs")
+[![](/uploads/2011-06-04-Data-driven-content-first-design/pdfpulltabs-600x342.png "pdfpulltabs")](/uploads/2011-06-04-Data-driven-content-first-design/pdfpulltabs-600x342.png)
 
 I'm working on an app for the  [DonorChoose.org Hacking Education Contest](http://www.donorschoose.org/hacking-education). DonorsChoose works by having teachers submit classroom project/supply needs that people can then donate to pay for through the internet. Right now the only way to "share" those projects is through the usual email, Facebook and Twitter; my idea for am app is to create custom printable 4-up (quartersheet) flyers for handing out, and pull-tab sheets for posting-up. Despite the "power of teh internets", I think consideration of local resources and capacity is an important value to recognize---and helping teachers and allies advertise their needs (and the positive outcomes they hope to create) more easily within their physical communities would go far towards advancing DonorsChoose.org's mission.
 
