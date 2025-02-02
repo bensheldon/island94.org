@@ -1,8 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 // Global variable to store the search index promise
-let globalSearchData = null;
-let globalSearchIndex = null;
+let searchPromise = null;
 
 export default class extends Controller {
   static targets = ["results", "input"]
@@ -21,45 +20,61 @@ export default class extends Controller {
       return
     }
 
-    this.inputTarget.value = searchQuery
+    // Set the value of all input targets to the search query
+    this.inputTargets.forEach(input => {
+      input.value = searchQuery;
+    });
+
     this.#performSearch(searchQuery)
   }
 
-  fetchSearchData() {
-    if (!globalSearchData) {
-      globalSearchData = fetch('/search.json').then(response => response.json())
-    }
-    return globalSearchData;
+  syncInputs(event) {
+    const newValue = event.target.value;
+    this.inputTargets.forEach(input => {
+      if (input !== event.target) {
+        input.value = newValue;
+      }
+    });
   }
 
-  async #performSearch(searchQuery) {
-    const [{ default: lunr }, searchData] = await Promise.all([
-      import('lunr'),
-      this.fetchSearchData()
-    ])
+  fetchSearchData() {
+    if (!searchPromise) {
+      searchPromise = new Promise(async (resolve, reject) => {
+        const [{ default: lunr }, searchData] = await Promise.all([
+          import('lunr'),
+          fetch('/search.json').then(response => response.json())
+        ])
 
-    if (!globalSearchIndex) {
-      globalSearchIndex = lunr(function() {
-        this.field('id')
-        this.field('title', { boost: 10 })
-        this.field('tags', { boost: 10 })
-        this.field('content')
+        const searchIndex = lunr(function() {
+          this.field('id')
+          this.field('title', { boost: 10 })
+          this.field('tags', { boost: 10 })
+          this.field('content')
 
-        Object.keys(searchData).forEach((key, i) => {
-          const item = searchData[key]
-          this.add({
-            'id': key,
-            'title': item.title,
-            'published': item.published,
-            'tags': item.tags,
-            'content': item.content
+          Object.keys(searchData).forEach((key, i) => {
+            const item = searchData[key]
+            this.add({
+              'id': key,
+              'title': item.title,
+              'published': item.published,
+              'tags': item.tags,
+              'content': item.content
+            })
           })
         })
+
+        resolve([searchData, searchIndex]);
       })
     }
 
+    return searchPromise;
+  }
+
+  async #performSearch(searchQuery) {
+    const [searchData, searchIndex] = await this.fetchSearchData();
+
     searchQuery = searchQuery.trim();
-    const searchResults = globalSearchIndex.search(searchQuery)
+    const searchResults = searchIndex.search(searchQuery)
     this.resultsTarget.innerHTML = this.#formatSearchResults(searchQuery, searchResults, searchData)
   }
 
