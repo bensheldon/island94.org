@@ -7,7 +7,7 @@
   <title>Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="cpDfrrLuoxfGsq-HAqEMzJlVL0QDo_LDRAYweVaXw56FBQt9C7tX65gYKAhkmW4sQxD5TAipYtS12NQvfZgqbg" />
+<meta name="csrf-token" content="ef0BOnCQ_gUYYN87jqJPjadT9rI9bo1kQVSrA49LeoUpDlQnOVYJ4BDcsTtAxLS7HA7RyvyM-kiCYzSP-xr7mQ" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -24,7 +24,7 @@
     "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
     "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
     "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
-    "controllers/search_controller": "/assets/controllers/search_controller-aabc5898a31c9ffe309a0a815cbdf78ee26f62ed7a42ccc9c05a0d2b57949e57.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
     "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
     "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
   }
@@ -122,7 +122,7 @@
 
       <form id="search" class="d-flex" action="/search" method="get">
         <div class="input-group">
-          <input data-search-target="input" data-action="keyup->search#fetchSearchData" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
           <button type="submit" class="btn btn-outline-secondary">
             <i class="bi bi-search"></i>
             <span class="visually-hidden">Search</span>
