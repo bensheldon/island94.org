@@ -25,9 +25,26 @@ class Post < ApplicationModel
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
+  def self.create(title:, body:, frontmatter: {})
+    frontmatter = {
+      title: title,
+      date: Time.current.strftime("%Y-%m-%d %H:%M:%S %z"),
+    }.merge(frontmatter.symbolize_keys)
+
+    title = frontmatter.fetch(:title)
+    published_at = Time.parse(frontmatter.fetch(:date))
+
+    # mmmm-dd-yyyy-the-title
+    filename = "#{published_at.strftime("%m-%d-%Y")}-#{title.parameterize}"
+    filepath = "#{Rails.root}/_posts/#{filename}.md"
+
+    File.write(filepath, "#{frontmatter.stringify_keys.to_yaml}---\n\n#{body}")
+    new(filepath: filepath, frontmatter: frontmatter, body: body)
+  end
+
   def initialize(filepath:, frontmatter:, body:)
     @filepath = filepath
-    @frontmatter = frontmatter
+    @frontmatter = frontmatter.with_indifferent_access
     @body = body
   end
 
