@@ -3,7 +3,7 @@ class Post < ApplicationModel
 
   def self.all
     # Load all files from _posts directory
-    cache[:all] ||= Dir.glob("#{Rails.root}/_posts/*.*").map do |filepath|
+    cache[:all] ||= Dir.glob("#{Rails.root}/_posts/**/*.*").map do |filepath|
       Post.from_file(filepath)
     end
   end
