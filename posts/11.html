@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="w-uTp3ZIuwsO0DwkqKrSeUpMmTVwLG-HZ2myiLhNFeXFG95wHqmIoSqDTl2ZgDppBiC6j9nryvZ6hZIt3C_gRQ" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/05/is-securerandom-choose-the-wrong-name-for-generating-randomized-strings-with-ruby"><p>Is SecureRandom.choose the wrong name for generating randomized strings with Ruby?</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-05-27T08:37:00-07:00" itemprop="datePublished">May 27, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I frequently need to generate a short, random string:</p>
+
+<ul>
+  <li>I need a non-numeric, non-enumerable url ID. e.g. <code>https://example.com/resources/TOKEN</code></li>
+  <li>I need to generate a short, human-readable random activation token and I don’t want it to contain similar-looking characters like <code>1I</code> or <code>O0</code></li>
+  <li>I want to do something fun with strings of emojis.</li>
+</ul>
+
+<p>I’ve been copy-pasting this snippet around for years:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">random_string</span><span class="p">(</span><span class="n">alphabet</span><span class="p">:,</span> <span class="n">length</span><span class="p">:)</span>
+  <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="p">{</span> <span class="n">alphabet</span><span class="p">.</span><span class="nf">chars</span><span class="p">[</span><span class="nb">rand</span><span class="p">(</span><span class="n">alphabet</span><span class="p">.</span><span class="nf">chars</span><span class="p">.</span><span class="nf">size</span><span class="p">)]</span> <span class="p">}.</span><span class="nf">join</span>
+<span class="k">end</span>
+
+<span class="n">random_string</span><span class="p">(</span><span class="ss">alphabet: </span><span class="s2">"AaBbCc123"</span><span class="p">,</span> <span class="ss">length: </span><span class="mi">7</span><span class="p">)</span> 
+<span class="c1"># =&gt; "C113A11", "Abcc3B2", "33cabbC", etc.</span>
+
+<span class="n">random_string</span><span class="p">(</span><span class="ss">alphabet: </span><span class="s2">"😀😍🙃🤪😎"</span><span class="p">,</span> <span class="ss">length: </span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># =&gt; "😍😀😎", "😀🤪🤪", "🙃😎😀", etc.</span>
+</code></pre></div></div>
+
+<p>The gems <a href="https://github.com/norman/friendly_id"><code>friendly_id</code></a> and <a href="https://github.com/ryanb/uniquify"><code>uniquify</code></a> can do this too.</p>
+
+<p>There was recently a discussion on <a href="https://www.rubyonrails.link/">Ruby on Rails Link Slack</a> about generating random strings, and I went looking to see if there was a better implementation.</p>
+
+<p>I found <a href="https://github.com/ruby/ruby/blob/029169bc5b45d8ec783c19eaf713395b7983d16a/lib/securerandom.rb#L247-L291"><code>SecureRandom.choose</code></a>, which is built into the Ruby standard library, and as part of the <code>SecureRandom</code> module, should be fairly trustworthy. Looks perfect:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SecureRandom.choose generates a string that randomly draws from a source array of characters.</span>
+<span class="c1">#</span>
+<span class="c1"># The argument _source_ specifies the array of characters from which to generate the string.</span>
+<span class="c1"># The argument _n_ specifies the length, in characters, of the string to be generated.</span>
+<span class="c1">#</span>
+<span class="c1"># The result may contain whatever characters are in the source array.</span>
+<span class="c1">#</span>
+<span class="c1">#   require 'securerandom'</span>
+<span class="c1">#</span>
+<span class="c1">#   SecureRandom.choose([*'l'..'r'], 16) #=&gt; "lmrqpoonmmlqlron"</span>
+<span class="c1">#   SecureRandom.choose([*'0'..'9'], 5)  #=&gt; "27309"</span>
+</code></pre></div></div>
+
+<p>…but there is a problem: <code>SecureRandom.choose</code> is a private method. The <code>choose</code> method is used to implement the public <code>SecureRandom.alphanumeric</code> method, but is not itself exposed publicly. I went back to the initial <a href="https://bugs.ruby-lang.org/issues/10849">feature request</a> and found the reason:</p>
+
+<blockquote>
+  <p>I feel the method name, SecureRandom.choose, doesn’t represent the behavior well.</p>
+</blockquote>
+
+<p>Fair enough. Until the name is figured out, I’ll still be using it:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'securerandom'</span>
+
+<span class="no">SecureRandom</span><span class="p">.</span><span class="nf">send</span> <span class="ss">:choose</span><span class="p">,</span> <span class="s2">"😀😍🙃🤪😎"</span><span class="p">.</span><span class="nf">chars</span><span class="p">,</span> <span class="mi">3</span>
+<span class="c1"># =&gt; "😍😎😍"</span>
+</code></pre></div></div>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/05/generic-advice-for-managers"><p>Generic advice for managers</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-05-26T08:15:00-07:00" itemprop="datePublished">May 26, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From Allison Green’s <a href="https://www.thecut.com/article/ask-a-boss-glassdoor-negative-review.html">Ask a Manager: “I Got a Terrible Review on Glassdoor, and I’m Spiraling”</a>:</p>
+
+<blockquote>
+  <p>The reality is, when you’re a manager, not everyone will like working for you. You could be the greatest boss in the world and some people still wouldn’t like you. Partly that’s because being a good manager means giving feedback, addressing problems, and holding people accountable in ways they might not like. If you need to correct someone a lot, or have difficult conversations with them about their work, or say no to something they wanted, it’s human nature that you might not end up being their favorite person. Or you might have a style that doesn’t align well with theirs — maybe you’re very direct and matter-of-fact and that feels brusque to them, or maybe you’re a planner and a devotee of process and they work more spontaneously. That wouldn’t mean either of you is in the wrong; it would just mean you don’t mesh well together.</p>
+
+  <p>Sometimes, too, people dislike a job or a manager for reasons that aren’t as much about the manager as they are about other things going on with that person — a dislike of their career path, stressors outside of work, a generally bad fit with the role, or all kinds of things.</p>
+
+  <p>Or, frankly, you might be an imperfect manager — most of us are — but that doesn’t mean you’re a horrible one. Managing people is hard, and every manager will get things wrong now and then. Ideally you’ll establish a track record of fairness, transparency, and good judgment so your mistakes are judged within that context … but you still might encounter an employee who judges your mistakes harshly. You’re basically on a stage when you’re the boss; you’re going to be scrutinized by the people under you, and there will be things they take issue with. It’s part of the job, and you’ve got to be okay with that.</p>
+
+  <p>Or, yes, you might be a terrible manager! It’s possible. There are lots of terrible managers out there. But I’m skeptical that you’re terrible in the specific ways the review described (mean and intolerant of mistakes), because your detailed explanation of your approach to mistakes sounds pretty healthy and because you sound genuinely thoughtful and caring toward team members. People can delude themselves, of course, and managers aren’t always reliable narrators of their own management styles. But the way you talk about how you operate — and your reaction now — doesn’t seem to line up with that review or with the feedback people have given your boss about you. That doesn’t mean that review is definitely wrong. I obviously can’t say that with certainty. But I don’t think it warrants the self-flagellation you’re doing.</p>
+
+  <p>That said, all managers have ways they could improve — things they’re doing that irritate or upset their teams, or make things run less effectively, or allow problems to fester. I can say with confidence that you could be a better manager, because we all could. So one option is to take this as an impetus to do a real inventory of the way you manage, figure out where you could improve, and lean into doing that work.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/01/goodjob-1-4-jruby-compatibility-and-more"><p>GoodJob 1.4: JRuby compatibility and more</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-01-10T20:12:00-08:00" itemprop="datePublished">January 10, 2021</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a>  version 1.4 is released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the  <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> .</p>
+
+<p>GoodJob’s v1.4 release adds support for:</p>
+
+<ul>
+  <li>JRuby</li>
+  <li>MRI 3.0</li>
+  <li>Rails 6.1</li>
+  <li>Postgres 12+</li>
+</ul>
+
+<p>And includes additional improvements to the Web Dashboard.</p>
+
+<p>Version 1.4’s release comes three months after v1.3 and five months after GoodJob’s initial v1.0 release.</p>
+
+<h2 id="jruby-compatibility">JRuby compatibility</h2>
+<p>GoodJob 1.4 adds compatibility for Ruby on Rails applications running under JRuby. GoodJob’s multithreading is built on top of <a href="https://github.com/ruby-concurrency/concurrent-ruby">ConcurrentRuby</a>, which provides consistent behavior and guarantees on all four of the main Ruby interpreters (MRI/CRuby, JRuby, Rubinius, TruffleRuby).</p>
+
+<p>A minor downside of JRuby is that JRuby’s database adapter, <a href="https://github.com/jruby/activerecord-jdbc-adapter"><code>activerecord-jdbc-adapter</code></a>, does not support Postgres LISTEN, which means GoodJob must rely on polling for new jobs under JRuby.</p>
+
+<h2 id="broader-compatibility-and-improvements">Broader compatibility and improvements</h2>
+<p>In addition to JRuby, GoodJob 1.4 adds compatibility for MRI 3.0, Rails 6.1, and Postgres 12+.</p>
+
+<p>GoodJob 1.4 also includes improved filtering for the Web Dashboard,.</p>
+
+<h2 id="whats-next">What’s next</h2>
+<p>The next version of GoodJob will add support for daemonization.</p>
+
+<h2 id="contribute">Contribute</h2>
+<p>Code, documentation, and curiosity-based contributions are welcome! Check out the  <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a> , comment on or open a Github Issue, or make a Pull Request.</p>
+
+<p>I also have a  <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a>  if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/11/triangular-eating"><p>Triangular eating</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-11-03T12:44:00-08:00" itemprop="datePublished">November 3, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I have been practicing <a href="http://fedupwithlunch.com/2010/05/guest-blogger-triangular-eating-in-japan/">triangular eating</a> after reading this blog post from The School Lunch Project in 2010:</p>
+
+<blockquote>
+
+  <p>Triangular Eating (sankaku-tabe)</p>
+
+  <p>(ex.) Main dish →　Rice or Bread or Pasta →Soup →Main dish → Rice or Bread or Pasta → Soup….</p>
+
+  <p>In Japan, we usually learn how to eat food in triangular patterns when we were little kids. We usually learn it preschool age to elementary school age. When we start school lunch, it is the time to learn how to eat. It is kind of Japanese food culture, so teacher don’t go too strict nowadays. Kids don’t have to eat in triangular way, but many Japanese do triangular eating because we learn when school lunch time.</p>
+
+  <p>I would like to tell about the triangular way of eating. So, you have to make sure it is in triangular order. This is good practice in learning know how to eat a balanced meal by yourself. I think you can arrange this as square, pentagon and so on. Please go ahead add a salad or a side dish. As time goes by, if I have meat or fish, I automatically want to eat rice, then I start to want to eat vegetables. Isn’t it nice?</p>
+
+  <p>Also, triangular way could be give you rhythm and let your mouth reset. You can imagine wine and cheese. It is work well for harmony too.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/11/the-five-ideals-explained"><p>The five ideals explained</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-11-03T11:38:00-08:00" itemprop="datePublished">November 3, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I previously posted the <a href="https://island94.org/2017/12/the-three-ways-explained">The Three Ways</a> from <em>The Phoenix Project</em>. Here are <a href="https://itrevolution.com/five-ideals-of-devops/">the Five Ideals from <em>The Unicorn Project</em></a>, by way of Gene Kim’s <em>IT Revolution</em> blog:</p>
+
+<blockquote>
+
+  <p>The First Ideal: Locality and Simplicity</p>
+
+  <p>We need to design things so that we have locality in our systems and the organizations that build them. We need simplicity in everything we do. This ideal relates to the degree to which a development team can make local code changes in a single location without impacting various teams. The last place we want complexity is internally, whether it’s in our code, in our organization, or in our processes.</p>
+
+  <p>The Second Ideal: Focus, Flow, and Joy</p>
+
+  <p>The Second Ideal is all about how our daily work feels. Is our work marked by boredom and waiting for other people to get things done on our behalf? Do we blindly work on small pieces of the whole, only seeing the outcomes of our work during deployment when everything blows up, leading to firefighting, punishment, and burnout? Or do we work in small batches, ideally single-piece flow, getting fast and continual feedback on our work? These are the conditions that allow for focus and flow, challenge, learning, discovery, mastering our domain, and even joy. This is what being a developer means.</p>
+
+  <p>The Third Ideal: Improvement of Daily Work</p>
+
+  <p>The Third Ideal addresses paying down technical debt and improving architecture. When technical debt is treated as a priority and paid down and architecture is continuously improved and modernized, teams can work with flow, delivering better value sooner, safer, and happier. And the business ultimately wins when developers can deliver on enterprise performance goals.</p>
+
+  <p>The Fourth Ideal: Psychological Safety</p>
+
+  <p>Psychological safety is one of the top predictors of team performance. When team members feel safe to talk about problems, problems can not only be fixed but prevented. Solving problems requires honesty, and honesty requires an absence of fear. In knowledge work, psychological safety should be treated with the same importance as physical safety is in manufacturing.</p>
+
+  <p>The Fifth Ideal: Customer Focus</p>
+
+  <p>Customer focus relates to the difference between core and context as defined by Geoffrey Moore. Core is what customers are willing and able to pay for, the bread and butter of your business. Context is what they don’t care about, what it took to get them that product, including all the backend systems of an organization like HR and marketing and development. It’s critical to look at these Context systems as essential, as mission critical, and fund them appropriately. Context should never kill core.</p>
+
+</blockquote>
+
+<p>And a shorter version that’s less engineer focused from <a href="https://itrevolution.com/devops-a-primer/">“DevOps: A Primer For The Business Leader”</a>:</p>
+
+<blockquote>
+
+  <ul>
+    <li>Locality and Simplicity: alleviate dependencies between teams and components.</li>
+    <li>Focus, Flow, and Joy: the smooth flow of work that enables focus and joy.</li>
+    <li>Improvement of Daily Work: continuously improve and pay down technical debt.</li>
+    <li>Psychological Safety: a top predictor of team performance; enables improvement.</li>
+    <li>Customer Focus: optimize for customer value, not for a role-based silo.</li>
+  </ul>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/11/maimonides-levels-of-charity"><p>Maimonides’ levels of charity</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-11-03T16:01:00-08:00" itemprop="datePublished">November 3, 2020</time>
+
+        • Tagged <a href="/posts/tags/charity">charity</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>This has been kicking around in my “to blog” bucket since July, 2008 when I had many more posts on Charity. I originally copied this from <a href="http://judaism.about.com/od/beliefs/a/charity_nine.htm">judaism.about.com</a>, and <a href="https://en.wikipedia.org/wiki/Tzedakah">Wikipedia</a> has a version of these too.</em></p>
+
+<p>Maimonides organized the different levels of tzedakah (charity) into a list from the least to the most honorable.</p>
+
+<blockquote>
+
+  <p>8. When donations are given grudgingly.</p>
+
+  <p>7. When one gives less than he should, but does so cheerfully.</p>
+
+  <p>6. When one gives directly to the poor upon being asked.</p>
+
+  <p>5. When one gives directly to the poor without being asked.</p>
+
+  <p>4. When the recipient is aware of the donor’s identity, but the donor does not know the identity of the recipient.</p>
+
+  <p>3. When the donor is aware of the recipient’s identity, but the recipient is unaware of the source.</p>
+
+  <p>2. When the donor and recipient are unknown to each other.</p>
+
+  <p>1. The highest form of charity is to help sustain a person before they become impoverished by offering a substantial gift in a dignified manner, or by extending a suitable loan, or by helping them find employment or establish themselves in business so as to make it unnecessary for them to become dependent on others.</p>
+
+</blockquote>
+
+<p>To be critical, 8 and 1 are most meaningful to me, and the gradations between the others aren’t particularly strong, though I think 4 and 3 could swap places.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/11/if-you-can-hook-them-for-a-day-you-can-hook-them-for-two"><p>If you can hook them for a day, you can hook them for two</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-11-03T15:51:00-08:00" itemprop="datePublished">November 3, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I think this essay has come to mind more often than any other in the past decade of my work as a developer, and sometimes distressingly, in life. From Tim Rogers <a href="http://web.archive.org/web/20201111182117/https://insertcredit.com/2011/09/22/who-killed-videogames-a-ghost-story/">“who killed videogames? (a ghost story)”</a><br />
+:</p>
+
+<blockquote>
+
+  <p>One click in one of these social games will take the user to the Real-World Money-Costing In-Game-Currency-Unit-Buying Shop. Here, the player will see that the game indeed offers him an option for paying $100 for something which is not real: an in-game currency with which to buy things in the game.</p>
+
+  <p>At the time he makes the conscious decision to wait for his energy to refill, the player likely already knows that “micro”-transactions exist which have $100 price-tags. Now he learns how much energy costs — usually, it’s nowhere near $100, or even $10.</p>
+
+  <p>Do players buy energy? What sorts of players buy energy? The short answer is: actual idiots. The long answer is: people who don’t understand why they have so much real-world money.</p>
+
+  <p>In social games, energy doesn’t exist to be bought. It exists as an engagement-regulating filter. The player attaches to it some vague notion of “value”. Backward-like, he comes to associate waiting an hour in the real world before coming back to the game with “working” and “earning” the “value” of the thing the game is giving him for “free”.</p>
+
+  <p>This isn’t exactly a truthful impression. The impression the player should take away — and gets confused about — is that in social games, time is a currency. Time is what you use to buy energy. Energy is a currency for purchasing in-game money, and some less-abstract in-game currencies (the premium in-game currency which the player must use real money to purchase) and more-abstract in-game currencies (namely virality and chance) can be used to purchase energy directly.</p>
+
+  <p>Energy’s multiple conversion rates into multiple in-game currencies mystify the idea of time as a currency.</p>
+
+  <p>The old idiom “time is money” has many meanings, you see.</p>
+
+  <p>“Energy” is a money that literally directly represents time.</p>
+
+  <p>…It’s a compulsion trap.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/11/dying-on-management-mountain"><p>Dying on management mountain</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-11-03T12:59:00-08:00" itemprop="datePublished">November 3, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From <em>First, break all the rules</em>:</p>
+
+<blockquote>
+  <p>Managers were encouraged to focus on complex initiatives like reengineering or learning organizations, without spending time on the basics. The stages on the mountain reveal that if the employee doesn’t know what is expected of him as an individual (Base Camp), then you shouldn’t ask him to get excited about playing on a team (Camp 2). If he feels as though he is in the wrong role (Camp 1), don’t pander to him by telling him how important his innovative ideas are to the company’s reengineering efforts (Camp 3). If he doesn’t know what his manager thinks of him as an individual (Camp 1), don’t confuse him by challenging him to become part of the new “learning organization” (Camp 3). Don’t helicopter in at seventeen thousand feet, because sooner or later you and your people will die on the mountain.</p>
+</blockquote>
+
+<p>And a quote about performing the performance:</p>
+
+<blockquote>
+  <p>A manager has got to remember that he is on stage every day. His people are watching him. Everything he does, everything he says, and the way he says it, sends off clues to his employees. These clues affect performance. So never forget you are on that stage.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/11/better-by-our-own-standards"><p>Better by our own standards</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-11-03T11:55:00-08:00" itemprop="datePublished">November 3, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>This book review in the New Yorker of <a href="https://www.newyorker.com/magazine/2019/08/26/how-cultural-anthropologists-redefined-humanity">Charles King’s “Gods of the Upper Air”</a> has been kicking about my brain for a long while, especially in regards to the phrase “variations within groups are greater than variations between groups” concretely in my work on accessibility, diversity, equity and inclusion.</p>
+
+<blockquote>
+
+  <p>The evidence proved, Boas said, “the plasticity of human types.” It also showed that variations within groups are greater than variations between groups.</p>
+
+  <p>…</p>
+
+  <p>Boas devoted his life to showing people that the science they were relying on was bad science. “He believed the world must be made safe for differences,” Ruth Benedict wrote when Boas died.</p>
+
+  <p>…</p>
+
+  <p>It’s true that Boas and Benedict spoke of “relativity,” and that at the end of “Patterns of Culture” Benedict refers to “coexisting and equally valid patterns of life which mankind has created for itself from the raw materials of existence.” But everything else in Benedict’s book contradicts the assertion that all cultures are “equally valid.” The whole point is to judge which practices, others’ or our own, seem to produce the kind of society we want. The anthropological mirror has a moral purpose.</p>
+
+  <p>The term “culture” is responsible for some of the confusion. We think that to call something part of a group’s culture is to excuse it from judgment. We say, That’s just the lens through which people in that society view the world. It’s not for us to tell them what to think. Our ways are not better, only different. What it all boils down to (to paraphrase Montaigne) is: We wear pants; they do not. That would be relativism.</p>
+
+  <p>But to say that a belief or a practice is culture-relative is not to place it beyond judgment. The whole force of Boasian anthropology is the demonstration that racial prejudice is cultural. The belief that some races are superior and some inferior is learned; it has no basis in biology. It is therefore subject to criticism.</p>
+
+  <p>Boas spent his entire life telling people that intolerance is wrong. King says that cultural anthropology pushes us to expand our notion of the human. That may be so, but it has nothing to do with relativism. King’s anthropologists are prescriptivists. They are constantly telling us to unlearn one way of living in order to learn a way that is better by <em>our own standards</em>.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/10/the-furthest-to-go-in-efforts-to-reach-their-full-humanity"><p>The furthest to go in efforts to reach their full humanity</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-10-27T17:14:00-07:00" itemprop="datePublished">October 27, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Tawana “Honeycomb” Petty writing in a <a href="https://riverwisedetroit.org/article/mama-lila-cabbil-tribute-pushing-us-toward-deeper-thought-still/">“Mama Lila Cabbil Tribute: Pushing Us Toward Deeper Thought, Still”</a>, published in Riverwise Magazine.</p>
+
+<blockquote>
+
+  <p>Through my organizing and teaching, I have asked that anti-racist circles step away from performative testimonials of privilege for whites and lack of privilege for Black and Brown people. I have asked that all allies move from ally-ship towards co-liberation, with the belief that we can only make systemic change if we understand our liberation is tied up with one another’s. My historical and current analysis of this moment pushes me to interrogate the notion that (most) white people “benefit” from their forced relationship with white supremacy.</p>
+
+  <p>I have asked that white allies (aspiring co-liberators) seek to understand the impact that the myth of white superiority and the system of white supremacy has had on their own communities. I have asked them to deal with school shootings in their communities, opioid abuse, domestic violence, and rising incidents of suicide. I have asked them if they truly believe what they say when they testify to their privilege.</p>
+
+  <p>For many, this way of thinking may not appear to answer the questions that plague Black and Brown people in America. However, I am of the mindset that a dehumanized being cannot see another as fully human. I am of the mindset that the white children who are shooting up schools have fallen victim to trying to live up to the myth of white superiority.</p>
+
+  <p>White men, even in progressive circles, are taught they are superior to white women, Black women, and every other living being on the planet. What would it mean for the anti-racism movement to teach white men that they have the furthest to go in efforts to reach their full humanity? What would it look like if they don’t enter spaces acting inherently superior (privileged), but rather with a lot of work to do to shed the legacy of violence that comes with their perception of superiority?</p>
+
+</blockquote>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/10" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/12" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

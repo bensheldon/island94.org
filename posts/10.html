@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="8mHEWNceuqELhJ_swfZthe5uzZ4lCpimbMbhExBOc-D0kYmPv_-JCy_X7ZXw3IWVogLuJIzNPddxKsG2dCyGQA" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/01/javascript-is-a-management-problem"><p>Javascript is a management problem</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-01-11T11:17:00-08:00" itemprop="datePublished">January 11, 2022</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I have been on board with low/no javascript for a long time for a variety of observed and experienced reasons, and grasping around for a succinct explanation. Baldur Bjarnason captures it in <a href="https://www.baldurbjarnason.com/2021/single-page-app-morality-play/">“The Single-Page-App Morality Play”</a>:</p>
+
+<blockquote>
+
+  <p><em>The problem is management.</em></p>
+
+  <p>It is a management problem. Truly.</p>
+
+  <p>The Multi-Page-App forces the team to narrow the scope to a level they can handle. It puts a hard limit on their technological aspirations. Mandating a traditional Multi-Page-App under the auspices of performance, accessibility, or Search-Engine-Optimisation is a face-saving way to force the hand of management to be more realistic about what their teams can accomplish. When we can accomplish the same by advocating for a specific Single-Page-App toolkit or framework, that’s what most of us nominally on the ‘Anti’ side do. I regularly advocate for Svelte when I think the team can handle its long term implications in terms of complexity. (That might change as Svelte adds more features.)</p>
+
+  <p>The problem with Single-Page-App frameworks, even the ones like SvelteKit who could claim to be more Hybrid than just SPA, is that they are very, very eager to enable ‘scale’ of any sort. Features, app size, code complexity, integrations, etc. They are desperate to make sure that you can keep using their framework if you become a mythical ‘unicorn’ startup and your project grows into the next Facebook. So they put a lot of hard work into making sure that there is no upper limit to the scope of the app you can make with them.</p>
+
+  <p>Which, when they present it as ‘scale’, sounds like a good thing. But it’s absolutely a bad thing when you’re in an industry that’s as mismanaged as ours. We can’t handle complexity. Having no upper limit to it is extremely bad.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/12/i&#39;m-burning-dude-where-do-we-go-from-here"><p>I’m burning dude… where do we go from here?</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-12-09T17:41:00-08:00" itemprop="datePublished">December 9, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>A powerful conversation from Reveal’s <a href="https://revealnews.org/podcast/mississippi-goddam-chapter-6-mississippi-justice/">“Mississippi Goddam Chapter 6: Mississippi Justice” (46:10)</a> between reporters Al Letson and Jonathan Jones:</p>
+
+<blockquote>
+
+  <p><strong>Al Letson</strong></p>
+
+  <p>After the interview, I was still thinking about everything Curley said. JJ and I walked back to our car mostly in silence, but on the ride back, we talked about it.</p>
+
+  <p>Okay, so, what did you think about the interview with Curley?</p>
+
+  <p><strong>Jonathan Jones</strong></p>
+
+  <p>It was good. It was slightly pessimistic at the end of it.</p>
+
+  <p><strong>Al Letson</strong></p>
+
+  <p>That’s kind of what I wanted to talk to you about though, is that like, I am just really tired of people asking Black folks to have hope, and to make people feel better about the American situation, when everything in our history tells us that that is not the case. And I especially am uncomfortable with it when we are asking people who are doing the work, like Curley Clark is out there doing the work to try to make this world a more just place. And I, in the work that I choose to do, I’m trying to make the world a better place in it. And in the work that you do, it’s the same reason. We’re both driven to the work that we do and the cases that we look at and pick, because we want this place to be more just for everybody. And so, but the idea that somehow or another, Black folks are supposed to have hope, and Black folks are not supposed to be pessimistic. It just feels yucky to me, because it’s like asking us to look at all the history of what’s happened in this country and kind of ignore it.</p>
+
+  <p><strong>Jonathan Jones</strong></p>
+
+  <p>No, but I don’t disagree with you. I think that’s a misunderstanding of what I was asking. I wasn’t fishing for Black folk to fight.</p>
+
+  <p><strong>Al Letson</strong></p>
+
+  <p>No, I don’t think you were. That’s not what I’m saying. I’m not saying that you were telling me…</p>
+
+  <p><strong>Jonathan Jones</strong></p>
+
+  <p>Well, let me just… I mean, I am thinking about, I want to inspire. I want to… I don’t want to be an activist, but I hope our journalism helps to make this better world. And in investigative reporting, we do a great job of finding bad guys. We don’t do a very good job about solutions.</p>
+
+  <p><strong>Al Letson</strong></p>
+
+  <p>I think we look at it in two different ways, in the sense of, we’re both shooting for the same goal. And I want to be really clear that I didn’t think that you were telling Curley Clark to work harder. I felt like you were asking Curley, and by extension me, why don’t we have hope, and where’s the hope? And my point is that the history of this country tells me, no, no, I can’t do that anymore.</p>
+
+  <p>And I would say that, I think it’s beautiful that you want to inspire people. I do. I love that about you. And in certain ways, I do want to do work that inspires people, but really at this point in my life and where I am, I don’t want to inspire people, I want to infuriate people. I want to make work that make people burn so hard that they feel like this injustice is wrong, and they want to go out, and they want to tear it all down.</p>
+
+  <p>And I know that we’re talking about the same thing, but we’re talking about it in different ways, right? I know that you want to do the exact same thing, that you want to inspire people for this, to this higher cause. And I think that that is useful and smart, but also, I think, just like in series that we’re working on, I couldn’t do this without you, and you couldn’t do this without me, and the inspiration is definitely necessary, but fuck, man, I got so much anger.</p>
+
+  <p>I got so much anger, and I’m so tired of hiding it, and I’m so tired of pretending that it’s not there, and I’m so tired of this idea that… This shit really chokes me up a little bit. I’m just, I’m sick of it, man. I’m sick of it, And it makes… I want to… I’m burning, dude. And that’s why I’m doing this work, is because I’m seeing how the world is, and it’s not just Mississippi. It’s all, it’s the entire country. You see how it’s happening, and I don’t have hope, but what I do have is this rage, and it’s burning in me. And that’s what I hope that we do. I hope that we people off so bad at that they create change from that fire.</p>
+
+  <p><strong>Jonathan Jones</strong></p>
+
+  <p>And that seems very real, and I completely affirm that. I think maybe I would have, maybe I should have phrased the question a little bit better, because that answer that you gave would have been the answer. I guess my point was, where do we go from here? It can be from anger and raw rage, and outrage at injustice. It’s just, where do we go from here? And I don’t want to have a… I’m not trying to do a hokey fairytale at all.</p>
+
+  <p><strong>Al Letson</strong></p>
+
+  <p>Right, right.</p>
+
+  <p><strong>Jonathan Jones</strong></p>
+
+  <p>And it’s… it’s hard.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/11/types-of-corruption"><p>Types of Corruption</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-11-21T14:33:00-08:00" itemprop="datePublished">November 21, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>An interesting breakdown of types of corruption by <a href="https://freakonomics.com/podcast/chinas-gilded-age/">Yuen Yuen Ang on Freakonomics</a>:</p>
+
+<blockquote>
+
+  <p>I propose a typology of four types of corruption divided along two dimensions. First, whether the corruption involves elites or non-elites. And second, whether the corruption involves theft or exchange. So this intersection creates, first of all, corruption with theft, which I divide into petty theft and grand theft. Petty theft would be like extortion — a police officer who just stops you and robs you of $200. Grand theft would be embezzlement. Nigeria would be a classic case, billions of dollars siphoned out of a country. And then I distinguish between two types of transactional corruption. The first is what I call speed money, which is bribes paid to low- or medium-level officials in order to overcome red tape or delays or harassment. And then I have a fourth category called access money, which is privileges paid to powerful officials, not because you want to overcome red tape, but because you want to buy special deals from them.</p>
+
+  <p>[…]</p>
+
+  <p>I use the analogy of drugs because we know that all drugs are harmful, but they harm in different ways. Petty theft and grand theft are like toxic drugs, where if you take this drug, it’s definitely going to damage your health, you get no benefit from it… Speed money are like painkillers, so they help you to relieve a headache by overcoming red tape, but they don’t help you grow muscles fast. They don’t help you to grow your business. And access money are the steroids of capitalism, and steroids, we know, help you grow muscle fast. They help you perform superhuman feats. But they come with serious side effects that accumulate over time, and they only erupt in the event of a meltdown.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/11/conflict-in-the-matrix"><p>Conflict in the matrix</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-11-05T17:17:00-07:00" itemprop="datePublished">November 5, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From Apenwarr’s <a href="https://apenwarr.ca/log/20190926">“What do executives do, anyway?”</a>:</p>
+
+<blockquote>
+
+  <p>To paraphrase the book [High Output Management, by Andy Grove], the job of an executive is: to define and enforce culture and values for their whole organization, and to ratify good decisions.</p>
+
+  <p>That’s all.</p>
+
+  <p>Not to decide. Not to break ties. Not to set strategy. Not to be the expert on every, or any topic. Just to sit in the room while the right people make good decisions in alignment with their values. And if they do, to endorse it. And if they don’t, to send them back to try again.</p>
+
+  <p>There’s even an algorithm for this.</p>
+
+  <p>It seems too easy to be real. For any disagreement, identify the lead person on each side. Then, identify the lowest executive in the corporate hierarchy that both leads report into (in the extreme case, this is the CEO). Set up a meeting between the three of them. At the meeting, the two leads will present the one, correct decision that they have agreed upon. The executive will sit there, listen, and ratify it.</p>
+
+  <p>But… wait. If the decision is already made before the meeting, why do we need the meeting? Because the right decision might not happen without the existence of that meeting. The executive gives formal weight to a major decision. The executive holds the two disagreeing leads responsible: they must figure out not what’s best for them, but what’s best for the company. They can’t pull rank. They can’t cheat. They have to present their answer to a person who cares about both of their groups equally. And they want to look good, because that person is their boss! This puts a lot of pressure on people to do the right thing.</p>
+
+</blockquote>
+
+<p>From HBR’s <a href="https://hbr.org/1978/05/problems-of-matrix-organizations">“Problems of Matrix Organizations”</a>:</p>
+
+<blockquote>
+
+  <p>Another possible source of decision strangulation in matrix organizations occurs when managers frequently or constantly refer decisions up the dual chain of command. Seeing that one advantage of the conventional single chain of command is that two disagreeing peers can go to their shared boss for a resolution, managers unfamiliar with the matrix worry about this problem almost more than any other. They look at a matrix and realize that the nearest shared boss might be the CEO, who could be five or six echelons up. They realize that not too many problems can be pushed up to the CEO for resolution without creating the ultimate in information overload. So, they think, will not the inevitable disagreement lead to a tremendous pileup of unresolved conflict?</p>
+
+  <p>Certainly, this can happen in a malfunctioning matrix. Whether it does happen depends primarily on the depth of understanding that exists about required matrix behavior on the part of managers in the dual structure. Let us envision the following scene: a manager with two bosses gets sharply conflicting instructions from his product and his functional bosses. When he tries to reconcile his instructions without success, he quite properly asks for a session with his two bosses to resolve the matter. The three people meet, but the discussion bogs down, no resolution is reached, and neither boss gives way.</p>
+
+  <p>The two bosses then appeal the problem up a level to their respective superiors in each of the two chains of command. This is the critical step. If the two superiors properly understand matrix behavior, they will first ascertain whether the dispute reflects an unresolved broader policy issue. If it does not, they know their proper step is to teach their subordinates to resolve the problem themselves—not to solve it for them. In short, they would not let the unresolved problem escalate, but would force it back to the proper level for solution, and insist that the solution be found promptly.</p>
+
+  <p>Often, conflict cannot be resolved; it can, however, be managed, which it must be if the matrix is to work. Any other course of action would represent management’s failure to comprehend the essential nature of the design.</p>
+
+</blockquote>
+
+<p>Lastly, <a href="https://komoroske.com/slime-mold/">Alex Komoroske’s deck on Slime Molds</a> is good.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/10/til:-detecting-block-returns-in-ruby-"><p>TIL: Detecting block returns in Ruby</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-10-11T12:01:00-07:00" itemprop="datePublished">October 11, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I was doing some research on introspecting Ruby on Rails database transactions for a <a href="https://www.reddit.com/r/ruby/comments/q54515/comment/hg9dzdc/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">Reddit thread</a>, and came across this <a href="https://github.com/rails/rails/pull/29333">Rails PR</a> that had some new Ruby behavior for me: detecting an early <code>return</code> from a block.</p>
+
+<p>Some background: A Ruby language feature, that can frequently surprise people, is that using <code>return</code> within a Ruby block will return not only from the block itself, but also from the block’s caller too. Using <code>next</code> is really the only truly safe way to interrupt a block early; even <code>break</code> can be troublesome if the block is called by an enumerator. Also, <code>next</code> can take a return value too, just like <code>return</code> e.g. <code>next my_value</code>.</p>
+
+<p>I found the Rails PR interesting, because it has a method for detecting and warning on an early return. Here’s a simplified example:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+  <span class="n">block</span><span class="p">.</span><span class="nf">call</span>
+  <span class="n">completed</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># won't be called if the block returns early</span>
+<span class="k">ensure</span>
+  <span class="k">if</span> <span class="n">completed</span>
+    <span class="nb">puts</span> <span class="s2">"ok"</span>
+  <span class="k">else</span>
+    <span class="nb">puts</span> <span class="s2">"returned early"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">some_method</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1"># =&gt; "returned early"</span>
+<span class="n">some_method</span> <span class="p">{</span> <span class="k">next</span> <span class="p">}</span> <span class="c1"># =&gt; "ok"</span>
+</code></pre></div></div>
+
+<p>This works because the methods <code>ensure</code> block will always be called, even if <code>#some_method</code> returns early. That was a novel implementation for me.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/10/behaving-like-the-character-in-a-story"><p>Behaving like the character in a story</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-10-11T12:14:00-07:00" itemprop="datePublished">October 11, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I enjoyed reading Robert Kolker’s <a href="https://www.nytimes.com/2021/10/05/magazine/dorland-v-larson.html">“Who Is the Bad Art Friend?”</a>, specifically about the non-symmetric relationships of fiction and inspiration.</p>
+
+<blockquote>
+  <p>Larson’s biggest frustration with Dorland’s accusations was that they stole attention away from everything she’d been trying to accomplish with this story. “You haven’t asked me one question about the source of inspiration in my story that has to do with alcoholism, that has to do with the Chinese American experience. It’s extremely selective and untrue to pin a source of a story on just one thing. And this is what fiction writers know.” To ask if her story is about Dorland is, Larson argues, not only completely beside the point, but ridiculous. “I have no idea what Dawn is thinking. I don’t, and that’s not my job to know. All I can tell you about is how it prompted my imagination.”</p>
+
+  <p>…</p>
+
+  <p>When Larson discusses “The Kindest” now, the idea that it’s about a kidney donation at all seems almost irrelevant. If that hadn’t formed the story’s pretext, she believes, it would have been something else. “It’s like saying that ‘Moby-Dick’ is a book about whales,” she said. As for owing Dorland a heads-up about the use of that donation, Larson becomes more indignant, stating that no artist has any such responsibility. “If I walk past my neighbor and he’s planting petunias in the garden, and I think, Oh, it would be really interesting to include a character in my story who is planting petunias in the garden, do I have to go inform him because he’s my neighbor, especially if I’m still trying to figure out what it is I want to say in the story? I just couldn’t disagree more.”</p>
+
+  <p>…</p>
+
+  <p>“[Dorland] might behave like the character in my story,” [Larsen] said. “But that doesn’t mean that the character in my story is behaving like [Dorland].”</p>
+</blockquote>
+
+<p><a href="https://captainawkward.com/2021/10/11/1351-can-i-use-my-exs-pseudonym-in-my-novel/">Captain Awkward</a> also had memorable advice:</p>
+
+<blockquote>
+  <p>Creatively speaking, I think you can generally write whatever you want about whoever you want. You do not owe people flattering portrayals in your fiction and you don’t owe the world a fair hearing of both sides. Even if you’re writing memoir, the expectation is that you’ll write the truth about your own experiences and recollections of events. So, when it’s just you and a blank page that nobody else will see? Name names. Settle scores. Spill some beans. Layer in all the carefully hoarded observations and details you’ve been saving up. You don’t have to solve publishing problems right this second, so feed the fire in your belly with your ex’s pet name for himself if that’s what gets it done; spite is motivating. You can always pull up a name generator later when you need to.</p>
+
+  <p>Ethically speaking, being free to write whatever you want does not mean being free of consequences from what you wrote. If you include recognizable details about real people in your published writing, fictional or otherwise, if you disclose confidential information about them (like mental health diagnoses), assume that somebody will connect the dots, and assume that the people you wrote about will eventually feel some kind of way about it. They may not have grounds to sue you, but they might think you are a bad person or a lazy artist, and they might tell their own stories where you are not the hero.</p>
+</blockquote>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/09/home-buyer-letter"><p>Home buyer letter</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-09-14T12:02:00-07:00" itemprop="datePublished">September 14, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Having now successfully purchased a home in San Francisco, I have had friends asked me for resources. This was the letter we sent to the seller, which is <em>very</em> SF, but also the energy to bring. I also learned that these letters are waning because they are biased af.</p>
+
+<blockquote>
+
+  <p>Dear [seller],</p>
+
+  <p>Your home at [street address] is the right fit for us, our two cats, and (hopefully) our future family. We love the long layout, high ceilings (we’re both tall) and sunny patio, and look forward to hosting friends for Sunday brunch someday.</p>
+
+  <p>We’re rooted in the city through the South End Rowing Club, St. Francis Lutheran Church, supporting the YMCA, kickstarting local businesses like Andytown coffee, and working at tech companies and nonprofits. Ben worked for three years just around the corner at California and Grant, and Angelina has worked at numerous tech companies around Union Square and SOMA. We love the quiet contrast of Nob Hill against the rest of downtown San Francisco.</p>
+
+  <p>We see SF as a long term home and [street address] as a homebase for work and play: swimming and rowing on the SF Bay, and wine trips up to Napa and Sonoma too. Your home would have the perfect commute for Ben, walking down the hill to his nonprofit job at [organization] where he builds technology to help people apply for food stamps, remove marijuana convictions from criminal records, and improve how government delivers services to those who need them most. And it’s a short walk for Angelina to the [company] Shuttle or Downtown SF [company] office where she does business development for maps and location technology in use around the world.</p>
+
+  <p>Your home would provide the greatest fit for us as we aim to continue to contribute to the fabric of the city, where we hope to raise a family and be active in the community. We aim to take great care of an already-loved property while advocating for a neighborhood that supports all members throughout the growth of our city.</p>
+
+  <p>Our offer is fair given the condition, amenities and comparable sales, and we aim for being the best buyer to steward this home and the neighborhood. We look forward to your consideration of our offer for [street address].</p>
+
+  <p>Sincerely,<br />
+Ben and Angelina</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/07/goodjob-whats-new-v1120"><p>GoodJob, what’s new: Cron, concurrency controls, and a dashboard demo (v1.12.0)</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-07-27T06:50:00-07:00" itemprop="datePublished">July 27, 2021</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>This is a quick roundup of what’s new with GoodJob v1.12.0 since the last update published for <a href="https://island94.org/2021/01/goodjob-1-4-jruby-compatibility-and-more">GoodJob v1.9</a>.</p>
+
+<p>GoodJob ( <a href="https://github.com/bensheldon/good_job">github</a> ) is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the  <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>.</p>
+
+<p><em>For further details on the following updates, check out GoodJob’s <a href="https://github.com/bensheldon/good_job/blob/main/CHANGELOG.md">Changelog</a> or <a href="https://github.com/bensheldon/good_job/blob/main/README.md">Readme</a>.</em></p>
+
+<h3 id="cron-like-replacement-for-repeatingrecurring-jobs">Cron-like replacement for repeating/recurring jobs</h3>
+
+<p>GoodJob now ships with a <a href="https://github.com/bensheldon/good_job#cron-style-repeatingrecurring-jobs">cron-like replacement for repeating/recurring jobs</a>. The cron-like process runs either via the CLI, or <code>async</code> within the web server process. Repeating jobs can be scheduled to the second, powered by the <a href="https://github.com/floraison/fugit">Fugit</a> gem. Here’s what the configuration looks like:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/environments/application.rb or a specific environment e.g. production.rb</span>
+
+<span class="c1"># Enable cron in this process; e.g. only run on the first Heroku worker process</span>
+<span class="n">config</span><span class="p">.</span><span class="nf">good_job</span><span class="p">.</span><span class="nf">enable_cron</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'DYNO'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'worker.1'</span> <span class="c1"># or `true` or via $GOOD_JOB_ENABLE_CRON</span>
+
+<span class="c1"># Configure cron with a hash that has a unique key for each recurring job</span>
+<span class="n">config</span><span class="p">.</span><span class="nf">good_job</span><span class="p">.</span><span class="nf">cron</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1"># Every 15 minutes, enqueue `ExampleJob.set(priority: -10).perform_later(52, name: "Alice")`</span>
+  <span class="ss">frequent_task: </span><span class="p">{</span> <span class="c1"># each recurring job must have a unique key</span>
+    <span class="ss">cron: </span><span class="s2">"*/15 * * * *"</span><span class="p">,</span> <span class="c1"># cron-style scheduling format by fugit gem</span>
+    <span class="ss">class: </span><span class="s2">"ExampleJob"</span><span class="p">,</span> <span class="c1"># reference the Job class with a string</span>
+    <span class="ss">args: </span><span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="p">{</span> <span class="ss">name: </span><span class="s2">"Alice"</span> <span class="p">}],</span> <span class="c1"># arguments to pass; can also be a proc e.g. `-&gt; { { when: Time.now } }`</span>
+    <span class="ss">set: </span><span class="p">{</span> <span class="ss">priority: </span><span class="o">-</span><span class="mi">10</span> <span class="p">},</span> <span class="c1"># additional ActiveJob properties; can also be a lambda/proc e.g. `-&gt; { { priority: [1,2].sample } }`</span>
+    <span class="ss">description: </span><span class="s2">"Something helpful"</span><span class="p">,</span> <span class="c1"># optional description that appears in Dashboard (coming soon!)</span>
+  <span class="p">},</span>
+  <span class="ss">another_task: </span><span class="p">{</span>
+    <span class="ss">cron: </span><span class="s2">"0 0,12 * * *"</span><span class="p">,</span>
+    <span class="ss">class: </span><span class="s2">"AnotherJob"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="c1"># etc.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="concurrency-controls">Concurrency controls</h3>
+
+<p>GoodJob now offers an <a href="https://github.com/bensheldon/good_job#activejob-concurrency">ActiveJob extension</a> to provide customizable limits on the number of jobs enqueued or executed concurrently. Rails might upstream it too. Here’s how to configure it:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/jobs/my_job.rb</span>
+<span class="k">class</span> <span class="nc">MyJob</span> <span class="o">&lt;</span> <span class="no">ApplicationJob</span>
+  <span class="kp">include</span> <span class="no">GoodJob</span><span class="o">::</span><span class="no">ActiveJobExtensions</span><span class="o">::</span><span class="no">Concurrency</span>
+
+  <span class="n">good_job_control_concurrency_with</span><span class="p">(</span>
+    <span class="c1"># Maximum number of jobs with the concurrency key to be concurrently enqueued</span>
+    <span class="ss">enqueue_limit: </span><span class="mi">2</span><span class="p">,</span>
+
+    <span class="c1"># Maximum number of jobs with the concurrency key to be concurrently performed</span>
+    <span class="ss">perform_limit: </span><span class="mi">1</span><span class="p">,</span>
+
+    <span class="c1"># A unique key to be globally locked against.</span>
+    <span class="c1"># Can be String or Lambda/Proc that is invoked in the context of the job.</span>
+    <span class="c1"># Note: Arguments passed to #perform_later must be accessed through `arguments` method.</span>
+    <span class="ss">key: </span><span class="o">-&gt;</span> <span class="p">{</span> <span class="s2">"Unique-</span><span class="si">#{</span><span class="n">arguments</span><span class="p">.</span><span class="nf">first</span><span class="si">}</span><span class="s2">"</span> <span class="p">}</span> <span class="c1">#  MyJob.perform_later("Alice") =&gt; "Unique-Alice"</span>
+  <span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">perform</span><span class="p">(</span><span class="n">first_name</span><span class="p">)</span>
+    <span class="c1"># do work</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="dashboard-demo">Dashboard Demo</h3>
+
+<p>Don’t take my word for what a good job it is. Check out the new GoodJob Dashboard demo running on Heroku entirely within a single free dyno: https://goodjob-demo.herokuapp.com/</p>
+
+<h3 id="more-news">More news:</h3>
+
+<ul>
+  <li>Wojciech Wnętrzak aka <a href="https://github.com/morgoth">@morgoth</a> became a GoodJob maintainer.</li>
+  <li>Wrote up details of the <a href="https://github.com/bensheldon/good_job/issues/255">evolving development philosophy</a> behind GoodJob.</li>
+  <li>The Dashboard now allows removing jobs, with more actions coming soon.</li>
+</ul>
+
+<h3 id="contribute">Contribute</h3>
+
+<p>Code, documentation, and curiosity-based contributions are welcome! Check out the  <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a> , comment on or open a Github Issue, or make a Pull Request.</p>
+
+<p>I also have a  <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a>  if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/07/paranoid-and-reparative-readings"><p>Paranoid and Reparative readings</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-07-05T10:19:00-07:00" itemprop="datePublished">July 5, 2021</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From <a href="https://www.vox.com/the-highlight/22543858/isabel-fall-attack-helicopter"><em>How Twitter can ruin a life: Isabel Fall’s sci-fi story “I Sexually Identify as an Attack Helicopter” drew the ire of the internet</em></a>:</p>
+
+<blockquote>
+  <p>The delineation between paranoid and reparative readings originated in 1995, with influential critic Eve Kosofsky Sedgwick. A paranoid reading focuses on what’s wrong or problematic about a work of art. A reparative reading seeks out what might be nourishing or healing in a work of art, even if the work is flawed. Importantly, a reparative reading also tends to consider what might be nourishing or healing in a work of art for someone who isn’t the reader.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2021/05/goodjob-updates-v15-v19"><p>GoodJob Updates v1.5 - v1.9: Dashboard, daemonize, async_server, and graceful shutdowns</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2021-05-31T20:14:00-07:00" itemprop="datePublished">May 31, 2021</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>This is a quick roundup of what’s new with GoodJob since the last update published for <a href="https://island94.org/2021/01/goodjob-1-4-jruby-compatibility-and-more">GoodJob v1.4</a>.</p>
+
+<p>GoodJob (<a href="https://github.com/bensheldon/good_job">github</a>) is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the  <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> .</p>
+
+<p><em>For further details on the following updates, check out GoodJob’s <a href="https://github.com/bensheldon/good_job/blob/main/CHANGELOG.md">Changelog</a> or <a href="https://github.com/bensheldon/good_job/blob/main/README.md">Readme</a>.</em></p>
+
+<h3 id="goodjob-v15-web-dashboard-and-configuration">GoodJob v1.5: Web Dashboard and configuration</h3>
+
+<p>GoodJob ships with a <a href="https://github.com/bensheldon/good_job#dashboard">web dashboard</a> to display future, finished and errored jobs for easy inspection.  The Dashboard mounts as a self-contained Rails Engine.</p>
+
+<p>GoodJob uses more <code>Rails.application.config...</code> for improved autoloading compatibility; deprecation notices have examples for updating configuration.</p>
+
+<h3 id="goodjob-v16-daemonize">GoodJob v1.6: Daemonize</h3>
+
+<p>GoodJob can run as a backgrounded daemon for folks who are still managing servers with <code>--daemonize</code>.</p>
+
+<h3 id="goodjob-v17-scheduled-job-cache">GoodJob v1.7: Scheduled job cache</h3>
+
+<p>GoodJob caches scheduled jobs (i.e. <code>ExampleJob.set(wait: 30.minutes).perform_later</code>) for signifiantly improved latency without relying upon polling.</p>
+
+<h3 id="goodjob-v18-graceful-shutdown">GoodJob v1.8: Graceful shutdown</h3>
+
+<p>GoodJob added additional shutdown options, including <code>GOOD_JOB_SHUTDOWN_TIMEOUT</code> to allow jobs to finish before exiting.</p>
+
+<h3 id="goodjob-v19-async_server-mode">GoodJob v1.9: async_server mode</h3>
+
+<p>GoodJob added an additional <code>async</code> execution mode to simplify the default configuration: running jobs as part of the web-process (and <em>not</em> console, Rake commands, etc.)</p>
+
+<h3 id="upcoming-cron-and-concurrency-controls">Upcoming: cron and concurrency controls</h3>
+
+<p>GoodJob will add support for cron-style repeating jobs, and concurrency controls to ensure that only a specified number (1 or more) jobs are enqueued or performed at the same time.  I previously was opposed to extending ActiveJob’s interface, but <a href="https://github.com/bensheldon/good_job/issues/255">have changed my mind</a>; it’s on!</p>
+
+<h3 id="contribute">Contribute</h3>
+
+<p>Code, documentation, and curiosity-based contributions are welcome! Check out the  <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request. <strong>Thank you!!!</strong> to everyone who has contributed to GoodJob, including morgoth, tedhexaflow, weh, lauer, reczy, zealot128, gadimbaylisahil, Mr0grog, thilo, arku, sj26, jm96441, thedanbob, and joshmn.</p>
+
+<p>I also have a <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a> if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/9" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/11" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

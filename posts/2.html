@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="LjAKjlB9kc6FchiBAbl77kjHVJOIA5L0mcYreLxSwO8owEdZOJyiZKEhavgwk5P-BKt3KSHEN4WEKgvd2DA1Tw" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/09/seeing-like-a-rails-and-ruby-platform-team"><p>Seeing like a Rails and Ruby platform team</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-09-21T08:17:00-07:00" itemprop="datePublished">September 21, 2024</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a> and <a href="/posts/tags/ruby">Ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>When I’m not hacking on GoodJob, I work at GitHub, where I’m the engineering manager of the “Ruby Architecture” team, which is filled with fantastic rubyists. Our team mission is to:</p>
+
+<blockquote>
+  <p>Make it easy for GitHub engineers to create, deliver, and operate best-of-class Ruby and Rails applications, and share the best of it with the world.</p>
+</blockquote>
+
+<p>This is an adaptation of a post I published internally at GitHub, and its ensuing discussions, to explain what a team like ours <em>does</em> when we’re supporting other teams and giving technical feedback. I imagine this is similar to other big companies’ Rails and Ruby platform teams, like <a href="https://railsatscale.com">Shopify’s “Ruby Infrastructure” team</a>. I hope this is useful in thinking about your own Rails and Ruby work, experience, and career development focuses.</p>
+
+<h3 id="before-you-architecture">Before you “architecture”</h3>
+
+<p>The rest of this post is a big ol’ list of deep Ruby technical topics. To avoid premature optimization and architecture astronautics, I want to just quickly ground some expectations of any technical change you lead:</p>
+
+<ul>
+  <li>Is it clear what it does, especially to others, who may be yourself in the future?</li>
+  <li>Does it follow established patterns and precedent throughout the codebase, and is it internally consistent with itself?</li>
+  <li>Does it accomplish the business goal? Does it work?</li>
+  <li>Does it not prevent other components from accomplishing their business goals? Does it not break or negatively impact other stuff?</li>
+</ul>
+
+<p>I write these things out because it’s very common, as a technical feature goes through multiple reviews and revisions, to lose sight of its original goals or purpose or business constraints. So set yourself up for success by being clear on that stuff up front, and push back (or go deeper) if someone tells you something needs to change <em>for technical reasons</em> but it compromises your intended non-technical outcome.</p>
+
+<h3 id="architecting-ruby-the-list">Architecting Ruby, the list</h3>
+
+<p><strong>A brief note about my authority on this.</strong> The following list comes out of my experience working on a big Rails and Ruby monolith at GitHub, which has largely co-evolved with Rails and Ruby over the past 15+ years, and alongside 1k+ other engineers. (I’m also a consultant, and worked in a lot of software labs, and untangled a lot of other people’s applications too; and <a href="https://speakerdeck.com/bensheldon/real-world-dashboard">not-Rails stuff too</a>.) Many members of the team are core maintainers of Rails and Ruby, and we <a href="https://island94.org/2023/01/framing-open-source-contributions-at-work">treat the Rails Framework as an extension of our application</a>. Our team is responsible for integrating upstream changes in Rails and Ruby within GitHub’s vast monolith. <strong>We upgrade and integrate Rails and Ruby main/dev/trunk changes weekly!</strong> (<a href="https://github.blog/engineering/infrastructure/upgrading-github-from-rails-3-2-to-5-2/">Never repeat, never forget.</a>) This continuous practice produces a deep familiarity with how change happens, and where friction builds up between an application and its upstream dependencies. Performing these upgrades over and over leads to experience, and repeated experience leads to intuition.</p>
+
+<p><em>(btw, please reach out if your company has a practice of continuously upgrading Rails main/dev/trunk and running it in production. GitHub and Shopify and Gusto are trying to form a club and we want you in it.)</em></p>
+
+<p>There is a general order here, from most important to least in broad strokes. Remember, nothing here is intrinsically bad or should never be done; but in those situations there should be well-considered decision points.</p>
+
+<ul>
+  <li><strong>Global namespace and Library/Dependency Privacy Violations</strong>
+    <ul>
+      <li>Avoid monkeypatching or reaching into private methods or objects.</li>
+      <li>The most appropriate place to make changes is upstream.</li>
+    </ul>
+  </li>
+  <li><strong>Safety, Security</strong>
+    <ul>
+      <li>Avoiding thread safety issues, like globally held objects and privacy violations, not leaking data between requests, or retaining big objects in memory.  <a href="https://rubykaigi.org/2024/presentations/jhawthorn.html">Profile</a>, <a href="https://www.youtube.com/watch?v=pQ1XCrwq1qc">profile</a>, <a href="https://island94.org/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory">profile</a>.</li>
+      <li>Seeking object locality (or avoiding globalness) by storing objects on instances of controllers and jobs (or their attributes) and embracing the natural lifecycles provided by the framework. Frequently a developer desires not to call <code>SomeObject.new</code> at the usage-site, but to have a DSL-like callable method already ready in the appropriate scope (eg. <code>current_some_object</code>). We love a good DSL and they can be difficult to get right.</li>
+    </ul>
+  </li>
+  <li><strong>Code Loading, Autoloading, and Reloading</strong>
+    <ul>
+      <li>Code autoloading is <a href="https://github.blog/engineering/infrastructure/upgrading-github-from-rails-3-2-to-5-2/">one of the most important design-constraints in Rails</a> that can vastly affect inner-loop development (the “hands-on-keyboard” part) and production availability because of impact to application boot speed.</li>
+      <li>Designing for code loading and autoloading is critical to design, file placement (app vs lib vs config) and dependencies interactions</li>
+    </ul>
+  </li>
+  <li><strong>Internal to the Ruby VM constraints</strong>
+    <ul>
+      <li>Even though Ruby makes it easy to introspect the runtime (<code>descendants</code> or <code>subclasses</code> or <code>ObjectSpace</code>) they shouldn’t be used outside of application boot or exception handling (and sparingly even then); they may have performance implications or be overly nuanced and non-deterministic in their output. Using <code>callers</code> and introspecting the Ruby callstack is a particularly expensive operation.</li>
+      <li>While infrequent and not-obvious, some patterns can massively de-optimize the Ruby VM with either localized or global effects. The Ruby VM (or accelerators like YJIT) are unable to optimize certain code patterns, and some patterns may cause VM-internal caches to churn inefficiently or to retain objects and their references unnecessarily (this can get tricky so please partner with us!). You probably want examples:
+        <ul>
+          <li>OpenStruct (though probably isn’t a reason to use it at all)</li>
+          <li><code>eval</code> and <code>class_</code>/<code>instance_eval</code></li>
+          <li>Modifying singleton classes (using <code>extend</code> on objects) (<a href="https://bugs.ruby-lang.org/issues/19436">example</a>)</li>
+          <li>Anything that adds to the callstack (call-wrapping, complicated delegation)</li>
+          <li>(handwaves) Things that YJIT isn’t yet optimized for, things that <a href="https://railsatscale.com/2023-10-24-memoization-pattern-and-object-shapes/">deoptimize object shapes</a>, which is the result of new fast-paths being introduced which now mean there are slow-paths that didn’t previously exist.</li>
+          <li>Native extensions that don’t release the interpreter lock</li>
+          <li>Metaprogramming generally</li>
+          <li>None of these are intrinsically bad (except OpenStruct and poorly done native extensions), and framework and platform level code definitely make use of them. And they’re also constantly changing because of upstream Ruby work. And are maybe ok in isolation but a problem when copied as a pattern or introduced as a part of the platform for broad consumption. Something John Hawthorn has said:
+            <blockquote>
+              <p>A thought experiment I like to try is asking myself how I would implement this in another language without [Ruby magic]… Adding that constraint can help unblock thinking of simpler, more “normal” approaches without expensive metaprogramming.</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>External to the Ruby VM constraints and dependencies (memory, compute, file descriptors, database connections, etc.)</strong>
+    <ul>
+      <li>Database stuff alone is a lot. The design prompt everyone is largely working from is “how does one architect an efficient, stateless application that sits between an end-user client and stateful data sources and manages bidirectional transformations of data?” Sounds hard when you put it that way, right?</li>
+      <li>Thinking about resource lifecycle, pooling, and how they interact across the various concurrency models available to use (process forking, threads, etc.). We do expect the frameworks and platform libraries we choose to keep these out of mind for most development tasks 😅</li>
+    </ul>
+  </li>
+  <li><strong>Design of the thing, for use</strong>
+    <ul>
+      <li>Rails’s model of “convention over configuration” frequently means that how an object is structured and where it’s placed can have an outsized impact on how it behaves: e.g. within App, Lib, Rack Middleware, Other Library Middleware (Faraday, jobs system, etc.), Rails Configuration/Initialization/Railties, and more!</li>
+      <li>…and how those conventions relate to Maintainability, Developer Usability, and Conceptual Integrity.</li>
+      <li>Sometimes what may appear as simply an aesthetic decision can have a functional impact.</li>
+      <li>Identifying atypical or disordered usage patterns. Sometimes a desired behavior can be more of a happy accident than an enforced intention, and it might change upstream because no <a href="https://www.explainxkcd.com/wiki/index.php/1172:_Workflow">one expected it to be used that way</a>.</li>
+    </ul>
+  </li>
+  <li><strong>Dependency Stewardship</strong>
+    <ul>
+      <li>In addition to Rails and Ruby, our monolith depends on hundreds of gems, double hundreds of their transitive gem dependencies, and several other runtimes and system libraries.</li>
+      <li>The nature of a monolith is that <em>we go together.</em> If some dependency isn’t compatible with the latest Rails or Ruby, or any other dependency upgrade, we must adapt. We work upstream, we patch locally, and worst case, we remove and replace the dependency with something more maintainable. All of this takes time and effort and resources.</li>
+      <li>We want to choose dependencies that are well-maintained: their maintainers proactively respond to upstream changes, are responsive to issues and PRs, and <a href="https://en.wiktionary.org/wiki/MINASWAN">importantly in Ruby</a>, are nice. (And to whom we are nice too!) That’s more important than benchmarks.</li>
+      <li>And dependencies should be well architected too, obvs.</li>
+    </ul>
+  </li>
+  <li><strong>Automating and Scaling: Packwerk, Sorbet, Rubocop</strong>
+    <ul>
+      <li>We do our best to encode our knowledge and shape the application through tooling; that’s how our team scales!  We send our custom rules upstream, too.</li>
+      <li>But it’s complicated! Sometimes that means that developers may focus on designing their code <a href="https://island94.org/2024/09/the-novice-problem">in response to the automated tooling</a> and ending up with a less effective design or even introduce global risks and impacts to the application. At worst, a developer might even glaze over the linter’s intent by smuggling their design through a spelling or arrangement the linter doesn’t recognize 💀 Unfortunately the most important things are often the most abstract and arguable and difficult to detect or automatically warn about. We regret when we do have to tell folks that an approach is untenable in a PR or even after the fact when we notice production metrics have degraded.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="a-conclusion-about-lists">A conclusion about lists</h3>
+
+<p>I like making <a href="https://island94.org/2017/01/Engeering-Practice-Ad-Nauseam.html">lists of things</a>; I find them helpful. I also realize that <a href="https://island94.org/2019/07/truths-about-the-interpretation-of-falsehood-articles">not everyone experiences lists the same way I do</a>. For me, the purpose of a good laundry list is to be a quick reminder (“don’t forget to wash the handkerchiefs”) and not not an exhaustive list of actionable instructions (“the exact and best temperature to wash this t-shirt and that pair of jeans”). So please reach out to me (<a href="https://ruby.social/@bensheldon">Mastodon</a> / <a href="https://x.com/bensheldon">Twitter/X</a>) if:</p>
+
+<ul>
+  <li>You think there is something that should be added to the list, or explained in more detail</li>
+  <li>You’re curious how something in the list might apply to a specific thing you have</li>
+</ul>
+
+<p>I’d love to chat. Thanks for reading!</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/09/secret-to-rails-database-connection-pool-size"><p>The secret to perfectly calculate Rails database connection pool size</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-09-19T07:33:00-07:00" itemprop="datePublished">September 19, 2024</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Ruby on Rails <a href="https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/ConnectionPool.html">maintains a pool of database connections</a> for Active Record. When a database connection is needed for querying the database, usually one per thread (though <a href="https://github.com/rails/rails/pull/51349">that’s changing to per-transaction</a>), a connection is checked out of the pool, used, and then returned to the pool. The size of the pool is configured in the <code>config/database.yml</code>. The <a href="https://github.com/rails/rails/blob/dfd1e951aa1aeef06c39fffb2994db8a8fa1914f/railties/lib/rails/generators/rails/app/templates/config/databases/postgresql.yml.tt#L20">default</a>, as of Rails 7.2, is <code>pool: &lt;%%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %&gt;</code>.</p>
+
+<p>The database connection pool size is frequently misconfigured. <em>A lot.</em> How to calculate the database connection pool size is one of the most common questions I get on GoodJob (Hi! I’m the author of GoodJob 👋). I have spent an embarrassingly large amount of time trying to come up with a precise pool size calculator and give advice to take into account Puma threads, and GoodJob async jobs, and <code>load_async</code> queries and everything that might be asking for a database connection at the same time. It’s nearly impossible to get the number exactly right.</p>
+
+<p>If the connection pool is misconfigured to be <em>too small</em> , it can slow down web requests and jobs while waiting for a connection to become available, or raise <code>ActiveRecord::ConnectionTimeoutError</code> if there isn’t a connection available within a reasonable amount of time (5 seconds by default). That’s bad! We never want that to happen. Here’s what you should do:</p>
+
+<p><strong>✨ The secret to perfectly calculate Rails database connection pool size:</strong> <em>Don’t! Set the pool size to a very large, constant number, and never worry about it again. E.g. <code>pool: 100</code>, and remove the reference to <code>RAILS_MAX_THREADS</code> entirely:</em></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/database.yml</span>
+<span class="na">default</span><span class="pi">:</span> <span class="nl">&amp;default</span>
+  <span class="c1"># ...</span>
+  <span class="na">pool</span><span class="pi">:</span> <span class="m">100</span> <span class="c1"># &lt;-- that's it 👍</span>
+  <span class="c1"># ...</span>
+</code></pre></div></div>
+
+<p>WAIT, WHAT?! Why? I described that bad things happen if the pool size is <em>too small</em>. Here’s the trick: it’s impossible to set the connection pool size to be <em>too big</em>. You can’t do it! That’s why it’s always better to set a number that’s too large. And the best number is one that can <em>never</em> be too small regardless of how you configure (and inevitably reconfigure) your application. Here’s why:</p>
+
+<ul>
+  <li>The <code>pool:</code> configuration value, despite its name, is the <em>max</em> size of the database connection pool.</li>
+  <li>Database connections are lazily created and added to the pool <em>as they’re needed</em>. Your Rails application will never create more database connections than it needs. And the database connection pool reaper removes idle and unused connections from the pool. The pool will never be larger than it needs to be.</li>
+  <li>It’s possible you may run out of available database connections <em>at the database</em>. For example, Heroku’s new <code>Essentials-0</code> Postgres database only has 20 database connections available globally. But any problems you run into won’t be because the database connection pool is too big, it’s because your application is <em>using too many concurrent database connections</em>.</li>
+  <li>If you find yourself in a situation where your application is using too many concurrent database connections, you should be configuring and re-sizing <em>the things using database connections concurrently</em>, not the database connection pool itself:
+    <ul>
+      <li>Configure the number of Puma threads</li>
+      <li>Configure the number of GoodJob async threads (Solid Queue now has similar functionality too!)</li>
+      <li>Configure the <code>load_async</code> thread pool</li>
+      <li>Configure anything else using a background thread making database queries</li>
+      <li>Configure the number of parallel processes/Puma workers/dynos/containers you’re using, which the database connection pool does not affect anyways.</li>
+    </ul>
+  </li>
+  <li>If you still don’t have enough database connections <em>at the database</em>, then you should increase the number of database connections <em>at the database</em>. Which means scaling your database, or using a connection multiplexer like PgBouncer. <a href="https://judoscale.com/tools/heroku-postgresql-connection-calculator">Judoscale has a nice calculator</a> to estimate the number of connections you’ll need <em>at the database</em> (which again, is not the pool size).</li>
+  <li>If, in an incredibly rare case, your application concurrency is very, very spiky and you worry that idle database connections are sitting in the connection pool for too long before they are automatically removed by the connection pool reaper, then configure that:
+    <ul>
+      <li><code>idle_timeout</code>: number of seconds that a connection will be kept unused in the pool before it is automatically disconnected (default: 5 minutes). Set this to zero to keep connections forever.</li>
+      <li><code>reaping_frequency</code>: number of seconds between invocations of the database connection pool reaper to disconnect and remove unused connections from the pool (default: 1 minute)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>I know this is wild advice, but it’s based on facts and experience. Even Rails maintainers have intentions <a href="https://github.com/rails/rails/pull/51073#issuecomment-1942762197">to remove this configuration option entirely</a>:</p>
+
+<blockquote>
+  <p>…we want the pool not to have a limit by default anymore.</p>
+</blockquote>
+
+<p>So please, stop sweating the precise, exact, perfect database connection pool value. Set it to something really big, that can never be too small, and never worry about it again.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/09/the-novice-problem"><p>The Novice Problem</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-09-12T10:26:00-07:00" itemprop="datePublished">September 12, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Brandon Weaver’s <a href="https://dev.to/baweaver/beyond-senior-metric-obsessions-1j7p">“Beyond Senior - Metric Obsessions”</a> has been stuck in my mind ever since we caught up at a SF Ruby Meetup and chatted about rules-adherence as a general problem:</p>
+
+<blockquote>
+
+  <p>…by definition a vast majority of your engineers are likely to be concentrated more towards the novice end of the spectrum, and will frequently over rate themselves on this scale.</p>
+
+  <p>If folks in the novice to advanced beginner stages are known for a rigid adherence to rules and almost legalistic approach to them what do you think might happen if you give them a giant list of metrics [, coding rules, linter warnings, dependency violations, or type-checking errors]?</p>
+
+  <p>Will they exercise discretion and nuance? Will they have the ability to prioritize based on that information? Will they make appropriate tradeoffs? [No.]</p>
+
+</blockquote>
+
+<p>This is coming from the <a href="https://www.kaizenko.com/the-dreyfus-model-of-skills-acquisition/">Dreyfus Model of Skills Acquisition</a>, which is like <a href="https://island94.org/2018/03/japanese-processes">Shuhari</a> but with more levels:</p>
+
+<blockquote>
+
+  <ol>
+    <li>Novice:
+      <ul>
+        <li>“rigid adherence to taught rules or plans”</li>
+        <li>no exercise of “discretionary judgment”</li>
+      </ul>
+    </li>
+    <li>Advanced beginner
+      <ul>
+        <li>limited “situational perception”</li>
+        <li>all aspects of work treated separately with equal importance</li>
+      </ul>
+    </li>
+    <li>Competent
+      <ul>
+        <li>“coping with crowdedness” (multiple activities, accumulation of information)</li>
+        <li>some perception of actions in relation to goals</li>
+        <li>deliberate planning</li>
+        <li>formulates routines</li>
+      </ul>
+    </li>
+    <li>Proficient
+      <ul>
+        <li>holistic view of situation</li>
+        <li>prioritizes importance of aspects</li>
+        <li>“perceives deviations from the normal pattern”</li>
+        <li>employs maxims for guidance, with meanings that adapt to the situation at hand</li>
+      </ul>
+    </li>
+    <li>Expert
+      <ul>
+        <li>transcends reliance on rules, guidelines, and maxims</li>
+        <li>“intuitive grasp of situations based on deep, tacit understanding”</li>
+        <li>has “vision of what is possible”</li>
+        <li>uses “analytical approaches” in new situations or in case of problems</li>
+      </ul>
+    </li>
+  </ol>
+
+</blockquote>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/07/on-the-importance-of-rails-code-reloading"><p>On the importance of Rails code reloading and autoloading</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-07-07T07:44:00-07:00" itemprop="datePublished">July 7, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’ve elevated to “strongly held belief” that <a href="https://island94.org/2024/04/a-ruby-meetup-and-3-podcasts">code reloading and autoloading is <em>the</em> most important design constraint</a> when designing or architecting for Ruby on Rails.</p>
+
+<ul>
+  <li>Code reloading is what powers the “make a code change, refresh the browser, see the result” development loop.</li>
+  <li>Code autoloading is what allows Rails to boot in milliseconds (if you’ve designed for it!) to run generators and application scripts and a single targeted test for tight test-driven-development loops.</li>
+</ul>
+
+<p>When <a href="https://guides.rubyonrails.org/autoloading_and_reloading_constants.html">autoloading and reloading</a> just works, it probably isn’t something you think about. When code autoloading and reloading doesn’t work or works poorly, as it has on numerous apps across my career and consulting, it can be maddening:</p>
+
+<ul>
+  <li>Spending hours “debugging” some code only to realize that your changes were never being run at all.</li>
+  <li>Waiting tens of excruciatingly boring seconds to run a simple test or watching the browser churn away while it slowly waits for a response from the development server.</li>
+  <li>Feeling like you can write the code yourself each time faster than running a scaffold/template generator, repetitively over and over again.</li>
+</ul>
+
+<p>Code reloading and autoloading not working correctly is a huge pain. It’s not great, at all!</p>
+
+<p>The history of code reloading and autoloading came up recently in the <a href="https://www.railsspeed.com">Rails Performance Slack</a>. A  developer working on an old Rails application asked what Spork was (a forking preloader), and whether it was necessary (not necessarily). As a Rails Developer who is increasingly aware of my <del>age</del> experience (I started working with Rails in 2012, long after it first launched in 2004, but it’s still been a minute), I realized I had something to share.</p>
+
+<p>Over history, various strategies have been taken to make the development loop faster because that’s so important. Those strategies usually boil down to:</p>
+
+<ul>
+  <li>Separating the (static) framework code from the (changing, developed) application code and only loading, just in time, what’s needed for the part of the application that’s currently running.</li>
+  <li>Loading/booting the framework code that is unlikely to change, and then only (re-)load the application code when invoking a command or running a test.</li>
+</ul>
+
+<p>There have been various approaches to doing this:</p>
+
+<ul>
+  <li>Forking Preloaders (Spork, though Spring is the more contemporary version): load up the framework code in a process once, then fork into a subprocess when you invoke a command and reload just the application code. Sometimes, things can get out of sync (some application code or state pollutes the primary process), and things get weird/confusing. This is why you’ll hear of people hating on Spring or complaining, “I wasted all day on a development bug, and it turns out I just needed to restart Spring” (the analogous “it was DNS all along” of the Rails world).</li>
+  <li>Bootsnap, though operating on a cache strategy rather than a process-forker, serves a similar purpose of trying to speed up an application’s code loading time. The adoption of Bootsnap, and much, much faster CPUs in general, has largely replaced the usage of Spring in applications (though it’s still okay!).</li>
+  <li>Zeitwerk autoloader also plays a role in this history because it, too, is trying to “solve” the necessity of separating the framework code (which changes infrequently) from the application code during development (which is actively being changed) to produce faster development feedback cycles. Zeitwerk replaced the previous autoloader built into Rails, whose lineage seems to date all the way back to <a href="https://github.com/bensheldon/rails/commit/ee014ef95ae9746b4228f3bc7c85ac0df28ba1df">Rails 2.0 circa 2005</a>. Tell me the history / raison d’être of the original autoloader if you know it!</li>
+</ul>
+
+<p>Look, a lot of labor has gone into this stuff. It’s important! And it’s easy to get wrong and produce a slow and disordered application where development is a pain. It happens! A lot!</p>
+
+<p>I wish I could easily leave this post with some kind of <em>nugget</em> of something actionable to do, but it’s really more like: <strong>please take care</strong>. Some rules of thumb:</p>
+
+<ul>
+  <li>Don’t reference, don’t access, don’t use or touch any constants in <code>app/</code>, or allow them to be referenced (looking at you, custom Rack Middleware) unless you’re doing so from another constant in <code>app/</code> (or somewhere that you <em>know</em> is <a href="https://island94.org/2023/05/whatever-you-do-don-t-autoload-rails-lib">autoloaded</a>).</li>
+  <li>Take care with <code>config/initializers/</code> and ensure you’re making the most of <code>ActiveSupport.on_load</code> hooks. Rails may even be missing <a href="https://guides.rubyonrails.org/engines.html#available-load-hooks">some load hooks</a>, so make an upstream PR if you need to configure an autoloaded object and you can’t. It’s super common to run into trouble; in writing this blog post alone, I discovered a <a href="https://github.com/textacular/textacular/pull/159">problem with a gem I use</a>.</li>
+  <li>If you’re writing library code, become familiar with the configuration-class-initializer-attribute-pattern dance (my name for it), which is how you’ll get something like <code>config.action_view.something = :the_thing</code> lifted and constantized into <code>ActionView::Base.something #=&gt; TheThing</code></li>
+</ul>
+
+<p>You might find luck with this <a href="https://gist.github.com/bensheldon/ba6532c4216c11dd9ba03487c5a06ee4">bin/autoload-check script</a>, that I adapted from something <a href="https://www.johnhawthorn.com/">John Hawthorn</a> originally wrote, giving output like:</p>
+
+<pre><code class="language-text">❌ Autoloaded constants were referenced during during boot.
+These files/constants were autoloaded during the boot process,
+which will result in inconsistent behavior and will slow down and
+may break development mode. Remove references to these constants
+from code loaded at boot.
+
+🚨 ActionView::Base (action_view) referenced by config/initializers/field_error.rb:3:in `&lt;main&gt;'
+🚨 ActiveJob::Base (active_job)   referenced by config/initializers/good_job.rb:7:in `block in &lt;main&gt;'
+🚨 ActiveRecord::Base (active_record)
+                                         /Users/bensheldon/.rbenv/versions/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.4/lib/active_record/base.rb:338:in `&lt;module:ActiveRecord&gt;'
+                                         /Users/bensheldon/.rbenv/versions/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.4/lib/active_record/base.rb:15:in `&lt;main&gt;'
+                                         .....
+</code></pre>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/07/notes-from-carrierwave-to-active-storage"><p>Notes from Carrierwave to Active Storage</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-07-09T03:30:00-07:00" itemprop="datePublished">July 9, 2024</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently migrated <a href="https://dayoftheshirt.com">Day of the Shirt</a>, my graphic t-shirt sale aggregator, from storing image attachments with Carrierwave to Active Storage. It went ok! 👍</p>
+
+<p>There were a couple of things driving this migration, though Carrierwave had served me very well for nearly a decade:</p>
+
+<ul>
+  <li>For budgetary reasons, I was moving the storage service from S3 to Digital Ocean Spaces. I knew I’d be doing some sort of data migration regardless.</li>
+  <li>I was using some monkeypatches of Carrierwave v2 that weren’t compatible with Carrierwave v3. So I knew I’d have to dig into the internals anyways if I wanted to stay up to date.</li>
+  <li>I generally trust Rails, and by extension Active Storage, to be reliable stewards when I take them on as a dependency.</li>
+</ul>
+
+<p>And I had a couple of requirements to work though, largely motivated because images in Day of the Shirt <em>are the content</em> with dozens or hundreds displayed on a single page:</p>
+
+<ul>
+  <li>For budget (slash performance), I need to link directly to image assets. No proxying or redirecting through the Rails app.</li>
+  <li>For SEO, I need to customize the image filenames so they are relevant to the content.</li>
+  <li>For performance (slash availability), I need to pre-process image transformations (convert, scale, crop) before they are published. Dozens of new designs can go up on the homepage at once.</li>
+  <li>For availability, I need to validate that the images are (1) transformable and (2) actually transformed before they are published; invalid or missing images are unacceptable.</li>
+</ul>
+
+<p>How’d it go? Great! 🎉 I am now fully switched over to Active Storage. It’s working really well and I was able to meet all of my requirements. Active Storage is very nice, as nice as Carrierwave.</p>
+
+<p>But the errata? Yes, that’s why I’m writing the blog post, and probably why you’re reading. To document all of the stuff I did that wasn’t in the <a href="https://edgeguides.rubyonrails.org/active_storage_overview.html">very excellent Active Storage Rails Guide.</a> Let’s go through it:</p>
+
+<p><strong>Direct Linking to images</strong> is possible via the method described in this excellent post from Florin Lipan: <a href="https://lipanski.com/posts/activestorage-cdn-rails-direct-route">“Serving Active Storage uploads through a CDN with Rails direct routes”</a>.</p>
+
+<p><strong>Customizing Active Storage filenames</strong> is possible with a monkeypatch (maybe <a href="https://github.com/rails/rails/pull/41004">someday it will be possible directly</a>). The patch simply adds the specified filename to the end of what otherwise would be a random string; and it seems durable through variants such that the variant extensions will be updated properly when the format is transformed (e.g. from a <code>.png</code> to a <code>.jpg</code>):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/active_storage.rb</span>
+<span class="k">module</span> <span class="nn">MonkeypatchBlobKey</span>
+  <span class="k">def</span> <span class="nf">key</span>
+    <span class="nb">self</span><span class="p">[</span><span class="ss">:key</span><span class="p">]</span> <span class="o">||=</span> <span class="k">begin</span>
+      <span class="c1"># ActiveStorage::Filename doesn't provide an easy nil-check</span>
+      <span class="n">filename_string</span> <span class="o">=</span> <span class="k">begin</span>
+        <span class="n">filename</span><span class="p">.</span><span class="nf">to_s</span>
+      <span class="k">rescue</span> <span class="no">StandardError</span>
+        <span class="kp">nil</span>
+      <span class="k">end</span>
+
+      <span class="n">unique_token</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">generate_unique_secure_token</span><span class="p">(</span><span class="ss">length: </span><span class="no">ActiveStorage</span><span class="o">::</span><span class="no">Blob</span><span class="o">::</span><span class="no">MINIMUM_TOKEN_LENGTH</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">filename_string</span>
+        <span class="c1"># "xyz1234/foobar.jpg"</span>
+        <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">unique_token</span><span class="p">,</span> <span class="n">filename_string</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="c1"># "xyz1234"</span>
+        <span class="n">unique_token</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:active_storage_blob</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">ActiveStorage</span><span class="o">::</span><span class="no">Blob</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">MonkeypatchBlobKey</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Preprocessing variants</strong> required tapping into some private methods to get the variant names back out of the system. Here’s an example of processing all of the variants when the attachment changes. Beware: attachments happen in an <code>after_commit</code>, <a href="https://www.youtube.com/live/78HzHhMnhHY">which is good</a>, but means that I had to introduce a <code>published</code> state to the record to ensure it was not visible until the variants were processed (there is a <a href="https://github.com/rails/rails/pull/47473"><code>preprocessed:</code></a> option to process individual variants async in a background job but that, unfortunately, doesn’t meet my needs for synchronizing them all at once):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">Shirt</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">has_one_attached</span> <span class="ss">:graphic</span> <span class="k">do</span> <span class="o">|</span><span class="n">attachable</span><span class="o">|</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:full</span><span class="p">,</span> <span class="ss">format: :jpg</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:large</span><span class="p">,</span> <span class="ss">resize_to_limit: </span><span class="p">[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> <span class="ss">format: :jpg</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:square</span><span class="p">,</span> <span class="ss">resize_to_fill: </span><span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="ss">format: :jpg</span>
+    <span class="n">attachable</span><span class="p">.</span><span class="nf">variant</span> <span class="ss">:thumb</span><span class="p">,</span> <span class="ss">resize_to_fill: </span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="ss">format: :jpg</span>
+  <span class="k">end</span>
+
+  <span class="n">after_commit</span> <span class="ss">:process_graphic_variants_and_publish</span><span class="p">,</span> <span class="ss">if: </span><span class="o">-&gt;</span> <span class="p">(</span><span class="n">shirt</span><span class="p">){</span> <span class="n">shirt</span><span class="p">.</span><span class="nf">graphic</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">blob</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">saved_changes?</span> <span class="p">},</span> <span class="ss">on: </span><span class="p">[</span><span class="ss">:create</span><span class="p">,</span> <span class="ss">:update</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">process_graphic_variants</span>
+    <span class="n">attachment_variants</span><span class="p">(</span><span class="ss">:graphic</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">variant</span><span class="o">|</span>
+      <span class="n">graphic</span><span class="p">.</span><span class="nf">variant</span><span class="p">(</span><span class="n">variant</span><span class="p">).</span><span class="nf">processed</span>
+    <span class="k">end</span>
+    <span class="n">update</span><span class="p">(</span><span class="ss">published: </span><span class="kp">true</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># All of the named variants for an attachment</span>
+  <span class="c1"># @param attachment [Symbol] the name of the attachment</span>
+  <span class="c1"># @return Array[Symbol] the names of the variants</span>
+  <span class="k">def</span> <span class="nf">attachment_variants</span><span class="p">(</span><span class="n">attachment</span><span class="p">)</span>
+    <span class="nb">send</span><span class="p">(</span><span class="n">attachment</span><span class="p">).</span><span class="nf">attachment</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:named_variants</span><span class="p">).</span><span class="nf">keys</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Validating variants</strong> was easy with a very nice and well-named gem: <a href="https://github.com/igorkasyanchuk/active_storage_validations"><code>active_storage_validations</code></a>. It <a href="https://github.com/igorkasyanchuk/active_storage_validations/blob/ab27760ecee7498e8fcb2a6434157c8cdd81038d/lib/active_storage_validations/metadata.rb#L122">works really well</a>.</p>
+
+<p><strong>You will have N+1s</strong>, where you forget to add <code>with_attached_*</code> scopes to some queries. Unfortunately Active Storage’s schema is laid out in a way that it will emit queries to the same model/table <em>even when it’s loading correctly</em>, so you may get <a href="https://github.com/flyerhzm/bullet/issues/474">detection false positives</a> too. You can see that clearly in the next example with the doubly-nested <code>blob</code> association.</p>
+
+<p><strong>Active Storage’s schema is a beast</strong>. I get that it’s gone through a lot of changes, and Named Variants are an amazing hack when you see how they’ve been implemented. And it’s wild. You can see that by how the <a href="https://github.com/rails/rails/blob/9f178ada796a89c01f952fc05810b58b6f8682fc/activestorage/lib/active_storage/attached/model.rb#L129-L137">scope for <code>with_attached_*</code></a> is generated:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">includes</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">_attachment"</span><span class="p">:</span> <span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span>
+  <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">},</span>
+  <span class="ss">preview_image_attachment: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span> <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>I originally thought that when eager-loading through an association (e.g. <code>Merchant.includes(:shirts)</code>) I’d have to do something like this (🫠):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Merchant</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">shirts: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span>
+  <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">},</span>
+  <span class="ss">preview_image_attachment: </span><span class="p">{</span> <span class="ss">blob: </span><span class="p">{</span> <span class="ss">variant_records: </span><span class="p">{</span> <span class="ss">image_attachment: :blob</span> <span class="p">}</span> <span class="p">}</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>…but fortunately this seems to work too (💅):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Merchant</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:shirts</span><span class="p">).</span><span class="nf">merge</span><span class="p">(</span><span class="no">Shirt</span><span class="p">.</span><span class="nf">with_attached_graphic</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>That’s everything. All in all I’m very happy with the migration 🌅</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/07/introducing-goodjob-v4"><p>Introducing GoodJob v4</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-07-06T21:44:00-07:00" itemprop="datePublished">July 6, 2024</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a> and <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>GoodJob version 4.0 has been released! 🎉 GoodJob v4 has breaking changes that should be addressed through a transitionary v3.99 release, but if you’ve kept up with v3.x releases and migrations, you’re likely ready to upgrade 🚀</p>
+
+<p>The <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#upgrading-v3-to-v4">README has an upgrade guide</a>. If you’d like to leave feedback about this release, please comment on the <a href="https://github.com/bensheldon/good_job/discussions/1396">GitHub Discussions post 📣</a></p>
+
+<p>If you’re not familiar with GoodJob, you can read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> from four years ago. We’ve come pretty far.</p>
+
+<h3 id="breaking-changes-to-job-schema">Breaking changes to job schema</h3>
+
+<p>GoodJob v4 changes how job and job execution records are stored in the database; moving from job and executions being commingled in the <code>good_jobs</code> table to Jobs (still in <code>good_jobs</code>) having many discrete Execution records in the <code>good_job_executions</code> table.</p>
+
+<p>To safely upgrade, all unfinished jobs must use the new schema relationship, tracked in the <code>good_jobs.is_discrete</code> column. This change was transparently introduced in GoodJob <a href="https://github.com/bensheldon/good_job/releases/tag/v3.15.4">v3.15.4 (April 2023)</a>, so your application is likely ready-to-upgrade already if you have kept up with GoodJob updates and migrations. You can check by running <code>v3.99</code>’s <code>GoodJob.v4_ready?</code> in production or run the following SQL query on the production database and check it returns zero: <code>SELECT COUNT(*) FROM "good_jobs" WHERE finished_at IS NULL AND is_discrete IS NOT TRUE</code>. If not all unfinished jobs are stored in the new format, either wait to upgrade until those jobs finish or discard them. If you upgrade prematurely to v4 without allowing those jobs to finish, they may never be performed.</p>
+
+<h3 id="other-notable-changes">Other notable changes</h3>
+
+<p>GoodJob v4:</p>
+
+<ul>
+  <li>Only supports Rails 6.1+, CRuby 3.0+ and JRuby 9.4+, Postgres 12+. Rails 6.0 is no longer supported. CRuby 2.6 and 2.7 are no longer supported. JRuby 9.3 is no longer supported.</li>
+  <li>Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job’s definition of priority.</li>
+  <li>Enqueues and executes jobs via the <code>GoodJob::Job</code> model instead of <code>GoodJob::Execution</code></li>
+  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>” </code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
+</ul>
+
+<h3 id="new-features">New Features</h3>
+
+<p>GoodJob v4 does not introduce any new features on its own. In the 110 releases since GoodJob v3.0 was released (June, 2022), these new features and improvements have been introduced:</p>
+
+<ul>
+  <li><a href="https://github.com/bensheldon/good_job#batches">Batches</a></li>
+  <li>Bulk enqueueing including support for Active Job’s <code>perform_all_later</code>.</li>
+  <li><a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#labelled-jobs">Labelled jobs</a></li>
+  <li>Throttling added to <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#concurrency-controls">Concurrency Controls</a></li>
+  <li>Improvements to the <a href="https://goodjob-demo.herokuapp.com/good_job/jobs">Web Dashboard</a>, including Dark Mode, performance dashboard, and improved UI,  and customizable templates.</li>
+  <li>Storage of error backtraces. Improved handling of job error conditions, including signal interruptions. Added <code>GoodJob.current_thread_running?</code> and <code>GoodJob.current_thread_shutting_down?</code> to support job iteration.</li>
+  <li><a href="https://github.com/bensheldon/good_job/pull/665">Ordered Queues</a>, <a href="https://github.com/bensheldon/good_job/pull/727"><code>queue_select_limit</code></a> and further options for configuring queue order and performance.</li>
+  <li>Improvements to Cron / Repeating Jobs.</li>
+  <li>Operational improvements including <code>systemd</code> integration, improved health checks.</li>
+</ul>
+
+<p><strong>A huge thank you to 88 (!) GoodJob v3.x contributors 🙇🏻</strong> @afn, @ain2108, @aisayo, @Ajmal, @aki77, @alec-c4, @AndersGM, @andyatkinson, @andynu, @arnaudlevy, @baka-san, @benoittgt, @bforma, @BilalBudhani, @binarygit, @bkeepers, @blafri, @blumhardts, @ckdake, @cmcinnes-mdsol, @coreyaus, @DanielHeath, @defkode, @dixpac, @Earlopain, @eric-christian, @erick-tmr, @esasse, @francois-ferrandis, @frans-k, @gap777, @grncdr, @hahwul, @hidenba, @hss-mateus, @Intrepidd, @isaac, @jgrau, @jklina, @jmarsh24, @jpcamara, @jrochkind, @julienanne, @julik, @LucasKendi, @luizkowalski, @maestromac, @marckohlbrugge, @maxim, @mec, @metalelf0, @michaelglass, @mitchellhenke, @mkrfowler, @morgoth, @Mr0grog, @mthadley, @namiwang, @nickcampbell18, @padde, @patriciomacadden, @paul, @Pauloparakleto, @pgvsalamander, @remy727, @rrunyon, @saksham-jain, @sam1el, @sasha-id, @SebouChu, @segiddins, @SemihCag, @shouichi, @simi, @sparshalc, @stas, @steveroot, @TAGraves, @tagrudev, @thepry, @ur5us, @WailanTirajoh, @yenshirak, @ylansegal, @yshmarov, @zarqman</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/06/rails-strict-locals-local_assigns-and-reserved-keywords"><p>Rails Strict Locals, undefined <code>local_assigns</code>, and reserved keywords</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-06-19T15:21:00-07:00" itemprop="datePublished">June 19, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><strong>Update: This has been mostly fixed upstream in Rails (Rails 8.0, I think) and <a href="https://github.com/rails/rails/pull/52209">documented in the Rails Guides</a>.</strong></p>
+
+<p><em>Huge thank you to Vojta Drbohlav in the <a href="https://www.railsspeed.com/">Rails Performance Slack</a> for helping me figure this out! 🙇</em></p>
+
+<p>Things I learned today about a new-to-me Ruby on Rails feature:</p>
+
+<ul>
+  <li>Rail 7.1 added a feature called <a href="https://blog.kiprosh.com/allow-template-to-set-strict-locals/">“Strict Locals”</a> that uses a magic comment in ERB templates to declare required and optional local variables. It looks like this: <code>&lt;%# locals: (shirts:, class: nil) %&gt;</code> which in this example means when rendering the partial, it must be provided a <code>shirts</code> parameter and optional <code>class</code> parameter. Having ERB templates act more like callable functions with explicit signatures is a nice feature.</li>
+  <li>When using Rails Strict Locals, the <code>local_assigns</code> variable <a href="https://github.com/rails/rails/blob/4bb73233413f30fd7217bd7f08af44963f5832b1/actionview/lib/action_view/template.rb#L439-L444"><em>is not defined</em></a>. You can’t use <code>local_assigns</code>. You’ll see an error that looks like <code>ActionView::Template::Error (undefined local variable or method 'local_assigns' for an instance of #&lt;Class:0x0000000130536cc8&gt;)</code>. <strong>This has been <a href="https://github.com/rails/rails/pull/52209">fixed</a> 🎉 though <code>local_assigns</code> doesn’t expose default values.</strong></li>
+  <li>This is a problem if your template has locals that are also Ruby reserved keywords like <code>class</code> or <code>if</code>, which can be accessed with <code>local_assigns[:class]</code> <em>unless you start using Strict Locals</em>.<br />
+To access local variables named with reserved keywords in your ERB template when using Strict Locals, you can use <code>binding.local_variable_get(:the_variable_name)</code>, e.g., <code>binding.local_variable_get(:class)</code> or <code>binding.local_variable_get(:if)</code>. <strong>This is still necessary if you want to access reserved keywords <em>with defaults</em> because the defaults don’t show up in <code>local_assigns</code>.</strong></li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/06/recently-june-2024"><p>Recently, June, 2024</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-06-02T20:56:00-07:00" itemprop="datePublished">June 2, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <ul>
+  <li>I finished reading the <a href="https://www.goodreads.com/series/243623-the-poppy-war">Poppy Wars trilogy</a>. It got tiresome by the end. I liked <em>Babel</em> much more, and I’m probably reading <em>Yellowface</em> next. I also read <em>Exit Interview</em>, which was another thrilling entry to the canon of “fantastically brilliant not-men who work in tech for whom it really should go better but unfortunately and predictably doesn’t”.</li>
+  <li>We saw <a href="https://www.imdb.com/title/tt31520076/">“Film is dead. Long live film!”</a> at the Roxie. It was enjoyable, reminded me of my big-Cable-Access-TV-energy days, and also gave far too little screen time to hearing from the film collectors wives (yes, exactly) and children. I thought this was my first movie theater since Covid, but Angelina reminded me we saw the Barbie Movie in a theater.</li>
+  <li>I played Animal Well until the credits roll, and then I read the spoilers and have been going for completionism. Though I don’t imagine I’ll get there before fully losing interest.</li>
+  <li>I joined the Program Committee for RubyConf in Chicago in November. We’re trying to get the Call for Papers/Speakers released this week. Should be a good one.</li>
+  <li>I started working on the GoodJob major version 4 release. It’s simply doing all the breaking changes that were previously warned about. A deprecation-warning made is debt unpaid. It’s not so bad.</li>
+  <li>With my friend Rob, I started volunteering on the backend of <a href="https://www.knockfordemocracy.org">Knock for Democracy</a>. I occasionally see people try to make a Tolstoy-inspired statement like “Healthy applications are all the same, but unhealthy ones are each unhealthy in their own way”. But that’s not true! All the apps that need some TLC have the exact same problems as all the others. Surprise me for once!</li>
+  <li>At work I’m nearly, nearly done with performance feedback and promotion packets and calibrations and all that. It’s the stuff that I truly enjoy as a manager, and also is terrible because of everything that’s outside my control. I also got asked to draw up a Ruby sponsorship budget for the year, which is the most normal administrative thing I think I’ve ever been asked in my (checks watch) 12 years of working in Bay Area tech.</li>
+  <li>I think the days of mobile apps for Day of the Shirt are numbered. I haven’t updated them ever since Apple rejected an update for the olde “Section 4.2: Minimum Functionality” thing, after like 8 freaking years in the App Store already. I did the olde “talk to someone on the phone at Apple who unhelpfully can’t tell me what would be <em>enough</em> functionality.” And so they’ve just been sitting and recently I got an email from a user that it won’t install on their new Android phone. So that sucks. It was a pain (when I was doing it) to develop 3 separate versions of Day of the Shirt: web, iOS, and Android, so maybe this is a sign to probably just commit to the web.</li>
+  <li>A triple <a href="https://www.epicurious.com/recipes/food/views/bolognese-meat-sauce-hazan">recipe of bolognese</a> is too much for my pot to handle.</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/04/a-comment-on-second-systems"><p>A comment on Second Systems</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-04-09T13:33:00-07:00" itemprop="datePublished">April 9, 2024</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently left this comment on a Pragmatic Engineer review of Fred Brook’s <em>Mythical Man Month</em> in <a href="https://newsletter.pragmaticengineer.com/p/what-changed-in-50-years-of-computing-8d0">“What Changed in 50 Years of Computing: Part 2”</a>. This was what I reacted to:</p>
+
+<blockquote>
+
+  <p><strong>Software design and “the second-system effect”</strong></p>
+
+  <p>Brooks covers an interesting phenomenon in Chapter 5: “The Second-System Effect.” He states that architects tend to design their first system well, but they over-engineer the second one, and carry this over-engineering habit on to future systems.</p>
+
+  <blockquote>
+    <p>“This second system is the most dangerous system a [person] ever designs. When [they] do this and [their] third and later ones, [their] prior experiences will confirm each other as to the general characteristics of such systems, and their differences will identify those parts of [their] experience that are particular and not generalizable.”</p>
+
+    <p>The general tendency is to over-design the second system, using all the ideas and frills that were sidetracked on the first one.”</p>
+  </blockquote>
+
+  <p>I can see this observation making sense at a time when:</p>
+
+  <ul>
+    <li>Designing a system took nearly a year</li>
+    <li>System designs were not circulated, pre-internet</li>
+    <li>Architects were separated from “implementers”</li>
+  </ul>
+
+  <p>Today, all these assumptions are wrong:</p>
+
+  <ul>
+    <li>Designing systems takes weeks, not years</li>
+    <li>System designs are commonly written down and critiqued by others. We cover more in the article, Engineering Planning with RFCs, Design Documents and ADRs</li>
+    <li>“Hands-off architects” are increasingly rare at startups, scaleups, and Big Tech</li>
+  </ul>
+
+  <p>As a result, engineers design more than one or two systems in a year and get more feedback, so this “second-system effect” is likely nonexistent.</p>
+
+</blockquote>
+
+<p>And this was my comment/reaction:</p>
+
+<blockquote>
+
+  <p>I think the Second-System Effect is still very present.</p>
+
+  <p>I would say it most frequently manifests as a result of not recognizing Gall’s Law: “all complex systems that work evolved from simpler systems that worked.”</p>
+
+  <p>What trips people up is usually that they start from a place of “X feature is hard to achieve in the current system” and then they start designing/architecting <em>for</em> that feature and not recognizing all of the other table-stakes necessities and Chesterton Fences of the current system, which only are recognized and bolted on late in the implementation when it is more difficult and complicated.</p>
+
+  <p>The phrase “10 years of experience, or 1 year of experience 10 times” comes to mind when thinking of people who only have the experience of implementing a new system once and trivially, and do not have the experience of growing and supporting and maintaining a system they designed over a meaningful lifecycle.</p>
+
+</blockquote>
+
+<p>Which also reminds me of a <a href="https://www.simplermachines.com/exploration-tidying-ecto/">recent callback</a> to a <a href="https://lethain.com/notes-on-tidy-first/">Will Larson review of Kent Beck’s <em>Tidy First</em></a> about growing software:</p>
+
+<blockquote>
+
+  <p>I really enjoyed this book, and reading it I flipped between three predominant thoughts:</p>
+
+  <ul>
+    <li>I’ve never seen a team that works this way–do any teams work this way?</li>
+    <li>Most of the ways I’ve seen teams work fall into the “never tidy” camp, which is sort of an implicit belief that software can’t get much better except by replacing it entirely. Which is a bit depressing, if you really think about it</li>
+    <li>Wouldn’t it be inspiring to live in a world where your team believes that software can actually improve without replacing it entirely?</li>
+  </ul>
+
+</blockquote>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2024/04/a-ruby-meetup-and-3-podcasts"><p>A Ruby Meetup about Rails autoloading and 3 Podcasts</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2024-04-05T16:44:00-07:00" itemprop="datePublished">April 5, 2024</time>
+
+        • Tagged <a href="/posts/tags/ruby">Ruby</a> and <a href="/posts/tags/media">media</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2024/ruby-meetup-ben.jpg" alt="Me standing on a small stage in front of a slide with 2 adoptable cats and the GitHub logo" /></p>
+
+<p>Last week I spoke at the <a href="https://evilmartians.com/events/sf-bay-area-ruby-meetup">SF Bay Area Ruby Meetup</a>, which was hosted at GitHub HQ, which made for an easy commute for me. Here’s <a href="https://www.youtube.com/watch?v=9-PWz9nbrT8&amp;t=275s">the video</a> and <a href="https://speakerdeck.com/bensheldon/an-ok-compromise-faster-development-by-designing-for-the-rails-autoloader">the slides</a>. My talk was entitled “An OK compromise: Faster development by designing for the Rails autoloader”</p>
+
+<p>Also, I haven’t shared here the 3 podcasts I did over the past few years. Here they are:</p>
+
+<ul>
+  <li><a href="https://www.therubyonrailspodcast.com/383">The Ruby on Rails Podcast</a> from September, 2021.</li>
+  <li><a href="https://www.youtube.com/watch?v=DJ9HIjLla_U">GemRuby Show</a> from September, 2023.</li>
+  <li><a href="https://topenddevs.com/podcasts/ruby-rogues/episodes/examining-goodjob-solidq-and-more-ruby-623">The Ruby Rogues</a> from January, 2024.</li>
+</ul>
+
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/1" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/3" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

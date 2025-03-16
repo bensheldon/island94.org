@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="a-2_PDZ-EvvEthE4aNFgGEk9HC1J2HQTeoYptR_b9tJtHfLrXp8hUeDlY0FZ-4gIBVE_l-Af0WJnagkQe7kDcg" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/03/advocacy-in-print---survival-news-for-2011"><p>Advocacy in print - Survival News for 2011</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-03-03T00:00:00+00:00" itemprop="datePublished">March 3, 2011</time>
+
+        • Tagged <a href="/posts/tags/advocacy">advocacy</a>, <a href="/posts/tags/design">design</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/publishing">publishing</a>, <a href="/posts/tags/welfare">welfare</a>, and <a href="/posts/tags/women">women</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2011-03-03-Advocacy-in-print---Survival-News-for-2011/foodTimer-600x600.png" alt="" title="foodTimer" /></p>
+
+<p>Today I sent another issue of <em>Survival News</em>—“the voices of low-income women”—to the printers; this is my second year as layout artist for the newspaper. At 40 broadsheets (11”x17”), the newspaper is the same size as <a href="http://www.island94.org/2010/02/laying-out-latest-layout/">last year</a>. Published by <a href="http://survivorsinc.org">Survivors, Inc.</a>, <em>Survival News</em> is the official newspaper of the <a href="http://www.nationalwru.org/">National Welfare Rights Union</a> and provides news, stories, advocacy information and 20 pages of Survival Tips—explanations and contact information to help in navigating the complex and crumbling web of social services and support systems—in English and Spanish, and excerpts in Vietnamese.</p>
+
+<p>It’s a great group with which to volunteer and the stories and information that’s published are invaluable. Also, the group doesn’t just stop at publishing the paper; they go into DTA (Department of Transitional Assistance: welfare) offices and volunteer as public advocates for those seeking assistance. This is an excerpt from a DTA Log by Diana Moon:</p>
+
+<blockquote>
+  <p>I started working for Survivor’s Inc. early last 2010. I met many wonderful families and individuals. Thanks to all for sharing their experience with me. Here are a few highlights that I recall from my visits to Dudley and the Revere DTA.</p>
+
+  <p>I offered “Survival News” to a woman explaining a little about Survivor’s Inc and also introducing myself. She then told me her story. She worked for many years and had good jobs and was self-sufficient. Last year she became ill with heart disease and was hospitalized. Unable to work she lost her apartment and moved to her daughter’s apartment. She is on a wait-list for housing. She is in today because her disability benefits were terminated because she has a burial insurance policy (which is counted as an asset.) At first she thought surely this must be a mistake; I agreed with her that a burial policy which can only be used at the time of her death should not be counted as an asset (WT**.) Wow… how perplexing! Then she became emotional because after all the years she has worked and all she’s been through it’s really painful to be spoken to by a DTA worker as if she has done something wrong; as if needing financial help or any other assistance or getting sick means a failure on her part. I felt upset too for this very dignified woman to have someone speak so carelessly to her. We must keep trying to be respectful to each other. We reviewed the Survivor Tip section and I encouraged her to contact Greater Boston Legal Services (GBLS). She knew of GBLS and said she would contact them although she informed me she learned there is a Regulation that burial policies count as assets. I hope this regulation will be changed! She thanked me for the paper and after we talked she said she felt a little better and less alone.</p>
+
+  <p>I talked with another woman about the Survival Tips section and we had a discussion of private rights and personal space and then what can happen to privacy when you live in public housing. For example, there is talk of making smoking illegal in public housing (more issues to debate). She told me she came in to apply for food stamps. She was laid off her job and then took a position for less income at a CVS. The food stamps are a big help she said. I’ve heard similar stories from other women who either work full time for minimum wage or have a part-time position and come to apply for or renew their food stamps. Food stamps are a great benefit and I feel thankful this is available for families! I think, too, about how many live vulnerably just one paycheck away from the threat of losing the security of their home. Another woman told me, “If I lose my job then I’ll be looking for shelter. I worry each month I won’t be able to make full rent and then I’ll be evicted.” I think about how we hear talk about strengthening families, about empowering families; well, then affordable, safe housing is a good place to start!</p>
+</blockquote>
+
+<p>The artwork above was contributed by coworker <a href="http://robobilly.com">Billy Brown</a>. And I’m still trying to convince them to work on their website.</p>
+
+<p><img src="/uploads/2011-03-03-Advocacy-in-print---Survival-News-for-2011/survival-news-600x413.png" alt="" title="survival news" /></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/03/the-48-hour-mobile-web-app-drunken-stumble"><p>The 48 hour mobile web app: Drunken Stumble</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-03-02T00:00:00+00:00" itemprop="datePublished">March 2, 2011</time>
+
+        • Tagged <a href="/posts/tags/drupal">Drupal</a>, <a href="/posts/tags/intoxication">intoxication</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/project-management">project-management</a>, and <a href="/posts/tags/webdesign">webdesign</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://drunkenstumble.com"> <img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/drunkenlogo-500x190.png" alt="" title="drunkenlogo" /> </a></p>
+
+<p>Last weekend I participated in the <a href="http://beta.boston.com/hackday">Boston Hack Day Challenge</a>, a 48 hour (so I’m not sure why they called it a hack <em>day</em>) competition sponsored by the Boston Globe and held in the MassChallenge workspace. The goal of the event was to develop tools that would improve the lives of Bostonians. My team won “Best Mobile App” as well as the “Crowd Favorite” award for the pub crawl app we built: <a href="http://drunkenstumble.com">Drunken Stumble</a>.</p>
+
+<p><em><strong>Update:</strong> You can also read about the process from some of my teammates: <a href="http://www.nikibrown.com/designoblog/2011/02/28/designing-and-building-a-web-app-in-a-weekend-drunken-stumble/">@nikibrown on the design</a>, <a href="http://www.unruthless.com/blog/post/drunken-stumble">@unruthless on frontend and whip-cracking</a>, and <a href="http://miles-per-hour.com/2011/03/01/drunken-stumble-a-drupal-7-web-app-built-in-a-weekend/">@mikemiles86 on the backend</a> and <a href="http://miles-per-hour.com/2011/03/02/drunken-stumble-a-breakdown/">interface</a>.</em></p>
+
+<p>(And if you’re wondering how a pub crawl app would improve the lives of Bostonians, you must not be from Boston.)</p>
+
+<h2 id="about-the-project">About the Project</h2>
+
+<p>Our team formed Friday night. On the frontend we had <a href="http://twitter.com/nikibrown">@nikibrown</a> (designer) and <a href="http://twitter.com/unruthless">@unruthless</a> (frontend developer)—who knew each other prior to the event. On the backend we had <a href="http://twitter.com/mikemiles86">@mikemiles86</a> (application developer) and <a href="http://twitter.com/bensheldon">myself</a> (API and interface developer)—who happened to be standing near the cheese table.</p>
+
+<p>Together—and with the muse of the open bar—we came up with the idea of creating an application that would help people perform a pub crawl. While other teams proposed concept demos and APIs, we set our goal to be the delivery of a complete product by the end of the weekend. Defining a minimum viable product meant keeping a lot of great ideas in the parking lot (like drink lists and multi-user crawls) but helped us focus on delivering a tight, attractive and functional pub-crawl application that lets you:</p>
+
+<ul>
+  <li>
+    <p>use your smartphone to find nearby pubs</p>
+  </li>
+  <li>
+    <p>get walking directions to that pub</p>
+  </li>
+  <li>
+    <p>invite your friends to the pub via social media (Twitter and Facebook)</p>
+  </li>
+  <li>
+    <p>find the next pub for your crawl and get directions to there from your current pub</p>
+  </li>
+  <li>
+    <p>track your nightly progress (or revisit it the next morning)</p>
+  </li>
+  <li>
+    <p>call a cab home at the end of the night</p>
+  </li>
+</ul>
+
+<h2 id="about-the-app">About the App</h2>
+
+<p>We built Drunken Stumble as an HTML5 mobile web application—testing it on both iPhone and Android. As an HTML5 mobile web app, we can access smartphone features (like GPS and Portrait/Landscape modes) as well as quickly write, test and deploy. Both @mikemiles86 and myself are Drupal/PHP developers so (with some reservations) we decided to use Drupal as a framework—using its paths, forms, database and template systems and nothing else.</p>
+
+<p><img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/drunken-planning.jpeg" alt="Planning documents" title="drunken planning" /></p>
+
+<p>I focused most of my development on interfacing with external APIs. Originally we planned on using Yelp to provide business data for locating pubs, but their API is extremely limited with only 100 lookups per day. Fortunately, we found an awesome service called <a href="http://simplegeo.com">SimpleGeo</a> that currently offers unlimited lookups for businesses based upon location. Using SimpleGeo we were able to quickly write a rich, location-aware application that works anywhere in the United States, not just in Boston.</p>
+
+<p>Once we knew we had a source for business data, the next step was telling the application where you are. HTML5 offers <a href="http://dev.w3.org/geo/api/spec-source.html">native geolocation</a> which means we can (politely) request exact location data based on your smartphone’s GPS. If your smartphone doesn’t have GPS (or it’s turned off) you can type in an address and we use <a href="http://code.google.com/apis/maps/documentation/geocoding/">Google Maps to geocode</a> it into a latitude/longitude. If you do use your GPS, we also do a reverse geocode (again using Google Maps) to show you your street-level address to confirm that’s actually where you are (“ <a href="http://maps.google.com/maps?ll=42.331528,-70.94425">42.331528,-70.94425</a>” could be in the middle of Boston Harbor for all I know).</p>
+
+<p><a href="http://code.google.com/apis/maps/documentation/directions/">Google Directions</a> is the special sauce that ties it all together. We provide your starting location and the location of your next pub and Google Directions provides walking instructions and waypoints along the way. We display the walking directions and overlay the waypoints on top of a (static) Google Map. Unfortunately, Google Direction’s API also has a rather low limit of lookups (2,500/day), so should we go over our limit (as we did about 2am Sunday morning), we alternatively display a link that will launch your smartphone’s native maps app (or push you to Google Maps directly) to get directions there.</p>
+
+<p>There was one last benefit of using SimpleGeo’s well-populated business database: our app’s design isn’t limited to just pubs. For example, we decided rather late in the process to offer a list of local taxicab phone numbers at the end of the pub crawl. Because we had already tapped into the SimpleGeo API, we just needed to filter nearby businesses for “taxis”, rather than “bars &amp; pubs”. Which is an important thing to keep in mind: with a few minor changes, our app can facilitate routing for any type of business or geographically based event—like a taco crawl or artists’ open studios.</p>
+
+<p><a href="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/Drunken-Stumble-Screens.png"> <img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/Drunken-Stumble-Screens-500x315.png" alt="" title="Drunken Stumble Screens" /> </a></p>
+
+<h2 id="about-the-process">About the process</h2>
+
+<p>The process was awesome. We got down to business about 8:00pm on Friday night and went live at 1:45pm on Sunday. Sure, we missed deadlines, our final feature list shrunk (and the parking lot grew), the architecture is far from “robust”, and the final design didn’t match our initial sketches (it was better!), but we met our goal of delivering a complete and functional product.</p>
+
+<p>I think it was our focus on “completeness” that helped us win more awards than any other team (2 awards). Other than a few all-hands decisions, our small and diverse team focused separately on our individual areas and integrated as necessary—@mikemiles86 and I used Git to sync progress on the backend, while I think the frontend mostly looked over each other’s shoulders. For me that meant moving from API wrangling at the start of the project to templating at the end. I also can’t overstate the value of @mikemiles86 pulling an all nighter on Saturday (the rest of us ejected at 3am for about 4 hours of sleep)</p>
+
+<p>The Crowd Favorite award was not only a function of our easy-to-understand concept, but also the stellar work of our frontend team. @nikibrown quickly produced strong branding and interface mockups that were key to creating early buzz: as other teams walked around and mingled, we could easily show off our idea. @unruthless became our de facto project manager and spokeswomen, explaining the app to visitors and pushing progress updates to Twitter and the #bostonhack hashtag for the event. We also lived our values, bringing in a wide selection of beer to carry us through Saturday and Sunday (and sharing it didn’t hurt our chances of winning the Crowd-Favorite award either).</p>
+
+<h2 id="about-the-future">About the future</h2>
+
+<p>It’s only been a few days since the event but we’ve kept up a steady stream of chatter over Twitter and pushed a few minor updates to the server too. The intensive hack model worked really well for building a minimally viable product, but time will tell whether we can keep the momentum and updates coming—turning Drunken Stumble into a maximally functional application.</p>
+
+<p>In the meantime though, <a href="http://drunkenstumble.com">happy stumbling</a>, sober or otherwise.</p>
+
+<p><a href="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/team-stumble.png"> <img src="/uploads/2011-03-02-The-48-hour-mobile-web-app-Drunken-Stumble/team-stumble-500x331.png" alt="" title="team stumble" /> </a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/03/how-to-decorate-your-office-without-really-trying"><p>How to decorate your office without really trying</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-03-02T00:00:00+00:00" itemprop="datePublished">March 2, 2011</time>
+
+        • Tagged <a href="/posts/tags/furniture">furniture</a>, <a href="/posts/tags/nostalgia">nostalgia</a>, and <a href="/posts/tags/shelving">shelving</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2011-03-02-How-to-decorate-your-office-without-really-trying/succeed-at-business-1-600x255.png" alt="" title="succeed at business 1" /></p>
+
+<p>Tonight I watched the movie musical <em>How to Succeed in Business Without Really Trying</em>. I was shocked, though not surprised, to discover that all of the office furniture from this 1967 film is the same furniture I have in my office at UMass Boston. The scene above is more representative—the desk and shelving are the same (and I used to have that typewriter stand)—but the orange chair in the scene below is mine.</p>
+
+<p><img src="/uploads/2011-03-02-How-to-decorate-your-office-without-really-trying/succeed-at-business-2-600x256.png" alt="" title="succeed at business 2" /></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/notes-from-the-city-of-bostons-open311-citizens-connect-api-developer-meeting"><p>Notes from the City of Boston’s Open311 / Citizens Connect API Developer Meeting</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-31T00:00:00+00:00" itemprop="datePublished">January 31, 2011</time>
+
+        • Tagged <a href="/posts/tags/boston">Boston</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/govdata">govdata</a>, <a href="/posts/tags/government">government</a>, and <a href="/posts/tags/meeting">meeting</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Today I attended a developer meeting at Boston City Hall for their <a href="http://www.cityofboston.gov/doit/apps/citizensconnect.asp">Citizen Connect API</a>, a to-be-launched <a href="http://open311.org/">Open311</a> implementation. The city currently has official <a href="http://itunes.apple.com/us/app/boston-citizens-connect/id330894558">iPhone</a> and <a href="http://www.androidzoom.com/android_applications/tools/boston-citizens-connect_najk.html">Android</a> apps that allow community members to submit broken streetlights, potholes, graffiti and snow removal, but the intent of the “open” part is to allow unaffiliated developers to integrate the system into their own applications. The other developers attending were the 7-person Boston <a href="http://codeforamerica.org/boston/">Code for America</a> crew (who just arrived a few days before), <a href="http://www.seeclickfix.com/">SeeClickFix</a> and a university researcher (the latter 2 via teleconference).</p>
+
+<p>The City of Boston uses a <a href="http://www.lagan.com/">Lagan CRM</a> system to create and track tickets and cases. To feed that ticketing system the city offers <a href="http://www.cityofboston.gov/mayor/24/">constituent services</a> in person, via telephone (the meeting was held next to the call center which had ~10 agents active at the time), via the web, and through the smartphone apps. The Lagan system tracks 150-170 types of tickets, but Boston currently exposes only 6 of them through Open311 API (streetlights, potholes, graffiti, 2 types of snow removal, and other); this decision was explained as being driven by the UI needs of the official smartphone apps. The Open311 system is only a data bridge into the Lagan CRM and thus won’t support any additional metadata or external decisioning (this dismissed a Code for America fellow’s suggestion of voting on tickets).</p>
+
+<p>The API is not currently available. The city estimates 2 - 3 weeks until they have a test server up, and from there they will evaluate whether to give applications access to the live system. The test server will be a sandbox that is either refreshed every 24 hours, has new data streamed to it, or may simulate workflows (e.g. submit, review, comment, close)—it was still in discussion.</p>
+
+<p>In addition to the Open311 API, the city also offers data dumps of its entire ticketing system, offset by 24 hours. Unfortunately, those data dumps don’t include the channel through which they were inputted, e.g. it’s not recorded whether the ticket came thru Open311, telephone, web or in person. This is allegedly through the city’s <a href="http://hubmaps1.cityofboston.gov/datahub/">Data Hub</a> / <a href="http://www.cityofboston.gov/doit/databoston/app/data.aspx">Data Dashboard</a>, but I can’t find it.</p>
+
+<p>The City of Boston is taking a more deliberate and restrictive approach than <a href="http://www.eot.state.ma.us/developers/">MassDOT/MBTA</a> in opening up their data, though CRM tickets are clearly different than bus/train route and dispatch data. The university researcher’s (Ben Clark) use case for the data was spot-on: determining who is utilizing these smartphone tools, and importantly who isn’t. Time will tell how the influence of outside software developers will push the city’s implementation—and how will it effect less-technology focused solutions.</p>
+
+<p>I was really excited to meet the Code for America crew as they are bringing a lot of excitement and energy to the gov data scene. I did get the impression that they were unprepared for managing institutional forces: there was a question about why the city couldn’t devote more IT resources to the project that were answered with some allusions to Dilbert (without acknowledging that the current capital budget was probably set 14 months ago). Open311 doesn’t seem like CfA’s <a href="http://codeforamerica.org/boston/">primary focus</a> in Boston, but if this was their first City of Boston meeting, I think they learned a lot.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/authenticity-and-such"><p>Authenticity and such</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-23T00:00:00+00:00" itemprop="datePublished">January 23, 2011</time>
+
+        • Tagged <a href="/posts/tags/authenticity">authenticity</a>, <a href="/posts/tags/philosophy">philosophy</a>, and <a href="/posts/tags/provenance">provenance</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I read several books on <em>authenticity</em> last autumn. Below is from Andrew Potter’s <em>The Authenticity Hoax: How We Get Lost Finding Ourselves</em>, which is representative of the book as a whole—thought provoking stuff with the occasional reactionary junk:</p>
+
+<blockquote>
+  <p>[Lionel] Trilling suggests that the way authenticity “has become part of the moral slang of our day points to the peculiar nature of our fallen condition, our anxiety over the credibility of existence and of individual existences.” What he is highlighting here is the biblical texture that permeates the whole discourse of authenticity: in the beginning, humans lived in a state of original authenticity, where all was harmony and unity. At some point there was a great discord, and we became separated from nature, from society, and even from ourselves. Ever since, we have been living in a fallen state, and our great spiritual project is to ﬁnd our way back to that original and authentic unity.</p>
+
+  <p>What led to this apparent separation was nothing less than the birth of the world. Characterized by the rise of secularism, liberalism, and the market economy, is the reason we have lost touch with whatever it is about human existence that is meaningful. Once upon a time religion, especially monotheistic religion, served as the objective and eternal standard of all that is good and true and valuable, and we built our society (indeed, our entire civilization) around the idea that living a meaningful life involved living up to that standard.</p>
+
+  <p>The search for authenticity is about the search for meaning in a world where all the traditional sources — religion and successor ideals such as aristocracy, community, and nationalism — have been dissolved in the acid of science, technology, capitalism, and liberal democracy. We are looking to replace the God concept with something more acceptable in a world that is not just disenchanted, but also socially ﬂattened, cosmopolitan, individualistic, and egalitarian. It is a complicated and difﬁcult search, one that leads people down a multitude of paths that indude the worship of the creative and emotive powers of the self; the fetishization of our premodern past and its contemporary incarnation in exotic cultures; the search for increasingly obscure and rariﬂed forms of consumption and experience; a preference for local forms of community and economic organization; and, most obviously, an almost violent hostility to the perceived shallowness of Western forms of consumption and entertainment.</p>
+</blockquote>
+
+<p>Richard Todd’s <em>The Thing Itself - On the Search for Authenticity</em>, other than being first-person non-fiction, stayed closer to treating authenticity as straight-forward provenance—with all the other stuff just being vigorous capitalism.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/adding-class-to-wordpress-linked-images"><p>Adding class to Wordpress linked images</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-23T00:00:00+00:00" itemprop="datePublished">January 23, 2011</time>
+
+        • Tagged <a href="/posts/tags/code">code</a>, <a href="/posts/tags/css">css</a>, <a href="/posts/tags/php">php</a>, <a href="/posts/tags/theming">theming</a>, and <a href="/posts/tags/wordpress">wordpress</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>An <a href="http://wordpress.org/support/topic/how-can-i-set-the-class-of-anchors">enduring issue</a> with linked images ( <code>&lt;a href=""&gt;&lt;img src="" /&gt;&lt;/a&gt;</code> ), is targeting the anchor link for theming—especially for disabling borders and highlighting that look great on text links but odd for images. CSS doesn’t have a parent selector ( <code>a &gt; img:parent</code> ), and javascript feels like overkill. The simple solution is to add a <code>class</code> to the parent anchor (<code>&lt;a href="" class="img"&gt;)</code>, but that can get repetitive, especially when Wordpress is supposed to automate those sorts of things.</p>
+
+<p>Adding the following code to your Wordpress theme’s <code>functions.php</code> file will automatically add a class to the anchor link when you insert linked images through Wordpress’s Media Library interface. It won’t fix posts you’ve already written, but should make things better moving forward.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/**
+ * Attach a class to linked images' parent anchors
+ * e.g. a img =&gt; a.img img
+ */</span>
+<span class="k">function</span> <span class="n">give_linked_images_class</span><span class="p">(</span><span class="nv">$html</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$caption</span><span class="p">,</span> <span class="nv">$title</span><span class="p">,</span> <span class="nv">$align</span><span class="p">,</span> <span class="nv">$url</span><span class="p">,</span> <span class="nv">$size</span><span class="p">,</span> <span class="nv">$alt</span> <span class="o">=</span> <span class="s1">''</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Separate classes with spaces, e.g. 'img image-link'</span>
+  <span class="nv">$classes</span> <span class="o">=</span> <span class="s1">'img'</span><span class="p">;</span>
+
+  <span class="c1">// check if there are already classes assigned to the anchor</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s1">'/&lt;a.*? class=".*?"&gt;/'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*? class=".*?)(".\?&gt;)/'</span><span class="p">,</span> <span class="s1">'$1 '</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'$2'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*?)&gt;/'</span><span class="p">,</span> <span class="s1">'$1 class="'</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'" &gt;'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nv">$html</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">add_filter</span><span class="p">(</span><span class="s1">'image_send_to_editor'</span><span class="p">,</span> <span class="s1">'give_linked_images_class'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The if/else could probably be done with a single regular expression, but I’m not <em>that</em> smart.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/the-benefits-of-age"><p>The benefits of age</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-22T00:00:00+00:00" itemprop="datePublished">January 22, 2011</time>
+
+        • Tagged <a href="/posts/tags/boomers">boomers</a>, <a href="/posts/tags/generations">generations</a>, <a href="/posts/tags/millennials">millennials</a>, and <a href="/posts/tags/nonprofit">nonprofit</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2011-01-22-The-benefits-of-age/boom1.jpeg"> <img src="/uploads/2011-01-22-The-benefits-of-age/boom1-500x241.jpg" alt="" title="boom1" /> </a></p>
+
+<p>Havard Business Review’s Dan Pallota <a href="http://blogs.hbr.org/pallotta/2011/01/the-wisdom-years-the-value-of.html">quoted from Julia Moulden’s book, <em>RIPE: Rich, Rewarding Work After 50</em></a>: &gt;</p>
+<ul>
+  <li>I can tell the difference between a customer who has a legitimate gripe with my company and one who is an alcoholic or has anger-management issues. At 25, I thought it was all and always about me.</li>
+  <li>My bullshit meter is highly attuned because I’ve heard a lot of bullshit. At 25 I was naive enough to believe most of what everyone was dishing out.</li>
+  <li>I have the confidence to know that if I don’t understand some new business idea you’re pitching to me it’s not because I’m stupid. It’s because you’re not communicating it well. At 25 I was more prone to point the finger inward.</li>
+  <li>I know that business construction projects cost about twice what you budgeted them to cost. At 25, I was continually shocked and unprepared when costly problems popped up or snags set projects back months.</li>
+  <li>I know that being nice to people and being a good leader are two different things. At 25 I was nice to everyone. And not the best leader.</li>
+</ul>
+
+<p>I suggested in the <a href="http://blogs.hbr.org/pallotta/2011/01/the-wisdom-years-the-value-of.html#comment-132959702">comments</a> this addition: &gt; My peers and I outnumber everyone else. At 25, people over 50 were few and far between which let me do a lot without someone looking over my shoulder and judging my work.<br />
+Which is really a <a href="http://en.wikipedia.org/wiki/Strauss_and_Howe">defining difference</a> between Boomers and Millennials: Millennials are coming of age with a lot more older people around then when Boomers came of age. But I’ve also disagreed with Dan Pallota <a href="http://www.island94.org/2009/10/social-work-is-womens-work-so-we-dont-care/">before</a>. The population pyramid image is from <a href="http://www.flatrock.org.nz/topics/money_politics_law/boom_moves_along.htm">here</a>, which looks like it may have been copied out of a newspaper.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/mediation-journal-version-0"><p>Mediation Journal, Version 0</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-12T00:00:00+00:00" itemprop="datePublished">January 12, 2011</time>
+
+        • Tagged <a href="/posts/tags/journal">journal</a>, <a href="/posts/tags/media">media</a>, <a href="/posts/tags/publishing">publishing</a>, and <a href="/posts/tags/writing">writing</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-3.jpg"> <img src="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-3-500x334.jpg" alt="" title="mediation-3" /> </a></p>
+
+<p>I <a href="http://www.island94.org/2010/12/mediation-journal-pieces/">earlier</a> posted a picture from a project I was working on for journaling media usage. Below is the book I got back from POD (I used Lulu and am quite satisfied). I still have a few changes I want to make before I consider it “finalized”: increasing the gutter size (the gutter calculator is clearly configured for reading, not writing), optimizing the half-tones and gradients (I printed a test scale in the back of the book), and redoing the cover (I don’t think I had the DPI set properly for the only rasterized image I used in the entire project).</p>
+
+<p>Also, after reading this piece by Kelli Anderson on documenting work, I’m trying to take better project and process photos. I took these photos on my porch, in 20° weather—but the natural sunlight made it worth it.</p>
+
+<p><a href="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-1.jpg"> <img src="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-1-150x150.jpg" alt="" title="mediation-1" /> </a> <a href="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-2.jpg"> <img src="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-2-150x150.jpg" alt="" title="mediation-2" /> </a></p>
+
+<p><a href="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-5.jpg"> <img src="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-5-150x150.jpg" alt="" title="mediation-5" /> </a> <a href="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-4.jpg"> <img src="/uploads/2011-01-12-Mediation-Journal-Version-0/mediation-4-150x150.jpg" alt="" title="mediation-4" /> </a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/assessment-of-needs-assessment-needs"><p>Assessment of needs-assessment needs</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-05T00:00:00+00:00" itemprop="datePublished">January 5, 2011</time>
+
+        • Tagged <a href="/posts/tags/assessment">assessment</a>, <a href="/posts/tags/needs">needs</a>, and <a href="/posts/tags/technology">technology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2011-01-05-Assessment-of-needs-assessment-needs/staff-development-activities-600x684.jpg" alt="" title="staff-development-activities" /></p>
+
+<p>One of my AmeriCorps members asked for resources on technology needs-assessment surveys and I came across some varied approaches. Above is from the US Department of Education hosted <em><a href="http://www2.ed.gov/pubs/EdTechGuide/appc-5.html">An Educator’s Guide to Evaluating the Use of Technology in Schools and Classrooms</a></em>. Below is from the National Center for Technology Planning’s “ <a href="http://www.nctp.com/downloads/assess.pdf">Perceived Educational Technology Needs Survey</a>” [PDF] (the Center appears to be more a guy then a center). Both appear rather aged, though I like the latter one better.</p>
+
+<blockquote>
+  <p><em>Note to the respondent: Please keep this questionnaire in your possession for the survey interval in your usual work location while performing your customary duties. Make entries to the items as appropriate responses occur to you. Your responses will help inform the technology planning process about the best application of technologies in your teaching situation.</em></p>
+
+  <ol>
+    <li>Do you ever, or often, think, “there must be an easier way to do this?” If so, please list and describe as many of the things or situations as you can to which this statement would apply:</li>
+  </ol>
+
+  <p>1.</p>
+
+  <p>2.</p>
+
+  <p>3.</p>
+
+  <p>4.</p>
+
+  <p>5.<br />
+  [Note: All of the following questions repeat this format, but the phrase “If so, please list and describe as many of the things or situations as you can to which this statement would apply: #1-5” is omitted for brevity ]</p>
+
+  <ol>
+    <li>Do you ever, or often, think, “I could do this faster if only…”</li>
+    <li>Do you ever, or often, think, “I wish I had a helper to help me do…”</li>
+    <li>Do you ever, or often, think, “I wish I had a computer or other device so I could…”</li>
+    <li>Do you ever, or often, think, “I wish I or my students could contact someone right now to tell them…”</li>
+    <li>Do you ever, or often, think, “I wish I or my students could contact someone right now to find out…”</li>
+    <li>Do you ever, or often, think, “I wish my students had improved computers or other technological resources available so they could…”</li>
+    <li>Do you ever, or often, think, “I wish my students had more computers or other technological resources available so they could…”</li>
+  </ol>
+
+  <p>Please use the space below to state in your own words any suggestions, recommendations, or concerns you have for the use of computers, networks, or other advanced technologies for your work or for your students, your school, or the school district. Thank you for providing this information.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/01/adding-hyperlinks-to-print-publications"><p>Adding hyperlinks to print publications</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-01-02T00:00:00+00:00" itemprop="datePublished">January 2, 2011</time>
+
+        • Tagged <a href="/posts/tags/best-practices">best-practices</a>, <a href="/posts/tags/hyperlinks">hyperlinks</a>, <a href="/posts/tags/publishing">publishing</a>, and <a href="/posts/tags/web">web</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2011-01-02-Adding-hyperlinks-to-print-publications/hyperlink-numbermysteries-500x454.jpg" alt="" title="hyperlink-numbermysteries" /></p>
+
+<p>I am very impressed with how Marcus du Sautoy’s <em>The Number Mysteries</em> integrates hyperlinks into the book using URL shorteners and QR codes (above). Contrast that with Dan Cederholm’s <em>Handcrafted CSS _(which is still an excellent book)</em>. _The latter was published August 2009, the former August 2010.</p>
+
+<p><img src="/uploads/2011-01-02-Adding-hyperlinks-to-print-publications/hyperlink-handcraftedcss-500x334.jpg" alt="" title="hyperlink-handcraftedcss" /></p>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/24" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/26" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

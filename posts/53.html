@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="g1u0fiOs1bAtHRl0-wpa9-gvjFZ6qORx75htKoBu1wiFq_mpS03mGglOaw3KILLnpEOv7NNvQQDydE2P5AwiqA" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/06/line-up-in-order-of-your-ssn"><p>Line up in order of your SSN</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-06-17T00:00:00+00:00" itemprop="datePublished">June 17, 2008</time>
+
+        • Tagged <a href="/posts/tags/math">math</a> and <a href="/posts/tags/taxes">taxes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The IRS is using the last two digits of your Social Security Number to determine <a href="http://www.irs.gov/irs/article/0,,id=180250,00.html">when you’ll receive your Economic Stimulus</a> (e.g. free money i.e. your children’s money).</p>
+<blockquote>
+  <p>Paper checks will also go out based on Social Security number. For Social Security numbers ending in 00 through 09, the paper checks will be mailed starting May 9 and will continue through May 16. A similar process will be repeated in the following weeks.</p>
+
+  <p>Please allow additional delivery time, perhaps 3 to 5 days, since the paper checks are being sent through the mail.<br />
+PAPER CHECK</p>
+</blockquote>
+
+<blockquote>
+  <p>Last two SSN digits:<br />
+Payments will be mailed no later than (and received a few days after):<br />
+00 through 09 May 16<br />
+10 through 18 May 23<br />
+19 through 25 May 30<br />
+26 through 38 June 6<br />
+39 through 51 June 13<br />
+52 through 63 June 20<br />
+64 through 75 June 27<br />
+76 through 87 July 4<br />
+88 through 99 July 11</p>
+</blockquote>
+
+<p>** <a href="http://www.chainreaction-community.net/?spies_like_us">Spies Like Us release</a>**</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/06/contextonomy"><p>Contextonomy</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-06-15T00:00:00+00:00" itemprop="datePublished">June 15, 2008</time>
+
+        • Tagged <a href="/posts/tags/language">language</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Aha! I knew there had to be a word for misusing review quotes. From this week’s <a href="http://www.worldwidewords.org/nl/krcv.htm">World Wide Words</a>:</p>
+
+<blockquote>
+  <p>Such extracts from reviews are called “pull quotes” in the jargon;massaging them into more favourable versions is “quote doctoring”. Another word, with apologies to Stephen Potter, is “quotemanship”(or “quotesmanship”). “Contextomy” is yet another term, one used principally by academics in reference to literary misquoting. The ending “-tomy” means cutting up and has here been neatly reversed into “context”. It was created by the historian Milton Mayer in 1966 in reference to a much more significant issue, the misquoting<br />
+of the Torah for propaganda purposes by Julius Streicher, editor ofthe Nazi paper Der Stürmer in Weimar-era Germany.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/06/conference-notes-managing-nonprofit-technology-projects"><p>Conference notes: managing nonprofit technology projects</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-06-15T00:00:00+00:00" itemprop="datePublished">June 15, 2008</time>
+
+        • Tagged <a href="/posts/tags/drupal">Drupal</a> and <a href="/posts/tags/technology">technology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Notes from Rebecca below on managing nonprofit technology projects</p>
+
+<p>http://aspirationtech.org/events/mntp-sf<br />
+http://mntp.aspirationtech.org/index.php/Event_Agenda</p>
+
+<p>…maybe I’ll clean this up someday.</p>
+
+<p>ï»¿—-<br />
+!!!Basic Stages of a Project</p>
+<ol>
+  <li>Initiate<br />
+* define project<br />
+* talk about start and end points, budget, participants/roles, timeline</li>
+  <li>Plan<br />
+* defining scope, requirements, use cases</li>
+  <li>
+    <p>Implement</p>
+  </li>
+  <li>
+    <p>Monitor</p>
+  </li>
+  <li>Close<br />
+*how do you know when you’re done with the project you’re working on?</li>
+</ol>
+
+<p>*upkeep/maintenance phase?</p>
+
+<p>*in “waterfall” style projects, there is just one of each step<br />
+*in “agile” style projects, the plan -&gt; implement -&gt; monitor cycle repeats<br />
+*know which style project it is at the beginning!</p>
+
+<hr />
+<p>!!!Content inventories<br />
+For redesign processes, figure out what content and navigation is currently present and how it’s organized. Include things like creation dates and web statistics; talk about the value of old content to users. This can affect how much of the content is migrated, and can give organizations insight into how they intend to communicate vs. how they’re actually communicating. For example, one PM working on the ACLU site inventoried 15,000 pages; the ACLU decided to migrate 8,000 of those, and rethought their style of technical &amp; legal language to a more personal approach.</p>
+
+<hr />
+<p>!!!Scope Creep<br />
+*postpone things to phase 2<br />
+*define project endpoints in the “initiate” phase<br />
+*specifications that include what ‘‘won’t’’ be included<br />
+*review scope and recently developed features regularly<br />
+*revisit goals to regain focus as scope creep starts to take over<br />
+*saying no: make sure that people are aware of the depth of their requests, especially if they’re out of scope. inform people about research or dev time required just to estimate cost for a feature.</p>
+
+<hr />
+<p>!!!Recognizing Impending Doom<br />
+*chunking projects: dividing projects into smaller chunks will make overages more obvious.<br />
+*development time = developer + QA + PM + client + risk + padding.<br />
+*define checkin points in the web plan<br />
+*be upfront/honest/immediate when you’re feeling uncomfortable<br />
+*be proactive about input–consider what input people will have before you ask them for it<br />
+*one attendee mentioned that they “had been trying to stay with this FOSS community which was politically important, but they were making incredibly bad engineering decisions” and they eventually had to break with the FOSS group.<br />
+*beware of working with volunteers who aren’t web professionals<br />
+*notice the point where transparency starts to drop</p>
+
+<hr />
+<p>!!!Client Panic<br />
+*lack of communication: presenting a product that the client hasn’t seen before and they aren’t happy<br />
+*role changes on either the client or dev side can trigger less dialouge<br />
+*when you’re behind, don’t just work harder: restructure dev roles, reopen lines of communication with client<br />
+*sign of panic: abusive emails. one dev mentioned having a “2 strike rule” for abusive communication; he immediately calls higher-ups re: lack of tolerance for abusive/blame email/interaction<br />
+*learn how to identify ‘‘good’’ things about a client relationship</p>
+
+<p>’'’recovery stragegy’’’: regaining trust is remotely is difficult. Highly structured communication can help; for example, frequent meeting at consistent times with a repeated agenda.</p>
+
+<p>#highly structured communication<br />
+#revisit goals<br />
+#talk to other members of the client org<br />
+#re-structure the project<br />
+#fire the client</p>
+
+<hr />
+<p>!!!Turning a Project into a Product<br />
+*forces you into more standardization<br />
+*documentation becomes exponentially more important<br />
+*languages &amp; international users: translators can be your most active outside contributors</p>
+
+<hr />
+<p>!!!Other<br />
+*build test cases alongside app development<br />
+*involve real-life people–external stakeholders–in the process<br />
+*make sure there is someone within the nonprofit who can maintain the solution<br />
+*can you narrow your website’s focus? working with the client to focus the project; can be used to reduce the feature set and budget, AND/OR to clarify the client’s communication strategy.<br />
+*get clients to take notes at meetings and send them to you so that you know what they’re taking away/expecting<br />
+*discussions about “which tools?” can obscure discussions of needs<br />
+*blog or message board for a project: for both issues and for cheerleading<br />
+*“the smallest organizations need the most hand-holding”<br />
+—-<br />
+EOF</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/05/ntc08-the-seven-things-everyone-wants-what-freud-and-buddha-understood-and-were-forgetting-about-online-outreach"><p>NTC08: The Seven Things Everyone Wants: What Freud and Buddha Understood (and We’re Forgetting) about Online Outreach</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-05-26T00:00:00+00:00" itemprop="datePublished">May 26, 2008</time>
+
+        • Tagged <a href="/posts/tags/conference">conference</a>, <a href="/posts/tags/human-nature">human nature</a>, <a href="/posts/tags/marketing">marketing</a>, <a href="/posts/tags/notes">notes</a>, <a href="/posts/tags/nten">nten</a>, and <a href="/posts/tags/outreach">outreach</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’ve been meaning to type of some of my notes from the NTEN 2008 Conference, but the benefit of waiting is that someone will do it better. Like <a href="http://havefundogood.blogspot.com/2008/03/notes-from-seven-things-everyone-wants.html">Britt Bravo: Notes from The Seven Things Everyone Wants: What Freud and Buddha Understood (and We’re Forgetting) about Online Outreach </a>.</p>
+
+<p>In short (lots more notes and examples in the link):</p>
+
+<blockquote>
+  <p><strong>Need 1: To be SEEN and HEARD</strong></p>
+
+  <p>Does your home page make people feel heard? Not many people give money because they read a well word-smithed mission statement. Effective sites and campaigns provide space for people to express themselves. Nonprofits need to truly listen to their supporters and acknowledge what they are saying.</p>
+
+  <p><strong>Need 2: To be CONNECTED to someone or something</strong></p>
+
+  <p>Engage people by connecting to what they (not you!) care about.</p>
+
+  <p>**Need 3: To be part of something GREATER THAN THEMSELVES<br />
+**</p>
+</blockquote>
+
+<blockquote>
+  <p>**Need 4: To have HOPE for the future<br />
+**</p>
+</blockquote>
+
+<blockquote>
+  <p>Doom and gloom, and finger-wagging messages don’t work.</p>
+
+  <p><strong>Need 5: The security of TRUST</strong></p>
+
+  <p>People are starved for a sense of trust in “the messenger.”</p>
+
+  <p>**Need 6: To be of SERVICE<br />
+**</p>
+</blockquote>
+
+<blockquote>
+  <p>The #1 reason people stop giving to a nonprofit is that they feel like they are being treated like an ATM machine. They want to help, but they want to be of service, and to have different ways of serving. That need is not being fulfilled if all they hear is the unimaginative drumbeat of dollars.</p>
+
+  <p>**Need 7: To want HAPPINESS for self and others<br />
+**</p>
+</blockquote>
+
+<blockquote>
+  <p>The core of Buddhism is that everyone wants happiness and to be free from suffering. The more you want happiness for others, the better it is for you, and them.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/05/jp-cafe-brownies"><p>JP Cafe Brownies</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-05-07T00:00:00+00:00" itemprop="datePublished">May 7, 2008</time>
+
+        • Tagged <a href="/posts/tags/dessert">dessert</a> and <a href="/posts/tags/recipe">recipe</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The cafe down the corner from my house makes the best brownies and I’ve been wanting this recipe ever since they opened. My friends have been quietly debating whether it was corn syrup or condensed milk that makes them so good. I made an oft-hand remark about it today and the counter-girl went back and wrote out the recipe for me. Turns out the answer is butter and eggs, lots of ‘em.</p>
+
+<p>In regard to the amounts below: they were given to me in grams, and I did some loose conversions since I don’t have a scale.</p>
+
+<ul>
+  <li>3-1/3 C (760g) Butter</li>
+  <li>1-2/3 Lb (910g) Chocolate</li>
+  <li>12 Eggs</li>
+  <li>2 Tsp Vanilla</li>
+  <li>2-1/2 C (560g) Sugar</li>
+  <li>3-1/3 C (420g) Flour</li>
+  <li>2 Tsp Salt</li>
+</ul>
+
+<p>18” X 24” Pan (makes 24 Brownies)</p>
+
+<p>I didn’t get the instructions for actually baking them, but I assume that you melt and cool the chocolate, then cream everything, adding the flour at the end.</p>
+
+<p>Probably bake at 350 (though maybe a cooler 325). They should have a torte-like consistency when done—cakily aerated but moist and fudgy if compressed.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/05/binaries-and-teaching"><p>Binaries and Teaching</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-05-06T00:00:00+00:00" itemprop="datePublished">May 6, 2008</time>
+
+        • Tagged <a href="/posts/tags/language">language</a>, <a href="/posts/tags/pedagogy">pedagogy</a>, <a href="/posts/tags/teaching">teaching</a>, and <a href="/posts/tags/youtube">youtube</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From an Ars Technica article entitled <a href="http://arstechnica.com/news.ars/post/20080424-youtube-university-gets-failing-grade-from-prof-students.html">YouTube University gets failing grade from prof, students</a>. The <a href="http://www.oculture.com/2008/04/teaching_on_youtube.html">original analysis is here</a></p>
+
+<blockquote>
+  <p>Juhasz breaks the issues down into a set of what she refers to as “binaries”—tensions between opposites that have to be balanced for proper teaching.</p>
+</blockquote>
+
+<p>Those binaries were:</p>
+
+<ol>
+  <li>Public/Private</li>
+  <li>Aural/Visual</li>
+  <li>Body/Digital</li>
+  <li>Amateur/Expert</li>
+  <li>Entertainment/Education</li>
+  <li>Control/Chaos</li>
+</ol>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/04/boston-vegetable-planting-chart"><p>Boston Vegetable Planting Chart</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-04-27T00:00:00+00:00" itemprop="datePublished">April 27, 2008</time>
+
+        • Tagged <a href="/posts/tags/chart">chart</a>, <a href="/posts/tags/gardening">gardening</a>, <a href="/posts/tags/graphics">graphics</a>, <a href="/posts/tags/nature">nature</a>, <a href="/posts/tags/navigation">navigation</a>, and <a href="/posts/tags/portfolio">portfolio</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://www.flickr.com/photos/bensheldon/2447776678/" title="Boston Vegetable Planting Chart by bensheldon, on Flickr"> <img src="http://farm3.static.flickr.com/2300/2447776678_9cd6dc2a71.jpg" alt="Boston Vegetable Planting Chart" /> </a></p>
+
+<p>I made a simple chart of approximate seed planting times for Boston (USDA Zone 6). You can <a href="http://island94.org/files/island94.org/Boston%20Vegetable%20Planting%20Chart.pdf">download a printable PDF of the planting chart</a>.</p>
+
+<p>Today I put together a simple raised bed in my backyard. I built it along the same design as the <a href="http://www.thefoodproject.org/agriculture/Internal1.asp?ID=601">Food Project’s Build-a-Garden Program’s planter</a>—which my landlord participated in last year. Other than shoveling 1300 pounds of soil needed for an 8 x 4 raised bed, it was pretty easy. The only really novel part is putting a sheet of weed-block between the ground and the planting soil to keep the vegetables from growing down into polluted city-dirt.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/04/enchilada-sauce"><p>Enchilada Sauce</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-04-22T00:00:00+00:00" itemprop="datePublished">April 22, 2008</time>
+
+        • Tagged <a href="/posts/tags/food">food</a> and <a href="/posts/tags/recipe">recipe</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Dandy’s recipe:</p>
+
+<ul>
+  <li>8 medium tomatoes, stewed</li>
+  <li>1 jalapeno</li>
+  <li>4 green onion, chopped</li>
+  <li>1/4 bunch of cilantro, chopped</li>
+  <li>2 garlic cloves</li>
+</ul>
+
+<p>Then:</p>
+
+<ul>
+  <li>In large sauce pan, stew tomatoes and jalepeno.</li>
+  <li>Remove stem from jalapeno.</li>
+  <li>Put into blender or food processor.</li>
+  <li>Add garlic.</li>
+</ul>
+
+<p>Then:</p>
+
+<ul>
+  <li>Pour into pan.</li>
+  <li>Add 4 green onions and cilantro.</li>
+  <li>Simmer for 15 minutes.</li>
+  <li>Salt and pepper to taste.</li>
+</ul>
+
+<p><em>My alteration</em>:</p>
+
+<p>Take all of the above ingredients, and just throw them in a blender (I use a can of whole stewed tomatoes rather than the fresh tomatoes—probably better fresh). Done._</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/04/cat-new"><p>Cat, New</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-04-20T00:00:00+00:00" itemprop="datePublished">April 20, 2008</time>
+
+        • Tagged <a href="/posts/tags/animal">animal</a>, <a href="/posts/tags/cat">cat</a>, and <a href="/posts/tags/pet">pet</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>.!.</p>
+
+<p><a href="http://www.flickr.com/photos/bensheldon/sets/72157604097747478/"> <img src="/uploads/2008-04-20-Cat-New/ponty-set.png" alt="Ponty, a cat" /> </a></p>
+
+<p>Meet my new cat, Jose Pierpont (“Ponty”). I got him a few weeks ago from the MSPCA and he’s somewhere in that adolescent cat phase between 10 months and a year old. He’s pretty awesome, though he has a strong penchant for pipe cleaners. <a href="http://www.flickr.com/photos/bensheldon/sets/72157604097747478/">more pictures</a></p>
+
+<p><a href="http://www.flickr.com/photos/bensheldon/2367627936/" title="IMG_0222 by bensheldon, on Flickr"> <img src="http://farm3.static.flickr.com/2202/2367627936_f75568d9bc.jpg" alt="IMG_0222" /> </a></p>
+
+<p><a href="http://www.flickr.com/photos/bensheldon/2391289806/" title="IMG_0447 by bensheldon, on Flickr"> <img src="http://farm3.static.flickr.com/2039/2391289806_c27088904f.jpg" alt="IMG_0447" /> </a></p>
+
+<p><a href="http://www.flickr.com/photos/bensheldon/2327492807/" title="IMG_0201 by bensheldon, on Flickr"> <img src="http://farm4.static.flickr.com/3264/2327492807_d3bf657f78.jpg" alt="IMG_0201" /> </a></p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/04/brompt-is-a-blog-reminder"><p>Brompt is a blog reminder</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-04-20T00:00:00+00:00" itemprop="datePublished">April 20, 2008</time>
+
+        • Tagged <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/project">project</a>, <a href="/posts/tags/web-2-0">Web 2.0</a>, <a href="/posts/tags/webdesign">webdesign</a>, and <a href="/posts/tags/brompt">brompt</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://brompt.com" title="a blog reminder service"> <img src="/uploads/2008-04-20-Brompt-is-a-blog-reminder/brompt-logo.jpg" alt="Brompt.com logo" /> </a></p>
+
+<p>Two weeks ago I launched a new website at <a href="http://brompt.com" title="a blog reminder service">Brompt.com</a>. It’s a web-based service for unreliable bloggers (like myself) that sends you an email if you haven’t posted to your blog in a while. It’s sort’ve like <a href="http://www.hassleme.co.uk/">HassleMe</a> except Brompt actively scans your blogs RSS feed to only send reminders when you’re lax (as opposed to just sending you a reminder every so often).</p>
+
+<p>It’s very practical, but I also think Brompt is really interesting conceptually too. Everyone talks about RSS as just a means to aggregating <em>content</em>, but there is so much other interesting metadata in an RSS feed too.</p>
+
+<p>Right now the site is just the barebones service, but I’m planning on adding some statistics and such so you can track your unreliability. It’s a fun project with a lot of possibilities.</p>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/52" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/54" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

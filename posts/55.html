@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="shJZHmJV6gOjZT737XUd-kgbnv-6qqnaMH0PlkRk4IC04hTJCrTZqYc2TI7cX_XqBHe9RRNtDKstkS8zIAYVIA" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/02/excel-escape-characters"><p>Excel Escape Characters</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-02-27T00:00:00+00:00" itemprop="datePublished">February 27, 2008</time>
+
+        • Tagged <a href="/posts/tags/spreadsheets">spreadsheets</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>If you want to insert a parenthesis into an excel formula (for example, concatenating strings into something to export), you want do use double-double-quotes:</p>
+
+<pre><code>"I am ""cool"""
+</code></pre>
+
+<p>Produces the text string <em>I am “cool”</em></p>
+
+<p>A useful example is producing email addresses:</p>
+
+<pre><code>=CONCATENATE("""",A2, """ ")
+</code></pre>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/02/perspective"><p>Perspective</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-02-19T00:00:00+00:00" itemprop="datePublished">February 19, 2008</time>
+
+        • Tagged <a href="/posts/tags/aging">aging</a>, <a href="/posts/tags/philosophy">philosophy</a>, and <a href="/posts/tags/politics">politics</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>In September 1963 [George] McGovern became the only senator who opposed U.S. involvement in Vietnam during the Kennedy administration. He came by his horror of war honorably in 35 B-23 missions over Germany, where half the B-24 crews did not survive—they suffered a higher rate of fatalities than did Marines storming Pacific islands. McGovern was awarded a Distinguished Flying Corss with three oak-leaf clusters. In his 70s he lost a 45-year old daughter to alcoholism. Losing a presidential election, he says softly, “was not the saddest thing in my life.” Time confers a comforting perspective, giving consolations to old age, which needs them.<br />
+McGovern and the outcomes of the 1968 Democratic Convention are big news what with the current affairs. From the <a href="http://www.newsweek.com/id/112767/page/2">Last Word</a> of Newsweek’s February 25, 2008 issue. I think that last sentence is unnecessary; or upon closer reading, is supposed to dismissive of McGovern (old people need to be comforted/coddled).</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/02/ny-times-on-public-television"><p>NY Times on Public Television</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-02-19T00:00:00+00:00" itemprop="datePublished">February 19, 2008</time>
+
+        • Tagged <a href="/posts/tags/broadcasting">broadcasting</a> and <a href="/posts/tags/tv">tv</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>The average PBS show on prime time now scores about a 1.4 Nielsen rating, or roughly what the wrestling show “Friday Night Smackdown” gets.<br />
+Probably the average reader of the NY Times doesn’t think much of Friday Night Smackdown (I don’t really), but it gets a pretty good following. So in my opinion, contrary to what I think this <a href="http://www.nytimes.com/2008/02/17/arts/television/17mcgr.html">editorial</a> is intending, that’s not a very damning statistic.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/02/ors-amounts-for-a-nalgene-bottle"><p>ORS amounts for a Nalgene bottle</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-02-16T00:00:00+00:00" itemprop="datePublished">February 16, 2008</time>
+
+        • Tagged <a href="/posts/tags/disease">disease</a>, <a href="/posts/tags/food">food</a>, and <a href="/posts/tags/sick">sick</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>For a 32oz Nalgene Bottle (the standard biggish one) of clean water, the Oral Rehydration Salt quantities are:</p>
+
+<ul>
+  <li>
+    <p>Slightly less than 1/2 teaspoon of Salt (0.43tsp. to be exact)</p>
+  </li>
+  <li>
+    <p>7.5 teaspoons of Sugar</p>
+  </li>
+</ul>
+
+<p>(Personal note: when you’ve made it correctly, it should taste like minusculey-sweet saliva)</p>
+
+<p>Adapted from <a href="http://www.rehydrate.org/solutions/homemade.htm#recipes">Rehydrate.org’s ORS Recipe</a> based on 1 liter of water.</p>
+
+<p>And the wikipedia entry on <a href="http://en.wikipedia.org/wiki/Oral_rehydration_salt">Oral Rehydration Salts (ORS)</a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/01/to-decimate"><p>To “decimate”</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-01-12T00:00:00+00:00" itemprop="datePublished">January 12, 2008</time>
+
+        • Tagged <a href="/posts/tags/etymology">etymology</a> and <a href="/posts/tags/language">language</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>A good <a href="http://www.worldwidewords.org/nl/rgnp.htm">World Wide Words this week</a>. I read it weekly, but of particular interest is language that has to do with numbers. Like <a href="http://en.wikipedia.org/wiki/Decimation_%28Roman_Army%29">decimate</a>, which originally referred to the Roman military practice of preventing mutiny by killing one-tenth of the soldiers (drawn by lots).</p>
+
+<p>World Wide Words takes on its misuse:</p>
+
+<blockquote>
+  <p>It feels right to me when it’s used, as H W Fowler wrote in 1926, of “the destruction in any way of a large proportion of anything reckoned by number”.</p>
+
+  <p>White’s criticism of “terribly decimated” seems fair, because it’s innumerate, as does “incredibly decimated”, from a recent US newspaper report quoting a librarian complaining about a 15% budget cut. It also seems incorrect to use decimate for indivisibles (“Some have set out to decimate the soul of this great country”), to imply complete destruction (“a totally decimated population”), the killing of an individual (“He protects his brother from the thugs intent on physically decimating him”), the destruction of a named fraction (“A single frosty night decimated the fruit by 80%”), or the part of a whole (“disease decimated most of the population”).</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/01/2007-in-review"><p>2007 in Review</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-01-01T00:00:00+00:00" itemprop="datePublished">January 1, 2008</time>
+
+        • Tagged <a href="/posts/tags/navel-gazing">navel gazing</a> and <a href="/posts/tags/review">review</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://www.flickr.com/photos/bensheldon/2145931201/" title="IMG_1321 by bensheldon, on Flickr"> <img src="http://farm3.static.flickr.com/2276/2145931201_03678691e5.jpg" alt="IMG_1321" /> </a></p>
+
+<p>Well, it’s the new year, which is always a great time for navel gazing. So, looking back, here’s some stuff from 2007:</p>
+
+<p><strong>Places I’ve Slept:</strong><br />
+<em>California:</em> <a href="http://www.flickr.com/photos/bensheldon/2070496510/">Poway</a>, <a href="http://www.flickr.com/photos/bensheldon/426070106/">Venice</a>, <a href="http://www.flickr.com/photos/bensheldon/429766613/">Santa Barbara</a>, <a href="http://www.flickr.com/photos/bensheldon/429775877/">Isla Vista</a>, <a href="http://www.flickr.com/photos/bensheldon/437419637/">Sacramento</a>, <a href="http://www.flickr.com/photos/bensheldon/2070448728/">San Francisco</a>, <a href="http://www.flickr.com/photos/bensheldon/437415187/">Sunnyvale</a>;</p>
+
+<p><em>Central:</em> <a href="http://www.flickr.com/photos/bensheldon/901620062/in/set-72157601010905852/">Minneapolis, MN</a>; <a href="http://www.flickr.com/photos/bensheldon/2070618466/">Austin, TX</a>;</p>
+
+<p><em>South-East-ish:</em> <a href="http://www.flickr.com/photos/bensheldon/366290022/">Memphis, TN</a>; <a href="http://www.flickr.com/photos/bensheldon/2069997127">Philadelphia, PN</a>;</p>
+
+<p><em>Northeast:</em> <a href="http://www.flickr.com/photos/bensheldon/686544649/">Lowell, MA;</a> Montpelier, VT; <a href="http://www.flickr.com/photos/bensheldon/2079204822/">Kittery Point, ME</a>; Narragansett, RI; Portsmouth, NH;</p>
+
+<p><em>If-you-want-to-be-anal:</em> Alston, Brighton, Medford;</p>
+
+<p><strong>Best Purchase:</strong> <a href="http://www.flickr.com/photos/bensheldon/2155090907/">new belt</a></p>
+
+<p><strong>Best Gift:</strong> <a href="http://www.flickr.com/photos/bensheldon/2090666181/">new scarf</a> via my <a href="http://www.flickr.com/photos/bensheldon/2090649025/">birthday scarf party</a></p>
+
+<p><strong>Best Book:</strong> Lay of the Land by Richard Ford</p>
+
+<p><strong>Best Movie:</strong> Hawaii, Oslo</p>
+
+<p><strong>Best Album:</strong> At Home with Owen</p>
+
+<p><strong>Best Object:</strong> Zebra F-301 Pen (blue ink)</p>
+
+<p><strong>Best Transportation:</strong> new bike</p>
+
+<p><strong>Best Meal:</strong> Sweet Potato Sandwich and Kukicha Tea from Ula Cafe</p>
+
+<p><strong>Best Social Space:</strong> Delux Cafe</p>
+
+<p><strong>Best Personal Space:</strong> <a href="http://www.flickr.com/photos/bensheldon/1544721958/">Harborwalk at Dorchester Bay</a></p>
+
+<p><strong>Best Achievement:</strong> <a href="http://www.flickr.com/photos/bensheldon/2090647071/">this mouse I caught</a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/12/lolart"><p>lolart</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-12-28T00:00:00+00:00" itemprop="datePublished">December 28, 2007</time>
+
+        • Tagged <a href="/posts/tags/art">art</a>, <a href="/posts/tags/fun">fun</a>, and <a href="/posts/tags/inane">inane</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://mine.icanhascheezburger.com/View.aspx?ucallmeezis128433303032993750.jpg"> <img src="/uploads/2007-12-28-lolart/ucallmeezishmael.jpg" alt="funny pictures" /> </a></p>
+
+<p>Thought I should (tardily) follow up considering my <a href="http://island94.org/articles/nonprofit-technology-sandwich">Nonprofit Technology Sandwich</a> was featured on <a href="http://lolnptech.blogspot.com/2007/08/nonprofit-technology-sandwich-anyone.html">LOLnptech.org</a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/12/medicalization"><p>Medicalization</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-12-27T00:00:00+00:00" itemprop="datePublished">December 27, 2007</time>
+
+        • Tagged <a href="/posts/tags/medicine">medicine</a> and <a href="/posts/tags/psychology">psychology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Interesting article from Ben Goldacre on <a href="http://www.dailymail.co.uk/pages/live/articles/health/healthmain.html?in_article_id=496612&amp;in_page_id=1774">homeopathy.</a> In regard to medicine in general, he makes this point:</p>
+
+<blockquote>
+  <p>Prescribing a pill carries its own risks: it medicalises problems, it can promote the idea that a pill is an appropriate response to a social problem such as shyness or difficulties at work.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/12/understanding-beliefs-and-how-to-change-them"><p>Understanding Beliefs (and how to change them)</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-12-26T00:00:00+00:00" itemprop="datePublished">December 26, 2007</time>
+
+        • Tagged <a href="/posts/tags/beliefs">beliefs</a>, <a href="/posts/tags/communications">communications</a>, and <a href="/posts/tags/psychology">psychology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>It’s the holiday season which seems to make a lot of people think about beliefs. I’m thinking about this great book on my desk entitled <a href="http://www.amazon.com/Communication-Planning-Integrated-Approach-Relations/dp/0761913149">Communication Planning: An Integrated Approach</a> by Sherry Devereaux Ferguson and reading the section on understanding the psychology of audiences (Chapter 7).</p>
+
+<p>Citing social psychologist <a href="http://en.wikipedia.org/wiki/Milton_Rokeach">Milton Rokeach</a> the book outlines five belief types:</p>
+
+<ul>
+  <li>
+    <p><strong>Type A - Worldview beliefs</strong>: These beliefs constitute basic truths: physical (“This is a cat”), social reality (“I live in Boston”), and nature of the self (“I am a man”). These beliefs are nearly impossible to change.</p>
+  </li>
+  <li>
+    <p><strong>Type B - Personal beliefs</strong>: These are ego centered and internally formed. Usually self-evaluations (“I’m intelligent”), they can also be phobias or delusions (“I’m fat”).</p>
+  </li>
+  <li>
+    <p><strong>Type C - Authority beliefs</strong>: These beliefs are formed because of an outside authority, or in opposition to that authority (“I’ll accept that because the president said it” or “I’ll disbelieve that because the president said it”).</p>
+  </li>
+  <li>
+    <p><strong>Type D - Beliefs emanating from authority figures</strong>: These beliefs are formed indirectly by the actions of authority figures (People’s distrust of Richard Nixon led them to distrust the office of the President and of government and politics in general).</p>
+  </li>
+  <li>
+    <p><strong>Type E - Matters of taste</strong>: These are arbitrary or essentially inconsequential opinions. While these beliefs may be defended just as strongly as more central beliefs, individuals will more readily relinquish them them. (“This is the best ice cream”). Examples are product preferences or brand allegiances.</p>
+  </li>
+</ul>
+
+<p><strong>So what?</strong> Most commercial messages concern Type E beliefs and most advertising takes the form of linking Type E beliefs with more <em>core</em> belief types. For example:</p>
+
+<ul>
+  <li>
+    <p><strong>Linking Type E to Type B</strong>: These usually take the form of convincing the individual that use of a product or service will have a personal affect upon them (“Drinking this soda will make you popular” or “If you are athletic, you should use this deodorant”)</p>
+  </li>
+  <li>
+    <p><strong>Linking Type E to Type C</strong>: Connecting matters of taste to an authority is usually the domain of the testimonial or endorsement.</p>
+  </li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/12/detective-nonsense"><p>Detective Nonsense</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-12-22T00:00:00+00:00" itemprop="datePublished">December 22, 2007</time>
+
+        • Tagged <a href="/posts/tags/confessions">confessions</a>, <a href="/posts/tags/crime">crime</a>, <a href="/posts/tags/honesty">honesty</a>, and <a href="/posts/tags/justice">justice</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>Mr. Geberth, the former homicide detective, said the problems with trying to trick murder suspects had more to do with a detective’s need to maintain credibility in the courtroom than with fending off a challenge by defense attorneys. Generally, he said, his advice to detectives is, “You don’t make a false claim of evidence.” Nonetheless, he said, ruses were often necessary during interrogations of murder suspects, who often cling to false accounts or alibis. <strong>“I believe in trickery and deceit unless you are making an innocent person confess,” he said. “Most people who are charged with homicide probably did it.”</strong> But Mr. Saltzburg said detectives and other police officials were sometimes swayed too much by the limited evidence that is available to them and by the belief that the person under suspicion must be guilty. “Even after cases are cleared by DNA, it is not uncommon for a detective to say, ‘I know he did it,’” Mr. Saltzburg said. “They are true believers.”<br />
+So much for a presumption of innocence. Not to mention those statements are complete nonsense together. From a a NY Times article entitled <a href="http://www.nytimes.com/2007/12/23/nyregion/23tankleff.html?_r=1&amp;ref=nyregion&amp;oref=slogin">Detectives’ Interrogation Tricks Under Scrutiny After Court Ruling</a></p>
+</blockquote>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/54" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/56" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

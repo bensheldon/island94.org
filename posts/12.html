@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ppMjlx0ezH0ClmAjekm9LdsBwqaBfbofyQxPfsNThemgY25Adf__1ybFElpLY1U9l23hHCi6H27U4G_bpzFwSQ" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/10/the-sublime"><p>The sublime</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-10-25T16:46:00-07:00" itemprop="datePublished">October 25, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From Susan Casey’s <em>The wave</em>:</p>
+
+<blockquote>
+  <p>Teahupoo, with its timeless power, brought to mind the age-old philosophical quest to distinguish between beauty and its twisted cousin, the sublime: for the merely pretty to graduate to the sublime, terror was required in the mix. “The Alps fill the mind with a kind of agreeable horror,” wrote one seventeenth-century thinker, summing up the concept. And while humans were capable of creating the lovely, the dramatic, the sad, or the inspiring, only nature could produce the sublime. It was a concept both comforting and disturbing: there are many things out there more powerful than we are. No one was more aware of this than the men who’d ridden Teahupoo on this day (except, perhaps, the ones who had fallen on it).</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/10/centering-civic-tech"><p>Centering Civic Tech</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-10-19T18:22:00-07:00" itemprop="datePublished">October 19, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From Cyd Harrell’s excellent <a href="https://cydharrell.com/book/">“A Civic Technoligists Practice Guide”</a>, via a <a href="https://twitter.com/bensheldon/status/1318348423012102144">Twitter convo</a>, reformatted by me:</p>
+
+<blockquote>
+
+  <p>Because its goal is change, civic tech embodies an interesting split between demonstrating and operationalizing the potential of modern tech. I like to call these two branches showing what’s possible and doing what’s necessary. Many projects are a mix of the two, but they require different mindsets.</p>
+
+  <p>“Showing what’s possible” is about speed, prototyping, design, public feedback, and data. These are often web projects because web tools are great for those purposes.</p>
+
+  <p>“Doing what’s necessary,” on the other hand, is about shifting the underlying practices and systems: back-end systems, security, and procurement; hiring and team composition; even shifting budget priorities.”</p>
+
+  <p>[…]</p>
+
+  <p>But our job as civic technologists isn’t to be the hero of the stories we stumble into halfway through; it’s to understand and support the people who have already been in place doing the work, and who want to use tech to make improvements.</p>
+
+</blockquote>
+
+<p>They line up with Code for America’s pillars of “Show what’s possible”, “Help people do it themselves” and “Build a movement” (though the latter is rather more grandiose than <em>understand and support</em>).</p>
+
+<p>As we called these in my previous career, Direct Service, Capacity Building, and <a href="http://putsomegratitudeinyourattitude.com/About.html">Roy Johnson</a> (“Put some gratitude in your attitude!”).</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/10/goodjob-v1-3-web-dashboard-and-full-documentation"><p>GoodJob v1.3: Web dashboard and full documentation</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-10-05T11:24:00-07:00" itemprop="datePublished">October 5, 2020</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> version 1.3 is released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>.</p>
+
+<p>GoodJob’s v1.3 release adds a mountable Web Dashboard and improved README documentation and complete code-level YARD documentation.</p>
+
+<p>Version 1.3’s release comes five weeks after v1.2 and three months after GoodJob’s initial v1.0 release.</p>
+
+<h2 id="shoutouts-">Shoutouts 🙌</h2>
+
+<p>GoodJob has accepted contributions from 9 people total, and currently has 559 stars on Github. The project just passed 150 combined Issues and Pull Requests.</p>
+
+<p>I’m grateful for everyone who has reached out to me on <a href="https://www.rubyonrails.link/">Ruby on Rails Link Slack (@bensheldon)</a> and <a href="https://web.archive.org/web/20200723181116/https://twitter.com/bensheldon">Twitter (@bensheldon)</a></p>
+
+<p>🙏</p>
+
+<h2 id="mountable-web-dashboard">Mountable web dashboard</h2>
+
+<p>GoodJob v1.3 adds a web dashboard for exploring and visualizing job status and queue health.</p>
+
+<p><img src="/uploads/2020-10/good_job-dashboard-mvp.png" alt="GoodJob Dashboard MVP" /></p>
+
+<p>The web dashboard is implemented as an optional Rails::Engine and includes charts and lists of pending jobs.</p>
+
+<p>I expect the web dashboard to be a hot area of ongoing improvement. This initial release contains a minimum functional interface, a chart, and some necessities like keyset pagination. The dashboard is familiar to develop (Rails Controllers, ERB Views and ActiveRecord), and I’ve adopted Bootstrap CSS and Chartist to ease and speed development.</p>
+
+<h2 id="improved-documentation">Improved documentation</h2>
+
+<p>GoodJob’s README has been edited and rewritten for clarity and comprehensiveness, and GoodJob’s implementation code is now thoroughly documented with YARD.</p>
+
+<p>Good documentation is vital for open source projects like GoodJob. I worked with <a href="https://robbrackett.com/">Rob Brackett</a>, who consults on complex software and open source challenges.</p>
+
+<h2 id="upcoming">Upcoming</h2>
+
+<p>In the next release, v1.4, I plan to continue adding views and charts to the web dashboard and improving thread management.</p>
+
+<h2 id="contribute">Contribute</h2>
+
+<p>Code, documentation, and curiosity-based contributions are welcome! Check out the <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request.</p>
+
+<p>I also have a <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a> if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/10/performance-facilitators-not-supervisors"><p>Performance facilitators not supervisors</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-10-02T16:56:00-07:00" itemprop="datePublished">October 2, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Doublespeak from Pro-Publica’s <a href="https://www.propublica.org/article/meet-the-customer-service-reps-for-disney-and-airbnb-who-have-to-pay-to-talk-to-you">“Meet the Customer Service Reps for Disney and Airbnb Who Have to Pay to Talk to You”</a>, via Pluralistic’s <a href="https://pluralistic.net/2020/10/02/chickenized-by-arise/#arise">ongoing chickenization coverage</a>:</p>
+
+<blockquote>
+
+  <p>Arise carefully monitors the language agents use to reinforce that it does not have an employment relationship with them. Stung by lawsuits that claimed Arise had actually employed agents but didn’t pay them fairly, Arise’s legal department has become a kind of word police, one former staffer told ProPublica.</p>
+
+  <p>“You don’t schedule ‘hours,’ you schedule ‘intervals,’” the former staffer said. Agents were not to be addressed as “you,” but “your business.” They were not “working,” they were “servicing.” There were no “supervisors,” only “performance facilitators.” Agents were not “coached.” Rather, their services were “enhanced.”</p>
+
+  <p>Once, an Arise manager, testifying in an arbitration hearing, was asked about meetings that performance facilitators have with agents. “They’re not meetings,” he said. “They’re informational sessions, or hosts.”</p>
+
+  <p>In an internal announcement in 2012, Arise listed “new terminology” for eight terms to avoid “the misconception” that agents are Arise employees. The corporate link between Arise and the agents went from being called Virtual Services Corporations to Independent Businesses. Service Fees became Service Revenue. Central Operations became Support Operations.</p>
+
+  <p>Arise seems particularly unable to settle on a term for the agents. Early on, the company called each a CyberAgent. Later came Arise Certified Professional. In 2012, that was changed to Client Support Professional. Nowadays, Arise’s website calls agents “onshore brand advocates or Service Partners.”</p>
+
+  <p>“Arise-speak,” as one opposing attorney called it in legal proceedings, could be a wonder to behold. Client Support Professionals (CSPs) would work with Quality Assurance Performance Facilitators (QAPFs) in a Performance Enhancement Session (PES), or they might reach out to Chat Performance Facilitators or Escalation Performance Facilitators, and none would be an Arise employee, all would be independent contractors.</p>
+
+</blockquote>
+
+<p>And a disturbing exchange:</p>
+
+<blockquote>
+
+  <p>Rice said he worked out of his bedroom, in his mother’s home, helping customers for Arise’s clients, including Barnes &amp; Noble, Disney and Sears. While testifying, Rice referred to performance facilitators in the Arise network as supervisors. This elicited a challenge from a lawyer for Arise.</p>
+
+  <p>“Where’d you get that term from, supervisor?” the lawyer asked.</p>
+
+  <p>“Growing up in America,” Rice said. “That’s the term people use for people that are above you.”</p>
+
+  <p>“… You never referred to them as supervisors while you were providing services, did you?”</p>
+
+  <p>“Well, yeah,” Rice said.</p>
+
+  <p>“You did? To who?”</p>
+
+  <p>“Well, obviously I’m on the phone with a customer, I’m not going to say, ‘OK, let me go check my chat performance facilitator.’ Usually I just said, you know, ‘Let me just talk to my supervisor.’”</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/09/respect-our-vendors"><p>Respect our vendors</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-09-22T07:57:00-07:00" itemprop="datePublished">September 22, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2020-09/costco_mission.jpg" alt="Costco Values" /></p>
+
+<p>“Respect our vendors” is foreign enough to me in software engineering that I  took this picture of Costco’s values. The opposite of respect, perhaps “contempt for vendors and tools,” seems endemic.</p>
+
+<p>At one job, memorably, a coworker was fired over it. Our engineering team had a shared email list used when setting up root accounts on various 3rd party services, including our primary infrastructure vendor for whom we were one of their largest customers.</p>
+
+<p>The infrastructure vendor sent a Net-Promoter Score-like survey to our shared email list. Receiving this kind of marketing junk was frequent enough that I ignored it, but my colleague filled it out:</p>
+
+<blockquote>
+  <p>On a scale of 1-10, how likely are you to recommend our service?: “1”</p>
+
+  <p>Why?: “I hate you.”</p>
+</blockquote>
+
+<p>This survey response led to the vendor’s account executive making a frantic and fearful call to our leadership team. The blowback of that led to my coworkers’ termination. (This was not my colleague’s first warning; my team and I were also targets of their trolling and bullying.)</p>
+
+<p>This is a funny story to reflect on. And it’s terribly toxic the multitude of things engineers will despise, wear on their sleeve, and eagerly share at the slightest opportunity, myself included.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/08/goodjob-v1-2-multithreaded-queue-isolation-and-listen-notify"><p>GoodJob v1.2: Multithreaded queue isolation and LISTEN/NOTIFY</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-08-19T20:51:00-07:00" itemprop="datePublished">August 19, 2020</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> version 1.2 has been released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>.</p>
+
+<p>GoodJob’s v1.2 release adds  multithreaded queue isolation for easier congestion management, and usage of Postgres LISTEN/NOTIFY to greatly reduce queue latency.</p>
+
+<p>Version 1.2 comes out 2 weeks after GoodJob v1.1, and 5 weeks after GoodJob’s initial v1.0 release.</p>
+
+<h2 id="multithreaded-queue-isolation">Multithreaded queue isolation</h2>
+
+<p>GoodJob v1.2 adds multithreaded queue isolation for easier congestion management. Queue isolation ensures that slow, long-running jobs do not block the execution of higher priority jobs.</p>
+
+<p>Achieving queue isolation has always been possible by running multiple processes, but GoodJob v1.2 makes it easy to configure multiple isolated thread-pools within a single process.</p>
+
+<p>For example, to create a pool of 2 threads working from the <code>mice</code> queue, and 1 thread working from the <code>elephants</code> queue:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>good_job <span class="nt">--queues</span><span class="o">=</span><span class="s2">"mice:2;elephants:1"</span>
+</code></pre></div></div>
+
+<p>Or via an environment variable:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ GOOD_JOB_QUEUS</span><span class="o">=</span><span class="s2">"mice:2;elephants:1"</span> bundle <span class="nb">exec </span>good_job
+</code></pre></div></div>
+
+<p>Additional examples and syntax:</p>
+
+<ul>
+  <li><code>--queues=*:2;mice,sparrows:1</code> will create two thread-pools, one running jobs on any queue, and another dedicated to <code>mice</code> and <code>sparrows</code> queued jobs.</li>
+  <li><code>--queues=-elephants,whales:2;elephants,whales:1</code> will create two thread-pools, one running jobs from any queue <em>except</em> the <code>elephants</code> or <code>whales</code>, and another dedicated to <code>elephants</code> and <code>whales</code> queued jobs.</li>
+</ul>
+
+<h2 id="listennotify">LISTEN/NOTIFY</h2>
+
+<p>GoodJob now uses Postgres LISTEN/NOTIFY to push newly enqueued jobs for immediate execution.  LISTEN/NOTIFY greatly reduces queue latency, the time between when a job is enqueued and execution begins.</p>
+
+<p>LISTEN/NOTIFY works alongside GoodJob’s polling mechanism.  Together, jobs queued for immediate execution (<code>ExampleJob.perform_later</code>) are executed immediately, while future scheduled jobs (<code>ExampleJob.set(wait: 1.hour).perform_later</code>) are executed at (or near) their set time.</p>
+
+<h2 id="upcoming">Upcoming</h2>
+
+<p>In the next release, v1.3, I plan to include a simple web dashboard for inspecting job execution performance, and focus on improving GoodJob’s documentation.</p>
+
+<h2 id="contribute">Contribute</h2>
+
+<p>Code, documentation, and curiousity-based contributions are welcome! Check out the <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request.</p>
+
+<p>I’ve also set up a <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a> if you’re able to support me and GoodJob monetarily. It helps me stay in touch and send you project updates too.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/08/goodjob-v1-1-async-and-improved-documentation"><p>GoodJob v1.1: async and improved documentation</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-08-09T20:49:00-07:00" itemprop="datePublished">August 9, 2020</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> version 1.1 has been released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>.</p>
+
+<p>GoodJob’s v1.1 release contains a new, economical execution mode called “async” to execute jobs within the webserver process with the same reliability as a separate job worker process.</p>
+
+<p>This release also contains more in-depth documentation based on feedback and questions I’ve received since the v1.0 release.</p>
+
+<p>Version 1.1 comes out 3 weeks after GoodJob v1.0. The initial release of GoodJob was featured on <a href="https://rubyweekly.com/issues/511">Ruby Weekly</a>, <a href="https://web.archive.org/web/20200810221115/https://afreshcup.com/home/2020/07/30/double-shot-2651">A Fresh Cup</a></p>
+
+<p>, <a href="https://ruby.libhunt.com/newsletter/219">Awesome Ruby</a>, and was as high as #8 on <a href="https://news.ycombinator.com/item?id=23928891">Hacker News</a>. GoodJob has since received nearly <a href="https://github.com/bensheldon/good_job">500 stars on Github</a>.</p>
+
+<h2 id="async-mode">Async mode</h2>
+<p>In addition to the <code>$ good_job</code> executable, GoodJob now can execute jobs inside the webserver process itself. For light workloads and simple applications, combining web and worker into a single process is very economical, especially when running on Heroku’s free or hobby plans.</p>
+
+<p>GoodJob’s async execution is compatible with Puma, in multithreaded (<code>RAILS_MAX_THREADS</code>), multi-process (<code>WEB_CONCURRENCY</code>), and memory efficient <code>preload_app!</code> configurations. GoodJob is built with Concurrent Ruby which offers excellent thread and process-forking safety guarantees. Read the <a href="https://github.com/bensheldon/good_job#executing-jobs-async--in-process">GoodJob async documentation</a> for more details.</p>
+
+<p>On a personal level, I’m very excited to have this feature in GoodJob. Async execution was <em>the</em> compelling reason I had previously adopted Que, another Postgres-based backend, in multiple projects and I was heartbroken when <a href="https://github.com/que-rb/que/issues/238#issuecomment-480648845">Que dropped support for async execution</a>.</p>
+
+<h2 id="improved-documentation">Improved documentation</h2>
+<p>Since GoodJob was released 3 weeks ago, the documentation has been significantly expanded. It contains more code and examples for ensuring reliability and handling job errors. I’ve had dozens of people ask questions through <a href="https://github.com/bensheldon/good_job/issues">Github Issues</a> and <a href="https://www.rubyonrails.link">Ruby on Rails Link Slack</a>.</p>
+
+<h2 id="upcoming">Upcoming</h2>
+<p>In the next release, v1.2, I plan to simplify the creation of multiple dedicated threadpools within a single process. The goal is to provide an economical solution to congestion when the execution of a number of slow, low-priority jobs (elephants) are being performed and there are no execution resources available for newly introduced fast, high priority jobs (mice) until the currently executing elephants complete.</p>
+
+<p>A proposed configuration, for example:</p>
+
+<p><code>--queues=mice:2,elephants:4</code></p>
+
+<p>…would allocate 2 dedicated threads for jobs enqueued on the mice queue, and 4 threads for the elephants queue. Learn more in the <a href="https://github.com/bensheldon/good_job/issues/45">feature’s Github Issue</a>.</p>
+
+<h2 id="contribute">Contribute</h2>
+<p>GoodJob continues to be enjoyable to develop and build upon Rails’ ActiveJob and Concurrent Ruby. Contributions are welcomed: check out the <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/07/introducing-goodjob-1-0"><p>Introducing GoodJob 1.0, a new Postgres-based, multithreaded, ActiveJob backend for Ruby on Rails</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-07-20T14:12:00-07:00" itemprop="datePublished">July 20, 2020</time>
+
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> is a new Postgres-based, multithreaded, second-generation ActiveJob backend for Ruby on Rails.</p>
+
+<p><strong>Inspired by Delayed::Job and Que, <a href="https://github.com/bensheldon/good_job">GoodJob</a> is designed for maximum compatibility with Ruby on Rails, ActiveJob, and Postgres to be simple and performant for most workloads.</strong></p>
+<ul>
+  <li><strong>Designed for ActiveJob.</strong> Complete support for async, queues, delays, priorities, timeouts, and retries with near-zero configuration.</li>
+  <li><strong>Built for Rails.</strong> Fully adopts Ruby on Rails threading and code execution guidelines with Concurrent::Ruby.</li>
+  <li><strong>Backed by Postgres.</strong> Relies upon Postgres integrity and session-level Advisory Locks to provide run-once safety and stay within the limits of schema.rb.</li>
+  <li><strong>For most workloads.</strong> Targets full-stack teams, economy-minded solo developers, and applications that enqueue less than 1-million jobs/day.</li>
+</ul>
+
+<p><a href="https://github.com/bensheldon/good_job">Visit Github for instructions on adding GoodJob to your Rails application</a> , or read on for the story behind GoodJob.</p>
+
+<h3 id="a-second-generation-activejob-backend">A “Second-generation” ActiveJob backend</h3>
+
+<p>Why “second-generation*”? GoodJob is designed from the beginning to be an ActiveJob-backend in a conventional Ruby on Rails application.</p>
+
+<p>First-generation ActiveJob backends, like Delayed::Job and Que, all predate ActiveJob and support non-Rails applications. First-generation ActiveJob backends are significantly more complex than GoodJob because they separately maintain a lot of functionality that comes with a conventional Rails installation (ActiveRecord, ActiveSupport, Concurrent::Ruby) and re-implement job lifecycle hooks so they can work apart from ActiveJob. I’ve observed that this can make them slow to keep up with major Rails changes. An impetus for GoodJob was reviewing the number of outages, blocked upgrades, and forks of first-generation backends I’ve managed during both major and minor Rails upgrades over the years.</p>
+
+<p>As a second-generation ActiveJob backend, GoodJob can draft off of all the advances and solved problems of ActiveJob and Ruby on Rails. For example <code>rescue_from</code>, <code>retry_on</code>, <code>discard_on</code> are all implemented already by ActiveJob.</p>
+
+<p>GoodJob is significantly thinner than first-generation backends, and over the long run hopefully easier to maintain and keep up with changes to Ruby on Rails. For example, GoodJob is currently ~600 lines of code, whereas Que is ~1,200 lines, and Delayed::Job is ~2,300 lines (2,000 for <code>delayed_job</code>, and an additional 300 for <code>delayed_job_active_record</code>).</p>
+
+<p><em>*“Second generation” was coined for me by Daniel Lopez on <a href="https://rubyonrails-link.slack.com/archives/C0GB80GRE/p1594860261410500">Ruby on Rails Link Slack</a>.</em></p>
+
+<h3 id="postgres-based">Postgres-based</h3>
+
+<p>I love Postgres. Postgres offers a lot of features, has safety and integrity guarantees, and simply running fewer services (skipping Redis) means less complexity in development and production.</p>
+
+<p>GoodJob builds atop ActiveRecord. It’s numbingly boring, in a good way.</p>
+
+<p>GoodJob uses session-level Advisory Locks to provide run-once guarantees with relatively little performance implications for most workloads.</p>
+
+<p>GoodJob’s session-level Advisory Lock implementation is perhaps the only “novel” aspect, that comes from my experience orchestrating complex web-driving of government systems (“the browser is the API”) for <a href="https://codeforamerica.org/">Code for America</a>. GoodJob uses a Common Table Expression (CTE) to find, lock, and return the next workable job in a single query. Session-level Advisory Locks will gracefully relinquish that lock if interrupted, without having to maintain a transaction for the duration of the job.</p>
+
+<h3 id="multi-threaded">Multi-threaded</h3>
+
+<p>GoodJob uses <a href="https://github.com/ruby-concurrency/concurrent-ruby">Concurrent::Ruby</a>  to scale and manage jobs across multiple threads. “<em>Concurrent Ruby makes one of the strongest thread-safety guarantees of any Ruby concurrency library”.</em>  Ruby on Rails has adopted Concurrent Ruby, and GoodJob follows its lead and <a href="https://guides.rubyonrails.org/threading_and_code_execution.html">thread-execution and safety guidelines</a>.</p>
+
+<p>In building GoodJob I leaned heavily on my positive experiences running Que, another multithreaded backend, on Heroku. Threads are great for balancing simplicity, economy, and performance for typical IO-bound workloads like heavy database queries, API requests, Selenium web-driving, or sending emails.</p>
+
+<p>A feature that won’t be in GoodJob 1.0, but I hope to implement soon, is the ability to run the GoodJob scheduler inside the webserver process (“async mode”). This was a feature  <a href="https://github.com/que-rb/que/issues/238#issuecomment-480648845">withdrawn from Que</a> , but I believe can be safely implemented with Concurrent Ruby. An async mode would offer even greater economy, for example, in Heroku’s constrained environment.</p>
+
+<h3 id="goodjob-is-right-for-me">GoodJob is right for me</h3>
+
+<p>GoodJob’s design is based directly on my experience in 2-pizza, full-stack teams, and as an economy-minded solo developer. GoodJob already powers  <a href="https://dayoftheshirt.com/">Day of the Shirt</a> and <a href="https://brompt.com/">Brompt</a> performing tens-of-thousands of real-world jobs a day.</p>
+
+<h3 id="is-goodjob-right-for-you">Is GoodJob right for you?</h3>
+
+<p><a href="https://github.com/bensheldon/good_job">Try it out</a>  and let me know.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/07/retail-politics"><p>Retail politics</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-07-12T19:16:00-07:00" itemprop="datePublished">July 12, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I will quote anything that reinforces the necessity of showing up. From SF Weekly’s <a href="https://archives.sfweekly.com/sanfrancisco/the-many-faces-of-leland-yee-a-politicians-calculated-rise-and-dramatic-fall/Content?oid=2949247&amp;showFullText=true">“The Many Faces of Leland Yee: A Politician’s Calculated Rise and Dramatic Fall”</a> :</p>
+
+<blockquote>
+
+  <p>Upon reflection, Yee’s principles may be ever-shifting and his policies may be decorative, but he found a way around this: by being omnipresent.</p>
+
+  <p>He knew the name of every neighborhood stalwart from every neighborhood club; he cleaned hundreds of plates at hundreds of Chinatown banquets; he sat through countless community meetings, gathering hundreds of converts at a time: “In local politics,” says one longtime player, “a cup of coffee and a handshake can win you a friend for life.”</p>
+
+  <p>Yee showed up at your kid’s bar mitzvah or high school graduation; he showed up at your community gathering; he showed up at your neighborhood bazaar — in short, he showed up. His staff returned your phone call. And he read your letters: A former associate says Yee never failed to leave the office at the end of a long day toting a thick stack of mail that he made a point of poring through. In insider jargon, this is known as “retail politics.” Few worked harder or did it better.</p>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2020/07/engineering-operations-is-not-the-same-as-development"><p>Engineering Operations is not the same as Development</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2020-07-12T18:42:00-07:00" itemprop="datePublished">July 12, 2020</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>I wrote this memo several years ago when I joined GetCalFresh as the first outside engineering hire. An early focus of mine was helping the team move more confidently into an operational mindset: this memo reframes the teams existing values that drive development as values that also support operations. This also overlaps greatly with a talk I gave at Code for America’s 2018 Summit <a href="https://speakerdeck.com/bensheldon/keeping-users-at-the-forefront-while-scaling-services">“Keeping Users at the Forefront While Scaling Services”</a>.</em></p>
+
+<p>Over the past month GetCalFresh has tripled the number of food stamp applications we’re processing. We often talk about “build the right thing”, but I wanted to focus on what it means to “operate a thing safely”.</p>
+
+<h2 id="understanding-operational-failure">Understanding operational failure</h2>
+
+<p>GetCalFresh collects foodstamp applicant’s information via a series of webforms, and then submits that applicant information to the county to begin the foodstamp eligibility process.</p>
+
+<p>The website and webforms being offline or unavailable is <strong>bad</strong>.</p>
+
+<p>Failing to submit application information to the county in a timely manner is <strong>awful</strong>. Foodstamp benefits are prorated to the day that the client’s application arrives <em>at the county</em> before 5pm. Failing to deliver a clients application in a timely manner literally means less food on the table for a hungry family.</p>
+
+<p>Our system is operationally “safe” when it ensures that client information is transmitted to the county in a timely manner. Our system experiences an operational “failure” when information is not submitted in a timely manner. Our system has operational “risk” that degrades safety and is the potential for an operational failure.</p>
+
+<h2 id="risks-in-complicated-complex-and-chaotic-systems">Risks in complicated, complex and chaotic systems</h2>
+
+<p>Keeping a website online is complicated, but can be addressed with good practice. We use boring technologies: Ruby on Rails, SQL, AWS, that scale and respond predictably and are part of a mature ecosystem of monitoring tools and practice.</p>
+
+<p>Submitting client information to the county is complex and sometimes chaotic. Because county systems often have no API, we have a queue of jobworkers that use Selenium Webdriver to click through and type into a “virtualized” headless Firefox browser. Automating this leads to emergent and novel problems. Client data must be transformed into a series of scripted actions to be performed across multiple county webpages, with dynamic forms and data fields. The county websites may be offline or degraded, and occasionally their structure and content changes. Additional client documents may need to be faxed, emailed or uploaded to the county, and those systems can be degraded as well.</p>
+
+<p>Our applicants themselves can cause operational risks. As we target new populations and demographics (e.g. seniors, students, military families, homeless, low-literacy or non-English-speaking), we discover new usability issues and challenges in collecting and transforming data from our webforms into county systems. For example, different county systems have different optional and required fields and expect names and addresses to by sanitized and tokenized differently.</p>
+
+<p>In this system, we cannot reliably (or affordably, with time and resources) predict how this system will respond as it scales to new users or integrates with new counties.</p>
+
+<h2 id="creating-safety-with-staff-and-time">Creating safety with staff and time</h2>
+
+<p>We ensure that foodstamp applications are submitted in a timely manner through existing staff and dedicated time. Because we cannot reliably predict how our system scales or responds to changes, we have systems that alerts us to the risk of operational failure and engineers who are available to respond, remediate, and harden against similar circumstances in the future.</p>
+
+<p>Every day, engineers block out 4pm to 5pm as “Apps &amp; Docs”. We use this time to review any food stamp applications that failed our automated submission process to ensure the applications are submitted to the county by the daily deadline. Problems are documented and potential improvements are added to or reprioritized within the team’s backlog. We create safety by sometimes reaching out to clients for clarification or correction. In the event of an operational failure (we are not able to submit their application that day), we try to make things right; sometimes offering a gift card the client can use to purchase food.</p>
+
+<p>Examples of problems identified during our hour of Apps &amp; Docs:</p>
+
+<ul>
+  <li>Services not allowing multiple parallel sessions using the same credentials.</li>
+  <li>Inconsistent address tokenization for college campuses, military bases, PO boxes, and Private Mail Boxes</li>
+  <li>Frequency of people uploading iexplore.exe and notes.app instead of their intended document</li>
+  <li>Forms that do not allow non-ASCII characters</li>
+  <li>Forever optimizing headless Firefox, writing flexible and reliable Selenium scripts, and managing an increasing fleet of specialized jobworkers</li>
+</ul>
+
+<h2 id="trade-operational-risk-for-speed-of-learning">Trade operational risk for speed of learning</h2>
+<p>We can’t predict the exact operational issues we’ll experience during a given day, but by scheduling and protecting one hour per day for operational tasks, we can deliberately trade risk for flexibility. Flexibility comes because we can accept small risks by introducing incomplete or manual-intervention-required workflows into the system. We do not have to build for every edge case or automate every action. We can develop features faster and create more opportunities to learn with real users in a real operational environment. This is an operationalization of our engineering principle “don’t argue, ship”.</p>
+
+<h2 id="takeaways">Takeaways</h2>
+
+<ul>
+  <li><strong>Define operational failure</strong>: Leaving failure ambiguous can lead to fire-drills on every bad experience and exception, even if they may not have a material impact on business process or metrics. Defining service level objectives helps everyone self-organize, prioritize and understand the impact of their work.</li>
+  <li><strong>Operationalize operations</strong>: Unexpected things happen all the time, but merely saying “high priority interrupt” does not expose the actual cost of response and remediation. Blocking out explicit times and spaces helps measure, and thus manage, work that might otherwise be overlooked.</li>
+  <li><strong>Protect Developers’ time only so much</strong>: “Any improvement not made at the constraint is an illusion.” Approaching automation as an iterative and forever-incomplete process enables our team to move quickly in optimizing the system as a whole. When manual remediation is at risk of overflowing our time block, we dedicate time to greater automation; when we have perceived sufficient tolerances, we can push product features faster by manually tasking edge-cases.</li>
+  <li><strong>Operations is a practice</strong>: Product Design and Development principles and practice provide a strong foundation and an experienced team can greatly reduce the risk of technical and market failure… but they can’t eliminate it. Operations is a field and practice that can reinforce and elevate Product Design and Development.</li>
+</ul>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/11" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/13" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

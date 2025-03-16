@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="2qJ09JOVlYENgI24NO7DddOpgwIK53nQA0o8OwKGy__cUjkj-3SmKynT_8EFxCtln8WguKMg3KEephyeZuQ-Xw" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/05/spring-arrives"><p>Spring arrives</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-05-09T00:00:00+00:00" itemprop="datePublished">May 9, 2007</time>
+
+        • Tagged <a href="/posts/tags/boston">Boston</a>, <a href="/posts/tags/flowers">flowers</a>, <a href="/posts/tags/season">season</a>, <a href="/posts/tags/spring">spring</a>, and <a href="/posts/tags/washington-dc">Washington DC</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://www.flickr.com/photos/bensheldon/448506773/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/218/448506773_55049ea73c.jpg" alt="CIMG2509.JPG" /> </a></p>
+
+<p>Spring came a lot earlier to Washington, DC than it did to New England, but the mercury is topping 80 today in Boston. Above, I’m at the Cherry Blossom Festival in Washington, DC last month. Below is the one of the multitudinous dandelions that have sprung up around UMass Boston.</p>
+
+<p><a href="http://www.flickr.com/photos/bensheldon/489864761/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/194/489864761_ffcbfa0a22.jpg" alt="Dandelions at UMass Boston" /> </a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/04/new-england-construction"><p>New England Construction</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-04-29T00:00:00+00:00" itemprop="datePublished">April 29, 2007</time>
+
+        • Tagged <a href="/posts/tags/architecture">architecture</a>, <a href="/posts/tags/detective-story">detective story</a>, and <a href="/posts/tags/fiction">fiction</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>Wrote this a while back and it’s been floating around my drafts pile. The story is a little light, but mostly I wrote it to remember all the arcane details my landlord’s handyman told me when he came to rehang our doors.</em></p>
+
+<p>Monday morning; my girl was out of town on business. Her business. I was watching the Price is Right: dolts with nothing better to do with their time either. One knocked at my door.</p>
+
+<p>I wiped the spent food refuse and old files towards the far end of my desk. The desk is a large one and sometimes that’s needed. Today it wasn’t.</p>
+
+<p>I called it, her, in.</p>
+
+<p>I’m no bunny humper but fur coats make little sense to me I don’t need the socio-economic, market differentiation explanation. Here’s an old woman, probably afraid to watch the evening news, yet wears the clothing equivalent of a sausage factory.</p>
+
+<p>I operate my business on a sliding scale. I slid it to the right. I’ve been known to do pro-bono, but I didn’t think she’d need it. She didn’t.</p>
+
+<p>“I’ve lost something.”</p>
+
+<p>I keep my list of services vague. Boston’s a tough town and you never know when a treed cat will pay the heating bill.</p>
+
+<p>“A ring, it’s somewhere in my house.”</p>
+
+<p>“I’m sorry, Miss—”</p>
+
+<p>“Capshaw, Rosemary Capshaw.”</p>
+
+<p>“I don’t do house cleaning. Perhaps you have an assistant?” Or a psychic. But from the looks of her she probably did; on retainer. A phrenologist too. I gave the scale another shove.</p>
+
+<p>“No, it’s in my house. Somewhere in the walls.”</p>
+
+<p>“You need a carpenter.” And a shrink. But she’d already have one of those too; maybe should up her dose.</p>
+
+<p>“I had one but he couldn’t find it. He tore my house apart and still couldn’t find it. Then he gave me your number.”</p>
+
+<p>I have to wonder about the people that recommend me. I probably photographed his wife cheating. Maybe roughed the guy up too. Value-addeds make customers for life.</p>
+
+<p>“I’ll see what I can do.” My calendar, if I had a calendar, was empty; also why I don’t have a calendar.</p>
+
+<p>Rosemary drove. I could have asked to bring along an elephant and it would have fit comfortably in the backseat; might have scuffed up the leather though.</p>
+
+<p>Her house was large, but that was to be expected considering she needed somewhere to park the car. It was an old carriage house with a mansard roof. That sort of thing may have fooled the French, who taxed by the floor, but Yankee assayers are more clever. They call it historical architecture and increase the value. But I don’t think property taxes keep Rosemary up at night.</p>
+
+<p>She had a nice place. Selling it would lead to quite the nice South Florida retirement. Nothing like my own apartment. Atlantic city has nothing on the Boston rental market: the odds are horrible and the house always wins. I rent the second floor of a triple-decker. Unless I experience a “life altering” event, I’m guaranteed to be out on my ass: carting my belongings down the street when the place goes condo, or in an ambulance when the owner firebombs it.</p>
+
+<p>She showed me to the attic. Quite a carpenter she found; the place was ripped to shreds. To be expected if the guy recommended me. The floorboards along an entire wall was torn apart, down to the studs.</p>
+
+<p>While we were driving over she explained the situation: priceless ring, slip of the hand, crack in the floor.</p>
+
+<p>“So you’re sure this is exactly where it slipped.”</p>
+
+<p>“Completely. I was right here.”</p>
+
+<p>“What’s beneath this?”</p>
+
+<p>“My parlor.”</p>
+
+<p>The wood in this place was amazing, and I don’t just mean the floor. Moldings, doorframes, inset cabinetry was all perfect. Most times it’s easier just gut them rather than refinish. Replace priceless mahogany and cherry with spruce or pine. Spruce takes a good coat of paint but not much else. As for pine, when I was a baby I teethed on our furniture. Wouldn’t happen here though. Somebody probably sanded their family a new car working on this place and that car would still be out of my price range.</p>
+
+<p>In the parlor the baseboards were completely torn up too, with obvious belief that the ring would have fallen down through the wall. No insulation: typical. Coldest winters in the country and nobody thinks to use a little fiberglass.</p>
+
+<p>I knocked the wall. Carpenter was a dolt. New England houses are always interesting, and he apparently didn’t know this one’s particular peculiarity:</p>
+
+<p>Hurricane brace; a solid beam running diagonally across the wall. From modern architectural standing such a thing is half over-engineering, half-diminished standards: buildings these days are mostly plastic wrap. That it comes from 3M rather than Stretch-Tite doesn’t make much of a difference.</p>
+
+<p>I measured out the dimensions in my head, matching up where she dropped her ring in the attic above.</p>
+
+<p>“Do you mind?”</p>
+
+<p>Plaster walls: it takes a jackhammer to drive a nail into, but any flat, blunt object will bust them wide open. Like a fist.</p>
+
+<p>There are few parts of my CV I enjoy more than my extensive knowledge of and experience in effectively hitting things. The wall gave way in a burst of gypsum and lead paint. Between the mangled wooden strips of plaster-backing, I spotted a glint of something.</p>
+
+<p>I reached through the hole, gave my sliding scale one last tap, and retrieved her ring. Needless to say, she was satisfied. And cleaning up is never a part of my job description.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/04/introducing-panlexiconcom"><p>Introducing Panlexicon.com</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-04-14T00:00:00+00:00" itemprop="datePublished">April 14, 2007</time>
+
+        • Tagged <a href="/posts/tags/development">development</a>, <a href="/posts/tags/launch">launch</a>, <a href="/posts/tags/navigation">navigation</a>, <a href="/posts/tags/portfolio">portfolio</a>, <a href="/posts/tags/synonyms">synonyms</a>, <a href="/posts/tags/thesaurus">thesaurus</a>, <a href="/posts/tags/webdesign">webdesign</a>, and <a href="/posts/tags/website">website</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://www.flickr.com/photos/bensheldon/459184378/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/178/459184378_b3538d860c.jpg" alt="Panlexicon.com" /> </a></p>
+
+<p>I’m very proud to be officially launching ** <a href="http://panlexicon.com">Panlexicon.com</a>: a unique thesaurus<strong>. Using intuitive **“tag clouds”</strong> to represent synonyms, <a href="http://panlexicon.com">Panlexicon</a> makes discovering the word you want quick, easy and explorational.</p>
+
+<p>Panlexicon’s current functions allow you to:</p>
+
+<ul>
+  <li>
+    <p><strong>First</strong>, perform a lookup on a single word and receive a weighted cloud of synonyms.</p>
+  </li>
+  <li>
+    <p><strong>Second</strong>, view synonyms that overlap across multiple words either by entering the words manually, or clicking on words already in the cloud to further refine your search.</p>
+  </li>
+</ul>
+
+<p><strong>For example</strong>, performing a search on “ <a href="http://panlexicon.com/?query=cool">cool</a>” provides a wide variety of synonyms from “chilly”, to “unimpassioned”, to “groovy”. Refining the search using <a href="http://panlexicon.com/?query=cool,nifty">cool <em>and</em> nifty</a> provides more refined synonyms.</p>
+
+<p>By varying the size of the typeface, like tag clouds do, the most relevant terms <strong>pop out at you</strong> allowing you to quickly scan through large lists of words. Also, because the algorithm is a little fuzzy, you may run across related words that provide better context.</p>
+
+<p>Panlexicon was developed jointly with <a href="http://circuitous.org">Rebecca</a> who originally proposed the project and did much of the research on thesauri and helped develop the word relevance algorithms.</p>
+
+<p>The word lists come from the <a href="http://www.gutenberg.org/etext/3202">Moby Thesaurus</a> as part of <a href="http://www.gutenberg.org/">Project Gutenburg’s</a> library of free electronic texts. <a href="http://drupal.org">Drupal</a> is used as a simple framework for core functions such as database abstraction and page callbacks and to simplify future feature developments. Google AdSense is activated on the site, but that is due more to curiosity over the interplay of contextual advertising and the word lists than on any current revenue model.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/04/nonprofit-communications-20"><p>Nonprofit Communications 2.0</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-04-13T00:00:00+00:00" itemprop="datePublished">April 13, 2007</time>
+
+        • Tagged <a href="/posts/tags/07ntc">07ntc</a>, <a href="/posts/tags/communications">communications</a>, <a href="/posts/tags/conference">conference</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/nptech">nptech</a>, <a href="/posts/tags/nten">nten</a>, <a href="/posts/tags/strategy">strategy</a>, and <a href="/posts/tags/video">video</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Last week I attended NTEN’s 2007 <a href="http://nten.org/ntc">Nonprofit Technology Conference</a> and sat in on a wonderful session entitled <strong>Nonprofit Communications 2.0: Seven Steps to Transform Your Organization.</strong> Led by <a href="http://www.cctv.org/index.php?SiteAlias=cctv&amp;PageAlias=CCTV_Staff#LG">Lauren-Glenn Davitian</a> of the <a href="http://www.cctv.org/">CCTV Center for Media and Democracy</a>, the session provided a strong framework for nonprofits to better communicate in an increasingly networked society.</p>
+
+<p>I am also very lucky to serve with Lauren-Glenn on the editorial board of the <a href="http://communitymediareview.org/">Community Media Review</a>.</p>
+
+<p>The video itself is approximately 1 hour, 24 minutes long and worth every second, but I included my notes from the session below.</p>
+
+<blockquote>
+  <p>Community building talent is the single most important resource in the modern world.</p>
+</blockquote>
+
+<p>Peter Drucker</p>
+
+<h3 id="how-to-engage-and-mobilize-members">How to engage and mobilize members</h3>
+
+<p>A Communications framework for thinking about how organizational objectives are met through interaction. The correlating Development framework is in parenthesis.</p>
+
+<ol>
+  <li><strong>Welcome</strong> (Prospect)</li>
+  <li><strong>Educate</strong> (Cultivation)</li>
+  <li><strong>Ask</strong> (Involvement)</li>
+  <li><strong>Thank</strong> (Stewardship)</li>
+</ol>
+
+<h3 id="the-seven-steps">The Seven Steps</h3>
+
+<ol>
+  <li><strong>Assessment</strong>: Defining your goal (What behavior are you trying to change in undertaking a communications strategy?), audience (an explicit, targeted “who” and their values), evaluating your infrastructure (orthodoxies, structure, time, leadership)</li>
+  <li><strong>Awareness</strong>: Start by searching <a href="http://nten.org">NTEN</a>, <a href="http://techsoup.org">TechSoup</a>, <a href="http://www.idealware.org/">Idealware</a>, etc. (Link Research)</li>
+  <li><strong>Training</strong>: A discipline of doing things. How are stories told, infrastructure built and actions communicated to regular people?</li>
+  <li><strong>Content Production</strong>: “The currency of the new world”</li>
+  <li><strong>Technical Support</strong>: An example: how to know when to build and when to buy</li>
+  <li><strong>Partnerships</strong>: Who is going to stand up for you?</li>
+  <li><strong>Planning</strong>: What are the components that revolve around your goal?</li>
+</ol>
+
+<h3 id="other-links">Other Links</h3>
+
+<ul>
+  <li><a href="https://secure.spinproject.org/modinput4.php?modin=56">Strategic Communications Plan Generator</a> from The SPIN Project</li>
+  <li><a href="http://www.npowerseattle.org/education/resources/communications.htm">Tech Savvy Communications Toolkit</a> from NPower Seattle</li>
+  <li>Storytelling: <a href="http://www.agoodmanonline.com/">Andy Goodman</a>, <a href="http://sethgodin.typepad.com/">Seth Godin</a>, <a href="http://www.gilbert.org/">The Gilbert Center</a></li>
+</ul>
+
+<p><em>I shot this video with a <a href="http://www.amazon.com/Casio-Exilim-EX-S600-Digital-Optical/dp/B000E158D4">Casio EX-S600</a>, which shoots full-frame (640 x 480) MPEG-4 video. With a two gigabyte SD Card it can shoot approximately an hour and a half of video at medium quality before its battery dies. The Casio’s AVI wrapper is incompatible with iMovie (or any Quicktime decoder), so I first used <a href="http://www.techspansion.com/visualhub/">VisualHub</a> to repackage the video as an MP4 before importing into iMovie to add titles. I exported from iMovie as DV and then converted that with VisualHub into MPEG-4. Compressed and at quarter-frame (320 x 240) the entire video was 105 MB. This time I uploaded to Google Video since <a href="http://blip.tv">Blip.tv</a> stalled out.</em></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/04/meetamericorps-still-a-success"><p>MeetAmeriCorps still a success</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-04-02T00:00:00+00:00" itemprop="datePublished">April 2, 2007</time>
+
+        • Tagged <a href="/posts/tags/americorps">AmeriCorps</a>, <a href="/posts/tags/meetamericorps">meetamericorps</a>, <a href="/posts/tags/nptech">nptech</a>, <a href="/posts/tags/social-networking">social networking</a>, and <a href="/posts/tags/webdesign">webdesign</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://www.flickr.com/photos/bensheldon/444085635/" title="Photo Sharing"> <img src="http://farm1.static.flickr.com/235/444085635_15a71d43c8.jpg" alt="The Faces of MeetAmeriCorps.com" /> </a></p>
+
+<p>I just got back from some extended travel in California where I met with some fellow AmeriCorps*VISTAs and, among other things, discussed how we could get our <a href="http://meetamericorps.com">AmeriCorps social networking website</a> growing even faster. Right now the site has over 300 registered users, which is pretty good for a six month old baby.</p>
+
+<p>Most importantly, we’re working on stepping up our outreach. Unlike what some of the hype may tell you, social networking website don’t build themselves. If you build it, they <em>won’t</em> come, at least not if you don’t tell anyone about.</p>
+
+<p><strong>Outreach is key</strong>, and unfortunately it usually means a change of strategy. We’re building our networks online because it’s cheap real estate, but on the internet you can’t shout very far and most people are deaf. If you’re trying to get in front of someone’s face (or next to their ear), putting something on the internet is probably the worst way to go about it.</p>
+
+<p><strong>Physical objects are best</strong>, so I’m in the process of designing a postcard to mail out to AmeriCorps host organizations.</p>
+
+<p>Also, because MeetAmeriCorps.com already has so many <a href="http://meetamericorps.com/map">members across the country</a>, we can have them lend a hand too in outreach activities. That’s always a benefit of working with AmeriCorps: we love to help.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/04/copyright-and-the-nineteenth-century"><p>Copyright and the Nineteenth Century</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-04-02T00:00:00+00:00" itemprop="datePublished">April 2, 2007</time>
+
+        • Tagged <a href="/posts/tags/analysis">analysis</a>, <a href="/posts/tags/berkman-center">Berkman Center</a>, <a href="/posts/tags/copyright">copyright</a>, <a href="/posts/tags/history">history</a>, <a href="/posts/tags/law">law</a>, and <a href="/posts/tags/mark-twain">Mark Twain</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>I’ve had these notes kicking around my desktop for a few weeks and just got around to typing them up into a cohesive post.</em></p>
+
+<p>I’ve an avid participant of Harvard Law School’s <a href="http://cyber.law.harvard.edu/home/">Berkman Center</a>’s <a href="http://cyber.law.harvard.edu/home/events">Tuesday Luncheon Series</a>. On February 27, author <a href="http://www.matthewpearl.com/">Matthew Pearl</a> gave a great talk on copyright in the nineteenth century; I have reordered and summarized the content, though you can <a href="http://blogs.law.harvard.edu/mediaberkman/2007/02/28/the-literary-vision-of-copyright/">listen to the full audio</a>. Through analysis of the writings and motivations of numerous 19th century authors, publishers and tradesman, Matthew Pearl carried an interesting theme: the intellectual property rhetoric of pirates and thievery was pure artifice until the rhetoric itself was codified as law, or still in some cases, not.</p>
+
+<p>The mid-ninteenth century was a heady time for American publishers and a frustrating one for authors. The United States, while having domestic copyright law protecting the literary rights of American authors, had no International Copyright provisions. The works of foreign authors–British especially, because they were English language–could be printed or altered without royalty or the permission of their writers. The works of <a href="http://en.wikipedia.org/wiki/Charles_Dickens">Charles Dickens</a>, <a href="http://en.wikipedia.org/wiki/Matthew_Arnold"> or </a> <a href="http://en.wikipedia.org/wiki/Anthony_Trollope">Anthony Trollope</a>, could be freely printed in America, and they were. Publishing agents would eagerly wait at the docks of Boston for transatlantic clippers to arrive with the newest novels to then reprint. The publisher <a href="http://en.wikipedia.org/wiki/Harper_&amp;_Brothers">Harper &amp; Brothers</a> <a href="http://en.wikipedia.org/wiki/Anthony_Trollope">, today HarperCollins, was the most notorious and proud of their unapproved additions.</a></p>
+
+<p>The free-spirited atmosphere created by a lack of international copyright affected both foreign and domestic authors. Foreign authors did not receive royalties on books printed in America; the content was also sometimes modified from the author’s original text. Domestic books, by such authors as Mark Twain, Walt Whitman and James Fennimore Cooper, sold less because the prices were undercut by non-royalty paying foreign novels.</p>
+
+<p>At this time the authors often banded together in copyright clubs or leagues to protest. <a href="http://en.wikipedia.org/wiki/James_Russell_Lowell">James Russell Lowell</a>, noted poet and president of American Copyright League penned this motto:</p>
+
+<blockquote>
+  <p>In vain we call old notions fudge,</p>
+
+  <p>And bend our conscience to our dealing;</p>
+
+  <p>The Ten Commandments will not budge,</p>
+
+  <p>And stealing will continue stealing.</p>
+
+</blockquote>
+
+<p>This motto, in the same vein as many other pro-copyright writings, is interesting because of the themes it calls up. Notably, it evokes a traditionalist past implying that there was a time when literary property was respected. The motto also refers explicitly to stealing, yet at the time, there did not exist a legal framework of infringement. Indeed, courts at the time stated that there existed no common-law for the protection of literary works</p>
+
+<p>In the same vein, <a href="http://en.wikipedia.org/wiki/Rudyard_Kipling">Rudyard Kipling</a> published the Rhyme of the Three Captains, a long and complicated poem literalizing the theft of one of his books by Harper. Kipling moralizes the episode with the serious line “<em>Does he steel with tears when he buccaneers? For God then why does he steal?</em>” One reviewer even goes so far as to call them “book-aneers”.</p>
+
+<p>Other works contained similar ideas of constant, instantaneous and expected crime. Edgar Allen Poe’s Purloined Letter concerns a crime that is completely in public view. Charles Dicken’s Martin Chuzzlewit is about the “false commerce” of America.</p>
+
+<p>But authors, while protecting their writings, had a tightrope wire to walk with themes very American: democracy, class, culture and slavery.</p>
+
+<p>Royalty-free novels made possible, for the first time, “railway station” editions that could cheaply purchased by the general public. In the past, only library quality editions could be purchased by those who could afford their high costs. Restoring high prices these could viewed as keeping knowledge or betterment from the masses. Additionally, the growth of the publishing industry was fueled by cheap foreign novels, and to be against them placed authors as elitists above the working class typesetters and bookbinders.</p>
+
+<p>At this time there did not fully exist the concept of the sanctity of a creator’s work. English books were often Americanized, removing British language or themes and replacing them with more American counterparts more easily understandable or acceptable to American palates. Twain’s A Yankee in King Arthur’s Court is the archetypal American meddling with high British romance: invading, changing and ultimately destroying it.</p>
+
+<p>Disallowing the modification of works was even viewed as imposing a slavery of words. When <a href="http://en.wikipedia.org/wiki/Harriet_Beecher_Stowe">Harriet Beecher Stowe</a> went to court to prevent an unauthorized German translation of Uncle Tom’s Cabin, she was named a hypocrite by some in calling for the emancipation of the negro yet shackling her novel.</p>
+
+<p>Charles Dickens, on his two visits to America, was viewed with much animosity by the American public. On these visits he called for an international copyright but was derided as only seeking greater profits for himself.</p>
+
+<p>Indeed, authors went to great lengths to not fall too heavily on either side. Walt Whitman’s Leaves of Grass contains a very measured call for stronger protections. Mark Twain, in a confusing episode before the U.S. Senate, gave strange or contradictory answers. James Fennimore Cooper would outright lie when asked about having signed petitions.</p>
+
+<p>Despite all of this, there was created by authors a wholly successful fictional narrative superimposed on an actual legal regime. Today’s concepts—and laws—of copyright infringement, piracy, robbery and thievery are based upon these artificial metaphors and themes. At the time no laws existed to make the actions of publishers such as Harpers illegal, but rhetoric, poems and stories were created until a legal framework could codify them.</p>
+
+<p>To learn from these episodes Matthew Pearl makes this important point:</p>
+
+<p>It is easy for us to forget that at one point there existed the need to craft the rhetoric of “a shadow copyright regime”.</p>
+
+<p>Today, it’s difficult for us to notice how we adjust the rhetoric, for better or worse, in the popular conceptions and legal framework of ownership and copyright protection. And when taking into account concepts like <a href="http://en.wikipedia.org/wiki/Fair_use">Fair Use</a>, noticing that conceptions may be just rhetoric.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/03/arguments-ive-heard-against-open-source"><p>Arguments I’ve heard against Open Source</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-03-22T00:00:00+00:00" itemprop="datePublished">March 22, 2007</time>
+
+        • Tagged <a href="/posts/tags/complaints">complaints</a>, <a href="/posts/tags/open-source">Open Source</a>, and <a href="/posts/tags/oss">oss</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>When planning a dynamic website, using <a href="http://nonprofiteye.blogspot.com/2006/11/non-profit-open-source.html">Open Source Software</a> (OSS) can make a lot of sense. I think there is enough information <a href="http://technorati.com/search/open+source+is+awesome" title="technorati search: 'open source is awesome'">out there</a> about why OSS is the cat’s meow, so here are a few reasons I’ve hear from people that <em>don’t</em> want to use Open Source Software for their web development projects:</p>
+
+<ul>
+  <li>
+    <p><strong>“I don’t know anything about it”</strong> is a common refrain I hear from larger institutions. This usually translates as “I don’t know <em>anyone</em> that does it”. Oftentimes larger organizations will have established relationships—historical, contractual or personal—with proprietary developers.</p>
+  </li>
+  <li>
+    <p><strong>“All the examples are really awful”</strong> is a statement I have to agree with, but fortunately there is an explanation. Open Source CMS software like <a href="http://drupal.org">Drupal</a> or <a href="http://wordpress.org">Wordpress</a> is free and relatively easy to use. Thus these systems have an enormous number of people using them; people with no design or development experience. Therefore there exists a very small signal-to-noise ratio of beautiful and usable websites to poorly designed or out-of-the-box examples. This means you’re much more likely to run across the latter.</p>
+  </li>
+  <li>
+    <p><strong>“I hear it’s insecure”</strong> is a common and legitimate concern whether you’re using open source software, buying a proprietary system, or building from the ground up. Unfortunately, the explanation for this common refrain is very similar to the aesthetic complaint: because the install base of these systems is so large, there exist many more instances of improper or unsafe configurations or failures to properly update software.</p>
+  </li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/03/ways-and-water"><p>Ways and Water</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-03-15T00:00:00+00:00" itemprop="datePublished">March 15, 2007</time>
+
+        • Tagged <a href="/posts/tags/beach">beach</a>, <a href="/posts/tags/driving">driving</a>, <a href="/posts/tags/encinitas">encinitas</a>, <a href="/posts/tags/freeway">freeway</a>, <a href="/posts/tags/highway">highway</a>, <a href="/posts/tags/i-5">i-5</a>, <a href="/posts/tags/san-diego">San Diego</a>, <a href="/posts/tags/surfing">surfing</a>, <a href="/posts/tags/timelapse">timelapse</a>, and <a href="/posts/tags/water">water</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://blip.tv/file/get/Bensheldon-WaysAndWater899.flv"> <img src="http://blip.tv/file/get/Bensheldon-WaysAndWater899.flv.jpg" alt="" title="Click To Play" /> </a><br />
+<a href="http://blip.tv/file/get/Bensheldon-WaysAndWater899.flv">Click To Play</a></p>
+
+<p>Drove downtown to eat lunch with an old high school friend. Then jammed my camera between the dash and the windshield and drove up I-5 to Swami’s, my old surfing spot in Encinitas.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/03/airport-vehicles"><p>Airport Vehicles</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-03-14T00:00:00+00:00" itemprop="datePublished">March 14, 2007</time>
+
+        • Tagged <a href="/posts/tags/dc">DC</a>, <a href="/posts/tags/dulles">dulles</a>, <a href="/posts/tags/paul">paul</a>, <a href="/posts/tags/video">video</a>, and <a href="/posts/tags/washingtondc">washingtonDC</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://blip.tv/file/get/Bensheldon-AirportVehicles233.flv"> <img src="http://blip.tv/file/get/Bensheldon-AirportVehicles233.flv.jpg" alt="" title="Click To Play" /> </a><br />
+<a href="http://blip.tv/file/get/Bensheldon-AirportVehicles233.flv">Click To Play</a></p>
+
+<p>I had a two hour layover at Dulles Airport. Before I left, I was showing off my camera to my boss . It shoots full frame (640 x 480) mpeg-4 video; that’s over an hour of video on a two gigabyte card. My boss told me to make lots of videos.</p>
+
+<p>I shot and edited this entirely while waiting for my connecting flight. I waited till my final destination to upload it though.</p>
+
+<p>The video quality is a little poor from multiple compressions. I edited it in iMovie and had to export and reimport the video in order to timelapse it to the speed I wanted.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/03/but-its-just-a-logo"><p>But it’s just a logo</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-03-07T00:00:00+00:00" itemprop="datePublished">March 7, 2007</time>
+
+        • Tagged <a href="/posts/tags/design">design</a>, <a href="/posts/tags/identity">identity</a>, <a href="/posts/tags/logo">logo</a>, and <a href="/posts/tags/nonprofit">nonprofit</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’m currently helping out a small group of <a href="http://www.storycenter.org/index1.html">Digital Storytellers</a> in the process of designing and launching a new community website. We put the project out as a Request for Proposals (RFP) and are now working with a webdeveloper. As a webdeveloper myself, I’ve learned a lot about the process from the other side.</p>
+
+<p>For all of my development projects I’ve worked with people I know or on projects in which I have some stake or significant interest. Because of this, my process has usually been us all sitting around the kitchen table drawing pen and paper workflows and mockups till the wee hours. I’ve never formally responded to an RFP and usually invest myself in mapping out the who, what and whys before even getting into the hows.</p>
+
+<p>With that said, I was surprised to see that so many of the development proposals included a logo design process, usually as the first milestone. We are an ad-hoc group across several organizations without an existing identity, so I understand the need for a logo. Of course, most groups may already have an identity so the logo design itself may not be needed, but the thought and process that goes into it is.</p>
+
+<p>Without getting into <a href="http://en.wikipedia.org/wiki/Logo">why logos are important</a></p>
+
+<p>I tried to condense what we are getting out of the <em>process</em> :</p>
+
+<ul>
+  <li><strong>A better definition of the project</strong>: For an iconic logo (as we’re receiving) it should somehow reflect a meaning or message about the project. An outside developer may not have a complete picture of what the client hopes to achieve. The client may not have fully defined the audience or objectives, even to themselves.</li>
+  <li><strong>Discovering if the developer and client’s design tastes match</strong>: It’s always good to know that people are on the same page, especially for a relatively simple thing like a logo. If the developer is returning <a href="http://yh.yayhooray.com/thread/90661/yh-collab:-redesign-famous-logos-in-web-2-0-format?page=1">vogue</a> and the client is looking for something more timeless, it’s good to determine and remedy this early.</li>
+  <li><strong>Testing the decision making process</strong>: If decisions are made by more than one person (as they usually are), knowing from the beginning how the group will interact is important. Will decisions be made by consensus or will one person ultimately have executive power? Who is participating and giving feedback and who needs a little nudge?</li>
+</ul>
+
+<p>A good developer should drop a finished design in your lap without input along the way. But concentrating on something simple like a logo (or color-scheme or stylesheet) as an early step can help better define the project and how participants interact around it.</p>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/61" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/63" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

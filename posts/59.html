@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="eTZOTWHpiOraMa6uc3I4P_DBIZvJZGX5WkniPMeD4TV_xgOaCQi7QP5i3NdCWNAvvK0CIWCjwIhHpcKZo-EUlQ" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/10/puddingstone"><p>Puddingstone</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-10-16T00:00:00+00:00" itemprop="datePublished">October 16, 2007</time>
+
+        • Tagged <a href="/posts/tags/boston">Boston</a>, <a href="/posts/tags/fun">fun</a>, <a href="/posts/tags/history">history</a>, <a href="/posts/tags/poetry">poetry</a>, and <a href="/posts/tags/rocks">rocks</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I happen to be particularly fond of Puddingstone, the conglomerate rock found around Boston. It’s also the official rock of Massachusetts; specifically <a href="http://en.wikipedia.org/wiki/Roxbury_puddingstone">Roxbury Puddingstone</a>.</p>
+
+<p>It’s a nifty looking rock, or rather a collection of different rocks within a sedimentary rock.</p>
+
+<p>It also has some fantastical elements:</p>
+
+<p>Oliver Wendell Holmes wrote a poem entitled <a href="http://www.ibiblio.org/eldritch/owh/pudding.html">The Dorchester Giant</a> that describes Boston’s puddingstone being the result of the abandoned children of a giant flinging plum pudding about:</p>
+
+<blockquote>
+  <p>What are those lone ones doing now,</p>
+
+  <p>The wife and the children sad?</p>
+
+  <p>Oh, they are in a terrible rout,</p>
+
+  <p>Screaming, and throwing their pudding about,</p>
+
+  <p>Acting as they were mad.</p>
+
+  <p>They flung it over to Roxbury hills,</p>
+
+  <p>They flung it over the plain,</p>
+
+  <p>And all over Milton and Dorchester too</p>
+
+  <p>Great lumps of pudding the giants threw;</p>
+
+  <p>They tumbled as thick as rain.</p>
+</blockquote>
+
+<p>Puddingstone is also to be imbued with magical and protective powers. <a href="http://en.wikipedia.org/wiki/Hertfordshire_puddingstone">Herfordshire Puddingstone</a> was used to cover the top of witch’s coffin to prevent her to escape in death.</p>
+
+<p>**Update: **Here’s the whole poem:</p>
+
+<blockquote>
+  <p>**The Dorchester Giant</p>
+
+  <p>By Oliver Wendell Holmes (1830)</p>
+</blockquote>
+
+<p>**</p>
+
+<blockquote>
+  <p>There was a giant in time of old,</p>
+
+  <p>A mighty one was he;</p>
+
+  <p>He had a wife, but she was a scold,</p>
+
+  <p>So he kept her shut in his mammoth fold;</p>
+
+  <p>And he had children three.</p>
+
+  <p>It happened to be an election day,</p>
+
+  <p>And the giants were choosing a king;</p>
+
+  <p>The people were not democrats then,</p>
+
+  <p>They did not talk of the rights of men,</p>
+
+  <p>And all that sort of thing.</p>
+
+  <p>Then the giant took his children three,</p>
+
+  <p>And fastened them in the pen;</p>
+
+  <p>The children roared; quoth the giant, “Be still!”</p>
+
+  <p>And Dorchester Heights and Milton Hill</p>
+
+  <p>Rolled back the sound again.</p>
+
+  <p>Then he brought them a pudding stuffed with plums,</p>
+
+  <p>As big as the State-House dome;</p>
+
+  <p>Quoth he, “There’s something for you to eat;</p>
+
+  <p>So stop your mouths with your ‘lection treat,</p>
+
+  <p>And wait till your dad comes home.”</p>
+
+  <p>So the giant pulled him a chestnut stout,</p>
+
+  <p>And whittled the boughs away;</p>
+
+  <p>The boys and their mother set up a shout.</p>
+
+  <p>Said he, “You’re in, and you can’t get out,</p>
+
+  <p>Bellow as loud as you may.”</p>
+
+  <p>Off he went, and he growled a tune</p>
+
+  <p>As he strode the fields along</p>
+
+  <p>‘Tis said a buffalo fainted away,</p>
+
+  <p>And fell as cold as a lump of clay,</p>
+
+  <p>When he heard the giant’s song.</p>
+
+  <p>But whether the story’s true or not,</p>
+
+  <p>It isn’t for me to show;</p>
+
+  <p>There’s many a thing that’s twice as queer</p>
+
+  <p>In somebody’s lectures that we hear,</p>
+
+  <p>And those are true, you know.</p>
+
+  <p>. . . . . .</p>
+
+  <p>What are those lone ones doing now,</p>
+
+  <p>The wife and the children sad?</p>
+
+  <p>Oh, they are in a terrible rout,</p>
+
+  <p>Screaming, and throwing their pudding about,</p>
+
+  <p>Acting as they were mad.</p>
+
+  <p>They flung it over to Roxbury hills,</p>
+
+  <p>They flung it over the plain,</p>
+
+  <p>And all over Milton and Dorchester too</p>
+
+  <p>Great lumps of pudding the giants threw;</p>
+
+  <p>They tumbled as thick as rain.</p>
+
+  <p>. . . . .</p>
+
+  <p>Giant and mammoth have passed away,</p>
+
+  <p>For ages have floated by;</p>
+
+  <p>The suet is hard as a marrow-bone,</p>
+
+  <p>And every plum is turned to a stone,</p>
+
+  <p>But there the puddings lie.</p>
+
+  <p>And if, some pleasant afternoon,</p>
+
+  <p>You’ll ask me out to ride,</p>
+
+  <p>The whole of the story I will tell,</p>
+
+  <p>And you shall see where the puddings fell,</p>
+
+  <p>And pay for the punch beside.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/10/google-relevance"><p>Google Relevance</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-10-16T00:00:00+00:00" itemprop="datePublished">October 16, 2007</time>
+
+        • Tagged <a href="/posts/tags/advice">advice</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, and <a href="/posts/tags/search">search</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>On Slashdot today was an <a href="http://slashdot.org/article.pl?sid=07/10/16/135209">entry</a> about <a href="http://www.meangene.com/google/design_for_google.html">Google Search if it was designed for Google</a>. Basically redesigning the page for a higher pagerank.</p>
+
+<p>Fun, but the interesting thing was a <a href="http://slashdot.org/comments.pl?sid=329457&amp;cid=20998511">comment</a> from the comments:</p>
+
+<blockquote>
+  <p>Should read: What if Google was a useless site…</p>
+
+  <p>…and had to design for Google?</p>
+
+  <p>Lets see… counter examples… how about searching Google for the word “shipping”. What do you know, UPS and Fedex are #1 and #2, and their front pages aren’t a mess of useless, Google-pleasing crap. Maybe because they are real businesses and aren’t pandering some direct ship junk or get rich quick scheme.</p>
+
+</blockquote>
+
+<p>Makes sense, and is the basis for what I tell people who are concerned about SEO disproportionately to having a useful and relevant website: concentrate on having a good service and a useful website first.</p>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/10/woody-allen-assignment"><p>Woody Allen Assignment</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-10-15T00:00:00+00:00" itemprop="datePublished">October 15, 2007</time>
+
+        • Tagged <a href="/posts/tags/academic">academic</a>, <a href="/posts/tags/art">art</a>, <a href="/posts/tags/criticism">criticism</a>, and <a href="/posts/tags/irony">irony</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Today I was helping a work-study student down the hall from my office on a film studies essay. Her assignment was to analyze what critics had to say on Woody Allen, specifically whether his films were comedies or dramas.</p>
+
+<p>She had only read one of three critics ( <a href="http://people.bu.edu/rcarney/carncult/woody.shtml">Carney</a>) but it was interesting to map out with her what her finished assignment would look like; she was (as was typical of my undergraduate experience) unsure of what the final product would look like, other than a page count (12-15). I gave her my best idea I could of what I would expect:</p>
+
+<p>Coming up with a thesis, even as simple as “Many critics disagree as to whether Woody Allen’s films are comedic or dramatic.”</p>
+
+<p>Then deconstruct and explain those elements in a logical fashion:</p>
+
+<ol>
+  <li>Who is Woody Allen, what are his films and why do we care enough to write 12-15 pages on what other people think of him.</li>
+  <li>Who are the said critics, what are their backgrounds and how may that affect their opinions (which we still aren’t sure we care about)?</li>
+  <li>What defines a comedy or drama? Can they agree on that?(nope)</li>
+  <li>What are they using to apply these definitions to? (the scenes). Describe and deconstruct.</li>
+  <li>Restate what is now obvious (the thesis)</li>
+  <li>Conclude with why all this is important? —this was my response to her confusion with the teacher asking for a personal reflection</li>
+</ol>
+
+<p>I thought it was interesting how that one critic strongly seems to use fantasy (I only scanned the first few pages) to define a comedy. And that Woody Allen is masterful at creating squirmy, deep situations, and ending them prematurely before any sort of conclusion can be made (the non-dramatic part).</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/10/pancake-recipe"><p>Pancake Recipe</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-10-14T00:00:00+00:00" itemprop="datePublished">October 14, 2007</time>
+
+        • Tagged <a href="/posts/tags/breakfast">breakfast</a>, <a href="/posts/tags/food">food</a>, and <a href="/posts/tags/recipe">recipe</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <ul>
+  <li>1-1/2 c. corn meal</li>
+  <li>1 c. flour</li>
+  <li>1 tsp. baking soda</li>
+  <li>1 tsp. baking powder</li>
+  <li>2 eggs (optional: separate and beat egg white until stiff)</li>
+  <li>1/3 c. oil</li>
+  <li>2 c. milk</li>
+  <li>~1-2 tsp. vinegar</li>
+</ul>
+
+<p>via <a href="http://circuitous.org">Rebecca</a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/who-is-using-drupal"><p>Who is using Drupal?</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-26T00:00:00+00:00" itemprop="datePublished">September 26, 2007</time>
+
+        • Tagged <a href="/posts/tags/drupal">Drupal</a>, <a href="/posts/tags/examples">examples</a>, and <a href="/posts/tags/webdesign">webdesign</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Always interesting to see who is using Drupal for their website:</p>
+
+<ul>
+  <li><a href="http://www.jbs.org">John Birch Society</a></li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/latin-transit"><p>Latin Transit</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-24T00:00:00+00:00" itemprop="datePublished">September 24, 2007</time>
+
+        • Tagged <a href="/posts/tags/language">language</a>, <a href="/posts/tags/latin">latin</a>, <a href="/posts/tags/quote">quote</a>, and <a href="/posts/tags/speech">speech</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p><em>Sic transit gloria mundi</em> Thus passes the glory of the world<br />
+Noticed in The Sportswriter by Richard Ford (p. 284)</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/opinion-on-nonprofits"><p>Opinion on Nonprofits</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-17T00:00:00+00:00" itemprop="datePublished">September 17, 2007</time>
+
+        • Tagged <a href="/posts/tags/conference">conference</a>, <a href="/posts/tags/keynote">keynote</a>, and <a href="/posts/tags/nonprofits">nonprofits</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Giving the keynote at last weekend’s Craigslist Foundation’s Nonprofit Bootcamp in New York, was Nancy Lublin, CEO and Chief Old Person of Do Something and founder of Dress for Success.</p>
+
+<p>She gave us her <strong>Top Ten List of things she hates about nonprofits</strong>:</p>
+
+<ol>
+  <li>Being told “Be more like a for-profit”. In response: “I wish you would act more like you had the soul of a nonprofit.”</li>
+  <li>The people who say that. In response to the “venture philanthropists”: “I’d like you to behave like an ATM with legs.</li>
+  <li>My grandfather thinks he can find me at home in the middle of the day.</li>
+  <li>The way you people dress: flannel, cotton turtlenecks, socks with sandals</li>
+  <li>Redundancy. There are no market forces to force collaboration: every cosmetic corporation has a breast cancer organization.</li>
+  <li>Fundraising dinners: it’s always salmon.</li>
+  <li>Used Computers. If it’s not good enough for them, why should it be for us?</li>
+  <li>Direct Mail: antiquated, wastes time, money, trees.</li>
+  <li>The standard business model: “We do good work. Give us money”. In response: “Monetize your core competency”. You should hope to put yourself out of business.</li>
+  <li>Cute names: Do you think you’ll raise more money if your name rhymes?</li>
+</ol>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/an-important-distinction"><p>An important distinction</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-17T00:00:00+00:00" itemprop="datePublished">September 17, 2007</time>
+
+        • Tagged <a href="/posts/tags/advertising">advertising</a>, <a href="/posts/tags/affirmation">affirmation</a>, and <a href="/posts/tags/mail">mail</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>Congratulations are in order. You’ve earned an important distinction – a Card that reflects your achievements and perfectly complements your life. A Card designed to reward you and bring you the extra services and privileges you require.<br />
+From an American Express Rewards Plus Gold Card promo letter. Glad I can have my life affirmed via direct mail. Apparently my life doesn’t mean enough for Platinum. Sigh.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/politics-of-fear"><p>Politics of Fear</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-11T00:00:00+00:00" itemprop="datePublished">September 11, 2007</time>
+
+        • Tagged <a href="/posts/tags/fear">fear</a>, <a href="/posts/tags/history">history</a>, <a href="/posts/tags/politics">politics</a>, and <a href="/posts/tags/quote">quote</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>There are so many overlapping assumptions and statements in this congressman’s statement it’s amazing. It’s also amazing how 40 years of history inures you to something viciously contested by minds great and small.</p>
+
+<blockquote>
+  <p>On September 21st [1964], Congressman Donald C. Bruce of Indiana lashed out at the Daisy and Ice Cream ads at a Republican Ward dinner. He suggested that the spots aided Soviet political goals by “repeating as fact a Communist-sponsored lie which for years has been Kremlin-directed propaganda aimed at neutralizing the American will to resist the Communist program for world conquest by promoting fear of ‘the bomb.’”</p>
+
+  <p>William Bernbach himself defended the Daisy spot in no uncertain terms to the New York Times in October of 1964:</p>
+
+  <p><em>“The little girl commercial was deplored on absolutely erroneous grounds. The central theme of this campaign—whether you like it or not—is nuclear responsibility. Perhaps that theme is not a tasteful one; there is no way to make death pleasant.”</em></p>
+
+  <p>The divisiveness of the ad seems understandable considering the <a href="https://island94.org/node/148">studies of mortality awareness</a>.</p>
+
+  <p>from CONELRAD’s history of Lyndon Johnson’s atomic responsibility, anti-Goldwater <a href="http://www.conelrad.com/daisy/daisy3.php">Daisy Ad</a>. (via <a href="http://www.boingboing.net/2007/09/11/history-of-the-infam.html">BoingBoing</a>)</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/drupal-wysiwyg-editors"><p>Drupal WYSIWYG Editors</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-08T00:00:00+00:00" itemprop="datePublished">September 8, 2007</time>
+
+        • Tagged <a href="/posts/tags/drupal">Drupal</a>, <a href="/posts/tags/geeking">geeking</a>, and <a href="/posts/tags/modules">modules</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’m partial to the following WYSIWYG editors for Drupal:</p>
+
+<ul>
+  <li><a href="http://drupal.org/project/widgeditor">WidgEditor</a> - stupid simple</li>
+  <li><a href="http://drupal.org/project/tinymce">TinyMCE</a> - way complicated powerful</li>
+</ul>
+
+<p><em>But</em> neither of them work well enough for me to want to use them. The trade-off for using these is that it’s easy to make pretty text, but if you ever need to manually edit, it’s incredibly painful. The biggest problem is that they don’t make new lines for paragraph breaks, smashing everything together into one huge, ugly block. And since Drupal has a nice, built-in filter for creating paragraph elements, it’s redundant (and infuriating).</p>
+
+<p>The only markup you need is bold, emphasis, links, pictures and a way to turn it off. Wordpress seems to get it.</p>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/58" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/60" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

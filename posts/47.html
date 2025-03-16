@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1my2hreEyQUwgXYD35CTzmDD7FWkkI3EQ_FEXAV9di3QnPtR32X6rxTSBHruunveLK_P7w1XKLVeHWT5YR-DjQ" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/01/american-commissar-my-family-archive-project"><p>American Commissar: my family archive project</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-01-25T00:00:00+00:00" itemprop="datePublished">January 25, 2009</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://www.flickr.com/photos/bensheldon/3227588090/" title="Sandor Voros by bensheldon, on Flickr"> <img src="http://farm4.static.flickr.com/3093/3227588090_f83a1a7b6e.jpg" alt="Sandor Voros" /> </a></p>
+
+<p>It’s been about 3 years since I started and I’m excited to finally be rolling out a digital version of my late grandfather’s autobiography, <em>American Commissar</em>. The book follows my grandfather from Hungary to America as an immigrant in the 1920s; his entrance to the communist party and their activities during the 1920s and 30s; his wartime experiences serving with the Abraham Lincoln Brigade in the Spanish Civil War; and his frustration and disillusionment with the international Soviet communist movement. The book is human, funny, and—my grandfather being an accomplished playwright—well-paced with memorable scenes and stories. Seriously.</p>
+
+<p>I will be posting one chapter from the book each week—there are 60 total plus an epilogue—on a blog specially set up for the purpose: <a href="http://americancommissar.wordpress.com">http://americancommissar.wordpress.com</a></p>
+
+<p>While I would not characterize the past 3 years as “steady progress” towards my goal of fully digitizing the book, I’m really happy to be entering the finale. The book itself is nearly 500 pages—which I have been scanning, converting to text (OCR) and proof-reading against the original text. Published in 1961, my family is pretty sure the book has entered the <a href="http://en.wikipedia.org/wiki/Public_domain">Public Domain</a>—my mom and I have researched the laws (yuck), as well as contacting the original publisher and Adelphia University, who maintains his archive.  When I’m finished I’ll be submitting the entirety to <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenberg</a>.</p>
+
+<p>In addition to my own personal interest in the work, I think the book has enduring lessons. As a 2nd generation American citizen, the experience of confused immersion and material poverty is so distant; as is the experience of the early-20th century, which few history books expose from such unique points of view. Fighting against the Fascists during the Spanish Civil War, my grandfather would today have been classified as an “unlawful combatant” or terrorist; yet at the time was cheered both locally and abroad. Most enduringly, I think his view of community organizing and his experience with the American Communist Party at the time is profound: the radical populism of the American Communist Party was one of the few movements actively advocating for the social services we take for granted today like Medicare, Social Security and unemployment insurance. As my grandfather argues, it was these evolutionary reforms that protected the American way of life (enduring freedom and opportunities) from Soviet style revolution—a movement that at its end my grandfather became disillusioned with and he worked the rest of his life to distance himself from.</p>
+
+<p>While the book is a harsh critique of the Communist Party, I think my grandfather’s hope, optimism, and well-intentioned desire for positive change—topical concepts for today—are the book’s strongest themes; though I admit I am of a much different generation than both my parents and my grandfather’s contemporaries.</p>
+
+<p>So I hope you will subscribe to the blog and read my grandfather’s book at <a href="http://americancommissar.wordpress.com">http://americancommissar.wordpress.com</a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/01/obama-painting"><p>Obama Painting</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-01-22T00:00:00+00:00" itemprop="datePublished">January 22, 2009</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2009-01-22-Obama-Painting/picture-3.png" alt="Obama Painting" title="Obama Painting" /></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/01/using-distinctions-to-create-meaning"><p>Using distinctions to create meaning</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-01-14T00:00:00+00:00" itemprop="datePublished">January 14, 2009</time>
+
+        • Tagged <a href="/posts/tags/cleaving">cleaving</a>, <a href="/posts/tags/language">language</a>, <a href="/posts/tags/meaning">meaning</a>, and <a href="/posts/tags/semantings">semantings</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>For Christmas, my friend <a href="http://verdesmoke.com">Danielle</a> bought me the book, <a href="http://www.amazon.com/Tree-Knowledge-Humberto-R-Maturana/dp/0877736421?tag=particculturf-20"><em>The Tree of Knowledge: The Biological Roots of Human Understanding</em></a>.  It’s getting a little long in the tooth near page 150, but I really like how they go about building up their argument.  Specifically, how they define <em>Destinctions</em>.</p>
+
+<p>I’ve been accused in the past (by my own mom, for one) of being semantic.  Well, this is all of semiotics (of which semantics is just one part, along with syntactics and pragmatics).  So too bad.</p>
+
+<p>The book builds upon the idea of “knowing how we know” and argues from the basic standing that “all doing is knowing and all knowing is doing” or “everything said is said by someone”.  They begin with the point that in creating knowledge, we are performing an act of <em>Distinction</em>: separating something from its background based upon certain criterion.  This something (being, object, concept, etc), is called a <strong>Unity</strong>.  Conversely, each time we refer to something (a <em>Unity</em>) in conversation, we are performing an act of Distinction.  A unity can be anything from a person, to a species, to an object, to a color, to an emotion, to a concept, to 1 of 100 different names for snow (which is an <a href="http://en.wikipedia.org/wiki/Eskimo_words_for_snow">urban legend</a>, by the way.</p>
+
+<p>I found that to be an incredibly interesting way of breaking down understanding.  Building upon the core idea of Unity, I wanted to propose some additional building blocks of meaning that are commonly used in conversation, rhetoric and didactics (and easily found elsewhere on this blog).</p>
+
+<p><img src="/uploads/2009-01-14-Using-distinctions-to-create-meaning/making-meaning-500x756.png" alt="Making Meaning" title="Making Meaning" /></p>
+
+<p>A <strong>Dichotomy</strong> is choosing between two unities that are mutually exclusive.  Dichotomies (and false dichotomies) are easily used and abused in arguments and rhetoric—some go so far as to say the West is an <a href="http://www.amazon.com/Argument-Culture-Stopping-Americas-Words/dp/0345407512?tag=particculturf-20">Argument Culture </a>where middle alternatives are ignored.</p>
+
+<p>A <strong>Continuum</strong> is a linear series capped by two Unities.  Sometimes there is meaning along the line, but the meaning primarily is a function of proximity to one unity or the other.  Probability is a simple continuum, capped at one end by absolute certainty, and absolute non-certainty at the other.</p>
+
+<p>A <strong>Plane</strong> (or <strong>Field</strong>) is an flat-area bounded by multiple  unities.  Creating meaning from one’s position within the plane becomes more difficult to communicate unless in close proximity (or far distant) to a unity.</p>
+
+<p>A <strong>Space</strong> is the most complex construction of meaning in which many unities are “mapped” out.  For such a construction, pointing out significant features (low-points, high-points, etc.) are the only way to communicate meaning about a space.</p>
+
+<p>Ending with spaces, it’s interesting to note that the realm of human understanding (as bounded by our senses and cognition) is still a simplification of the complete space of possibility.  Even so, simpler and simpler constructions are made in order to successfully communicate.</p>
+
+<p>Of course, definitions need not be static.  Because of that, I propose two ideas of movement or state change.  <strong>Flow</strong> is the change from one state of unity to another; a meta-dichotomy.  A frog may flow through the states of egg, tadpole, and adult.  A <strong>Cycle</strong> is a flow that iterates multiple times.</p>
+
+<p>And for recursions sake, by defining these concepts, or applying these definitions to something, we are performing an act of distinction.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/01/patterns-of-meaning"><p>Patterns of Meaning</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-01-14T00:00:00+00:00" itemprop="datePublished">January 14, 2009</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I am also convinced, but cannot prove, that there are no objects, but only relations.  By this I mean that I am convinced that there is a consistent way of thinking about nature that refers only to interactions between systems and not to states of or changes in individual systems. I am convinced that this way of thinking of nature will end up to be the useful and natural one in physics. Carlo Rovelli, physicist, Institut Universitaire de France and Université de la Mediterranée; author of <em>Quantum Gravity</em>. <a href="http://edge.com">Edge Foundation</a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/01/archetypes-of-history"><p>Archetypes of history</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-01-14T00:00:00+00:00" itemprop="datePublished">January 14, 2009</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Great man theory, etc.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/01/2008-in-review"><p>2008 in Review</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-01-13T00:00:00+00:00" itemprop="datePublished">January 13, 2009</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2009-01-13-2008-in-Review/img_0232-500x533.jpg" alt="Me" title="Me" /></p>
+
+<p>To follow up on <a href="http://island94.org/2008/01/2007-in-review/">last year’s navel gazing</a>, here’s the roundup for 2008:</p>
+
+<p><strong>Places I’ve Slept:</strong></p>
+
+<p><em>California</em>: <a href="http://flickr.com/photos/bensheldon/sets/72157608001469904/">Santa Barbara</a>, <a href="http://flickr.com/photos/bensheldon/sets/72157607765763069/">San Luis Obispo</a>, <a href="http://flickr.com/photos/bensheldon/sets/72157612438585629/">Los Angeles</a>, Poway;</p>
+
+<p><em>Northwest</em>: Seattle, CA; <a href="http://flickr.com/photos/bensheldon/sets/72157606272583024/">Portland and Silver Falls, Oregon</a>;</p>
+
+<p><em>Midwest</em>: <a href="http://flickr.com/photos/bensheldon/sets/72157612531812134/">Denver, CO</a>; <a href="http://flickr.com/photos/bensheldon/sets/72157612483392227/">Madison, WI</a>;</p>
+
+<p><em>South</em>: <a href="http://flickr.com/photos/bensheldon/sets/72157604315013439/">New Orleans, LA</a>;</p>
+
+<p><em>East</em>: <a href="http://flickr.com/photos/bensheldon/2794254829">Jersey City, NJ</a>; <a href="http://flickr.com/photos/bensheldon/sets/72157612490401910/">Narragansett, RI</a>;</p>
+
+<p><strong>Best Purchase</strong>: <a href="http://flickr.com/search/?w=87923401%40N00&amp;q=ponty&amp;m=tags">Jose Pierpont</a></p>
+
+<p><strong>Best Gift</strong>: <a href="http://flickr.com/photos/bensheldon/3195197386/">Buttons</a></p>
+
+<p><strong>Best Book:</strong> PopCo by Scarlett Thomas</p>
+
+<p><strong>Best Album:</strong> Cloud Cult’s <em>The Meaning of 8</em></p>
+
+<p><strong>Best Object:</strong> Butcher block kitchen table that has become my desk</p>
+
+<p><strong>Best Shoe:</strong> Dansko clogs</p>
+
+<p><strong>Best Project</strong> <a href="http://brompt.com">Brompt.com</a></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2009/01/weingarten-rights"><p>Weingarten Rights</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2009-01-02T00:00:00+00:00" itemprop="datePublished">January 2, 2009</time>
+
+        • Tagged <a href="/posts/tags/careers">careers</a>, <a href="/posts/tags/law">law</a>, <a href="/posts/tags/organizing">organizing</a>, <a href="/posts/tags/rights">rights</a>, and <a href="/posts/tags/union">union</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I found my union card today and with it was a little <a href="http://en.wikipedia.org/wiki/Weingarten_Rights">Weingarten Rights</a> card—explaining my right to have union representation during an interview by my employer. I didn’t particularly like the text of it, so this is from Wikipedia:</p>
+
+<blockquote>
+  <p>RULE 1: The employee must make a clear request for union representation before or during the interview. The employee cannot be punished for making this request.</p>
+
+  <p>RULE 2: After the employee makes the request, the employer must choose from among three options. The Employer must either: grant the request and delay questioning until the union representative arrives and has a chance to consult privately with the employee; deny the request and end the interview immediately; or give the employee a choice of having the interview without representation or ending the interview.</p>
+
+  <p>RULE 3: If the employer denies the request for union representation, and continues to ask questions, it commits an unfair labor practice and the employee has a right to refuse to answer. The employer may not discipline the employee for such a refusal.</p>
+</blockquote>
+
+<p>In 2000, Weingarten Rights were extended to non-union employees (in the form of the right to have a coworker present during investigatory meetings). This was later rescinded in 2004.</p>
+
+<p>Some <a href="http://library.findlaw.com/2004/Jul/19/133510.html">protected activities</a> still do exist for non-union employees:, including:</p>
+
+<blockquote>
+  <ol>
+    <li>Free To Discuss Discipline, Wages and Benefits</li>
+  </ol>
+
+  <p>Non-union employers cannot prohibit employees from discussing work conditions, wages or discipline. In Double Eagle Hotel &amp; Casino, an employer violated the NLRA by promulgating a work rule that prohibited employees from sharing such information with each other or persons outside the company. Such a rule, according to the Board, “plainly infringes on upon Section 7 rights.”</p>
+
+  <ol>
+    <li>Email Complaints About Company Policies</li>
+  </ol>
+
+  <p>Non-union employers cannot terminate employees for sending mass emails complaining about new company policies. An employee’s “effort to incite other employees to help him preserve a vacation policy which he believed best served his interests, and perhaps the interests of other employees, unquestionably qualified his communication as being in pursuit of mutual aid or protection.” Even if the email does not request other employee participation and is sarcastic in nature, such communications remain protected under the NLRA.</p>
+
+  <ol>
+    <li>Non-Union Employees Are Free to Walk Off The Job To Complain About Supervisors or Other Job Conditions</li>
+  </ol>
+
+  <p>Another common trap is when non-union employees walk off a job to protest certain job conditions. Most employers naturally (but incorrectly) presume that they may terminate non-union employees for abandoning the job. But that is not always the case. If, for example, employees engage in a work stoppage due to a legitimate job complaint, the NLRA may protect such conduct. In Trompler, Inc., an employer was held liable for back pay and reinstatement for terminating six employees who walked off the job in response to unanswered complaints about their supervisor.Such a work stoppage may qualify as “protected concerted activity” under Section 7 of the NLRA.</p>
+</blockquote>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/12/human-measurements"><p>Human Measurements</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-12-18T00:00:00+00:00" itemprop="datePublished">December 18, 2008</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Great comment from slashdot on <a href="http://tech.slashdot.org/comments.pl?sid=1066141&amp;cid=26159359">English Units</a>:</p>
+
+<blockquote>
+  <p>A league is about the distance a healthy man can walk on a good road in one hour. A fathom is about the height of a tall man; it is about eighteen hand widths (fingers closed). A US gallon is the volume of eight pounds of water. An imperial gallon (i.e. the UK gallon) is the volume of ten pounds of water.</p>
+
+  <p>One interesting thing about weights. The system of dram/ounce/pound is base 16, which makes division by two a practical measuring operation. Take a pound of something readily dividable, divide it into two equal portions (using a balance scale). Then repeat the process four times. The result is one ounce.</p>
+
+  <p>This shows the offsetting virtues of traditional units. While they are difficult to calculate with, they are convenient for measuring things – especially when it come to quantifying things for sale.</p>
+
+  <p>For example, consider length:<br />
+1 inch = approximately the width of a thumb<br />
+1 hand = 4 inches = width of a hand with fingers closed<br />
+1 ft = 3 hands<br />
+1 yard = 3 ft<br />
+1 fathom = 2 yards<br />
+1 rod = 5.5 yards = length of ox goad<br />
+1 chain = 22 yards = 100 links in standard survey chain</p>
+</blockquote>
+
+<blockquote>
+  <p>1 furlong = 10 chains = distance ox team can plow without rest<br />
+1 mile = 880 fathoms</p>
+</blockquote>
+
+<blockquote>
+  <p>Notice that if you lay out a square field such that an ox team can plow one furrow across then rest, you get a square with sides of exactly one furlong or 660 ft. The area of that field 43,600 square feet, which is nearly exactly one acre (43,560 ft).</p>
+
+  <p>For purposes of round measurement (no fractions), such as you would use in commerce, traditional measurement is far more convenient. If I’m buying liquor, the following units exhaust all the practical measures to which I might wish to round a purchase:</p>
+
+  <p>1 mouthful<br />
+1 jigger (aka 1 fluid ounce) = 2 mouthfuls<br />
+1 jack = 2 jiggers<br />
+1 gill = 2 jacks = 4 jiggers<br />
+1 cup = 2 gills = 8 jiggers = 16 mouthfuls<br />
+1 pint = 2 cups<br />
+1 quart = 2 pints = 4 cups<br />
+1 gallon = 4 quarts = 8 pints = 16 cups<br />
+1 cask = 16 gallons<br />
+1 barrel = 2 casks<br />
+1 hogshead = 2 barrels<br />
+1 butt = 2 hogsheads = 4 barrels<br />
+1 tun = 2 butts = 4 hogsheads = 8 barrels</p>
+</blockquote>
+
+<blockquote>
+  <p>In such a system of measurement, you never, ever have to deal with fractions. Breaking down into smaller units is simply a matter of dividing a whole into two equal parts. So if you want to buy things without having to specify fractions, traditional units are the bee’s knees (equal to 1 / 128 of an inch … no just kidding). That’s not so important in a world with calculators – you just calculate a unit price.</p>
+
+  <p>Still, if you want to buy eight feet, three inches of rope, you can measure out twenty-four hands and three thumbs and come rather close.</p>
+</blockquote>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/12/from-web-20-to-produsage"><p>From “Web 2.0” to “Produsage”</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-12-04T00:00:00+00:00" itemprop="datePublished">December 4, 2008</time>
+
+        • Tagged <a href="/posts/tags/media">media</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/produsage">produsage</a>, <a href="/posts/tags/social-media">social media</a>, and <a href="/posts/tags/web-2-0">Web 2.0</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><strong>Fact</strong>: I now feel uncomfortable when people talk about Web 2.0 as a philosophy.</p>
+
+<p>Last night, I had a free-ranging conversation with my longtime friend and occassional coworker/coproducer <a href="http://verdesmoke">Danielle Martin</a> centered around her developing thesis on “ <a href="http://www.slideshare.net/mizzdmartin/participatory-media-catalyzed-by-outside-facilitators-presentation?from=email&amp;type=share_slideshow&amp;subtype=slideshow">Participatory Media Catalyzed by Ouside Facilitators</a>” at MIT.</p>
+
+<p>In developing her thesis, she had been referring to Web 2.0 as a philosophy—something I have done and had many, many other people have do as well—in a conversation with Henry Jenkins. Who (and this is hearsay, I admit), said, “Don’t. <strong>Web 2.0 is a business model</strong>.” And he’s right.</p>
+
+<p><a href="http://radar.oreilly.com/archives/2006/12/web-20-compact.html">Tim O’Reilly, says this</a>: <em>“Web 2.0 is the business revolution in the computer industry caused by the move to the internet as platform, and an attempt to understand the rules for success on that new platform. Chief among those rules is this: Build applications that harness network effects to get better the more people use them.”</em> This is business model.</p>
+
+<p>Instead, Danielle pointed me to the work of Axel Bruns and his conception of <strong>Produsers and Produsage</strong>: <em>produsers engage not in a traditional form of content production [producer -&gt; distributor -&gt; consumer], but are instead involved in produsage – the collaborative and continuous building and extending of existing content in pursuit of further improvement.</em></p>
+
+<p>Bruns, in an <a href="http://henryjenkins.org/2008/05/interview_with_axel_bruns.html">interview</a> with Henry Jenkins, lays out <a href="http://produsage.org/node/11">4 principles of produsage</a>:</p>
+
+<blockquote>
+  <ul>
+    <li>Open Participation, Communal Evaluation: the community as a whole, if sufficiently large and varied, can contribute more than a closed team of producers, however qualified;</li>
+    <li>Fluid Heterarchy, Ad Hoc Meritocracy: produsers participate as is appropriate to their personal skills, interests, and knowledges, and their level of involvement changes as the produsage project proceeds;</li>
+    <li>Unfinished Artefacts, Continuing Process: content artefacts in produsage projects are continually under development, and therefore always unfinished - their development follows evolutionary, iterative, palimpsestic paths;</li>
+    <li>Common Property, Individual Rewards: contributors permit (non-commercial) community use and adaptation of their intellectual property, and are rewarded by the status capital gained through this process.</li>
+  </ul>
+</blockquote>
+
+<p>These ideas, much more so than Web 2.0, seem to encapsulate what my peers and colleagues are trying to get across when we talk about social media and networked production of knowledge.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2008/12/the-nonprofit-between-scylla-and-charydbis"><p>The Nonprofit between Scylla and Charydbis</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2008-12-03T00:00:00+00:00" itemprop="datePublished">December 3, 2008</time>
+
+        • Tagged <a href="/posts/tags/art">art</a>, <a href="/posts/tags/cartoon">cartoon</a>, <a href="/posts/tags/greek">greek</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, and <a href="/posts/tags/random">random</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://www.flickr.com/photos/bensheldon/3079520555/" title="the Nonprofit between Scylla &amp; Chaydbis by bensheldon, on Flickr"> <img src="http://farm4.static.flickr.com/3165/3079520555_a9db691c8d.jpg" alt="the Nonprofit between Scylla &amp; Chaydbis" /> </a></p>
+
+<p>In my <a href="http://management.bu.edu/exec/elc/inml/index.shtml">Boston University Institute for Nonprofit Management and Leadership</a> program, we always get up to the edge of talking about the interplay between resource development and need, but then it always seems to drift away. So this is my contribution: if you swing too far towards either (ignoring the other), you’re toast.</p>
+
+<p>And for the record, available resources and community need are external to your organization. Also, my art is lousy. And if you find this interesting, you should read my previous post on <a href="http://island94.org/articles/strengthening-organizations-through-community-engagement">Community Engagement</a>.</p>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/46" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/48" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>

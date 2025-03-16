@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org : A lost and found | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="I_YbYt5OM7Btr67DWhj2ItRHsW-8CUiANTIaSd35pnIlBla1tq8AGkn83LprMh4ymCuS1RXO7fEo3jrsuZtT0g" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-2d0874f724227ac5e099df0bd7cfeb3a4fc86f9358ede0d8216b193fa7a7da99.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-3389e8d94238c6aae57b91819279862a918c12e4596fd5a397c51f16df96057e.js">
+<link rel="modulepreload" href="/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script>
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+      <meta name="robots" content="noindex, follow">
+
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true"
+              >
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/de-nada-una-pequea-casa"><p>De nada, Una Pequeña Casa</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-27T00:00:00+00:00" itemprop="datePublished">December 27, 2010</time>
+
+        • Tagged <a href="/posts/tags/donations">donations</a>, <a href="/posts/tags/thanks">thanks</a>, and <a href="/posts/tags/volunteer">volunteer</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2010-12-27-De-nada-Una-Pequea-Casa/SAM_0505-500x375.jpg" alt="" title="One Small House" /></p>
+
+<p>My former-roommate Alex (the guy in the middle) is spending his winter vacation in Mexico volunteering with <a href="http://www.onesmallhouse.org/">One Small House</a>. I donated to the project and they’ve been awesome in thanking me. &gt; During the week of December 26-31, 2010, a group of volunteers from the United States will work with the community of Lazaro Cardenas to build them a new, free health clinic. Currently, this small community is receiving its health services from a trailer that is inadequate to handle their needs. With the support of donations, One Small House and its volunteers will help ensure that this community receives the quality health care it needs.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/t-shirt"><p>T Shirt</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-18T00:00:00+00:00" itemprop="datePublished">December 18, 2010</time>
+
+        • Tagged <a href="/posts/tags/boston">Boston</a>, <a href="/posts/tags/merchandise">merchandise</a>, <a href="/posts/tags/shirt">shirt</a>, and <a href="/posts/tags/subway">subway</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2010-12-18-T-Shirt/t-shirt-500x373.jpg" alt="" title="T Shirt" /></p>
+
+<p>An Island 94 <a href="http://www.island94.org/2009/09/boston-subway-in-vector-format-svg/#comment-72879">commenter</a> requested a t-shirt based on the Boston Subway Map I <a href="http://www.island94.org/2009/09/boston-subway-in-vector-format-svg/">vectorized</a> a while ago. So I set up an at-cost shop through <a href="http://horseshoefab.spreadshirt.com/">Spreadshirt</a>, and ordered one myself.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/mediation-journal-pieces"><p>Mediation journal pieces</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-09T00:00:00+00:00" itemprop="datePublished">December 9, 2010</time>
+
+        • Tagged <a href="/posts/tags/consumption">consumption</a>, <a href="/posts/tags/criticism">criticism</a>, <a href="/posts/tags/journaling">journaling</a>, <a href="/posts/tags/media">media</a>, and <a href="/posts/tags/reflection">reflection</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2010-12-09-Mediation-journal-pieces/mediation-journal-sqr.png"> <img src="/uploads/2010-12-09-Mediation-journal-pieces/mediation-journal-sqr-500x546.png" alt="" title="mediation-journal-sqr" /> </a></p>
+
+<p>This is a set of images from a self-journaling project I’m working on based around my media-consumption habits. A few months ago I designed a self-journaling worksheet for <a href="http://angelinacalderon.com">Angelina</a>, and she really liked the use of a blank face for the critical-reflection process—so that’s one part of it. I just sent off Version 0 to be printed; I’ll post some photos when it arrives.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/boston-bike-crash-map-in-the-news"><p>Boston Bike Crash Map in the News</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-07T00:00:00+00:00" itemprop="datePublished">December 7, 2010</time>
+
+        • Tagged <a href="/posts/tags/bike">bike</a>, <a href="/posts/tags/map">map</a>, <a href="/posts/tags/media">media</a>, <a href="/posts/tags/news">news</a>, and <a href="/posts/tags/press">press</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2010-12-07-Boston-Bike-Crash-Map-in-the-News/Metro_bike-crash-map.jpeg"> <img src="/uploads/2010-12-07-Boston-Bike-Crash-Map-in-the-News/Metro_bike-crash-map-500x667.jpg" alt="" title="Metro_bike-crash-map" /> </a></p>
+
+<p>Boston’s <em>Metro</em> newspaper ran a <a href="http://www.metro.us/boston/local/article/712124--bike-map-offers-crash-warnings">page 2 article</a> on the <a href="http://bostoncyclistsunion.org/resources/crash-map/">Boston Bike Crash Map</a> the Boston Cyclists Union and I <a href="http://www.island94.org/2010/11/boston-bike-crash-map/">created</a>. Also in the news:</p>
+
+<ul>
+  <li>In the <a href="http://www.boston.com/bostonglobe/editorial_opinion/blogs/the_angle/2010/12/bike_crash_map.html"><em>Boston Globe Blog</em>’s “The Angle”</a>:</li>
+</ul>
+
+<blockquote>
+  <p>This is a stunning example of what a non-profit can do with government statistics, Google Maps, and a very dedicated volunteer.</p>
+
+  <ul>
+    <li>On <a href="http://www.wbur.org/2010/11/29/bike-crash-map">WBUR Radio</a>:</li>
+  </ul>
+
+  <p>Among other concentrations, it shows a dark line of bruised elbows, broken fenders, and worse stretching from the Back Bay to Allston along Commonwealth Avenue, right past our studios at WBUR.</p>
+</blockquote>
+
+<ul>
+  <li>And <a href="http://www.universalhub.com/2010/thats-lot-crashes">Universal Hub</a>.</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/proposals-to-change-the-tax-deductibility-of-donations"><p>Proposals to change the tax-deductibility of donations</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-03T00:00:00+00:00" itemprop="datePublished">December 3, 2010</time>
+
+        • Tagged <a href="/posts/tags/death">death</a>, <a href="/posts/tags/government">government</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/regulation">regulation</a>, and <a href="/posts/tags/taxes">taxes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The <em>New York Times</em> yesterday gave a breakdown of <a href="http://www.nytimes.com/2010/12/03/business/03charity.html">proposals to change how donors calculate donations in their taxes</a>:</p>
+
+<blockquote>
+  <p>All three deficit reduction proposals from the blue ribbon panels would eliminate the deduction in its current form.</p>
+
+  <p>One of the panels, the National Commission on Fiscal Responsibility and Reform would give taxpayers a tax credit worth 12 percent of their donations — but only if they contributed 2 percent or more of their adjusted gross income to charity.</p>
+
+  <p>Another plan proposed by a panel of three liberal-leaning organizations — Demos, the Economic Policy Institute and the Century Foundation — is similar, suggesting a 25 percent tax credit for all charitable gifts.</p>
+
+  <p>The plan philanthropic experts find the most intriguing, however, comes from the Bipartisan Policy Center panel, which suggests borrowing a system of subsidizing nonprofits similar to the one used in Britain, called Gift Aid.</p>
+
+  <p>Under that proposal, nonprofits could claim a tax credit worth 15 percent of any charitable gift they received, effectively giving the donor a partial match. For instance, if a donor makes a charitable gift of $100 to a charity, the charity could apply to receive an additional $15 from the government.</p>
+</blockquote>
+
+<p>I’m partial to this proposal from the <a href="http://www.pppnet.org/pdf/Position_Paper_12-2-10.pdf">Partnership for Philanthropic Planning</a> (via <a href="http://www.gifthub.org/2010/12/ppp-on-obama-charitable-tax-proposal.html">Gift Hub</a>):</p>
+
+<blockquote>
+  <p>For many years, PPP has suggested a conceptual alternative to the charitable deduction. PPP’s plan addresses the current goal of simplifying the tax code, while supporting a robust nonprofit sector that can compensate for reduced government services. Rather than a deduction from income, we propose that charitable contributions be treated as an adjustment from gross income. Since the donor never receives the benefit of income which is contributed to charity, the amount contributed should be considered unavailable for taxation at all. Far from the “tax expenditure” that the [National Commission on Fiscal Responsibility and Reform] suggests, allowing charitable contributions as adjustments to income would provide a fair and accessible incentive for charitable giving to all Americans.</p>
+</blockquote>
+
+<p>And of course, don’t forget the background context of rising inequity, a lapsed estate tax, and the models of individually-determined giving versus democratically-determined (ostensibly) government grants and earmarks.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/blue-ribbon-commissions-in-print"><p>Blue Ribbon Commissions in Print</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-03T00:00:00+00:00" itemprop="datePublished">December 3, 2010</time>
+
+        • Tagged <a href="/posts/tags/authority">authority</a>, <a href="/posts/tags/language">language</a>, <a href="/posts/tags/power">power</a>, and <a href="/posts/tags/search">search</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2010-12-03-Blue-Ribbon-Commissions-in-Print/blue-ribbon-commission.png"> <img src="/uploads/2010-12-03-Blue-Ribbon-Commissions-in-Print/blue-ribbon-commission-500x90.png" alt="" title="blue ribbon commission" /> </a></p>
+
+<p>I was annoyed by my <a href="http://www.island94.org/2010/12/proposals-to-change-the-tax-deductibility-of-donations/">previous post</a> quoting the New York Times’ usage of “blue ribbon panel” (and the numerous appeals to authority in that entire article) that I looked it up using Google Search’s timeline: <em><a href="http://www.google.com/search?tbs=tl:1&amp;q=site:nytimes.com+[%22blue+ribbon+panel%22+OR+%22blue+ribbon+commission%22]">site:nytimes.com [“blue ribbon panel” OR “blue ribbon commission”]</a>.</em> There were 621 results.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/undermining-nonprofit-significance"><p>Undermining nonprofit significance</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-02T00:00:00+00:00" itemprop="datePublished">December 2, 2010</time>
+
+        • Tagged <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/social-enterprise">social-enterprise</a>, and <a href="/posts/tags/sour-grapes">sour-grapes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From a Facebook comment on Kate Barr’s “ <a href="http://www.facebook.com/note.php?note_id=476792537759">Nonprofits, Social Enterprise, and Hot Buttons</a>” ( <a href="http://www.nonprofitsassistancefund.org/blog/2010/11/30/nonprofits-social-enterprise-and-hot-buttons/">blog link</a>):</p>
+
+<blockquote>
+  <p>The craving to undermine nonprofit signficance, value and tax-exemption is endless and will probably never be “satisified” until the entire 501-c section of the tax code is repealed. And there do exist those who want to do exactly that. Those who deeply resent paying taxes at all loathe the nonprofit field for its tax exemption. They won’t stop and they won’t shut up, even when repeatedly, humiliatingly and thoroughly refuted.</p>
+</blockquote>
+
+<p>This is a perspective I share, though rarely so explicitly.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/this-is-me-not-being-cynical-about-nonprofit-innovation"><p>This is me not being cynical about nonprofit innovation</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-02T00:00:00+00:00" itemprop="datePublished">December 2, 2010</time>
+
+        • Tagged <a href="/posts/tags/bellyache">bellyache</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/nptech">nptech</a>, <a href="/posts/tags/social-media">social media</a>, and <a href="/posts/tags/technology">technology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>A comment I made about the newly launched <a href="http://www.jumo.com/">Jumo</a> platform for nonprofits, in response to much bellyaching on Facebook about it being duplicative and pointless:</p>
+
+<blockquote>
+  <p>I don’t get it either. But I’ve been increasingly thinking about a recent David Pogue column ( <a href="http://nyti.ms/id0kep">http://nyti.ms/id0kep</a>) in which he says “Things don’t replace things; they just splinter.”</p>
+
+  <p>We have this idea in the nonprofit world that we must overly optimize the resources we have; cleanly transitioning from one model to the next with minimal duplication. That’s not realistic and probably wouldn’t be innovative either. Instead we just have this messy iterative process of broken models, half-starts and ignorant foundation officers—from which the next round of innovators can cobble together an itch-scratcher and pitch it as “Hotness-XYZ but for nonprofits”.</p>
+
+  <p>I think Jumo sucks so far, but the few million dollars it took to launch is a drop in the bucket. Unless it causes Omidyar and Knight to pick up their checkbooks and go home, I think it will help move the ball towards something more transformational to the sector.</p>
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/public-data-vs-self-reporting"><p>Public data vs. Self-reporting</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-02T00:00:00+00:00" itemprop="datePublished">December 2, 2010</time>
+
+        • Tagged <a href="/posts/tags/access">access</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/digital-divide">digital-divide</a>, <a href="/posts/tags/maps">maps</a>, <a href="/posts/tags/participation-gap">participation-gap</a>, and <a href="/posts/tags/public-data">public-data</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>A <a href="http://www.stevevance.net/planning/i-want-to-make-a-crash-reporting-tool/#comment-106046851">comment</a> by Pete Stidman of the Boston Cyclists Union, in response to a <a href="http://www.stevevance.net/planning/i-want-to-make-a-crash-reporting-tool/">proposal to build a Chicago Bike Crash Map</a>:</p>
+
+<blockquote>
+  <p>I would advise against self reporting—because what you get is only crashes within whatever bike subculture is reached by the map and by the web. Boston did that before our map and the spread of accidents across the city is very different in each—and could give people the wrong ideas about priority streets and areas. (This is particularly true in communities of color, which were heavily under-reported in Boston’s self-reported crash survey.)</p>
+</blockquote>
+
+<p>Boston’s <a href="http://bostoncyclistsunion.org/resources/crash-map/">bike crash map</a> is generated from (somewhat-) public data on on ambulance runs and EMT reports; Portland has a <a href="http://bikeportland.org/closecall/home.php">self-reported bike incident map</a>.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/11/accessible-leisure-through-technology"><p>Accessible leisure through technology</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-11-29T00:00:00+00:00" itemprop="datePublished">November 29, 2010</time>
+
+        • Tagged <a href="/posts/tags/development">development</a>, <a href="/posts/tags/ict4d">ict4d</a>, <a href="/posts/tags/leisure">leisure</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/snark">snark</a>, and <a href="/posts/tags/technology">technology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I always talk about technology as a multiplier of action; here is someone with better credentials than me making the same point: Kentaro Toyama writing in the <em>Boston Review</em> on “ <a href="http://www.bostonreview.net/BR35.6/toyama.php">Can Technology End Poverty? [No]</a>”</p>
+
+<p>The following excerpt touches upon how technology enables the developing world to experience the same leisure activities the developed world enjoys:</p>
+
+<blockquote>
+  <p>Along with differential access and capacity, a third mechanism—differential motivation—contributes to the widening divergence between the privileged and the marginalized. What do people want to do with the technology they have access to? Those of us who have worked in interventionist ICT4D have often been surprised to find that poor people don’t rush to gain more education, learn about health practices, or upgrade vocational skills. Instead, they seem to use technology primarily for entertainment. Telecenter surveys find that when a village has ready access to a PC—connected to the Internet or otherwise—the dominant use is by young men playing games, watching movies, or consuming adult content. Many become proficient at the software incantations required to download YouTube videos from a PC onto a mobile phone. But these same users typically forsake software-based accounting and language lessons. What interventionists perceive to be “productive” use of technology is trumped by the “frivolous” desires of users. Even users in the developed world rarely take advantage of their technologies for purposes of self-improvement—the most popular iPhone apps are games and other entertainments, nothing that would improve productivity or health—but this tendency is exacerbated among those who have grown up with lessons of learned helplessness and low self-confidence.</p>
+
+  <p>I’m not blaming the victim. None of the three mechanisms necessarily speak to failures on the part of those who are poor or poorly educated. Blame, if it must be attributed, falls readily on historical circumstances, social structures, and the rich world’s unwillingness to invest in high-quality, universal education. In fact, one reason for valuing education is that it generates the appetite for and capacity to use modern tools—all the more reason to focus on nurturing human capability, rather than trying to compensate for limited capacity with technology.</p>
+</blockquote>
+
+  </div>
+</article>
+
+
+<hr>
+
+<div class="d-flex justify-content-between mb-5">
+    <a href="/posts/25" class="btn btn-outline-primary">Newer posts</a>
+    <a href="/posts/27" class="btn btn-outline-primary">Older posts</a>
+</div>
+
+  </div>
+
+</body>
+</html>
