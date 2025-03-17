@@ -5,7 +5,7 @@ published: true
 tags: []
 ---
 
-Lost to time in my Code for America email was a list of reasons why deferring to software engineers can be problematic. It included this theme, from Will Larson's ["Building personal and organizational prestige"](https://lethain.com/building-prestige/$0):
+Lost to time in my Code for America email's sent folder was a list of reasons why deferring to software engineers can be problematic. It included this theme, from Will Larson's ["Building personal and organizational prestige"](https://lethain.com/building-prestige/$0):
 
 <blockquote markdown="1">
 
