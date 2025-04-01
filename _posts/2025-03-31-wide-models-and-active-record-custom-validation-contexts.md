@@ -55,7 +55,7 @@ class Account < ApplicationRecord
 end
 ```
 
-Note: it is possible to add _custom_ validation contexts on `before_validation` and `after_validation` callbacks, but not others like `before_save`, etc. (though they'll take the non-custom callbacks like `on: :create` ). I haven't found this to be much of a problem.
+Note: it's possible to add _custom_ validation contexts on `before_validation` and `after_validation` callbacks, but not others like `before_save`, `after_commit`, etc. only take the non-custom callbacks like `on: :create`.
 
 So to wrap it up: sure, maybe it can all go in the Active Record model.
 
