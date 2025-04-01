@@ -28,7 +28,7 @@ I didn't entirely agree with this advice though:
 
 > In Rails world you could use `dry-validation` for input validations and ActiveRecord validation for domain checks. Another approach would be to heavily use form objects (input validation) and limit model validations to actual business invariants.
 
-My disagreement is because Active Record validations have a built-in feature to selectively apply validations: [Validation Contexts \(the￼`on:` keyword\)](https://guides.rubyonrails.org/active_record_validations.html#on) and specifically [_custom_ validation contexts](https://guides.rubyonrails.org/active_record_validations.html#custom-contexts):
+My disagreement is because Active Record validations have a built-in feature to selectively apply validations: [Validation Contexts \(the `on:` keyword\)](https://guides.rubyonrails.org/active_record_validations.html#on) and specifically [_custom_ validation contexts](https://guides.rubyonrails.org/active_record_validations.html#custom-contexts):
 
 > You can define your own custom validation contexts for callbacks, which is useful when you want to perform validations based on specific scenarios or group certain callbacks together and run them in a specific context. A common scenario for custom contexts is when you have a multi-step form and want to perform validations per step.
 
