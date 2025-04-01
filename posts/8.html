@@ -7,7 +7,7 @@
   <title>Island94.org : A lost and found | Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="d2hkwsTy-h_a_v4A2hJJA4lquZCbDwNkUcDYsWjmzqdiGqKubgF_G216c3HjFmODwjq0rGHdUUUnM5EyV2d75A" />
+<meta name="csrf-token" content="Ef6E_bj3-tQ5NYWKK0wRnQj2zqt3qmx1HTpm3gbfLqCTRPlyWyP-MzHqJolclEA-mJ-BH9PE8Bn8LuW4V9GwLA" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -143,6 +143,138 @@
   <div class="container container-body">
     
 
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/07/what-the-fuck-are-you-talking-about-the-story-of-nodetiles"><p>“What the fuck are you talking about?”: The story of NodeTiles</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-07-13T22:31:00-07:00" itemprop="datePublished">July 13, 2022</time>
+
+        • Tagged <a href="/posts/tags/maps">maps</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2022-07/nodetiles.png" alt="NodeTiles' trippy demo image that says &quot;NODTILES&quot; written across a map ofthe globe" /></p>
+
+<p><em>I recently lost access to my 10-year old Code for America email address when I changed jobs. I tried to preserve some of the good stuff and this is one story.</em></p>
+
+<p>During my time as a Code for America Fellow in 2012, I created a Javascript-based slippy map tile renderer called <a href="https://github.com/nodetiles/nodetiles-core">NodeTiles</a> (kinda sorta like Mapnik). Several colleagues helped vastly expand it, we presented at NACIS, and I know of at least one successful company that is still powered by forked version of it today.</p>
+
+<p><strong>Jessica</strong></p>
+
+<p>During our Fellowship, Jessica Lord gave a tech talk on building custom map tiles and first introduced me to TileMill. I couldn’t find a record in my email of when that happened, but know she planted this seed 🌱</p>
+
+<p><strong>Tom</strong></p>
+
+<p>On April 25, 2012, I sent this email to Tom Carden:</p>
+
+<blockquote>
+  <p>This week I came across a gist of yours and eventually made my way to nodemap while researching how to generate server-side map tiles. Thank you so much for putting those pieces together; they’re fantastic! I matched your code with node-canvas-heroku to get it running in the cloud and it’s pretty fantastic:</p>
+
+  <p><a href="http://morning-spring-2292.herokuapp.com/">http://morning-spring-2292.herokuapp.com/</a></p>
+
+  <p>Anyways, just wanted to send you a big thanks for the code and inspiration. I’m working on building a node-based utfgrid renderer to bootstrap an entire wax interaction layer… all without Mapnik (though maybe I should just work on packaging that for Heroku).</p>
+
+  <p>Cheers,<br />
+Ben</p>
+</blockquote>
+
+<p>Tom gave some helpful advice and caveat emptor about JS performance and data caching. He continued to follow up with node-canvas and cairo suggestions for getting stuff running on Heroku. Tom ended up being a Code for America mentor for a different project and he was the source of us using the Toner map style in demos and also a nice leaflet clustering plugin.</p>
+
+<p><strong>Rob</strong></p>
+
+<p>Rob Brackett was the first person I explained what I was doing to create a tile render in Javascript. His reaction to my explanation was “What the fuck are you talking about?” Rob is one of my best friends, and I don’t remember how I explained what would become Nodeiles initially, but I’m sure it took 20 minutes and was a non-linear train of thought.</p>
+
+<p>On May 2, 2012, I sent this email to “Fuzz”, Code for America’s random-nerdsnipe list:</p>
+
+<blockquote>
+
+  <p>Last week Rob and I built a heroku-compatible map-tile renderer (and UTFGrid generator) that can quickly (and with low bandwidth/client-processing) serve interactive maps and markers comprising tens of thousands of points and polygons—and unlike TileMill, the final map can be connected to a live database and updated on-the-fly. It’s kind’ve badass.</p>
+
+  <p>Here are 2 examples:</p>
+
+  <ol>
+    <li>
+      <p>Static map of San Francisco streets and Parks: 
+ <a href="http://morning-spring-2292.herokuapp.com/">http://morning-spring-2292.herokuapp.com/</a></p>
+    </li>
+    <li>
+      <p>Map of all ~1.5k Occupy sites worldwide (I did this in about 15min, so it’s a little clunky):
+ <a href="http://occupy-map.herokuapp.com/">http://occupy-map.herokuapp.com/</a></p>
+    </li>
+  </ol>
+
+  <p>In terms of why it’s badass (from less to more geeky):</p>
+
+  <ol>
+    <li>It’s fast. Nothing is rendered in the browser, instead all of the tiles are rendered and streamed to the browser as PNGs.</li>
+    <li>It’s small. No shapefiles are sent to the browser. Each Map (the entire initial pageload) is less than 500kb.</li>
+    <li>It can do dynamic data. TileMill makes beautiful maps, but once you export them to MapBox (or your own mbtile server), you can’t change them. This can be hooked up to a live database (right now it parses geojson).</li>
+    <li>It runs on Heroku. It uses node-canvas (not Mapnik) so it is fast, lightweight and has few dependencies.</li>
+    <li>It renders UTFGrids, which can provide mouse-hovers and other straightforward UI stuff that most maps don’t (way less clicky)</li>
+    <li>It’s not a tileserver, it’s a tile <em>renderer</em>. Seriously, all those maptiles are being generated on on-the-fly (we should probably cache them, but hey, this is bleeding edge)</li>
+    <li>It’s nodejs and all the code is on Github:  <a href="https://github.com/bensheldon/nodetiles">https://github.com/bensheldon/nodetiles</a>  </li>
+  </ol>
+
+  <p>I’m still working on it, so if you have a big dataset that you’ve had trouble mapping before, let me know since I’m looking for more/better use cases.</p>
+
+</blockquote>
+
+<p><strong>Prashant</strong></p>
+
+<p>Prashant Singh, another Code for America fellow, was excited about the project and gave me lots of feedback. Prashant was using my project to generate large static maps from the commandline, and he gave some feedback on his experience doing similar work with Mapnik. Prashant and two other Fellows, Alicia Rouault and Matt Hampel, would subsequently build a business on top of it.</p>
+
+<p>On June 5, 2012 I sent this email to Eric Gundersen at Mapbox:</p>
+
+<blockquote>
+
+  <p>I haven’t done a big writeup yet. I’m hoping to submit to NACIS for their October conference, but I’m still trying to clean up the code, modularize it, and write tests and documentation.</p>
+
+  <p>General backstory: I had been playing around a lot with TileMill and Mapnik and trying to programmatically generate map tiles; at CfA we have a lot of big, dynamic data and I was trying to set up an automated tile renderer. Then I came across a Tom Carden project where he was use Node-Canvas to render tiles… and then I discovered a node-canvas module that would run on Heroku… and by that point I was in love with the idea of a low-dependency (compared to mapnik) on-the-fly tile rendering implementation.</p>
+
+  <p>From there, I wanted to see how close I could get to a full-blown TileJSON implementation. I had my coworker Rob Brackett write me a Javascript UTFGrid implementation and I hooked that up to the tile rasterizer. And bam. It’s clunky as hell, and sort’ve slow (it’s rendering an entire shapefile then cropping it down for every tile rather than spatially indexing the features), but I think it has potential. </p>
+
+  <p>I think the next step (in addition to cleanup and documentation) is loading up some OSM metro data and actually seeing how the performance compares to Mapnik. Also, while I can’t foresee implementing something like Cascadenik, node-canvas gives you direct access to the graphics renderer and it might be useful for creating boutique maps with graphical flourishes that Mapnik hasn’t implemented… and of course for creating layers with dynamic data.</p>
+
+  <p>Let me know if you have any specific questions or ideas you’d like me to try to implement or use as demos. Thanks for the interest!</p>
+
+</blockquote>
+
+<p><strong>Alex</strong></p>
+
+<p>Alex Yule, another Code for America Fellow, and an actual experienced cartographer, was also interested. Alex would build a proper database adapter layer and the actual spatial indexing functionality that all of my previous emails yolo. Alex joined Rob and my presentation proposal at NACIS. This was our abstract:</p>
+
+<blockquote>
+  <p><strong>NodeTiles: Joyful Map Tile Rendering with Node.js</strong></p>
+
+  <p>Mapnik has become the de facto open-source standard for rendering map tiles. While Mapnik is extremely powerful, it can be difficult to set up and deploy. We present NodeTiles, a lightweight, JavaScript-based, open-source map tile renderer that is easy to deploy, use, and extend. Built to support applications with dynamic data, NodeTiles offers an accessible and cloud-friendly alternative to Mapnik. While still in early-stage development, features on the road-map include styling with the CSS-based Carto language for compatibility with MapBox TileMill, UTFGrid generation for client-side interactivity, and data adaptors for PostGIS and Shapefiles.</p>
+</blockquote>
+
+<p><strong>NACIS</strong></p>
+
+<p>The NACIS (North American Cartographic Information Society) conference was October 17-19, 2012 in Portland, Oregon. Alex and Rob and I had gotten an AirBnB and I mostly remember us doing a lot of last-minute implementing. Alex built a really nice Postgres Adapter plugin and Rob was reimplementing Cascadenik (“CSS for Maps”) somewhere between Javascript and Cairo; there was a deep-dive into blitting. We presented at a breakout called “Slippy Maps”.</p>
+
+<p>Afterwards, I remember riding BART back from the airport when we arrived home in San Francisco. I was talking with a maybe-a-big-deal person from the map-tech community, and they asked me something pointed like “But how much did <strong>you</strong> <em>really</em> contribute to NodeTiles?” I said something like “It was a team effort” and then it got really quiet. In hindsight that was probably a job interview. And also fuck that, it <em>was</em> a team effort.</p>
+
+<p><strong>That’s it</strong></p>
+
+<p>During Fall of 2012 Code for America Fellowship was ending and interviewing as an inexperienced engineer is freaking hard (and also incredibly dumb, but those are different stories). So I mostly put down NodeTiles. And also:</p>
+
+<ul>
+  <li>Going from something that’s a tech demo to something understandable (“What the fuck are you talking about”) and usable by outsiders is hard.</li>
+  <li>The sheer difficulty of spatial work. That dumb NodeTiles logo took me hours just to get the tooling together to just like, draw straight lines on a globe to say “NODETILES”.</li>
+  <li>Maps are a commodity, and also if you need to dynamically map a billion+ polyons (I’ve been informed that today there is Postgres MVT) <em>and</em> you need a pipeline for auth and anti-scrape and billing and raster and…. well, god bless you.</li>
+  <li>I leaned into some questionable architectural decisions to make NodeTiles more Javascripty, splitting up the front and backends, and modularizing all the different pieces into their own packages. In hindsight that was a lot of valueless work that only introduced friction into building the tool and delivering the value. That’s on me; never forget.</li>
+  <li>Given that this is an email-based retrospective, I will admit I found some emails from kinda big deals like Stamen that I didn’t respond to. I dunno why I didn’t respond; probably burnout. If that was you, it wasn’t personal, and I’m happy with the path I’ve taken, and I hope you are too 🤗</li>
+</ul>
+
+<p>NodeTiles is <a href="https://github.com/nodetiles">still up on GitHub</a>. If you can get node-canvas linking to cairo (memories of this seems like a fever dream), NodeTiles is really cool. Maybe you’ll do something neat with Nodetiles ❤️</p>
+
+  </div>
+</article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
@@ -549,99 +681,6 @@ Some aspects of the software engineering ideal appealed directly to preferences 
 …   <br />
 <strong>In at least three important senses, software engineering could be said to have failed.</strong> First, because of the divergent approaches and priorities of academic theorists and industry practitioners, much research investment has been wasted. Second, to the extent that software engineering was meant to revolutionize labor practices by deskilling and disciplining programmers, imposing standardized research-based methods, or mandating licensing, it has not succeeded. Finally, software engineering never solved the problem that was its <em>raison d’etre</em>—the software crisis. These failures call into question the notion that engineering is the most appropriate model for the programming profession.</p>
 </blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2022/04/science-in-the-capital"><p>Science in the Capital</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2022-04-13T10:32:00-07:00" itemprop="datePublished">April 13, 2022</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>The series is 3 books:</p>
-
-<ul>
-  <li><em>Forty Signs of Rain</em></li>
-  <li><em>Fifty Degrees Below</em></li>
-  <li><em>Sixty Days and Counting</em></li>
-</ul>
-
-<p>It was subsequently re-edited into a single edition (<em>Green Earth</em>), but I read the originals. They have all the components of a KSR book:</p>
-
-<ul>
-  <li>Someone is smacked in the face</li>
-  <li>The last third of the book/series includes a travelogue of terraforming</li>
-  <li>Buddhism</li>
-  <li>Humanity rendered (and pondering) their place as a primates-out-of-forest/fish-out-of-water in a technology-based society.</li>
-</ul>
-
-<p>And some uniquely nice and interesting things</p>
-
-<ul>
-  <li>Child characters. I found them the most interesting, especially toddler Joe. Older Nick is pretty boring and unmotivated (in the literary sense) in stark contrast to <em>Aurora</em>’s Devi.</li>
-  <li>Contemporary setting (which does have its problems, like suggesting fictional nano-rods instead of actual CRISPR). This is mainly why I gave it 4 stars; it’s fairly unique as a KSR book goes.</li>
-</ul>
-
-<p>A main theme is “an excess of reason is itself a form of madness” with the various characters navigating contemporary rationalism (politics, bureaucracy, venture science, healthcare, courtship, family) within the constraints of their character’s authentic selves.</p>
-
-<blockquote>
-  <p>“We are animals. Animals whose wisdom has extended so far as to tell us we are mortal creatures. We die. For fifty thousand years we have known this. Much of our mental energy is spent avoiding this knowledge. We do not like to think of it. Then again, we know now that even the cosmos is mortal. Reality is mortal. All things change ceaselessly. Nothing remains the same in time. Nothing can be held on to. The question then becomes, what do we <em>do</em> with this knowledge? How do we live with it? How do we make sense of it?”</p>
-
-  <p>Well—indeed. Frank leaned forward, piqued, wondering what Drepung would tell them the old man had said next. That gravelly low voice, growling through its incomprehensible sounds—it was strange to think it was expressing such meanings. Frank suddenly wanted to know what he was saying.</p>
-
-  <p>“One of the scientific terms for compassion,” Drepung said, looking around the ceiling as if for the word, “…  you say, ‘altruism.’ This is a question in your animal studies. Does true altruism exist, and is it a good adaptation? Does compassion work, in other words? You have done studies that suggest altruism is the best adaptive strategy, if seen from the group context. This then becomes a kind of … admonishment. To practice compassion in order to successfully evolve—this, coming from your science, which claims to be descriptive only! Only describing what has worked to make us what we are. But in Buddhism we have always said, if you want to help others, practice compassion; if you want to help yourself, practice compassion. Now science adds, if you want to help your species, practice compassion.”</p>
-
-  <p>This got a laugh, and Frank also chuckled. He started to think about it in terms of prisoners’ dilemma strategies; it was an invocation for all to make the always generous move, for maximum group return, indeed maximum individual return.… Thus he missed what Drepung said next, absorbed in something more like a feeling than a thought: <em>If only I could believe in something, no doubt it would be a relief</em>. All his rationality, all his acid skepticism; suddenly it was hard not to feel that it was really just some kind of disorder.</p>
-
-  <p>And at that very moment Rudra Cakrin looked right at him, him alone in all the audience, and Drepung said, “An excess of reason is itself a form of madness.”</p>
-
-  <p>Frank sat back in his seat. What had the question been? Rerunning his short-term memory, he could not find it.</p>
-
-  <p>Now he was lost to the conversation again. His flesh was tingling, as if he were a bell that had been struck.</p>
-
-  <p>“The experience of enlightenment can be sudden.”</p>
-
-  <p>He didn’t hear that, not consciously.</p>
-
-  <p>“The scattered parts of consciousness occasionally assemble at once into a whole pattern.”</p>
-
-  <p>He didn’t hear that either, as he was lost in thought. All his certainties were trembling. He thought, an excess of reason itself a form of madness—it’s the story of my life. And the old man <em>knew</em>.</p>
-</blockquote>
-
-<p>The biggest problem with the book is that one of the main characters is super creepy. And it goes on too long. I think the latter is fixed in the edited Green Planet edition, but I dunno about the former.  Fortunately he doesn’t act on it:</p>
-
-<blockquote>
-  <p>Now he was considering acting in accordance with his beliefs. Something else he had heard the Khembalis say at the Quiblers, this time Drepung: If you don’t act on it, it wasn’t a true feeling. … One can always just walk away. The Dalai Lama had said that for sure. Things you don’t like, things you think are wrong, you can always just walk away. You will be happier. Love and compassion are necessities, not luxuries. Without them humanity cannot survive. But compassion is not just a feeling. You have to act.</p>
-</blockquote>
-
-<p>And if you make it to the third book, you’re treated to some good liberal head-canon in the newly elected President’s inauguration speech:</p>
-
-<blockquote>
-  <p>“Fellow Americans,” he said, pacing his speech to the reverb of the loudspeakers, “you have entrusted me with the job of president during a difficult time. The crisis we face now, of abrupt climate change and crippling damage to the biosphere, is a very dangerous one, to be sure. But we are not at war with anyone, and in fact we face a challenge that all humanity has to meet together. On this podium, Franklin Roosevelt said, ‘This generation has a rendezvous with destiny.’ Now it’s true again. We are the generation that has to deal with the profound destruction that will be caused by the global warming that has already been set in motion. The potential disruption of the natural order is so great that scientists warn of a mass extinction event. Losses on that scale would endanger all humanity, and so we cannot fail to address the threat. The lives of our children, and all their descendants, depend on us doing so.</p>
-
-  <p>“So, like FDR and his generation, we have to face the great challenge of our time. We have to use our government to organize a total social response to the problem. That took courage then, and we will need courage now. In the years since we used our government to help get us out of the Great Depression, it has sometimes been fashionable to belittle the American government as some kind of foreign burden laid on us. That attitude is nothing more than an attack on American history, deliberately designed to shift power away from the American people. I want us to remember how Abraham Lincoln said it: ‘that government of the people, by the people, and for the people shall not perish from this</p>
-
-  <p>Earth.’ This is the crucial concept of American democracy—that government expresses what the majority of us would like to do as a society. It’s us. We do it to us and for us. I believe this reminder is so important that I intend to add the defining phrase ‘of the people, by the people, and for the people’ every time I use the word ‘government,’ and I intend to do all I can to make that phrase be a true description. It will make me even more long-winded than I was before, but I am willing to pay that price, and you are going to have to pay it with me.</p>
-
-  <p>“So, this winter, with your approval and support, I intend to instruct my team in the executive branch of government of the people, by the people, and for the people, to initiate a series of federal actions and changes designed to meet the problem of global climate change head-on. We will deal with it as a society working together, and working with the rest of the world. It’s a global project, and so I will go to the United Nations and tell them that the United States is ready to join the international effort. We will also help the under-developed world to develop using clean technology, so that all the good aspects of development will not be drowned in its bad side effects—often literally drowned. In our own country, meanwhile, we will do all it takes to shift to clean technologies as quickly as possible.”<br />
-Phil paused to survey the crowd. “My, it’s cold out here today! You can feel right now, right down to the bone, that what I am saying is true. We’re out in the cold, and we need to change the way we do things. And it’s not just a technological problem, having to do with our machinery alone. The devastation of the biosphere is also a result of there being too many human beings for the planet to support over the long haul. If the human population continues to increase as it has risen in the past, all progress we might make will be overwhelmed.</p>
-
-  <p>“But what is very striking to observe is that everywhere on this Earth where good standards of justice prevail, the rate of reproduction is about at the replacement rate. While wherever justice, and the full array of rights as described in the UN Declaration of Human Rights, is somehow denied to some portion of the population, especially to women and children, the rate of reproduction either balloons to unsustainably rapid growth rates, or crashes outright. Now you can argue all you want about why this correlation exists, but the correlation itself is striking and undeniable. So this is one of those situations in which what we do for good in one area, helps us again in another. It is a positive feedback loop with the most profound implications. Consider: for the sake of climate stabilization, there must be population stabilization; and for there to be population stabilization, <em>justice must prevail.</em> Every person on the planet must live with the full array of human rights that all nations have already ascribed to when signing the UN Charter. When we achieve that, at that point, and at that point only, we will begin to reproduce at a sustainable rate.</p>
-
-  <p>“To help that to happen, I intend to make sure that the United States joins the global justice project <em>fully, unequivocally,</em> and <em>without any double standards</em>. This means accepting the jurisdiction of the International Criminal Court, and the jurisdiction of the World Court in the Hague. It means abiding by all the clauses of the UN Charter and the Geneva Conventions, which after all we have already signed. It means supporting UN peacekeeping forces, and supporting the general concept of the UN as the body through which international conflicts get resolved. It means supporting the World Health Organization in all its reproductive rights and population reduction efforts. It means supporting women’s education and women’s rights everywhere, even in cultures where men’s tyrannies are claimed to be some sort of tradition. All these commitments on our part will be crucial if we are serious about building a sustainable world. There are three legs to this effort, folks: technology, environment, and social justice. None of the three can be neglected.</p>
-
-  <p>“So, some of what we do may look a little unconventional at first. And it may look more than a little threatening to those few who have been trying, in effect, to buy our government of the people, by the people, and for the people, and use it to line their own pockets while the world goes smash. But you know what? Those people need to change too. They’re out in the cold the same as the rest of us. So we will proceed, and hope those opposed come to see the good in it.</p>
-
-  <p>“Ultimately we will be exploring all peaceful means to initiate positive changes in our systems, in order to hand on to the generations to come a world that is as beautiful and bountiful as the one we were born into. We are only the temporary stewards of a mighty trust, which includes the lives of all the future generations to come. We are responsible to our children and theirs. What we do now will reveal much about our character and our values as a people. We have to rise to the occasion, and I think we can and will. I am going to throw myself into the effort wholeheartedly and with a feeling of high excitement, as if beginning a long journey over stormy seas.”</p>
-</blockquote>
-
 
   </div>
 </article>

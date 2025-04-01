@@ -7,7 +7,7 @@
   <title>Island94.org : A lost and found | Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="veRb8XsJuMzx8prpBg0h0D-5kqx6hHzzgCCaSh-jRRyolp2d0fo9yEZ2F5g_CQtQdOmfkIBWLtL209PJICLwXw" />
+<meta name="csrf-token" content="7y2ImRQRMkm7tDbBDK3z3_qVVcYoAksjzpmRZpR_jhptl_UW98U2rrNrlcJ7daJ8avwacoxs108vjRIAxXEQlg" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -143,6 +143,73 @@
   <div class="container container-body">
     
 
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/02/til-activerecord-transactions-roll-back-on-ruby-thread-abort"><p>TIL: ActiveRecord transactions roll back on Ruby Thread abort</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-02-07T19:54:00-08:00" itemprop="datePublished">February 7, 2022</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I learned that ActiveRecord would roll back transactions when inside an aborted thread. It’s implemented right here, in ActiveRecord’s <a href="https://github.com/rails/rails/blob/3f13828392a4aea81184fa873c47cb2e53d295e9/activerecord/lib/active_record/connection_adapters/abstract/transaction.rb#L336-L342">connection_adapters/abstract/transaction.rb</a>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">within_new_transaction</span>
+  <span class="c1"># ...</span>
+<span class="k">ensure</span>
+  <span class="c1"># ...</span>
+  <span class="k">elsif</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">current</span><span class="p">.</span><span class="nf">status</span> <span class="o">==</span> <span class="s2">"aborting"</span> <span class="o">||</span> <span class="p">(</span><span class="o">!</span><span class="n">completed</span> <span class="o">&amp;&amp;</span> <span class="n">transaction</span><span class="p">.</span><span class="nf">written</span><span class="p">)</span>
+    <span class="c1"># The transaction is still open but the block returned earlier.</span>
+    <span class="c1">#</span>
+    <span class="c1"># The block could return early because of a timeout or because the thread is aborting,</span>
+    <span class="c1"># so we are rolling back to make sure the timeout didn't caused the transaction to be</span>
+    <span class="c1"># committed incompletely.</span>
+    <span class="n">rollback_transaction</span>
+  <span class="c1"># ...</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>How did I end up here? I recently implemented a feature in GoodJob to track active processes in the database using ActiveRecord. These database queries occur in a background thread where I also use the same database connection for GoodJob’s Postgres LISTENing. It looks something like this (pseudocode):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Concurrent</span><span class="o">::</span><span class="no">Future</span><span class="p">.</span><span class="nf">execute</span> <span class="k">do</span>
+  <span class="n">process</span> <span class="o">=</span> <span class="no">Process</span><span class="p">.</span><span class="nf">create</span>
+  <span class="kp">loop</span> <span class="p">{</span> <span class="n">listen_for_notify</span> <span class="p">}</span>
+<span class="k">ensure</span>
+  <span class="n">process</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">destroy!</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>While working on one of my Rails projects that use GoodJob (https://dayoftheshirt.com), I noticed that Process records were not cleaned up as I expected running when GoodJob async inside of Rails Server/Puma locally and exiting. Inspecting the logs, I saw this:</p>
+
+<pre><code class="language-text">TRANSACTION (0.1ms)  BEGIN
+GoodJob::Process Destroy (0.3ms)  DELETE FROM "good_job_processes" WHERE "good_job_processes"."id" = $1  [["id", "320de861-4c84-4f8c-ba3e-2e08a8ef0469"]]
+TRANSACTION (0.1ms)  ROLLBACK
+</code></pre>
+
+<p>Huh. I did some Googling and found some <a href="https://github.com/rails/rails/pull/40704#discussion_r532007113">references to rollback behavior</a>, and asked in the Rails Link Slack, but nobody knew. This caused me to dig in ActiveRecord, where I found the behavior implemented.</p>
+
+<p>I was still confused because I had never seen this behavior in GoodJob when building out the feature. But after much head-scratching, I realized that I hadn’t followed <a href="https://github.com/bensheldon/good_job#execute-jobs-async--in-process">GoodJob’s README instructions for integrating with Puma</a>, which ensures that GoodJob is gracefully shutdown before Ruby aborts threads at exit:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/puma.rb</span>
+
+<span class="n">on_worker_shutdown</span> <span class="k">do</span>
+  <span class="no">GoodJob</span><span class="p">.</span><span class="nf">shutdown</span>
+<span class="k">end</span>
+
+<span class="no">MAIN_PID</span> <span class="o">=</span> <span class="no">Process</span><span class="p">.</span><span class="nf">pid</span>
+<span class="nb">at_exit</span> <span class="k">do</span>
+  <span class="no">GoodJob</span><span class="p">.</span><span class="nf">shutdown</span> <span class="k">if</span> <span class="no">Process</span><span class="p">.</span><span class="nf">pid</span> <span class="o">==</span> <span class="no">MAIN_PID</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Mystery solved.</p>
+
+  </div>
+</article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
@@ -563,27 +630,6 @@ Ben and Angelina</p>
 
 <p>I also have a  <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a>  if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
 
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2021/07/paranoid-and-reparative-readings"><p>Paranoid and Reparative readings</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2021-07-05T10:19:00-07:00" itemprop="datePublished">July 5, 2021</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>From <a href="https://www.vox.com/the-highlight/22543858/isabel-fall-attack-helicopter"><em>How Twitter can ruin a life: Isabel Fall’s sci-fi story “I Sexually Identify as an Attack Helicopter” drew the ire of the internet</em></a>:</p>
-
-<blockquote>
-  <p>The delineation between paranoid and reparative readings originated in 1995, with influential critic Eve Kosofsky Sedgwick. A paranoid reading focuses on what’s wrong or problematic about a work of art. A reparative reading seeks out what might be nourishing or healing in a work of art, even if the work is flawed. Importantly, a reparative reading also tends to consider what might be nourishing or healing in a work of art for someone who isn’t the reader.</p>
-</blockquote>
 
   </div>
 </article>
