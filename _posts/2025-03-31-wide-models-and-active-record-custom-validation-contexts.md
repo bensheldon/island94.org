@@ -1,6 +1,6 @@
 ---
-title: "Welcoming Wide Models with custom Active Record validation contexts"
-date: 2025-03-31 17:18 PDT
+title: "Wide Models and Active Record custom validation contexts"
+date: 2025-04-01 08:00 PDT
 published: true
 tags: [Rails]
 ---
