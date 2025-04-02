@@ -57,13 +57,22 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   config.filter_gems_from_backtrace("capybara", "cuprite", "ferrum")
 
-  Capybara.register_driver(:cuprite) do |app|
-    Capybara::Cuprite::Driver.new(app, window_size: [1200, 800], process_timeout: 30, inspector: ENV['INSPECTOR'])
-  end
+  Capybara.default_max_wait_time = 2
+  Capybara.server = :puma, { Silent: true }
 
   config.before(:each, type: :system) do |example|
+    example.metadata[:js] = true if ENV['SHOW_BROWSER']
+
     if example.metadata[:js]
-      driven_by :cuprite
+      driven_by(
+        :cuprite,
+        screen_size: [1024, 800],
+        options: {
+          process_timeout: 30,
+          headless: ENV['SHOW_BROWSER'] ? false : true,
+          browser_options: ENV["DOCKER"] ? { "no-sandbox" => nil } : {},
+        }
+      )
     else
       driven_by :rack_test
     end
