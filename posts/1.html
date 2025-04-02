@@ -7,7 +7,7 @@
   <title>Island94.org : A lost and found</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="EwVGlZ1AgXesGSS64MxUfVGPI4vKG4JNH9DxplH7TYihDY7IYJZjHYfE1e3PQQeGmZCNHX_LO_XCdLxB4a5XGQ" />
+<meta name="csrf-token" content="MMbYc1bNTd0Q6jRML5tuI1mSXJQXLIOdjqW27vEN8KzCzW2QVYPvwE9Z0sGx6_24TJIwoLEzZVle7MKXqbOj5g" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -142,6 +142,30 @@
   <div class="container container-body">
     
 
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/04/recently-april-2-2025"><p>Recently, April 2, 2025</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-04-02T07:27:00-07:00" itemprop="datePublished">April 2, 2025</time>
+
+        • Tagged <a href="/posts/tags/recently">recently</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <ul>
+  <li>I’ve been away from work for the past week hosting family, including a 9 and 11 year old. In that week, we did: Ferry Building Farmer’s Market, Exploratorium and Tactile Dome, Alcatraz, “Dear San Francisco” at Club Fugazi, swam in the Bay and at the YMCA, rode a cable car, rode some buses, walked the Golden Gate Bridge, hiked Muir Woods, ate House of Prime Rib, Mama’s, Fish, Tailor’s Son, and Cafe de Casa. We had the kids for a night so their parent’s could do Napa and overnight at Indian Springs. I dropped them off at the airport yesterday and it is blessedly quiet and cats are decompressing.</li>
+  <li>For the kids we opened up The Big Bag of Quest Headsets that we have accumulated because Angelina works on them. Lots of charging and battery swapping and then Beat Saber. The kids also played <em>Threes</em> and <em>Tiny Wings</em> on iPhones.</li>
+  <li>During downtime we watched through “Wolf King”, and I got to provide adult commentary of “do you think <em>they</em> are a werelord?” about everyone; I had fun.</li>
+  <li>I finished reading <em>Wicked</em>; I won’t be doing the trilogy. I recluctantly started reading <em>Polostan</em>; the past several Neal Stephenson books have not been my thing but I am a suffering optimist.</li>
+  <li>I started playing <em>Anodyne</em>. Please suggest casual uncomplicated metroidvanias and open-world wander-arounders.</li>
+</ul>
+
+  </div>
+</article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
@@ -793,67 +817,6 @@ Overall: Is it positive, neutral, or negative?</p>
     </ul>
   </li>
 </ul>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2024/11/keep-your-secrets-yml-in-rails-7-2"><p>Keep your secrets.yml in Rails 7.2+</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2024-11-19T16:13:00-08:00" itemprop="datePublished">November 19, 2024</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Ruby on <a href="https://www.shakacode.com/blog/rails-7-1-removes-secret-setup-command-and-deprecates-secret-show-edit-commands/">Rails v7.1 deprecated and v7.2 removed</a> support for <code>Rails.application.secrets</code> and <code>config/secrets.yml</code> in favor of Encrypted Credentials. You don’t have to go along with that! I like Secrets functionality because it allows for consolidating and normalizing <code>ENV</code> values in a single configuration file with ERB (Encrypted Credentials <a href="https://github.com/rails/rails/pull/46508">doesn’t</a>).</p>
-
-<p>It’s extremely simple to reimplement the same behavior using <a href="https://guides.rubyonrails.org/configuring.html#custom-configuration"><code>config_for</code></a> and the knowledge that methods defined in <code>application.rb</code> show as methods on <code>Rails.application</code>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/application.rb</span>
-
-<span class="k">module</span> <span class="nn">ExampleApp</span>
-  <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Rails</span><span class="o">::</span><span class="no">Application</span>
-    <span class="c1"># ....</span>
-    <span class="n">config</span><span class="p">.</span><span class="nf">secrets</span> <span class="o">=</span> <span class="n">config_for</span><span class="p">(</span><span class="ss">:secrets</span><span class="p">)</span> <span class="c1"># loads from config/secrets.yml</span>
-    <span class="n">config</span><span class="p">.</span><span class="nf">secret_key_base</span> <span class="o">=</span> <span class="n">config</span><span class="p">.</span><span class="nf">secrets</span><span class="p">[</span><span class="ss">:secret_key_base</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">secrets</span>
-      <span class="n">config</span><span class="p">.</span><span class="nf">secrets</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>That is all you need to continue using a <code>secrets.yml</code> file that looks like this:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/secrets.yml</span>
-
-<span class="na">defaults</span><span class="pi">:</span> <span class="nl">&amp;defaults</span>
-  <span class="na">default_host</span><span class="pi">:</span> <span class="s">&lt;%= ENV.fetch('DEFAULT_HOST', 'localhost:3000') %&gt;</span>
-  <span class="na">twilio_api_key</span><span class="pi">:</span> <span class="s">&lt;%= ENV.fetch('TWILIO_API_KEY', 'fake') %&gt;</span>
-  <span class="na">mailgun_secret</span><span class="pi">:</span> <span class="s">&lt;%= ENV.fetch('MAILGUN_SECRET', 'fake') %&gt;</span>
-
-<span class="na">development</span><span class="pi">:</span>
-  <span class="na">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*defaults</span>
-  <span class="na">secret_key_base</span><span class="pi">:</span> <span class="s">79c6d24d26e856bc2549766552ff7b542f54897b932717391bf705e35cf028c851d5bdf96f381dc41472839fcdc8a1221ff04eb4c8c5fbef62a6d22747f079d7</span>
-
-<span class="na">test</span><span class="pi">:</span>
-  <span class="na">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*defaults</span>
-  <span class="na">secret_key_base</span><span class="pi">:</span> <span class="s">0b3abfc0c362bab4dd6d0a28fcfea3f52f076f8d421106ec6a7ebe831ab9e4dc010a61d49e41a45f8f49e9fc85dd8e5bf3a53ce7a3925afa78e05b078b31c2a5</span>
-
-<span class="c1"># Do not keep production secrets in the repository,</span>
-<span class="c1"># instead read values from the environment.</span>
-<span class="na">production</span><span class="pi">:</span>
-  <span class="na">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*defaults</span>
-  <span class="na">secret_key_base</span><span class="pi">:</span> <span class="s">&lt;%= ENV["SECRET_KEY_BASE"] %&gt;</span>
-  <span class="na">default_host</span><span class="pi">:</span> <span class="s">&lt;%= ENV['DEFAULT_HOST'] || (ENV['HEROKU_APP_NAME'] ? "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"</span><span class="err">:</span> <span class="s">nil) %&gt;</span>
-</code></pre></div></div>
-
-<p><strong>Note:</strong> This only works for <code>secrets.yml</code> not <code>secrets.enc.yml</code> which was called “Encrypted Secrets.” If you’re using “Encrypted Secrets” then you should definitely move over to the Encrypted Credentials feature.</p>
 
   </div>
 </article>
