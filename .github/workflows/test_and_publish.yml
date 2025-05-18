@@ -3,6 +3,8 @@ on:
   push:
   schedule:
     - cron: '0 7 * * *'
+  repository_dispatch:
+    types: [trigger-test-and-publish]
 concurrency:
   group: ${{ github.workflow}}-${{ github.ref }}
   cancel-in-progress: true
@@ -39,4 +41,3 @@ jobs:
           publish_dir: ./build
           publish_branch: gh-pages
           enable_jekyll: false
-
