@@ -1,10 +1,11 @@
+# frozen_string_literal: true
 module RouteHelper
   def strip_leading_slash(string)
-    string.sub(%r{\A/}, "")
+    string.delete_prefix('/')
   end
 
   def strip_trailing_slash(string)
-    string.sub(%r{/\z}, "")
+    string.delete_suffix('/')
   end
 
   def strip_outer_slashes(string)

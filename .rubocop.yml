@@ -1,0 +1,203 @@
+# inherit_from: .rubocop_todo.yml
+
+#
+# https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+#
+plugins:
+  - rubocop-capybara
+  - rubocop-factory_bot
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-rspec_rails
+
+inherit_mode:
+  merge:
+    - Exclude
+    - Include
+
+AllCops:
+  TargetRubyVersion: "3.4"
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - db/migrate/*_init_schema.rb
+    - node_modules/**/*
+    - scripts/**/*
+    - vendor/**/*
+  NewCops: enable
+
+Capybara/ClickLinkOrButtonStyle:
+  EnforcedStyle: link_or_button
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+
+Naming/VariableNumber:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/ApplicationController:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
+
+RSpec/SpecFilePathFormat:
+  Exclude:
+    - spec/config/rubocop/**
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/MailerName:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/ThreeStateBooleanColumn:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - demo
+    - staging
+    - test
+    - development
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/lib/tasks/*
+    - spec/features/*
+    - spec/requests/*
+    - spec/system/*
+    - spec/routing/*
+
+RSpec/ExampleLength:
+  Enabled: false
+
+FactoryBot/ExcessiveCreateList:
+  Enabled: false
+
+FactoryBot/SyntaxMethods:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MatchArray:
+  Enabled: false
+
+RSpec/MessageChain:
+  Enabled: false
+
+RSpec/MultipleDescribes:
+  Exclude:
+    - spec/lib/tasks/*
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/PredicateMatcher:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/FormatStringToken:
+  EnforcedStyle: template
+
+Style/GuardClause:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/SingleArgumentDig:
+  Enabled: false
+
+Style/StringConcatenation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/SymbolProc:
+  Exclude:
+    - db/migrate/**/*
+
+Style/WordArray:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma

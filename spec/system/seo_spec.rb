@@ -1,12 +1,12 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe 'SEO' do
   context 'when on frontpage' do
     it 'does not include robots meta tag' do
       visit '/'
-
-      expect(page).not_to have_css 'meta[name="robots"]',
-                                   visible: false
+      expect(page).to have_content("Island94")
+      expect(page).to have_no_css 'meta[name="robots"]', visible: :all
     end
   end
 
@@ -18,8 +18,7 @@ RSpec.describe 'SEO' do
       end
 
       expect(page.text).to include 'Island94.org'
-      expect(page).not_to have_css 'meta[name="robots"]',
-                                   visible: false
+      expect(page).to have_no_css 'meta[name="robots"]', visible: :all
     end
   end
 
@@ -27,14 +26,12 @@ RSpec.describe 'SEO' do
     it 'includes robots noindex,nofollow meta tag' do
       visit '/posts/2/'
 
-      expect(page).to have_css 'meta[name="robots"][content="noindex, follow"]',
-                               visible: false
+      expect(page).to have_css 'meta[name="robots"][content="noindex, follow"]', visible: :all
     end
   end
 
-  context 'sitemap' do
-    # Not compatible with latest versions of jekyll-sitemap plugin
-    xit 'does not include archive pages' do
+  describe 'sitemap' do
+    it 'does not include archive pages' do
       visit 'sitemap.xml'
 
       sitemap = Nokogiri::XML page.body

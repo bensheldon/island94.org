@@ -1,5 +1,8 @@
+# frozen_string_literal: true
 class Post < ApplicationModel
-  attr_reader :filepath, :frontmatter, :body
+  attribute :filepath, :string
+  attribute :frontmatter, default: -> { {} }
+  attribute :body, :string
 
   def self.all
     # Load all files from _posts directory
@@ -25,14 +28,8 @@ class Post < ApplicationModel
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
-  def initialize(filepath:, frontmatter:, body:)
-    @filepath = filepath
-    @frontmatter = frontmatter
-    @body = body
-  end
-
   def slug
-    @slug ||= raw_slug.downcase
+    @_slug ||= raw_slug.downcase
   end
 
   def project_filepath
@@ -48,17 +45,11 @@ class Post < ApplicationModel
   end
 
   def content
-    @content ||= Kramdown::Document.new(body, input: 'GFM').to_html.html_safe
+    @_content ||= Kramdown::Document.new(body, input: 'GFM').to_html.html_safe # rubocop:disable Rails/OutputSafety
   end
 
   def published_at
-    @published_at ||= begin
-      if frontmatter["date"]
-        Time.parse(frontmatter["date"])
-      else
-        Time.parse(filename.split("-", 3).join("-"))
-      end
-    end
+    @_published_at ||= Time.zone.parse(frontmatter["date"] || filename.split("-", 3).join("-"))
   end
 
   def published?
@@ -79,12 +70,11 @@ class Post < ApplicationModel
     return [] if tags.empty?
 
     self.class.all
-      .select(&:published?)
-      .select { |post| (post.tags & tags).any? }
-      .reject { |post| post == self }
-      .sort_by(&:published_at)
-      .reverse
-      .first(5) # Limit to 5 related posts
+        .select(&:published?)
+        .select { |post| post.tags.intersect?(tags) }
+        .reject { |post| post == self }
+        .sort_by(&:published_at)
+        .last(5).reverse # Limit to 5 related posts
   end
 
   private

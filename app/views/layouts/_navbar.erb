@@ -6,9 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><%= link_to "About", about_path, class: ["nav-link", active: current_page?(about_path)] %></li>
-        <li class="nav-item"><%= link_to "Archives", archives_path, class: ["nav-link", active: current_page?(archives_path)] %></li>
-        <li class="nav-item"><%= link_to "Tags", tags_path, class: ["nav-link", active: current_page?(tags_path)] %></li>
+        <li class="nav-item"><%= link_to "About", about_path, class: ["nav-link", { active: current_page?(about_path) }] %></li>
+        <li class="nav-item"><%= link_to "Archives", archives_path, class: ["nav-link", { active: current_page?(archives_path) }] %></li>
+        <li class="nav-item"><%= link_to "Tags", tags_path, class: ["nav-link", { active: current_page?(tags_path) }] %></li>
         <li class="nav-item"><%= link_to feed_path(format: :xml), class: "nav-link" do %>RSS Feed <i class="bi bi-rss-fill"></i><% end %></li>
 
         <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
@@ -22,8 +22,7 @@
             class="btn btn-link nav-link dropdown-toggle"
             type="button"
             aria-expanded="false"
-            data-bs-toggle="dropdown"
-          >
+            data-bs-toggle="dropdown">
             <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
             <span data-theme-target="switcherText">Theme</span>
           </button>
@@ -34,8 +33,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="light"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-sun"></i> Light
               </button>
             </li>
@@ -45,8 +43,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="dark"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-moon-stars-fill"></i> Dark
               </button>
             </li>
@@ -56,8 +53,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="auto"
                 data-action="theme#switch"
-                aria-pressed="true"
-              >
+                aria-pressed="true">
                 <i class="bi bi-circle-half"></i> Auto
               </button>
             </li>
@@ -68,7 +64,7 @@
 
       <form id="search" class="d-flex" action="/search" method="get">
         <div class="input-group">
-          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
           <button type="submit" class="btn btn-outline-secondary">
             <i class="bi bi-search"></i>
             <span class="visually-hidden">Search</span>

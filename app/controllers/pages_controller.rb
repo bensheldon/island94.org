@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 class PagesController < ApplicationController
-  layout (lambda do
+  layout(lambda do
     if action_name == 'feed'
       nil
     else

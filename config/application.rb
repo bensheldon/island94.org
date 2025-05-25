@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require_relative "boot"
 
 require "rails"
@@ -9,7 +10,7 @@ require "action_view/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-require_relative "./middleware/redirect_to_meta_refresh"
+require_relative "middleware/redirect_to_meta_refresh"
 
 module Island94
   class Application < Rails::Application
@@ -28,15 +29,13 @@ module Island94
 
     config.middleware.insert_before 0, RedirectToMetaRefresh
     config.middleware.use Rack::Static,
-      urls: ["/uploads"],
-      root: Rails.root.to_s,
-      header_rules: [
-        [:all, { "Cache-Control" => "public, max-age=15552000" }]
-      ]
+                          urls: ["/uploads"],
+                          root: Rails.root.to_s,
+                          header_rules: [
+                            [:all, { "Cache-Control" => "public, max-age=15552000" }],
+                          ]
 
     config.default_url_options = {}
-
-
 
     # Configuration for the application, engines, and railties goes here.
     #

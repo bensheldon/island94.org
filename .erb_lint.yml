@@ -1,0 +1,51 @@
+---
+glob: "app/views/**/*.erb"
+include:
+  - "app/views/**/*.erb"
+exclude:
+  - "app/views/**/*.xml.erb"
+EnableDefaultLinters: true
+linters:
+  AllowedScriptType:
+    enabled: true
+    allowed_types:
+      - 'application/json'
+      - 'text/javascript'
+      - 'text/html'
+      - 'application/ld+json'
+      - 'module'
+    allow_blank: false
+    disallow_inline_scripts: false
+  HardCodedString:
+    enabled: false
+  ClosingErbTagIndent:
+    enabled: false
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+      Layout/ArgumentAlignment:
+        Enabled: false
+      Layout/FirstArrayElementIndentation:
+        Enabled: false
+      Layout/FirstHashElementIndentation:
+        Enabled: false
+      Layout/InitialIndentation:
+        Enabled: false
+      Layout/LeadingEmptyLines:
+        Enabled: false
+      Layout/TrailingEmptyLines:
+        Enabled: false
+      Layout/TrailingWhitespace:
+        Enabled: false
+      Lint/UselessAssignment:
+        Enabled: false
+      Naming/FileName:
+        Enabled: false
+      Rails/OutputSafety:
+        Enabled: false
+      Style/FrozenStringLiteralComment:
+        Enabled: false
+      Style/QuotedSymbols:
+        Enabled: false
