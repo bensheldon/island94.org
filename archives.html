@@ -7,7 +7,7 @@
   <title>Archives | Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="ePhB85d7JHsdby-xTDqGmSXor_Pkh-Ss8lx0xDZDfoTJEmphMG-V7bmEQQrQ0djpuvPz0mswLLKpJSHRbOa0pA" />
+<meta name="csrf-token" content="WMYxj2kBIgLXbk2p6Xz21fkX4HEbGAN2155yH4gpCjQ73xae8ooB7ays5MD34o_LrkcGnz0gUMi5fOwR7DWznA" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -36,7 +36,7 @@
 <link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
 <script type="module">import "application"</script>
 
-  <script>
+  <script type="text/javascript">
     function setTheme() {
       let theme = localStorage.getItem('theme');
       if (!["light", "dark"].includes(theme)) {
@@ -76,8 +76,7 @@
             class="btn btn-link nav-link dropdown-toggle"
             type="button"
             aria-expanded="false"
-            data-bs-toggle="dropdown"
-          >
+            data-bs-toggle="dropdown">
             <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
             <span data-theme-target="switcherText">Theme</span>
           </button>
@@ -88,8 +87,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="light"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-sun"></i> Light
               </button>
             </li>
@@ -99,8 +97,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="dark"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-moon-stars-fill"></i> Dark
               </button>
             </li>
@@ -110,8 +107,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="auto"
                 data-action="theme#switch"
-                aria-pressed="true"
-              >
+                aria-pressed="true">
                 <i class="bi bi-circle-half"></i> Auto
               </button>
             </li>
@@ -122,7 +118,7 @@
 
       <form id="search" class="d-flex" action="/search" method="get">
         <div class="input-group">
-          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
           <button type="submit" class="btn btn-outline-secondary">
             <i class="bi bi-search"></i>
             <span class="visually-hidden">Search</span>
@@ -258,10 +254,10 @@
     <h3 class="h6">June</h3>
     <ul>
         <li><a href="/2023/06/19-sales-marketing-strategies-in-19-weeks">19 sales &amp; marketing strategies in 19 weeks</a></li>
+        <li><a href="/2023/06/rebuilding-concurrent-ruby-scheduledtask-event-and-timerset">Rebuilding Concurrent Ruby: ScheduledTask, Event, and TimerSet</a></li>
     </ul>
     <h3 class="h6">May</h3>
     <ul>
-        <li><a href="/2023/05/rebuilding-concurrent-ruby-scheduledtask-event-and-timerset">Rebuilding Concurrent Ruby: ScheduledTask, Event, and TimerSet</a></li>
         <li><a href="/2023/05/whatever-you-do-don-t-autoload-rails-lib">Whatever you do, don&#39;t autoload Rails `lib/`</a></li>
     </ul>
     <h3 class="h6">April</h3>
@@ -290,9 +286,12 @@
     </ul>
   <h2>2022</h2>
 
+    <h3 class="h6">December</h3>
+    <ul>
+        <li><a href="/2022/12/liberatory-accountability">Liberatory accountability</a></li>
+    </ul>
     <h3 class="h6">November</h3>
     <ul>
-        <li><a href="/2022/11/liberatory-accountability">Liberatory accountability</a></li>
         <li><a href="/2022/11/environment-at-work">Environment, at work</a></li>
         <li><a href="/2022/11/worknotes-november-13-2022">Worknotes: November 13, 2022</a></li>
         <li><a href="/2022/11/synectics">Synectics: The Development of Creative Capacity</a></li>
@@ -348,10 +347,10 @@
         <li><a href="/2022/03/bullshit-jobs">Bullshit Jobs</a></li>
         <li><a href="/2022/03/over-rapported">Over-rapported</a></li>
         <li><a href="/2022/03/oop-the-easy-way">OOP the easy way</a></li>
+        <li><a href="/2022/03/software-models">Software models</a></li>
     </ul>
     <h3 class="h6">February</h3>
     <ul>
-        <li><a href="/2022/02/software-models">Software models</a></li>
         <li><a href="/2022/02/it-asks-you-to-be-interactive">It asks you to be interactive</a></li>
         <li><a href="/2022/02/even-if-the-answers-are-messy-and-provisional">Even if the answers are messy and provisional</a></li>
         <li><a href="/2022/02/til-activerecord-transactions-roll-back-on-ruby-thread-abort">TIL: ActiveRecord transactions roll back on Ruby Thread abort</a></li>
@@ -385,9 +384,12 @@
         <li><a href="/2021/07/goodjob-whats-new-v1120">GoodJob, what&#39;s new: Cron, concurrency controls, and a dashboard demo (v1.12.0)</a></li>
         <li><a href="/2021/07/paranoid-and-reparative-readings">Paranoid and Reparative readings</a></li>
     </ul>
+    <h3 class="h6">June</h3>
+    <ul>
+        <li><a href="/2021/06/goodjob-updates-v15-v19">GoodJob Updates v1.5 - v1.9: Dashboard, daemonize, async_server, and graceful shutdowns</a></li>
+    </ul>
     <h3 class="h6">May</h3>
     <ul>
-        <li><a href="/2021/05/goodjob-updates-v15-v19">GoodJob Updates v1.5 - v1.9: Dashboard, daemonize, async_server, and graceful shutdowns</a></li>
         <li><a href="/2021/05/is-securerandom-choose-the-wrong-name-for-generating-randomized-strings-with-ruby">Is SecureRandom.choose the wrong name for generating randomized strings with Ruby?</a></li>
         <li><a href="/2021/05/generic-advice-for-managers">Generic advice for managers</a></li>
     </ul>
@@ -485,14 +487,11 @@
         <li><a href="/2019/01/having-a-creator-s-profile">Having a creator&#39;s profile</a></li>
         <li><a href="/2019/01/just-the-fact-there-doesn-t-seem-to-be-a-reason-doesn-t-mean-there-isn-t-a-reason">Just the fact there doesn&#39;t seem to be a reason doesn&#39;t mean there isn&#39;t a reason</a></li>
         <li><a href="/2019/01/the-work-of-product-management">The work of product management</a></li>
+        <li><a href="/2019/01/advocacy-inquiry-and-very-large-teams">Advocacy, inquiry, and very large teams</a></li>
+        <li><a href="/2019/01/what-are-the-rewards">What are the rewards?</a></li>
     </ul>
   <h2>2018</h2>
 
-    <h3 class="h6">December</h3>
-    <ul>
-        <li><a href="/2018/12/advocacy-inquiry-and-very-large-teams">Advocacy, inquiry, and very large teams</a></li>
-        <li><a href="/2018/12/what-are-the-rewards">What are the rewards?</a></li>
-    </ul>
     <h3 class="h6">November</h3>
     <ul>
         <li><a href="/2018/11/difficult-workshops-and-vulnerability">Difficult workshops and vulnerability</a></li>
@@ -527,11 +526,14 @@
         <li><a href="/2018/03/japanese-processes">Japanese processes</a></li>
         <li><a href="/2018/03/if-you-replaced-accessibility-with-responsive-design-in-2018-this-is-what-youd-get">If you replaced “accessibility” with “responsive design” in 2018, this is what you’d get</a></li>
     </ul>
+    <h3 class="h6">January</h3>
+    <ul>
+        <li><a href="/2018/01/to-test-god">To test god</a></li>
+    </ul>
   <h2>2017</h2>
 
     <h3 class="h6">December</h3>
     <ul>
-        <li><a href="/2017/12/to-test-god">To test god</a></li>
         <li><a href="/2017/12/design-principles-are-insights-made-actionable">Design Principles are insights made actionable</a></li>
         <li><a href="/2017/12/taking-responsibility-for-safety-on-the-line">Taking responsibility for safety on the line</a></li>
         <li><a href="/2017/12/people-do-not-need-or-await-permission-to-move">People do not need or await permission to move</a></li>

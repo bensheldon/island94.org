@@ -5,8 +5,8 @@
     <description>A Lost and Found</description>
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 May 2025 15:13:00 -0700</pubDate>
-    <lastBuildDate>Sun, 25 May 2025 17:11:56 +0000</lastBuildDate>
+    <pubDate>Sun, 04 May 2025 22:13:00 +0000</pubDate>
+    <lastBuildDate>Sun, 25 May 2025 17:26:08 +0000</lastBuildDate>
     <generator>Ruby on Rails</generator>
       <item>
         <title>Recently, May 4, 2025</title>
@@ -60,7 +60,7 @@
         </description>
         <link>https://island94.org/2025/05/recently-may-4-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/05/recently-may-4-2025</guid>
-        <pubDate>Sun, 04 May 2025 15:13:00 -0700</pubDate>
+        <pubDate>Sun, 04 May 2025 22:13:00 +0000</pubDate>
       </item>
       <item>
         <title>Recently, April 20, 2025</title>
@@ -143,7 +143,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/04/recently-april-20-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/04/recently-april-20-2025</guid>
-        <pubDate>Sun, 20 Apr 2025 17:19:00 -0700</pubDate>
+        <pubDate>Mon, 21 Apr 2025 00:19:00 +0000</pubDate>
       </item>
       <item>
         <title>Recently, April 14, 2025</title>
@@ -203,7 +203,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/04/recently-april-14-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/04/recently-april-14-2025</guid>
-        <pubDate>Mon, 14 Apr 2025 19:02:00 -0700</pubDate>
+        <pubDate>Tue, 15 Apr 2025 02:02:00 +0000</pubDate>
       </item>
       <item>
         <title>Recently, April 7, 2025</title>
@@ -233,7 +233,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/04/recently-april-7-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/04/recently-april-7-2025</guid>
-        <pubDate>Mon, 07 Apr 2025 19:33:00 -0700</pubDate>
+        <pubDate>Tue, 08 Apr 2025 02:33:00 +0000</pubDate>
       </item>
       <item>
         <title>Recently, April 2, 2025</title>
@@ -251,7 +251,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/04/recently-april-2-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/04/recently-april-2-2025</guid>
-        <pubDate>Wed, 02 Apr 2025 07:27:00 -0700</pubDate>
+        <pubDate>Wed, 02 Apr 2025 14:27:00 +0000</pubDate>
       </item>
       <item>
         <title>Wide Models and Active Record custom validation contexts</title>
@@ -327,7 +327,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/04/wide-models-and-active-record-custom-validation-contexts</link>
         <guid isPermaLink="true">https://island94.org/2025/04/wide-models-and-active-record-custom-validation-contexts</guid>
-        <pubDate>Tue, 01 Apr 2025 08:00:00 -0700</pubDate>
+        <pubDate>Tue, 01 Apr 2025 15:00:00 +0000</pubDate>
       </item>
       <item>
         <title>Recently, March 26, 2025</title>
@@ -346,7 +346,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/03/recently-march-26-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/03/recently-march-26-2025</guid>
-        <pubDate>Wed, 26 Mar 2025 09:01:00 -0700</pubDate>
+        <pubDate>Wed, 26 Mar 2025 16:01:00 +0000</pubDate>
       </item>
       <item>
         <title>Recently, March 16, 2025</title>
@@ -368,7 +368,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/03/recently-march-16-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/03/recently-march-16-2025</guid>
-        <pubDate>Sun, 16 Mar 2025 15:37:00 -0700</pubDate>
+        <pubDate>Sun, 16 Mar 2025 22:37:00 +0000</pubDate>
       </item>
       <item>
         <title>Addressing it directly</title>
@@ -390,7 +390,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/03/addressing-it-directly</link>
         <guid isPermaLink="true">https://island94.org/2025/03/addressing-it-directly</guid>
-        <pubDate>Sun, 16 Mar 2025 14:46:00 -0700</pubDate>
+        <pubDate>Sun, 16 Mar 2025 21:46:00 +0000</pubDate>
       </item>
       <item>
         <title>Flattening the curve for the safety net, five years later</title>
@@ -452,7 +452,7 @@ export default class extends Controller {
         </description>
         <link>https://island94.org/2025/03/flattening-the-curve-for-the-safety-net</link>
         <guid isPermaLink="true">https://island94.org/2025/03/flattening-the-curve-for-the-safety-net</guid>
-        <pubDate>Mon, 10 Mar 2025 08:00:00 -0800</pubDate>
+        <pubDate>Mon, 10 Mar 2025 16:00:00 +0000</pubDate>
       </item>
   </channel>
 </rss>

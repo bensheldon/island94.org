@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>To test god | Island94.org</title>
+  <title>Software models | Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="EAFbZ2pSipGBIKZZQmZRaW2hOJDYXXkZvvT0jx7akv2h63D1zUY7ByXLyOLejQ8Z8rpksVfqsQfljaGaRH9Y3Q" />
+<meta name="csrf-token" content="bLX8mxw6atrTl-l4dA2L0UCjLH0cX0MEzP205AvjlzYPrNuKh7FJNahVQBFqk_LPF_PKkzpnELqiHyrqb_8ung" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -36,7 +36,7 @@
 <link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
 <script type="module">import "application"</script>
 
-  <script>
+  <script type="text/javascript">
     function setTheme() {
       let theme = localStorage.getItem('theme');
       if (!["light", "dark"].includes(theme)) {
@@ -76,8 +76,7 @@
             class="btn btn-link nav-link dropdown-toggle"
             type="button"
             aria-expanded="false"
-            data-bs-toggle="dropdown"
-          >
+            data-bs-toggle="dropdown">
             <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
             <span data-theme-target="switcherText">Theme</span>
           </button>
@@ -88,8 +87,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="light"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-sun"></i> Light
               </button>
             </li>
@@ -99,8 +97,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="dark"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-moon-stars-fill"></i> Dark
               </button>
             </li>
@@ -110,8 +107,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="auto"
                 data-action="theme#switch"
-                aria-pressed="true"
-              >
+                aria-pressed="true">
                 <i class="bi bi-circle-half"></i> Auto
               </button>
             </li>
@@ -122,7 +118,7 @@
 
       <form id="search" class="d-flex" action="/search" method="get">
         <div class="input-group">
-          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
           <button type="submit" class="btn btn-outline-secondary">
             <i class="bi bi-search"></i>
             <span class="visually-hidden">Search</span>
@@ -144,48 +140,54 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2017/12/to-test-god"><p>To test god</p>
+      <a class="post-link" href="/2022/03/software-models"><p>Software models</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2017-12-31T18:25:00-08:00" itemprop="datePublished">December 31, 2017</time>
+        <time datetime="2022-03-01T01:32:00Z" itemprop="datePublished">March 1, 2022</time>
 
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>From Steven Erikson’s “Toll the Hounds”:</p>
+    <p><img src="/uploads/2022-02/strict-technical-debt.jpg" alt="Stickynote drawing of a chart in which understanding of the business domain grows, and understanding of the modeling in code sinuisoidally approaches and departs from it." /></p>
+
+<p>Software design has been in my thoughts lately. Particularly <em>agile</em> software design, in which the game is to re-design working software in response to changing business requirements in response to learnings from working software.</p>
+
+<p>1. I was recently talking to a colleague about what I call “Strict” Technical Debt, which is how Ward Cunningham originally defined it (not YAGNI or Skimping <a href="https://ronjeffries.com/articles/019-01ff/iter-yagni-skimp/">according to Ron Jeffries</a>). <a href="https://daverupert.com/2020/11/technical-debt-as-a-lack-of-understanding/">Dave Rupert pulls out</a> the following quote from Ward Cunningham, as “Technical Debt as a lack of understanding”:</p>
 
 <blockquote>
-  <p>“I tried to tell him what I am sensing from the Redeemer. Sir, your friend is <em>missed</em>.” She sighed, turning away. “If all who worship did so without need. If all came to their saviour unmindful of that title and its burden, if they came as friends—” she glanced back at him, “what would happen then, do you think? I wonder…”</p>
-
-  <p>[…much later…]</p>
-
-  <p>Seerdomin glared at the god, who now offered a faint smile. After a moment, Seerdomin hissed and stepped back. “You ask this of me? Are you mad? I am not one of your pilgrims! Not one of your mob of would-be priests and priestesses! <em>I do not worship you!</em>”</p>
-
-  <p>“Precisely, [Seerdomin]. It is the curse of believers that they seek to second-guess the one they claim to worship.”</p>
-
-  <p>“In your silence what choice do they have?”</p>
-
-  <p>The Redeemer”s smile broadened. “Every choice in the world, my friend.”</p>
+  <p>“If you develop a program for a long period of time by only adding features but never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer.”</p>
 </blockquote>
 
-<p>From Dan Simmons’ <em>The Fall of Hyperion</em>:</p>
+<p>2. This sentence from SICPER’s <a href="https://www.sicpers.info/2022/02/aphorism-considered-harmful/">“Aphorism Considered Harmful”</a> about the phrase “Make it work, make it right, make it fast”:</p>
 
 <blockquote>
-  <p>With a sudden clarity which went beyond the immediacy of his pain or sorrow, Sol Weintraub suddenly understood perfectly why Abraham had agreed to sacrifice Isaac, his son, when the Lord commanded him to do so.</p>
 
-  <p>It was not obedience.</p>
+  <p>So actually it looks like I had the wrong idea all this time: you don’t somehow make working software then correct software then fast software, you make working software and some inputs into that are the abstractions in the interfaces you design and the performance they permit in use.</p>
 
-  <p>It was not even to put the love of God above the love of his son.</p>
+</blockquote>
 
-  <p><em>Abraham was testing God.</em></p>
+<p>Or as I interpret it: make it functional, then make the software design be an appropriate representation and model of the business/problem domain, and then make it appropriate/ergonomic for future developers to use or maintain.</p>
 
-  <p>By denying the sacrifice at the last moment, by stopping the knife, God had earned the right—in Abraham’s eyes and the hearts of his offspring — to become the God of Abraham.</p>
+<p>3. I left this comment on Jason Swett’s <a href="https://www.codewithjason.com/duplication-cheaper-wrong-abstraction/">“Why I don’t buy “duplication is cheaper than the wrong abstraction”</a>:</p>
 
-  <p>Sol shuddered as he thought of how no posturing on Abraham’s part, no shamming of his willingness to sacrifice the boy, could have served to forge that bond between greater power and humankind. Abraham had to know in his own heart that he would kill his son. The Deity, whatever form it then took, had to know Abraham’s determination, had to feel that sorrow and commitment to destroy what was to Abraham the most precious thing in the universe.</p>
+<blockquote>
 
-  <p>Abraham came not to sacrifice, but to know once and for all whether this God was a god to be trusted and obeyed. No other test would do.</p>
+  <p>…The statement I use is “code duplication is better than the wrong business abstraction”.</p>
+
+  <p>A lot of these statements/concepts come out of Agile, Object-Oriented Programming, and Extreme Programming recognize that there are two things evolving unevenly: the understanding of the business domain, and then laggingly, the development of the code that models the understanding of the business domain.</p>
+
+  <p>A better expansion here as I understand the concept would be “duplication of code is acceptable if the proposed extraction/abstraction does not meaningfully model the current understanding of the business domain”.</p>
+
+  <p>The power of the statement, as I use it (and as I see these things go from Agile/OOPS/XP) is to push someone to get closer to the business domain (and the user) in their thinking/proposals/justifications and as a counterweight to DRY. The problem with these things is when they get imposed as a criticism, rather than the starting place of a conversation.</p>
+
+  <p>I think you give solid advice:</p>
+
+  <blockquote>
+    <p>Don’t try to make one thing act like two things. Instead, separate it into two things. If you feel reluctant to modify someone else’s code, ask why that is.</p>
+  </blockquote>
+
 </blockquote>
 
   </div>
@@ -198,7 +200,7 @@
       <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
       <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
       or suggest a change on
-      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2017/2017-12-31-to-test-god.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2022/2022-02-28-software-models.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
   </div>
   </div>
 </div>

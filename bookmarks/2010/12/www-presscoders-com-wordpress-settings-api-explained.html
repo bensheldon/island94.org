@@ -7,7 +7,7 @@
   <title>Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="qvCWmmRtC418HHUjAMi-aJVRpYhP3zQQdBhQyta-eEsbGr0Iw3m6G9j3G5icI-AYCkr5qcBo_A4vYQXfjBuyaw" />
+<meta name="csrf-token" content="NRT7I9DXrVq-1HO-soP7YPL_v6CWKVhLOgvEgfnBzHlWDdwyS1yOtcUW2tesHYJ-pa9ZTrARC_VU6VqPnd110Q" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -36,7 +36,7 @@
 <link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
 <script type="module">import "application"</script>
 
-  <script>
+  <script type="text/javascript">
     function setTheme() {
       let theme = localStorage.getItem('theme');
       if (!["light", "dark"].includes(theme)) {
@@ -76,8 +76,7 @@
             class="btn btn-link nav-link dropdown-toggle"
             type="button"
             aria-expanded="false"
-            data-bs-toggle="dropdown"
-          >
+            data-bs-toggle="dropdown">
             <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
             <span data-theme-target="switcherText">Theme</span>
           </button>
@@ -88,8 +87,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="light"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-sun"></i> Light
               </button>
             </li>
@@ -99,8 +97,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="dark"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-moon-stars-fill"></i> Dark
               </button>
             </li>
@@ -110,8 +107,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="auto"
                 data-action="theme#switch"
-                aria-pressed="true"
-              >
+                aria-pressed="true">
                 <i class="bi bi-circle-half"></i> Auto
               </button>
             </li>
@@ -122,7 +118,7 @@
 
       <form id="search" class="d-flex" action="/search" method="get">
         <div class="input-group">
-          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
           <button type="submit" class="btn btn-outline-secondary">
             <i class="bi bi-search"></i>
             <span class="visually-hidden">Search</span>
@@ -146,7 +142,7 @@
     </h1>
     <small><a href="http://www.presscoders.com/wordpress-settings-api-explained/">http://www.presscoders.com/wordpress-settings-api-explained/</a></small>
     <p>
-        <time datetime="2010-12-17T00:05:00Z" itemprop="datePublished">
+        <time datetime="2010-12-17T00:05:00+00:00" itemprop="datePublished">
           December 17, 2010
         </time>
     </p>

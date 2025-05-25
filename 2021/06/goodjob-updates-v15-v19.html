@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>What are the rewards? | Island94.org</title>
+  <title>GoodJob Updates v1.5 - v1.9: Dashboard, daemonize, async_server, and graceful shutdowns | Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="nWUd9qBhL8DLClCD6UO-_z55Btnra06OTCGkhXDqc5UsjzZkB3WeVm_hPjh1qOCPoWJa-GTchpAXWPGQKk-5tQ" />
+<meta name="csrf-token" content="x98hM2Sqllq02qS1RgbcJ-j3RT823ORdvI5lWfBwNRikxgYi_yG1tc8YDdxYmKU5v6ej0RDkt-PSbPtXlGyMsA" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -36,7 +36,7 @@
 <link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
 <script type="module">import "application"</script>
 
-  <script>
+  <script type="text/javascript">
     function setTheme() {
       let theme = localStorage.getItem('theme');
       if (!["light", "dark"].includes(theme)) {
@@ -76,8 +76,7 @@
             class="btn btn-link nav-link dropdown-toggle"
             type="button"
             aria-expanded="false"
-            data-bs-toggle="dropdown"
-          >
+            data-bs-toggle="dropdown">
             <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
             <span data-theme-target="switcherText">Theme</span>
           </button>
@@ -88,8 +87,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="light"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-sun"></i> Light
               </button>
             </li>
@@ -99,8 +97,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="dark"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-moon-stars-fill"></i> Dark
               </button>
             </li>
@@ -110,8 +107,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="auto"
                 data-action="theme#switch"
-                aria-pressed="true"
-              >
+                aria-pressed="true">
                 <i class="bi bi-circle-half"></i> Auto
               </button>
             </li>
@@ -122,7 +118,7 @@
 
       <form id="search" class="d-flex" action="/search" method="get">
         <div class="input-group">
-          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
           <button type="submit" class="btn btn-outline-secondary">
             <i class="bi bi-search"></i>
             <span class="visually-hidden">Search</span>
@@ -144,29 +140,54 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2018/12/what-are-the-rewards"><p>What are the rewards?</p>
+      <a class="post-link" href="/2021/06/goodjob-updates-v15-v19"><p>GoodJob Updates v1.5 - v1.9: Dashboard, daemonize, async_server, and graceful shutdowns</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2018-12-31T18:25:00-08:00" itemprop="datePublished">December 31, 2018</time>
+        <time datetime="2021-06-01T03:14:00Z" itemprop="datePublished">June 1, 2021</time>
 
+        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>From <em>Overcoming The Five Dysfunctions of a Team</em> by Patrick Lencioni:</p>
+    <p>This is a quick roundup of what’s new with GoodJob since the last update published for <a href="https://island94.org/2021/01/goodjob-1-4-jruby-compatibility-and-more">GoodJob v1.4</a>.</p>
 
-<blockquote>
-  <p><strong>Question #1: Are we really a team?</strong></p>
+<p>GoodJob (<a href="https://github.com/bensheldon/good_job">github</a>) is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the  <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> .</p>
 
-  <p>Sometimes a team improvement effort is doomed from the start because the group going through it isn’t really a team at all, at least not in the true sense of the word. <strong>You see, a team is a relatively small number of people (anywhere from three to twelve) that shares common goals as well as the rewards and responsibilities for achieving them. Team members readily set aside their individual or personal needs for the greater good of the group.</strong></p>
+<p><em>For further details on the following updates, check out GoodJob’s <a href="https://github.com/bensheldon/good_job/blob/main/CHANGELOG.md">Changelog</a> or <a href="https://github.com/bensheldon/good_job/blob/main/README.md">Readme</a>.</em></p>
 
-  <p>If your “team” doesn’t meet these criteria, you might want to consider whether you have a smaller subset of the group that is a real team. Or maybe the group is simply a collection of people who report to the same manager, but with relatively little interdependence and mutual accountability (that is, not a team).</p>
+<h3 id="goodjob-v15-web-dashboard-and-configuration">GoodJob v1.5: Web Dashboard and configuration</h3>
 
-  <p>And remember, it’s okay to decide that your group isn’t a team. In a world where teamwork is rarer than we might think, plenty of non-teams succeed. In fact, if your group is not meant to be a team, it’s far better to be clear about that than to waste time and energy pretending you’re something you’re not. Because that only creates false expectations, which leads to frustration and resentment.</p>
-</blockquote>
+<p>GoodJob ships with a <a href="https://github.com/bensheldon/good_job#dashboard">web dashboard</a> to display future, finished and errored jobs for easy inspection.  The Dashboard mounts as a self-contained Rails Engine.</p>
 
-<p>I’ve been wondering a lot about defining a team as a group of people who receive rewards when those rewards are indirect e.g. there isn’t a financial reward. When working within a nonprofit context, there is impact (bettering the world) but not everyone involved is able to turn that into social or economic gain. In other words, the work you’re doing doesn’t advance your career from a skills/competency perspective, and your position doesn’t allow you to claim a significant leadership narrative that might accrue social benefit (thought leadership).</p>
+<p>GoodJob uses more <code>Rails.application.config...</code> for improved autoloading compatibility; deprecation notices have examples for updating configuration.</p>
+
+<h3 id="goodjob-v16-daemonize">GoodJob v1.6: Daemonize</h3>
+
+<p>GoodJob can run as a backgrounded daemon for folks who are still managing servers with <code>--daemonize</code>.</p>
+
+<h3 id="goodjob-v17-scheduled-job-cache">GoodJob v1.7: Scheduled job cache</h3>
+
+<p>GoodJob caches scheduled jobs (i.e. <code>ExampleJob.set(wait: 30.minutes).perform_later</code>) for signifiantly improved latency without relying upon polling.</p>
+
+<h3 id="goodjob-v18-graceful-shutdown">GoodJob v1.8: Graceful shutdown</h3>
+
+<p>GoodJob added additional shutdown options, including <code>GOOD_JOB_SHUTDOWN_TIMEOUT</code> to allow jobs to finish before exiting.</p>
+
+<h3 id="goodjob-v19-async_server-mode">GoodJob v1.9: async_server mode</h3>
+
+<p>GoodJob added an additional <code>async</code> execution mode to simplify the default configuration: running jobs as part of the web-process (and <em>not</em> console, Rake commands, etc.)</p>
+
+<h3 id="upcoming-cron-and-concurrency-controls">Upcoming: cron and concurrency controls</h3>
+
+<p>GoodJob will add support for cron-style repeating jobs, and concurrency controls to ensure that only a specified number (1 or more) jobs are enqueued or performed at the same time.  I previously was opposed to extending ActiveJob’s interface, but <a href="https://github.com/bensheldon/good_job/issues/255">have changed my mind</a>; it’s on!</p>
+
+<h3 id="contribute">Contribute</h3>
+
+<p>Code, documentation, and curiosity-based contributions are welcome! Check out the  <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request. <strong>Thank you!!!</strong> to everyone who has contributed to GoodJob, including morgoth, tedhexaflow, weh, lauer, reczy, zealot128, gadimbaylisahil, Mr0grog, thilo, arku, sj26, jm96441, thedanbob, and joshmn.</p>
+
+<p>I also have a <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a> if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
 
   </div>
 </article>
@@ -178,8 +199,18 @@
       <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
       <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
       or suggest a change on
-      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2018/2018-12-31-what-are-the-rewards.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2021/2021-05-31-goodjob-updates-v15-v19.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
   </div>
+    <hr>
+    <div class="card-body">
+      <h5>Related Posts</h5>
+      <ul>
+          <li><a href="/2024/07/introducing-goodjob-v4">Introducing GoodJob v4</a></li>
+          <li><a href="/2023/12/solid-queue-first-impressions">Solid Queue first impressions: Nice!</a></li>
+          <li><a href="/2023/10/reflections-on-good-job-for-solid-queue">Reflections on GoodJob for Solid Queue</a></li>
+          <li><a href="/2023/08/how-to-isolate-i18n-configuration-in-a-rails-engine">How to isolate I18n configuration in a Rails Engine</a></li>
+          <li><a href="/2023/06/rebuilding-concurrent-ruby-scheduledtask-event-and-timerset">Rebuilding Concurrent Ruby: ScheduledTask, Event, and TimerSet</a></li>
+      </ul>
   </div>
 </div>
 

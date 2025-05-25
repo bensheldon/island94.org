@@ -7,7 +7,7 @@
   <title>Island94.org : A lost and found</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="q11i98FL_JBTTEs3d3fAMwNIoL9DHCUxolLRmBAKNdwat0llZl9NBvenJYzrnJ5DnFP8nsyr7S_5K4SNSq___A" />
+<meta name="csrf-token" content="SYPG0ErqRjk4DxTHxZncoD3jdbSbvzXoblAB9vggBJ4qmuHB0WFl1kPNva7bB6W-arOTWr2HZlYAsp_4nDy9Ng" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -36,7 +36,7 @@
 <link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
 <script type="module">import "application"</script>
 
-  <script>
+  <script type="text/javascript">
     function setTheme() {
       let theme = localStorage.getItem('theme');
       if (!["light", "dark"].includes(theme)) {
@@ -76,8 +76,7 @@
             class="btn btn-link nav-link dropdown-toggle"
             type="button"
             aria-expanded="false"
-            data-bs-toggle="dropdown"
-          >
+            data-bs-toggle="dropdown">
             <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
             <span data-theme-target="switcherText">Theme</span>
           </button>
@@ -88,8 +87,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="light"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-sun"></i> Light
               </button>
             </li>
@@ -99,8 +97,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="dark"
                 data-action="theme#switch"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
                 <i class="bi bi-moon-stars-fill"></i> Dark
               </button>
             </li>
@@ -110,8 +107,7 @@
                 class="dropdown-item"
                 data-bs-theme-value="auto"
                 data-action="theme#switch"
-                aria-pressed="true"
-              >
+                aria-pressed="true">
                 <i class="bi bi-circle-half"></i> Auto
               </button>
             </li>
@@ -122,7 +118,7 @@
 
       <form id="search" class="d-flex" action="/search" method="get">
         <div class="input-group">
-          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
           <button type="submit" class="btn btn-outline-secondary">
             <i class="bi bi-search"></i>
             <span class="visually-hidden">Search</span>
@@ -149,7 +145,7 @@
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-05-04T15:13:00-07:00" itemprop="datePublished">May 4, 2025</time>
+        <time datetime="2025-05-04T22:13:00Z" itemprop="datePublished">May 4, 2025</time>
 
         • Tagged <a href="/posts/tags/weeknotes">weeknotes</a> and <a href="/posts/tags/recently">recently</a>
     </p>
@@ -209,7 +205,7 @@
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-04-20T17:19:00-07:00" itemprop="datePublished">April 20, 2025</time>
+        <time datetime="2025-04-21T00:19:00Z" itemprop="datePublished">April 21, 2025</time>
 
         • Tagged <a href="/posts/tags/recently">recently</a>
     </p>
@@ -298,7 +294,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-04-14T19:02:00-07:00" itemprop="datePublished">April 14, 2025</time>
+        <time datetime="2025-04-15T02:02:00Z" itemprop="datePublished">April 15, 2025</time>
 
         • Tagged <a href="/posts/tags/weeknotes">weeknotes</a> and <a href="/posts/tags/recently">recently</a>
     </p>
@@ -364,7 +360,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-04-07T19:33:00-07:00" itemprop="datePublished">April 7, 2025</time>
+        <time datetime="2025-04-08T02:33:00Z" itemprop="datePublished">April 8, 2025</time>
 
         • Tagged <a href="/posts/tags/weeknotes">weeknotes</a>
     </p>
@@ -400,7 +396,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-04-02T07:27:00-07:00" itemprop="datePublished">April 2, 2025</time>
+        <time datetime="2025-04-02T14:27:00Z" itemprop="datePublished">April 2, 2025</time>
 
         • Tagged <a href="/posts/tags/recently">recently</a>
     </p>
@@ -424,7 +420,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-04-01T08:00:00-07:00" itemprop="datePublished">April 1, 2025</time>
+        <time datetime="2025-04-01T15:00:00Z" itemprop="datePublished">April 1, 2025</time>
 
         • Tagged <a href="/posts/tags/rails">Rails</a>
     </p>
@@ -506,7 +502,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-03-26T09:01:00-07:00" itemprop="datePublished">March 26, 2025</time>
+        <time datetime="2025-03-26T16:01:00Z" itemprop="datePublished">March 26, 2025</time>
 
     </p>
   </header>
@@ -530,7 +526,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-03-16T15:37:00-07:00" itemprop="datePublished">March 16, 2025</time>
+        <time datetime="2025-03-16T22:37:00Z" itemprop="datePublished">March 16, 2025</time>
 
         • Tagged <a href="/posts/tags/recently">recently</a> and <a href="/posts/tags/weeknotes">weeknotes</a>
     </p>
@@ -558,7 +554,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-03-16T14:46:00-07:00" itemprop="datePublished">March 16, 2025</time>
+        <time datetime="2025-03-16T21:46:00Z" itemprop="datePublished">March 16, 2025</time>
 
     </p>
   </header>
@@ -585,7 +581,7 @@ export default class extends Controller {
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2025-03-10T08:00:00-08:00" itemprop="datePublished">March 10, 2025</time>
+        <time datetime="2025-03-10T16:00:00Z" itemprop="datePublished">March 10, 2025</time>
 
     </p>
   </header>
