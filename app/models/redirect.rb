@@ -1,18 +1,19 @@
+# frozen_string_literal: true
 class Redirect < ApplicationModel
   STATIC = {
-    "posts" => "/"
-  }
+    "posts" => "/",
+  }.freeze
 
   def self.all
     cache[:all] ||= STATIC.merge(Post.redirects).to_h do |key, value|
       target = case value
-      when String
-        value
-      when Post
-        RouteHelper.post_path(value, only_path: true)
-      else
-        raise ArgumentError, "Invalid redirect target"
-      end
+               when String
+                 value
+               when Post
+                 RouteHelper.post_path(value, only_path: true)
+               else
+                 raise ArgumentError, "Invalid redirect target"
+               end
       target = sanitize(target)
 
       [sanitize(key), "/#{target}"]
@@ -28,6 +29,6 @@ class Redirect < ApplicationModel
   end
 
   def self.sanitize(path)
-    path.sub(%r{\A/}, "").sub(%r{/\z}, "")
+    path.delete_prefix('/').delete_suffix('/')
   end
 end

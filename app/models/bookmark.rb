@@ -1,5 +1,8 @@
+# frozen_string_literal: true
 class Bookmark < ApplicationModel
-  attr_reader :filepath, :frontmatter, :body
+  attribute :filepath, :string
+  attribute :frontmatter, default: -> { {} }
+  attribute :body, :string
 
   def self.all
     cache[:all] ||= Dir.glob("#{Rails.root}/_bookmarks/**/*.*").map do |filepath|
@@ -12,14 +15,8 @@ class Bookmark < ApplicationModel
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
-  def initialize(filepath:, frontmatter:, body:)
-    @filepath = filepath
-    @frontmatter = frontmatter
-    @body = body
-  end
-
   def slug
-    @slug ||= begin
+    @_slug ||= begin
       _year, _month, _day, slug = filename.split("-", 4)
       slug
     end
@@ -43,13 +40,13 @@ class Bookmark < ApplicationModel
 
   def date
     if frontmatter["date"]
-      Time.parse(frontmatter["date"])
+      Time.zone.parse(frontmatter["date"])
     else
       File.mtime(filepath)
     end
   end
 
   def content
-    Kramdown::Document.new(body, input: 'GFM').to_html.html_safe
+    Kramdown::Document.new(body, input: 'GFM').to_html.html_safe # rubocop:disable Rails/OutputSafety
   end
 end

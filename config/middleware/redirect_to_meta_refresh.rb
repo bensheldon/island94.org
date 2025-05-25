@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class RedirectToMetaRefresh
   def initialize(app)
     @app = app
@@ -6,9 +7,9 @@ class RedirectToMetaRefresh
   def call(env)
     status, headers, body = @app.call(env)
 
-    if (300..399).include?(status) && headers['Location']
+    if (300..399).cover?(status) && headers['Location']
       [200, {
-        'Content-Type' => 'text/html'
+        'Content-Type' => 'text/html',
       }, [build_meta_refresh(headers['Location'])]]
     else
       [status, headers, body]

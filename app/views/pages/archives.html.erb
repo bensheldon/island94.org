@@ -10,7 +10,7 @@
   <% posts_by_month.each do |month, month_posts| %>
     <h3 class="h6"><%= month %></h3>
     <ul>
-      <% month_posts.sort_by(&:published_at).reverse.each do |post| %>
+      <% month_posts.sort_by(&:published_at).reverse_each do |post| %>
         <li><%= link_to post.title, post_path(post) %></li>
       <% end %>
     </ul>
