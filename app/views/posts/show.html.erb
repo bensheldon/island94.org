@@ -4,10 +4,11 @@
 
 <div class="card my-4">
   <div class="card-body">
-    Discuss this with me on <a href="https://twitter.com/bensheldon"><i class="bi bi-twitter"></i> Twitter</a>
-    or suggest a
-    <a href="https://github.com/bensheldon/island94.org/blob/main/<%= @post.project_filepath %>"><i class="bi bi-github"></i>
-      change</a>.
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/<%= @post.project_filepath %>" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
   </div>
   <% if @post.related_posts.any? %>
     <hr>
