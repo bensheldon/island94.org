@@ -9,6 +9,8 @@ I got this nice email from Defector, an online publication I pay for (along with
 
 <blockquote markdown="1">
 
+Subject: Thank you for supporting Defector
+
 I like when people ask me how Defector is doing. Thanks to subscribers like you, I get to say that not only that Defector is doing well, but that I love my work.
 
 I spent most of my life as a writer in jobs that were always and obviously impermanent. Roughly every 20 months, the people running things—people I never saw, and who had no interest in the work we did—would get bored, or nervous, or fall for some dippy executive fad, and [pivot some number of us out of our jobs](https://defector.com/three-newsrooms-imploded-around-me-in-under-a-year). Basically every innovation in media over the last few decades has been some version of this: an attempt by executive types to see how much less they can do, and how long they can get away with making everything [smaller](https://defector.com/henry-blodget-invents-hires-sexually-harasses-blogs-about-nonexistent-ai-subordinate), [sadder](https://defector.com/the-familiarity-and-sadness-of-watching-the-washington-post-go-to-hell), and [worse](https://defector.com/horny-sports-blogging-makes-a-bewildering-return-to-sports-illustrated).
