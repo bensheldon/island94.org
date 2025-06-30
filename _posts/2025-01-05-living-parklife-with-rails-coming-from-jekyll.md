@@ -69,4 +69,4 @@ With Jekyll, even with `--incremental`, most development changes required a 10+ 
 
 ### In conclusion
 
-Here’s [this blog’s Parkfile](https://web.archive.org/web/20250131105413/https://github.com/bensheldon/island94.org/blob/main/Parkfile). I did a little bit of convenience monkeypatching of things I intend to contribute upstream to Parklife. I dunno, maybe you’ll like the Parklife too.
+Here’s [this blog’s Parkfile](https://github.com/bensheldon/island94.org/blob/e95bc4686dd6215357c2770fb75cc70da48a39d1/Parkfile). I did a little bit of convenience monkeypatching of things I intend to contribute upstream to Parklife. I dunno, maybe you’ll like the Parklife too.
