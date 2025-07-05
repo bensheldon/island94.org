@@ -7,7 +7,7 @@
   <title>Island94.org : A lost and found</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="6yZZAUMV4Y16bCX7Uh376A_vMz81_lueOvPrM0CIlVqya08avpIjc6dlPZQyD3MdKF324k1LWYSEkFzQF7V6Sw" />
+<meta name="csrf-token" content="ezanY08U4lwobYfwslrwZngFwyaIyMNK6848e1UwH0lghgp-Z8WpOArbwV9vqyhE6JcEjwkvXIi7XUl7IzSlKg" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -138,6 +138,96 @@
   <div class="container container-body">
     
 
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/07/is-everyone-ok-at-the-gemba"><p>Is everyone ok at the gemba</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-07-05T17:35:00Z" itemprop="datePublished">July 5, 2025</time>
+
+        • Tagged <a href="/posts/tags/working">working</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The following is the bones of a half-written essay I’ve had kicking around in my drafts for the past 3 years, occassionally updated. I recently read <em>two</em> things that said it all better anyways, but if you read through you get my perspectives as someone in software cooking the goose.</p>
+
+<p>One:  Albert Burneko’s <a href="https://defector.com/toward-a-theory-of-kevin-roose">“Toward a theory of Kevin Roose”</a>:</p>
+
+<blockquote>
+  <p>My suspicion, my awful awful newfound theory, is that there are people with a sincere and even kind of innocent belief that we are all just picking winners, in everything: that ideology, advocacy, analysis, criticism, affinity, even taste and style and association are essentially predictions. That what a person tries to do, the essential task of a person, is to identify who and what is going to come out on top, and align with it. The rest—what you say, what you do—is just enacting your pick and working in service to it.</p>
+
+  <p>…. To these people this kind of thing is not cynicism, both because they believe it’s just what everybody is doing and because they do not regard it as ugly or underhanded or whatever. Making the right pick is simply being smart. And not necessarily in some kind of edgy-cool or subversive way, but smart the very same shit-eating way that the dorkus malorkus who gets onto a friendly first-name basis with the middle-school assistant principal is smart. They just want to be smart.</p>
+
+  <p>So these people look at, say, socialists, and they see fools—not because of moral or ethical objections to socialism or whatever, or because of any authentically held objections or analysis at all, but simply because they can see that, at present, socialism is not winning. All the most powerful guys are against it. Can’t those fools see it? They have picked a loser. They should pick the winner instead.</p>
+</blockquote>
+
+<p>Two: Ed Zitrain’s <a href="https://www.wheresyoured.at/make-fun-of-them/">“Make fun of them”</a> (emphasis in the original):</p>
+
+<blockquote>
+  <p>In my opinion, there’s nothing more cynical than watching billions of people get shipped increasingly-shitty and expensive solutions and then <strong>get defensive of the people shipping them,</strong> and hostile to the people who are complaining that the products they use suck<strong>.</strong> </p>
+</blockquote>
+
+<h3 id="in-the-day-to-day">In the day to day</h3>
+
+<p>One of the standard questions in my manager/executive interview kit is:</p>
+
+<p><em>Walk me through what a good day looks like for you if this were your ideal job? And based on past experience, walk me through a bad day?</em> (yes, this is described in the Phoenix Project)</p>
+
+<p>With some prodding, I want sus out how they think about a mix of group meetings, 1:1s, and heads down time. And ideally that the candidate can articulate some concrete artifacts of work (canned meetings, documents, etc.).</p>
+
+<ul>
+  <li>An excerpt of a good answer: Promoting someone up a level is really satisfying. Being in a calibration meeting where I’m presenting the packet my report and I developed together. I’ve designed promotion processes before and building an agenda for that meeting is a lot of fun. Do you have a career ladder here? I spend a lot of time doing gap analyses. I’ll spend at least a few hours every week running through my notes.</li>
+  <li>An excerpt of a bad answer: Promoting someone up a level is really satisfying. It’s important people are recognized for their work.</li>
+</ul>
+
+<p>Good answers usually have jumping off points to talk about working and communication styles: “oh, is that something you’re doing over chat or email or in a shared document? Is that a repeating thing or as needed? How would you pull that together?” Bad answers usually stay at the general level (async, mastery, autonomy, meaning, etc.) and just… stop.</p>
+
+<p>Having done maybe 30 of these interviews over the past decade, I’ve realized there are many people who seem otherwise competent but can’t talk, concretely, to what they do. Physically. Embodied. Even at a computer, what’s behind that digital window.</p>
+
+<p>And I say “seems competent” cause, well, I usually pull these questions out at the end of the interview pipeline, and the candidates are otherwise qualified and their previous interviewers liked them enough to advance them to this stage. And even when the company has gone on to hire them, over my objections sometimes based on this question, they haven’t been <em>the worst</em>. The candidate I interviewed with the most memorably bad answers is now an SVP of Engineering at a major tech company. They’re doing ok.</p>
+
+<p>But I do think there’s something there, that’s indicative of the moment. To break it down, there’s two awarenesses that I’m checking for:</p>
+
+<ul>
+  <li>Materiality: an awareness of where they <em>are</em> doing the work, and that’s also sorta doublechecking that they are aware that other people actually exist too. You read enough Ask a Manager and you realize <em>a lot</em> of powerful people struggle with object permanence when someone is outside their sight lines.</li>
+  <li>Operationalization: a set of personal playbooks for making things happen. For example, I’m a big fan of skip 1:1s (when you meet with your report’s reports, or your manager’s manager) and will make point of intentionally setting those up. I have lots of opinions about what a minimally-viable-career-progression system looks like: career ladders and performance evaluation processes and calibration meeting agendas and 1:1 templates. Or more discipline specific, like inventories and gapping templates and decision docs,  In any job we don’t have to use <em>mine</em> but I sorta expect an experienced manager to have them in their back pocket and be interested in talking about them.</li>
+</ul>
+
+<p>All of which is to ask: <strong>take me to your gemba</strong>, ideally, and help me understand how it differs from your worst one too. <em><a href="https://en.wikipedia.org/wiki/Gemba">The Gemba</a></em> being the location where the work happens. Pedantically, it’s where the value is actually created, like the factory floor, but in this knowledge-heavy work… who can say? Our most valuable assets go home every night, right?</p>
+
+<h3 id="the-ai-in-the-room">The AI in the Room</h3>
+
+<p>All of this comes to mind with the contemporary exhortions of like “AI is mandatory” and “you must use AI in your job” sorts of manifestos and the reply-guys of like “you either git gud with AI or you fall behind and end up living in a cave and eating bats.”</p>
+
+<p>So I take the previous thought of like “lots of managers and executives have no idea what their own work actually looks like”….</p>
+
+<p>…and my thoughts about my own discipline: how does software get made? <a href="https://arxiv.org/pdf/1802.06321">Nobody knows.</a> On the individual level, it’s extremely rare to find people doing anything like Extreme Programming and its emphasis on pair programming and rigid collective team practices. In most of my decades of professional experience, software just expected to happen. <a href="https://arxiv.org/abs/2307.13143">Nobody knows.</a></p>
+
+<p>For example, most teams I’ve worked with have huge differences in how individuals approach a problem: what and how much design or plannng they do up front, whether they start with tests or implementation, the order of components they work through, what they consider “done”. Drill down to the actual hands-on-keyboard-and-eyes-on-screen and editors and IDEs and development tooling are all over the place developer to developer. And no practices for sharing or learning from each other, and rarely interest either (“it works for me and I expect it would be painful to change”).</p>
+
+<p>I have to imagine there’s a relation here, more often than not I’m talking to software managers and executives. Shared practices just aren’t <em>a thing</em>.</p>
+
+<p>So I’ll simply say: it’s weird that AI is <em>the thing</em> to mandate, rather than like a consistent IDE, or testing strategy, or debugger workflow. That <em>this</em> is the thing, when there is so much everything-else that nobody knows.</p>
+
+<h3 id="accountability-kayfabe">Accountability kayfabe</h3>
+
+<p>I’ll admit it’s easy to take potshots at the weird things tech executive say and do, but I see a pattern here. Just prior to these AI mandates were the layoffs, which had their signature phrase and power pose: “I’m accountable for this decision.”</p>
+
+<p>“Accountability” is a funny word as it means to “give an account.” Y’know, explain what happened, what was done, when, and by whom. What’s funny is that the word has been sort of walked back from actually giving that explaination, to the idea of the burden of having to give that explanation, to just a vibe of like “I’ve got it. This one’s on me.”</p>
+
+<p>I noticed that a lot. I’m <a href="https://aworkinglibrary.com/writing/on-accountability">not the only one</a>.</p>
+
+<p>I think the thing that people wanted to know, employees especially, was just like: materially and operationally, what the hell happened here?! And when there’s not an answer, there is a reasonable spectrum between active gaslighting on one side and my recognition that the people in charge could actually have no idea and maybe not even the personal capacity to know. It just ended up that way. Things happened.</p>
+
+<h3 id="bringing-it-back-around">Bringing it back around</h3>
+
+<p>I dunno. Just continue asking the “can you show me that?” “can we look at it together?” “how do you think that will effect things?” “is there anything you have in mind that I can do to help?” questions.</p>
+
+  </div>
+</article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
@@ -566,88 +656,6 @@ export default class extends Controller {
   <li>I finished reading <em>Wicked</em>; I won’t be doing the trilogy. I recluctantly started reading <em>Polostan</em>; the past several Neal Stephenson books have not been my thing but I am a suffering optimist.</li>
   <li>I started playing <em>Anodyne</em>. Please suggest casual uncomplicated metroidvanias and open-world wander-arounders.</li>
 </ul>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/04/wide-models-and-active-record-custom-validation-contexts"><p>Wide Models and Active Record custom validation contexts</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-04-01T15:00:00Z" itemprop="datePublished">April 1, 2025</time>
-
-        • Tagged <a href="/posts/tags/rails">Rails</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>This post is a brief description of a pattern I use a lot using when building features in Ruby on Rails apps and that I think needed a name:</p>
-
-<p><strong>Wide Models</strong> have many attributes (columns in the database) that are updated in multiple places in the application, but not always all at once i.e. different forms will update different subsets of attributes on the same model.</p>
-
-<p><em>How is that not a <a href="https://codeclimate.com/blog/7-ways-to-decompose-fat-activerecord-models">“fat model”</a>?</em></p>
-
-<blockquote>
-  <p>As you add more intrinsic complexity (read: features!) to your application, the goal is to spread it across a coordinated set of small, encapsulated objects (and, at a higher level, modules) just as you might spread cake batter across the bottom of a pan. Fat models are like the big clumps you get when you first pour the batter in. Refactor to break them down and spread out the logic evenly. Repeat this process and you’ll end up with a set of simple objects with well defined interfaces working together in a veritable symphony.</p>
-</blockquote>
-
-<p>I dunno. I’ve seen teams take Wide Models pretty far (80+ attributes in a model) while still maintaining cohesion and developer productivity. And I’ve seen the opposite where there is a profusion of tiny service objects and any functional change must be threaded not just through a model, view and controller but also a form object and a decorator and several command objects, or where there is large number of narrow models that all have to be joined or included nearly all of the time in the app—and it sucks to work with. I mean, find the right size for you and your team, but the main thrust here is that bigger doesn’t inherently mean worse.</p>
-
-<p>This all came to mind while reading Paweł Świątkowski’s <a href="https://katafrakt.me/2025/02/05/validations-nature-commands/">“On validations and the nature of commands”</a>:</p>
-
-<blockquote>
-  <p>Recently I took part in a discussion about where to put validations. What jarred me was how some people inadvertently try to get all the validation in a one fell swoop, even though the things they validate are clearly not one family of problems.</p>
-</blockquote>
-
-<p>The post goes on to suggest differentiating between:</p>
-
-<ul>
-  <li>“input validation”, which I take to mean user-facing validation that is only necessary when the user is editing some fields concretely on a form in the app. Example: that an account’s email address is appropriately constructed.</li>
-  <li>“domain checks”, which I take to mean as more fundamental invariants/constraints of the system. Example: that an account is uniquely identified by its email address.</li>
-</ul>
-
-<p>I didn’t entirely agree with this advice though:</p>
-
-<blockquote>
-  <p>In Rails world you could use <code>dry-validation</code> for input validations and ActiveRecord validation for domain checks. Another approach would be to heavily use form objects (input validation) and limit model validations to actual business invariants.</p>
-</blockquote>
-
-<p>My disagreement is because Active Record validations have a built-in feature to selectively apply validations: <a href="https://guides.rubyonrails.org/active_record_validations.html#on">Validation Contexts (the <code>on:</code> keyword)</a> and specifically <a href="https://guides.rubyonrails.org/active_record_validations.html#custom-contexts"><em>custom</em> validation contexts</a>:</p>
-
-<blockquote>
-  <p>You can define your own custom validation contexts for callbacks, which is useful when you want to perform validations based on specific scenarios or group certain callbacks together and run them in a specific context. A common scenario for custom contexts is when you have a multi-step form and want to perform validations per step.</p>
-</blockquote>
-
-<p>I use custom validation contexts <em>a lot</em>. I don’t intend for this to be a tutorial on custom validation contexts, but just to give a quick example:</p>
-
-<ul>
-  <li>Imagine you have an <code>Account</code> model</li>
-  <li>A person can register for an account with just an email address so they can sign in with a magic link.</li>
-  <li>An account holder can later add a password to their account if they want to optionally sign in with a password</li>
-  <li>An account holder can later add a username to their account which will be displayed next to their posts and comments.</li>
-</ul>
-
-<p>You might set up the <code>Account</code> model validations like this:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Account</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-  <span class="n">validates</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">uniqueness: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span>
-  <span class="c1"># also set up uniqueness/not-null constraints in the database too</span>
-  <span class="n">validates</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">email_structure: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">on: </span><span class="p">[</span><span class="ss">:signup_form</span><span class="p">,</span> <span class="ss">:update_email_form</span><span class="p">]</span>
-
-  <span class="n">validates</span> <span class="ss">:password</span><span class="p">,</span> <span class="ss">password_complexity: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">allow_blank: </span><span class="kp">true</span>
-  <span class="n">validates</span> <span class="ss">:password</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">password_complexity: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">on: </span><span class="p">[</span><span class="ss">:add_password_form</span><span class="p">,</span> <span class="ss">:edit_password_form</span><span class="p">]</span>
-
-  <span class="n">validates</span> <span class="ss">:username</span><span class="p">,</span> <span class="ss">uniqueness: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">allow_blank: </span><span class="kp">true</span>
-  <span class="n">validates</span> <span class="ss">:username</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">on: </span><span class="p">[</span><span class="ss">:add_username_form</span><span class="p">,</span> <span class="ss">:edit_username_form</span><span class="p">]</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Note: it’s possible to add <em>custom</em> validation contexts on <code>before_validation</code> and <code>after_validation</code> callbacks, but not others like <code>before_save</code>, <code>after_commit</code>, etc. only take the non-custom callbacks like <code>on: :create</code>.</p>
-
-<p>So to wrap it up: sure, maybe it can all go in the Active Record model.</p>
-
 
   </div>
 </article>
