@@ -5,9 +5,145 @@
     <description>A Lost and Found</description>
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Jul 2025 17:35:00 +0000</pubDate>
-    <lastBuildDate>Wed, 16 Jul 2025 07:10:42 +0000</lastBuildDate>
+    <pubDate>Wed, 16 Jul 2025 10:00:00 +0000</pubDate>
+    <lastBuildDate>Wed, 16 Jul 2025 19:10:55 +0000</lastBuildDate>
     <generator>Ruby on Rails</generator>
+      <item>
+        <title>How to customize Rails I18n key suffixes like `_md` for Markdown</title>
+        <description>
+          <![CDATA[
+          <p>If you’ve had reason to use internationalization in Rails on Rails, you’ve probably used a <a href="https://guides.rubyonrails.org/i18n.html#using-safe-html-translations">nifty feature</a> of it:</p>
+
+<blockquote>
+  <p>Keys with a <code>_html</code> suffix… are marked as HTML safe. When you use them in views the HTML will not be escaped.</p>
+</blockquote>
+
+<p>Authoring HTML within translations can be a pain because HTML is quite verbose and easy to mess up when maintaining multiple versions of the same phrase, or paragraph, or page across multiple languages.</p>
+
+<p>It would be nice 💅 to have something like this: Keys with a <code>_md</code> suffix can be authored in Markdown, and automatically converted to HTML and marked as HTML safe. Markdown is a lot less verbose than HTML and easier to write and eyeball.</p>
+
+<p>Let’s do it!</p>
+
+<p>First, we have to patch into the I18n <code>translate</code> method. It looks something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/markdown.rb</span>
+
+<span class="k">module</span> <span class="nn">Markdown</span>
+  <span class="k">module</span> <span class="nn">I18nBackendExt</span>
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">locale</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="k">super</span>
+      <span class="c1"># Rails missing key returns as MISSING_TRANSLATION =&gt; -(2**60) =&gt; -1152921504606846976</span>
+      <span class="k">if</span> <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+          <span class="no">Markdown</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="no">Markdown</span><span class="p">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">else</span>
+        <span class="n">result</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:i18n</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">I18n</span><span class="p">.</span><span class="nf">backend</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">I18nBackendExt</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Fun Fact:</strong> Rails does a clever thing to detect missing translations. I18n accepts a stack of fallback defaults, and Rails <a href="https://github.com/rails/rails/pull/45572">appends a magic number</a> to the back of that stack: <code>-(2**60) =&gt; -1152921504606846976</code>. If a translation ever returns that value, Rails assumes that the translation fell through the entire fallback stack and is therefore missing. (It took me a bit of sleuthing to figure out what the heck this weird number meant while poking around.)</p>
+
+<p>Second, we patch the Rails HTML Safe behavior to <em>also</em> make these strings HTML safe too:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/markdown.rb</span>
+
+<span class="k">module</span> <span class="nn">Markdown</span>
+  <span class="k">module</span> <span class="nn">HtmlSafeTranslationExt</span>
+    <span class="k">def</span> <span class="nf">html_safe_translation_key?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+      <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">||</span> <span class="k">super</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="o">::</span><span class="no">HtmlSafeTranslation</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">HtmlSafeTranslationExt</span>
+</code></pre></div></div>
+
+<p>That’s pretty much it!</p>
+
+<p>If you’re uncomfortable patching things, Tim Masliuchenko has a gem called  <a href="https://github.com/timfjord/i18n-transformers"><code>I18n::Transformers</code></a> that makes it easy create custom key-based transformations. I believe you’ll still need to patch into the HTML safety behavior of Rails though—and anything involving marking things as HTML-safe should be always be scrutinized for <a href="https://guides.rubyonrails.org/security.html#cross-site-scripting-xss">XSS</a> potential.</p>
+
+<p>Here’s the full initializer I have, including how I get Kramdown to create “inline” markdown:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/markdown.rb</span>
+
+<span class="k">module</span> <span class="nn">Markdown</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"Can't provide both text and block"</span> <span class="k">if</span> <span class="n">text</span> <span class="o">&amp;&amp;</span> <span class="nb">block_given?</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="k">yield</span> <span class="k">if</span> <span class="nb">block_given?</span>
+    <span class="k">return</span> <span class="s2">""</span> <span class="k">unless</span> <span class="n">text</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">strip_heredoc</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">options</span><span class="p">.</span><span class="nf">reverse_merge</span><span class="p">(</span>
+      <span class="ss">auto_ids: </span><span class="kp">false</span><span class="p">,</span>
+      <span class="ss">smart_quotes: </span><span class="p">[</span><span class="s2">"apos"</span><span class="p">,</span> <span class="s2">"apos"</span><span class="p">,</span> <span class="s2">"quot"</span><span class="p">,</span> <span class="s2">"quot"</span><span class="p">]</span> <span class="c1"># disable smart quotes</span>
+    <span class="p">)</span>
+    <span class="no">Kramdown</span><span class="o">::</span><span class="no">Document</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">options</span><span class="p">).</span><span class="nf">to_html</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">**</span><span class="p">)</span>
+    <span class="c1"># Custom input parser defined in Kramdown::Parser::Inline</span>
+    <span class="n">convert</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="ss">input: </span><span class="s2">"Inline"</span><span class="p">,</span> <span class="o">**</span><span class="p">).</span><span class="nf">strip</span>
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="nn">HtmlSafeTranslationExt</span>
+    <span class="k">def</span> <span class="nf">html_safe_translation_key?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+      <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">||</span> <span class="k">super</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="nn">I18nBackendExt</span>
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">locale</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="k">super</span>
+      <span class="c1"># Rails missing key returns as MISSING_TRANSLATION =&gt; (2**60) =&gt; -1152921504606846976</span>
+      <span class="k">if</span> <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+          <span class="no">Markdown</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="no">Markdown</span><span class="p">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">else</span>
+        <span class="n">result</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ActiveSupport</span><span class="o">::</span><span class="no">HtmlSafeTranslation</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">HtmlSafeTranslationExt</span>
+<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:i18n</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">I18n</span><span class="p">.</span><span class="nf">backend</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">I18nBackendExt</span>
+<span class="k">end</span>
+
+<span class="c1"># Generate HTML from Markdown without any block-level elements (p, etc.)</span>
+<span class="c1"># http://stackoverflow.com/a/30468100/241735</span>
+<span class="k">module</span> <span class="nn">Kramdown</span>
+  <span class="k">module</span> <span class="nn">Parser</span>
+    <span class="k">class</span> <span class="nc">Inline</span> <span class="o">&lt;</span> <span class="no">Kramdown</span><span class="o">::</span><span class="no">Parser</span><span class="o">::</span><span class="no">Kramdown</span>
+      <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+        <span class="k">super</span>
+        <span class="vi">@block_parsers</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+          ]]>
+        </description>
+        <link>https://island94.org/2025/07/customize-rails-i18n-key-suffixes-like-md-for-markdown</link>
+        <guid isPermaLink="true">https://island94.org/2025/07/customize-rails-i18n-key-suffixes-like-md-for-markdown</guid>
+        <pubDate>Wed, 16 Jul 2025 10:00:00 +0000</pubDate>
+      </item>
       <item>
         <title>Is everyone ok at the gemba</title>
         <description>
@@ -452,24 +588,6 @@ export default class extends Controller {
         <link>https://island94.org/2025/04/recently-april-7-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/04/recently-april-7-2025</guid>
         <pubDate>Tue, 08 Apr 2025 02:33:00 +0000</pubDate>
-      </item>
-      <item>
-        <title>Recently, April 2, 2025</title>
-        <description>
-          <![CDATA[
-          <ul>
-  <li>I’ve been away from work for the past week hosting family, including a 9 and 11 year old. In that week, we did: Ferry Building Farmer’s Market, Exploratorium and Tactile Dome, Alcatraz, “Dear San Francisco” at Club Fugazi, swam in the Bay and at the YMCA, rode a cable car, rode some buses, walked the Golden Gate Bridge, hiked Muir Woods, ate House of Prime Rib, Mama’s, Fish, Tailor’s Son, and Cafe de Casa. We had the kids for a night so their parent’s could do Napa and overnight at Indian Springs. I dropped them off at the airport yesterday and it is blessedly quiet and cats are decompressing.</li>
-  <li>For the kids we opened up The Big Bag of Quest Headsets that we have accumulated because Angelina works on them. Lots of charging and battery swapping and then Beat Saber. The kids also played <em>Threes</em> and <em>Tiny Wings</em> on iPhones.</li>
-  <li>During downtime we watched through “Wolf King”, and I got to provide adult commentary of “do you think <em>they</em> are a werelord?” about everyone; I had fun.</li>
-  <li>I finished reading <em>Wicked</em>; I won’t be doing the trilogy. I recluctantly started reading <em>Polostan</em>; the past several Neal Stephenson books have not been my thing but I am a suffering optimist.</li>
-  <li>I started playing <em>Anodyne</em>. Please suggest casual uncomplicated metroidvanias and open-world wander-arounders.</li>
-</ul>
-
-          ]]>
-        </description>
-        <link>https://island94.org/2025/04/recently-april-2-2025</link>
-        <guid isPermaLink="true">https://island94.org/2025/04/recently-april-2-2025</guid>
-        <pubDate>Wed, 02 Apr 2025 14:27:00 +0000</pubDate>
       </item>
   </channel>
 </rss>
