@@ -1,5 +1,5 @@
 ---
-title: "Customize Rails I18n so key suffixes like `_md` are converted from Markdown"
+title: "How to customize Rails I18n key suffixes like `_md` for Markdown"
 date: 2025-07-16 10:00 UTC
 published: true
 tags: [Rails, i18n]
