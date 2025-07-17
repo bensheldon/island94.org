@@ -11,9 +11,11 @@ If you’ve had reason to use internationalization in Rails on Rails, you’ve p
 
 Authoring HTML within translations can be a pain because HTML is quite verbose and easy to mess up when maintaining multiple versions of the same phrase, or paragraph, or page across multiple languages.
 
-It would be nice 💅 to have something like this: Keys with a `_md` suffix can be authored in Markdown, and automatically converted to HTML and marked as HTML safe. Markdown is a lot less verbose than HTML and easier to write and eyeball.
+It would be nice 💅 to have something like this: 
 
-Let’s do it! 
+> Keys with a `_md` suffix can be authored in Markdown, and automatically converted to HTML and marked as HTML safe.
+
+Markdown is a lot less verbose than HTML and easier to write and eyeball. Let’s do it! 
 
 First, we have to patch into the I18n `translate` method. It looks something like this:
 
