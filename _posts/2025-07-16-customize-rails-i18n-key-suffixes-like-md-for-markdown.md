@@ -13,7 +13,7 @@ Authoring HTML within translations can be a pain because HTML is quite verbose a
 
 It would be nice 💅 to have something like this: 
 
-> Keys with a `_md` suffix can be authored in Markdown, and automatically converted to HTML and marked as HTML safe.
+> Keys with a `_md` suffix can be authored in Markdown and will be automatically converted to HTML and marked as HTML safe.
 
 Markdown is a lot less verbose than HTML and easier to write and eyeball. Let’s do it! 
 
