@@ -7,7 +7,7 @@
   <title>Island94.org : A lost and found</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="3tuFm6R8A8sQb1k4jfH317N0xsem6-7H6NXQfUiTlNb488l30n7QoUnaVBcofTXf4IUz5u08uH-s4nXX_4zt7w" />
+<meta name="csrf-token" content="DACC7d6eWe8TtUmRbbaZuhDYmR241D5hWt52wgZyVQaGzhMNdhXESf6mEmEDK6LsY2El3JWhnNwpfh2OKKExxw" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -160,9 +160,13 @@
 
 <p>Authoring HTML within translations can be a pain because HTML is quite verbose and easy to mess up when maintaining multiple versions of the same phrase, or paragraph, or page across multiple languages.</p>
 
-<p>It would be nice 💅 to have something like this: Keys with a <code>_md</code> suffix can be authored in Markdown, and automatically converted to HTML and marked as HTML safe. Markdown is a lot less verbose than HTML and easier to write and eyeball.</p>
+<p>It would be nice 💅 to have something like this:</p>
 
-<p>Let’s do it!</p>
+<blockquote>
+  <p>Keys with a <code>_md</code> suffix can be authored in Markdown and will be automatically converted to HTML and marked as HTML safe.</p>
+</blockquote>
+
+<p>Markdown is a lot less verbose than HTML and easier to write and eyeball. Let’s do it!</p>
 
 <p>First, we have to patch into the I18n <code>translate</code> method. It looks something like this:</p>
 
