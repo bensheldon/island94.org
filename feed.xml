@@ -6,7 +6,7 @@
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>Fri, 25 Jul 2025 18:18:00 +0000</pubDate>
-    <lastBuildDate>Fri, 25 Jul 2025 19:09:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jul 2025 21:24:29 +0000</lastBuildDate>
     <generator>Ruby on Rails</generator>
       <item>
         <title>Consider Thruster with Puma on Heroku</title>
