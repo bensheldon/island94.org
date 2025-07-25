@@ -5,7 +5,7 @@ published: true
 tags: [Rails]
 ---
 
-To briefly catch you up to speed if you haven't been minutely tracking Rails performance errata: Puma has some mildly surprising behavior with the order in which it processes and prioritizes requests that are pipelined through keepalive connections; under load, it can lead to unexpected latency. 
+To briefly catch you up to speed if you haven't been minutely tracking Ruby on Rails performance errata: Puma has some mildly surprising behavior with the order in which it processes and prioritizes requests that are pipelined through keepalive connections; under load, it can lead to unexpected latency. 
 
 Heroku wrote [~3,000 words about this Puma thing](https://www.heroku.com/blog/pumas-routers-keepalives-ohmy/), and [very smart people](https://github.com/puma/puma/issues/3487) are [working on it](https://github.com/puma/puma/pull/3506). All of this became mildly important because: Heroku upgraded their network router ("Router 2.0"), which _does_ support connection keepalive, which has the potential to reduce a little bit of latency by reducing the number of TCP handshakes going over Heroku's internal network between their router and your application dyno. People want it.
 
