@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consider Thruster with Puma on Heroku | Island94.org</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ifXzqpm00pD4IKqNZ1OAx88lkFORFp5PHvLMYrcQmqd9_mZsQCTIJtrGgeKBzPsbc5JEe_J7lEmwXzyRiB0zlw" />
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  <link rel="stylesheet" href="/assets/application-39a1f2f7963cb72fa41194b70f3ff8033d1cbab7fae2f8cb78a801ed41144a6a.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-38d030897e3554a265d3a3b6bdf4fb7509b08197ba2b6e3761683c07e776c1bc.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js">
+<link rel="modulepreload" href="/assets/turbo.min-38d030897e3554a265d3a3b6bdf4fb7509b08197ba2b6e3761683c07e776c1bc.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/07/consider-thruster-with-puma-on-heroku"><p>Consider Thruster with Puma on Heroku</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-07-25T18:18:00Z" itemprop="datePublished">July 25, 2025</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>To briefly catch you up to speed if you haven’t been minutely tracking Ruby on Rails performance errata: the Puma webserver has some mildly surprising behavior with the order in which it processes and prioritizes requests that are pipelined through keepalive connections; under load, it can lead to unexpected latency.</p>
+
+<p>Heroku wrote <a href="https://www.heroku.com/blog/pumas-routers-keepalives-ohmy/">~3,000 words about this Puma thing</a>, and <a href="https://github.com/puma/puma/issues/3487">very smart people</a> are <a href="https://github.com/puma/puma/pull/3506">working on it</a>. All of this became mildly important because: Heroku upgraded their network router (“Router 2.0”), which <em>does</em> support connection keepalive, which has the potential to reduce a little bit of latency by reducing the number of TCP handshakes going over Heroku’s internal network between their router and your application dyno. People want it.</p>
+
+<p>When you read the Heroku blog post (all several thousand words of it), it will suggest working around this with Puma configuration like (1) disabling connection keepalive in Puma or (2) disabling a Puma setting called <code>max_fast_inline</code>, though I’m pretty sure this has the same effect in Puma as disabling connection keepalives too (last I checked there wasn’t consensus in Puma as to what parts of the related behavior were intended but surprising, and what was unintended bugs in the logic).</p>
+
+<p>Anyways, there’s a 3rd option: <strong>use Thruster</strong>.</p>
+
+<ul>
+  <li>Requests on the Heroku network between the Heroku router and Thruster running in your application dyno can use connection keepalives (sidenote: I’m 98% confident Thruster supports keepalives because <a href="https://github.com/basecamp/thruster/blob/10e33f6f5a2476231c00a59be209f7a58e98dc1a/internal/server.go#L9">Go <code>net/http</code></a> enables keepalives by default and Thruster doesn’t appear to explicitly disable them)</li>
+  <li>Requests <em>locally</em> within your application dyno between Thruster and Puma can disable connection keepalive and there shouldn’t be any network latency for the TCP handshake because it’s all happening locally in the dyno.</li>
+</ul>
+
+<p>No one else seems to be blogging about this—a fact pointed out when I suggested this in the Rails Performance Slack. So here ya go.</p>
+
+<ol>
+  <li>Add the <code>thruster</code> <a href="https://github.com/basecamp/thruster">gem</a></li>
+  <li>Update your Procfile: <code>web: HTTP_PORT=$PORT TARGET_PORT=3001 bundle exec thrust bin/rails server</code></li>
+  <li>Disable Puma’s keepalives: <code>enable_keep_alives false</code></li>
+</ol>
+
+<p>I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you’re worried about resource usage (because Thruster is yet another process) it’s been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for Puma.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>heroku ps:exec <span class="nt">-a</span> APPNAME
+<span class="c"># ....</span>
+<span class="nv">$ </span>ps <span class="nt">-eo</span> rss,pss,cmd
+  RSS   PSS CMD
+    4     0 ps-run
+11324 12792 /app/vendor/bundle/ruby/3.4.0/gems/thruster-0.1.14-x86_64-linux/exe/
+ 2960  1095 sshd: /usr/sbin/sshd <span class="nt">-f</span> /app/.ssh/sshd_config <span class="nt">-o</span> Port 1092 <span class="o">[</span>listener
+ 2220   407 /bin/bash <span class="nt">-l</span> <span class="nt">-c</span> <span class="nv">HTTP_PORT</span><span class="o">=</span><span class="nv">$PORT</span> <span class="nv">TARGET_PORT</span><span class="o">=</span>3001 bundle <span class="nb">exec </span>thrust
+199336 187215 puma 6.6.0 <span class="o">(</span>tcp://0.0.0.0:3001<span class="o">)</span> <span class="o">[</span>app]
+ 8316  1821 ssh <span class="nt">-o</span> <span class="nv">ServerAliveInterval</span><span class="o">=</span>30 <span class="nt">-o</span> <span class="nv">ServerAliveCountMax</span><span class="o">=</span>3 <span class="nt">-o</span> HostKeyAlg
+ 9172  6346 skylightd
+ 8244  1367 sshd: u16321 <span class="o">[</span>priv]
+ 5548  1296 sshd: u16321@pts/0
+ 4444  1178 <span class="nt">-bash</span>
+ 4036  1964 ps <span class="nt">-eo</span> rss,pss,cmd
+</code></pre></div></div>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2025-07-25-consider-thruster-with-puma-on-heroku.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+    <hr>
+    <div class="card-body">
+      <h5>Related Posts</h5>
+      <ul>
+          <li><a href="/2025/07/customize-rails-i18n-key-suffixes-like-md-for-markdown">How to customize Rails I18n key suffixes like `_md` for Markdown</a></li>
+          <li><a href="/2025/06/difference-rails-plugin-extensions-gems-railties-engines">The difference between Rails Plugins, Extensions, Gems, Railties, and Engines</a></li>
+          <li><a href="/2025/04/wide-models-and-active-record-custom-validation-contexts">Wide Models and Active Record custom validation contexts</a></li>
+          <li><a href="/2024/09/seeing-like-a-rails-and-ruby-platform-team">Seeing like a Rails and Ruby platform team</a></li>
+          <li><a href="/2024/09/secret-to-rails-database-connection-pool-size">The secret to perfectly calculate Rails database connection pool size</a></li>
+      </ul>
+  </div>
+</div>
+
+  </div>
+
+</body>
+</html>
