@@ -2,7 +2,7 @@
 title: "Consider Thruster with Puma on Heroku"
 date: 2025-07-25 18:18 UTC
 published: true
-tags: []
+tags: [Rails]
 ---
 
 To briefly catch you up to speed if you haven't been minutely tracking Rails performance errata: Puma has some mildly surprising behavior with the order in which it processes and prioritizes requests that are pipelined through keepalive connections; under load, it can lead to unexpected latency. 
