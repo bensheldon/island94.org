@@ -22,7 +22,7 @@ No one else seems to be blogging about this---a fact pointed out when I suggeste
 2. Update your Procfile: `web: HTTP_PORT=$PORT TARGET_PORT=3001 bundle exec thrust bin/rails server`
 3. Disable Puma's keepalives: `enable_keep_alives false`
 
-I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you're worried about resource usage (because Thruster is yet another process) it's been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for Puma. 
+I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you're worried about resource usage (because Thruster is yet another process) it's been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for the Rails app running in Puma; seems tiny to me.
 
 ```bash
 $ heroku ps:exec -a APPNAME
