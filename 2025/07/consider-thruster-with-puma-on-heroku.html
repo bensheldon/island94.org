@@ -7,7 +7,7 @@
   <title>Consider Thruster with Puma on Heroku | Island94.org</title>
 
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="X5ldJ2E8ZHqgwIhsqx1tvEOm9mCWBoeP31pN58ieOIcdNwCGMqlgB7Bn40RtWyZw5mDOkksHc33J6ZpyMV5pOA" />
+<meta name="csrf-token" content="znWNeGxynGKwlXW3Wsgcjiu16N01HNUui_hKwlQkhGEZfomDk6ZJxSH8p93FGNL2IjBOoVSHI3TJ9YwhDnxShg" />
   
 
   <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
@@ -172,7 +172,7 @@
   <li>Disable Puma’s keepalives: <code>enable_keep_alives false</code></li>
 </ol>
 
-<p>I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you’re worried about resource usage (because Thruster is yet another process) it’s been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for Puma.</p>
+<p>I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you’re worried about resource usage (because Thruster is yet another process) it’s been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for the Rails app running in Puma; seems tiny to me.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>heroku ps:exec <span class="nt">-a</span> APPNAME
 <span class="c"># ....</span>

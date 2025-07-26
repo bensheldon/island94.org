@@ -6,7 +6,7 @@
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>Fri, 25 Jul 2025 18:18:00 +0000</pubDate>
-    <lastBuildDate>Fri, 25 Jul 2025 21:24:29 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 15:07:13 +0000</lastBuildDate>
     <generator>Ruby on Rails</generator>
       <item>
         <title>Consider Thruster with Puma on Heroku</title>
@@ -33,7 +33,7 @@
   <li>Disable Puma’s keepalives: <code>enable_keep_alives false</code></li>
 </ol>
 
-<p>I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you’re worried about resource usage (because Thruster is yet another process) it’s been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for Puma.</p>
+<p>I was already using Thruster with Puma on Heroku because of the benefits of x-sendfile support. If you’re worried about resource usage (because Thruster is yet another process) it’s been pretty minimal. I looked just now on one app and 13MB for Thruster next to 200MB for the Rails app running in Puma; seems tiny to me.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>heroku ps:exec <span class="nt">-a</span> APPNAME
 <span class="c"># ....</span>
