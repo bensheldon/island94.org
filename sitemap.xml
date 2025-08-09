@@ -4344,4 +4344,10 @@
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
     </url>
+     <url>
+      <loc>https://island94.org/2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code</loc>
+      <lastmod>2025-08-09</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+    </url>
 </urlset>
