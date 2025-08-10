@@ -6,7 +6,7 @@
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>Sat, 09 Aug 2025 21:28:00 +0000</pubDate>
-    <lastBuildDate>Sat, 09 Aug 2025 21:52:51 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Aug 2025 07:08:15 +0000</lastBuildDate>
     <generator>Ruby on Rails</generator>
       <item>
         <title>Everything I know about AI, I learned by reading the AWS Bedrock Client Ruby SDK code</title>
