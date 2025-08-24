@@ -2,14 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%== title %></title>
-
-  <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
-  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="<%= feed_url(format: :xml) %>">
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
@@ -27,6 +22,8 @@
     setTheme();
     document.addEventListener('turbo:load', setTheme);
   </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="<%= feed_url(format: :xml) %>">
 
   <%= yield :head %>
 </head>
