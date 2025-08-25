@@ -10,7 +10,6 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.assets.compile = true
-  config.assets.gzip = false
 
   config.force_ssl = false
 
