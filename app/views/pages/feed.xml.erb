@@ -6,7 +6,6 @@
     <link><%= root_url %></link>
     <atom:link href="<%= feed_url(format: :xml) %>" rel="self" type="application/rss+xml"/>
     <pubDate><%= @posts.first.published_at.rfc822 %></pubDate>
-    <lastBuildDate><%= Time.now.rfc822 %></lastBuildDate>
     <generator>Ruby on Rails</generator>
     <% @posts.each do |post| %>
       <item>
