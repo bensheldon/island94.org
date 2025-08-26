@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building deterministic, reproducible assets with Sprockets | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-39a1f2f7963cb72fa41194b70f3ff8033d1cbab7fae2f8cb78a801ed41144a6a.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-38d030897e3554a265d3a3b6bdf4fb7509b08197ba2b6e3761683c07e776c1bc.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js">
+<link rel="modulepreload" href="/assets/turbo.min-38d030897e3554a265d3a3b6bdf4fb7509b08197ba2b6e3761683c07e776c1bc.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/08/building-deterministic-reproducible-assets-with-sprockets"><p>Building deterministic, reproducible assets with Sprockets</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-08-26T03:03:00Z" itemprop="datePublished">August 26, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a> and <a href="/posts/tags/ruby">Ruby</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>This is a story that begins with airplane wifi, and ends with the recognition that everything is related in web development.</p>
+
+<p>While on slow airplane wifi, I was syncing this blog’s git repo, and it was taking forever. That was surprising because this blog is mostly text, which I expected shouldn’t require many bits to transfer for Git. Looking more deeply into it (I had a 4-hour flight), I discovered that the vast majority of the bits were in the git branch of built assets that gets deployed to GitHub Pages (<code>gh-pages</code>) when I build my Rails app into a static site <a href="https://island94.org/2025/01/living-parklife-with-rails-coming-from-jekyll">with Parklife</a>. And the bits in that branch were assets (css, javascript, and a few icons and fonts) built by Sprockets, whose contents were changing every time the blog was built and published. What changed?</p>
+
+<ul>
+  <li>Sprockets creates a file manifest that is randomly named <code>".sprockets-manifest-#{SecureRandom.hex(16)}.json"</code>.</li>
+  <li>Within the file manifest, there is an entry for every file built by Sprockets, that includes that original asset’s <code>mtime</code>—when the file on the filesystem was last touched, even if the contents didn’t change.</li>
+  <li>By default, Sprockets generates gzipped <code>.gz</code> copies of compressible assets, and it includes the uncompressed file’s <code>mtime</code> in the gzipped file’s header, producing different binary content even though the compressed payloads’ contents didn’t change.</li>
+</ul>
+
+<p>Do I need that? Let’s go through it.</p>
+
+<h3 id="the-sprockets-manifest">The Sprockets Manifest</h3>
+
+<p>The Sprockets Manifest is pretty cool (I mean <code>public/assets/.sprockets-manifest-*.json</code>, not <code>app/assets/config/manifest.js</code> which is different). The manifest is how Sprockets is able to add unique cache-breaking digests to each file while still remembering what the file was originally named. When building assets on a server with a persisted filesystem, Sprockets also uses the manifest to keep <em>old</em> versions of files around: <code>bin/rails assets:clean</code> will keep the last 3 versions of built assets, which is helpful for blue-green deployments. Heroku also has a <a href="https://devcenter.heroku.com/articles/rails-4-asset-pipeline#multiple-versions">bunch of custom stuff</a> powered by this too to make deployments seamless.</p>
+
+<p>But none of that is applicable to me and this blog, which gets built from scratch and committed to Git. Or for that matter, when I build some of my other Rails apps with Docker; not unnecessarily busting my cached file layers would be nice 💅</p>
+
+<p>The following is a monkeypatch, which works with Sprockets <em>right now</em> but I’m hoping to ultimately propose as a configuration option upstream (as others <a href="https://github.com/rails/sprockets/issues/707">have proposed</a>).</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/sprockets.rb</span>
+<span class="k">module</span> <span class="nn">SprocketsManifestExt</span>
+  <span class="k">def</span> <span class="nf">generate_manifest_path</span>
+    <span class="c1"># Always generate the same filename</span>
+    <span class="s2">".sprockets-manifest-</span><span class="si">#{</span><span class="s1">'0'</span> <span class="o">*</span> <span class="mi">32</span><span class="si">}</span><span class="s2">.json"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">save</span>
+    <span class="c1"># Use the epoch as the mtime for everything</span>
+    <span class="n">zero_time</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">at</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">utc</span>
+    <span class="vi">@data</span><span class="p">[</span><span class="s2">"files"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="p">(</span><span class="n">_path</span><span class="p">,</span> <span class="n">asset</span><span class="p">)</span><span class="o">|</span>
+      <span class="n">asset</span><span class="p">[</span><span class="s2">"mtime"</span><span class="p">]</span> <span class="o">=</span> <span class="n">zero_time</span>
+    <span class="k">end</span>
+
+    <span class="k">super</span>
+  <span class="k">end</span>
+
+  <span class="no">Sprockets</span><span class="o">::</span><span class="no">Manifest</span><span class="p">.</span><span class="nf">prepend</span> <span class="nb">self</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Now, if you’re like me (on a plane), you might be curious about why the obsessive tracking of <code>mtime</code>. I have worked alongside several people in my career with content-addressable storage obsessions. The idea being: focus on the contents, not the container. And <code>mtime</code> is very much a concern of the <em>container</em>. But Sprockets <a href="https://github.com/rails/sprockets/blob/58759051635c3d660421908702b6ade729dd4ab8/README.md#cache">makes the case</a> that “Compiling assets is slow” so I can see it’s useful to quickly check when the file was modified, in a lot of cases… but not mine.</p>
+
+<p>Let’s move on.</p>
+
+<h3 id="gzip-but-maybe-you-dont-need-it">GZip, but maybe you don’t need it</h3>
+
+<p>So… everything in web development is connected. While wondering why new copies of every <code>.gz</code> file were being committed on every build, I remembered what my buddy Rob recently did in Rails: <a href="https://github.com/rails/rails/pull/55382"><code>MakeActiveSupport::Gzip.compress</code>￼deterministic</a>.</p>
+
+<blockquote>
+  <p>I have some tests of code that uses <code>ActiveSupport::Gzip.compress</code> that have been flaky for a long time, and recently discovered this is because the output of that method includes the timestamp of when it was compressed. If two calls with the same input happen during different seconds, then you get different output (so, in my flaky tests, they fail to compare correctly).</p>
+</blockquote>
+
+<p>GZip takes a parameter called <code>mtime</code>, which is stored and changes the timestamp of the compressed file(s) <em>when they are uncompressed</em>. It changes the <em>content</em> of the gzipped file, because it stores the timestamp in the contents of the file, but doesn’t affect the mtime of the gzipped file <em>container</em>.</p>
+
+<p>So in the case of Sprockets, if the modification date of the uncompressed asset changes, regardless of whether its contents have changed, a new and different (according to git or Docker) gzipped file will be generated. This was <em>really</em> bloating up my git repo.</p>
+
+<p>Props to Rack maintainer Richard Schneeman who <a href="https://github.com/rails/sprockets/pull/197#issuecomment-162954641">dug further down this hole previously</a>, admirably asking the zlib group themselves for advice. The commentary made a mention of nginx docs, which I assume is for <a href="https://nginx.org/en/docs/http/ngx_http_gzip_static_module.html"><code>ngx_http_gzip_static_module</code></a> which says:</p>
+
+<blockquote>
+  <p>The files can be compressed using the gzip command, or any other compatible one. It is recommended that the modification date and time of the original and compressed files be the same.</p>
+</blockquote>
+
+<p>But that’s not <code>GZip#mtime</code> value stored inside the contents of the gzip file, that’s the mtime of the <code>.gz</code> file container. Sprockets <em>also</em> sets that, with <a href="https://github.com/rails/sprockets/blob/4dff018b9271c37b09889e829f8926d1c5379731/lib/sprockets/utils/gzip.rb#L19C11-L19C22"><code>File.utime</code></a>.</p>
+
+<p>It’s easy enough to patch the mtime to the “unknown” value of <code>0</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/sprockets.rb</span>
+<span class="k">module</span> <span class="nn">SprocketsGzipExt</span>
+  <span class="k">def</span> <span class="nf">compress</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">_target</span><span class="p">)</span>
+    <span class="n">archiver</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="kp">nil</span>
+  <span class="k">end</span>
+
+  <span class="no">Sprockets</span><span class="o">::</span><span class="no">Utils</span><span class="o">::</span><span class="no">Gzip</span><span class="p">.</span><span class="nf">prepend</span> <span class="nb">self</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>…though if you’re in my shoes, you might not even need these gzipped assets. afaict only Nginx makes use of them with the non-default <code>ngx_http_gzip_static_module</code> module; Apache requires some complicated RewriteRules; Puma doesn’t serve them, CDNs don’t request them. Maybe turn them off? 🤷</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/sprockets.rb</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">gzip</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Fun fact: <a href="https://github.com/rails/sprockets-rails/pull/551">that configuration was undocumented</a></p>
+
+<h3 id="maybe-please-dont-even-pass-mtime-to-gzip-for-web-assets">Maybe please don’t even pass <code>mtime</code> to gzip for web assets</h3>
+
+<p>All of this stuff about file modification dates reminded me of <em>another</em> thing I had once previously rabbit-holed on, which was <a href="https://github.com/feedbin/feedbin/issues/726">poorly behaved conditional requests in RSS Readers</a>. The bad behavior involved inappropriately caching web requests whose Last-Modified HTTP header changed, but their contents didn’t. And how do webservers generate their Last-Modified header value? That’s right, file <code>mtime</code>, the one that can be set by <code>File.utime</code>!</p>
+
+<p>…but not the one set by <code>GZip#mtime=</code>. I cannot find any evidence anywhere that value, <em>in the contents of the gzip file</em> matters. Nada. All it does is make the gzip file’s <em>contents</em> be different, because of that one tiny value being included. I can’t imagine anything cares about the original mtime when it’s unzipped, that wasn’t already transmitted via the Last-Modified HTTP header. What am I missing?</p>
+
+<p>Of the evidence I have, it seems like developers set <code>GZip#mtime=</code>… because it’s an option? I couldn’t find a reason <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in the Sprockets history</a>. I noticed that Rack::Deflater does the same for reasons I haven’t figured out <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in their history</a> either.  This behavior probably is not busting <em>a lot</em> of content-based caches unnecessarily, but it probably does some. So maybe don’t do it unless you need to.</p>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2025-08-26-building-deterministic-reproducible-assets-with-sprockets.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+    <hr>
+    <div class="card-body">
+      <h5>Related Posts</h5>
+      <ul>
+          <li><a href="/2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code">Everything I know about AI, I learned by reading the AWS Bedrock Client Ruby SDK code</a></li>
+          <li><a href="/2025/01/ruby-thread-contention-simply-gvl-queuing">Ruby &quot;Thread Contention&quot; is simply GVL Queuing</a></li>
+          <li><a href="/2024/09/seeing-like-a-rails-and-ruby-platform-team">Seeing like a Rails and Ruby platform team</a></li>
+          <li><a href="/2024/04/a-ruby-meetup-and-3-podcasts">A Ruby Meetup about Rails autoloading and 3 Podcasts</a></li>
+          <li><a href="/2023/11/rails-executor-increasingly-everywhere">The Rails Executor: increasingly everywhere</a></li>
+      </ul>
+  </div>
+</div>
+
+  </div>
+
+</body>
+</html>
