@@ -20,7 +20,7 @@ class Post < ApplicationModel
   end
 
   def self.tags
-    all.flat_map(&:tags).uniq.sort
+    all.flat_map(&:tags).uniq.map(&:parameterize).uniq.sort
   end
 
   def self.from_file(path)
@@ -57,7 +57,7 @@ class Post < ApplicationModel
   end
 
   def tags
-    frontmatter["tags"] || []
+    (frontmatter["tags"] || []).map(&:parameterize).uniq.sort
   end
 
   def redirects
