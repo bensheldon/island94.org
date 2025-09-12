@@ -1,5 +1,5 @@
 ---
-title: "Recoding America"
+title: "Recoding America, a book review"
 author: "Jen Pahlka"
 link: "https://us.macmillan.com/books/9781250266774/recodingamerica"
 rating: 5
