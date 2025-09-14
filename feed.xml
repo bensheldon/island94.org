@@ -13,7 +13,7 @@
           <![CDATA[
           <p>I recently started using ViewComponent. I’ve been gradually removing non-omikase libraries from my Rails applications over the past decade, but ViewComponent is alright. I was strongly motivated by Boring Rails’ <a href="https://boringrails.com/articles/self-updating-components/">“Hotwire components that refresh themselves”</a>, cause matching up all the dom ids and stream targets between views/partials and …. wherever you put your Stream and Broadcast renderers is a pain.</p>
 
-<p>You might also know me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves <em>later</em> and move stream broadcast rendering into a background job. I simply call <code>MessagesComponent.add_message(message)</code> and broadcasts an update <em>later</em> to the correct stream and target that are all nice and compactly stored inside the View Component:</p>
+<p>You might also know me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves <em>later</em> and move stream broadcast rendering into a background job. I simply call <code>MessagesComponent.add_message(message)</code> and broadcasts an update <em>later</em> to the correct stream and target that are all nice and local when defined inside the View Component:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MessageListComponent</span> <span class="o">&lt;</span> <span class="no">ApplicationComponent</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
