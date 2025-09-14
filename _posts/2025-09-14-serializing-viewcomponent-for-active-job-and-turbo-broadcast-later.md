@@ -7,7 +7,7 @@ tags: [Ruby, Ruby on rails]
 
 I recently started using ViewComponent. I’ve been gradually removing non-omikase libraries from my Rails applications over the past decade, but ViewComponent is alright. I was strongly motivated by Boring Rails’ ["Hotwire components that refresh themselves”](https://boringrails.com/articles/self-updating-components/), cause matching up all the dom ids and stream targets between views/partials and …. wherever you put your Stream and Broadcast renderers is a pain.
 
-You might also know me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves _later_ and move stream broadcast rendering into a background job. I simply call `MessagesComponent.add_message(message)` and broadcasts an update _later_ to the correct stream and target that are all nice and local when defined inside the View Component:
+You might be familiar with me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves _later_ and move stream broadcast rendering into a background job. I simply call `MessagesComponent.add_message(message)` and broadcasts an update _later_ to the correct stream and target that are all nice and local when defined inside the View Component:
 
 ```ruby
 class MessageListComponent < ApplicationComponent
