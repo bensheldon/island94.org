@@ -16,7 +16,7 @@ class MessageListComponent < ApplicationComponent
     Turbo::StreamsChannel.broadcast_action_later_to(
       user, :message_list,
       action: :append,
-      target: ActionView::RecordIdentifier.dom_id(user, :messages),
+      target: ActionView::RecordIdentifier.dom_id(user, :message_list),
       renderable: MessageComponent.serializable(message: message), # <- that right there
       layout: false
     )
@@ -29,7 +29,7 @@ class MessageListComponent < ApplicationComponent
 
   erb_template <<~HTML
     <%= helpers.turbo_stream_from @user, :message_list %>
-    <div id="<%= dom_id(@user, :messages) %>">
+    <div id="<%= dom_id(@user, :message_list) %>">
       <%= render MessageComponent.with_collection @messages %>
     </div>
   HTML
