@@ -10,7 +10,7 @@ I recently started using ViewComponent. I’ve been gradually removing non-omika
 You might also know me as the GoodJob author. So of course I wanted to have my Hotwire components refresh themselves _later_ and move stream broadcast rendering into a background job. I simply call `MessagesComponent.add_message(message)` and broadcasts an update _later_ to the correct stream and target that are all nice and compactly stored inside the View Component:
 
 ```ruby
-class MessagesComponent < ApplicationComponent
+class MessageListComponent < ApplicationComponent
   def self.add_message(message)
     user = message.user
     Turbo::StreamsChannel.broadcast_action_later_to(
