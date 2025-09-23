@@ -5,6 +5,9 @@ published: true
 tags: []
 ---
 
+### Documentation
+
+[Ruby thread documentation](https://docs.ruby-lang.org/en/master/table_of_contents.html#classes:~:text=Thread%3A%3AConditionVariable) (anchored on `Thread::ConditionVariable`)
 
 ### Queues and Mutexes
 
