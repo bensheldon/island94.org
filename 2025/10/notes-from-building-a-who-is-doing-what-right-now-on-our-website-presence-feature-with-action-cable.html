@@ -153,7 +153,7 @@
 
 <p>The follow is more my notes than a cohesive narrative. But maybe you’ll get something out of it.</p>
 
-<h2 id="big-props">Big props</h2>
+<h3 id="big-props">Big props</h3>
 
 <p>In building this feature, I got a lot of value from:</p>
 <ul>
@@ -162,7 +162,7 @@
   <li>AI slop, largely Jetbrains Junie agent. Not because it contributed code to the final feature, but because I had the agent try to implement from scratch 3 different times, and while none of them fully worked (let alone met my quality standards or covered all edges), it helped sharpen the outlines and common shapes and surfaced some API methods to click into that I wasn’t aware of. And made the difference between undirected poking around vs being like “ok, this is gonna require no more than 5 objects in various places working together; let’s go!”</li>
 </ul>
 
-<h2 id="the-big-idea">The big idea</h2>
+<h3 id="the-big-idea">The big idea</h3>
 
 <p>The feature I wanted to build would track multiple presence keys at the same time. So if someone is on a deep page (<code>/admin/clients/1/messages</code>) they’d be present for that specific client, any client, as well as the dashboard a whole.</p>
 
@@ -180,7 +180,8 @@
 <p>It works! I’m happy with it.</p>
 
 <p>Ok, let’s get some grumbles out.</p>
-<h2 id="action-cable-could-have-a-bit-more-conceptual-integrity">Action Cable could have a bit more conceptual integrity</h2>
+
+<h3 id="action-cable-could-have-a-bit-more-conceptual-integrity">Action Cable could have a bit more conceptual integrity</h3>
 
 <p>I once built some Action Cable powered features <a href="https://github.com/bensheldon/open311status/pull/59">about 7 years ago</a>, before Turbo Broadcast Streams, and it wasn’t my favorite. Since then, Turbo Broadcast Streams totally redeemed my feelings about Action Cable… and then I had to go real deep again on Action Cable to build this Presence feature.</p>
 
@@ -195,14 +196,15 @@
 <p>I’m a pedantic person, and it’s tiring for me to write about this stuff with precision. Active Storage named variants—with its record-blob-variant-blob-record—has as an analogous vibe of “I guess it works and I have a hard time looking directly at it”.</p>
 
 <p>I have immense compassion and sympathy and empathy for trying to wrangle something as complex as Action Cable. And also fyi, it <em>is</em> a lot.</p>
-<h2 id="testing">Testing</h2>
+
+<h3 id="testing">Testing</h3>
 
 <ul>
   <li>You’ll need to isolate and reset Action Cable after individual tests to prevent queries from being made after the transaction rollback, or changing of pinned database connection:<code>ActionCable.server.restart</code></li>
-  <li>If you see deadlocks, <code>pg.exec</code> freezes or AR gives you <code>undefined method 'count' for nil</code> inside of Active Record <a href="https://github.com/rails/rails/blob/b0c813bc7b61c71dd21ee3a6c6210f6d14030f71/activerecord/lib/active_record/connection_adapters/postgresql/database_statements.rb#L167">because the query result object is <code>nil</code></a>, that’s a sign that the database connection is being read out-of-order/unsafely asynchronously/all whack.
-    <h2 id="page-lifecycle">Page lifecycle</h2>
-  </li>
+  <li>If you see deadlocks, <code>pg.exec</code> freezes or AR gives you <code>undefined method 'count' for nil</code> inside of Active Record <a href="https://github.com/rails/rails/blob/b0c813bc7b61c71dd21ee3a6c6210f6d14030f71/activerecord/lib/active_record/connection_adapters/postgresql/database_statements.rb#L167">because the query result object is <code>nil</code></a>, that’s a sign that the database connection is being read out-of-order/unsafely asynchronously/all whack.</li>
 </ul>
+
+<h3 id="page-lifecycle">Page lifecycle</h3>
 
 <p>Live and die by the <a href="https://developer.chrome.com/docs/web-platform/page-lifecycle-api">Browser Page Lifecycle API</a>.</p>
 
