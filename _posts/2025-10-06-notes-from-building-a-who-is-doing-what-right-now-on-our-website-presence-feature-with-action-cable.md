@@ -11,14 +11,14 @@ I recently was heads down building a “presence” feature for the case and com
 
 The follow is more my notes than a cohesive narrative. But maybe you’ll get something out of it.
 
-## Big props
+### Big props
 
 In building this feature, I got a lot of value from:
 - [Basecamp’s Campfire](https://github.com/basecamp/once-campfire) app, recently open sourced, which has a sorta similar feature. 
 - Rob Race’s [Developer Notes about building a Presence Feature](https://robrace.dev/blog/turbo-morphs-presence-channels-and-typing-indicators/#presence-channel)
 - AI slop, largely Jetbrains Junie agent. Not because it contributed code to the final feature, but because I had the agent try to implement from scratch 3 different times, and while none of them fully worked (let alone met my quality standards or covered all edges), it helped sharpen the outlines and common shapes and surfaced some API methods to click into that I wasn’t aware of. And made the difference between undirected poking around vs being like “ok, this is gonna require no more than 5 objects in various places working together; let's go!”
 
-## The big idea
+### The big idea
 
 The feature I wanted to build would track multiple presence keys at the same time. So if someone is on a deep page (`/admin/clients/1/messages`) they'd be present for that specific client, any client, as well as the dashboard a whole. 
 
@@ -34,7 +34,8 @@ What I ended up with was:
 It works! I'm happy with it. 
 
 Ok, let's get some grumbles out. 
-## Action Cable could have a bit more conceptual integrity
+
+### Action Cable could have a bit more conceptual integrity
 
 I once built some Action Cable powered features [about 7 years ago](https://github.com/bensheldon/open311status/pull/59), before Turbo Broadcast Streams, and it wasn’t my favorite. Since then, Turbo Broadcast Streams totally redeemed my feelings about Action Cable… and then I had to go real deep again on Action Cable to build this Presence feature. 
 
@@ -49,11 +50,13 @@ On the server, I have accepted that the Connection/Channel/Streams challenges me
 I'm a pedantic person, and it's tiring for me to write about this stuff with precision. Active Storage named variants—with its record-blob-variant-blob-record—has as an analogous vibe of “I guess it works and I have a hard time looking directly at it”.
 
 I have immense compassion and sympathy and empathy for trying to wrangle something as complex as Action Cable. And also fyi, it _is_ a lot. 
-## Testing
+
+### Testing
 
 - You’ll need to isolate and reset Action Cable after individual tests to prevent queries from being made after the transaction rollback, or changing of pinned database connection:`ActionCable.server.restart`
 - If you see deadlocks, `pg.exec` freezes or AR gives you `undefined method 'count' for nil` inside of Active Record [because the query result object is `nil`](https://github.com/rails/rails/blob/b0c813bc7b61c71dd21ee3a6c6210f6d14030f71/activerecord/lib/active_record/connection_adapters/postgresql/database_statements.rb#L167), that’s a sign that the database connection is being read out-of-order/unsafely asynchronously/all whack.
-## Page lifecycle
+
+### Page lifecycle
 
 Live and die by the [Browser Page Lifecycle API](https://developer.chrome.com/docs/web-platform/page-lifecycle-api). 
 
