@@ -52,7 +52,7 @@ I have immense compassion and sympathy and empathy for trying to wrangle somethi
 ## Testing
 
 - You’ll need to isolate and reset Action Cable after individual tests to prevent queries from being made after the transaction rollback, or changing of pinned database connection:`ActionCable.server.restart`
-- If you see deadlocks, `pg.exec` freezes or AR gives you `undefined method 'count' for nil` inside of Active Record [because the query result object is ￼`nil`￼](https://github.com/rails/rails/blob/b0c813bc7b61c71dd21ee3a6c6210f6d14030f71/activerecord/lib/active_record/connection_adapters/postgresql/database_statements.rb#L167), that’s a sign that the database connection is being read out-of-order/unsafely asynchronously/all whack.
+- If you see deadlocks, `pg.exec` freezes or AR gives you `undefined method 'count' for nil` inside of Active Record [because the query result object is `nil`](https://github.com/rails/rails/blob/b0c813bc7b61c71dd21ee3a6c6210f6d14030f71/activerecord/lib/active_record/connection_adapters/postgresql/database_statements.rb#L167), that’s a sign that the database connection is being read out-of-order/unsafely asynchronously/all whack.
 ## Page lifecycle
 
 Live and die by the [Browser Page Lifecycle API](https://developer.chrome.com/docs/web-platform/page-lifecycle-api). 
@@ -75,13 +75,13 @@ I ended up making a whole new custom element `data-permanent-cable-stream-source
 
 All this work did generate some upstream issues and PRs. I mostly worked around them in my own app, but maybe we’ll roll the rock uphill a little bit:
 
-- `hotwired/turbo-rails`: ~[Allow `turbo-cable-stream-source` to be compatible with `data-turbo-permanent`](https://github.com/hotwired/turbo-rails/pull/756)~
+- `hotwired/turbo-rails`: [Allow `turbo-cable-stream-source` to be compatible with `data-turbo-permanent`](https://github.com/hotwired/turbo-rails/pull/756)
 - `rails/rails`: [Fix Action Cable `after_subscribe` callback to call after deferred subscription confirmation transmit](https://github.com/rails/rails/pull/55825)
 - `rails/rails`: [Add `success_callback` to Action Cable's `stream_from` and `stream_to`](https://github.com/rails/rails/pull/55824)
 - `reclaim-the-stack/actioncable-enhanced-postgresql-adapter`: [Fix incorrect escaping of large payloads](https://github.com/reclaim-the-stack/actioncable-enhanced-postgresql-adapter/pull/6)
 
 ### Notes, right?
 
-Yep, these are my notes. Maybe they’re helpful. No big denouement. The feature works, I’m happy with it, my teammates are super impressed, and I probably wouldn’t have attempted it at all if I didn’t have such positive thoughts about Action Cable going in, even if the work itself was tiresome.
+Yep, these are my notes. Maybe they’re helpful. No big denouement. The feature works, I’m happy with it, my teammates are happy, and I probably wouldn’t have attempted it at all if I didn’t have such positive thoughts about Action Cable going in, even if the work itself got deeply into the weeds.
 
 
