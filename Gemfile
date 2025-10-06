@@ -1,13 +1,14 @@
 # frozen_string_literal: true
-source 'https://rubygems.org'
-ruby File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip
+source "https://rubygems.org"
+ruby File.read(File.join(File.dirname(__FILE__), ".ruby-version")).strip
 
-gem 'activesupport'
+gem "activesupport"
 gem "csv"
-gem 'jekyll' # still necessary for bookmarking scripts
-gem 'octokit'
+gem "jekyll" # still necessary for bookmarking scripts
+gem "octokit"
 
 gem "parklife"
+gem "parklife-rails"
 gem "rails", "~> 8.0.0"
 
 gem "bootsnap", require: false
