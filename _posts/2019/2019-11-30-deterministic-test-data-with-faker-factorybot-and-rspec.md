@@ -58,3 +58,21 @@ end
 ```
 
 That’s all you need to combine Faker and FactoryBot to get deterministic test data in your RSpec tests. Have fun!
+
+### Update October 2025
+
+I'm now doing it like this in tests, no sequencing required:
+
+```ruby
+# spec/support/deterministic.rb
+
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+
+  config.prepend_before do
+    Faker::Config.random = Random.new(1) # <-- just reset it globally every test
+    Faker::UniqueGenerator.clear
+    FactoryBot.rewind_sequences
+  end
+end
+```
