@@ -21,9 +21,9 @@ The most common strategy for deferring stuff is: use a string as a stand-in for 
 
 In Rails, a lot of performance repair work for development is identifying places where a constant _shouldn’t_ be directly referenced and instead should use some other stand-in until it’s really needed. In Rails, it can be confusing, because sometimes you can use a configuration string to refer to a constant, and sometimes you have to use a constant; it is inconsistent.
 
-### In Hanami, everything has a string key
+### In Hanami, (nearly) everything has a string key
 
-Hanami’s approach: make all the constants referenceable by a string. Called a `key`. _Everything is keyed._ (again, Hanami does quite a bit more than that, I just mean in regards to code loading). Objects are configured by what keys they have dependencies upon, and those objects are [injected by the framework](https://guides.hanamirb.org/v2.2/app/container-and-components/#injecting-dependencies-via-deps). So instead of writing this:
+Hanami’s approach: make application components referencable by a string. Called a `key`. _Everything is keyed._ (again, Hanami does quite a bit more than that, I just mean in regards to code loading). Objects are configured by what keys they have dependencies upon, and those objects are [injected by the framework](https://guides.hanamirb.org/v2.2/app/container-and-components/#injecting-dependencies-via-deps). So instead of writing this:
 
 ```ruby
 class MyClass
@@ -48,9 +48,11 @@ class MyClass
 end
 ```
 
-Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app[“thekey”]` though Tim says: that’s a smell, don’t do that, use injection.
+Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app["thekey"]` when debugging, but normal code should get them injected from Deps.
 
-In Hanami, if you have an object that lives outside the framework primitives (Actions, Operations, Views) like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/).
+Functional components in Hanami have a key, but not everything is functional: classes that embody a bit of data (in Hanami these are called Structs) do not have entries in the app container, and therefore don't have keys.
+
+If you have something functional coming from outside Hanami, like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/). By convention, keys match a class name but they don't have to.
 
 **Briefly, commentary:** Some common Rails development discourse is “Rails is too magic”, which is leveled because Rails framework can work out what constants you mean without directly referencing them (e.g. `has_many :comments` implies there’s an Active Record `Comment`), and “just use a PORO” (plain old ruby object) when a developer is trying to painfully jam _everything_ into narrow Rails framework primitives. With Hanami:
 - Hanami has quite a bit of like “here’s a string, now it’s an object 🪄” , but it is consistently applied everywhere and has some nice benefits beyond just brevity, like overloading dependencies.
@@ -115,7 +117,7 @@ Ending on what I originally shared with Tim to start our discussion, which I sha
 >
 > **How Hanami does it:**
 >
->> From Tim Riley: You can find some information about Hanami way of handling dependency container: [https://guides.hanamirb.org/v2.2/app/container-and-components/](https://guides.hanamirb.org/v2.2/app/container-and-components/) Also autoloading: [https://guides.hanamirb.org/v2.2/app/autoloading/](https://guides.hanamirb.org/v2.2/app/autoloading/) And info about lazy boot: [https://guides.hanamirb.org/v2.2/app/booting/](https://guides.hanamirb.org/v2.2/app/booting/)
+>> @inouire in the Rails Discord shared a couple of links: You can find some information about Hanami way of handling dependency container: [https://guides.hanamirb.org/v2.2/app/container-and-components/](https://guides.hanamirb.org/v2.2/app/container-and-components/) Also autoloading: [https://guides.hanamirb.org/v2.2/app/autoloading/](https://guides.hanamirb.org/v2.2/app/autoloading/) And info about lazy boot: [https://guides.hanamirb.org/v2.2/app/booting/](https://guides.hanamirb.org/v2.2/app/booting/)
 >
 > Hanami questions from Ben:
 > - Components are singletons that are pure-ish functions? Do they get torn down / recreated on every request, or does the same object exist for the lifetime of the application?,
