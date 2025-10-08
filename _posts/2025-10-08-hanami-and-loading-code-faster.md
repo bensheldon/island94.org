@@ -48,7 +48,7 @@ class MyClass
 end
 ```
 
-Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app["thekey"]` when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don't have to.
+Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app["thekey"]` when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don't have to. This is [powered by `dry-system`](https://dry-rb.org/gems/dry-system/).
 
 Not _everything_ has to have a key. Functional components in Hanami have a key, but classes that embody a bit of data (in Hanami these are called Structs) do not have entries in the app container, and therefore don't have keys.
 
