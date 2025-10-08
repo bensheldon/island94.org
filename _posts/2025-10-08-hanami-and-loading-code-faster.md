@@ -23,7 +23,7 @@ In Rails, a lot of performance repair work for development is identifying places
 
 ### In Hanami, (nearly) everything has a string key
 
-Hanami’s approach: make application components referencable by a string. Called a `key`. _Everything is keyed._ (again, Hanami does quite a bit more than that, I just mean in regards to code loading). Objects are configured by what keys they have dependencies upon, and those objects are [injected by the framework](https://guides.hanamirb.org/v2.2/app/container-and-components/#injecting-dependencies-via-deps). So instead of writing this:
+Hanami’s approach: make _all_ the application components referencable by a string, called a `key`. (again, Hanami does quite a bit more than that, I just mean in regards to code loading). Objects are configured by what keys they have dependencies upon, and those objects are [injected by the framework](https://guides.hanamirb.org/v2.2/app/container-and-components/#injecting-dependencies-via-deps). So instead of writing this:
 
 ```ruby
 class MyClass
@@ -48,11 +48,11 @@ class MyClass
 end
 ```
 
-Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app["thekey"]` when debugging, but normal code should get them injected from Deps.
+Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app["thekey"]` when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don't have to.
 
-Functional components in Hanami have a key, but not everything is functional: classes that embody a bit of data (in Hanami these are called Structs) do not have entries in the app container, and therefore don't have keys.
+Not _everything_ has to have a key. Functional components in Hanami have a key, but classes that embody a bit of data (in Hanami these are called Structs) do not have entries in the app container, and therefore don't have keys.
 
-If you have something functional coming from outside Hanami, like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/). By convention, keys match a class name but they don't have to.
+If you have something functional coming from outside Hanami, like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/). 
 
 **Briefly, commentary:** Some common Rails development discourse is “Rails is too magic”, which is leveled because Rails framework can work out what constants you mean without directly referencing them (e.g. `has_many :comments` implies there’s an Active Record `Comment`), and “just use a PORO” (plain old ruby object) when a developer is trying to painfully jam _everything_ into narrow Rails framework primitives. With Hanami:
 - Hanami has quite a bit of like “here’s a string, now it’s an object 🪄” , but it is consistently applied everywhere and has some nice benefits beyond just brevity, like overloading dependencies.
