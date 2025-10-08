@@ -51,7 +51,7 @@ end
 
 Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app[“thekey”]` though Tim says: that’s a smell, don’t do that, use injection.
 
-In Hanami, if you have an object that lives outside the framework primitves (Actions, Operations, Views) like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/).
+In Hanami, if you have an object that lives outside the framework primitives (Actions, Operations, Views) like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/).
 
 **Briefly, commentary:** Some common Rails development discourse is “Rails is too magic”, which is leveled because Rails framework can work out what constants you mean without directly referencing them (e.g. `has_many :comments` implies there’s an Active Record `Comment`), and “just use a PORO” (plain old ruby object) when a developer is trying to painfully jam _everything_ into narrow Rails framework primitives. With Hanami:
 - Hanami has quite a bit of like “here’s a string, now it’s an object 🪄” , but it is consistently applied everywhere and has some nice benefits beyond just brevity, like overloading dependencies.
