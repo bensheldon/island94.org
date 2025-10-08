@@ -19,7 +19,7 @@ The name of the game in development, where you want to run a single test or brow
 
 The most common strategy for deferring stuff is: use a string as a stand-in for the constant, and only later, when you really need to convert the string to a constant, do it. An example is in Rails Routes, where you’ll write `to: “mycontroller#index”` and not `MyController`. At some point the `mycontroller` gets constantized to `MyController`, but that’s _later_, when you hit that particular route. Another example is Active Record Relation definitions, where you’ll use `class_name: “MyModel"` instead of `class_name: MyModel`, which only gets constantized when you use `record.my_models`.
 
-In Rails, a lot of performance repair work for development is identifying places where a constant _shouldn’t_ be directly referenced and instead should use some other stand-in until it’s really needed. In Rails, it can be confusing, because sometimes you can use a configuration string to refer to a constant, and sometimes you have to use a constant; it is really inconsistent.
+In Rails, a lot of performance repair work for development is identifying places where a constant _shouldn’t_ be directly referenced and instead should use some other stand-in until it’s really needed. In Rails, it can be confusing, because sometimes you can use a configuration string to refer to a constant, and sometimes you have to use a constant; it is inconsistent.
 
 ### In Hanami, everything has a string key
 
