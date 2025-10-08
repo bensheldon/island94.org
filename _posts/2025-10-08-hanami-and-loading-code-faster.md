@@ -48,7 +48,6 @@ class MyClass
 end
 ```
 
-
 Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app[“thekey”]` though Tim says: that’s a smell, don’t do that, use injection.
 
 In Hanami, if you have an object that lives outside the framework primitives (Actions, Operations, Views) like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/).
@@ -56,6 +55,7 @@ In Hanami, if you have an object that lives outside the framework primitives (Ac
 **Briefly, commentary:** Some common Rails development discourse is “Rails is too magic”, which is leveled because Rails framework can work out what constants you mean without directly referencing them (e.g. `has_many :comments` implies there’s an Active Record `Comment`), and “just use a PORO” (plain old ruby object) when a developer is trying to painfully jam _everything_ into narrow Rails framework primitives. With Hanami:
 - Hanami has quite a bit of like “here’s a string, now it’s an object 🪄” , but it is consistently applied everywhere and has some nice benefits beyond just brevity, like overloading dependencies.
 - Everything does sorta have to be fit into the framework, but there’s an explicit interface for doing so.
+
 ## Assorted notes in this general theme
 
 - Providers are like "Rails initializers but with more juice" – they register components in the container. They have lifecycle hooks (prepare, start, stop) for managing resources. They're lazily loaded and can have namespace capabilities for organizing related components.
@@ -92,6 +92,7 @@ In the Hanami Discord, Tim shared a proposal for building out a plugin system fo
 Ending on what I originally shared with Tim to start our discussion, which I share partly cause I think it’s funny how easily I can type out 500 words today on a thesis of like “why code loading in Ruby is hard”:
 
 > **Making boot fast; don’t load the code unless you need it**
+> 
 > Don’t load code until/unless you need it. DEFINITELY don’t create database connections or make any http calls or invoke other services. How Rails does it, Rails autoloads as much as possible (framework, plugin/extension, and application code), either via Ruby Autoload or Zeitwerk. The architecture challenge is: how do you set up configuration properties, so that *when* the code is loaded (and all the different pieces of framework/plugin/extension/application get their fingers on it), it is configured with the properties y’all ultimately want on it? There are two mechanisms:
 >
 > - A configuration hash, that is intended to be made up (somewhat) of primitives that are dependency free and thus don’t load a bunch of code themselves,
