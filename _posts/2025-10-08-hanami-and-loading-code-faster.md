@@ -89,7 +89,7 @@ In the Hanami Discord, Tim shared a proposal for building out a plugin system fo
 > * Adjustments to first-party Hanami gems to allow their classes to be used in an un-extended state when required.
 > * A separate “extension” gem that can allow Hanami extensions to register their extensions without depending on the main Hanami gem.
 
-## And how this all started
+### And how this all started
 
 Ending on what I originally shared with Tim to start our discussion, which I share partly cause I think it’s funny how easily I can type out 500 words today on a thesis of like “why code loading in Ruby is hard”:
 
