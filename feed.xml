@@ -5,8 +5,167 @@
     <description>A Lost and Found</description>
     <link>https://island94.org/</link>
     <atom:link href="https://island94.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Oct 2025 14:59:00 +0000</pubDate>
+    <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
     <generator>Ruby on Rails</generator>
+      <item>
+        <title>Hanami and loading code, faster</title>
+        <description>
+          <![CDATA[
+          <p>I’ll be giving a talk in November in at SF Ruby Conference (<a href="https://luma.com/sfrubyconf2025?coupon=SEP29OCT6">tickets on sale now!</a>). My talk is speeding up your application’s development cycle by taking a critical eye at your application’s development boot. Which all boils down to <em>do less</em>. In Ruby, the easiest, though not the simplest, is to load less code. So yeah, autoloading.</p>
+
+<p>To expand my horizons and hopefully give a better talk, I branched out beyond my experience with Ruby on Rails to talk to Tim Riley about Hanami and how it handles code loading during development.</p>
+
+<p>The following are my notes; it’s not a critical review of Hanami, and it only looks into a very narrow topic: code loading and development performance.</p>
+
+<h3 id="ruby-and-analogously-rails">Ruby, and analogously Rails</h3>
+
+<p>Ruby has a global namespace; constants (classes, modules, CONSTANTS) are global singletons. When your code (or some code you’re loading—Ruby calls each file it loads a “feature” identified by its filesystem path) defines a constant, Ruby is evaluating everything about the constant: the class body, class attributes, basically anything that isn’t in a block or a method definition. And so any constants that are referenced in the code also need to be loaded and evaluated, and class ancestors, and their code and so forth. That’s the main reason booting an application is slow: doing stuff just to load the code that defines all the constants so the program can run.</p>
+
+<p>The name of the game in development, where you want to run a single test or browser a single route or open the CLI, is <em>load less</em>. If you can just avoid loading the constant, you can avoid loading the file the constant is defined in, and avoid loading all of its other dependencies and references until <em>later</em>, when you really need them (or never, in development).</p>
+
+<p>The most common strategy for deferring stuff is: use a string as a stand-in for the constant, and only later, when you really need to convert the string to a constant, do it. An example is in Rails Routes, where you’ll write <code>to: “mycontroller#index”</code> and not <code>MyController</code>. At some point the <code>mycontroller</code> gets constantized to <code>MyController</code>, but that’s <em>later</em>, when you hit that particular route. Another example is Active Record Relation definitions, where you’ll use <code>class_name: “MyModel"</code> instead of <code>class_name: MyModel</code>, which only gets constantized when you use <code>record.my_models</code>.</p>
+
+<p>In Rails, a lot of performance repair work for development is identifying places where a constant <em>shouldn’t</em> be directly referenced and instead should use some other stand-in until it’s really needed. In Rails, it can be confusing, because sometimes you can use a configuration string to refer to a constant, and sometimes you have to use a constant; it is inconsistent.</p>
+
+<h3 id="in-hanami-nearly-everything-has-a-string-key">In Hanami, (nearly) everything has a string key</h3>
+
+<p>Hanami’s approach: make <em>all</em> the application components referencable by a string, called a <code>key</code>. (again, Hanami does quite a bit more than that, I just mean in regards to code loading). Objects are configured by what keys they have dependencies upon, and those objects are <a href="https://guides.hanamirb.org/v2.2/app/container-and-components/#injecting-dependencies-via-deps">injected by the framework</a>. So instead of writing this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyClass</span>
+  <span class="n">cattr_accessor</span> <span class="ss">:api_client</span>
+  <span class="nb">self</span><span class="p">.</span><span class="nf">api_client</span> <span class="o">=</span> <span class="no">ApiClient</span><span class="p">.</span><span class="nf">new</span> <span class="c1"># &lt;-- loads that constants</span>
+
+  <span class="k">def</span> <span class="nf">transmit_something</span>
+    <span class="no">MyClass</span><span class="p">.</span><span class="nf">api_client</span><span class="p">.</span><span class="nf">transmit</span><span class="p">(</span><span class="s2">"something"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>…you would instead use Hanami’s <code>Deps</code> and write:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyClass</span>
+  <span class="kp">include</span> <span class="no">Deps</span><span class="p">[</span><span class="s2">"api_client"</span><span class="p">]</span> <span class="c1"># &lt;-- injects the object</span>
+
+  <span class="k">def</span> <span class="nf">transmit_something</span>
+    <span class="n">api_client</span><span class="p">.</span><span class="nf">transmit</span><span class="p">(</span><span class="s2">"something"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Keys are global, and keys whose objects have been loaded live in  <code>Hanami.app.keys</code> . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with <code>Hanami.app["thekey"]</code> when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don’t have to. This is <a href="https://dry-rb.org/gems/dry-system/">powered by <code>dry-system</code></a>.</p>
+
+<p>Not <em>everything</em> has to have a key. Functional components in Hanami have a key, but classes that embody a bit of data (in Hanami these are called Structs) do not have entries in the app container, and therefore don’t have keys.</p>
+
+<p>If you have something functional coming from outside Hanami, like that <code>ApiClient</code> in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application <a href="https://guides.hanamirb.org/v2.2/app/providers/">via a Provider</a>.</p>
+
+<p><strong>Briefly, commentary:</strong> Some common Rails development discourse is “Rails is too magic”, which is leveled because Rails framework can work out what constants you mean without directly referencing them (e.g. <code>has_many :comments</code> implies there’s an Active Record <code>Comment</code>), and “just use a PORO” (plain old ruby object) when a developer is trying to painfully jam <em>everything</em> into narrow Rails framework primitives. With Hanami:</p>
+<ul>
+  <li>Hanami has quite a bit of like “here’s a string, now it’s an object 🪄” , but it is consistently applied everywhere and has some nice benefits beyond just brevity, like overloading dependencies.</li>
+  <li>Everything does sorta have to be fit into the framework, but there’s an explicit interface for doing so.</li>
+</ul>
+
+<h2 id="assorted-notes-in-this-general-theme">Assorted notes in this general theme</h2>
+
+<ul>
+  <li>Providers are like “Rails initializers but with more juice” – they register components in the container. They have lifecycle hooks (prepare, start, stop) for managing resources. They’re lazily loaded and can have namespace capabilities for organizing related components.</li>
+  <li>Hanami encourages namespacing over Rails’ flat structure. “Slices” provide first-class support for modularizing applications like Rails Engines. Each slice has its own container and can have its own providers, creating bounded contexts.</li>
+  <li>Hanami uses Zeitwerk for code loading.</li>
+  <li>Dev server uses Guard to restart puma in development. Because everything is so modularized, it’s good enough.</li>
+  <li>Code is lazy-loaded in development but fully pre-loaded in production.</li>
+</ul>
+
+<h2 id="where-things-are-going">Where things are going</h2>
+
+<p>In the Hanami Discord, Tim shared a proposal for building out a plugin system for Hanami… and to me looks a lot like Railties and <a href="https://edgeapi.rubyonrails.org/classes/ActiveSupport/LazyLoadHooks.html">ActiveSupport lazy load hooks</a>:</p>
+
+<blockquote>
+  <p>Using your grant, I propose to implement this Hanami extensions API. The end<br />
+goal will be to:</p>
+
+  <ul>
+    <li>Allow all first-party “framework extension code” to move from the core Hanami<br />
+gem back into the respective Hanami subsystem gems (e.g. the core Hanami<br />
+gem should no longer have specific extension logic for views).</li>
+    <li>Allow third-party gems to integrate with Hanami on an equal footing to the first-<br />
+party gems.</li>
+  </ul>
+
+  <p>This will require building at least some of the following:</p>
+
+  <ul>
+    <li>Ability for extensions to be detected by or registered with the Hanami framework.</li>
+    <li>Ability to enhance or replace Hanami CLI commands.</li>
+    <li>Ability to register new configuration settings on the Hanami app.</li>
+    <li>Hooks for extending core Hanami classes.</li>
+    <li>Hooks for adding logic to Hanami’s app boot process.</li>
+    <li>Adjustments to first-party Hanami gems to allow their classes to be used in an un-extended state when required.</li>
+    <li>A separate “extension” gem that can allow Hanami extensions to register their extensions without depending on the main Hanami gem.</li>
+  </ul>
+</blockquote>
+
+<h3 id="and-how-this-all-started">And how this all started</h3>
+
+<p>Ending on what I originally shared with Tim to start our discussion, which I share partly cause I think it’s funny how easily I can type out 500 words today on a thesis of like “why code loading in Ruby is hard”:</p>
+
+<blockquote>
+  <p><strong>Making boot fast; don’t load the code unless you need it</strong></p>
+
+  <p>Don’t load code until/unless you need it. DEFINITELY don’t create database connections or make any http calls or invoke other services. How Rails does it, Rails autoloads as much as possible (framework, plugin/extension, and application code), either via Ruby Autoload or Zeitwerk. The architecture challenge is: how do you set up configuration properties, so that <em>when</em> the code is loaded (and all the different pieces of framework/plugin/extension/application get their fingers on it), it is configured with the properties y’all ultimately want on it? There are two mechanisms:</p>
+
+  <ul>
+    <li>A configuration hash, that is intended to be made up (somewhat) of primitives that are dependency free and thus don’t load a bunch of code themselves,</li>
+    <li>
+      <p>A callback hook that is placed within autoloaded code, that one can register against and use it to pull data out of configuration (framework/plugin/extension) or override/overload behavior (your application), that is only triggered when the code is loaded for reals. Extensions put this in a Railtie, maybe you put it in an initializer.,<br />
+ The practical problems are:</p>
+    </li>
+    <li>Ideally everything was stateless and just pulled values from configuration and got torn down after every request/transaction/task, but also:
+      <ul>
+        <li>Some objects are long-lived, and you don’t want to constantly be tearing them down,</li>
+        <li>Sometimes locality of properties is nice and it would be annoying to be like “either use this locally assigned value OR use this value from really far away in this super deep config object”.,</li>
+        <li>Hopefully that config object is thread and fiber safe if you’re gonna be changing it later and you’re not really sure what’s happening right then in your application lifecycle.,</li>
+      </ul>
+    </li>
+    <li>A hook doesn’t exist in the place that you want to hook into, so you either have to:
+      <ul>
+        <li>go upstream and get a hook added; which is annoying (just hook every class and feature, why not?!),</li>
+        <li>load the code prematurely so you can directly modify it,</li>
+      </ul>
+    </li>
+    <li>When something else (framework/plugin/extension/application) prematurely loads the code (chaotically or intentionally), before you add your own configuration or before you register a hook callback, and the behavior is stateful or had to be backed out (example: it’s configuration for connections in a connection pool and early invocation fills the pool with connection objects with premature configuration. So to re-configure you have to drain the pool of the old prematurely configured connections and maybe that’s hard),</li>
+    <li>Examples of pain:
+      <ul>
+        <li>Devise.
+          <ul>
+            <li>It’s route (devise_for) loads your active record model, when routes load, which in &lt; Rails 8.0 was when your app boots, which is premature otherwise,</li>
+            <li>Changing the layout of devise controllers. They don’t have load hooks (maybe they should?). You can subclass them and manually mount them in your app, but htat’s annoying,</li>
+          </ul>
+        </li>
+        <li>Every initializer where you try to assign config and maybe it won’t work cause something else already hooked it and loaded it and it’s baked.,</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><strong>How Hanami does it:</strong></p>
+
+  <blockquote>
+    <p>@inouire in the Rails Discord shared a couple of links: You can find some information about Hanami way of handling dependency container: <a href="https://guides.hanamirb.org/v2.2/app/container-and-components/">https://guides.hanamirb.org/v2.2/app/container-and-components/</a> Also autoloading: <a href="https://guides.hanamirb.org/v2.2/app/autoloading/">https://guides.hanamirb.org/v2.2/app/autoloading/</a> And info about lazy boot: <a href="https://guides.hanamirb.org/v2.2/app/booting/">https://guides.hanamirb.org/v2.2/app/booting/</a></p>
+  </blockquote>
+
+  <p>Hanami questions from Ben:</p>
+  <ul>
+    <li>Components are singletons that are pure-ish functions? Do they get torn down / recreated on every request, or does the same object exist for the lifetime of the application?,</li>
+    <li>Is there a pattern of assigning properties to class variables? Seems like most stuff is pure-ish functions. How do you handle objects that you want to be long-lived, like Twitter::Client.new or something?,</li>
+    <li>I didn’t see plugins/extensions. Are you required to subclass and overload a component or can you poke around in an existing class/component? Can I defer poking around in a component until it’s loaded? (like an autoload hook),</li>
+    <li>Are there any patterns you see people do, that would slow down their hanami app’s boot, that you wish they didn’t do?</li>
+  </ul>
+</blockquote>
+
+          ]]>
+        </description>
+        <link>https://island94.org/2025/10/hanami-and-loading-code-faster</link>
+        <guid isPermaLink="true">https://island94.org/2025/10/hanami-and-loading-code-faster</guid>
+        <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      </item>
       <item>
         <title>Serializing ViewComponent for Active Job and Turbo Broadcast Later</title>
         <description>
@@ -856,57 +1015,6 @@
         <link>https://island94.org/2025/06/recently-june-29-2025</link>
         <guid isPermaLink="true">https://island94.org/2025/06/recently-june-29-2025</guid>
         <pubDate>Sun, 29 Jun 2025 23:21:00 +0000</pubDate>
-      </item>
-      <item>
-        <title>The difference between Rails Plugins, Extensions, Gems, Railties, and Engines</title>
-        <description>
-          <![CDATA[
-          <p>There’s overlapping terminology that describes the act of packaging up some new behavior for Rails. I think of two gems I maintain that are of vastly different scales</p>
-
-<ul>
-  <li><a href="https://github.com/bensheldon/activerecord-has_some_of_many">￼<code>activerecord-has_some_of_many</code>￼</a> which adds two new tiny association methods to Active Record models in 150 lines of code.</li>
-  <li><a href="https://github.com/bensheldon/good_job">GoodJob</a>, which is an entire Active Job backend with a mountable Web Dashboard and database models and custom job extensions in 10k lines of code.</li>
-</ul>
-
-<p>I was pondering the different terminology because I recently saw both ends of the spectrum discussed in the community:</p>
-
-<ul>
-  <li>A developer on Reddit announced a tiny new gem and a commenter wrote <em>well actually, in your Readme you called it an Engine but you shouldn’t do that.</em></li>
-  <li>I got pinged on <a href="https://github.com/rails/rails/issues/52311">a Rails issue</a> that left me with the belief that some behavior, if <em>not</em> packaged as an Engine, could be expected to break.</li>
-</ul>
-
-<p>I think there are only two dimensions to consider when picking the correct terminology:</p>
-
-<ul>
-  <li>How the behavior is packaged</li>
-  <li>Whether it’s necessary to package the behavior that way. Which isn’t even a criticism in my opinion, just an observation.</li>
-</ul>
-
-<p>Here’s my opinionated list, in order of somewhat increasing complexity:</p>
-
-<ul>
-  <li><strong>Rails Extension</strong>: A small monkeypatch or tiny new behavior to existing Rails behaviors (Active Record, Active Job, etc.). Especially if it’s not even a gem: simply a file you wrote a blog post about that gets copied into <code>config/extensions</code> and then <code>require_relative</code>’d in <code>config/application.rb</code>.</li>
-  <li><strong>Rails Gem</strong> : Reductively, a gem is a load path for some code, and some ownership metadata, and maybe it’s been published to Rubygems.org. Nothing special.</li>
-  <li>⭐️ <strong>Rails Plugin</strong>. A generic name covers all situations imo, regardless of size, scope, or complexity.</li>
-  <li><strong>Railtie</strong>: When you write a gem that plugs into the Rails framework, you create <a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">special file</a> named <code>lib/railtie.rb</code> that has a class that inherits from `<a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">Rails::Railtie</a> that contains a DSL to configure how your gem’s behavior interfaces with Rails (configuration, initialization, etc.). I think Railtie is a bit of an odd-duck terminology-wise, but it makes sense considering…</li>
-  <li><strong>Rails Engine</strong>: An “Engine” is <em>nearly</em> identical to a Railtie, but the file is named <code>lib/engine.rb</code> and it has a class that inherits from <code>Rails::Engine</code>. But <code>Rails::Engine</code> itself inherits from <code>Rails::Railtie</code>, so this is a matter of degrees. Your gem absolutely <em>needs</em> to use the Engine behavior if it wants to create mountable routes (though I guess you can mount a vanilla Rack app) or inherit from Rails Base classes like <code>ActiveRecord::Base</code>, <code>ActionController::Base</code>, <code>ActiveJob::Base</code>, etc. which live in the Engine’s own <code>app/</code> directory.</li>
-</ul>
-
-<p>(I’ll clock that the <a href="https://guides.rubyonrails.org/">The Rails Guides</a>, under the “Extending Rails” section, has separate guides for Plugins and Engines; the former somewhat surprisngly does not mention the latter.)</p>
-
-<p>So if I go back to the two reasons why I wrote this, and try to be strict with this terminology:</p>
-
-<ul>
-  <li>If your Plugin <em>has</em> an <code>engine.rb</code> file, it <em>is</em> an Engine. Simple as that. If you don’t need the Engine-specific behavior, you could package it as a Railtie, but I think the difference is negligible.</li>
-  <li>If you don’t have <em>any</em> dependencies on Rails (outside of maybe ActiveSupport) and don’t need to hook into the parent application’s configuration or initialization or framework, then you don’t need a Railtie or Engine at all. Just say it’s a gem that’s compatible with Rails and explain how to use it in that environment.</li>
-  <li>Really, do what you want and tell people about it.</li>
-</ul>
-
-          ]]>
-        </description>
-        <link>https://island94.org/2025/06/difference-rails-plugin-extensions-gems-railties-engines</link>
-        <guid isPermaLink="true">https://island94.org/2025/06/difference-rails-plugin-extensions-gems-railties-engines</guid>
-        <pubDate>Tue, 17 Jun 2025 15:48:00 +0000</pubDate>
       </item>
   </channel>
 </rss>

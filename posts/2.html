@@ -138,6 +138,63 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/06/difference-rails-plugin-extensions-gems-railties-engines"><p>The difference between Rails Plugins, Extensions, Gems, Railties, and Engines</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-06-17T15:48:00Z" itemprop="datePublished">June 17, 2025</time>
+
+        • Tagged <a href="/posts/tags/rails">Rails</a> and <a href="/posts/tags/rails-engines">Rails Engines</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>There’s overlapping terminology that describes the act of packaging up some new behavior for Rails. I think of two gems I maintain that are of vastly different scales</p>
+
+<ul>
+  <li><a href="https://github.com/bensheldon/activerecord-has_some_of_many">￼<code>activerecord-has_some_of_many</code>￼</a> which adds two new tiny association methods to Active Record models in 150 lines of code.</li>
+  <li><a href="https://github.com/bensheldon/good_job">GoodJob</a>, which is an entire Active Job backend with a mountable Web Dashboard and database models and custom job extensions in 10k lines of code.</li>
+</ul>
+
+<p>I was pondering the different terminology because I recently saw both ends of the spectrum discussed in the community:</p>
+
+<ul>
+  <li>A developer on Reddit announced a tiny new gem and a commenter wrote <em>well actually, in your Readme you called it an Engine but you shouldn’t do that.</em></li>
+  <li>I got pinged on <a href="https://github.com/rails/rails/issues/52311">a Rails issue</a> that left me with the belief that some behavior, if <em>not</em> packaged as an Engine, could be expected to break.</li>
+</ul>
+
+<p>I think there are only two dimensions to consider when picking the correct terminology:</p>
+
+<ul>
+  <li>How the behavior is packaged</li>
+  <li>Whether it’s necessary to package the behavior that way. Which isn’t even a criticism in my opinion, just an observation.</li>
+</ul>
+
+<p>Here’s my opinionated list, in order of somewhat increasing complexity:</p>
+
+<ul>
+  <li><strong>Rails Extension</strong>: A small monkeypatch or tiny new behavior to existing Rails behaviors (Active Record, Active Job, etc.). Especially if it’s not even a gem: simply a file you wrote a blog post about that gets copied into <code>config/extensions</code> and then <code>require_relative</code>’d in <code>config/application.rb</code>.</li>
+  <li><strong>Rails Gem</strong> : Reductively, a gem is a load path for some code, and some ownership metadata, and maybe it’s been published to Rubygems.org. Nothing special.</li>
+  <li>⭐️ <strong>Rails Plugin</strong>. A generic name covers all situations imo, regardless of size, scope, or complexity.</li>
+  <li><strong>Railtie</strong>: When you write a gem that plugs into the Rails framework, you create <a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">special file</a> named <code>lib/railtie.rb</code> that has a class that inherits from `<a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">Rails::Railtie</a> that contains a DSL to configure how your gem’s behavior interfaces with Rails (configuration, initialization, etc.). I think Railtie is a bit of an odd-duck terminology-wise, but it makes sense considering…</li>
+  <li><strong>Rails Engine</strong>: An “Engine” is <em>nearly</em> identical to a Railtie, but the file is named <code>lib/engine.rb</code> and it has a class that inherits from <code>Rails::Engine</code>. But <code>Rails::Engine</code> itself inherits from <code>Rails::Railtie</code>, so this is a matter of degrees. Your gem absolutely <em>needs</em> to use the Engine behavior if it wants to create mountable routes (though I guess you can mount a vanilla Rack app) or inherit from Rails Base classes like <code>ActiveRecord::Base</code>, <code>ActionController::Base</code>, <code>ActiveJob::Base</code>, etc. which live in the Engine’s own <code>app/</code> directory.</li>
+</ul>
+
+<p>(I’ll clock that the <a href="https://guides.rubyonrails.org/">The Rails Guides</a>, under the “Extending Rails” section, has separate guides for Plugins and Engines; the former somewhat surprisngly does not mention the latter.)</p>
+
+<p>So if I go back to the two reasons why I wrote this, and try to be strict with this terminology:</p>
+
+<ul>
+  <li>If your Plugin <em>has</em> an <code>engine.rb</code> file, it <em>is</em> an Engine. Simple as that. If you don’t need the Engine-specific behavior, you could package it as a Railtie, but I think the difference is negligible.</li>
+  <li>If you don’t have <em>any</em> dependencies on Rails (outside of maybe ActiveSupport) and don’t need to hook into the parent application’s configuration or initialization or framework, then you don’t need a Railtie or Engine at all. Just say it’s a gem that’s compatible with Rails and explain how to use it in that environment.</li>
+  <li>Really, do what you want and tell people about it.</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/06/recently-june-8-2025"><p>Recently, June 8, 2025</p>
 </a>
     </h1>
@@ -589,34 +646,6 @@ export default class extends Controller {
   <li>I have been desultorily playing <a href="https://bracket.city/">Bracket City</a>; the scoring system generates no motivation for me but it’s fun to have found another use for the decades spent training my brain to parse deeply nested hierarchical syntax. I was also told that LinkedIn has games, and other than being “Faster than 95% of CEOs” at Queens, I have already lost my streak.</li>
   <li>I asked on Rails Performance Slack how to better delegate Rails model association accessors and got <a href="https://gist.github.com/bensheldon/2075bf807277697681c69f382fc96e9c">some good ideas</a>.</li>
   <li>My <a href="https://ruby.social/@bensheldon/114082492378628679">RailsConf session proposal</a> was accepted! See you there 🙌</li>
-</ul>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/03/recently-march-16-2025"><p>Recently, March 16, 2025</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-03-16T22:37:00Z" itemprop="datePublished">March 16, 2025</time>
-
-        • Tagged <a href="/posts/tags/recently">recently</a> and <a href="/posts/tags/weeknotes">weeknotes</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <ul>
-  <li>We have promoted another cat to fostering: Merlin, the cat formerly known as Gray Cat.</li>
-  <li>I finished the latest <em>Bruno, Chief of Police</em> book. I read it for the food and culture, but it has some bad descriptions of hacking in this one.  I started <em>The Midnight Library</em>, which as close as you can imagine to a TED talk but actually a novel. Next is <em>Careless People</em>, which I’m looking forward to; hopefully as exhilarating/vicariously-traumatic as <em>Exit Interview</em>.</li>
-  <li>At work the latest is that all planning must snap to 1-month objectives. “If you don’t produce a plan, someone will produce one for you” is an advice. Super proud of the work: doing Pitchfork, kicking the tires on <code>ruby/json</code>, adding more knobs to Active Record. My Incident Commander shift was this week too; 2pm - 8pm really destroys the possibility of pre-dinner errands. I did go to a Mustqche Harbor show while on secondary Friday night and nothing bad happened (though I was still 15 minutes from home should something have).</li>
-  <li>I bought a RailsConf supporter ticket. I submitted a panel discussion talk, so even if that’s accepted, I think I’ll still need a ticket. It’s for a good cause.</li>
-  <li>Some new Playdate games. <em>Echo: The Oracle’s Scroll</em> was the only one I’ve beaten so far, despite fiddly jumping puzzle, and the surprise ending by which I mean I was surprised when I went to chat with an owl-person and then the credits rolled.</li>
-  <li>I am recovering from pink eye, again. Reinfecting yourself is a thing that can happen. The last six months or so have not been my favorite, minor ailments-wise.</li>
-  <li>Folks on Rails Performance Slack asked about Cursor rules, which was an opportunity for me to <a href="https://gist.github.com/bensheldon/00c23699bfb1857acbc2e9225de8adb1">consolidate mine</a> from several projects. I dunno, it’s ok.</li>
-  <li>After about a month, I think I’m an iPad Mini person. The screen is very not good, but I guess “the best screen is the screen you have” when said screen is bigger than a phone, but smaller than 11 inches.</li>
-  <li><a href="https://sfrecpark.org/CivicAlerts.aspx?AID=2127">This</a> is the most SF press release and I can’t wait.</li>
 </ul>
 
   </div>
