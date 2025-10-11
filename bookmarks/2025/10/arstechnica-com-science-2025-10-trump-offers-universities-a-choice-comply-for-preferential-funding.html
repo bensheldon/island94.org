@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-39a1f2f7963cb72fa41194b70f3ff8033d1cbab7fae2f8cb78a801ed41144a6a.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c74be0932cb32c32e67be87ed26ae1eae819736c1055a6a4056c773f2b044211.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js">
+<link rel="modulepreload" href="/assets/turbo.min-c74be0932cb32c32e67be87ed26ae1eae819736c1055a6a4056c773f2b044211.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/bookmarks/2025/10/arstechnica-com-science-2025-10-trump-offers-universities-a-choice-comply-for-preferential-funding">Trump offers universities a choice: Comply for preferential funding</a>
+    </h1>
+    <small><a href="https://arstechnica.com/science/2025/10/trump-offers-universities-a-choice-comply-for-preferential-funding/">https://arstechnica.com/science/2025/10/trump-offers-universities-a-choice-comply-for-preferential-funding/</a></small>
+    <p>
+        <time datetime="2025-10-11T01:52:00+00:00" itemprop="datePublished">
+          October 11, 2025
+        </time>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>But the single most important metric in admissions for selective universites is none of this stuff. The most important metric is how predictably you will accept the admissions offer. Exclusive universes have a numbers problem. We had 130,000 applications for 5,000 seats. If you expect ⅓ of your offers to be taken, you have to make 15,000 offers. If you’re wrong on that ⅓, and half take them, you’re fucked - you have 2,500 students with no dorm rooms, not enough classrooms, instructors, not enough services, and so on. At a public university they also won’t get their subsidy, so you’re taking a ~$10,000 loss on each student. You’ve probably also wrecked your financial aid pool. If you go under that’s less devastating, but still pretty bad because you have a lot of fixed costs that you need that tuition + subsidy at a public to cover. You can backfill from waitlist to some degree, but only so much. Universities care more about how reliably they can predict your likelihood to take the offer than they do about boosting the average GPA or whatever. When you’re admitting 12% of the pool, there’s really no difference between the top 1% and the top 5%, and the top 1% are the hardest to predict so you don’t admit them. Yes, you turn down the highest achieving students because they’re the hardest to get and you can’t risk modeling them wrong.</p>
+
+<p>Another byproduct of this kind of policy is male attendance is going to get hammered even harder. Why? Because male students (and this is true everywhere) for some reason overestimate their chances of getting in. If you look at the GPA/SAT distribution by gender, they’re wildly different. Your distribution of women will look a lot more like your distribution of admits - with median GPAs and SATs a lot closer to where you will be making your selection. Your distribution of men will be miles from that mark. The bottom third of your pool is almost all guys that have no chance of getting in. What got these lower achieving men into the school in the past were athletics, legacy, etc. This removes one of your tools to try and balance the gender pool. Note, I’m not saying that men underachieve women, I’m saying that men overestimate where they are competitive. They tend to think they’re competitive at a their of school that they really aren’t, and they might even pick safety schools that they are a coin flip to get into. Women are better at estimated their competitiveness and tend to slightly underestimate where they are competitive. Our application gender mix was 50/50 but our mix when we offered admission was 70/30 in favor of women, and we were a state where considering race and gender was illegal. You can get around the race thing a big by substituting a geographic servicing mandate, which we had - we were a public, saying we would try and admit equally from across all taxpaying regions was valid so we did evaluation in the local context - you weren’t competing against all other applicants in the state, only other applicants from your school or your district - and because communities segregate by race to some degree that kind of policy ensures that you are getting some degree of equal representation by race. But we don’t segregate by gender. There aren’t proxies to use apart from activity participation to do that. But a decent number of well achieving male students wind up at community college because they thought they were Berkeley material when they had no hope of getting in and got shut out of 20 schools they applied to. We soaked up as many of them through transfer admissions as we could, but many would just give up before we could get to them. I don’t recall a single female student that wound up at a community college because they got shut out, they were all guys and there were a lot of them.</p>
+
+  </div>
+</article>
+
+
+</body>
+</html>
