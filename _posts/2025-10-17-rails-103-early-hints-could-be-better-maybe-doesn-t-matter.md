@@ -2,7 +2,7 @@
 title: "Rails 103 Early Hints could be better, maybe doesn’t matter"
 date: 2025-10-17 15:00 UTC
 published: true
-tags: []
+tags: [ruby on rails]
 ---
 
 I recently went on a brief deep dive into 103 Early Hints because I looked at a [Shakapacker PR](https://github.com/shakacode/shakapacker/pull/722) for adding 103 Early Hints support. Here’s what I learned.
