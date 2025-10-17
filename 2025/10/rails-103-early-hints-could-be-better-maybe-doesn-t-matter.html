@@ -153,7 +153,7 @@
 
 <p>If you look at a response that includes 103 Early Hints, it looks like 2 responses:</p>
 
-<pre><code>HTTP/2 103
+<pre><code class="language-text">HTTP/2 103
 link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload
 
 HTTP/2 200
@@ -244,29 +244,29 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 
 <p>And if you want to see 103 Early Hints… anywhere… good luck! I have yet to find an example of a website that serves them.</p>
 
-<pre><code># Basecamp
-$ curl -s -k -v --http2 https://basecamp.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
-# nothing
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Basecamp</span>
+<span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-k</span> <span class="nt">-v</span> <span class="nt">--http2</span> https://basecamp.com 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="nt">-E</span> <span class="s1">'103 Early Hints|HTTP/2 103'</span>
+<span class="c"># nothing</span>
 
-# GitHub
-$ curl -s -k -v --http2 https://github.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
-# nothing
+<span class="c"># GitHub</span>
+<span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-k</span> <span class="nt">-v</span> <span class="nt">--http2</span> https://github.com 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="nt">-E</span> <span class="s1">'103 Early Hints|HTTP/2 103'</span>
+<span class="c"># nothing</span>
 
-# Shopify
-$ curl -s -k -v --http2 https://www.shopify.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
-# nothing
+<span class="c"># Shopify</span>
+<span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-k</span> <span class="nt">-v</span> <span class="nt">--http2</span> https://www.shopify.com 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="nt">-E</span> <span class="s1">'103 Early Hints|HTTP/2 103'</span>
+<span class="c"># nothing</span>
 
-# Google
-$ curl -s -k -v --http2 https://www.google.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
-# nothing
+<span class="c"># Google</span>
+<span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-k</span> <span class="nt">-v</span> <span class="nt">--http2</span> https://www.google.com 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="nt">-E</span> <span class="s1">'103 Early Hints|HTTP/2 103'</span>
+<span class="c"># nothing</span>
 
-# Someone's tester for 103 Early Hints
-$ curl -s -k -v --http2 https://code103.hotmann.de 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+<span class="c"># Someone's tester for 103 Early Hints</span>
+<span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-k</span> <span class="nt">-v</span> <span class="nt">--http2</span> https://code103.hotmann.de 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="nt">-E</span> <span class="s1">'103 Early Hints|HTTP/2 103'</span>
 &lt; HTTP/2 103
-&lt; link: &lt;/app.min.css&gt;; as=style; rel=preload
+&lt; <span class="nb">link</span>: &lt;/app.min.css&gt;<span class="p">;</span> <span class="nv">as</span><span class="o">=</span>style<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span>preload
 &lt;
-# ... ok, that returns something
-</code></pre>
+<span class="c"># ... ok, that returns something</span>
+</code></pre></div></div>
 
 
   </div>
