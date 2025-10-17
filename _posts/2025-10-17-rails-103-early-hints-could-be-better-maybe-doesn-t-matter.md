@@ -11,7 +11,7 @@ Briefly, [103 Early Hints](https://developer.chrome.com/docs/web-platform/early-
 
 If you look at a response that includes 103 Early Hints, it looks like 2 responses:
 
-```
+```text
 HTTP/2 103
 link: </application.css>; as=style; rel=preload,</application.js>; as=script; rel=modulepreload
 
@@ -23,7 +23,6 @@ link: </application.css>; as=style; rel=preload,</application.js>; as=script; re
 <html> 
 ... the content
 ```
-
 
 I keep writing “103 Early Hints” because Early Hints the status code response (103), also gets confused with the `Link` header of a content response that serves the same purpose (hinting what assets will need to be loaded), and near identical content: the 103 Early Hint header is usually same the `Link` value that the actual-content response header has. Because of this conceptual collision, it’s tough to google for and there are various confused StackOverflow responses.
 
@@ -98,7 +97,7 @@ $ curl -s -k -v --http2 localhost:3000 2>&1 | grep -A 5 -E '103 Early Hints|HTTP
 
 And if you want to see 103 Early Hints… anywhere… good luck! I have yet to find an example of a website that serves them.
 
-```
+```bash
 # Basecamp
 $ curl -s -k -v --http2 https://basecamp.com 2>&1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
 # nothing
