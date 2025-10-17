@@ -138,6 +138,45 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2022/02/even-if-the-answers-are-messy-and-provisional"><p>Even if the answers are messy and provisional</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2022-02-08T05:08:00Z" itemprop="datePublished">February 8, 2022</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I liked this (email) conversation between Willa Glickman of NYRB and English professor Anahid Nersessian in <a href="https://www.nybooks.com/daily/2022/01/08/late-romanticism/">“Late Romanticism”</a>:</p>
+
+<blockquote>
+
+  <p>Perhaps understandably for a scholar with an interest in utopia, if less expectedly for a scholar of criticism, Nersessian believes in the importance of pressing forward with new visions rather than just critiquing existing ideas and systems. “I think lots of people believe the world right now is pretty bad—politically, ecologically—and that capitalism is responsible for a very large part of the situation. But being against capitalism doesn’t entail being for anything else,” she said:</p>
+
+  <blockquote>
+    <p>It’s all very well to say “capitalism turns us into commodities, that’s degrading, human beings shouldn’t be degraded.” But how should we be treated, and how should we live? What would love and sex—among other things, like health care or having a job—look like in a good world? It’s important to take the risk of answering those questions, even if the answers are messy and provisional.</p>
+  </blockquote>
+
+</blockquote>
+
+<p>And:</p>
+
+<blockquote>
+
+  <p>I wondered how she dealt with the complex relationship between literature and history in her own work—as she argues in her essay in the Review, relying on novels to understand the past can distort one’s vision of it. “It’s very tempting to use literature to confirm a hypothesis you already have about the world. For better and for worse, though, fictional texts don’t always give us good information about reality,” she explained:</p>
+
+  <blockquote>
+    <p>Another danger can be to lean too hard on canonical literature that tells an “official” story about what life or people or relationships were like in such-and-such a time. If you ask a classicist, they’ll tell you that Plato—a member of an elite, all-male, free, and politically enfranchised class—is not your best informant for how the vast majority of ancient Athenians were living their lives, having sex, or negotiating intimacy.</p>
+  </blockquote>
+
+</blockquote>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2022/01/javascript-is-a-management-problem"><p>Javascript is a management problem</p>
 </a>
     </h1>
@@ -537,60 +576,6 @@ Ben and Angelina</p>
 <blockquote>
   <p>The delineation between paranoid and reparative readings originated in 1995, with influential critic Eve Kosofsky Sedgwick. A paranoid reading focuses on what’s wrong or problematic about a work of art. A reparative reading seeks out what might be nourishing or healing in a work of art, even if the work is flawed. Importantly, a reparative reading also tends to consider what might be nourishing or healing in a work of art for someone who isn’t the reader.</p>
 </blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2021/06/goodjob-updates-v15-v19"><p>GoodJob Updates v1.5 - v1.9: Dashboard, daemonize, async_server, and graceful shutdowns</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2021-06-01T03:14:00Z" itemprop="datePublished">June 1, 2021</time>
-
-        • Tagged <a href="/posts/tags/goodjob">GoodJob</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>This is a quick roundup of what’s new with GoodJob since the last update published for <a href="https://island94.org/2021/01/goodjob-1-4-jruby-compatibility-and-more">GoodJob v1.4</a>.</p>
-
-<p>GoodJob (<a href="https://github.com/bensheldon/good_job">github</a>) is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the  <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> .</p>
-
-<p><em>For further details on the following updates, check out GoodJob’s <a href="https://github.com/bensheldon/good_job/blob/main/CHANGELOG.md">Changelog</a> or <a href="https://github.com/bensheldon/good_job/blob/main/README.md">Readme</a>.</em></p>
-
-<h3 id="goodjob-v15-web-dashboard-and-configuration">GoodJob v1.5: Web Dashboard and configuration</h3>
-
-<p>GoodJob ships with a <a href="https://github.com/bensheldon/good_job#dashboard">web dashboard</a> to display future, finished and errored jobs for easy inspection.  The Dashboard mounts as a self-contained Rails Engine.</p>
-
-<p>GoodJob uses more <code>Rails.application.config...</code> for improved autoloading compatibility; deprecation notices have examples for updating configuration.</p>
-
-<h3 id="goodjob-v16-daemonize">GoodJob v1.6: Daemonize</h3>
-
-<p>GoodJob can run as a backgrounded daemon for folks who are still managing servers with <code>--daemonize</code>.</p>
-
-<h3 id="goodjob-v17-scheduled-job-cache">GoodJob v1.7: Scheduled job cache</h3>
-
-<p>GoodJob caches scheduled jobs (i.e. <code>ExampleJob.set(wait: 30.minutes).perform_later</code>) for signifiantly improved latency without relying upon polling.</p>
-
-<h3 id="goodjob-v18-graceful-shutdown">GoodJob v1.8: Graceful shutdown</h3>
-
-<p>GoodJob added additional shutdown options, including <code>GOOD_JOB_SHUTDOWN_TIMEOUT</code> to allow jobs to finish before exiting.</p>
-
-<h3 id="goodjob-v19-async_server-mode">GoodJob v1.9: async_server mode</h3>
-
-<p>GoodJob added an additional <code>async</code> execution mode to simplify the default configuration: running jobs as part of the web-process (and <em>not</em> console, Rake commands, etc.)</p>
-
-<h3 id="upcoming-cron-and-concurrency-controls">Upcoming: cron and concurrency controls</h3>
-
-<p>GoodJob will add support for cron-style repeating jobs, and concurrency controls to ensure that only a specified number (1 or more) jobs are enqueued or performed at the same time.  I previously was opposed to extending ActiveJob’s interface, but <a href="https://github.com/bensheldon/good_job/issues/255">have changed my mind</a>; it’s on!</p>
-
-<h3 id="contribute">Contribute</h3>
-
-<p>Code, documentation, and curiosity-based contributions are welcome! Check out the  <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request. <strong>Thank you!!!</strong> to everyone who has contributed to GoodJob, including morgoth, tedhexaflow, weh, lauer, reczy, zealot128, gadimbaylisahil, Mr0grog, thilo, arku, sj26, jm96441, thedanbob, and joshmn.</p>
-
-<p>I also have a <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a> if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
 
   </div>
 </article>

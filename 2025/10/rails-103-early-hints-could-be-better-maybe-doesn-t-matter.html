@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rails 103 Early Hints could be better, maybe doesn?t matter | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-39a1f2f7963cb72fa41194b70f3ff8033d1cbab7fae2f8cb78a801ed41144a6a.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c74be0932cb32c32e67be87ed26ae1eae819736c1055a6a4056c773f2b044211.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js">
+<link rel="modulepreload" href="/assets/turbo.min-c74be0932cb32c32e67be87ed26ae1eae819736c1055a6a4056c773f2b044211.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/10/rails-103-early-hints-could-be-better-maybe-doesn-t-matter"><p>Rails 103 Early Hints could be better, maybe doesn’t matter</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-10-17T15:00:00Z" itemprop="datePublished">October 17, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">ruby on rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently went on a brief deep dive into 103 Early Hints because I looked at a <a href="https://github.com/shakacode/shakapacker/pull/722">Shakapacker PR</a> for adding 103 Early Hints support. Here’s what I learned.</p>
+
+<p>Briefly, <a href="https://developer.chrome.com/docs/web-platform/early-hints">103 Early Hints</a> is a status code for an HTTP response that happens <em>before</em> a regular HTTP response with content like HTML. The frontrunning response hints to the browser what additional assets (javascript, css) the browser will have to load when it renders the subsequent HTTP response with all the content. The idea being that the browser <em>could</em>  load those resources while waiting for the full content response to be transmitted, and thus load and render the complete page with all its assets faster overall.</p>
+
+<p>If you look at a response that includes 103 Early Hints, it looks like 2 responses:</p>
+
+<pre><code>HTTP/2 103
+link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload
+
+HTTP/2 200
+date: Fri, 17 Oct 2025 15:07:24 GMT
+content-type: text/html; charset=utf-8
+link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload
+
+&lt;html&gt; 
+... the content
+</code></pre>
+
+<p>I keep writing “103 Early Hints” because Early Hints the status code response (103), also gets confused with the <code>Link</code> header of a content response that serves the same purpose (hinting what assets will need to be loaded), and near identical content: the 103 Early Hint header is usually same the <code>Link</code> value that the actual-content response header has. Because of this conceptual collision, it’s tough to google for and there are various confused StackOverflow responses.</p>
+
+<p>Eileen Uchitelle built out <a href="https://eileencodes.com/posts/http2-early-hints/">the original implementation in Rails</a>. It’s good. It can be better. It also maybe doesn’t matter. I’ll tell you how and why.</p>
+
+<h3 id="it-can-be-better">It can be better</h3>
+
+<p>There’s two ways that the Rails implementation of 103 Early Hints can be better:</p>
+
+<ol>
+  <li>There should only be one 103 Early Hints response.</li>
+  <li>The 103 Early Hints response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</li>
+</ol>
+
+<p><strong>There should only be one 103 Early Hint response.</strong> According to <a href="https://datatracker.ietf.org/doc/html/rfc8297">the RFC</a>, there can be multiple 103 responses, but according to the Browsers, they only look at the first 103 response.</p>
+
+<blockquote>
+  <p>A server might send multiple 103 responses, for example, following a redirect. <strong>Browsers only process the first early hints response</strong>, and this response must be discarded if the request results in a cross-origin redirect. — <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103">MDN</a></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Chrome ignores the second and following Early Hints responses. Chrome only handles the first Early Hints response</strong> so that Chrome doesn’t apply inconsistent security policies (e.g. Content-Security-Policy). — <a href="https://source.chromium.org/chromium/chromium/src/+/main:docs/early-hints.md;l=18?q=early%20hints&amp;ss=chromium%2Fchromium%2Fsrc:docs%2F">Chromium Docs</a></p>
+</blockquote>
+
+<p>Rails emits a 103 Early Hint response each and every time your application calls <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.</p>
+
+<p>Instead, it would be better if the application could accumulate multiple asset links and then flush them to a single 103 Early Hint response all together.</p>
+
+<p>Aside: it’s really, really, cool how 103 Early Hint responses in Rack/Puma/Rails are emitted <em>in the middle of a handling a response</em>. The webserver puts a lambda/callable into the Rack Environment, and then the application calls that lambda with the contents of the 103 Early Hint response, and that causes the webserver to write the content to the socket. <a href="https://github.com/puma/puma/blob/a5206f1acdb953f87e690909d4434bb7e0b134af/lib/puma/request.rb#L78-L87">Here’s how it’s done in Puma</a>, in pseudocode:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In the Puma webserver</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="k">do</span> <span class="o">|</span><span class="n">early_hints_str</span><span class="o">|</span>
+  <span class="n">fast_write_str</span> <span class="n">socket</span><span class="p">,</span> <span class="s2">"HTTP/1.1 103 Early Hints</span><span class="se">\r\n</span><span class="si">#{</span><span class="n">early_hints_str</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">"</span> 
+<span class="k">end</span>
+
+<span class="c1"># In the application</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="s2">"link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>The 103 Early Hint response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</strong> As mentioned, the 103 Early Hint response gets triggered when using <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.  Those usually are used in a Rails Layout <code>erb</code> file.</p>
+
+<p>In Rails, Layouts get rendered last, after the view is rendered, which means that 103 Early Hints get emitted when the response is almost done being constructed: after the controller action, after the databae queries, after most of the HTML has been rendered to a string.</p>
+
+<p>Instead, it would be better if the 103 Early Hint response was emitted in a <code>before_action</code> before any slow database queries or view rendering happens. The purpose of the 103 Early Hint is to be <em>early</em>. I’ve done this myself, manually constructing the links and flushing them through <code>request.send_early_hints</code>, it’s not difficult, but it would be nice if it was easier.</p>
+
+<h3 id="it-maybe-doesnt-matter">It maybe doesn’t matter</h3>
+
+<p>I can’t actually get 103 Early Hints to be returned all the way to me in any of my production environments. Likely because there is a network device, reverse proxy, load balancer, CDN, or something that’s blocking them.</p>
+
+<ul>
+  <li>👎 Heroku with Router 2.0 and custom domain</li>
+  <li>👎 Heroku behind Cloudfront</li>
+  <li>👎 Digital Ocean App Platform behind Cloudflare</li>
+  <li>👎 AWS ECS+Fargate behind an ALB (this one actually breaks the website: <code>HTTP/2 stream 1 was not closed cleanly</code>)</li>
+</ul>
+
+<p>I can see them working locally, using Puma or Puma behind Thruster, but in production…. nada. Obviously this isn’t comprehensive list of production environments, but they’re the ones <em>I</em> am using.</p>
+
+<p>If you want to see them locally:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Run Puma with early hints. Or use `early_hints` DSL directive in puma.rb</span>
+<span class="nv">$ </span>bin/rails s <span class="nt">--early-hints</span>
+
+<span class="c"># Make a request, this works locally or against a production target</span>
+<span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-k</span> <span class="nt">-v</span> <span class="nt">--http2</span> localhost:3000 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="nt">-E</span> <span class="s1">'103 Early Hints|HTTP/2 103'</span>
+
+&lt; HTTP/1.1 103 Early Hints
+&lt; <span class="nb">link</span>: &lt;/assets/application-316caf93b23ca4756d151eaa97d8122c7173f8bdfea91203603e56621193c19e.css&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span>preload<span class="p">;</span> <span class="nv">as</span><span class="o">=</span>style<span class="p">;</span> nopush
+&lt;
+&lt; HTTP/1.1 103 Early Hints
+&lt; <span class="nb">link</span>: &lt;/vite-dev/assets/application-WvRi4PrU.js&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span>modulepreload<span class="p">;</span> <span class="nv">as</span><span class="o">=</span>script<span class="p">;</span> <span class="nv">crossorigin</span><span class="o">=</span>anonymous<span class="p">;</span> nopush
+&lt;
+&lt; HTTP/1.1 103 Early Hints
+&lt; Link: &lt;/vite-dev/assets/index-ilXdZXkf.js&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span>modulepreload<span class="p">;</span> <span class="nv">as</span><span class="o">=</span>script<span class="p">;</span> <span class="nv">crossorigin</span><span class="o">=</span>anonymous
+&lt;
+</code></pre></div></div>
+
+<p>And if you want to see 103 Early Hints… anywhere… good luck! I have yet to find an example of a website that serves them.</p>
+
+<pre><code># Basecamp
+$ curl -s -k -v --http2 https://basecamp.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# GitHub
+$ curl -s -k -v --http2 https://github.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# Shopify
+$ curl -s -k -v --http2 https://www.shopify.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# Google
+$ curl -s -k -v --http2 https://www.google.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# Someone's tester for 103 Early Hints
+$ curl -s -k -v --http2 https://code103.hotmann.de 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+&lt; HTTP/2 103
+&lt; link: &lt;/app.min.css&gt;; as=style; rel=preload
+&lt;
+# ... ok, that returns something
+</code></pre>
+
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2025-10-17-rails-103-early-hints-could-be-better-maybe-doesn-t-matter.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+  </div>
+</div>
+
+  </div>
+
+</body>
+</html>

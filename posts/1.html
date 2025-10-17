@@ -137,6 +137,144 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/10/rails-103-early-hints-could-be-better-maybe-doesn-t-matter"><p>Rails 103 Early Hints could be better, maybe doesn’t matter</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-10-17T15:00:00Z" itemprop="datePublished">October 17, 2025</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">ruby on rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently went on a brief deep dive into 103 Early Hints because I looked at a <a href="https://github.com/shakacode/shakapacker/pull/722">Shakapacker PR</a> for adding 103 Early Hints support. Here’s what I learned.</p>
+
+<p>Briefly, <a href="https://developer.chrome.com/docs/web-platform/early-hints">103 Early Hints</a> is a status code for an HTTP response that happens <em>before</em> a regular HTTP response with content like HTML. The frontrunning response hints to the browser what additional assets (javascript, css) the browser will have to load when it renders the subsequent HTTP response with all the content. The idea being that the browser <em>could</em>  load those resources while waiting for the full content response to be transmitted, and thus load and render the complete page with all its assets faster overall.</p>
+
+<p>If you look at a response that includes 103 Early Hints, it looks like 2 responses:</p>
+
+<pre><code>HTTP/2 103
+link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload
+
+HTTP/2 200
+date: Fri, 17 Oct 2025 15:07:24 GMT
+content-type: text/html; charset=utf-8
+link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload
+
+&lt;html&gt; 
+... the content
+</code></pre>
+
+<p>I keep writing “103 Early Hints” because Early Hints the status code response (103), also gets confused with the <code>Link</code> header of a content response that serves the same purpose (hinting what assets will need to be loaded), and near identical content: the 103 Early Hint header is usually same the <code>Link</code> value that the actual-content response header has. Because of this conceptual collision, it’s tough to google for and there are various confused StackOverflow responses.</p>
+
+<p>Eileen Uchitelle built out <a href="https://eileencodes.com/posts/http2-early-hints/">the original implementation in Rails</a>. It’s good. It can be better. It also maybe doesn’t matter. I’ll tell you how and why.</p>
+
+<h3 id="it-can-be-better">It can be better</h3>
+
+<p>There’s two ways that the Rails implementation of 103 Early Hints can be better:</p>
+
+<ol>
+  <li>There should only be one 103 Early Hints response.</li>
+  <li>The 103 Early Hints response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</li>
+</ol>
+
+<p><strong>There should only be one 103 Early Hint response.</strong> According to <a href="https://datatracker.ietf.org/doc/html/rfc8297">the RFC</a>, there can be multiple 103 responses, but according to the Browsers, they only look at the first 103 response.</p>
+
+<blockquote>
+  <p>A server might send multiple 103 responses, for example, following a redirect. <strong>Browsers only process the first early hints response</strong>, and this response must be discarded if the request results in a cross-origin redirect. — <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103">MDN</a></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Chrome ignores the second and following Early Hints responses. Chrome only handles the first Early Hints response</strong> so that Chrome doesn’t apply inconsistent security policies (e.g. Content-Security-Policy). — <a href="https://source.chromium.org/chromium/chromium/src/+/main:docs/early-hints.md;l=18?q=early%20hints&amp;ss=chromium%2Fchromium%2Fsrc:docs%2F">Chromium Docs</a></p>
+</blockquote>
+
+<p>Rails emits a 103 Early Hint response each and every time your application calls <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.</p>
+
+<p>Instead, it would be better if the application could accumulate multiple asset links and then flush them to a single 103 Early Hint response all together.</p>
+
+<p>Aside: it’s really, really, cool how 103 Early Hint responses in Rack/Puma/Rails are emitted <em>in the middle of a handling a response</em>. The webserver puts a lambda/callable into the Rack Environment, and then the application calls that lambda with the contents of the 103 Early Hint response, and that causes the webserver to write the content to the socket. <a href="https://github.com/puma/puma/blob/a5206f1acdb953f87e690909d4434bb7e0b134af/lib/puma/request.rb#L78-L87">Here’s how it’s done in Puma</a>, in pseudocode:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In the Puma webserver</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="k">do</span> <span class="o">|</span><span class="n">early_hints_str</span><span class="o">|</span>
+  <span class="n">fast_write_str</span> <span class="n">socket</span><span class="p">,</span> <span class="s2">"HTTP/1.1 103 Early Hints</span><span class="se">\r\n</span><span class="si">#{</span><span class="n">early_hints_str</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">"</span> 
+<span class="k">end</span>
+
+<span class="c1"># In the application</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="s2">"link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>The 103 Early Hint response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</strong> As mentioned, the 103 Early Hint response gets triggered when using <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.  Those usually are used in a Rails Layout <code>erb</code> file.</p>
+
+<p>In Rails, Layouts get rendered last, after the view is rendered, which means that 103 Early Hints get emitted when the response is almost done being constructed: after the controller action, after the databae queries, after most of the HTML has been rendered to a string.</p>
+
+<p>Instead, it would be better if the 103 Early Hint response was emitted in a <code>before_action</code> before any slow database queries or view rendering happens. The purpose of the 103 Early Hint is to be <em>early</em>. I’ve done this myself, manually constructing the links and flushing them through <code>request.send_early_hints</code>, it’s not difficult, but it would be nice if it was easier.</p>
+
+<h3 id="it-maybe-doesnt-matter">It maybe doesn’t matter</h3>
+
+<p>I can’t actually get 103 Early Hints to be returned all the way to me in any of my production environments. Likely because there is a network device, reverse proxy, load balancer, CDN, or something that’s blocking them.</p>
+
+<ul>
+  <li>👎 Heroku with Router 2.0 and custom domain</li>
+  <li>👎 Heroku behind Cloudfront</li>
+  <li>👎 Digital Ocean App Platform behind Cloudflare</li>
+  <li>👎 AWS ECS+Fargate behind an ALB (this one actually breaks the website: <code>HTTP/2 stream 1 was not closed cleanly</code>)</li>
+</ul>
+
+<p>I can see them working locally, using Puma or Puma behind Thruster, but in production…. nada. Obviously this isn’t comprehensive list of production environments, but they’re the ones <em>I</em> am using.</p>
+
+<p>If you want to see them locally:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Run Puma with early hints. Or use `early_hints` DSL directive in puma.rb</span>
+<span class="nv">$ </span>bin/rails s <span class="nt">--early-hints</span>
+
+<span class="c"># Make a request, this works locally or against a production target</span>
+<span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-k</span> <span class="nt">-v</span> <span class="nt">--http2</span> localhost:3000 2&gt;&amp;1 | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="nt">-E</span> <span class="s1">'103 Early Hints|HTTP/2 103'</span>
+
+&lt; HTTP/1.1 103 Early Hints
+&lt; <span class="nb">link</span>: &lt;/assets/application-316caf93b23ca4756d151eaa97d8122c7173f8bdfea91203603e56621193c19e.css&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span>preload<span class="p">;</span> <span class="nv">as</span><span class="o">=</span>style<span class="p">;</span> nopush
+&lt;
+&lt; HTTP/1.1 103 Early Hints
+&lt; <span class="nb">link</span>: &lt;/vite-dev/assets/application-WvRi4PrU.js&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span>modulepreload<span class="p">;</span> <span class="nv">as</span><span class="o">=</span>script<span class="p">;</span> <span class="nv">crossorigin</span><span class="o">=</span>anonymous<span class="p">;</span> nopush
+&lt;
+&lt; HTTP/1.1 103 Early Hints
+&lt; Link: &lt;/vite-dev/assets/index-ilXdZXkf.js&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span>modulepreload<span class="p">;</span> <span class="nv">as</span><span class="o">=</span>script<span class="p">;</span> <span class="nv">crossorigin</span><span class="o">=</span>anonymous
+&lt;
+</code></pre></div></div>
+
+<p>And if you want to see 103 Early Hints… anywhere… good luck! I have yet to find an example of a website that serves them.</p>
+
+<pre><code># Basecamp
+$ curl -s -k -v --http2 https://basecamp.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# GitHub
+$ curl -s -k -v --http2 https://github.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# Shopify
+$ curl -s -k -v --http2 https://www.shopify.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# Google
+$ curl -s -k -v --http2 https://www.google.com 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+# nothing
+
+# Someone's tester for 103 Early Hints
+$ curl -s -k -v --http2 https://code103.hotmann.de 2&gt;&amp;1 | grep -A 5 -E '103 Early Hints|HTTP/2 103'
+&lt; HTTP/2 103
+&lt; link: &lt;/app.min.css&gt;; as=style; rel=preload
+&lt;
+# ... ok, that returns something
+</code></pre>
+
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/10/hanami-and-loading-code-faster"><p>Hanami and loading code, faster</p>
 </a>
     </h1>
@@ -1177,28 +1315,6 @@ party gems.</li>
 <h3 id="bringing-it-back-around">Bringing it back around</h3>
 
 <p>I dunno. Just continue asking the “can you show me that?” “can we look at it together?” “how do you think that will effect things?” “is there anything you have in mind that I can do to help?” questions.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/06/recently-june-29-2025"><p>Recently, June 29, 2025</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-06-29T23:21:00Z" itemprop="datePublished">June 29, 2025</time>
-
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <ul>
-  <li>We have a new fridge; it is the same model as the old fridge because only that model would fit in the cabinetry. The installers also discovered that the water valve was broken and couldn’t be shut off; subsequently, the plumber determined that only the handle had snapped. I ordered a completely new water valve to unscrew its handle and attach that handle to the existing valve. In this economy.</li>
-  <li>This week in Rails, I went back and replaced most of the places I was using turbo-broadcast-refresh and replaced them with targeted turbo-streams. I also spent a bunch of time trying to make an autogrowing textfield that didn’t bounce the page up and down which the <code>style.height = auto; style.height = scrollHeight</code>-strategy does with Bootstrap; this was <a href="https://gist.github.com/bensheldon/c68fbc7e7962bde5860ab4b5700585bb">the result</a>.</li>
-  <li>I’m committed to RubyMine Junie over Cursor for AI-assisted coding. I think Cursor does ever-so-slightly better with generated code and the prompting UI, but RubyMine is so far beyond for everything else. I keep sharing this on Reddit, so here’s <a href="https://gist.github.com/bensheldon/b4fd84f9880b05ae57521beb1297e3a2">my agent guidelines</a> that I symlink into wherever the tool wants it.</li>
-  <li>I’m still reading <em>The Future of Another Timeline</em>. And I started playing Satisfactory.</li>
-</ul>
 
   </div>
 </article>
