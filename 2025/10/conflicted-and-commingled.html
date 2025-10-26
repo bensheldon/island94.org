@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conflicted and commingled | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-39a1f2f7963cb72fa41194b70f3ff8033d1cbab7fae2f8cb78a801ed41144a6a.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-962c5e7cf27f994bdd1d258cdf9ea6b030432b2f7bd4f3ddca08ef99383fa2f8.js",
+    "popper": "/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js",
+    "bootstrap": "/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js",
+    "lunr": "/assets/lunr-f99b014c8a6f84586ea3c195936e9cc362e046b318239f33786855679a6b8294.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c74be0932cb32c32e67be87ed26ae1eae819736c1055a6a4056c773f2b044211.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/search_controller": "/assets/controllers/search_controller-1c839dad802fbbcac7f45100753997dfa82c2453ff1b036badede2d38baef4ff.js",
+    "controllers/theme_controller": "/assets/controllers/theme_controller-b01c6e0aeebf1ccac6a41c8358c52557f90e26684cb43214dcef7b5b11213069.js",
+    "search": "/assets/search-ddd6c6d0d2f91d8051c02d2b76c8c07937235fba085eb3ff25464fb4db3d8569.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/popper-003a40d80fd205e1fa00da117d5bdc19720ba330706eaa17f9ba9513fa502304.js">
+<link rel="modulepreload" href="/assets/bootstrap.min-4ecafa8f279d0b285b3d27ca02c7e5da187907efe2c38f83eb8b4c7d6aa151c4.js">
+<link rel="modulepreload" href="/assets/turbo.min-c74be0932cb32c32e67be87ed26ae1eae819736c1055a6a4056c773f2b044211.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<script type="module">import "application"</script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/10/conflicted-and-commingled"><p>Conflicted and commingled</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-10-26T23:39:00Z" itemprop="datePublished">October 26, 2025</time>
+
+        • Tagged <a href="/posts/tags/stories">stories</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>More than a decade ago, I was seated on the jury of a civil trial for “complex litigation”. I’ll try to keep this quick, but the case does come to mind more frequently than I would have imagined at the time.</p>
+
+<p>In this trial, the plaintiff. a pharmaceutical company. was suing the defendant, a chemistry professor, for fraud. The chemistry professor, as part of his day job at a university, would create a bunch of novel molecules (put a carbon there, or an extra hydrogen here) that the university would test for various interesting bio-medical properties, and then license them to pharmaceutical companies for commercialization.</p>
+
+<p>In this specific instance, the pharmaceutical company licensed a molecule from the university, and then turned around and invited the chemistry professor to join their scientific advisory board and gave the professor some company stock/equity. Fast forward several years and that molecule is now a very valuable drug. And the university <em>also</em> licensed a <em>different</em> molecule to a <em>different</em> company that the chemistry professor <em>also</em> had some equity in.</p>
+
+<p>The alleged fraud was that the chemistry professor didn’t tell that first pharmaceutical company about the other molecule or the other pharmaceutical company… and should have? That was why it went to litigation.</p>
+
+<p>The big picture wasn’t why it stuck in my mind so much as what we did during the <em>six week</em> jury trial: we read a lot of really, really old emails that the plaintiffs would paint as evidence of ill-intent and the defense would explain that nothing was very serious in the first place. I’m making the following exchange up, but thematically it was this over and over again:</p>
+
+<blockquote>
+  <p>Plaintiffs: You must not have been taking your duties very seriously when you replied: “I hope the wine is good winkie-face.”</p>
+
+  <p>Defense: Can you read the whole exchange?</p>
+
+  <p>Plaintiffs: This was in reply to the scientific advisory board chair writing “The meeting will be brief and then we’ll have dinner together at [nice restuarant]”</p>
+
+  <p>Defense: Now this very serious advisory board that you allege our client was taking so unseriously several years ago that you are suing him for fraud today. Was there any written agenda or minutes or notes from those meetings?</p>
+
+  <p>Plaintiffs: No.</p>
+</blockquote>
+
+<p>Lots and lots of that: some personal correspondence recontextualized in a trial against a background of potentially billions of pharmaceutical dollars at stake. Of what I learned:</p>
+
+<ul>
+  <li>Poe’s Law is everywhere: don’t be cute anywhere it might turn into discovery.</li>
+  <li>Conflicts of Interest and commingling of personal and employer and contractual stuff can cause lots of problems. And also that creating conflicts of interest <em>is a strategy</em> for muddying the water.</li>
+  <li>Complexity causes problems.</li>
+</ul>
+
+<p>On that last point, during the trial there was an entire plaintiff subplot of “but maybe actually it’s the same molecule.” The plaintiffs spent a whole day at least explaining benzene rings. Which was all of a theme to make the chemistry professor appear extra deceptive, like “it’s just one more carbon atom, how dumb do you think we are?!” And then at the end after several objections the judge was like “I’ve already ruled that they’re different molecules and the university owns them and can license them to whoever they want.” Any potential for confusion seemed to be taken advantage of in arguments to set a tone.</p>
+
+<p>Anyways, I’ve been telling this story a lot to people in the context of Ruby Central / Rubygems drama. Usually with the explainer of “totally random, but did ever tell you about the really long jury trial I was part of? It was a lot.”</p>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2025-10-26-conflicted-and-commingled.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+  </div>
+</div>
+
+  </div>
+
+</body>
+</html>
