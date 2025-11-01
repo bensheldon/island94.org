@@ -29,7 +29,7 @@ jobs:
       - name: Run tests
         run: bin/rspec --format documentation
       - name: Archive system spec screenshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: screenshots
