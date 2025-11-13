@@ -7,6 +7,7 @@ tags:
 - food
 - navigation
 - portfolio
+- recipe
 wp:post_type: post
 redirect_from:
 - 2010/10/fairly-fool-proof-popovers/
