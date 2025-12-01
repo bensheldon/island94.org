@@ -19,7 +19,7 @@ jobs:
       RUBYOPT: "--enable=yjit"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: "Ruby: Install Ruby"
         uses: ruby/setup-ruby@v1
         with:
