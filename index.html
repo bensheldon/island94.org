@@ -137,6 +137,149 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2025/12/tricks-to-work-around-nested-form-elements-for-rails"><p>Tricks to work around nested form elements, for Rails</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2025-12-20T17:14:00Z" itemprop="datePublished">December 20, 2025</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I <a href="https://github.com/bensheldon/good_job/pull/1658">recently migrated</a> GoodJob’s Dashboard from Rails UJS (“Unobtrusive Javascript”) to Turbo. One of the most significant changes <em>for me</em> of moving from UJS to Turbo is that UJS’s <code>data-method</code> is not functionally replaceable with Turbo’s <code>data-turbo-method</code>. This <code>-method</code> attribute allows you to make a button or link act like a form submission without using a<code>&lt;form&gt;</code> element.</p>
+
+<p>I learned some stuff, but first let’s back up even further</p>
+
+<h3 id="html-forms-are-hard">HTML <code>&lt;forms&gt;</code> are hard</h3>
+
+<p>There’s three practical things, and one conceptual, that are going to challenge us here</p>
+
+<p><strong>You cannot nest a <code>&lt;form&gt;</code> element within another <code>&lt;form&gt;</code> element.</strong> When rendering the page, the browser will remove it, or ignore it; regardless it won’t work. Doubly annoying because Chrome’s DevTools will simply remove the element; you have to use <code>view-source</code> to witness your mistake.</p>
+
+<p>Some designs would really benefit from a form nested in another form. For example: You have a screen with a bunch of inputs to update a record, and you want to put a “Destroy” button visually adjacent to the “Update” button. Or, for example: you are displaying a list of records that is wrapped entirely in one big form element so that each item can be checked/unchecked to apply actions upon multiple records <em>and</em> you want to be able to have buttons to perform actions on records individually in the list too.  Remember, you always want to put destructive or mutating actions behind a POST button rather than a GET link. It can be tricky. Here’s an example of a design challenge in the GoodJob Dashboard:</p>
+
+<p><img src="/uploads/2025/goodjob-forms.png" alt="A screenshot from the GoodJob dashboard" /></p>
+
+<p><strong>HTML forms only support two HTTP methods: <code>GET</code> and <code>POST</code>.</strong> All the other one’s (<code>PUT</code>, <code>PATCH</code>, <code>DELETE</code> ) are valid <em>HTTP</em> methods, but you can’t use them in an <em>HTML</em> form. Rails works around this with its form helpers by adding a hidden input named <code>_method</code> that puts the unsupported method in the formdata, or using Javascript <code>fetch</code>  or <code>XMLHttpRequest</code>.</p>
+
+<p><strong>You need a CSRF token.</strong> The form payload must contain the CSRF token payload, which Rails form helpers include as a hidden form element. If the payload doesn’t have a CSRF token, Rails will reject it. THe CSRF token really is important, please don’t disable it. Maybe that’ll <a href="https://github.com/rails/rails/pull/56350">go away someday</a>, but not today</p>
+
+<p>Conceptually, I want to leave you with this: <strong>Despite Ruby on Rails being a very good monolithic framework, we must clearly distinguish the HTML Documents and HTTP payloads from the Ruby bits and helpers.</strong>. In this case, we’ll be focusing more on:</p>
+
+<ul>
+  <li>The actual HTML document that the browser will render… over the ERB and Ruby Helpers that can make it easier to author that document.</li>
+  <li>The precise HTTP request and form-data payload that a form or javascript produces to send back to the server… over the Form Helpers and superficial Turbo interface.</li>
+  <li>How that HTTP request and form-data payload is processed by the Rails and Rack-middleware stack… over the pretty little Ruby hashes and objects you’ll access inside your Controller Actions.</li>
+</ul>
+
+<p>The intent here is not to throw shade at Ruby on Rails. I want to break through what I have sometimes seen from developers who treat Rails like a native app SDK that paints UI on their screen and tightly responds to user input though OS interrupts or something. I want to elevate the HTML Document and HTTP requests that are buzzing back and forth and the limitations <em>and opportunities</em> therein.</p>
+
+<h3 id="throw-out-your-ujs-data-method">Throw out your UJS <code>data-method</code></h3>
+
+<p>As I mentioned in the intro, migrating from UJS to Turbo has some changes. In UJS, the simplest thing to do was use <code>data-method</code> and <code>data-params</code> for anything extra:</p>
+
+<pre><code>&lt;a href="/posts/draft" data-method="put" data-params="something=extra" class="button"&gt;Set Draft&lt;/a&gt;
+</code></pre>
+
+<p>…and that would generate a form-like HTTP request with all the bits: the <code>_method</code> , your CSRF token, and the extra data attributes:</p>
+
+<pre><code>POST /posts/draft
+_method=put
+authenticity_token=alsdkfjasldkjfasdljkf
+something=extra
+</code></pre>
+
+<p>But seems like Turbo is <a href="https://github.com/hotwired/turbo-rails/issues/259">giving</a> <a href="https://github.com/hotwired/turbo/issues/915">up</a> on <code>data-turbo-method</code> , and Turbo never implemented a <code>data-params</code> equivalent. So we have to do something different.</p>
+
+<h3 id="alternatives-for-your-consideration">Alternatives for your consideration</h3>
+
+<p>Depending on what you need to change about the payload, you have some options:</p>
+
+<p>If you only want to know if someone clicked Button B instead of Button A, then use a different <code>commit</code> value for the button; <code>commit</code> is just the arbitrary name the Rails framework chose to put in the form-data:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= form_with model: @post do |f| %&gt;
+  &lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">button</span> <span class="s2">"Publish"</span><span class="p">,</span> <span class="ss">name: </span><span class="s2">"commit"</span><span class="p">,</span> <span class="ss">value: </span><span class="s2">"publish"</span> <span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sx">%= f.button "Save Draft", name: "commit", value: "draft" %&gt;
+&lt;% end %&gt;
+</span></code></pre></div></div>
+
+<p>…and then do your controller logic based on the <code>params[:commit]</code> value. Buttons can have any single <code>name</code> and <code>value</code> and it goes into the form-data.</p>
+
+<p>We can overload this if we <em>only</em> need to change the method. E.g. if we want to have our Delete button alongside, we can use our knowledge of the magic <code>_method</code> overloading to set the method to be treated like a <code>DELETE</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= form_with model: @post do |f| %&gt;
+  &lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">button</span> <span class="s2">"Update"</span> <span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sx">%= f.button "Delete", name: "_method", value: "delete" %&gt;
+&lt;% end %&gt;
+</span></code></pre></div></div>
+
+<p>This produces an HTTP payload that looks like what we want, though it includes all the other form inputs:</p>
+
+<pre><code>POST /posts/42
+_method=put
+authenticity_token=alsdkfjasldkjfasdljkf
+title=What was in the form
+body=Anything else in the form
+_method=delete
+</code></pre>
+
+<p>This works perfectly fine because the Form URL for both the <code>update</code> and <code>destroy</code> actions are the same, and it’s only the <code>_method</code> method that’s different and who cares about some extra form-data we won’t use.</p>
+
+<p><strong>But what about the duplicate <code>_method</code> keys?</strong> <a href="https://github.com/rails/rails/pull/53471">Rails (or maybe Rack)</a>. when it comes to duplicate keys, will expose only the last value in the params hash. It’s only if you named the key with square brackets like <code>foo[]</code> does it become an array of values. This isn’t HTTP, but rather a convention of Rails/Rack for parsing form-data into Ruby data objects.</p>
+
+<p>If we want a different URL, we can use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#formaction">HTML’s ￼<code>formaction=</code>￼ attribute</a> to change where the Form is posted:</p>
+
+<p><code>&lt;%= f.button "Fancy Delete", name: "_method", value: "delete", formaction: fancy_post_path(@post) %&gt;</code></p>
+
+<p>…which leads to HTML that looks like:</p>
+
+<pre><code>&lt;form action="/posts/42"&gt;
+  &lt;input type="hidden" name="_method" value="put"&gt;
+  
+  &lt;button&gt;Save&lt;/button&gt; &lt;!-- the regular form button --&gt;
+  &lt;button name="_method" value="delete" formaction="/posts/42/fancy"&gt;
+    Fancy Delete
+  &lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Pretty sweet!</p>
+
+<p>One more tool in our toolbox: In addition to <code>formaction</code> which changes the payload target URL, we can <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/form">redirect our button to an entirely different form using the ￼<code>form=</code>￼ attribute</a> on the button and targeting the other form by <code>id</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/posts/42"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"_method"</span> <span class="na">value=</span><span class="s">"put"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;button&gt;</span>Save<span class="nt">&lt;/button&gt;</span> <span class="c">&lt;!-- the regular form button --&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">name=</span><span class="s">"commit"</span> <span class="na">value=</span><span class="s">"delete"</span> <span class="na">form=</span><span class="s">"fancy_delete_form"</span><span class="nt">&gt;</span>
+    Fancy Delete
+  <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"fancy_delete_form"</span> <span class="na">action=</span><span class="s">"/posts/42/fancy"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"_method"</span> <span class="na">value=</span><span class="s">"put"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"foo"</span> <span class="na">value=</span><span class="s">"bar"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>In this case, we can include several more values in our payload in the external form. <strong>The downside here is that the HTTP payload <em>won’t</em> include any of the data from the primary form, only the inputs within the targetted<code>form=</code>.</strong></p>
+
+<h3 id="almost-but-not-quite-equivalent">Almost but not quite equivalent</h3>
+
+<p>We can cover these scenarios:</p>
+
+<ul>
+  <li>Want to change a method or single value or single URL: add some attributes to the button.</li>
+  <li>Want to submit multiple different values to a different place: use the <code>form=</code> attribute.</li>
+  <li>Want to submit both the original form’s data <em>and multiple other values</em>…. I don’t know how to do that easily. With UJS you could slot those key-values into <code>data-params</code> , but Turbo doesn’t have an equivalent. I encounter this very very rarely. I guess… put them in the query parameters?… Stimulus?</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2025/10/conflicted-and-commingled"><p>Conflicted and commingled</p>
 </a>
     </h1>
@@ -1128,152 +1271,6 @@ party gems.</li>
  5548  1296 sshd: u16321@pts/0
  4444  1178 <span class="nt">-bash</span>
  4036  1964 ps <span class="nt">-eo</span> rss,pss,cmd
-</code></pre></div></div>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/07/customize-rails-i18n-key-suffixes-like-md-for-markdown"><p>How to customize Rails I18n key suffixes like <code>_md</code> for Markdown</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-07-16T10:00:00Z" itemprop="datePublished">July 16, 2025</time>
-
-        • Tagged <a href="/posts/tags/rails">Rails</a> and <a href="/posts/tags/i18n">i18n</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>If you’ve had reason to use internationalization in Rails on Rails, you’ve probably used a <a href="https://guides.rubyonrails.org/i18n.html#using-safe-html-translations">nifty feature</a> of it:</p>
-
-<blockquote>
-  <p>Keys with a <code>_html</code> suffix… are marked as HTML safe. When you use them in views the HTML will not be escaped.</p>
-</blockquote>
-
-<p>Authoring HTML within translations can be a pain because HTML is quite verbose and easy to mess up when maintaining multiple versions of the same phrase, or paragraph, or page across multiple languages.</p>
-
-<p>It would be nice 💅 to have something like this:</p>
-
-<blockquote>
-  <p>Keys with a <code>_md</code> suffix can be authored in Markdown and will be automatically converted to HTML and marked as HTML safe.</p>
-</blockquote>
-
-<p>Markdown is a lot less verbose than HTML and easier to write and eyeball. Let’s do it!</p>
-
-<p>First, we have to patch into the I18n <code>translate</code> method. It looks something like this:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/markdown.rb</span>
-
-<span class="k">module</span> <span class="nn">Markdown</span>
-  <span class="k">module</span> <span class="nn">I18nBackendExt</span>
-    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">locale</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="k">super</span>
-      <span class="c1"># Rails missing key returns as MISSING_TRANSLATION =&gt; -(2**60) =&gt; -1152921504606846976</span>
-      <span class="k">if</span> <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-          <span class="no">Markdown</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="k">else</span>
-          <span class="no">Markdown</span><span class="p">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="k">end</span>
-      <span class="k">else</span>
-        <span class="n">result</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:i18n</span><span class="p">)</span> <span class="k">do</span>
-  <span class="no">I18n</span><span class="p">.</span><span class="nf">backend</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">I18nBackendExt</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p><strong>Fun Fact:</strong> Rails does a clever thing to detect missing translations. I18n accepts a stack of fallback defaults, and Rails <a href="https://github.com/rails/rails/pull/45572">appends a magic number</a> to the back of that stack: <code>-(2**60) =&gt; -1152921504606846976</code>. If a translation ever returns that value, Rails assumes that the translation fell through the entire fallback stack and is therefore missing. (It took me a bit of sleuthing to figure out what the heck this weird number meant while poking around.)</p>
-
-<p>Second, we patch the Rails HTML Safe behavior to <em>also</em> make these strings HTML safe too:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/markdown.rb</span>
-
-<span class="k">module</span> <span class="nn">Markdown</span>
-  <span class="k">module</span> <span class="nn">HtmlSafeTranslationExt</span>
-    <span class="k">def</span> <span class="nf">html_safe_translation_key?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-      <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">||</span> <span class="k">super</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">ActiveSupport</span><span class="o">::</span><span class="no">HtmlSafeTranslation</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">HtmlSafeTranslationExt</span>
-</code></pre></div></div>
-
-<p>That’s pretty much it!</p>
-
-<p>If you’re uncomfortable patching things, Tim Masliuchenko has a gem called  <a href="https://github.com/timfjord/i18n-transformers"><code>I18n::Transformers</code></a> that makes it easy create custom key-based transformations. I believe you’ll still need to patch into the HTML safety behavior of Rails though—and anything involving marking things as HTML-safe should be always be scrutinized for <a href="https://guides.rubyonrails.org/security.html#cross-site-scripting-xss">XSS</a> potential.</p>
-
-<p>Here’s the full initializer I have, including how I get Kramdown to create “inline” markdown:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/markdown.rb</span>
-
-<span class="k">module</span> <span class="nn">Markdown</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
-    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"Can't provide both text and block"</span> <span class="k">if</span> <span class="n">text</span> <span class="o">&amp;&amp;</span> <span class="nb">block_given?</span>
-
-    <span class="n">text</span> <span class="o">=</span> <span class="k">yield</span> <span class="k">if</span> <span class="nb">block_given?</span>
-    <span class="k">return</span> <span class="s2">""</span> <span class="k">unless</span> <span class="n">text</span>
-
-    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">strip_heredoc</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="n">options</span><span class="p">.</span><span class="nf">reverse_merge</span><span class="p">(</span>
-      <span class="ss">auto_ids: </span><span class="kp">false</span><span class="p">,</span>
-      <span class="ss">smart_quotes: </span><span class="p">[</span><span class="s2">"apos"</span><span class="p">,</span> <span class="s2">"apos"</span><span class="p">,</span> <span class="s2">"quot"</span><span class="p">,</span> <span class="s2">"quot"</span><span class="p">]</span> <span class="c1"># disable smart quotes</span>
-    <span class="p">)</span>
-    <span class="no">Kramdown</span><span class="o">::</span><span class="no">Document</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">options</span><span class="p">).</span><span class="nf">to_html</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">**</span><span class="p">)</span>
-    <span class="c1"># Custom input parser defined in Kramdown::Parser::Inline</span>
-    <span class="n">convert</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="ss">input: </span><span class="s2">"Inline"</span><span class="p">,</span> <span class="o">**</span><span class="p">).</span><span class="nf">strip</span>
-  <span class="k">end</span>
-
-  <span class="k">module</span> <span class="nn">HtmlSafeTranslationExt</span>
-    <span class="k">def</span> <span class="nf">html_safe_translation_key?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-      <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">||</span> <span class="k">super</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">module</span> <span class="nn">I18nBackendExt</span>
-    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">locale</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="k">super</span>
-      <span class="c1"># Rails missing key returns as MISSING_TRANSLATION =&gt; (2**60) =&gt; -1152921504606846976</span>
-      <span class="k">if</span> <span class="n">key</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"_md"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-          <span class="no">Markdown</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="k">else</span>
-          <span class="no">Markdown</span><span class="p">.</span><span class="nf">inline</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="k">end</span>
-      <span class="k">else</span>
-        <span class="n">result</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">ActiveSupport</span><span class="o">::</span><span class="no">HtmlSafeTranslation</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">HtmlSafeTranslationExt</span>
-<span class="no">ActiveSupport</span><span class="p">.</span><span class="nf">on_load</span><span class="p">(</span><span class="ss">:i18n</span><span class="p">)</span> <span class="k">do</span>
-  <span class="no">I18n</span><span class="p">.</span><span class="nf">backend</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">Markdown</span><span class="o">::</span><span class="no">I18nBackendExt</span>
-<span class="k">end</span>
-
-<span class="c1"># Generate HTML from Markdown without any block-level elements (p, etc.)</span>
-<span class="c1"># http://stackoverflow.com/a/30468100/241735</span>
-<span class="k">module</span> <span class="nn">Kramdown</span>
-  <span class="k">module</span> <span class="nn">Parser</span>
-    <span class="k">class</span> <span class="nc">Inline</span> <span class="o">&lt;</span> <span class="no">Kramdown</span><span class="o">::</span><span class="no">Parser</span><span class="o">::</span><span class="no">Kramdown</span>
-      <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
-        <span class="k">super</span>
-        <span class="vi">@block_parsers</span> <span class="o">=</span> <span class="p">[]</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
 </code></pre></div></div>
 
   </div>
