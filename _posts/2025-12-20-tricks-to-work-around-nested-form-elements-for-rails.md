@@ -16,7 +16,8 @@ There’s three practical things, and one conceptual, that are going to challeng
 **You cannot nest a `<form>` element within another `<form>` element.** When rendering the page, the browser will remove it, or ignore it; regardless it won’t work. Doubly annoying because Chrome’s DevTools will simply remove the element; you have to use `view-source` to witness your mistake.
 
 Some designs would really benefit from a form nested in another form. For example: You have a screen with a bunch of inputs to update a record, and you want to put a “Destroy” button visually adjacent to the “Update” button. Or, for example: you are displaying a list of records that is wrapped entirely in one big form element so that each item can be checked/unchecked to apply actions upon multiple records _and_ you want to be able to have buttons to perform actions on records individually in the list too.  Remember, you always want to put destructive or mutating actions behind a POST button rather than a GET link. It can be tricky. Here’s an example of a design challenge in the GoodJob Dashboard:
-![](Screenshot%202025-12-20%20at%209.11.00%E2%80%AFAM.png)
+
+![A screenshot from the GoodJob dashboard](/uploads/2025/goodjob-forms.png)
 
 **HTML forms only support two HTTP methods: `GET` and `POST`.** All the other one’s (`PUT`, `PATCH`, `DELETE` ) are valid _HTTP_ methods, but you can’t use them in an _HTML_ form. Rails works around this with its form helpers by adding a hidden input named `_method` that puts the unsupported method in the formdata, or using Javascript `fetch`  or `XMLHttpRequest`.
 
