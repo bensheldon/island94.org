@@ -9,7 +9,7 @@ I [recently migrated](https://github.com/bensheldon/good_job/pull/1658) GoodJob�
 
 I learned some stuff, but first let’s back up even further
 
-### HTML `<forms>` are hard 
+### HTML `<forms>` are hard
 
 There’s three practical things, and one conceptual, that are going to challenge us here
 
@@ -29,7 +29,7 @@ Conceptually, I want to leave you with this: **Despite Ruby on Rails being a ver
 - The precise HTTP request and form-data payload that a form or javascript produces to send back to the server… over the Form Helpers and superficial Turbo interface.
 - How that HTTP request and form-data payload is processed by the Rails and Rack-middleware stack… over the pretty little Ruby hashes and objects you’ll access inside your Controller Actions.
 
-The intent here is not to throw shade at Ruby on Rails. I want to break through what I have sometimes seen from developers who treat Rails like a native app SDK that paints UI on their screen and tightly responds to user input though OS interrupts or something. I want to elevate the HTML Document and HTTP requests that are buzzing back and forth and the limitations _and opportunities_ therein. 
+The intent here is not to throw shade at Ruby on Rails. I want to break through what I have sometimes seen from developers who treat Rails like a native app SDK that paints UI on their screen and tightly responds to user input though OS interrupts or something. I want to elevate the HTML Document and HTTP requests that are buzzing back and forth and the limitations _and opportunities_ therein.
 
 ### Throw out your UJS `data-method`
 
@@ -47,7 +47,7 @@ _method=put
 authenticity_token=alsdkfjasldkjfasdljkf
 something=extra
 ```
- 
+
 But seems like Turbo is [giving](https://github.com/hotwired/turbo-rails/issues/259) [up](https://github.com/hotwired/turbo/issues/915) on `data-turbo-method` , and Turbo never implemented a `data-params` equivalent. So we have to do something different.
 
 ### Alternatives for your consideration
@@ -85,7 +85,7 @@ body=Anything else in the form
 _method=delete
 ```
 
-This works perfectly fine because the Form URL for both the `update` and `destroy` actions are the same, and it’s only the `_method` method that’s different and who cares about some extra form-data we won’t use. 
+This works perfectly fine because the Form URL for both the `update` and `destroy` actions are the same, and it’s only the `_method` method that’s different and who cares about some extra form-data we won’t use.
 
 **But what about the duplicate `_method` keys?** [Rails \(or maybe Rack\)](https://github.com/rails/rails/pull/53471). when it comes to duplicate keys, will expose only the last value in the params hash. It’s only if you named the key with square brackets like `foo[]` does it become an array of values. This isn’t HTTP, but rather a convention of Rails/Rack for parsing form-data into Ruby data objects.
 
@@ -106,7 +106,7 @@ If we want a different URL, we can use [HTML’s ￼`formaction=`￼ attribute](
 </form>
 ```
 
-Pretty sweet! 
+Pretty sweet!
 
 One more tool in our toolbox: In addition to `formaction` which changes the payload target URL, we can [redirect our button to an entirely different form using the ￼`form=`￼ attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/form) on the button and targeting the other form by `id`:
 
