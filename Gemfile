@@ -9,7 +9,7 @@ gem "octokit"
 
 gem "parklife"
 gem "parklife-rails"
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.1.1"
 
 gem "bootsnap", require: false
 gem "bootstrap"
