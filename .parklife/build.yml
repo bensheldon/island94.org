@@ -10,7 +10,7 @@ paths:
     etag: W/"4bee81935eab57785f24af6a25059625"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"95911e055703acfaec921405046e9a9f"
+    etag: W/"168a2fefa13e0f36468d24d73cabe324"
   "/search":
     build_path: search.html
     etag: W/"20bc366326191fbe19bde3c7f2b74cce"
@@ -22,7 +22,7 @@ paths:
     etag: W/"a3276483d8b9dc4746aec37ab1656dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"6329c427d08d9cc38ff23c9983352ce6"
+    etag: W/"778dcde5297bd616cbf2e69d718380b7"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3713,6 +3713,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/www-nature-com-articles-s41591-025-04074-y-ref-labnotes-org":
+    build_path: bookmarks/2026/06/www-nature-com-articles-s41591-025-04074-y-ref-labnotes-org.html
+    etag: W/"9c7760bcb7c8ef0f634653a38e76da14"
   "/bookmarks/2026/06/cutlefish-substack-com-p-tbm-426-the-trouble-with-mirrors":
     build_path: bookmarks/2026/06/cutlefish-substack-com-p-tbm-426-the-trouble-with-mirrors.html
     etag: W/"e57a6050b2e8641bfb55173bef7e571d"
