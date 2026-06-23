@@ -57,7 +57,7 @@ class Post < ApplicationModel
   end
 
   def tags
-    Array(frontmatter["tags"])
+    frontmatter["tags"] || []
   end
 
   def redirects
