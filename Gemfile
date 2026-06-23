@@ -30,6 +30,7 @@ group :development, :test do
   gem "capybara"
   gem "cuprite"
   gem "erb_lint", require: false
+  gem "herb", require: false
   gem "mdl", require: false
   gem "rspec-rails"
   gem "rubocop-capybara", require: false
