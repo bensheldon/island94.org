@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"73858bbeef1d4c358fd8ef7dae5ebf4e"
+    etag: W/"06f692b1405f6c55d46e998d4570e588"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/statmodeling-stat-columbia-edu-2019-10-19-social-science-plaig-update":
+    build_path: bookmarks/2026/06/statmodeling-stat-columbia-edu-2019-10-19-social-science-plaig-update.html
+    etag: W/"b0238ead0b5e0a7b3c9f984c06e63158"
   "/bookmarks/2026/04/www-philschmid-de-agent-skills-tips-ref-labnotes-org":
     build_path: bookmarks/2026/04/www-philschmid-de-agent-skills-tips-ref-labnotes-org.html
     etag: W/"67544fde39c27aaad685c2bfd3f17ddc"
