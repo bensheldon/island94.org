@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"06f692b1405f6c55d46e998d4570e588"
+    etag: W/"e3535dafc165d053ebbd6832d8eef4d5"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -22,7 +22,7 @@ paths:
     etag: W/"3bd184fca2182a99eb34ebe51cc40904"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"1f9d8be2269de64aeeead6754c251abc"
+    etag: W/"3b7c91fb568f339ce10bb0c5741cb044"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/06/robert-winter-ink-the-saviour-industrial-complex-ref-labnotes-org":
+    build_path: bookmarks/2026/06/robert-winter-ink-the-saviour-industrial-complex-ref-labnotes-org.html
+    etag: W/"743accb474951d24af2d68de7063ae41"
   "/bookmarks/2026/06/statmodeling-stat-columbia-edu-2019-10-19-social-science-plaig-update":
     build_path: bookmarks/2026/06/statmodeling-stat-columbia-edu-2019-10-19-social-science-plaig-update.html
     etag: W/"b0238ead0b5e0a7b3c9f984c06e63158"
