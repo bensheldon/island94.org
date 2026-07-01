@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"e3535dafc165d053ebbd6832d8eef4d5"
+    etag: W/"1fc87a816427cb043e875c444f810264"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/degenerateart-beehiiv-com-p-you-don-t-have-to-swallow-frogs":
+    build_path: bookmarks/2026/07/degenerateart-beehiiv-com-p-you-don-t-have-to-swallow-frogs.html
+    etag: W/"513c692f882dcf382f194152ab5382a0"
   "/bookmarks/2026/06/robert-winter-ink-the-saviour-industrial-complex-ref-labnotes-org":
     build_path: bookmarks/2026/06/robert-winter-ink-the-saviour-industrial-complex-ref-labnotes-org.html
     etag: W/"743accb474951d24af2d68de7063ae41"
