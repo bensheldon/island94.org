@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"014e2d8ba4038217d32a1631d377c256"
+    etag: W/"85e0ee5125d2fc075a2761697d44f982"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/arstechnica-com-culture-2026-07-at-250-years-there-are-still-reasons-for-hope-in-america":
+    build_path: bookmarks/2026/07/arstechnica-com-culture-2026-07-at-250-years-there-are-still-reasons-for-hope-in-america.html
+    etag: W/"57c0642c4c2284ee12d108d4923a32f0"
   "/bookmarks/2026/07/www-filfre-net-2026-07-the-life-and-times-of-maxis-part-1-simeverything":
     build_path: bookmarks/2026/07/www-filfre-net-2026-07-the-life-and-times-of-maxis-part-1-simeverything.html
     etag: W/"d40245ca1089da491dd16ff25785b005"
