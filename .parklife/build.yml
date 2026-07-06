@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"85e0ee5125d2fc075a2761697d44f982"
+    etag: W/"7777cad0143b26e3d13501871025fe4c"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -22,7 +22,7 @@ paths:
     etag: W/"3bd184fca2182a99eb34ebe51cc40904"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"33b15ff605981de1c57c90b483ce5d28"
+    etag: W/"20bd1610ffa57fe7e920b7dc9f47c2a6"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/www-gamedeveloper-com-business-opinion-everything-hurts-and-no-one-knows-when-the-pain-will-end":
+    build_path: bookmarks/2026/07/www-gamedeveloper-com-business-opinion-everything-hurts-and-no-one-knows-when-the-pain-will-end.html
+    etag: W/"fac1d9ed0e90e2adece6697ca32db625"
   "/bookmarks/2026/07/arstechnica-com-culture-2026-07-at-250-years-there-are-still-reasons-for-hope-in-america":
     build_path: bookmarks/2026/07/arstechnica-com-culture-2026-07-at-250-years-there-are-still-reasons-for-hope-in-america.html
     etag: W/"57c0642c4c2284ee12d108d4923a32f0"
