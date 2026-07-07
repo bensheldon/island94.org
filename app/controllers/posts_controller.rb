@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def index
     @limit = LIMIT
     @page = params.fetch(:page, 1).to_i
-    @posts = Post.all.reverse.drop((@page - 1) * @limit).take(@limit)
+    @posts = Post.published.reverse.drop((@page - 1) * @limit).take(@limit)
   end
 
   def show
@@ -23,6 +23,6 @@ class PostsController < ApplicationController
     @tag = Post.tags.find { |tag| tag.parameterize == tag_slug }
     raise ActionController::RoutingError, "Not Found" unless @tag
 
-    @posts = Post.all.select { |post| post.tags.include?(@tag) }
+    @posts = Post.published.select { |post| post.tags.include?(@tag) }
   end
 end

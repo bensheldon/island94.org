@@ -15,6 +15,10 @@ class Bookmark < ApplicationModel
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
+  def self.published
+    all.select(&:published?)
+  end
+
   def slug
     @_slug ||= begin
       _year, _month, _day, slug = filename.split("-", 4)
@@ -48,5 +52,9 @@ class Bookmark < ApplicationModel
 
   def content
     Kramdown::Document.new(body, input: 'GFM').to_html.html_safe # rubocop:disable Rails/OutputSafety
+  end
+
+  def published?
+    frontmatter["published"] != false
   end
 end
