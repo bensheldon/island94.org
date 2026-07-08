@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class Post < ApplicationModel
+  include Markdownable
+
   attribute :filepath, :string
   attribute :frontmatter, default: -> { {} }
   attribute :body, :string
@@ -49,7 +51,7 @@ class Post < ApplicationModel
   end
 
   def content
-    @_content ||= Kramdown::Document.new(body, input: 'GFM').to_html.html_safe # rubocop:disable Rails/OutputSafety
+    @_content ||= render_markdown(body)
   end
 
   def published_at
