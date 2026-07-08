@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class Bookmark < ApplicationModel
+  include Markdownable
+
   attribute :filepath, :string
   attribute :frontmatter, default: -> { {} }
   attribute :body, :string
@@ -47,6 +49,6 @@ class Bookmark < ApplicationModel
   end
 
   def content
-    Kramdown::Document.new(body, input: 'GFM').to_html.html_safe # rubocop:disable Rails/OutputSafety
+    render_markdown(body)
   end
 end
