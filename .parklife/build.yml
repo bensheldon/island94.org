@@ -16,13 +16,13 @@ paths:
     etag: W/"be840a980665578f7882cf64595f09e2"
   "/search.json":
     build_path: search.json
-    etag: W/"a40d5357ec9ae50ee8328d0b021b36b3"
+    etag: W/"df2b82f91baca1076b16cb644dd50a56"
   "/feed.xml":
     build_path: feed.xml
     etag: W/"3bd184fca2182a99eb34ebe51cc40904"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"c5a409953a8c17456200f3969e0bd1b5"
+    etag: W/"01a8b1f399e33128f6f88a97a961c3fe"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -33,10 +33,10 @@ paths:
     etag: W/"dcbbcb40614f535b8c2b7a7a170461d9"
   "/archives":
     build_path: archives.html
-    etag: W/"360e1eeebdb24e22a28201def1fc9411"
+    etag: W/"7be6ff67bf19c77b93c1b6f0428f4b1f"
   "/tags":
     build_path: tags.html
-    etag: W/"e7686a70cfe9b6ae7df3ffa267074ea7"
+    etag: W/"a68b0b113b600bb99bbc6f3f25a66331"
   "/2012/04/a-commonplace-book":
     build_path: 2012/04/a-commonplace-book.html
     etag: W/"270e1599ddeea414e1a99cc16794056e"
@@ -18641,9 +18641,6 @@ paths:
   "/2019/10/trust-and-safety":
     build_path: 2019/10/trust-and-safety.html
     etag: W/"5ff22ff791c1d78cf2578ac00f4f15be"
-  "/2019/10/adults-in-the-room":
-    build_path: 2019/10/adults-in-the-room.html
-    etag: W/"f2df72401992e28bd0d6d9624cd1369e"
   "/2019/09/attention":
     build_path: 2019/09/attention.html
     etag: W/"b6ac712899b9191f9272e3820795bb85"
@@ -18782,24 +18779,12 @@ paths:
   "/2014/02/rigorous-complaint":
     build_path: 2014/02/rigorous-complaint.html
     etag: W/"de24a80a301bb82e9d4f3f17e7c67184"
-  "/2013/09/testing":
-    build_path: 2013/09/testing.html
-    etag: W/"7f78551ee1f693d2948a70475bdf8069"
-  "/2013/05/selling":
-    build_path: 2013/05/selling.html
-    etag: W/"5d72bd25e32e19545620e52dd1188c25"
   "/2012/12/a-gentle-conceptual-introduction-to-nodejs":
     build_path: 2012/12/a-gentle-conceptual-introduction-to-nodejs.html
     etag: W/"ea82c9be8cc0514d5fcd6c979b79d53c"
-  "/2011/11/nonprofit-naming":
-    build_path: 2011/11/nonprofit-naming.html
-    etag: W/"445c4e0cf5794fe6fb664a4c8945321b"
   "/2011/10/the-work-itself-isnt-inhumane":
     build_path: 2011/10/the-work-itself-isnt-inhumane.html
     etag: W/"dd29b0a152d362aea00b1827c86628df"
-  "/2011/06/data-leadership":
-    build_path: 2011/06/data-leadership.html
-    etag: W/"d2a9447ea30d95bf47e850fdb72cd441"
   "/2011/03/advocacy-in-print---survival-news-for-2011":
     build_path: 2011/03/advocacy-in-print---survival-news-for-2011.html
     etag: W/"d225acf46adf9a028302086cec02c85c"
@@ -18815,15 +18800,9 @@ paths:
   "/2010/10/fairly-fool-proof-whole-wheat-popovers":
     build_path: 2010/10/fairly-fool-proof-whole-wheat-popovers.html
     etag: W/"7879fe312df76d185f3583b0e530a1b6"
-  "/2010/10/digital-literacy-dichotomies":
-    build_path: 2010/10/digital-literacy-dichotomies.html
-    etag: W/"2d308e44853af84dbec3590c3080c658"
   "/2010/09/find-fresh-perspectives-at-nonprofitmillennialsorg":
     build_path: 2010/09/find-fresh-perspectives-at-nonprofitmillennialsorg.html
     etag: W/"0dafc02a0447784b7d86706af43787d5"
-  "/2010/07/colin-rhinesmith":
-    build_path: 2010/07/colin-rhinesmith.html
-    etag: W/"a4750906b8df2d6828f735d3535dfd17"
   "/2010/06/zen-and-postmodern-art":
     build_path: 2010/06/zen-and-postmodern-art.html
     etag: W/"b746131f7e6b9019d0710eb15091abaf"
@@ -18833,51 +18812,24 @@ paths:
   "/2010/04/i-am-now-a-technology-of-participation-facilitator-":
     build_path: 2010/04/i-am-now-a-technology-of-participation-facilitator-.html
     etag: W/"629d6d020572d555b47a923b6a233997"
-  "/2010/03/email-moderation-rules":
-    build_path: 2010/03/email-moderation-rules.html
-    etag: W/"2f1e94de7f9654280658b231098cdcee"
   "/2010/01/criticism-of-actor-network-theory":
     build_path: 2010/01/criticism-of-actor-network-theory.html
     etag: W/"d45d7dfbedba8ff88db6b6286d812b07"
   "/2009/09/technology-20-mapping-presentation":
     build_path: 2009/09/technology-20-mapping-presentation.html
     etag: W/"400c221d8c598b477526c87b7b358006"
-  "/2009/09/technology-20-mapping":
-    build_path: 2009/09/technology-20-mapping.html
-    etag: W/"555593548fb97ede134e58f1f54f4523"
   "/2009/09/removed-boston-subway-in-vector-format-svg":
     build_path: 2009/09/removed-boston-subway-in-vector-format-svg.html
     etag: W/"69408ce5061695d02999c1f68fbf2e8c"
-  "/2009/08/adding-html-to-your-":
-    build_path: 2009/08/adding-html-to-your-.html
-    etag: W/"ec9104409cdd387e73581ca8e74ee4d3"
   "/2009/08/drupal-adding-a-geocoding-failure-message-to-location-module":
     build_path: 2009/08/drupal-adding-a-geocoding-failure-message-to-location-module.html
     etag: W/"1ed74396cf2a14500234bab4cc770270"
   "/2009/07/three-americas":
     build_path: 2009/07/three-americas.html
     etag: W/"a7da0152f01d1ebd4fd8ec120e79f068"
-  "/2009/07/nonprofit-discretionary-tests":
-    build_path: 2009/07/nonprofit-discretionary-tests.html
-    etag: W/"18c5a0ea599c7de7e3b73cd20d335c84"
   "/2009/03/excerpt-sectors-of-the-us-right---active-in-the-year-2001":
     build_path: 2009/03/excerpt-sectors-of-the-us-right---active-in-the-year-2001.html
     etag: W/"765da54d8e96cb01e9d807eb626fd3ea"
-  "/2009/03/biscuit-recipe":
-    build_path: 2009/03/biscuit-recipe.html
-    etag: W/"18d49d14056de7fd7607c3396a78c7f7"
-  "/2009/02/guest-post-understanding-and-negotiating-your-non-profit-salary":
-    build_path: 2009/02/guest-post-understanding-and-negotiating-your-non-profit-salary.html
-    etag: W/"965c0c5e766c5aa53d8191dea7a68e09"
-  "/2009/01/obama-painting":
-    build_path: 2009/01/obama-painting.html
-    etag: W/"65e153b76a3fdb524de1c456c84ce3a9"
-  "/2009/01/archetypes-of-history":
-    build_path: 2009/01/archetypes-of-history.html
-    etag: W/"d471e61cb98be6c4599f0160a3ca64e0"
-  "/2009/01/patterns-of-meaning":
-    build_path: 2009/01/patterns-of-meaning.html
-    etag: W/"b8ece9bfe8e3746a807b854d3531780e"
   "/2008/12/from-web-20-to-produsage":
     build_path: 2008/12/from-web-20-to-produsage.html
     etag: W/"62bbcb0f0ff43000cd267454a29247bc"
@@ -20653,7 +20605,7 @@ paths:
     etag: W/"69643cab666d2784bddac852a908bd14"
   "/posts/tags/nonprofits":
     build_path: posts/tags/nonprofits.html
-    etag: W/"f1e4bbb5a5ec53a50bcc0f9125f69897"
+    etag: W/"07c8e88d081b0675726639fcaffd249a"
   "/posts/tags/nostalgia":
     build_path: posts/tags/nostalgia.html
     etag: W/"5532769d6170326f568d1522bb34bd77"
@@ -20696,9 +20648,6 @@ paths:
   "/posts/tags/online":
     build_path: posts/tags/online.html
     etag: W/"686027fdb6b017e47bb43a567c61fc0b"
-  "/posts/tags/online-marketing":
-    build_path: posts/tags/online-marketing.html
-    etag: W/"1abcb4b5fe6a353e8dd2da4891c2d1f0"
   "/posts/tags/open-source":
     build_path: posts/tags/open-source.html
     etag: W/"5d7bc60976d70439a654b6c534a8369d"
@@ -21701,9 +21650,6 @@ paths:
   "/posts/tags/whatever":
     build_path: posts/tags/whatever.html
     etag: W/"a246f38ff2ecf89d69f8551d1e3a9a3b"
-  "/posts/tags/whine":
-    build_path: posts/tags/whine.html
-    etag: W/"33933407dc9f09d7bf006c8d36714789"
   "/posts/tags/wiki":
     build_path: posts/tags/wiki.html
     etag: W/"b36a00774d756214a3badb4d9795e1a0"
@@ -21782,7 +21728,7 @@ paths:
     build_path: uploads/2006-03/digitalbicycle-guy.jpg
   "/tags/":
     build_path: tags.html
-    etag: W/"e7686a70cfe9b6ae7df3ffa267074ea7"
+    etag: W/"a68b0b113b600bb99bbc6f3f25a66331"
   "/uploads/2006-10/Typology_of_Nonprofit_Competition-concept_map.pdf":
     build_path: uploads/2006-10/Typology_of_Nonprofit_Competition-concept_map.pdf
   "/uploads/2006-11/nonprofit-tech-sandwich.pdf":
@@ -22063,178 +22009,172 @@ paths:
     etag: W/"521ac12896e4b81316b6f1b9f4db0a61"
   "/posts/16":
     build_path: posts/16.html
-    etag: W/"038fb8c892db3c297a854fe3a3c950f8"
+    etag: W/"1de1f092d39568376605929ece4d617a"
   "/posts/17":
     build_path: posts/17.html
-    etag: W/"21ef911e24d3263a00041eca03cd11c1"
+    etag: W/"936c39110631cb653ba444d17084ee51"
   "/posts/18":
     build_path: posts/18.html
-    etag: W/"602d9efbea20c842108514e3a0a7de88"
+    etag: W/"08ca2814faa7a65802442b2f8d9ff1ac"
   "/posts/19":
     build_path: posts/19.html
-    etag: W/"14ab838bd1e02eefdd94c8179cbaaad1"
+    etag: W/"0a3abd3cbd331ce746395f775e5ed69e"
   "/posts/20":
     build_path: posts/20.html
-    etag: W/"86151e72c2af029e28383e02a3b61249"
+    etag: W/"1789ece3fb5f79e1ea146982b9b73605"
   "/posts/21":
     build_path: posts/21.html
-    etag: W/"77b5caf203793501250428c868657926"
+    etag: W/"1af84ff719d3f7854920586d8ff98544"
   "/posts/22":
     build_path: posts/22.html
-    etag: W/"47faabcbc03cbc90fdc5e19d9312009d"
+    etag: W/"b07aa090e8898b5581d8c63732b22f3f"
   "/posts/23":
     build_path: posts/23.html
-    etag: W/"37acaf3795f2f5aa1ec1445f2c56efab"
+    etag: W/"a1d9d7d772c0ec166a323b87bb2f9d67"
   "/posts/24":
     build_path: posts/24.html
-    etag: W/"773ac33cc343b7fd4798a1e8045dfe34"
+    etag: W/"ab64d0f6c1c8510f64bd859017d1b7b8"
   "/posts/25":
     build_path: posts/25.html
-    etag: W/"3decd65256edbce578d60eea912b3f22"
+    etag: W/"3f872064b8c8fb2056c6df2b13b25f35"
   "/posts/26":
     build_path: posts/26.html
-    etag: W/"c31888e58a026e64ead62f8c7cf65847"
+    etag: W/"630294572129be2e1ea287ae23bcee8d"
   "/posts/27":
     build_path: posts/27.html
-    etag: W/"f46285a4ced607780dd9168006d7653b"
+    etag: W/"721341a4cf3a74a87ed992a9c34a422c"
   "/posts/28":
     build_path: posts/28.html
-    etag: W/"52604140fb0a8aaab6d878e2379f3b7e"
+    etag: W/"98375cdcecff44b8d52f1c86de80b89e"
   "/posts/29":
     build_path: posts/29.html
-    etag: W/"0f2be4af9c406aa97c055e789f50818a"
+    etag: W/"99daf508aa3fc6894f23db50d410de7f"
   "/posts/30":
     build_path: posts/30.html
-    etag: W/"47b0a2edd1350f7d4c4721a2a946dd1d"
+    etag: W/"9c97cd2424333c243c9e5f015f01c077"
   "/posts/31":
     build_path: posts/31.html
-    etag: W/"832f4b7a75aaf0411be6015da747a1da"
+    etag: W/"b4ea616a1c3b168055321957750c1c64"
   "/posts/32":
     build_path: posts/32.html
-    etag: W/"202df0c1092e52ce6b19a57fde9e9d9d"
+    etag: W/"ead733f4abef1f0e645d222be13bcf58"
   "/posts/33":
     build_path: posts/33.html
-    etag: W/"b319afe365564e0d043e5b336ee38b24"
+    etag: W/"c969dc6b9a1292eab23d1d90e1d422c1"
   "/posts/34":
     build_path: posts/34.html
-    etag: W/"01740885a3ed7330d5c05b594e5b1ba8"
+    etag: W/"03efe58c3f3a1cd8363abed72cc649d0"
   "/posts/35":
     build_path: posts/35.html
-    etag: W/"1304fd88eedbabb30e6f3e72f5900d3a"
+    etag: W/"52b84f8e291b773ed92fbe9b2a4a25a8"
   "/posts/36":
     build_path: posts/36.html
-    etag: W/"e99908b045b226461ace394623b186b0"
+    etag: W/"2208a9493ea487ca314bbc27a57b9ee8"
   "/posts/37":
     build_path: posts/37.html
-    etag: W/"5b02528cb2f35cb444deab91de5899e2"
+    etag: W/"608d2c25d90e9426b0b1bdc5084c5d0f"
   "/posts/38":
     build_path: posts/38.html
-    etag: W/"b19f95d020a56cd506880e5004f66704"
+    etag: W/"6d904025553c52fe2571c779e349b710"
   "/posts/39":
     build_path: posts/39.html
-    etag: W/"d3ca41a5543065ea8cc5e627522bf290"
+    etag: W/"f4214078932c266796b44d26a8fae4a0"
   "/posts/40":
     build_path: posts/40.html
-    etag: W/"7f78eb406b8f7ff881817dae32d2d1e8"
+    etag: W/"56e518ccb019cc7cc265fa6aefa742f5"
   "/posts/41":
     build_path: posts/41.html
-    etag: W/"7738981c2f14b802e80efa97d211c1ec"
+    etag: W/"aff799178d418bffe4388b0cecbc0bd5"
   "/posts/42":
     build_path: posts/42.html
-    etag: W/"9216bfd720eaa15a2584f7caa2eff810"
+    etag: W/"e3da6c392772fc046a56b3132121c6d3"
   "/posts/43":
     build_path: posts/43.html
-    etag: W/"8021534e2ebaca238e80a74d8f720a83"
+    etag: W/"92c79d4b2582e6e829821061d4ad8e6e"
   "/posts/44":
     build_path: posts/44.html
-    etag: W/"9efee36fa495a3b797c3c165c5021ce6"
+    etag: W/"5028f3683121db333a5a709fc410b872"
   "/posts/45":
     build_path: posts/45.html
-    etag: W/"b8fdef0a25967bc6185d471651e56504"
+    etag: W/"ea400ae5845b07394b3392b31b68960c"
   "/posts/46":
     build_path: posts/46.html
-    etag: W/"92aa1b42cfac086da0ff30567436511f"
+    etag: W/"d7ef277fc53104f4b0128788109cfb1d"
   "/posts/47":
     build_path: posts/47.html
-    etag: W/"ab165d550a7abacfc168f9b24c6c4080"
+    etag: W/"5927c4ac53358e0388b04ca918360952"
   "/posts/48":
     build_path: posts/48.html
-    etag: W/"a00d8b2f0c111f76d661d17d5e812a42"
+    etag: W/"487699297fad6b7cda84406d9ab0aa0c"
   "/posts/49":
     build_path: posts/49.html
-    etag: W/"d924c96dc79d2821a69b5c0457a2b65c"
+    etag: W/"fa023d75f409e41600b429d0ed4b9877"
   "/posts/50":
     build_path: posts/50.html
-    etag: W/"2008db27042bf74456e8773d71a37b24"
+    etag: W/"2c004a57b879dcd48c81234694a43b72"
   "/posts/51":
     build_path: posts/51.html
-    etag: W/"ac12ab0191324a5c848d4eed8663db90"
+    etag: W/"2548b85baa0d2975de34e4b3a85f6c07"
   "/posts/52":
     build_path: posts/52.html
-    etag: W/"f5eca9a3f668dd8ddaad1825c879501d"
+    etag: W/"db29e442fb5037e90f87827c8ffd58ea"
   "/posts/53":
     build_path: posts/53.html
-    etag: W/"82a045e0f9c122784dbcebf8a0818c9a"
+    etag: W/"e6168027b7405afdac4b0b6d7b8d0d5a"
   "/posts/54":
     build_path: posts/54.html
-    etag: W/"d2496ee90bc6ca6cc767f8650a7c15d0"
+    etag: W/"f97f15c3a49b9aed30e40af7f5958e3e"
   "/posts/55":
     build_path: posts/55.html
-    etag: W/"94c8d7d67cc393738e716c9b5a0508e9"
+    etag: W/"53b83801013e063866dc8c46db9b1c42"
   "/posts/56":
     build_path: posts/56.html
-    etag: W/"4fa13de55833029f2bc33292599ff4a9"
+    etag: W/"8c19ddbf706c6ea02413c7070f24b046"
   "/posts/57":
     build_path: posts/57.html
-    etag: W/"7733e46630f0491a7890c8e20cc64138"
+    etag: W/"1886abe097e3455ceb69f958e3a596da"
   "/posts/58":
     build_path: posts/58.html
-    etag: W/"4f2e3e27841079d0d54e878389a6f534"
+    etag: W/"ece4e53f40d74a16281ad6b84a4cf345"
   "/posts/59":
     build_path: posts/59.html
-    etag: W/"069cef735e5b3ec0aeb78bbc0a29e0a7"
+    etag: W/"c04fbbbce2d3bd9677fa29da3889e3c3"
   "/posts/60":
     build_path: posts/60.html
-    etag: W/"4c372351f30e7601d1ee4ca367f626e8"
+    etag: W/"58adfb1eaa9002852a8b8950c58c01b1"
   "/posts/61":
     build_path: posts/61.html
-    etag: W/"7d5621284812e6ca2feb5afdf3ea45c9"
+    etag: W/"3b1d5a8ab36412a38b163bdfe863c205"
   "/posts/62":
     build_path: posts/62.html
-    etag: W/"684d21bc22ac72a29cb7c60db5627bcd"
+    etag: W/"9bef1cfa65e8a672d63fa9d677b7dd6a"
   "/posts/63":
     build_path: posts/63.html
-    etag: W/"ea6e0cf44010bc0335c1ff2252fb8b6a"
+    etag: W/"79e5aa97cca44274f5d265075a97885b"
   "/posts/64":
     build_path: posts/64.html
-    etag: W/"098f4976d7fab5f024ec23636b0f01a6"
+    etag: W/"e80edd837720db2d308aac8f593354c5"
   "/posts/65":
     build_path: posts/65.html
-    etag: W/"8f1c1841769eb64eeabf833f3fd37c29"
+    etag: W/"47a214693f6d1876cf43f4080d26b238"
   "/posts/66":
     build_path: posts/66.html
-    etag: W/"ab02e8bd44c176958021ad47c4f2a31a"
+    etag: W/"b6147870490b4c50205f018dfb0818ba"
   "/posts/67":
     build_path: posts/67.html
-    etag: W/"6b4196907a1c0514a498fed7bc32cd73"
+    etag: W/"4d76b572c15a597434fc343a74964238"
   "/posts/68":
     build_path: posts/68.html
-    etag: W/"bd1d281bc495ab89efcb087e111bb5ec"
+    etag: W/"43275e61ba463655542d4e4d0d863cc7"
   "/posts/69":
     build_path: posts/69.html
-    etag: W/"0167fd948d04c8fcff52c657046bc50d"
+    etag: W/"0f24644fd6d2375510b278ce736e3f09"
   "/posts/70":
     build_path: posts/70.html
-    etag: W/"62b9099aba1cd967419e88da267de93f"
+    etag: W/"5c302fd021a51a8035d4ff80429e0055"
   "/posts/71":
     build_path: posts/71.html
-    etag: W/"895c052497bc029d9b4eea15db545d3f"
+    etag: W/"8ce84df318874b4183ef50df6fad1ad4"
   "/posts/72":
     build_path: posts/72.html
-    etag: W/"90fafa160fe9c20efae7191305f92795"
-  "/posts/73":
-    build_path: posts/73.html
-    etag: W/"09d4b9f09e4b0ca2752241419262f261"
-  "/posts/74":
-    build_path: posts/74.html
-    etag: W/"4af1222d78dc72f9130f06e7cad8da09"
+    etag: W/"e6e79de5302804cd08e4777de6368ac9"

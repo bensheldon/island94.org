@@ -118,44 +118,132 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/11/creating-models"><p>Creating Models</p>
+      <a class="post-link" href="/2007/09/drupal-wysiwyg-editors"><p>Drupal WYSIWYG Editors</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2007-11-10T00:00:00Z" itemprop="datePublished">November 10, 2007</time>
+        <time datetime="2007-09-08T00:00:00Z" itemprop="datePublished">September 8, 2007</time>
 
-        • Tagged <a href="/posts/tags/biology">biology</a>, <a href="/posts/tags/education">education</a>, <a href="/posts/tags/math">math</a>, <a href="/posts/tags/modeling">modeling</a>, and <a href="/posts/tags/philosophy">philosophy</a>
+        • Tagged <a href="/posts/tags/drupal">Drupal</a>, <a href="/posts/tags/geeking">geeking</a>, and <a href="/posts/tags/modules">modules</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>I’m taking Mathematical Models in Biology and we had an interesting problem in our last class. We were broken up into groups and asked to create a model around malaria infection. We received some information on mosquito behavior and lifecycles, infection rates and patterns, and effects. That was it.</p>
+    <p>I’m partial to the following WYSIWYG editors for Drupal:</p>
 
-<p>The primary tenet of mathematical modeling is simplification. We quickly realized that when trying to simplify the process, we needed to know what information we wanted to gain from the model. The standard (and incredibly simple) SIR model, for example, answers the question “how many people will be infected at any one time?”, not necessarily, “how many will recover or die?”.</p>
+<ul>
+  <li><a href="http://drupal.org/project/widgeditor">WidgEditor</a> - stupid simple</li>
+  <li><a href="http://drupal.org/project/tinymce">TinyMCE</a> - way complicated powerful</li>
+</ul>
 
-<p>To put it into mathematical terms, if we’re going to reduce the number of dimensions (by simplifying), we want to make sure that the information we’re left with has useful meaning <em>for the situation</em>.</p>
+<p><em>But</em> neither of them work well enough for me to want to use them. The trade-off for using these is that it’s easy to make pretty text, but if you ever need to manually edit, it’s incredibly painful. The biggest problem is that they don’t make new lines for paragraph breaks, smashing everything together into one huge, ugly block. And since Drupal has a nice, built-in filter for creating paragraph elements, it’s redundant (and infuriating).</p>
 
-<p>Which also leads me to thinking about reductionism and holism.</p>
+<p>The only markup you need is bold, emphasis, links, pictures and a way to turn it off. Wordpress seems to get it.</p>
 
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/11/nightmares"><p>Nightmares</p>
+      <a class="post-link" href="/2007/09/setting-up-octave-and-gnuplot-on-apple-mac-osx"><p>Setting up Octave and Gnuplot on Apple Mac OSX</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2007-11-09T00:00:00Z" itemprop="datePublished">November 9, 2007</time>
+        <time datetime="2007-09-07T00:00:00Z" itemprop="datePublished">September 7, 2007</time>
 
-        • Tagged <a href="/posts/tags/fear">fear</a>, <a href="/posts/tags/nightmares">nightmares</a>, and <a href="/posts/tags/psychology">psychology</a>
+        • Tagged <a href="/posts/tags/computations">computations</a>, <a href="/posts/tags/geeking">geeking</a>, and <a href="/posts/tags/osx">osx</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I just started auditing a Mathematical Models in Biology class and Matlab is one of the requirements. I had relatively good experience with the free, open source alternative, <a href="http://www.gnu.org/software/octave/">Octave</a> back in college, but then I was running Linux, not OSX. It took me about an hour to figure out how to set it up (I was a little worried for a bit).</p>
+
+<ol>
+  <li>
+    <p>Download the Octave binary for OSX from <a href="http://sourceforge.net/projects/octave/files/Octave%20MacOSX%20Binary/2009-10-03%20binary%20of%20Octave%203.2.3/">Octaveforge</a>.</p>
+  </li>
+  <li>
+    <p>Install Octave and Gnuplot (in the extras folder). I just dragged them to /Applications (X11 is required for Gnuplot—should be found on OSX install disk)</p>
+  </li>
+  <li>
+    <p>If you are using OSX 10.6 (Snow Leopard) or 10.5.8+ you may need to perform some additional steps <a href="http://sourceforge.net/projects/octave/files//Octave%20MacOSX%20Binary/2009-10-03%20binary%20of%20Octave%203.2.3/README_OSX1065.txt/view">outlined here</a></p>
+  </li>
+  <li>
+    <p>Set the environment variable for gnuplot (Octave is supposed to do this automatically, but it didn’t for me): `</p>
+  </li>
+</ol>
+
+<p>sudo ln -s /Applications/GnuPlot.app/Contents/Resources/bin/gnuplot /usr/bin/gnuplot</p>
+
+<p>`</p>
+
+<p>(thanks for the help, <a href="http://island94.org/setting-octave-and-gnuplot-osx#comment-3654">Toby</a>)</p>
+
+<ol>
+  <li>
+    <p>Download and install (again in /Applications) <a href="http://sourceforge.net/projects/aquaterm/">Aquaterm</a> which will actually render the gnuplot graphs.</p>
+  </li>
+  <li>
+    <p>Within Gnuplot, set the renderer: “terminal aqua”</p>
+  </li>
+  <li>
+    <p>Try it out in Octave (I had to restart Octave and Gnuplot to get it all to work): `</p>
+  </li>
+</ol>
+
+<p>x = linspace(-pi, pi, 100);</p>
+
+<p>y = sin(x);</p>
+
+<p>plot(x, y);</p>
+
+<p>`</p>
+
+<p>Thank you: <a href="http://hpc.sourceforge.net/">High Performance Computing for Mac OS X</a>, <a href="http://wiki.octave.org/wiki.pl?MacOSXIntegration">the Octave Wiki</a> and Google for helping me find what I needed.</p>
+
+<p><em><strong>Update (January 24, 2010):</strong> updated the link in step #1 to the latest version of Octave. Added an additional step described by <a href="http://www.island94.org/2007/09/setting-up-octave-and-gnuplot-on-osx/#comment-80303">Zack in the comment</a>s (thanks!)</em></p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/plagiarism"><p>Plagiarism</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-07T00:00:00Z" itemprop="datePublished">September 7, 2007</time>
+
+        • Tagged <a href="/posts/tags/ethics">ethics</a>, <a href="/posts/tags/honesty">honesty</a>, <a href="/posts/tags/musings">musings</a>, and <a href="/posts/tags/plagiarism">plagiarism</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I could care less about the politics, but it’s interesting to see that a congresswoman was <a href="http://www.dccc.org/stakeholder/archives/005317.html">caught</a>“plagiarizing” (“borrowing” or “incorporating” if you want to play the pronoun game) in a newspaper column via “a program that monitors high school and college student papers for acts of copying and forgery”. (via <a href="http://thinkprogress.org/2007/09/07/schmidt-caught-plagiarizing-in-newspaper-column/">ThinkProgress.org</a>)</p>
+
+<p>I didn’t realize that people were using things like <a href="http://turnitin.com/">Turn It In</a> for non-schoolwork.</p>
+
+<p>Not that I’d want to cite Johnny 10th Grader, but I wonder if their algorithm/database would work for looking for references (which then you could *properly* cite).</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/toe-straighteners"><p>Toe straighteners</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-06T00:00:00Z" itemprop="datePublished">September 6, 2007</time>
+
+        • Tagged <a href="/posts/tags/advertisement">advertisement</a> and <a href="/posts/tags/weird">weird</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <blockquote>
-  <p>While it is undeniable that people who watch lots of vampire movies have nightmares with vampires, it is also true that people who work at UPS have nightmares about boxes (according to a former anthro teacher of mine who also once worked at UPS).<br />
-From Wired’s <a href="http://blog.wired.com/geekdad/2007/11/you-let-our-c-1.html">Geekdad Blog</a></p>
+  <p>With our single, double or triple Toe Straighteners, you can align overlapping, crooked or hammertoes with gentle, constant pressure.<br />
+From <a href="http://www.colonialmedical.com/product.php?productid=18752">Colonial Medical</a> (via a gmail contextual ad for probably “step on any toes” in an email)</p>
 </blockquote>
 
   </div>
@@ -163,414 +251,142 @@ From Wired’s <a href="http://blog.wired.com/geekdad/2007/11/you-let-our-c-1.ht
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/11/chill-units"><p>Chill Units</p>
+      <a class="post-link" href="/2007/09/thesuarus-computations"><p>Thesuarus computations</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2007-11-09T00:00:00Z" itemprop="datePublished">November 9, 2007</time>
+        <time datetime="2007-09-03T00:00:00Z" itemprop="datePublished">September 3, 2007</time>
 
-        • Tagged <a href="/posts/tags/agriculture">agriculture</a>, <a href="/posts/tags/jargon">jargon</a>, and <a href="/posts/tags/plants">plants</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Thoughts.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/thesaurus-computations"><p>Thesaurus computations</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-03T00:00:00Z" itemprop="datePublished">September 3, 2007</time>
+
+        • Tagged <a href="/posts/tags/thesaurus">thesaurus</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Today I just started computing the relations between groups. It’s been chugging along on my local machine for about 8 hours now, I’m 1% complete and have a table with 5 million entries (at 210mb).</p>
+
+<p>If a word is shared between two groups, it forms an edge between those two groups. I’m storing that edge as the two group ids and the “overlap” value (the number of words shared between those two groups).</p>
+
+<p>My algorithm is iterating through every word, finding the groups that the word is a part of, and creating an edge between them—computing overlap as it goes. I expect the rate to fall off as duplicate edges are thrown out…. but we’ll see.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2007/09/tee"><p>Tee</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2007-09-03T00:00:00Z" itemprop="datePublished">September 3, 2007</time>
+
+        • Tagged <a href="/posts/tags/help">help</a>, <a href="/posts/tags/programming">programming</a>, and <a href="/posts/tags/unix">unix</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <blockquote>
-  <p>If you grow peaches for a living, you know all about chill units. They measure how much cold a plant experiences during a winter. And chill units are essential to a good crop of peaches. When plants go dormant at the end of summer, many of them have to experience a certain amount of time in cold weather before they can grow on schedule in the spring. If a peach tree doesn’t get enough chill units, it can’t respond promptly to the warmth of spring. It is still in a zombie-like dormancy, and it can only rouse itself after the spring gets even warmer.</p>
+  <p>tee is a Unix command that displays the output of a program and copies it into a file.<br />
+  <code>lint program.c | tee program.lint</code></p>
 </blockquote>
-
-<p>From a Wired article on <a href="http://www.wired.com/science/planetearth/news/2007/11/dissectionanddissent_1109">greenups</a> , or when plants begin growing in Spring.</p>
 
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/11/the-john-hancock-building"><p>The John Hancock Building</p>
+      <a class="post-link" href="/2007/09/pasta-dough-recipe"><p>Pasta dough recipe</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2007-11-07T00:00:00Z" itemprop="datePublished">November 7, 2007</time>
+        <time datetime="2007-09-03T00:00:00Z" itemprop="datePublished">September 3, 2007</time>
 
-        • Tagged <a href="/posts/tags/architecture">architecture</a>, <a href="/posts/tags/boston">Boston</a>, and <a href="/posts/tags/history">history</a>
+        • Tagged <a href="/posts/tags/cooking">cooking</a>, <a href="/posts/tags/flour">flour</a>, and <a href="/posts/tags/recipe">recipe</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>The JHB was known as the “Plywood Skyscraper” after having faulty glass windows that would pop out during it’s construction in the 1970s.</p>
+    <p>1 cup flour (I’ve been using white whole wheat)</p>
 
-<blockquote>
-  <p>Police were left closing off surrounding streets whenever winds reached 45 mph</p>
-</blockquote>
+<p>1 egg</p>
 
-<p>Also interesting description of two 300-ton weights that sit on the 58th floor to damp swaying motions.</p>
-
-<p>via <a href="http://en.wikipedia.org/wiki/John_Hancock_Tower">wikipedia</a>. Researched due to an article today about MIT <a href="http://www.boston.com/news/education/higher/articles/2007/11/06/mit_sues_gehry_citing_leaks_in_300m_complex/">suing Frank Gehry</a> over the Stata Center.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/11/understanding-academia-and-legitimacy-exchange"><p>Understanding Academia and Legitimacy Exchange</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2007-11-06T00:00:00Z" itemprop="datePublished">November 6, 2007</time>
-
-        • Tagged <a href="/posts/tags/academia">academia</a>, <a href="/posts/tags/cybernetics">cybernetics</a>, and <a href="/posts/tags/legitimacy-exchange">legitimacy exchange</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>According to Fred Turner in <a href="http://books.google.com/books?id=2SNFpgX_WigC&amp;pg=PA25&amp;lpg=PA25&amp;dq=%22legitimacy+exchange%22&amp;source=web&amp;ots=tqu371QGrs&amp;sig=yz1OyR3sa61eMBohnjh9RlqR68g">From Counterculture to Cyberculture</a> <strong>legitimacy exchange</strong> is…</p>
-
-<blockquote>
-  <p>…a term that refers to the process by which experts in one area draw on the authority of experts in another area to justify their activities.</p>
-</blockquote>
-
-<p>and it follows interestingly with</p>
-
-<blockquote>
-  <p>As Bowker explains, “An isolated scientific worker making an outlandish claim could gain rhetorical legitimacy by pointing to support from another field–which in turn referenced the first worker’s field to support its claim. The language of cybernetics provided a site where this exchange could occur.”</p>
-</blockquote>
-
-<p>The other term I took from the book is “network forum” in which individuals from different fields can meet and exchange legitimacy. Turner’s book gives the Whole Earth Catalog as a print example.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/10/alternatives-to-a-nonprofit-job"><p>Alternatives to a Nonprofit Job</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2007-10-23T00:00:00Z" itemprop="datePublished">October 23, 2007</time>
-
-        • Tagged <a href="/posts/tags/advice">advice</a>, <a href="/posts/tags/career">career</a>, <a href="/posts/tags/civic-literacy">civic literacy</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, and <a href="/posts/tags/strategy">strategy</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I was really happy with the feedback I received from my last article”Should I get a nonprofit job?” The responses I got, some of which you can read in the comments, helped me focus the message I was trying to convey:</p>
-
-<p><em><strong>A nonprofit job is not the only way to make a living and make a difference in the world.</strong></em></p>
-
-<p>In the comments, I think I hit upon the real issue, which is the lack of <em><strong>Civic Literacy</strong></em> I see among people in my age/social group. I don’t mean “young people are lazy/apathetic/ungrateful/whatever”, but that we don’t know how to effectively participate and initiate change in our communities and society—for no lack of interest. We’re having to make things up as we go along, which as I think my parent’s generation would agree, didn’t work out quite the way they thought it would.</p>
-
-<p>So below are three suggestions I have for the intelligent, well-educated (or seeking to be), self-motivated and upwardly mobile individual who can be an ally of the nonprofit sector, but not necessarily employed by it.</p>
+<p>~2tbps cool water</p>
 
 <ol>
-  <li><strong>Serve on the Board</strong></li>
+  <li>
+    <p>Mix flour and egg, adding water until flour is just moistened and sticks together</p>
+  </li>
+  <li>
+    <p>Let rest for 5 minutes</p>
+  </li>
+  <li>
+    <p>Knead the dough for 2 minutes. Or you can do it for 10 minutes; more kneading means better developed gluten and a “smoother” noodle.</p>
+  </li>
+  <li>
+    <p>Let rest 10 minutes</p>
+  </li>
+  <li>
+    <p>Roll out or whatever</p>
+  </li>
 </ol>
 
-<p>Executive Boards are the driving force behind nonprofit organizations. Boards set broad goals and provide important oversight for the functioning of the organization. Many boards have term-limits for serving, which means they need a constant influx of knowledgeable and engaged individuals. Boards often run by the Three-G’s—Give, Get or Get out—but an <em>active</em> board will provide great opportunities for involvement beyond fundraising.</p>
-
-<ol>
-  <li><strong>Start a Family Foundation</strong></li>
-</ol>
-
-<p>You can turn the typical fundraising experience on it’s head by offering a Request for Proposals, and get a tax write-off as well. Starting a Foundation allows you control social priorities by controlling the purse-strings. Because you’re offering a grant and not an individual gift, you have a better opportunity to target specific programs or objectives with increased accountability and oversight. Did someone say “site visit”?</p>
-
-<ol>
-  <li><strong>Write your Public Representative</strong></li>
-</ol>
-
-<p>There was <a href="http://en.wikipedia.org/wiki/Four_Freedoms">once a time in America</a> when people believed it was the federal government’s responsibility to offer many of the services that the nonprofit sector now provides. Regardless of your political-philosophical position, the government still provides massive amounts of funding to social causes. Contact your local, state or national representative and request support for your particular cause. You might not be able to target a particular organization for earmarks, but a rising tide raises all the boats.</p>
-
+<p>(adapted from a <a href="http://www.cooks.com/rec/view/0,1735,153178-227206,00.html">cooks.com recipe</a></p>
 
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/10/san-diego-is-burning"><p>San Diego is Burning</p>
+      <a class="post-link" href="/2007/09/hemp-milk"><p>Hemp milk</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2007-10-22T00:00:00Z" itemprop="datePublished">October 22, 2007</time>
+        <time datetime="2007-09-03T00:00:00Z" itemprop="datePublished">September 3, 2007</time>
 
+        • Tagged <a href="/posts/tags/alternative">alternative</a>, <a href="/posts/tags/food">food</a>, <a href="/posts/tags/milk">milk</a>, and <a href="/posts/tags/vegetarian">vegetarian</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>I got an email from my mom this morning that the wildfires in Southern California county were strongly encroaching on my hometown of Poway and the surrounding communities. A couple of my friends started an email list and we’ve been sending around information about what’s happening.</p>
+    <p>Info on <a href="http://www.post-gazette.com/pg/07123/782900-34.stm">Hemp Milk</a>.</p>
 
-<p>My heart goes out to everyone that’s lost something or is worried they may. I hear that both Tabitha’s and Liz’s dad’s, school bus driver and reserve sheriff, respectively, are helping to evacuate people and I’m grateful to them.</p>
-
-<p>For news I’ve been following the local Public Radio Station KPBS which is doing an <a href="http://kpbs.digitaria.com/">awesome job of keeping up with news and updates.</a></p>
-
-<p><a href="http://cbs8.com">Partial list of burned houses</a> (thanks Corinne!)</p>
-
-<p><a href="http://www.nbcsandiego.com">Pictures and info</a> (thanks Tabitha!)</p>
-
-<p><a href="http://media.signonsandiego.com/fires/">Another map</a> (thanks Nicole!)</p>
-
-<p>(all times are Pacific)</p>
-
-<p><strong>8:30am</strong> - Tabitha reported that Rancho Bernardo and Espola Road in Poway have been evacuated. They’re taking people to the community center off of Poway Rd, and they evacuated West View HS as another safe haven.</p>
-
-<p><strong>9:30am</strong> - Corinne thinks her families home in Lake Hodges has been lost and Liz reports that someone’s house in the same area has been burned.</p>
-
-<p><strong>10:30am</strong> - Kara’s family in North Poway was evacuated at 5am that morning “Just as he was leaving the power went out and he said he could see flames on one of the ridges in the area (not sure which)”. This was the same time that Corinne says her folks were evacuated too.</p>
-
-<p><strong>10:30pm</strong> - Nicole reports that it “sounds like the Poway Community center is overflowing - my grandpa’s assisted living facility tried to evacuate their senior citizens there, but couldn’t.” On the South-East side of Pomerado mountain nicole says “It’s nothing like four years ago. No dark black clouds. We’re all hoping it will not get worse. No helicopter noise, no fire engine sirens… “</p>
-
-<p>She also includes some pictures:</p>
-
-<p><a href="/uploads/2007-10-22-San-Diego-is-Burning/North.JPG.jpg"><img src="/uploads/2007-10-22-San-Diego-is-Burning/North.JPG.jpg" alt="" /> </a> <a href="http://island94.org/files/island94.org/Twin%20Peaks.JPG.jpg"><img src="http://island94.org/files/island94.org/Twin%20Peaks.JPG.jpg" alt="" /> </a></p>
-
-<p><a href="/uploads/2007-10-22-San-Diego-is-Burning/South.JPG.jpg"><img src="/uploads/2007-10-22-San-Diego-is-Burning/South.JPG.jpg" alt="" /> </a> <a href="/uploads/2007-10-22-San-Diego-is-Burning/TwinEspo.JPG.jpg"><img src="/uploads/2007-10-22-San-Diego-is-Burning/TwinEspo.JPG.jpg" alt="" /> </a></p>
-
-<p><strong>12:00noon</strong> - Nicole says “Oye… I think we are evacuating now. things seem to be getting a bit worse, but then again it’s hard to tell.”</p>
-
-<p><strong>1:00pm</strong> - Nicole again: “the dogs, my mom, and I are camped out at my dad’s work in poway’s industrial park. Saw some flames on the Poway grade as we drove over.North Poway is a bit worry some, but looks like south of Twin Peaks is okay.”</p>
-
-<p><strong>2:00pm</strong> - Tabitha reports that her mom was evacuated an hour ago.</p>
-
-<p><strong>3:00pm</strong> - Liz reports “parts of Bridlewood were on fire so it’s really not looking good for my neck of the woods. I hope Old Coach is better”</p>
-
-<p><strong>4:30pm</strong> - David says that he’s been putting out hot spots all afternoon near his house at the end of Twin Peaks (right beneath the Poway Grade, beneath Tooth Mountain).</p>
-
-<p><strong>5:00pm</strong> - Kara says that her parent’s house is gone (along with some neighbors): “When I talked to my mom, she said: ‘Well, this solves our problem of selling the house! We can build something smaller and better.’”</p>
-
-<p><strong>5:00pm</strong> - Adam reports that his parents are staying in a hotel in National City. He also says the international news leaves something to be desired (he’s in Australia right now): “CNN won’t shut up about Olivia Newton John’s home being evacuated, more or less ignoring the 250,000 evacuees in San Diego.”</p>
-
-<p><strong>6:00pm</strong> - Jason reports that a couple houses along Country Day has burned and is worried about Aaron’s house.</p>
-
-<p><strong>7:00pm</strong> - Mandy says that her parents in Upper Windmill have evacuated to Mira Mesa, but that her dad checked a few hours ago and the house is still accessible.</p>
-
-<p><strong>8:00pm</strong> - Kara sends some pictures she found on <a href="http://signonsandiego.com">signonsandiego.com</a>. “The first one is of the front door (or what was the front door I guess) and the second is from where the office was (you can see the pool….I think the patio furniture is ok! :)”</p>
-
-<p><a href="/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x006_001.jpg"><img src="/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x006_001.jpg" alt="" /> </a> <a href="/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x007_001.jpg"><img src="/uploads/2007-10-22-San-Diego-is-Burning/SL_witchcreekfire278842x007_001.jpg" alt="" /> </a></p>
+<p>I just bought some of this (Manitoba Harvest brand, the chocolate kind) at Whole Foods. It’s not soy milk, but I’m not sure if it’s any better. I kind’ve got a bit of a choke in the back of my throat on the first sip, though after that it was pretty smooth.</p>
 
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/10/opportunities-in-disguise"><p>Opportunities in Disguise</p>
+      <a class="post-link" href="/2007/09/fears-of-death"><p>Fears of death</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2007-10-20T00:00:00Z" itemprop="datePublished">October 20, 2007</time>
+        <time datetime="2007-09-03T00:00:00Z" itemprop="datePublished">September 3, 2007</time>
 
-        • Tagged <a href="/posts/tags/do-gooding">do-gooding</a> and <a href="/posts/tags/quote">quote</a>
+        • Tagged <a href="/posts/tags/mortality">mortality</a>, <a href="/posts/tags/musings">musings</a>, and <a href="/posts/tags/research">research</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Heard this quote I liked from <a href="http://namac.org">NAMAC keynote speaker</a> <a href="http://www.utexas.edu/lbj/21cp/bio.html">Gary Chapman</a> of the LBJ School of Public Affairs. He was paraphrasing John Gardner:</p>
+    <p><a href="http://www.boingboing.net/2007/08/31/how-voters-are-susce.html">Thoughts of mortality</a> make people entrench their beliefs. (via boingboing). It also makes people act in ways that boost their self-esteem, which, importantly, affects their <a href="http://www.gsb.stanford.edu/news/research/mktg_shiv_mortality.shtml">consumer behavior</a> (via google).</p>
 
-<blockquote>
-  <p>The nation is filled with opportunities disguised as insoluble problems.</p>
-</blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/10/puddingstone"><p>Puddingstone</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2007-10-16T00:00:00Z" itemprop="datePublished">October 16, 2007</time>
-
-        • Tagged <a href="/posts/tags/boston">Boston</a>, <a href="/posts/tags/fun">fun</a>, <a href="/posts/tags/history">history</a>, <a href="/posts/tags/poetry">poetry</a>, and <a href="/posts/tags/rocks">rocks</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I happen to be particularly fond of Puddingstone, the conglomerate rock found around Boston. It’s also the official rock of Massachusetts; specifically <a href="http://en.wikipedia.org/wiki/Roxbury_puddingstone">Roxbury Puddingstone</a>.</p>
-
-<p>It’s a nifty looking rock, or rather a collection of different rocks within a sedimentary rock.</p>
-
-<p>It also has some fantastical elements:</p>
-
-<p>Oliver Wendell Holmes wrote a poem entitled <a href="http://www.ibiblio.org/eldritch/owh/pudding.html">The Dorchester Giant</a> that describes Boston’s puddingstone being the result of the abandoned children of a giant flinging plum pudding about:</p>
-
-<blockquote>
-  <p>What are those lone ones doing now,</p>
-
-  <p>The wife and the children sad?</p>
-
-  <p>Oh, they are in a terrible rout,</p>
-
-  <p>Screaming, and throwing their pudding about,</p>
-
-  <p>Acting as they were mad.</p>
-
-  <p>They flung it over to Roxbury hills,</p>
-
-  <p>They flung it over the plain,</p>
-
-  <p>And all over Milton and Dorchester too</p>
-
-  <p>Great lumps of pudding the giants threw;</p>
-
-  <p>They tumbled as thick as rain.</p>
-</blockquote>
-
-<p>Puddingstone is also to be imbued with magical and protective powers. <a href="http://en.wikipedia.org/wiki/Hertfordshire_puddingstone">Herfordshire Puddingstone</a> was used to cover the top of witch’s coffin to prevent her to escape in death.</p>
-
-<p>**Update: **Here’s the whole poem:</p>
-
-<blockquote>
-  <p>**The Dorchester Giant</p>
-
-  <p>By Oliver Wendell Holmes (1830)</p>
-</blockquote>
-
-<p>**</p>
-
-<blockquote>
-  <p>There was a giant in time of old,</p>
-
-  <p>A mighty one was he;</p>
-
-  <p>He had a wife, but she was a scold,</p>
-
-  <p>So he kept her shut in his mammoth fold;</p>
-
-  <p>And he had children three.</p>
-
-  <p>It happened to be an election day,</p>
-
-  <p>And the giants were choosing a king;</p>
-
-  <p>The people were not democrats then,</p>
-
-  <p>They did not talk of the rights of men,</p>
-
-  <p>And all that sort of thing.</p>
-
-  <p>Then the giant took his children three,</p>
-
-  <p>And fastened them in the pen;</p>
-
-  <p>The children roared; quoth the giant, “Be still!”</p>
-
-  <p>And Dorchester Heights and Milton Hill</p>
-
-  <p>Rolled back the sound again.</p>
-
-  <p>Then he brought them a pudding stuffed with plums,</p>
-
-  <p>As big as the State-House dome;</p>
-
-  <p>Quoth he, “There’s something for you to eat;</p>
-
-  <p>So stop your mouths with your ‘lection treat,</p>
-
-  <p>And wait till your dad comes home.”</p>
-
-  <p>So the giant pulled him a chestnut stout,</p>
-
-  <p>And whittled the boughs away;</p>
-
-  <p>The boys and their mother set up a shout.</p>
-
-  <p>Said he, “You’re in, and you can’t get out,</p>
-
-  <p>Bellow as loud as you may.”</p>
-
-  <p>Off he went, and he growled a tune</p>
-
-  <p>As he strode the fields along</p>
-
-  <p>‘Tis said a buffalo fainted away,</p>
-
-  <p>And fell as cold as a lump of clay,</p>
-
-  <p>When he heard the giant’s song.</p>
-
-  <p>But whether the story’s true or not,</p>
-
-  <p>It isn’t for me to show;</p>
-
-  <p>There’s many a thing that’s twice as queer</p>
-
-  <p>In somebody’s lectures that we hear,</p>
-
-  <p>And those are true, you know.</p>
-
-  <p>. . . . . .</p>
-
-  <p>What are those lone ones doing now,</p>
-
-  <p>The wife and the children sad?</p>
-
-  <p>Oh, they are in a terrible rout,</p>
-
-  <p>Screaming, and throwing their pudding about,</p>
-
-  <p>Acting as they were mad.</p>
-
-  <p>They flung it over to Roxbury hills,</p>
-
-  <p>They flung it over the plain,</p>
-
-  <p>And all over Milton and Dorchester too</p>
-
-  <p>Great lumps of pudding the giants threw;</p>
-
-  <p>They tumbled as thick as rain.</p>
-
-  <p>. . . . .</p>
-
-  <p>Giant and mammoth have passed away,</p>
-
-  <p>For ages have floated by;</p>
-
-  <p>The suet is hard as a marrow-bone,</p>
-
-  <p>And every plum is turned to a stone,</p>
-
-  <p>But there the puddings lie.</p>
-
-  <p>And if, some pleasant afternoon,</p>
-
-  <p>You’ll ask me out to ride,</p>
-
-  <p>The whole of the story I will tell,</p>
-
-  <p>And you shall see where the puddings fell,</p>
-
-  <p>And pay for the punch beside.</p>
-</blockquote>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2007/10/google-relevance"><p>Google Relevance</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2007-10-16T00:00:00Z" itemprop="datePublished">October 16, 2007</time>
-
-        • Tagged <a href="/posts/tags/advice">advice</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, and <a href="/posts/tags/search">search</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>On Slashdot today was an <a href="http://slashdot.org/article.pl?sid=07/10/16/135209">entry</a> about <a href="http://www.meangene.com/google/design_for_google.html">Google Search if it was designed for Google</a>. Basically redesigning the page for a higher pagerank.</p>
-
-<p>Fun, but the interesting thing was a <a href="http://slashdot.org/comments.pl?sid=329457&amp;cid=20998511">comment</a> from the comments:</p>
-
-<blockquote>
-  <p>Should read: What if Google was a useless site…</p>
-
-  <p>…and had to design for Google?</p>
-
-  <p>Lets see… counter examples… how about searching Google for the word “shipping”. What do you know, UPS and Fedex are #1 and #2, and their front pages aren’t a mess of useless, Google-pleasing crap. Maybe because they are real businesses and aren’t pandering some direct ship junk or get rich quick scheme.</p>
-
-</blockquote>
-
-<p>Makes sense, and is the basis for what I tell people who are concerned about SEO disproportionately to having a useful and relevant website: concentrate on having a good service and a useful website first.</p>
-
+<p>These seem to both be domestic studies. I wonder how the US compares internationally in “mortality awareness”. (I’m guessing pretty low).</p>
 
   </div>
 </article>

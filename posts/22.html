@@ -118,189 +118,6 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2012/12/a-gentle-conceptual-introduction-to-nodejs"><p>A gentle &amp; conceptual introduction to Node.js</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2012-12-13T00:00:00Z" itemprop="datePublished">December 13, 2012</time>
-
-        • Tagged <a href="/posts/tags/education">education</a>, <a href="/posts/tags/javascript">javascript</a>, and <a href="/posts/tags/programming">programming</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><em>This is the text of a skillshare I delivered at <a href="http://www.thesourcery.com/">The Sourcery</a>, an awesome commission-less recruiting service. Not only is their model nifty, but they care about actually knowing what they’re recruiting for—so hopefully there isn’t anything too wrong below.</em></p>
-
-<p>You probably don’t know JavaScript. Like <em>really</em> know javascript.</p>
-
-<p>Javascript is a real programming language: functions, lambdas, closures, objects, inheritance, passing by reference, etc.</p>
-
-<p>Somewhere long, long ago, an arbitrary decision was made that we would “program” a web browser with Javascript. Javascript is good at this (we’ll soon learn why), but there are experimental browsers that use Python (and other languages) to manipulate a web browser window too. There is no inherent reason that Javascript has to be tied to the web browser (or web browsers have to be tied to Javascript).</p>
-
-<p>Unfortunately because the primary context we experience Javascript <em>is</em> in the web browser, we more strongly associate JavaScript with its browser-specific functions/extensions (for manipulating the DOM and listening for UI clicks) than its core language which can exist completely separately from the web browser. Just like we can use Ruby for general purpose programming without using Rails.</p>
-
-<p><img src="/uploads/2012-12/javascript-600x170.png" alt="Javascript Language" /></p>
-
-<p>If you only think of Javascript in the context of the browser, you’re really missing out; Javascript as a language is badass: lambdas, closures, inheritance, passing by reference.</p>
-
-<p>Why did JavaScript come to dominate the web browser? JavaScript is really good in a browser because as a language it easily supports event-based and asynchronous programming.</p>
-
-<ul>
-  <li>
-    <p>Event-based: when programming a web browser, most of the actions you want to wire up are “when the user clicks on this, perform a different action than when they click on that.” You declare what event(s) you want to listen for and the resulting action/function you want to take place / be called when you “hear” that event take place.</p>
-  </li>
-  <li>
-    <p>Asynchronous: when you’re interacting with a web page, you’re downloading new data (or images or video) that might take a second or two (or more for video!) to arrive over the wire. You don’t want to just freeze the browser while you wait for it to load, instead you want it to load in the background, then kick off some action when its complete (“completed loading” is another example of an event).</p>
-  </li>
-</ul>
-
-<p>(Remember, we’re talking about these properties as being inherent to the Javascript language itself, not just the functions/extensions that help it interact with the web browser while its doing these things).</p>
-
-<p><img src="/uploads/2012-12/js-on-browser-and-server-600x470.png" alt="js on browser and server" /></p>
-
-<p>Turns out that the same properties that make javascript work well for interacting with a web page are also very similar to what’s needed for building a good web server.</p>
-
-<ul>
-  <li>
-    <p>Event-based: a server will constantly be getting requests (at different urls, on different ports) that need to be responded to in different ways when those events take place</p>
-  </li>
-  <li>
-    <p>Asynchronous: in dealing with a request, a server will need to load other data (from a file, a database, another server like Twitter), and you don’t want your entire server to just lock up while it waits for that external service (we call this I/O for “Input/Output”) to finish. For a typical web request, the <em>majority</em> of time will be spent waiting on  I/O.</p>
-  </li>
-</ul>
-
-<p>So how are other languages that aren’t (for the most part) event-based/asynchronous used on web servers? Like Ruby, Python and PHP. The synchronous code runs on top of an asynchronous web server (Apache, Rack, WSGI) that creates a synchronous “thread” to run your Ruby/Python/PHP code. If another request comes in while that first thread is still processing, the web server creates a new thread. Unfortunately, those threads are resource-intensive which means you can only create a limited number of them (based on how powerful your server is). If all your threads are in-use, a new request will have to wait until a previous request is finished and the thread becomes available again.</p>
-
-<p><img src="/uploads/2012-12/typical-vs-node-server-600x344.png" alt="typical vs node server" /></p>
-
-<p>So what happens when you build the entire web server in Javascript: You get Node.js! Instead of adding web-browser functions/extensions to the Core Javascript language, Node.js adds server functions/extensions e.g. managing http requests, filesystem operations, talking to databases, etc. While Node.js runs everything on one single “thread”, because Javascript is event-based/asynchronous we can serve hundreds (if not thousands) of simultaneous requests at once because Node.js doesn’t have to freeze/lock for the “I/O” (“In/Out” e.g. database, filesystem, external-service) processes to finish… Node.js can just answer another request (and another) while waiting for first request’s (and subsequent requests’) I/O process to complete, then come back to it and do the next step in responding to the request. Node.js is a master delegator.</p>
-
-<p>So what can you do when you’re able to quickly serve hundreds/thousands of simultaneous connections?</p>
-
-<ol>
-  <li>
-    <p>Proxy servers / Service “Glue” / Data Plumbing: routing/piping data between different servers, services or processes</p>
-  </li>
-  <li>
-    <p>Telemetry / Analytics: catch and analyze data as events take place in your system</p>
-  </li>
-  <li>
-    <p>Real-time connections to the web-browser: Traditional/Threaded systems try to keep their connections brief (because they can only handle a few at a time). If you don’t have that few-at-a-time constraint, you can leave the connection open much longer and thus easily send data back and forth in real time. <strong>Socket.io</strong> is a library for doing this.</p>
-  </li>
-</ol>
-
-<p>Example of all 3: visualizing traffic going through a Node.js load-balancer by geolocating the requesting IP address and sending them to a map  in the web browser in real-time via Socket.io: <a href="http://vimeo.com/48470307">http://vimeo.com/48470307</a></p>
-
-<p><a href="http://vimeo.com/48470307"><img src="/uploads/2012-12/maptail-600x330.png" alt="maptail" /> </a></p>
-
-<p>Alternatives to Node.js: EventMachine (Ruby) or Twisted (Python). Unfortunately, the majority of Ruby/Python libraries aren’t written to be evented/asynchronous, which means you can’t use those libraries in an asynchronous environment (because they will lock it up). Whereas the majority of Node.js/Javascript code *is* written to be evented/asynchronous.</p>
-
-<p>So if Node.js is so badass, why not use it for everything?</p>
-
-<ol>
-  <li>
-    <p>CPU Blocking: because Node.js runs on only a single thread, any local processing you do (e.g. NOT database/service calls) locks the thread. For example, processing heavy numerical/algorithmic processing, or generating complicated HTML templates. Node.js works best when you do that data processing somewhere else (for example, in SQL or map/reduce database), and just sending along raw data (like JSON). This is why you’ll often see Node.js powering a thin API (calling out to a database and serving up some JSON) rather than a full-stack MVC implementation (like Rails/Django). This is why Node.js (backend server API) and single-page web apps like Backbone (frontend client-generated UI) are a powerful combination.</p>
-  </li>
-  <li>
-    <p>Javascript as a language can be a pain in the ass: because JavaScript has spent so much time solely in the browser, it hasn’t gotten the love it deserves. It’s tough to fix things because of backwards compatibility (there are so many different browsers that would need to be updated, and web-compatibility is already hard enough). ECMA Script (the official Javascript “standard”) is evolving. Also, there are many javascript cross-compilers that allow you to write your code in another language, then convert it to javascript; example: CoffeeScript, Clojure, Dart.</p>
-  </li>
-</ol>
-
-<p>Still, the opportunities that Node.js creates are worth it. Other fun stuff/opportunities for Node:</p>
-
-<ol>
-  <li>
-    <p>Sharing code between Server and Browser: Node.js being in Javascript (like the browser) creates the opportunity to share code between your server and client (keeping things DRY), which makes it easier to create persist server-like functionality on the client (for example, if you’re on a mobile phone and your connection drops, you can still use the web-app until it reconnects). Meteor.js is provides a framework for this (and much more, they entirely muddle the distinction between server and client)</p>
-  </li>
-  <li>
-    <p>Pre-rendering browser content on the server: Typically you don’t want to do heavy CPU processing on the Node server, but maybe you’re working with really lightweight clients and you want to “emulate a web-browser” on your more powerful server. Example: <a href="http://famo.us/">Famo.us</a> pre-renders DOM translations in their tech-demo so it will run on devices like the Apple TV</p>
-  </li>
-</ol>
-
-<p><strong>Follow-up Questions:</strong></p>
-
-<blockquote>
-  <p>So if Node.js + Backbone is a “powerful combination”, why don’t we just ditch Rails entirely?</p>
-</blockquote>
-
-<p>The Rails ecosystem is more mature than Node’s: there are more engineers, more libraries, stronger conventions and a more complete development and deployment pipeline (scaffolding, testing, continuous integration, monitoring, etc.). If you have a startup with a limited development window and a typical product design (“users create accounts, post content, favorite other user’s content, see what was most favorited content”) that you need to quickly/agilely iterate, Rails has that problem solved (this is the strength of Rails over pretty much everything, not a weakness of Node specifically). If you’re looking at a cost curve, the starting cost for Rails will be way lower for a vanilla product. Now if you’re talking about doing something non-typical (realtime interaction) or are operating at a huge scale (where you can swap infrastructure costs for engineering costs), Node is enabling (there are some things you just can’t/don’t want to do without Node) if not affordable. Also, you can use Node in a heterogenous environment (running the load balancer, or analytics server) or integrate a Node-powered service into a more traditional product (for example, real-time chat is powered by Node, but user accounts, relationships and chat history is managed by Rails).</p>
-
-<p><img src="/uploads/2012-12/nodejs-cost.png" alt="nodejs-cost" /></p>
-
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2012/09/reimagining-chicagos-311-activity-with-super-mayor-emanuel"><p>Reimagining Chicago’s 311 activity with Super Mayor Emanuel</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2012-09-25T00:00:00Z" itemprop="datePublished">September 25, 2012</time>
-
-        • Tagged <a href="/posts/tags/analytics">analytics</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/open311">open311</a>, and <a href="/posts/tags/portfolio">portfolio</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2012-09/screenshot-600x437.png" alt="" title="screenshot" /></p>
-
-<p><a href="http://supermayor.io">Super Mayor Emanuel</a> is one of the goofier applications I’ve built at Code for America: <a href="http://supermayor.io"><strong>supermayor.io</strong></a></p>
-
-<p><strong>Boring explanation:</strong> Using data from Chicago’s Open311 API the app lists, in near-realtime, service requests within the City of Chicago’s 311 system that have recently been created, updated or closed.</p>
-
-<p><strong>Awesome explanation:</strong> The mayor runs through the streets of Chicago, leaping over newly-reported civic issues and collecting coins as those civic problems are fixed.</p>
-
-<p>I really like this application, not only because of its visual style, but because it lets you engage with the 311 data in a completely novel way: aurally. Turn up those speakers and let the website run in the background for about 30 minutes. Spinies (new requests) come in waves, and coin blocks (updated/closed requests) are disappointingly rare. Sure, I could have just created a chart of statistics, but I think actually <em>experiencing</em> requests as they come in makes you think differently about both the people who submitted a request and the 311 operators and city staff who are receiving them (just think about what caused those restaurant complaints… or maybe don’t).</p>
-
-<p>The application is built with Node.js, which fetches and caches 311 requests, and a Backbone-based web-app, communicating via socket.io, which manages all of interface and animation. The source is on <a href="https://github.com/codeforamerica/super-mayor">Github</a>.</p>
-
-<p> </p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2012/08/put-your-civics-where-your-houseplant-is"><p>Put Your Civics Where Your Houseplant Is</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2012-08-14T00:00:00Z" itemprop="datePublished">August 14, 2012</time>
-
-        • Tagged <a href="/posts/tags/civics">civics</a>, <a href="/posts/tags/engagement">engagement</a>, <a href="/posts/tags/gamification">gamification</a>, and <a href="/posts/tags/portfolio">portfolio</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2012-08/civicsgarden-large-600x266.png" alt="" title="civicsgarden-large" /></p>
-
-<p>The core assumption of engagement applications is that people will do an activity consistently and repeatedly if you just structure the experience and incentivize it correctly — even if it’s asinine.  The justification for <em>civic</em> engagement apps can be similarly foolish: people will perform a potentially beneficial activity that they aren’t currently doing if we give them the ability to do it on the internet (or via SMS, or iPhone, etc.). That’s why I built <a href="http://civicsgarden.herokuapp.com">Civics Garden</a>.</p>
-
-<p>A few months ago a Code for America email thread came around asking how “If you could tell the story of how government works, what would you say?” I pushed back with the idea that one cannot know government without participating in it, and since we are a government of, by, and for the people, the best place to start would be reflecting on one’s own civic life and civic actions.</p>
-
-<p>A tried and true method of reflection is journaling. Hundreds of millions of people keep a journal called Twitter, reflecting and writing on their days experiences, tribulations, meals, and cat sightings (this is not a comprehensive list). If people naturally do this, why not ask them to reflect specifically on their civic actions—voting, volunteering, checking out a library book, picking up a piece of trash, smiling at a stranger—and write down that reflection (however brief) on a regular basis?</p>
-
-<p>Projecting from my own nature, people are fickle, lazy, unreliable creatures. That’s why gamification is the hotness. “How can I get you to look at my ads every day? I’ll make it a game.” Sure, this is no different than historical incentives (“How can I get you to work in my coal mine? I’ll pay you money.”), but now it’s on the internet where advertising is easier to place than coal mines. One form of gamification I really enjoy are virtual pets: like <a href="http://www.happyprog.com/tdgotchi/">tomagatchi’s you feed with Unit Tests</a>, or <a href="http://www.memrise.com/">flowers you water with foreign language vocabulary</a>. They encourage you to perform an activity because you instinctively (unless you’re a sociopath) feel good when they’re healthy and bad when they’re sickly… despite the fact you know they aren’t actually alive.</p>
-
-<p>Civics Garden combines these concepts: by signing up, users adopt a virtual plant that they keep healthy by regularly “watering” it by writing down their civic deeds. If they go too long without a journal entry, the plant will wither and eventually die. Just like owning real houseplants, it has exhilarating potential.</p>
-
-<p><img src="/uploads/2012-08/bamboo-states-600x218.png" alt="" title="bamboo-states" /></p>
-
-<p>I built Civics Garden with Node.js and MongoDB using Twitter for authentication. Each new user receives a healthy bamboo plant to caretake by writing short journal entries. To keep people reflecting regularly, one’s plant will wither after two days, and die after four–though users can replant it as many times as necessary. To keep them coming back to the site, users receive a tweet from <a href="http://twitter.com/civicsgarden">@civicsgarden</a> to let them know when their plant needs refreshing. As an minimum viable product (MVP), it’s high-on-concept/low-on-looks, but Diana and Emily helped with the graphics.</p>
-
-<p>I’ve tested it internally with Code for America fellows and it should be a rousing success. All of us, as active civic participants performing important civic deeds should be able to briefly but consistently reflect upon and record our actions, right? See for yourself on Civics Garden and <a href="http://civicsgarden.herokuapp.com">test your ability to reflect on a healthy civic commitment</a>.</p>
-
-<p>…or maybe people just don’t like bamboo.</p>
-
-<p><img src="/uploads/2012-08/civicsgarden-result-600x408.png" alt="" title="civicsgarden-result" /></p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2012/07/hard-data-on-the-status-of-open311"><p>Hard data on the status of Open311</p>
 </a>
     </h1>
@@ -523,47 +340,116 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/11/nonprofit-naming"><p>Nonprofit Naming</p>
+      <a class="post-link" href="/2011/11/speedgeeking-on-wordpress-filters"><p>Speedgeeking on Wordpress Filters</p>
 </a>
     </h1>
     <p class="post-meta text-muted">
-        <time datetime="2011-11-29T00:00:00Z" itemprop="datePublished">November 29, 2011</time>
+        <time datetime="2011-11-28T00:00:00Z" itemprop="datePublished">November 28, 2011</time>
 
+        • Tagged <a href="/posts/tags/nerdery">nerdery</a>, <a href="/posts/tags/web-development">web-development</a>, and <a href="/posts/tags/wordpress">wordpress</a>
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p><strong>Explanatory Name:</strong></p>
+    <p><img src="/uploads/2011-11/Wordpress-Filters-Presentation-600x305.png" alt="" title="Wordpress Filters Presentation" /></p>
 
-<p>African American Shakespeare Company, San Francisco School Volunteers, Environmental Federation of California, City Carshare, San Francisco Breastfeeding Promotion Coalition</p>
+<p>Tonight I’ll be making 10 five-minute presentations about Wordpress Filters, centered on this post about <a href="http://www.island94.org/2011/01/adding-class-to-wordpress-linked-images/">adding class to Wordpress linked images</a>, at the <a href="http://www.meetup.com/wordpress-sf/events/40941622/">San Francisco Wordpress Meetup</a>. The presentation is available for <a href="/uploads/2011-11/Wordpress-Filters-Speedgeeking-Ben-Sheldon.pdf">download as a PDF</a>.</p>
 
-<p><strong>Tradition</strong>:</p>
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/11/literacy-is-more-than-reading"><p>Literacy is more than reading</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-11-02T00:00:00Z" itemprop="datePublished">November 2, 2011</time>
 
-<p>Asheville Global Report, San Francisco Community Television Corporation, Jazz Heritage Center</p>
+        • Tagged <a href="/posts/tags/digital-literacy">digital-literacy</a>, <a href="/posts/tags/literacy">literacy</a>, <a href="/posts/tags/maslow">maslow</a>, and <a href="/posts/tags/training">training</a>
+    </p>
+  </header>
 
-<p><strong>Pithy Phrase:</strong></p>
+  <div class="post-content" itemprop="articleBody">
+    <p>Below is a year-old memo I wrote for the Transmission Project was later polished into a more <a href="http://transmissionproject.org/sites/transmissionproject.org/files/Transmission%20Project's%20Approach%20to%20Digital%20Literacy.pdf">general statement on media literacy</a>:</p>
 
-<p>1-by-1, Buying with a Vision, Climate of Trust Council, Dance Through Time, Walk with Earth, Jews for Jesus, Unite Here, Single Step Incorporated, Eyes and Ears Foundation, Open for Children, Street Beats, Programs for People, The Playhouse, Healing Waters Wilderness Adventures, New Leaf Services for Our Community</p>
+<blockquote>
+  <p>Synopsis: Digital Literacy Training should not continue the skills-based approach of the basic Computer Literacy that forms its foundation. To effectively prepare participants for 21st employment, Digital Literacy Training must focus upon the motivations and context for using new media and social networking technologies within business, nonprofit and community environments</p>
 
-<p><strong>Personify:</strong></p>
+  <p>Internet technologies—and the methods in which individuals and organizations utilize them—have undergone a paradigm shift over the past decade. Broader computer literacy skills coupled with high-speed broadband and the mobile internet have altered the barriers to becoming technology users and technology creators. The skills necessary to create modern internet technologies—rich media and interactive websites, custom social networks and mobile applications—have become professionalized: the education and experience necessary for their creation has moved beyond the scope of a community-centered training program. Meanwhile, those same technologies have undergone a process of consumerization, making their usage accessible to those with only basic computer literacy training. Today, millions of people every day create online, interactive, and rich-media experiences (for example, by embedding YouTube videos on their Facebook profile). yet do not have the skills necessary to build a basic website, nor do they need those skills to engage through these modern technologies.</p>
 
-<p>Faithful Fools Street Ministry, MBAs without Borders USA, October Saints Foundation, Gray Panthers of San Francisco, Women in Literature, Youth for Creative Adventure Storytelling, Youth with a Mission, San Francisco Communities Restoring Urban Environments, Our Family Coalition, Tenants First, Team Pride</p>
+  <p>While Basic Computer Literacy skills form the foundation for a Digital Literacy curriculum, an effective Digital Literacy Training will provide participants with the motivations and context for utilizing modern internet technologies and applications within business, nonprofit and community environments. This educational model requires a broader focus upon training participants in community building, decision making, and team facilitation. Training participants to apply digital technologies within these given contexts will best prepare them for 21st century employment. The job interview of tomorrow will not ask “What new media tools can you use?”, but rather “Given a business problem, how would you use new media tools in its solution?”</p>
+</blockquote>
 
-<p><strong>Metaphor</strong></p>
+<p>…of course, “you’re burying people at the bottom of Maslow’s hierarchy” is a pretty easy criticism to make about many things.</p>
 
-<p>Amazon Watch, Death Penalty Focus, Utility Reform Network, Committee for an Independent Voice, Paths of Native Africa</p>
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/10/the-work-itself-isnt-inhumane"><p>The work itself isn’t inhumane</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-10-31T00:00:00Z" itemprop="datePublished">October 31, 2011</time>
 
-<p><strong>Wordplay</strong>:</p>
+        • Tagged <a href="/posts/tags/boring">boring</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/databases">databases</a>, and <a href="/posts/tags/employment">employment</a>
+    </p>
+  </header>
 
-<p>BuildingBlocks International, OneHeart Productions, OpenHouse, Forest Ethics, Freedom West Computer Learning Center, Lighthouse Troupe, Reality House West, Network of Lovingkindness, TapFound, Push Dance Company, Planetwork NGO, UniversalGiving, Media Alliance, New Conservatory, Sound Safe, Sustainable Sciences Institute, Survival Exchange Network, World Love Manna Movement</p>
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="/uploads/2011-10/IMG_1116-600x450.jpg" alt="" title="IMG_1116" /></p>
 
-<p><strong>Nonsense:</strong></p>
+<p>Two weeks ago, while riding BART from East Bay to San Francisco, I was offered a transit survey from a BART Survey Team member. Pointing to what seemed to me to be a large number of written-response questions for a survey being delivered on a moving train, I asked her, “Do you have to read and code all these surveys?”</p>
 
-<p>Horizons Foundation, Jimena Inc, Hyperion Society, Pro Global &amp; Charities, Go Productions, Project Bandaloop, Project Respect, The Gubbio Project</p>
+<p>The answer was on my mind as I was in the Bay Area to attend a Summit at Code for America, the organization where I will be serving as a Fellow for 2012. During this trip, I observed (though this is by no means a fresh observation) that geeks are drawn to architecting databases, “open” no less, without recognizing or paying much attention to the experience of the people who will be entering and maintaining the data.</p>
 
-<p><strong>Combination/Portmanteau:</strong></p>
+<p>As someone who has spent a large amount of life sorting (and resorting) spreadsheets in Excel—and creator of an <a href="http://mappingaccess.org/">open database of my own</a>—the experience of maintaining data isn’t particularly liberating (nor is compiling federal grant reports, for that matter). The experience reminds me of what Joel Johnson wrote for <em>Wired Magazine</em> in <a href="http://www.wired.com/magazine/2011/02/ff_joelinchina/all/1">“1 Million Workers. 90 Million iPhones. 17 Suicides. Who’s to Blame?”</a>:</p>
 
-<p>Amvets, Balletneo, Encorps, Exitheatre</p>
+<blockquote>
+  <p>“…the work itself isn’t inhumane—unless you consider a repetitive, exhausting, and alienating workplace over which you have no influence or authority to be inhumane. And that would pretty much describe every single manufacturing or burger-flipping job ever.”</p>
+</blockquote>
+
+<p>Which is to say that maintaining a database is <em>work</em> and doubly so when the “data driven decisions” are not the maintainers’ to make. I think of this whenever the licensing costs of “closed” commercial databases are cited as driving the need for “open”; I agree that data in the public interest should be “free”,  but I recognize that freedom comes with a cost.</p>
+
+<p>At the Summit, Tim O’Reilly said, “Data is infrastructure.” If that’s the case, I hope us data “architects” recognize the experience of people—the data pavers, data plumbers, and data janitors—who maintain such “virtual” infrastructure if we expect to gain greater liberties than our current physical landscape provides.</p>
+
+<p>The BART Survey Team member’s answer on that shaky train was “Yes”.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2011/10/the-point-where-creativity-and-invention-occur"><p>The point where creativity and invention occur</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2011-10-31T00:00:00Z" itemprop="datePublished">October 31, 2011</time>
+
+        • Tagged <a href="/posts/tags/experience">experience</a>, <a href="/posts/tags/innovation">innovation</a>, and <a href="/posts/tags/technology">technology</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From the preface to Arnold Pacey’s <em>The Maze of Ingenuity : Ideas and Idealism in the Development of Technology</em>:</p>
+
+<blockquote>
+  <p>So far I have written about efforts to inaugurate a new direction for technical progress as if the chief problem is a lack of methods and discipline. But there are other problems too. Technology does not exist apart from the people who create and use it, and its precise forms have a lot to do with the way these people choose to organise their society. One of the problems about the use of intermediate or appropriate technology in the developing countries is that the people there often do not have suitable forms of local organisation to make effective use of the equipment being offered to them. Frequently, it is equipment devised by well-meaning Westerners who have little understanding of the social component of technology or of complex local patterns of social organisation.</p>
+
+  <p>In the industrialized countries also, we do not have many social structures with suitable organisation to use alternative technology. And although the necessary changes in society may come partly through unconscious evolution, or through individual efforts to organise self-help groups, village societies or communes, change will be needed at the political and legislative level also. And Dickson sees the great weakness of much alternative technology as its neglect of the ‘political dimension’ – neglect which implies ‘an idealistic concept … that does not coincide with the social reality of technology as it has been experienced’.</p>
+
+  <p>This is fair criticism in many respects, but it is a mistake to think that the political dimension is the over-riding totality within which all other aspects of technology are worked out – and my book is very largely about some of the other dimensions of technological change. The distinction becomes clear when we consider the symbolic purposes which technology is made to serve, about which Dickson has useful things to say. For example, individuals buy automobiles or household goods and nations buy armaments, not solely with a view to their utilitarian value but because of what they symbolize. Discussions about more modest lifestyles for an age of zero growth, or about disarmament, rarely acknowledge this, and so become confused as people invent phoney utilitarian or practical purposes for their acquisitions, and nations invent unreal threats to justify their arms.</p>
+
+  <p>The <em>Report from the Iron Mountain</em> almost a decade ago explained how the armies, structures and industries associated with preparedness for war in fact perform many non-military functions. Many of these functions can be described in terms of the ‘symbolic objectives’ discussed in this book and have to do with ‘ideological clarification’ and building national unity.</p>
+
+  <p>As a partial substitute for the non-military functions of war, the Iron Mountain report suggested that a massive space programme could fill the place of the armaments industry in the economy and would provide an equally potent, but less dangerous, symbolism to express national goals and national prestige – rather as the building of cathedrals in the 12th century, provided an effective substitute for the non-military functions of the Crusades (P. 42).</p>
+
+  <p>Dickson’s argument is that the symbolism of armaments, or of cathedrals, is largely invented by the ruling groups within society as a means of controlling the mass of the people. Thus Dickson sees the building of the cathedrals as a way in which the Church could extend its influence over craftsmen, artisans, and I would add, merchants.</p>
+
+  <p>There is much truth in this, but to present such political aspects of a creative technological movement as the whole of the picture seems wrong. From the viewpoint of the architects and stone masons who built the cathedrals, the work was something that carried conviction because of its symbolic meanings, whether concerning the New Jerusalem, the glory of God or the prestige of their own home town. It was these things which fired the imagination and sparked the immense burst of artistic and technology creativity which the cathedrals represent. We need to understand the reality of the symbolism, and not just its political uses, if we wish to understand the ideals and objectives which give rise to discovery and invention in technology. So I do not agree with Dickson that ‘technological development is essentially a political process’. It is partly a political process, but at the point where creativity and invention occur, it is the values and ideals of individuals that matter, and personal appreciations of ‘quality’ or fitness for purpose. The convictions and sensitivity of the technologist have a validity beyond just the social environment which shapes them, important though that is.</p>
+</blockquote>
 
   </div>
 </article>

@@ -118,158 +118,6 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/03/how-to-decorate-your-office-without-really-trying"><p>How to decorate your office without really trying</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-03-02T00:00:00Z" itemprop="datePublished">March 2, 2011</time>
-
-        • Tagged <a href="/posts/tags/furniture">furniture</a>, <a href="/posts/tags/nostalgia">nostalgia</a>, and <a href="/posts/tags/shelving">shelving</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><img src="/uploads/2011-03-02-How-to-decorate-your-office-without-really-trying/succeed-at-business-1-600x255.png" alt="" title="succeed at business 1" /></p>
-
-<p>Tonight I watched the movie musical <em>How to Succeed in Business Without Really Trying</em>. I was shocked, though not surprised, to discover that all of the office furniture from this 1967 film is the same furniture I have in my office at UMass Boston. The scene above is more representative—the desk and shelving are the same (and I used to have that typewriter stand)—but the orange chair in the scene below is mine.</p>
-
-<p><img src="/uploads/2011-03-02-How-to-decorate-your-office-without-really-trying/succeed-at-business-2-600x256.png" alt="" title="succeed at business 2" /></p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/01/notes-from-the-city-of-bostons-open311-citizens-connect-api-developer-meeting"><p>Notes from the City of Boston’s Open311 / Citizens Connect API Developer Meeting</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-01-31T00:00:00Z" itemprop="datePublished">January 31, 2011</time>
-
-        • Tagged <a href="/posts/tags/boston">Boston</a>, <a href="/posts/tags/data">data</a>, <a href="/posts/tags/govdata">govdata</a>, <a href="/posts/tags/government">government</a>, and <a href="/posts/tags/meeting">meeting</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Today I attended a developer meeting at Boston City Hall for their <a href="http://www.cityofboston.gov/doit/apps/citizensconnect.asp">Citizen Connect API</a>, a to-be-launched <a href="http://open311.org/">Open311</a> implementation. The city currently has official <a href="http://itunes.apple.com/us/app/boston-citizens-connect/id330894558">iPhone</a> and <a href="http://www.androidzoom.com/android_applications/tools/boston-citizens-connect_najk.html">Android</a> apps that allow community members to submit broken streetlights, potholes, graffiti and snow removal, but the intent of the “open” part is to allow unaffiliated developers to integrate the system into their own applications. The other developers attending were the 7-person Boston <a href="http://codeforamerica.org/boston/">Code for America</a> crew (who just arrived a few days before), <a href="http://www.seeclickfix.com/">SeeClickFix</a> and a university researcher (the latter 2 via teleconference).</p>
-
-<p>The City of Boston uses a <a href="http://www.lagan.com/">Lagan CRM</a> system to create and track tickets and cases. To feed that ticketing system the city offers <a href="http://www.cityofboston.gov/mayor/24/">constituent services</a> in person, via telephone (the meeting was held next to the call center which had ~10 agents active at the time), via the web, and through the smartphone apps. The Lagan system tracks 150-170 types of tickets, but Boston currently exposes only 6 of them through Open311 API (streetlights, potholes, graffiti, 2 types of snow removal, and other); this decision was explained as being driven by the UI needs of the official smartphone apps. The Open311 system is only a data bridge into the Lagan CRM and thus won’t support any additional metadata or external decisioning (this dismissed a Code for America fellow’s suggestion of voting on tickets).</p>
-
-<p>The API is not currently available. The city estimates 2 - 3 weeks until they have a test server up, and from there they will evaluate whether to give applications access to the live system. The test server will be a sandbox that is either refreshed every 24 hours, has new data streamed to it, or may simulate workflows (e.g. submit, review, comment, close)—it was still in discussion.</p>
-
-<p>In addition to the Open311 API, the city also offers data dumps of its entire ticketing system, offset by 24 hours. Unfortunately, those data dumps don’t include the channel through which they were inputted, e.g. it’s not recorded whether the ticket came thru Open311, telephone, web or in person. This is allegedly through the city’s <a href="http://hubmaps1.cityofboston.gov/datahub/">Data Hub</a> / <a href="http://www.cityofboston.gov/doit/databoston/app/data.aspx">Data Dashboard</a>, but I can’t find it.</p>
-
-<p>The City of Boston is taking a more deliberate and restrictive approach than <a href="http://www.eot.state.ma.us/developers/">MassDOT/MBTA</a> in opening up their data, though CRM tickets are clearly different than bus/train route and dispatch data. The university researcher’s (Ben Clark) use case for the data was spot-on: determining who is utilizing these smartphone tools, and importantly who isn’t. Time will tell how the influence of outside software developers will push the city’s implementation—and how will it effect less-technology focused solutions.</p>
-
-<p>I was really excited to meet the Code for America crew as they are bringing a lot of excitement and energy to the gov data scene. I did get the impression that they were unprepared for managing institutional forces: there was a question about why the city couldn’t devote more IT resources to the project that were answered with some allusions to Dilbert (without acknowledging that the current capital budget was probably set 14 months ago). Open311 doesn’t seem like CfA’s <a href="http://codeforamerica.org/boston/">primary focus</a> in Boston, but if this was their first City of Boston meeting, I think they learned a lot.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/01/authenticity-and-such"><p>Authenticity and such</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-01-23T00:00:00Z" itemprop="datePublished">January 23, 2011</time>
-
-        • Tagged <a href="/posts/tags/authenticity">authenticity</a>, <a href="/posts/tags/philosophy">philosophy</a>, and <a href="/posts/tags/provenance">provenance</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>I read several books on <em>authenticity</em> last autumn. Below is from Andrew Potter’s <em>The Authenticity Hoax: How We Get Lost Finding Ourselves</em>, which is representative of the book as a whole—thought provoking stuff with the occasional reactionary junk:</p>
-
-<blockquote>
-  <p>[Lionel] Trilling suggests that the way authenticity “has become part of the moral slang of our day points to the peculiar nature of our fallen condition, our anxiety over the credibility of existence and of individual existences.” What he is highlighting here is the biblical texture that permeates the whole discourse of authenticity: in the beginning, humans lived in a state of original authenticity, where all was harmony and unity. At some point there was a great discord, and we became separated from nature, from society, and even from ourselves. Ever since, we have been living in a fallen state, and our great spiritual project is to ﬁnd our way back to that original and authentic unity.</p>
-
-  <p>What led to this apparent separation was nothing less than the birth of the world. Characterized by the rise of secularism, liberalism, and the market economy, is the reason we have lost touch with whatever it is about human existence that is meaningful. Once upon a time religion, especially monotheistic religion, served as the objective and eternal standard of all that is good and true and valuable, and we built our society (indeed, our entire civilization) around the idea that living a meaningful life involved living up to that standard.</p>
-
-  <p>The search for authenticity is about the search for meaning in a world where all the traditional sources — religion and successor ideals such as aristocracy, community, and nationalism — have been dissolved in the acid of science, technology, capitalism, and liberal democracy. We are looking to replace the God concept with something more acceptable in a world that is not just disenchanted, but also socially ﬂattened, cosmopolitan, individualistic, and egalitarian. It is a complicated and difﬁcult search, one that leads people down a multitude of paths that indude the worship of the creative and emotive powers of the self; the fetishization of our premodern past and its contemporary incarnation in exotic cultures; the search for increasingly obscure and rariﬂed forms of consumption and experience; a preference for local forms of community and economic organization; and, most obviously, an almost violent hostility to the perceived shallowness of Western forms of consumption and entertainment.</p>
-</blockquote>
-
-<p>Richard Todd’s <em>The Thing Itself - On the Search for Authenticity</em>, other than being first-person non-fiction, stayed closer to treating authenticity as straight-forward provenance—with all the other stuff just being vigorous capitalism.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/01/adding-class-to-wordpress-linked-images"><p>Adding class to Wordpress linked images</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-01-23T00:00:00Z" itemprop="datePublished">January 23, 2011</time>
-
-        • Tagged <a href="/posts/tags/code">code</a>, <a href="/posts/tags/css">css</a>, <a href="/posts/tags/php">php</a>, <a href="/posts/tags/theming">theming</a>, and <a href="/posts/tags/wordpress">wordpress</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>An <a href="http://wordpress.org/support/topic/how-can-i-set-the-class-of-anchors">enduring issue</a> with linked images ( <code>&lt;a href=""&gt;&lt;img src="" /&gt;&lt;/a&gt;</code> ), is targeting the anchor link for theming—especially for disabling borders and highlighting that look great on text links but odd for images. CSS doesn’t have a parent selector ( <code>a &gt; img:parent</code> ), and javascript feels like overkill. The simple solution is to add a <code>class</code> to the parent anchor (<code>&lt;a href="" class="img"&gt;)</code>, but that can get repetitive, especially when Wordpress is supposed to automate those sorts of things.</p>
-
-<p>Adding the following code to your Wordpress theme’s <code>functions.php</code> file will automatically add a class to the anchor link when you insert linked images through Wordpress’s Media Library interface. It won’t fix posts you’ve already written, but should make things better moving forward.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/**
- * Attach a class to linked images' parent anchors
- * e.g. a img =&gt; a.img img
- */</span>
-<span class="k">function</span> <span class="n">give_linked_images_class</span><span class="p">(</span><span class="nv">$html</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$caption</span><span class="p">,</span> <span class="nv">$title</span><span class="p">,</span> <span class="nv">$align</span><span class="p">,</span> <span class="nv">$url</span><span class="p">,</span> <span class="nv">$size</span><span class="p">,</span> <span class="nv">$alt</span> <span class="o">=</span> <span class="s1">''</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Separate classes with spaces, e.g. 'img image-link'</span>
-  <span class="nv">$classes</span> <span class="o">=</span> <span class="s1">'img'</span><span class="p">;</span>
-
-  <span class="c1">// check if there are already classes assigned to the anchor</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s1">'/&lt;a.*? class=".*?"&gt;/'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*? class=".*?)(".\?&gt;)/'</span><span class="p">,</span> <span class="s1">'$1 '</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'$2'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">else</span> <span class="p">{</span>
-    <span class="nv">$html</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/(&lt;a.*?)&gt;/'</span><span class="p">,</span> <span class="s1">'$1 class="'</span> <span class="mf">.</span> <span class="nv">$classes</span> <span class="mf">.</span> <span class="s1">'" &gt;'</span><span class="p">,</span> <span class="nv">$html</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nv">$html</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nf">add_filter</span><span class="p">(</span><span class="s1">'image_send_to_editor'</span><span class="p">,</span> <span class="s1">'give_linked_images_class'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>The if/else could probably be done with a single regular expression, but I’m not <em>that</em> smart.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2011/01/the-benefits-of-age"><p>The benefits of age</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2011-01-22T00:00:00Z" itemprop="datePublished">January 22, 2011</time>
-
-        • Tagged <a href="/posts/tags/boomers">boomers</a>, <a href="/posts/tags/generations">generations</a>, <a href="/posts/tags/millennials">millennials</a>, and <a href="/posts/tags/nonprofit">nonprofit</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p><a href="/uploads/2011-01-22-The-benefits-of-age/boom1.jpeg"><img src="/uploads/2011-01-22-The-benefits-of-age/boom1-500x241.jpg" alt="" title="boom1" /> </a></p>
-
-<p>Havard Business Review’s Dan Pallota <a href="http://blogs.hbr.org/pallotta/2011/01/the-wisdom-years-the-value-of.html">quoted from Julia Moulden’s book, <em>RIPE: Rich, Rewarding Work After 50</em></a>: &gt;</p>
-<ul>
-  <li>I can tell the difference between a customer who has a legitimate gripe with my company and one who is an alcoholic or has anger-management issues. At 25, I thought it was all and always about me.</li>
-  <li>My bullshit meter is highly attuned because I’ve heard a lot of bullshit. At 25 I was naive enough to believe most of what everyone was dishing out.</li>
-  <li>I have the confidence to know that if I don’t understand some new business idea you’re pitching to me it’s not because I’m stupid. It’s because you’re not communicating it well. At 25 I was more prone to point the finger inward.</li>
-  <li>I know that business construction projects cost about twice what you budgeted them to cost. At 25, I was continually shocked and unprepared when costly problems popped up or snags set projects back months.</li>
-  <li>I know that being nice to people and being a good leader are two different things. At 25 I was nice to everyone. And not the best leader.</li>
-</ul>
-
-<p>I suggested in the <a href="http://blogs.hbr.org/pallotta/2011/01/the-wisdom-years-the-value-of.html#comment-132959702">comments</a> this addition: &gt; My peers and I outnumber everyone else. At 25, people over 50 were few and far between which let me do a lot without someone looking over my shoulder and judging my work.<br />
-Which is really a <a href="http://en.wikipedia.org/wiki/Strauss_and_Howe">defining difference</a> between Boomers and Millennials: Millennials are coming of age with a lot more older people around then when Boomers came of age. But I’ve also disagreed with Dan Pallota <a href="http://www.island94.org/2009/10/social-work-is-womens-work-so-we-dont-care/">before</a>. The population pyramid image is from <a href="http://www.flatrock.org.nz/topics/money_politics_law/boom_moves_along.htm">here</a>, which looks like it may have been copied out of a newspaper.</p>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2011/01/mediation-journal-version-0"><p>Mediation Journal, Version 0</p>
 </a>
     </h1>
@@ -403,6 +251,146 @@ Which is really a <a href="http://en.wikipedia.org/wiki/Strauss_and_Howe">defini
     <p><img src="/uploads/2010-12-18-T-Shirt/t-shirt-500x373.jpg" alt="" title="T Shirt" /></p>
 
 <p>An Island 94 <a href="http://www.island94.org/2009/09/boston-subway-in-vector-format-svg/#comment-72879">commenter</a> requested a t-shirt based on the Boston Subway Map I <a href="http://www.island94.org/2009/09/boston-subway-in-vector-format-svg/">vectorized</a> a while ago. So I set up an at-cost shop through <a href="http://horseshoefab.spreadshirt.com/">Spreadshirt</a>, and ordered one myself.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/mediation-journal-pieces"><p>Mediation journal pieces</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-09T00:00:00Z" itemprop="datePublished">December 9, 2010</time>
+
+        • Tagged <a href="/posts/tags/consumption">consumption</a>, <a href="/posts/tags/criticism">criticism</a>, <a href="/posts/tags/journaling">journaling</a>, <a href="/posts/tags/media">media</a>, and <a href="/posts/tags/reflection">reflection</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2010-12-09-Mediation-journal-pieces/mediation-journal-sqr.png"><img src="/uploads/2010-12-09-Mediation-journal-pieces/mediation-journal-sqr-500x546.png" alt="" title="mediation-journal-sqr" /> </a></p>
+
+<p>This is a set of images from a self-journaling project I’m working on based around my media-consumption habits. A few months ago I designed a self-journaling worksheet for <a href="http://angelinacalderon.com">Angelina</a>, and she really liked the use of a blank face for the critical-reflection process—so that’s one part of it. I just sent off Version 0 to be printed; I’ll post some photos when it arrives.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/boston-bike-crash-map-in-the-news"><p>Boston Bike Crash Map in the News</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-07T00:00:00Z" itemprop="datePublished">December 7, 2010</time>
+
+        • Tagged <a href="/posts/tags/bike">bike</a>, <a href="/posts/tags/map">map</a>, <a href="/posts/tags/media">media</a>, <a href="/posts/tags/news">news</a>, and <a href="/posts/tags/press">press</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2010-12-07-Boston-Bike-Crash-Map-in-the-News/Metro_bike-crash-map.jpeg"><img src="/uploads/2010-12-07-Boston-Bike-Crash-Map-in-the-News/Metro_bike-crash-map-500x667.jpg" alt="" title="Metro_bike-crash-map" /> </a></p>
+
+<p>Boston’s <em>Metro</em> newspaper ran a <a href="http://www.metro.us/boston/local/article/712124--bike-map-offers-crash-warnings">page 2 article</a> on the <a href="http://bostoncyclistsunion.org/resources/crash-map/">Boston Bike Crash Map</a> the Boston Cyclists Union and I <a href="http://www.island94.org/2010/11/boston-bike-crash-map/">created</a>. Also in the news:</p>
+
+<ul>
+  <li>In the <a href="http://www.boston.com/bostonglobe/editorial_opinion/blogs/the_angle/2010/12/bike_crash_map.html"><em>Boston Globe Blog</em>’s “The Angle”</a>:</li>
+</ul>
+
+<blockquote>
+  <p>This is a stunning example of what a non-profit can do with government statistics, Google Maps, and a very dedicated volunteer.</p>
+
+  <ul>
+    <li>On <a href="http://www.wbur.org/2010/11/29/bike-crash-map">WBUR Radio</a>:</li>
+  </ul>
+
+  <p>Among other concentrations, it shows a dark line of bruised elbows, broken fenders, and worse stretching from the Back Bay to Allston along Commonwealth Avenue, right past our studios at WBUR.</p>
+</blockquote>
+
+<ul>
+  <li>And <a href="http://www.universalhub.com/2010/thats-lot-crashes">Universal Hub</a>.</li>
+</ul>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/proposals-to-change-the-tax-deductibility-of-donations"><p>Proposals to change the tax-deductibility of donations</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-03T00:00:00Z" itemprop="datePublished">December 3, 2010</time>
+
+        • Tagged <a href="/posts/tags/death">death</a>, <a href="/posts/tags/government">government</a>, <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/regulation">regulation</a>, and <a href="/posts/tags/taxes">taxes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The <em>New York Times</em> yesterday gave a breakdown of <a href="http://www.nytimes.com/2010/12/03/business/03charity.html">proposals to change how donors calculate donations in their taxes</a>:</p>
+
+<blockquote>
+  <p>All three deficit reduction proposals from the blue ribbon panels would eliminate the deduction in its current form.</p>
+
+  <p>One of the panels, the National Commission on Fiscal Responsibility and Reform would give taxpayers a tax credit worth 12 percent of their donations — but only if they contributed 2 percent or more of their adjusted gross income to charity.</p>
+
+  <p>Another plan proposed by a panel of three liberal-leaning organizations — Demos, the Economic Policy Institute and the Century Foundation — is similar, suggesting a 25 percent tax credit for all charitable gifts.</p>
+
+  <p>The plan philanthropic experts find the most intriguing, however, comes from the Bipartisan Policy Center panel, which suggests borrowing a system of subsidizing nonprofits similar to the one used in Britain, called Gift Aid.</p>
+
+  <p>Under that proposal, nonprofits could claim a tax credit worth 15 percent of any charitable gift they received, effectively giving the donor a partial match. For instance, if a donor makes a charitable gift of $100 to a charity, the charity could apply to receive an additional $15 from the government.</p>
+</blockquote>
+
+<p>I’m partial to this proposal from the <a href="http://www.pppnet.org/pdf/Position_Paper_12-2-10.pdf">Partnership for Philanthropic Planning</a> (via <a href="http://www.gifthub.org/2010/12/ppp-on-obama-charitable-tax-proposal.html">Gift Hub</a>):</p>
+
+<blockquote>
+  <p>For many years, PPP has suggested a conceptual alternative to the charitable deduction. PPP’s plan addresses the current goal of simplifying the tax code, while supporting a robust nonprofit sector that can compensate for reduced government services. Rather than a deduction from income, we propose that charitable contributions be treated as an adjustment from gross income. Since the donor never receives the benefit of income which is contributed to charity, the amount contributed should be considered unavailable for taxation at all. Far from the “tax expenditure” that the [National Commission on Fiscal Responsibility and Reform] suggests, allowing charitable contributions as adjustments to income would provide a fair and accessible incentive for charitable giving to all Americans.</p>
+</blockquote>
+
+<p>And of course, don’t forget the background context of rising inequity, a lapsed estate tax, and the models of individually-determined giving versus democratically-determined (ostensibly) government grants and earmarks.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/blue-ribbon-commissions-in-print"><p>Blue Ribbon Commissions in Print</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-03T00:00:00Z" itemprop="datePublished">December 3, 2010</time>
+
+        • Tagged <a href="/posts/tags/authority">authority</a>, <a href="/posts/tags/language">language</a>, <a href="/posts/tags/power">power</a>, and <a href="/posts/tags/search">search</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="/uploads/2010-12-03-Blue-Ribbon-Commissions-in-Print/blue-ribbon-commission.png"><img src="/uploads/2010-12-03-Blue-Ribbon-Commissions-in-Print/blue-ribbon-commission-500x90.png" alt="" title="blue ribbon commission" /> </a></p>
+
+<p>I was annoyed by my <a href="http://www.island94.org/2010/12/proposals-to-change-the-tax-deductibility-of-donations/">previous post</a> quoting the New York Times’ usage of “blue ribbon panel” (and the numerous appeals to authority in that entire article) that I looked it up using Google Search’s timeline: <em><a href="http://www.google.com/search?tbs=tl:1&amp;q=site:nytimes.com+[%22blue+ribbon+panel%22+OR+%22blue+ribbon+commission%22]">site:nytimes.com [“blue ribbon panel” OR “blue ribbon commission”]</a>.</em> There were 621 results.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2010/12/undermining-nonprofit-significance"><p>Undermining nonprofit significance</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2010-12-02T00:00:00Z" itemprop="datePublished">December 2, 2010</time>
+
+        • Tagged <a href="/posts/tags/nonprofit">nonprofit</a>, <a href="/posts/tags/social-enterprise">social-enterprise</a>, and <a href="/posts/tags/sour-grapes">sour-grapes</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>From a Facebook comment on Kate Barr’s “ <a href="http://www.facebook.com/note.php?note_id=476792537759">Nonprofits, Social Enterprise, and Hot Buttons</a>” ( <a href="http://www.nonprofitsassistancefund.org/blog/2010/11/30/nonprofits-social-enterprise-and-hot-buttons/">blog link</a>):</p>
+
+<blockquote>
+  <p>The craving to undermine nonprofit signficance, value and tax-exemption is endless and will probably never be “satisified” until the entire 501-c section of the tax code is repealed. And there do exist those who want to do exactly that. Those who deeply resent paying taxes at all loathe the nonprofit field for its tax exemption. They won’t stop and they won’t shut up, even when repeatedly, humiliatingly and thoroughly refuted.</p>
+</blockquote>
+
+<p>This is a perspective I share, though rarely so explicitly.</p>
 
   </div>
 </article>
