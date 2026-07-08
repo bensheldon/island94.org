@@ -1,5 +1,5 @@
 <%
-  posts_hash = Post.all.sort_by(&:published_at).reverse.to_h do |post|
+  posts_hash = Post.published.sort_by(&:published_at).reverse.to_h do |post|
     [
       post_path(post).delete_prefix('/').parameterize,
       {

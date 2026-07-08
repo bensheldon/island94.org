@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.all.sort_by(&:date).reverse
+    @bookmarks = Bookmark.published.sort_by(&:date).reverse
   end
 
   def show

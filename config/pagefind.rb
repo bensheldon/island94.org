@@ -63,7 +63,7 @@ class Pagefind
 
   def search_json
     helpers = ActionController::Base.helpers
-    Post.all.sort_by(&:published_at).reverse.to_h do |post|
+    Post.published.sort_by(&:published_at).reverse.to_h do |post|
       url = "/#{post.published_at.strftime('%Y/%m')}/#{post.slug}"
       [
         url.delete_prefix('/').parameterize,

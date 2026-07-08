@@ -22,7 +22,11 @@ class Post < ApplicationModel
   end
 
   def self.tags
-    all.flat_map(&:tags).uniq.sort
+    published.flat_map(&:tags).uniq.sort
+  end
+
+  def self.published
+    all.select(&:published?)
   end
 
   def self.from_file(path)
@@ -71,8 +75,7 @@ class Post < ApplicationModel
   def related_posts
     return [] if tags.empty?
 
-    self.class.all
-        .select(&:published?)
+    self.class.published
         .select { |post| post.tags.intersect?(tags) }
         .reject { |post| post == self }
         .sort_by(&:published_at)
