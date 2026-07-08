@@ -12,18 +12,18 @@ class PagesController < ApplicationController
   end
 
   def archives
-    @posts = Post.all.reverse
+    @posts = Post.published.reverse
   end
 
   def books
   end
 
   def tags
-    @posts = Post.all
+    @posts = Post.published
   end
 
   def feed
-    @posts = Post.all.reverse.take(10)
+    @posts = Post.published.reverse.take(10)
   end
 
   before_action :build_search_index, only: :search
