@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"7777cad0143b26e3d13501871025fe4c"
+    etag: W/"09d70360e99aef3838cba27e466c3d54"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/open-substack-com-pub-henryfudgeofficial-p-degeneracy-is-a-symptom-utm-campaign-post-utm-medium-web":
+    build_path: bookmarks/2026/07/open-substack-com-pub-henryfudgeofficial-p-degeneracy-is-a-symptom-utm-campaign-post-utm-medium-web.html
+    etag: W/"8dee6faa810385d5d83cc5700686bd3a"
   "/bookmarks/2026/07/www-gamedeveloper-com-business-opinion-everything-hurts-and-no-one-knows-when-the-pain-will-end":
     build_path: bookmarks/2026/07/www-gamedeveloper-com-business-opinion-everything-hurts-and-no-one-knows-when-the-pain-will-end.html
     etag: W/"fac1d9ed0e90e2adece6697ca32db625"
