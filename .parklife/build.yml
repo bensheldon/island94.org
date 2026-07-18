@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"09d70360e99aef3838cba27e466c3d54"
+    etag: W/"06b6509008fcbe43a61db022e83dda32"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/newsletter-pragmaticengineer-com-p-the-pragmatic-engineer-ama":
+    build_path: bookmarks/2026/07/newsletter-pragmaticengineer-com-p-the-pragmatic-engineer-ama.html
+    etag: W/"34e2db81d64c2c905c03fa9fc70f444b"
   "/bookmarks/2026/07/open-substack-com-pub-henryfudgeofficial-p-degeneracy-is-a-symptom-utm-campaign-post-utm-medium-web":
     build_path: bookmarks/2026/07/open-substack-com-pub-henryfudgeofficial-p-degeneracy-is-a-symptom-utm-campaign-post-utm-medium-web.html
     etag: W/"8dee6faa810385d5d83cc5700686bd3a"
