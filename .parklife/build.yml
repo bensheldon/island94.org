@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"06b6509008fcbe43a61db022e83dda32"
+    etag: W/"7d970ec1910637d2dab3179793ed4a7e"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/mjtsai-com-blog-2026-07-06-castros-customer-support-lessons":
+    build_path: bookmarks/2026/07/mjtsai-com-blog-2026-07-06-castros-customer-support-lessons.html
+    etag: W/"ef5b6b2e8efaac7c3e8390479c226935"
   "/bookmarks/2026/07/newsletter-pragmaticengineer-com-p-the-pragmatic-engineer-ama":
     build_path: bookmarks/2026/07/newsletter-pragmaticengineer-com-p-the-pragmatic-engineer-ama.html
     etag: W/"34e2db81d64c2c905c03fa9fc70f444b"
