@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"44c735b0a6aac42224200732fe818ee2"
+    etag: W/"70f17529fd62c806fe262fe08e821345"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -22,7 +22,7 @@ paths:
     etag: W/"3c6b19ce45e343b29eafbe90322fa75e"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"8b450deaa131d2b202e83821fd015939"
+    etag: W/"99be5439310bcff5340e03e0bc1f3341"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/lukicdejan-com-writing-editing-stack-ref-labnotes-org":
+    build_path: bookmarks/2026/07/lukicdejan-com-writing-editing-stack-ref-labnotes-org.html
+    etag: W/"c648b44c9bd5ed8de91429165ba7bab6"
   "/bookmarks/2026/07/tekin-co-uk-2026-07-overriding-the-default-rails-error-message-format":
     build_path: bookmarks/2026/07/tekin-co-uk-2026-07-overriding-the-default-rails-error-message-format.html
     etag: W/"51f8b2d35956a632aa27eba215cf3d19"
