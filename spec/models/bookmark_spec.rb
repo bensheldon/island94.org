@@ -37,4 +37,35 @@ RSpec.describe Bookmark do
       expect(described_class.published).to eq([published_bookmark])
     end
   end
+
+  describe '.create!' do
+    let(:date) { Time.zone.parse("2026-01-01 12:00") }
+    let(:path) { Rails.root.join("_bookmarks", "2026", "2026-01-01-example-com-test-post.md") }
+
+    after do
+      FileUtils.rm_f(path)
+      described_class.reset
+    end
+
+    it 'writes a new bookmark file to disk' do
+      bookmark = described_class.create!(link: "https://example.com/test-post", title: "Test Post", tags: ["ruby"], notes: "First notes.", date: date)
+
+      expect(File.exist?(path)).to be(true)
+      expect(bookmark.filepath).to eq(path.to_s)
+      expect(bookmark.link).to eq("https://example.com/test-post")
+      expect(bookmark.title).to eq("Test Post")
+      expect(bookmark.tags).to eq(["ruby"])
+      expect(bookmark.body).to include("First notes.")
+    end
+
+    it 'appends new notes below a horizontal rule when a bookmark for the same link/date already exists' do
+      first = described_class.create!(link: "https://example.com/test-post", title: "Test Post", notes: "First notes.", date: date)
+      second = described_class.create!(link: "https://example.com/test-post", notes: "Second notes.", date: date)
+
+      expect(second.filepath).to eq(first.filepath)
+      expect(second.title).to eq("Test Post") # original frontmatter is preserved, not overwritten
+      expect(second.body).to include("---")
+      expect(second.body.index("First notes.")).to be < second.body.index("Second notes.")
+    end
+  end
 end
