@@ -34,6 +34,38 @@ class Post < ApplicationModel
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
+  # Creates a new post file on disk. Raises if a post with the same title/date already exists.
+  def self.create!(title:, body: nil, date: Time.zone.now, **extra_frontmatter)
+    title = title.to_s.strip
+    raise ArgumentError, "title is required" if title.empty?
+
+    path = filepath_for(title: title, date: date)
+    frontmatter = {
+      "title" => title,
+      "date" => date.strftime('%Y-%m-%d %H:%M %Z'),
+      "published" => true,
+      "tags" => [],
+    }.merge(extra_frontmatter.stringify_keys)
+    body = <<~MARKDOWN.strip
+      #{body}
+
+      <blockquote markdown="1">
+
+
+
+      </blockquote>
+    MARKDOWN
+
+    write_frontmatter_file(path, frontmatter: frontmatter, body: body)
+
+    reset
+    from_file(path)
+  end
+
+  def self.filepath_for(title:, date:)
+    Rails.root.join("_posts", "#{date.strftime('%Y-%m-%d')}-#{title.parameterize}.md").to_s
+  end
+
   def slug
     @_slug ||= raw_slug.downcase
   end

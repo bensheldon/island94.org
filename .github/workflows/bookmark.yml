@@ -1,4 +1,4 @@
-name: Create Bookmark
+name: New Bookmark
 on:
   workflow_dispatch:
     inputs:
@@ -19,45 +19,42 @@ on:
         required: false
         type: string
 jobs:
-  create_bookmark:
-    name: Create a new Bookmark
+  new_bookmark:
+    name: Create new bookmark and open PR
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Bookmark Details
-        env:
-          BOOKMARK_LINK: ${{ github.event.inputs.bookmark_link }}
-          BOOKMARK_TITLE: ${{ github.event.inputs.bookmark_title }}
-          BOOKMARK_TAGS: ${{ github.event.inputs.bookmark_tags }}
-          BOOKMARK_NOTES: ${{ github.event.inputs.bookmark_notes }}
-        run: |
-          echo ${{ toJSON(format('- Bookmark Link: {0}', github.event.inputs.bookmark_link)) }} >> $GITHUB_STEP_SUMMARY
-          echo ${{ toJSON(format('- Bookmark Title: {0}', github.event.inputs.bookmark_title)) }} >> $GITHUB_STEP_SUMMARY
-          echo ${{ toJSON(format('- Bookmark Tags: {0}', github.event.inputs.bookmark_tags)) }} >> $GITHUB_STEP_SUMMARY
-          echo ${{ toJSON(format('- Bookmark Notes: {0}', github.event.inputs.bookmark_notes)) }} >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
       - name: Checkout code
         uses: actions/checkout@v7
-
+      # Dependencies
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-
-      - name: Create bookmark
+      - name: Generate new bookmark
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BOOKMARK_LINK: ${{ github.event.inputs.bookmark_link }}
           BOOKMARK_TITLE: ${{ github.event.inputs.bookmark_title }}
           BOOKMARK_TAGS: ${{ github.event.inputs.bookmark_tags }}
           BOOKMARK_NOTES: ${{ github.event.inputs.bookmark_notes }}
+        run: bundle exec rake new_bookmark
+      - name: Create commit
         run: |
-          bundle exec scripts/bookmark.rb --commit="${GITHUB_REPOSITORY}#${GITHUB_REF##*/}"
+          git config user.name $GITHUB_ACTOR
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - name: Trigger test and publish workflow
-        uses: peter-evans/repository-dispatch@v4
+          git add --all _bookmarks/
+          git commit -m "Add bookmark for ${{ github.event.inputs.bookmark_link }}"
+      - name: Create Pull Request
+        id: create_pr
+        uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: trigger-test-and-publish
+          title: "Add bookmark for ${{ github.event.inputs.bookmark_link }}"
+          body: ""
+          branch-suffix: timestamp
+          add-paths: |
+            _bookmarks/
+
+      - name: PR Details
+        run: |
+          echo "- Pull Request Number - ${{ steps.create_pr.outputs.pull-request-number }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Pull Request URL - ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY

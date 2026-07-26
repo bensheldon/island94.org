@@ -21,6 +21,42 @@ class Bookmark < ApplicationModel
     all.select(&:published?)
   end
 
+  # Creates a new bookmark file on disk. If a bookmark for the same link/date already
+  # exists (i.e. the same link was bookmarked twice on the same day), the new notes are
+  # appended below the existing content, separated by a horizontal rule, rather than
+  # overwriting the file.
+  def self.create!(link:, title: nil, tags: nil, notes: nil, date: Time.zone.now)
+    link = link.to_s.strip
+    raise ArgumentError, "link is required" if link.empty?
+
+    path = filepath_for(link: link, date: date)
+
+    if File.exist?(path)
+      File.write(path, "#{File.read(path).rstrip}\n\n---\n\n#{notes}\n")
+    else
+      frontmatter = {
+        "link" => link,
+        "date" => date.strftime('%Y-%m-%d %H:%M %Z'),
+        "published" => true,
+        "title" => title,
+        "tags" => Array(tags),
+      }
+      write_frontmatter_file(path, frontmatter: frontmatter, body: notes.to_s)
+    end
+
+    reset
+    from_file(path)
+  end
+
+  def self.filepath_for(link:, date:)
+    Rails.root.join("_bookmarks", date.strftime('%Y'), "#{generate_slug(link: link, date: date)}.md").to_s
+  end
+
+  def self.generate_slug(link:, date:)
+    parameterized_link = link.to_s.strip.sub(%r{\Ahttps?://}, "").parameterize[0...150].delete_suffix('-')
+    "#{date.strftime('%Y-%m-%d')}-#{parameterized_link}"
+  end
+
   def slug
     @_slug ||= begin
       _year, _month, _day, slug = filename.split("-", 4)
@@ -42,6 +78,10 @@ class Bookmark < ApplicationModel
 
   def link
     frontmatter.fetch("link", "")
+  end
+
+  def tags
+    frontmatter["tags"] || []
   end
 
   def date

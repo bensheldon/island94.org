@@ -76,4 +76,43 @@ RSpec.describe Post do
       expect(described_class.published).to eq([published_post])
     end
   end
+
+  describe '.create!' do
+    let(:date) { Time.zone.parse("2026-01-01 12:00") }
+
+    it 'writes a new post file to disk' do
+      path = Rails.root.join("_posts", "2026-01-01-a-brand-new-test-post.md")
+
+      begin
+        post = described_class.create!(title: "A Brand New Test Post", body: "Hello world.", date: date)
+
+        expect(File.exist?(path)).to be(true)
+        expect(post.filepath).to eq(path.to_s)
+        expect(post.title).to eq("A Brand New Test Post")
+        expect(post.body).to include("Hello world.")
+        expect(post.published?).to be(true)
+      ensure
+        FileUtils.rm_f(path)
+        described_class.reset
+      end
+    end
+
+    it 'raises and leaves the existing file untouched when a post already exists at that path' do
+      path = Rails.root.join("_posts", "2026-01-01-a-conflicting-test-post.md")
+
+      begin
+        described_class.create!(title: "A Conflicting Test Post", body: "Original content.", date: date)
+
+        expect do
+          described_class.create!(title: "A Conflicting Test Post", body: "New content.", date: date)
+        end.to raise_error(/File already exists/)
+
+        expect(File.read(path)).to include("Original content.")
+        expect(File.read(path)).not_to include("New content.")
+      ensure
+        FileUtils.rm_f(path)
+        described_class.reset
+      end
+    end
+  end
 end

@@ -4,8 +4,6 @@ ruby File.read(File.join(File.dirname(__FILE__), ".ruby-version")).strip
 
 gem "activesupport"
 gem "csv"
-gem "jekyll" # still necessary for bookmarking scripts
-gem "octokit"
 
 gem "parklife"
 gem "parklife-rails"
@@ -14,6 +12,7 @@ gem "rails", "~> 8.1.1"
 gem "bootsnap", require: false
 gem "bootstrap"
 gem "front_matter_parser"
+gem "kramdown"
 gem "kramdown-parser-gfm"
 gem "metainspector", "~> 5.17" # for fetching bookmarks
 gem "puma"
