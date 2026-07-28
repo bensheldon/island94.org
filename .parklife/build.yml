@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"7f046d192f9d8fc29820ac23cac2f5ab"
+    etag: W/"d89a4380e3f31d05973606b904b128df"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -3710,6 +3710,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/07/dannykatch-substack-com-p-we-used-to-be-able-to-buy-things":
+    build_path: bookmarks/2026/07/dannykatch-substack-com-p-we-used-to-be-able-to-buy-things.html
+    etag: W/"1bc6f5bd6c03c0aff2ffbcf13e25e055"
   "/bookmarks/2026/07/www-hamiltonnolan-com-p-i-dont-know-how-you-can-look-at-minneapolis":
     build_path: bookmarks/2026/07/www-hamiltonnolan-com-p-i-dont-know-how-you-can-look-at-minneapolis.html
     etag: W/"457023047ddc4adbcccda12514a850b4"
