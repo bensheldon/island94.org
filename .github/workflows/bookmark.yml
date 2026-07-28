@@ -20,7 +20,7 @@ on:
         type: string
 jobs:
   new_bookmark:
-    name: Create new bookmark and open PR
+    name: Create new bookmark
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -44,7 +44,12 @@ jobs:
 
           git add --all _bookmarks/
           git commit -m "Add bookmark for ${{ github.event.inputs.bookmark_link }}"
+      - name: Push to main
+        id: push
+        continue-on-error: true
+        run: git push origin HEAD:main
       - name: Create Pull Request
+        if: steps.push.outcome == 'failure'
         id: create_pr
         uses: peter-evans/create-pull-request@v8
         with:
@@ -54,7 +59,12 @@ jobs:
           add-paths: |
             _bookmarks/
 
-      - name: PR Details
+      - name: Summary
         run: |
-          echo "- Pull Request Number - ${{ steps.create_pr.outputs.pull-request-number }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Pull Request URL - ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.push.outcome }}" = "success" ]; then
+            echo "- Pushed directly to main" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- Push to main conflicted, opened a Pull Request instead" >> $GITHUB_STEP_SUMMARY
+            echo "- Pull Request Number - ${{ steps.create_pr.outputs.pull-request-number }}" >> $GITHUB_STEP_SUMMARY
+            echo "- Pull Request URL - ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
+          fi
