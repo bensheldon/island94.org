@@ -2,7 +2,7 @@
 title: Running code when the Ruby on Rails webserver boots
 date: 2026-07-31 18:43 UTC
 published: true
-tags: [Ruby on Rails]
+tags: ["Ruby on Rails"]
 ---
 
 I was recently part of a [Mastodon discussion](https://github.com/mastodon/mastodon/pull/39990) about the best way to run code in a Rails application before Puma boots. The need for this is that sometimes you want some code that _only_ runs within a webserver, not when running rake tasks or rails commands or opening the console. 
