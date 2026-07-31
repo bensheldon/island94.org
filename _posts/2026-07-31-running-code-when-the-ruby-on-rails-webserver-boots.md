@@ -49,6 +49,8 @@ end
 
 This is the simplest answer: if you only want code to run in the webserver, invoking it on the first (or any) request makes sense to me. In Ruby on Rails, I think the development environment's "are there pending migrations?" check is a neat example because Rails does the check in the request, and then raises a [special kind of `ActionableError`](https://github.com/rails/rails/blob/b83739f81cc9f0f8028d98e1a3d7f6f79c375fb5/activerecord/lib/active_record/migration.rb#L147-L156) that causes the "Run pending migrations" button to appear.
 
+**Aside:** I think people are sometimes too quick to reach for Rack middleware instead of doing a Controller `before_action`; consider that too.
+
 ### Other thoughts
 
 There is a lot of trickiness to this problem. Mastodon is sorta special because it’s an *application that is distributed*. As opposed to your own specially customized Rails application you’re wholly developing, or a narrow gem/engine that you’re distributing to be installed in someone else’s application.
