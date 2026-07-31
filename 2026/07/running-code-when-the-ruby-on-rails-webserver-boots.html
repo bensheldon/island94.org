@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Running code when the Ruby on Rails webserver boots | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-4cd9fbc8705ce9304e625f5df173b9dc6dc69d41d521d0dcfe2498607bfd384c.css" data-turbo-track="reload" />
+  
+  <script src="/assets/vite/assets/application-D3c6pSoR.js" crossorigin="" type="module"></script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/07/running-code-when-the-ruby-on-rails-webserver-boots"><p>Running code when the Ruby on Rails webserver boots</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-07-31T18:43:00Z" itemprop="datePublished">July 31, 2026</time>
+
+        • Tagged <a href="/posts/tags/ruby-on-rails">Ruby on Rails</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I was recently part of a <a href="https://github.com/mastodon/mastodon/pull/39990">Mastodon discussion</a> about the best way to run code in a Rails application before Puma boots. The need for this is that sometimes you want some code that <em>only</em> runs within a webserver, not when running rake tasks or rails commands or opening the console.</p>
+
+<p>Here we go…</p>
+
+<h3 id="via-server-do-blocks">Via <code>server do</code> blocks</h3>
+
+<p>Rails 6.1 added a<a href="https://github.com/rails/rails/pull/39953"><code>Railtie#server</code> hook</a> that can be invoked in <code>application.rb</code> or a gem’s <code>engine.rb</code>. It’s invoked when the <code>config.ru</code> file is evaluated.</p>
+
+<p><code>Warning:</code> the invocation of the hook in <code>config.ru</code> is missing from <em>a lot</em> of Rails projects. I once <a href="https://github.com/rails/rails/pull/49704">lackadaisically tried to address this upstream</a>, but doublecheck your <code>config.ru</code> actually contains <code>Rails.application.load_server</code> as <a href="https://github.com/rails/rails/blob/b83739f81cc9f0f8028d98e1a3d7f6f79c375fb5/railties/lib/rails/generators/rails/app/templates/config.ru.tt#L6">it should</a>.</p>
+
+<h3 id="in-your-configru">In your <code>config.ru</code></h3>
+
+<p>The Rackup configuration file only gets evaluated by a webserver, so that is a natural place to invoke your webserver-only code.</p>
+
+<p><strong>Aside:</strong> like <code>boot.rb</code>, I either find <em>interesting things</em> lurking around in <code>configu.ru</code> , or it’s one of those files that hasn’t been touched since <code>rails new</code> was first run.</p>
+
+<h3 id="as-a-puma-plugin">As a Puma plugin</h3>
+
+<p>If you’re dedicated to Puma, <a href="https://github.com/puma/puma/blob/b8341dc946f0a2444e5ea6730d1967ca53c8d006/docs/plugins.md">write a simple plugin for it</a>. Puma plugins also allow hooking into more sophisticated places than simply “before it starts”.</p>
+
+<p>tbh, I wasn’t aware of Puma plugins as an integration point until <a href="https://github.com/rails/solid_queue/blob/86f3d92f1dd68547ec0ebe960fc9933c203d9e51/lib/puma/plugin/solid_queue.rb">Solid Queue shipped a Puma plugin</a> for its in-webserver mode.  I like it!</p>
+
+<h3 id="by-searching-the-callstack">By searching the callstack</h3>
+
+<p>I just mentioned Solid Queue has having an admirable integration point. My GoodJob has an… ok one: <a href="https://github.com/bensheldon/good_job/blob/81db22b7cfde2579b2d735e076fa6eaacc65affa/lib/good_job/configuration.rb#L408-L418">searching the callstack for webserver fingerprints</a>. I chose this path at the time for the broadest zero-configuration compatibility with older versions of Rails, different webservers, and JRuby, but I wouldn’t recommend it very strongly today because it feels brittle:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">in_webserver?</span>
+  <span class="k">return</span> <span class="vi">@_in_webserver</span> <span class="k">unless</span> <span class="vi">@_in_webserver</span><span class="p">.</span><span class="nf">nil?</span>
+
+  <span class="vi">@_in_webserver</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">const_defined?</span><span class="p">(</span><span class="ss">:Server</span><span class="p">)</span> <span class="o">||</span> <span class="k">begin</span>
+    <span class="n">self_caller</span> <span class="o">=</span> <span class="nb">caller</span>
+    <span class="n">self_caller</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{config.ru}</span><span class="p">).</span><span class="nf">any?</span> <span class="o">||</span> <span class="c1"># EXAMPLE: config.ru:3:in `block in &lt;main&gt;' OR config.ru:3:in `new_from_string'</span>
+      <span class="n">self_caller</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{puma/request}</span><span class="p">).</span><span class="nf">any?</span> <span class="o">||</span> <span class="c1"># EXAMPLE: puma-5.6.4/lib/puma/request.rb:76:in `handle_request'</span>
+      <span class="n">self_caller</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sx">%{/rack/handler/}</span><span class="p">).</span><span class="nf">any?</span> <span class="o">||</span> <span class="c1"># EXAMPLE: iodine-0.7.44/lib/rack/handler/iodine.rb:13:in `start'</span>
+      <span class="p">(</span><span class="no">Concurrent</span><span class="p">.</span><span class="nf">on_jruby?</span> <span class="o">&amp;&amp;</span> <span class="n">self_caller</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{jruby/rack/rails_booter}</span><span class="p">).</span><span class="nf">any?</span><span class="p">)</span> <span class="c1"># EXAMPLE: uri:classloader:/jruby/rack/rails_booter.rb:83:in `load_environment'</span>
+  <span class="k">end</span> <span class="o">||</span> <span class="kp">false</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="other-thoughts">Other thoughts</h3>
+
+<p>There is a lot of trickiness to this problem. Mastodon is sorta special because it’s an <em>application that is distributed</em>. As opposed to your own specially customized Rails application you’re wholly developing, or a narrow gem/engine that you’re distributing to be installed in someone else’s application.</p>
+
+<p>It’s tough to recommend a single best option. For a gem or engine, like Solid Queue or GoodJob, you’re probably focused most on the simplest and trouble-free installation with the widest compatibility. For your own application, the goal is probably not leaving a forgotten footgun to be stumbled over in the future. Good luck!</p>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2026-07-31-running-code-when-the-ruby-on-rails-webserver-boots.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+    <hr>
+    <div class="card-body">
+      <h5>Related Posts</h5>
+      <ul>
+          <li><a href="/2025/10/hanami-and-loading-code-faster">Hanami and loading code, faster</a></li>
+          <li><a href="/2025/10/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later">Serializing ViewComponent for Active Job and Turbo Broadcast Later</a></li>
+          <li><a href="/2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable">Notes from building a “who is doing what right now on our website?” presence feature with Action Cable</a></li>
+          <li><a href="/2025/08/building-deterministic-reproducible-assets-with-sprockets">Building deterministic, reproducible assets with Sprockets</a></li>
+          <li><a href="/2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code">Everything I know about AI, I learned by reading the AWS Bedrock Client Ruby SDK code</a></li>
+      </ul>
+    </div>
+</div>
+
+  </div>
+
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-BGjAUAG3.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-C3-9z0L7.js')</script>
+</body>
+</html>
