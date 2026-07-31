@@ -133,9 +133,9 @@
 
 <h3 id="via-server-do-blocks">Via <code>server do</code> blocks</h3>
 
-<p>Rails 6.1 added a<a href="https://github.com/rails/rails/pull/39953"><code>Railtie#server</code> hook</a> that can be invoked in <code>application.rb</code> or a gem’s <code>engine.rb</code>. It’s invoked when the <code>config.ru</code> file is evaluated.</p>
+<p>Rails 6.1 added a <a href="https://github.com/rails/rails/pull/39953"><code>Railtie#server</code> hook</a> that can be invoked in <code>application.rb</code> or a gem’s <code>engine.rb</code>. It’s invoked when the <code>config.ru</code> file is evaluated.</p>
 
-<p><code>Warning:</code> the invocation of the hook in <code>config.ru</code> is missing from <em>a lot</em> of Rails projects. I once <a href="https://github.com/rails/rails/pull/49704">lackadaisically tried to address this upstream</a>, but doublecheck your <code>config.ru</code> actually contains <code>Rails.application.load_server</code> as <a href="https://github.com/rails/rails/blob/b83739f81cc9f0f8028d98e1a3d7f6f79c375fb5/railties/lib/rails/generators/rails/app/templates/config.ru.tt#L6">it should</a>.</p>
+<p><strong>Warning:</strong> the invocation of the hook in <code>config.ru</code> is missing from <em>a lot</em> of Rails projects. I once <a href="https://github.com/rails/rails/pull/49704">lackadaisically tried to address this upstream</a>, but doublecheck your <code>config.ru</code> actually contains <code>Rails.application.load_server</code> as <a href="https://github.com/rails/rails/blob/b83739f81cc9f0f8028d98e1a3d7f6f79c375fb5/railties/lib/rails/generators/rails/app/templates/config.ru.tt#L6">it should</a>.</p>
 
 <h3 id="in-your-configru">In your <code>config.ru</code></h3>
 
