@@ -4,7 +4,7 @@ config:
 paths:
   "/":
     build_path: index.html
-    etag: W/"dd986eadbb40d0c3d1c4180a34581e61"
+    etag: W/"5a766a952376fa76e6b936174a58b165"
   "/redirects":
     build_path: redirects.html
     etag: W/"ec5db32245f205b619abd395492574a3"
@@ -16,10 +16,10 @@ paths:
     etag: W/"be840a980665578f7882cf64595f09e2"
   "/search.json":
     build_path: search.json
-    etag: W/"cd3feac7698ac28f7f6662a6bfd3e2c0"
+    etag: W/"fbe887d17c9164635355426fb7ca4335"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"a1ac2df930de6de54df65f211007efeb"
+    etag: W/"66fee2c4debf9d0faaec3870dd010cae"
   "/sitemap.xml":
     build_path: sitemap.xml
     etag: W/"423622a6f24b35ca062e79493f0abee5"
@@ -42,7 +42,7 @@ paths:
     etag: W/"270e1599ddeea414e1a99cc16794056e"
   "/2026/07/running-code-when-the-ruby-on-rails-webserver-boots":
     build_path: 2026/07/running-code-when-the-ruby-on-rails-webserver-boots.html
-    etag: W/"083f5186dcbca41c32a164308ebd6889"
+    etag: W/"3b6296ff1e17011a5ec7a9c9e31a1a64"
   "/posts/tags/ruby-on-rails":
     build_path: posts/tags/ruby-on-rails.html
     etag: W/"578b085adcb897e57b5b9950c1ebe1cf"
@@ -21748,7 +21748,7 @@ paths:
     etag: W/"5719c736f35dd14b8f10758e7b892c02"
   "/posts/1":
     build_path: posts/1.html
-    etag: W/"dd986eadbb40d0c3d1c4180a34581e61"
+    etag: W/"5a766a952376fa76e6b936174a58b165"
   "/posts/3":
     build_path: posts/3.html
     etag: W/"9d9de17f1309d1f797bb39a2f0784b2c"
