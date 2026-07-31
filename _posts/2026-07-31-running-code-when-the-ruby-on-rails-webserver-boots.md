@@ -11,9 +11,9 @@ Here we go…
 
 ### Via `server do` blocks
 
-Rails 6.1 added a[￼`Railtie#server`￼ hook](https://github.com/rails/rails/pull/39953) that can be invoked in `application.rb` or a gem’s `engine.rb`. It’s invoked when the `config.ru` file is evaluated.
+Rails 6.1 added a[`Railtie#server` hook](https://github.com/rails/rails/pull/39953) that can be invoked in `application.rb` or a gem’s `engine.rb`. It’s invoked when the `config.ru` file is evaluated.
 
-`Warning:` the invocation of the hook in `config.ru` is missing from _a lot_ of Rails projects. I once [lackadasically tried to address this upstream](https://github.com/rails/rails/pull/49704), but doublecheck your `config.ru` actually contains `Rails.application.load_server` as [it should](https://github.com/rails/rails/blob/b83739f81cc9f0f8028d98e1a3d7f6f79c375fb5/railties/lib/rails/generators/rails/app/templates/config.ru.tt#L6).
+`Warning:` the invocation of the hook in `config.ru` is missing from _a lot_ of Rails projects. I once [lackadaisically tried to address this upstream](https://github.com/rails/rails/pull/49704), but doublecheck your `config.ru` actually contains `Rails.application.load_server` as [it should](https://github.com/rails/rails/blob/b83739f81cc9f0f8028d98e1a3d7f6f79c375fb5/railties/lib/rails/generators/rails/app/templates/config.ru.tt#L6).
 
 ### In your `config.ru`
 
