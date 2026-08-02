@@ -10,7 +10,7 @@ paths:
     etag: W/"ec5db32245f205b619abd395492574a3"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"b2587783baa9e80eeb9ac3d0c01c5d56"
+    etag: W/"e9b249475c3f46f1cfa93450e4a9f9ec"
   "/search":
     build_path: search.html
     etag: W/"be840a980665578f7882cf64595f09e2"
@@ -22,7 +22,7 @@ paths:
     etag: W/"66fee2c4debf9d0faaec3870dd010cae"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"9d09d02bf8a940b23b312b1bff58fd93"
+    etag: W/"2943da27e9e162900b55c9451f3d0f41"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/bullypulpit-substack-com-p-tuesday-never-comes":
+    build_path: bookmarks/2026/08/bullypulpit-substack-com-p-tuesday-never-comes.html
+    etag: W/"00a91e827702ea0f3cd00a56da104237"
   "/bookmarks/2026/07/www-garbageday-email-p-the-genderslop-of-the-new-gilded-age":
     build_path: bookmarks/2026/07/www-garbageday-email-p-the-genderslop-of-the-new-gilded-age.html
     etag: W/"d7745f3062da06c8ca54366fb93351a7"
