@@ -17,7 +17,7 @@ A simple heuristic for identifying bad planning, either from yourself or others,
 
 [People like threes](https://en.wikipedia.org/wiki/Rule_of_three_%28writing%29). If you turn in a one item plan, maybe it looks like you didn’t do the assignment; if you submit 5 or more, maybe you don't look focused enough. I would suggest you play with it to see if that’s actually the case rather than *always* trying to shape _everything_ down to 3: try defensibly submitting just one priority, or twelve, and see what happens.
 
-When I worked at Code for America, there was a period where they adopted a planning framework called OGSM: Objectives, Goals, Strategies and Measures. Unfortunately, its application led to teams creating massive spreadsheets of 3 goals by 3 objectives by 3 Strategies by 3 Measures each. 3-to-the-4th-power is 81. Yikes. This was eventually reigned in.
+When I worked at Code for America, there was a period where they adopted a planning framework called OGSM: Objectives, Goals, Strategies and Measures. Unfortunately, its application led to teams creating massive spreadsheets of 3 goals by 3 objectives by 3 Strategies by 3 Measures each. 3-to-the-4th-power is 81. Yikes. This was eventually reined in.
 
 So to the extent that planning habitually hovers around 3 items per category, that's the simplest sign that “planning” is a box-checking and template-filling exercise. Either by you, or by the people reviewing it.
 
@@ -74,7 +74,7 @@ My advice for anyone in charge is to simply make 100% the achievable target and 
 
 Percentages are also annoying when you’re measuring progress towards some boolean done-or-not-done where there’s no benefit until it’s done. 80% of zero value is still zero value.
 
-In my opinion, the entire reason to report on progress is to have some shared context for if or when you need to ask for more resources to finish it out. Same with stoplights. If the only shared context is “things were green but now they’re yellow” that’s a pain; in the same way as “if some projects aren’t yellow, that means we’re not working hard enough” sucks too. Also when percentages or stoplights get averaged and rolled-up 🙄. 
+In my opinion, the entire reason to report on progress is to have some shared context for if or when you need to ask for more resources to finish it out. Same with stoplights. If the only shared context is “things were green but now they’re yellow” that’s not useful; in the same way as “if some projects aren’t yellow, that means we’re not working hard enough” sucks too. Also when percentages or stoplights get averaged and rolled-up 🙄. 
 
 ### Writing a plan vs doing planning
 
