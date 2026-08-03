@@ -33,6 +33,9 @@ AllCops:
     - vendor/**/*
   NewCops: enable
 
+Capybara/ClickLinkOrButtonStyle:
+  EnforcedStyle: link_or_button
+
 Layout/EmptyLineAfterMagicComment:
   Enabled: false
 
