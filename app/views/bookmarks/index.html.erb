@@ -21,16 +21,7 @@
         <a class="post-link" href="<%= bookmark.link %>">
           <%= bookmark.title&.truncate(50) %>
         </a>
-        <%
-          bookmark_host = begin
-            URI.parse(bookmark.link).host
-          rescue StandardError
-            nil
-          end
-        %>
-        <% if bookmark_host.present? %>
-          <br><small class="text-muted"><%= bookmark_host %></small>
-        <% end %>
+        <br><small class="text-muted"><%= bookmark.link_host %></small>
       </td>
       <td style="max-width: 20em"><%= bookmark.content %></td>
       <td>

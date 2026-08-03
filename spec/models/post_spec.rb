@@ -12,6 +12,23 @@ RSpec.describe Post do
     end
   end
 
+  describe '#tags' do
+    it 'returns an empty array when tags is absent' do
+      post = described_class.new(frontmatter: {})
+      expect(post.tags).to eq([])
+    end
+
+    it 'returns an array when tags is already an array' do
+      post = described_class.new(frontmatter: { "tags" => ["ruby", "rails"] })
+      expect(post.tags).to eq(["ruby", "rails"])
+    end
+
+    it 'wraps a string tag in an array' do
+      post = described_class.new(frontmatter: { "tags" => "ruby" })
+      expect(post.tags).to eq(["ruby"])
+    end
+  end
+
   describe '#content' do
     it 'executes xruby code blocks and annotates `# =>` comments with their values' do
       body = <<~MARKDOWN
