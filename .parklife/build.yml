@@ -4,7 +4,7 @@ config:
 paths:
   "/":
     build_path: index.html
-    etag: W/"3e9257220fdd929f0d4913a99214bb0a"
+    etag: W/"dacb34e26658e8904868a481178524d4"
   "/redirects":
     build_path: redirects.html
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
@@ -16,10 +16,10 @@ paths:
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
   "/search.json":
     build_path: search.json
-    etag: W/"52f7dbb17746d94f30369da715597dd1"
+    etag: W/"c1b40f42febf337cb6d2ff73e86c1c22"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"314bd0f6b9a412f6fb5870ea7f292df1"
+    etag: W/"389c282585bc73c1e619115371acd028"
   "/sitemap.xml":
     build_path: sitemap.xml
     etag: W/"590ba3fa0747b506f55e3930cf00fdef"
@@ -48,7 +48,7 @@ paths:
     etag: W/"25f05aeef72154d156007d696d2e8009"
   "/2026/07/planning-badly-more-and-less":
     build_path: 2026/07/planning-badly-more-and-less.html
-    etag: W/"e0969381528c8d5a474ccc71d15f6916"
+    etag: W/"1c847ab20837d0d80fba94b5f160f033"
   "/2026/05/one-year-of-ruby-on-rails-configuration":
     build_path: 2026/05/one-year-of-ruby-on-rails-configuration.html
     etag: W/"f77133b73b45f0d7923d04426e86dca4"
@@ -21835,7 +21835,7 @@ paths:
     etag: W/"a4edda018daeaf9398226e885f9a97da"
   "/posts/1":
     build_path: posts/1.html
-    etag: W/"3e9257220fdd929f0d4913a99214bb0a"
+    etag: W/"dacb34e26658e8904868a481178524d4"
   "/posts/3":
     build_path: posts/3.html
     etag: W/"329f9aadaf80a01f4e055beeb37620af"
