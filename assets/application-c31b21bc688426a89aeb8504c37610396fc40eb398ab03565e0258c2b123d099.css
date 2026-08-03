@@ -14913,124 +14913,131 @@ textarea.form-control-lg {
 }
 
 /* line 52, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+[data-bs-theme="light"] .highlight .ges,
+[data-bs-theme="auto"] .highlight .ges {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* line 56, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .gs,
 [data-bs-theme="auto"] .highlight .gs {
   font-weight: bold;
 }
 
-/* line 55, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 59, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .gt,
 [data-bs-theme="auto"] .highlight .gt {
   color: #000000;
   background-color: #d8d9ff;
 }
 
-/* line 59, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 63, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .kc,
 [data-bs-theme="auto"] .highlight .kc {
   color: #007500;
   font-weight: bold;
 }
 
-/* line 63, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 67, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .kn,
 [data-bs-theme="auto"] .highlight .kn {
   color: #007500;
   font-weight: bold;
 }
 
-/* line 67, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 71, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .kp,
 [data-bs-theme="auto"] .highlight .kp {
   color: #007500;
   font-weight: bold;
 }
 
-/* line 71, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 75, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .kr,
 [data-bs-theme="auto"] .highlight .kr {
   color: #007500;
   font-weight: bold;
 }
 
-/* line 75, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 79, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .gh,
 [data-bs-theme="auto"] .highlight .gh {
   color: #007500;
   font-weight: bold;
 }
 
-/* line 79, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 83, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .gu,
 [data-bs-theme="auto"] .highlight .gu {
   color: #007500;
   font-weight: bold;
 }
 
-/* line 83, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 87, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .kt,
 [data-bs-theme="auto"] .highlight .kt {
   color: #920241;
   font-weight: bold;
 }
 
-/* line 87, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 91, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .no,
 [data-bs-theme="auto"] .highlight .no {
   color: #920241;
   font-weight: bold;
 }
 
-/* line 91, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 95, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nc,
 [data-bs-theme="auto"] .highlight .nc {
   color: #920241;
   font-weight: bold;
 }
 
-/* line 95, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 99, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nd,
 [data-bs-theme="auto"] .highlight .nd {
   color: #920241;
   font-weight: bold;
 }
 
-/* line 99, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 103, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nn,
 [data-bs-theme="auto"] .highlight .nn {
   color: #920241;
   font-weight: bold;
 }
 
-/* line 103, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 107, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .bp,
 [data-bs-theme="auto"] .highlight .bp {
   color: #920241;
   font-weight: bold;
 }
 
-/* line 107, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 111, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .ne,
 [data-bs-theme="auto"] .highlight .ne {
   color: #920241;
   font-weight: bold;
 }
 
-/* line 111, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 115, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nl,
 [data-bs-theme="auto"] .highlight .nl {
   color: #840084;
   font-weight: bold;
 }
 
-/* line 115, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 119, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nt,
 [data-bs-theme="auto"] .highlight .nt {
   color: #840084;
   font-weight: bold;
 }
 
-/* line 119, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 123, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .m, [data-bs-theme="light"] .highlight .mb, [data-bs-theme="light"] .highlight .mf, [data-bs-theme="light"] .highlight .mh, [data-bs-theme="light"] .highlight .mi, [data-bs-theme="light"] .highlight .il, [data-bs-theme="light"] .highlight .mo, [data-bs-theme="light"] .highlight .mx,
 [data-bs-theme="auto"] .highlight .m,
 [data-bs-theme="auto"] .highlight .mb,
@@ -15044,20 +15051,20 @@ textarea.form-control-lg {
   font-weight: bold;
 }
 
-/* line 123, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 127, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .ld,
 [data-bs-theme="auto"] .highlight .ld {
   color: #007500;
   font-weight: bold;
 }
 
-/* line 127, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 131, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .ss,
 [data-bs-theme="auto"] .highlight .ss {
   color: #007500;
 }
 
-/* line 130, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 134, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .s, [data-bs-theme="light"] .highlight .sb, [data-bs-theme="light"] .highlight .dl, [data-bs-theme="light"] .highlight .sd, [data-bs-theme="light"] .highlight .s2, [data-bs-theme="light"] .highlight .sh, [data-bs-theme="light"] .highlight .sx, [data-bs-theme="light"] .highlight .sr, [data-bs-theme="light"] .highlight .s1,
 [data-bs-theme="auto"] .highlight .s,
 [data-bs-theme="auto"] .highlight .sb,
@@ -15072,79 +15079,79 @@ textarea.form-control-lg {
   font-weight: bold;
 }
 
-/* line 134, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 138, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .sa,
 [data-bs-theme="auto"] .highlight .sa {
   color: #19003a;
   font-weight: bold;
 }
 
-/* line 138, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 142, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .se,
 [data-bs-theme="auto"] .highlight .se {
   color: #840084;
   font-weight: bold;
 }
 
-/* line 142, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 146, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .sc,
 [data-bs-theme="auto"] .highlight .sc {
   color: #840084;
   font-weight: bold;
 }
 
-/* line 146, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 150, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .si,
 [data-bs-theme="auto"] .highlight .si {
   color: #840084;
   font-weight: bold;
 }
 
-/* line 150, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 154, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nb,
 [data-bs-theme="auto"] .highlight .nb {
   font-weight: bold;
 }
 
-/* line 153, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 157, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .ni,
 [data-bs-theme="auto"] .highlight .ni {
   color: #999999;
   font-weight: bold;
 }
 
-/* line 157, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 161, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .w,
 [data-bs-theme="auto"] .highlight .w {
   color: #BBBBBB;
 }
 
-/* line 160, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 164, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .go,
 [data-bs-theme="auto"] .highlight .go {
   color: #19003a;
 }
 
-/* line 163, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 167, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nf, [data-bs-theme="light"] .highlight .fm,
 [data-bs-theme="auto"] .highlight .nf,
 [data-bs-theme="auto"] .highlight .fm {
   color: #ff0089;
 }
 
-/* line 166, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 170, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .py,
 [data-bs-theme="auto"] .highlight .py {
   color: #ff0089;
 }
 
-/* line 169, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 173, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .na,
 [data-bs-theme="auto"] .highlight .na {
   color: #ff0089;
 }
 
-/* line 172, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
+/* line 176, app/assets/stylesheets/vendor/rouge/_magritte_light.scss */
 [data-bs-theme="light"] .highlight .nv, [data-bs-theme="light"] .highlight .vc, [data-bs-theme="light"] .highlight .vg, [data-bs-theme="light"] .highlight .vi, [data-bs-theme="light"] .highlight .vm,
 [data-bs-theme="auto"] .highlight .nv,
 [data-bs-theme="auto"] .highlight .vc,
@@ -15219,280 +15226,285 @@ textarea.form-control-lg {
 
 /* line 37, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .ge {
-  color: #1b1d1e;
   font-style: italic;
 }
 
-/* line 41, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 40, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+[data-bs-theme="dark"] .highlight .ges {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* line 44, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .gr {
   color: #f92672;
 }
 
-/* line 44, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 47, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .gt {
   color: #f92672;
 }
 
-/* line 47, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 50, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .gh {
   color: #403d3d;
 }
 
-/* line 50, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 53, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .go {
   color: #403d3d;
 }
 
-/* line 53, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 56, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .gp {
   color: #66d9ef;
 }
 
-/* line 56, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 59, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .gs {
   font-weight: bold;
 }
 
-/* line 59, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 62, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .gu {
   color: #465457;
 }
 
-/* line 62, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 65, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .k, [data-bs-theme="dark"] .highlight .kv {
   color: #66d9ef;
   font-weight: bold;
 }
 
-/* line 66, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 69, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .kc {
   color: #66d9ef;
   font-weight: bold;
 }
 
-/* line 70, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 73, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .kd {
   color: #66d9ef;
   font-weight: bold;
 }
 
-/* line 74, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 77, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .kp {
   color: #66d9ef;
   font-weight: bold;
 }
 
-/* line 78, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 81, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .kr {
   color: #66d9ef;
   font-weight: bold;
 }
 
-/* line 82, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 85, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .kt {
   color: #66d9ef;
   font-weight: bold;
 }
 
-/* line 86, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 89, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .kn {
   color: #f92672;
   font-weight: bold;
 }
 
-/* line 90, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 93, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .ow {
   color: #f92672;
   font-weight: bold;
 }
 
-/* line 94, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 97, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .o {
   color: #f92672;
   font-weight: bold;
 }
 
-/* line 98, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 101, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .mf {
   color: #af87ff;
 }
 
-/* line 101, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 104, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .mh {
   color: #af87ff;
 }
 
-/* line 104, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 107, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .il {
   color: #af87ff;
 }
 
-/* line 107, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 110, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .mi {
   color: #af87ff;
 }
 
-/* line 110, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 113, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .mo {
   color: #af87ff;
 }
 
-/* line 113, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 116, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .m, [data-bs-theme="dark"] .highlight .mb, [data-bs-theme="dark"] .highlight .mx {
   color: #af87ff;
 }
 
-/* line 116, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 119, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .se {
   color: #af87ff;
 }
 
-/* line 119, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 122, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .sb {
   color: #d7d787;
 }
 
-/* line 122, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 125, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .sc {
   color: #d7d787;
 }
 
-/* line 125, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 128, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .sd {
   color: #d7d787;
 }
 
-/* line 128, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 131, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .s2 {
   color: #d7d787;
 }
 
-/* line 131, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 134, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .sh {
   color: #d7d787;
 }
 
-/* line 134, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 137, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .si {
   color: #d7d787;
 }
 
-/* line 137, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 140, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .sx {
   color: #d7d787;
 }
 
-/* line 140, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 143, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .sr {
   color: #d7d787;
 }
 
-/* line 143, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 146, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .s1 {
   color: #d7d787;
 }
 
-/* line 146, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 149, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .ss {
   color: #d7d787;
 }
 
-/* line 149, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 152, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .s, [data-bs-theme="dark"] .highlight .sa, [data-bs-theme="dark"] .highlight .dl {
   color: #d7d787;
 }
 
-/* line 152, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 155, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .na {
   color: #a6e22e;
 }
 
-/* line 155, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 158, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nc {
   color: #a6e22e;
   font-weight: bold;
 }
 
-/* line 159, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 162, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nd {
   color: #a6e22e;
   font-weight: bold;
 }
 
-/* line 163, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 166, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .ne {
   color: #a6e22e;
   font-weight: bold;
 }
 
-/* line 167, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 170, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nf, [data-bs-theme="dark"] .highlight .fm {
   color: #a6e22e;
   font-weight: bold;
 }
 
-/* line 171, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 174, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .no {
   color: #66d9ef;
 }
 
-/* line 174, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 177, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .bp {
   color: #f8f8f2;
 }
 
-/* line 177, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 180, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nb {
   color: #f8f8f2;
 }
 
-/* line 180, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 183, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .ni {
   color: #f8f8f2;
 }
 
-/* line 183, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 186, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nn {
   color: #f8f8f2;
 }
 
-/* line 186, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 189, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .vc {
   color: #f8f8f2;
 }
 
-/* line 189, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 192, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .vg {
   color: #f8f8f2;
 }
 
-/* line 192, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 195, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .vi {
   color: #f8f8f2;
 }
 
-/* line 195, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 198, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nv, [data-bs-theme="dark"] .highlight .vm {
   color: #f8f8f2;
 }
 
-/* line 198, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 201, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .w {
   color: #f8f8f2;
 }
 
-/* line 201, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 204, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nl {
   color: #f8f8f2;
   font-weight: bold;
 }
 
-/* line 205, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 208, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight .nt {
   color: #f92672;
 }
 
-/* line 208, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
+/* line 211, app/assets/stylesheets/vendor/rouge/_molokai_dark.scss */
 [data-bs-theme="dark"] .highlight {
   color: #f8f8f2;
   background-color: #1b1d1e;
