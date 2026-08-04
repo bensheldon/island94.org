@@ -4,7 +4,7 @@ config:
 paths:
   "/":
     build_path: index.html
-    etag: W/"885cb107723d10e7afe66182244f0a78"
+    etag: W/"ea0f0932240d2426c32a199e5be4b10e"
   "/redirects":
     build_path: redirects.html
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
@@ -16,10 +16,10 @@ paths:
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
   "/search.json":
     build_path: search.json
-    etag: W/"e51a72ee40caecacd4977c5d5d296cec"
+    etag: W/"f185e6801596140bb92fbca5fc4fedb1"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"f56fd59dbf61b65fafd2dbe218b54f5e"
+    etag: W/"9a3fc1aec5053472b056cc1811ae96a8"
   "/sitemap.xml":
     build_path: sitemap.xml
     etag: W/"0fa1bbaae4e24dfbad5e411422251255"
@@ -42,7 +42,7 @@ paths:
     etag: W/"7087541ecce73be0734bd4e1e0979d4a"
   "/2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments":
     build_path: 2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments.html
-    etag: W/"87f4adeb40742ea3e939706d1d25747d"
+    etag: W/"9bddfe7ab94c88013fd63454fd5607e4"
   "/2026/07/running-code-when-the-ruby-on-rails-webserver-boots":
     build_path: 2026/07/running-code-when-the-ruby-on-rails-webserver-boots.html
     etag: W/"b55ca7eac4eb2cbee3bd8620b4f11312"
@@ -21838,7 +21838,7 @@ paths:
     etag: W/"a4edda018daeaf9398226e885f9a97da"
   "/posts/1":
     build_path: posts/1.html
-    etag: W/"885cb107723d10e7afe66182244f0a78"
+    etag: W/"ea0f0932240d2426c32a199e5be4b10e"
   "/posts/3":
     build_path: posts/3.html
     etag: W/"850c58384dc9d69665044def39de63cc"
