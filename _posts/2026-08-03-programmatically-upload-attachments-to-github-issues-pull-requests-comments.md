@@ -5,7 +5,7 @@ published: true
 tags: []
 ---
 
-It’s possible to programmatically upload images to GitHub Issues, Pull Requests and Comments via automation. Finally, though I dunno how long this will last.
+It’s possible to programmatically upload images to GitHub Issues, Pull Requests and Comments via automation. Finally, though maybe mistakenly, I dunno.
 
 It’s fairly well known that for the longest time, [GitHub has not had a programmatic interface for uploading images and attachments](https://github.com/cli/cli/issues/1895). It’s possible in the browser, by dragging-and-dropping your image, but not via something you can script or curl. That’s been a bummer for lots of GitHub Action-powered systems you might imagine, like: automatically attaching demo screenshots or videos on PRs for new features, or attaching failure screenshots or visual diffs from browser tests.
 
