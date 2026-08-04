@@ -148,7 +148,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>I don’t know if this endpoint always accepted an Auth Token and no one tried or noticed or talked about it, or if that’s new. My memory was that this endpoint <em>only</em> previously accepted Cookie Auth: circa 2018 I explored different Visual Diff services and the lack of a programmatic API for GitHub attachments meant that to DIY you’d have to use a service like S3, and then a service to authorize S3, and that’s annoying to set up when GitHub Actions could do everything else. I’m pretty sure I tried to fuzz the attachment interface at the time and it didn’t work.</p>
 
-<p>I recently learned all of this was possible because <a href="https://shakacode.com/about/">Justin Gordon of Shakacode</a> had shared a link to an <a href="https://github.com/intercom/2x-skills/blob/59213af0a2db9321ef10355ff24e9bd619151b6b/plugins/pr-tools/skills/attach-github-assets/SKILL.md">Intercom’s 2x-skills <code>attach-github-assets</code></a> and I was… skeptical… and then I tried it and it worked!</p>
+<p>I recently learned all of this was possible because <a href="https://shakacode.com/">Justin Gordon of Shakacode</a> shared a link to <a href="https://github.com/intercom/2x-skills/blob/59213af0a2db9321ef10355ff24e9bd619151b6b/plugins/pr-tools/skills/attach-github-assets/SKILL.md">Intercom’s 2x-skills <code>attach-github-assets</code></a> and I was… skeptical… and then I tried it and it worked!</p>
 
 <p><img src="/uploads/2026/github-attachment-upload-demo.png" alt="Ben Sheldon asking Claude to use the attach-github-assets skill to upload a placekitten image as a comment to a GitHub issue, and Claude successfully doing so" /></p>
 
