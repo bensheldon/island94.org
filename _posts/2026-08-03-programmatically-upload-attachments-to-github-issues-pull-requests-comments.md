@@ -24,7 +24,7 @@ curl -s "https://uploads.github.com/user-attachments/assets?name=$FILE&content_t
 # that outputs a JSON response containing the attachment URL, which you can then embed in an image tag into the GitHub content.
 ```
 
-That’s it! I mean, you can be more clever than curl or whatever, but that's the idea.
+That’s it! I mean, you can be more clever than curl or whatever, but that's the idea. It's equivalent to dragging-and-dropping an image into an Issue, PR, or Comment.
 
 I don’t know if this endpoint always accepted an Auth Token and no one tried or noticed or talked about it, or if that’s new. My memory was that this endpoint _only_ previously accepted Cookie Auth: circa 2018 I explored different Visual Diff services and the lack of a programmatic API for GitHub attachments meant that to DIY you’d have to use a service like S3, and then a service to authorize S3, and that's annoying to set up when GitHub Actions could do everything else. I’m pretty sure I tried to fuzz the attachment interface at the time and it didn’t work.
 
