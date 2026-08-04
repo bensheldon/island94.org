@@ -117,6 +117,49 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments"><p>How to programmatically upload attachments to GitHub Issues, Pull Requests, and Comments, finally, for now</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-08-03T17:00:00Z" itemprop="datePublished">August 3, 2026</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>It’s possible to programmatically upload images to GitHub Issues, Pull Requests and Comments via automation. Finally, though I dunno how long this will last.</p>
+
+<p>It’s fairly well known that for the longest time, <a href="https://github.com/cli/cli/issues/1895">GitHub has not had a programmatic interface for uploading images and attachments</a>. It’s possible in the browser, by dragging-and-dropping your image, but not via something you can script or curl. That’s been a bummer for lots of GitHub Action-powered systems you might imagine, like: automatically attaching demo screenshots or videos on PRs for new features, or attaching failure screenshots or visual diffs from browser tests.</p>
+
+<p>Until now, I guess. Here’s the unofficial, undocumented endpoint:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FILE</span><span class="o">=</span>cat.jpg
+<span class="nv">MIME</span><span class="o">=</span>image/jpeg
+<span class="nv">REPOSITORY</span><span class="o">=</span>bensheldon/good_job
+<span class="nv">TOKEN</span><span class="o">=</span><span class="si">$(</span>gh auth token<span class="si">)</span>
+
+curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/user-attachments/assets?name=</span><span class="nv">$FILE</span><span class="s2">&amp;content_type=</span><span class="nv">$MIME</span><span class="s2">&amp;repository_id=</span><span class="si">$(</span>gh api <span class="s2">"repos/</span><span class="nv">$REPOSITORY</span><span class="s2">"</span> <span class="nt">--jq</span> .id<span class="si">)</span><span class="s2">"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/json"</span> <span class="nt">--data-binary</span> <span class="s2">"@</span><span class="nv">$FILE</span><span class="s2">"</span>
+
+<span class="c"># that outputs a JSON response containing the attachment URL, which you can then embed in an image tag into the GitHub content.</span>
+</code></pre></div></div>
+
+<p>That’s it! I mean, you can be more clever than curl or whatever, but that’s the idea. It’s equivalent to dragging-and-dropping an image into an Issue, PR, or Comment.</p>
+
+<p>I don’t know if this endpoint always accepted an Auth Token and no one tried or noticed or talked about it, or if that’s new. My memory was that this endpoint <em>only</em> previously accepted Cookie Auth: circa 2018 I explored different Visual Diff services and the lack of a programmatic API for GitHub attachments meant that to DIY you’d have to use a service like S3, and then a service to authorize S3, and that’s annoying to set up when GitHub Actions could do everything else. I’m pretty sure I tried to fuzz the attachment interface at the time and it didn’t work.</p>
+
+<p>I recently learned all of this was possible because <a href="https://shakacode.com/about/">Justin Gordon of Shakacode</a> had shared a link to an <a href="https://github.com/intercom/2x-skills/blob/59213af0a2db9321ef10355ff24e9bd619151b6b/plugins/pr-tools/skills/attach-github-assets/SKILL.md">Intercom’s 2x-skills <code>attach-github-assets</code></a> and I was… skeptical… and then I tried it and it worked!</p>
+
+<p><img src="/uploads/2026/github-attachment-upload-demo.png" alt="Ben Sheldon asking Claude to use the attach-github-assets skill to upload a placekitten image as a comment to a GitHub issue, and Claude successfully doing so" /></p>
+
+<p>It’s very useful, I hope it doesn’t go away.</p>
+
+  </div>
+</article>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
       <a class="post-link" href="/2026/07/running-code-when-the-ruby-on-rails-webserver-boots"><p>Running code when the Ruby on Rails webserver boots</p>
 </a>
     </h1>
@@ -1346,56 +1389,6 @@ _method=delete
   <li>Want to submit multiple different values to a different place: use the <code>form=</code> attribute.</li>
   <li>Want to submit both the original form’s data <em>and multiple other values</em>…. I don’t know how to do that easily. With UJS you could slot those key-values into <code>data-params</code> , but Turbo doesn’t have an equivalent. I encounter this very very rarely. I guess… put them in the query parameters?… Stimulus?</li>
 </ul>
-
-  </div>
-</article>
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-link" href="/2025/10/conflicted-and-commingled"><p>Conflicted and commingled</p>
-</a>
-    </h1>
-    <p class="post-meta text-muted">
-        <time datetime="2025-10-26T23:39:00Z" itemprop="datePublished">October 26, 2025</time>
-
-        • Tagged <a href="/posts/tags/stories">stories</a>
-    </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>More than a decade ago, I was seated on the jury of a civil trial for “complex litigation”. I’ll try to keep this quick, but the case does come to mind more frequently than I would have imagined at the time.</p>
-
-<p>In this trial, the plaintiff. a pharmaceutical company. was suing the defendant, a chemistry professor, for fraud. The chemistry professor, as part of his day job at a university, would create a bunch of novel molecules (put a carbon there, or an extra hydrogen here) that the university would test for various interesting bio-medical properties, and then license them to pharmaceutical companies for commercialization.</p>
-
-<p>In this specific instance, the pharmaceutical company licensed a molecule from the university, and then turned around and invited the chemistry professor to join their scientific advisory board and gave the professor some company stock/equity. Fast forward several years and that molecule is now a very valuable drug. And the university <em>also</em> licensed a <em>different</em> molecule to a <em>different</em> company that the chemistry professor <em>also</em> had some equity in.</p>
-
-<p>The alleged fraud was that the chemistry professor didn’t tell that first pharmaceutical company about the other molecule or the other pharmaceutical company… and should have? That was why it went to litigation.</p>
-
-<p>The big picture wasn’t why it stuck in my mind so much as what we did during the <em>six week</em> jury trial: we read a lot of really, really old emails that the plaintiffs would paint as evidence of ill-intent and the defense would explain that nothing was very serious in the first place. I’m making the following exchange up, but thematically it was this over and over again:</p>
-
-<blockquote>
-  <p>Plaintiffs: You must not have been taking your duties very seriously when you replied: “I hope the wine is good winkie-face.”</p>
-
-  <p>Defense: Can you read the whole exchange?</p>
-
-  <p>Plaintiffs: This was in reply to the scientific advisory board chair writing “The meeting will be brief and then we’ll have dinner together at [nice restuarant]”</p>
-
-  <p>Defense: Now this very serious advisory board that you allege our client was taking so unseriously several years ago that you are suing him for fraud today. Was there any written agenda or minutes or notes from those meetings?</p>
-
-  <p>Plaintiffs: No.</p>
-</blockquote>
-
-<p>Lots and lots of that: some personal correspondence recontextualized in a trial against a background of potentially billions of pharmaceutical dollars at stake. Of what I learned:</p>
-
-<ul>
-  <li>Poe’s Law is everywhere: don’t be cute anywhere it might turn into discovery.</li>
-  <li>Conflicts of Interest and commingling of personal and employer and contractual stuff can cause lots of problems. And also that creating conflicts of interest <em>is a strategy</em> for muddying the water.</li>
-  <li>Complexity causes problems.</li>
-</ul>
-
-<p>On that last point, during the trial there was an entire plaintiff subplot of “but maybe actually it’s the same molecule.” The plaintiffs spent a whole day at least explaining benzene rings. Which was all of a theme to make the chemistry professor appear extra deceptive, like “it’s just one more carbon atom, how dumb do you think we are?!” And then at the end after several objections the judge was like “I’ve already ruled that they’re different molecules and the university owns them and can license them to whoever they want.” Any potential for confusion seemed to be taken advantage of in arguments to set a tone.</p>
-
-<p>Anyways, I’ve been telling this story a lot to people in the context of Ruby Central / Rubygems drama. Usually with the explainer of “totally random, but did ever tell you about the really long jury trial I was part of? It was a lot.”</p>
 
   </div>
 </article>

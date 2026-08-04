@@ -4,7 +4,7 @@ config:
 paths:
   "/":
     build_path: index.html
-    etag: W/"dacb34e26658e8904868a481178524d4"
+    etag: W/"885cb107723d10e7afe66182244f0a78"
   "/redirects":
     build_path: redirects.html
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
@@ -16,13 +16,13 @@ paths:
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
   "/search.json":
     build_path: search.json
-    etag: W/"c1b40f42febf337cb6d2ff73e86c1c22"
+    etag: W/"e51a72ee40caecacd4977c5d5d296cec"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"389c282585bc73c1e619115371acd028"
+    etag: W/"f56fd59dbf61b65fafd2dbe218b54f5e"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"590ba3fa0747b506f55e3930cf00fdef"
+    etag: W/"0fa1bbaae4e24dfbad5e411422251255"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -33,13 +33,16 @@ paths:
     etag: W/"52b579c05ad8f10e5b3099d551daf1ea"
   "/archives":
     build_path: archives.html
-    etag: W/"3daae84d60412adf51e941f083d14854"
+    etag: W/"1550a8855088f9b81f7ea5782ade48cb"
   "/tags":
     build_path: tags.html
     etag: W/"535180806932f2bd60affba1906dc2f0"
   "/2012/04/a-commonplace-book":
     build_path: 2012/04/a-commonplace-book.html
     etag: W/"7087541ecce73be0734bd4e1e0979d4a"
+  "/2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments":
+    build_path: 2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments.html
+    etag: W/"87f4adeb40742ea3e939706d1d25747d"
   "/2026/07/running-code-when-the-ruby-on-rails-webserver-boots":
     build_path: 2026/07/running-code-when-the-ruby-on-rails-webserver-boots.html
     etag: W/"b55ca7eac4eb2cbee3bd8620b4f11312"
@@ -76,15 +79,9 @@ paths:
   "/2025/12/tricks-to-work-around-nested-form-elements-for-rails":
     build_path: 2025/12/tricks-to-work-around-nested-form-elements-for-rails.html
     etag: W/"db758c707250ee4efc18834b2fe65580"
-  "/2025/10/conflicted-and-commingled":
-    build_path: 2025/10/conflicted-and-commingled.html
-    etag: W/"fadee1f3b853b2224ad13f8b64ae218d"
-  "/posts/tags/stories":
-    build_path: posts/tags/stories.html
-    etag: W/"851c46577d5b96f701eb480a4357f47c"
   "/posts/2":
     build_path: posts/2.html
-    etag: W/"6a6f15a8350d7dd25ffeee10f48c97d5"
+    etag: W/"a08efcf6803fc1a075101ded0f05e196"
   "/posts":
     build_path: posts.html
   "/articles/pool-soup":
@@ -18311,6 +18308,9 @@ paths:
   "/bookmarks/2005/04/blog-atomicworkshop-org":
     build_path: bookmarks/2005/04/blog-atomicworkshop-org.html
     etag: W/"593a0e1a5e7dfa1f5dd08468e11ceb32"
+  "/2025/10/conflicted-and-commingled":
+    build_path: 2025/10/conflicted-and-commingled.html
+    etag: W/"fadee1f3b853b2224ad13f8b64ae218d"
   "/2025/10/rails-103-early-hints-could-be-better-maybe-doesn-t-matter":
     build_path: 2025/10/rails-103-early-hints-could-be-better-maybe-doesn-t-matter.html
     etag: W/"c8975e5758c8e6e67b4c919b17ddeb45"
@@ -21410,6 +21410,9 @@ paths:
   "/posts/tags/statuary":
     build_path: posts/tags/statuary.html
     etag: W/"dd21b6560690ca3b89f3ece531581acb"
+  "/posts/tags/stories":
+    build_path: posts/tags/stories.html
+    etag: W/"851c46577d5b96f701eb480a4357f47c"
   "/posts/tags/storm":
     build_path: posts/tags/storm.html
     etag: W/"1d3fa094e98e1383e3e9d44de8e4f23a"
@@ -21835,10 +21838,10 @@ paths:
     etag: W/"a4edda018daeaf9398226e885f9a97da"
   "/posts/1":
     build_path: posts/1.html
-    etag: W/"dacb34e26658e8904868a481178524d4"
+    etag: W/"885cb107723d10e7afe66182244f0a78"
   "/posts/3":
     build_path: posts/3.html
-    etag: W/"329f9aadaf80a01f4e055beeb37620af"
+    etag: W/"850c58384dc9d69665044def39de63cc"
   "/uploads/2005/poolsoup.mp4":
     build_path: uploads/2005/poolsoup.mp4
   "/uploads/2006-03/digitalbicycle-guy.jpg":
@@ -22090,211 +22093,211 @@ paths:
     build_path: uploads/2008-08-10-Drupal-theme-override-for-Uploadmodules-attachments-list/shiny_upload.zip
   "/posts/4":
     build_path: posts/4.html
-    etag: W/"e5fc703be54e81b2952bbc9da10736ce"
+    etag: W/"97fc196e95678c23094050120ca4523b"
   "/posts/5":
     build_path: posts/5.html
-    etag: W/"1c3daee3356fafd62b9602ed28b009aa"
+    etag: W/"8dc00d774db54a2ff45802c0791234c6"
   "/posts/6":
     build_path: posts/6.html
-    etag: W/"ae7d176822194b878f7ba32cc69f326e"
+    etag: W/"b709e2594f645f877fb63f85db4d92a9"
   "/posts/7":
     build_path: posts/7.html
-    etag: W/"10d7deef22aa4b7aff0164f57f0ed9ec"
+    etag: W/"efa36bd462a9d5109b2cb4546b62bb80"
   "/posts/8":
     build_path: posts/8.html
-    etag: W/"51a93bacb3ba8174d8a15168da9cf2dd"
+    etag: W/"bca5257ce3ef51c83e35bb68cb2f9a9b"
   "/posts/9":
     build_path: posts/9.html
-    etag: W/"7a1cbfe4658de9c533dca48afcc637bf"
+    etag: W/"ed6111cf360be7cee8c63c1be837793a"
   "/posts/10":
     build_path: posts/10.html
-    etag: W/"897b6cd6ed57d8807b2bc12d65ec8ac3"
+    etag: W/"106f86726611689cf6a582d826d6821b"
   "/posts/11":
     build_path: posts/11.html
-    etag: W/"aa7ba7b8dd496dd1541167a92028cba2"
+    etag: W/"78f657c27ad0724a92a9108e3adf1920"
   "/posts/12":
     build_path: posts/12.html
-    etag: W/"d955534c8f9f06fc980f55415874194b"
+    etag: W/"eda9b74ba3a7afc34f9d664dbc372dc8"
   "/posts/13":
     build_path: posts/13.html
-    etag: W/"c34b1b03284e745a14fee62fbf19c746"
+    etag: W/"97ab0b40446c900f2a7e8fad84a9f6b9"
   "/posts/14":
     build_path: posts/14.html
-    etag: W/"0df47e2399cbd59c02d8598b2bab55fa"
+    etag: W/"fa887106467d860d1cb852f75621ebf6"
   "/posts/15":
     build_path: posts/15.html
-    etag: W/"9b54d53cf299372c587fdb450f8b7fd7"
+    etag: W/"e8589821a4e88b28509bed4edac3044d"
   "/posts/16":
     build_path: posts/16.html
-    etag: W/"5d9044bc55014a9a464ecab419e59708"
+    etag: W/"08866bc214c4a7efe6470378f0f4eaf8"
   "/posts/17":
     build_path: posts/17.html
-    etag: W/"fa4c617067ccbec5f19645879df6a6cf"
+    etag: W/"a055d81dcf76767542017497d4a074d1"
   "/posts/18":
     build_path: posts/18.html
-    etag: W/"c9a6dd0968c9bc4a2a7cbb8c17722c80"
+    etag: W/"ca31154cb02dc016fdc39e9e2e9c6654"
   "/posts/19":
     build_path: posts/19.html
-    etag: W/"92d920ba467eec19e4b47f5bfdf0e2d1"
+    etag: W/"c422a76a12a815755ef06421c4e729dc"
   "/posts/20":
     build_path: posts/20.html
-    etag: W/"53e925765d8cc46a9d83596768db3088"
+    etag: W/"30a1341b22cbc6acdec1081120b14af2"
   "/posts/21":
     build_path: posts/21.html
-    etag: W/"e2681bb653b0937adba35afd74ec2e0d"
+    etag: W/"d965a850869ed532f04dd90770ee685d"
   "/posts/22":
     build_path: posts/22.html
-    etag: W/"a3f10b05b46672ab68d27734a4822b7c"
+    etag: W/"be0115cd8afd8309e56901695ab345ed"
   "/posts/23":
     build_path: posts/23.html
-    etag: W/"2682b281124f5656df01dfb7a7734fcf"
+    etag: W/"68f4fe62b89df2992c13f99a7a0141d6"
   "/posts/24":
     build_path: posts/24.html
-    etag: W/"c524e175f6817871bef72531ffdb40c4"
+    etag: W/"e0b5e8356c52113e6e524a665eb9030a"
   "/posts/25":
     build_path: posts/25.html
-    etag: W/"05aff4be52e7fa7d01f289c7b7d4332c"
+    etag: W/"83709604a0d8fcf816f72830c608685b"
   "/posts/26":
     build_path: posts/26.html
-    etag: W/"6bb40c4b7dac99ac0866c9bb2f167b59"
+    etag: W/"aac1743c61dfbeb9cb8988e932d7edbe"
   "/posts/27":
     build_path: posts/27.html
-    etag: W/"85ffa299ef352d128cdc6cabf05ed082"
+    etag: W/"a6e506a0b5390dda3da74926646adcd4"
   "/posts/28":
     build_path: posts/28.html
-    etag: W/"9bd803b5c504631fd6a220ec20f18711"
+    etag: W/"a4a6bbf1e050c01b61052442c7b582cb"
   "/posts/29":
     build_path: posts/29.html
-    etag: W/"6b3449315293c6d9d75ccab34f222524"
+    etag: W/"58c425ba1035336c213a983179e838ae"
   "/posts/30":
     build_path: posts/30.html
-    etag: W/"489340e992bb38c2a4bb3ab5be8117c3"
+    etag: W/"6871c116ffbd83c44300e9867c9219ff"
   "/posts/31":
     build_path: posts/31.html
-    etag: W/"26b85b9965579d00096cd97d4e451e41"
+    etag: W/"afef39a9e05842edb73f22e927120b64"
   "/posts/32":
     build_path: posts/32.html
-    etag: W/"53b8d1914001d10fd7a3bb1108e29561"
+    etag: W/"e95554242c062d90b8d318708b9395c7"
   "/posts/33":
     build_path: posts/33.html
-    etag: W/"12344cf6abc21c238e30d776bd192817"
+    etag: W/"70d8a50c72bed4a1ce7e1e39dd629334"
   "/posts/34":
     build_path: posts/34.html
-    etag: W/"acc4b60ba1fc67af71c7f9c441c5abba"
+    etag: W/"0e24d3638cc6b9374e716ac79b327c8f"
   "/posts/35":
     build_path: posts/35.html
-    etag: W/"c701de8093c93a6bc8713e59243f4abc"
+    etag: W/"d7cda03006ef35f353948d8adb60bde0"
   "/posts/36":
     build_path: posts/36.html
-    etag: W/"a229bcea820f7a259e76c5ff6c979217"
+    etag: W/"753b88afaf283963d3bf1bb3c0669fbc"
   "/posts/37":
     build_path: posts/37.html
-    etag: W/"f8366b589e50fb94fc04805d9fe1d860"
+    etag: W/"0e27d45a6adb5b60c0d35f55adcf5f40"
   "/posts/38":
     build_path: posts/38.html
-    etag: W/"238daccefde505f245c3588ea0096131"
+    etag: W/"382c4e13008910229408b60af62837d1"
   "/posts/39":
     build_path: posts/39.html
-    etag: W/"2bc94a69078bc512a33fadec78e0c1f3"
+    etag: W/"ca285cea02d2d607ae80e735de39cde6"
   "/posts/40":
     build_path: posts/40.html
-    etag: W/"f616378503433bce4e960026f16eb2f5"
+    etag: W/"ebc3a22a5727ff0ec96969f0c7db588a"
   "/posts/41":
     build_path: posts/41.html
-    etag: W/"e847f13ba8b3be11349746f6cbd1fc0b"
+    etag: W/"cd2c4b9a7fb0eadf172f5f1543fa3ccc"
   "/posts/42":
     build_path: posts/42.html
-    etag: W/"23c8f8dd7e6c80eb4f5aaaa3b8c8cd0f"
+    etag: W/"88d7737fb274359b29b807f69d3ffb89"
   "/posts/43":
     build_path: posts/43.html
-    etag: W/"c075d4b4c744ed0762c633e54c5b0924"
+    etag: W/"7f1341d6672ec2392ff0bc6c4b68dbe4"
   "/posts/44":
     build_path: posts/44.html
-    etag: W/"65de30be37bea81793c0823813a2820a"
+    etag: W/"d4a0862a068fa3d17ce009ff60445367"
   "/posts/45":
     build_path: posts/45.html
-    etag: W/"fe758fc146eb0defb3d47b59bbaae8ba"
+    etag: W/"f0e576be7f40103a375bd9f6ee13b3a9"
   "/posts/46":
     build_path: posts/46.html
-    etag: W/"cc26dc2f7cae0a15a8792e86406860ca"
+    etag: W/"dd94605b9b3a20a9a734a4a4dfe9ebe6"
   "/posts/47":
     build_path: posts/47.html
-    etag: W/"aa7898f992cf88ab1cc806485260d549"
+    etag: W/"02cf3364ee773377391d572817a03ec7"
   "/posts/48":
     build_path: posts/48.html
-    etag: W/"afae4c7ea06880efd4fab7073c33db06"
+    etag: W/"946f32a856a4ad84ff388a460343a957"
   "/posts/49":
     build_path: posts/49.html
-    etag: W/"8b58666707dfee20a6abfbdbf9fb06c5"
+    etag: W/"e8eb0cee6189f49f3f0a2a0cfc565e61"
   "/posts/50":
     build_path: posts/50.html
-    etag: W/"ecee7bc4c7903950481e652c23e66728"
+    etag: W/"f78bfa526aafdb3f61f857958bbea70d"
   "/posts/51":
     build_path: posts/51.html
-    etag: W/"ea92d7e3ee91993bee044de0a0fb8e7c"
+    etag: W/"04d72eab46b7486574d28a8c9adeff9e"
   "/posts/52":
     build_path: posts/52.html
-    etag: W/"22d0fe11af156b3640694b79814c1292"
+    etag: W/"dd071be815e486ffb00e3d0927e4d253"
   "/posts/53":
     build_path: posts/53.html
-    etag: W/"3adabe591f002de8ccc82371b30750a1"
+    etag: W/"7ccd31855f08f1a57ce1bbcccb241160"
   "/posts/54":
     build_path: posts/54.html
-    etag: W/"e0619984c5c3a6c26f1d13883e29a439"
+    etag: W/"aab0c22deb1824d8eba7ca6b23fd2647"
   "/posts/55":
     build_path: posts/55.html
-    etag: W/"63c29653e292783281a78de697e766e3"
+    etag: W/"d5c395be2693cd67afc25d3c44421415"
   "/posts/56":
     build_path: posts/56.html
-    etag: W/"a323adbee1ddf783a1d8711f8a920c7c"
+    etag: W/"d2131a942765ef4a43f7ca5ff48d3c15"
   "/posts/57":
     build_path: posts/57.html
-    etag: W/"535a20d4317b25ba7d9073321063596d"
+    etag: W/"b694bf837b42b4ccbd6ef53abdca6b8d"
   "/posts/58":
     build_path: posts/58.html
-    etag: W/"6855d76aa3ea02334328280443b7c6aa"
+    etag: W/"db79db62c5c1976e640e03db6805abbf"
   "/posts/59":
     build_path: posts/59.html
-    etag: W/"8de9f7e21c7647c6ae7efa37b71a95cb"
+    etag: W/"58c635c6803bcff1a239127923ac8291"
   "/posts/60":
     build_path: posts/60.html
-    etag: W/"4806fa031d3f7cde2ee9a8a27b182ce0"
+    etag: W/"3ee53288a4ffbc64664957e4f6835957"
   "/posts/61":
     build_path: posts/61.html
-    etag: W/"83dbf8b7be3a7fd1dc12285d60fd9ed7"
+    etag: W/"734a4bbc38892e84e60460697e3a3068"
   "/posts/62":
     build_path: posts/62.html
-    etag: W/"0cf99b5d1cf59bf74b4f94662516fc72"
+    etag: W/"d271cabe76aa399fbcb34a0ed2c63b24"
   "/posts/63":
     build_path: posts/63.html
-    etag: W/"b0e5e4f86fd71529fc7077f706d1c791"
+    etag: W/"dffe8965cbb51c833fac2f9ce5fd64e6"
   "/posts/64":
     build_path: posts/64.html
-    etag: W/"f68938370b2a3037c6972390283ab6bd"
+    etag: W/"413a6eaf5c80e89cc25ccb686f9d180e"
   "/posts/65":
     build_path: posts/65.html
-    etag: W/"673ca5823969eaa73dd1f39773112846"
+    etag: W/"4bc775e8dbaf2eb9fecd0089b784d6de"
   "/posts/66":
     build_path: posts/66.html
-    etag: W/"069f9d75350020699ce54dffc6a34711"
+    etag: W/"f74dab6387d326a39e9528eec49a1460"
   "/posts/67":
     build_path: posts/67.html
-    etag: W/"fe1fd8a282c7c74a0be218cc0fd668ed"
+    etag: W/"f11989999dfa86e0b311e30dc45144c8"
   "/posts/68":
     build_path: posts/68.html
-    etag: W/"19f43660ae54b4947fc91963a74e4cdb"
+    etag: W/"5f20e8097c0eece26ec69a31f7948e05"
   "/posts/69":
     build_path: posts/69.html
-    etag: W/"2ac8cbd6ecb3ac2e63226779d0ce3ddc"
+    etag: W/"4bcc382f9420b14fc35103f36249a87d"
   "/posts/70":
     build_path: posts/70.html
-    etag: W/"95bb472f46cfff3e092bf9cd6e5315fd"
+    etag: W/"8d69f0f7dcd4244256214efd04fe5701"
   "/posts/71":
     build_path: posts/71.html
-    etag: W/"c4d4df9092f23b1e589781c00f785ccb"
+    etag: W/"7bc2252a89bf2c813e1be735aadf88d0"
   "/posts/72":
     build_path: posts/72.html
-    etag: W/"eda1b2da924661530d7d64379603cb26"
+    etag: W/"738935867ed07afeca1e2c3b232ab04c"
   "/posts/73":
     build_path: posts/73.html
-    etag: W/"81400cb3450ea4816fab059592eda4ba"
+    etag: W/"31ed9a990d11e406a025322e98fefab6"
