@@ -10,7 +10,7 @@ paths:
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"40ca1d442d55dac6365431fafe7f1609"
+    etag: W/"29de4eb7ebb0437f76623a6981460618"
   "/search":
     build_path: search.html
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
@@ -22,7 +22,7 @@ paths:
     etag: W/"c4dfd111db907a3bbb87432e3f179dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"a88b0734057f16d0b902a3e9594e3ebf"
+    etag: W/"5b9f308b21007eed46876dc25e935d1a"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,12 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/rubyinside-com-rbenv-a-simple-new-ruby-version-management-tool-5302-html":
+    build_path: bookmarks/2026/08/rubyinside-com-rbenv-a-simple-new-ruby-version-management-tool-5302-html.html
+    etag: W/"212bd2166f91f122cef1abcdc19723ed"
+  "/bookmarks/2026/08/www-jonloomer-com-15-years-facebook-meta-advertising":
+    build_path: bookmarks/2026/08/www-jonloomer-com-15-years-facebook-meta-advertising.html
+    etag: W/"afb02dbfe7a268012330c78c9a402fb0"
   "/bookmarks/2026/08/bullypulpit-substack-com-p-tuesday-never-comes":
     build_path: bookmarks/2026/08/bullypulpit-substack-com-p-tuesday-never-comes.html
     etag: W/"c2a825da13346673462e99157b77f439"
