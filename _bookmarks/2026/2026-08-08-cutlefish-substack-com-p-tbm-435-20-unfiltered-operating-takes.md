@@ -11,3 +11,9 @@ tags: []
 ---
 
 > I always say this: but powerful ideas imperfectly measured are more important than perfect measures for not so powerful ideas.
+
+---
+
+Most companies have a launch tier where product marketing describes the nature of the launch from a marketing perspective. But guess what? Some things are going to be incredibly disruptive internally, and require a ton of coordination, but marketing isn’t going to make a peep out of it to customers. In fact it may be critical for customers not to know anything about the launch. The “simple” distinction between internal blast radius and external launch demands has confused so many companies I’ve worked at, or advised….just that tiny distinction. 9/10 someone in marketing would say “yeah, but we need to keep it simple”, and their categorization scheme would pervade with executives and others.
+
+Don’t do that. 
