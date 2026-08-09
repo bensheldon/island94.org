@@ -10,7 +10,7 @@ paths:
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"f1b2ed3d43221950460d2a0e19c7b8ce"
+    etag: W/"544533735f75312fcdbda9b154a118c7"
   "/search":
     build_path: search.html
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
@@ -22,7 +22,7 @@ paths:
     etag: W/"c4dfd111db907a3bbb87432e3f179dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"01156272430e627e1e13136e4a186fa1"
+    etag: W/"3d285ed79d9c0f7e05d6700e04bb4fda"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/cutlefish-substack-com-p-tbm-435-20-unfiltered-operating-takes":
+    build_path: bookmarks/2026/08/cutlefish-substack-com-p-tbm-435-20-unfiltered-operating-takes.html
+    etag: W/"7fc6952c55a4be9268ef39656c16d568"
   "/bookmarks/2026/08/unsung-aresluna-org-seeing-like-a-state":
     build_path: bookmarks/2026/08/unsung-aresluna-org-seeing-like-a-state.html
     etag: W/"7cc634056ade166bf6e414313e918270"
