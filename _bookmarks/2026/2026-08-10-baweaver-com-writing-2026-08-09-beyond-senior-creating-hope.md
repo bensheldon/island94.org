@@ -12,4 +12,6 @@ The monolith is too big, Rails is slow, the tests take forever, everything is ho
 
 Once things hit that stage people stop asking questions about what endpoints are slow, what dependencies caused the latest incidents, where engineers are losing time, or what boundaries are creating the most friction to the organization. The problem has become so large that people begin to believe that no individual intervention has any meaning, and so the organization defaults to survival mode.
 
+---
 
+We were an acquired subsidiary on a Rails monolith, and the problems facing us were very rarely scale as much as business cases, so the inclination to break out services would have become a multi-year distraction that did not materially move the business forward.
