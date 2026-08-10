@@ -15,3 +15,7 @@ Once things hit that stage people stop asking questions about what endpoints are
 ---
 
 We were an acquired subsidiary on a Rails monolith, and the problems facing us were very rarely scale as much as business cases, so the inclination to break out services would have become a multi-year distraction that did not materially move the business forward.
+
+---
+
+At one company there was a particular table that would consistently brown out the entire database every few weeks, and teams had invested substantial time in extracting it as a service to reduce these issues. The problem wasn’t the monolith, the problem was the thrashing behavior of the database queries being run in one giant unbatched job with significant write contention on mutually locked rows. What should have been a localized optimization became a two year project that failed to deliver on its promises, and in fact made the problem worse, because the team was more fixated on the end-state they wanted rather than the next most logical improvement that would have lightened the load and given them more optionality.
