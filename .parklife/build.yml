@@ -4,7 +4,7 @@ config:
 paths:
   "/":
     build_path: index.html
-    etag: W/"7aee03c98b6dbe5ddd2e78644187a03f"
+    etag: W/"9398af148a1688a85293c34936964dfd"
   "/redirects":
     build_path: redirects.html
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
@@ -16,10 +16,10 @@ paths:
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
   "/search.json":
     build_path: search.json
-    etag: W/"6f167996973e8d68fd258acc9dc1b74a"
+    etag: W/"ba78a9bfeb1eaf5055671bb27eff8e0d"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"c1d1c59316ce6f12688da0cfecae5bd2"
+    etag: W/"66b17cf0ef5a3f99176f3892b0b3a921"
   "/sitemap.xml":
     build_path: sitemap.xml
     etag: W/"5d03508655f7e8d33be25827289cb7ec"
@@ -42,7 +42,7 @@ paths:
     etag: W/"7087541ecce73be0734bd4e1e0979d4a"
   "/2026/08/two-interviews-and-information-technology-thoughts":
     build_path: 2026/08/two-interviews-and-information-technology-thoughts.html
-    etag: W/"ed6a0696d7365214084eea716590743a"
+    etag: W/"99fba0866f2924eee3772b4dfe3d7826"
   "/2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments":
     build_path: 2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments.html
     etag: W/"543ef0881a5fda128e99cf2a3e2f2411"
@@ -21862,7 +21862,7 @@ paths:
     etag: W/"a4edda018daeaf9398226e885f9a97da"
   "/posts/1":
     build_path: posts/1.html
-    etag: W/"7aee03c98b6dbe5ddd2e78644187a03f"
+    etag: W/"9398af148a1688a85293c34936964dfd"
   "/posts/3":
     build_path: posts/3.html
     etag: W/"898b77b09262aac3ba05e7b1422c157c"
