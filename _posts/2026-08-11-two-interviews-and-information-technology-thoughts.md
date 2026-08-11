@@ -16,17 +16,17 @@ When I worked at Code for America, I helped design and deliver two different tec
 - Can you think of any apps or services you’ve used or worked on that could be vulnerable to this?
 - What are some various ways that we might mitigate this? Are there any non-code changes, or things that you would estimate as more or less effort? Thinking of a typical app you’ve worked on, how might we address it?
 
-…and then we’d go into an actual Ruby on Rails codebase, pinned to a specific commit from whence had that specific class of vulnerability, and talk through making a code change together to mitigate it, if not actually making the change then and there with tests and so forth (time permitting).
+…and then we’d go into an actual Ruby on Rails codebase, pinned to a specific commit from whence the codebase had that specific class of vulnerability, and talk through making a code change together to mitigate it, if not actually making the change then and there with tests and so forth (time permitting).
 
 I particularly liked this interview because it involved some technical reading comprehension, the implication that project responsibility was broad (hey, you’re gonna have to be aware of things!), and the particular problem itself I find very technically satisfying because it involves weird browser security model stuff (but still simple, relatively speaking) and also the solution involves booping around redirects, which I think is fun.
 
 As background, Code for America at that time was largely a Ruby on Rails shop, though we tried to be programming language and framework agnostic during the hiring process (to my mild disagreement). That said, we did emphasize experience with full-stack frameworks similar to Rails, like Laravel or Django or Java Spring, and especially emphasized full-stack *web development*. We were also, at the time, heavily pair-programming oriented (lots of former Pivotal Labs peeps), so these interviews were performed in front of dual-monitors+keyboards (or remotely with remote control) and the emphasis was on clearly communicating intent as much as it was on manipulating the code.
 
-**The second interview**, which I don’t remember if it was my original design, or if I simply spent a lot of time shaping it over the years, was more of a traditional “here’s a feature ticket, let’s do it together.” That feature was like “As a user of the dashboard, I want to be able to filter [this list of records] by those authored by a specific user within our organization.” I think the provided design was maybe a picture of the page and  a “filter widget goes here”-arrow below the heading and above the list of records.
+**The second interview**, which I don’t remember if it was my original design, or if I simply spent a lot of time shaping it over the years, was more of a traditional “here’s a feature ticket, let’s do it together.” That feature was like “As a user of the dashboard, I want to be able to filter [this list of records] by those authored by a specific user within our organization.” I think the provided design was maybe a picture of the page and a “filter widget goes here”-arrow below the heading and above the list of records.
 
 During this interview, the main beats were like:
 - For the visual affordance, what makes sense? And hopefully they’d ask about the design system and we’d talk about how many potential users there might be and I’d guide them towards like “a select dropdown”.
-- How is it manipulated by a user and how does the the select option value get transported to the backend server? (does it auto submit, is there a submit button)
+- How is it manipulated by a user and how does the select option value get transported to the backend server? (does it auto submit, is there a submit button)
 - How do we filter it on the backend and display the result? Are there any validation or security or record lifecycle considerations we should make?
 
 The last question always had a lot of substance to it, because it would be like “well, if we use their username as the value, what happens when they change their username?”, or “What happens if someone slaps in a user that isn’t a member of the org?” and so forth. All the sorts of things you’d hopefully enjoy nerding out about with a (potential) longterm colleague.
@@ -51,7 +51,7 @@ I can’t help but think, nearly every time I write a `predicate?` method of [Um
 
 ![Screenshot of the Umbrella Today website answering “Umbrella Today?” with a large “YES”](/uploads/2026/umbrella-today.jpg)
 
-I’ll offer that there is a dimension I have been thinking a lot about how it integrates into that previous definition of Information Technology, and that’s **stickiness and engagement**. On one hand, if you’re getting value out one side of it, then it shouldn’t be soul-crushing to use. But if you’re using it purely for the **delight and high** and the actual value or benefit is fleeting… that seems… bad?
+I’ll offer that there is a dimension I have been thinking a lot about how it integrates into that previous definition of Information Technology, and that’s **stickiness and engagement**. On one hand, if you’re getting value out of one side of it, then it shouldn’t be soul-crushing to use. But if you’re using it purely for the **delight and high** and the actual value or benefit is fleeting… that seems… bad?
 
 One reason these things come to mind is that I’m coming to the [15 year anniversary of writing Civic Tech Patterns](https://github.com/codeforamerica/civic-tech-patterns), which has been a longterm project to bully a very small group of very bright people into not wasting their time (I choose these words very specifically; it’s not an approach I would choose from scratch today). At the heart is this same project of trying to engage people in “no really, what are you trying to do here?”
 
