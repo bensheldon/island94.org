@@ -10,7 +10,7 @@ paths:
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"f1d778451a51039679c94d3b70bc35b8"
+    etag: W/"1b19ea45a779040879139a21bbaebdb5"
   "/search":
     build_path: search.html
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
@@ -22,7 +22,7 @@ paths:
     etag: W/"c4dfd111db907a3bbb87432e3f179dbf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"6a2f34bfc6c673a88e8539a8da984bc0"
+    etag: W/"583ca894043468ee81489af9c87a4115"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,12 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/snook-ca-everything-slash-what-now":
+    build_path: bookmarks/2026/08/snook-ca-everything-slash-what-now.html
+    etag: W/"664bd87dd71a1b7f2cbf045b340d88d1"
+  "/bookmarks/2026/08/baweaver-com-writing-2026-08-09-beyond-senior-creating-hope":
+    build_path: bookmarks/2026/08/baweaver-com-writing-2026-08-09-beyond-senior-creating-hope.html
+    etag: W/"68d8e4d32f966063436a80e5fd3b5656"
   "/bookmarks/2026/08/www-foodpolitics-com-s-sustainable-development-goals":
     build_path: bookmarks/2026/08/www-foodpolitics-com-s-sustainable-development-goals.html
     etag: W/"30aa99929461adbfdf5fa19db310fdbe"
