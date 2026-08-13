@@ -10,7 +10,7 @@ paths:
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"dae21e4632306e9dac6424c47b0c28e1"
+    etag: W/"a77b3f962477d3f2e47b0b629254ecda"
   "/search":
     build_path: search.html
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
@@ -22,7 +22,7 @@ paths:
     etag: W/"66b17cf0ef5a3f99176f3892b0b3a921"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"ff676852c93348de02774c181e09501e"
+    etag: W/"5390008fc4256b12874a21df5191b0fa"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/surfingcomplexity-blog-2026-02-16-poor-deming-never-stood-a-chance":
+    build_path: bookmarks/2026/08/surfingcomplexity-blog-2026-02-16-poor-deming-never-stood-a-chance.html
+    etag: W/"e5be79a751c0a8a8ee3812d27f0bf086"
   "/bookmarks/2026/08/sophiebits-com-2026-06-25-there-are-no-lossless-transformations-of-natural-language-text":
     build_path: bookmarks/2026/08/sophiebits-com-2026-06-25-there-are-no-lossless-transformations-of-natural-language-text.html
     etag: W/"08cc2908df262f53b184f72a7b2c0f13"
