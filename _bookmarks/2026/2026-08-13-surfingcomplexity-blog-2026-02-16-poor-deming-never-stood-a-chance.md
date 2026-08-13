@@ -7,3 +7,7 @@ tags: []
 ---
 
 > Deming faced a similar challenge to Calvin
+
+---
+
+> Deming argued that you had to understand whether your system was under statistical control in order to determine what intervention to do in order to make an improvement. For example, if your system was out of control, the next intervention would be to do a qualitative investigation into the outliers. On the other hand, if the system was under statistical control, then you’d have to figure out what systemic change to make to improve things.
