@@ -34,5 +34,19 @@ RSpec.describe "Feed" do
 
       expect(response.body).not_to include("Unpublished Post")
     end
+
+    it "rewrites relative asset URLs to absolute URLs" do
+      post_with_image = Post.new(
+        filepath: "#{Rails.root}/_posts/2024-03-22-post-with-image.md",
+        frontmatter: { "title" => "Post With Image", "date" => "2024-03-22", "published" => true },
+        body: "![alt text](/uploads/2024/example.png)"
+      )
+      allow(Post).to receive(:all).and_return([post_with_image])
+
+      get feed_path(format: :xml)
+
+      expect(response.body).to include(%(src="#{root_url}uploads/2024/example.png"))
+      expect(response.body).not_to include('src="/uploads')
+    end
   end
 end
