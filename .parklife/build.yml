@@ -10,7 +10,7 @@ paths:
     etag: W/"4e0651e6ae630e63fa51b0e81db45367"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c646025aea14f7f2092f7493947bf67d"
+    etag: W/"87371fc92a07bf7344ee24dd63332438"
   "/search":
     build_path: search.html
     etag: W/"b7aa6c122bb07a12cf97d8a25fd95091"
@@ -22,7 +22,7 @@ paths:
     etag: W/"66b17cf0ef5a3f99176f3892b0b3a921"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"20dab7f02cf079a37c40fe6e2bf8ebd7"
+    etag: W/"3081849d0851330eee844f5260dff930"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,12 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/defector-com-humanists-have-done-nothing-wrong":
+    build_path: bookmarks/2026/08/defector-com-humanists-have-done-nothing-wrong.html
+    etag: W/"8fbe2e83ed24e5507e323b9138e76335"
+  "/bookmarks/2026/08/cutlefish-substack-com-p-tbm-436-tension-based-prioritization":
+    build_path: bookmarks/2026/08/cutlefish-substack-com-p-tbm-436-tension-based-prioritization.html
+    etag: W/"156d3b842c9c2b030b9bd92d51ba4fd4"
   "/bookmarks/2026/08/surfingcomplexity-blog-2026-02-16-poor-deming-never-stood-a-chance":
     build_path: bookmarks/2026/08/surfingcomplexity-blog-2026-02-16-poor-deming-never-stood-a-chance.html
     etag: W/"d3b0ef94a30d040c07529cb57c42b29b"
