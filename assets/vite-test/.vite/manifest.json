@@ -12,7 +12,7 @@
     "isEntry": true
   },
   "entrypoints/application-legacy.js": {
-    "file": "assets/application-legacy-Bc4FKDNB.js",
+    "file": "assets/application-legacy-D-GVNTyO.js",
     "name": "entrypoints/application.js",
     "src": "entrypoints/application-legacy.js",
     "isEntry": true,
@@ -27,7 +27,7 @@
     "isDynamicEntry": true
   },
   "entrypoints/application.js": {
-    "file": "assets/application-DqnFbXFa.js",
+    "file": "assets/application-DrZD_9pI.js",
     "name": "entrypoints/application.js",
     "src": "entrypoints/application.js",
     "isEntry": true,
