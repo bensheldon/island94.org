@@ -19,7 +19,7 @@ paths:
     etag: W/"ba78a9bfeb1eaf5055671bb27eff8e0d"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"66b17cf0ef5a3f99176f3892b0b3a921"
+    etag: W/"d2f10507aef879bb319d89b1700535cf"
   "/sitemap.xml":
     build_path: sitemap.xml
     etag: W/"23f1397ebf60a92cdb582ddf0231332f"

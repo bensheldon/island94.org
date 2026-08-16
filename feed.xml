@@ -50,7 +50,8 @@
 <ul>
   <li>First off, we’re being <strong>reductive</strong> by taking a conceptual thing and reducing it to some limited representation of it in the data</li>
   <li>Then it’s being <strong>collected</strong> and <strong>aggregated</strong> so that some subset (or <em>all</em> of it, universally) is in our system</li>
-  <li>It’s being <strong>enriched</strong> in some way by adding additional internal or external data to it. And maybe being <strong>conflated</strong> or <strong>deduplicated</strong> as well. And maybe this is happening <strong>explicitly</strong> by additional data entry, or maybe <strong>implicitly</strong> by some behavior of the system. Maybe <strong>immediately</strong> or <strong>over some time horizon, short, long or in perpetuity</strong></li>
+  <li>It’s being <strong>enriched</strong> in some way by adding additional internal or external data to it. And maybe being <strong>conflated</strong> or <strong>deduplicated</strong> as well. And maybe this is happening <strong>explicitly</strong> by additional data entry, or maybe <strong>implicitly</strong> by some behavior of the system. Maybe <strong>immediately</strong> or <strong>over some time horizon, short, long or in perpetuity</strong>
+</li>
   <li>And then it’s being <strong>listed</strong> and <strong>filtered or scoped</strong> and then specific parts of the data are being <strong>projected</strong> or <strong>displayed</strong> in lots of different ways.</li>
   <li>And all together it’s ultimately driving towards some sort of <strong>monitoring and decisional process</strong> that leads to an <strong>action</strong> either within or outside the system.</li>
 </ul>
@@ -61,7 +62,7 @@
 
 <p>I can’t help but think, nearly every time I write a <code>predicate?</code> method of <a href="https://thoughtbot.com/blog/umbrella-today">Umbrella Today</a> (<a href="https://island94.org/2011/06/data-divides-and-umbrellafication">good and bad</a>).</p>
 
-<p><img src="/uploads/2026/umbrella-today.jpg" alt="Screenshot of the Umbrella Today website answering “Umbrella Today?” with a large “YES”" /></p>
+<p><img src="https://island94.org/uploads/2026/umbrella-today.jpg" alt="Screenshot of the Umbrella Today website answering “Umbrella Today?” with a large “YES”"></p>
 
 <p>I’ll offer that there is a dimension I have been thinking a lot about how it integrates into that previous definition of Information Technology, and that’s <strong>stickiness and engagement</strong>. On one hand, if you’re getting value out of one side of it, then it shouldn’t be soul-crushing to use. But if you’re using it purely for the <strong>delight and high</strong> and the actual value or benefit is fleeting… that seems… bad?</p>
 
@@ -122,7 +123,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>I recently learned all of this was possible because <a href="https://shakacode.com/">Justin Gordon of Shakacode</a> shared a link to <a href="https://github.com/intercom/2x-skills/blob/59213af0a2db9321ef10355ff24e9bd619151b6b/plugins/pr-tools/skills/attach-github-assets/SKILL.md">Intercom’s 2x-skills <code>attach-github-assets</code></a> and I was… skeptical… and then I tried it and it worked!</p>
 
-<p><img src="/uploads/2026/github-attachment-upload-demo.png" alt="Ben Sheldon asking Claude to use the attach-github-assets skill to upload a placekitten image as a comment to a GitHub issue, and Claude successfully doing so" /></p>
+<p><img src="https://island94.org/uploads/2026/github-attachment-upload-demo.png" alt="Ben Sheldon asking Claude to use the attach-github-assets skill to upload a placekitten image as a comment to a GitHub issue, and Claude successfully doing so"></p>
 
 <p>It’s very useful, I hope it doesn’t go away.</p>
 
@@ -146,7 +147,8 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p><strong>Warning:</strong> the invocation of the hook in <code>config.ru</code> is missing from <em>a lot</em> of Rails projects. I once <a href="https://github.com/rails/rails/pull/49704">lackadaisically tried to address this upstream</a>, but doublecheck your <code>config.ru</code> actually contains <code>Rails.application.load_server</code> as <a href="https://github.com/rails/rails/blob/b83739f81cc9f0f8028d98e1a3d7f6f79c375fb5/railties/lib/rails/generators/rails/app/templates/config.ru.tt#L6">it should</a>.</p>
 
-<h3 id="in-your-configru">In your <code>config.ru</code></h3>
+<h3 id="in-your-configru">In your <code>config.ru</code>
+</h3>
 
 <p>The Rackup configuration file only gets evaluated by a webserver, so that is a natural place to invoke your webserver-only code.</p>
 
@@ -294,12 +296,19 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <p>So of separate stages, that means that you force yourself to do each piece separately, rather than starting at the end (“what you want to do”) and working backwards or all at once.  The stages are:</p>
 
 <ol>
-  <li><strong>What’s going on?</strong> (the dry name here is “Environmental Scan”)  Laundry list any new themes, priorities, developments that have happened inside the company and outside it since the last planning process. Go look at the last plan too. “We said we were gonna do X” is a good thing to list here. <em>The thing to be aware of is that people are dying to shout “what we are going to do” so everything at this stage is still somewhat suspect. But that’s fine, we recognize thatand move forward.</em></li>
-  <li><strong>What are we going to do?</strong> That’s right, get it out there. Shake it out. List the things you want to do. Yes, you’re going to do them. They are very important. They are! I think it’s really important at this stage to let people linger and make sure they see those things they want to do captured. These are the things that are going to happen.</li>
-  <li><strong>What makes it hard to do those things? (“Barriers”)</strong> Like, really, why are they such big things that you felt the need to articulate them so badly. There’s lots of important work that just happens, so why spotlight those things? What are the problems you’re trying to overcome by spotlighting them? This is usually like resource problems, or distractions, or actual disagreements between leaders, or some other problem that constantly steals focus. Remember, you’re not trying to <em>justify</em> the thing from the previous stage, you’re trying to explain why you would ever need to justify them in the first place. Why can’t the work just happen?</li>
-  <li><strong>Of those things that make it hard, what do you have control over?</strong> It’s possible to work this question into the previous stage, but I like to allow people to let loose with all their grievances before trying to narrow them down slightly. This is a good spot though to fully divorce people from the “what I want to do”-brainspace by engaging them with something else to problem solve around….</li>
-  <li><strong>Of the barriers, what can you do to overcome or route around them?</strong> Here we go, this is what we’ve been working towards: solving problems. What actually would address the problems we identified in the previous stage? Write that down.</li>
-  <li><strong>Of those solutions, what are you going to do? (“The Strategics”)</strong> This is the decisional commitment. Remember, we haven’t replaced the initial stage’s “what are we going to do’s”—those are still happening—but rather worked towards a new list of “everything would sure be a lot better/faster/stronger if we did this first or in-addition-to”.</li>
+  <li>
+<strong>What’s going on?</strong> (the dry name here is “Environmental Scan”)  Laundry list any new themes, priorities, developments that have happened inside the company and outside it since the last planning process. Go look at the last plan too. “We said we were gonna do X” is a good thing to list here. <em>The thing to be aware of is that people are dying to shout “what we are going to do” so everything at this stage is still somewhat suspect. But that’s fine, we recognize thatand move forward.</em>
+</li>
+  <li>
+<strong>What are we going to do?</strong> That’s right, get it out there. Shake it out. List the things you want to do. Yes, you’re going to do them. They are very important. They are! I think it’s really important at this stage to let people linger and make sure they see those things they want to do captured. These are the things that are going to happen.</li>
+  <li>
+<strong>What makes it hard to do those things? (“Barriers”)</strong> Like, really, why are they such big things that you felt the need to articulate them so badly. There’s lots of important work that just happens, so why spotlight those things? What are the problems you’re trying to overcome by spotlighting them? This is usually like resource problems, or distractions, or actual disagreements between leaders, or some other problem that constantly steals focus. Remember, you’re not trying to <em>justify</em> the thing from the previous stage, you’re trying to explain why you would ever need to justify them in the first place. Why can’t the work just happen?</li>
+  <li>
+<strong>Of those things that make it hard, what do you have control over?</strong> It’s possible to work this question into the previous stage, but I like to allow people to let loose with all their grievances before trying to narrow them down slightly. This is a good spot though to fully divorce people from the “what I want to do”-brainspace by engaging them with something else to problem solve around….</li>
+  <li>
+<strong>Of the barriers, what can you do to overcome or route around them?</strong> Here we go, this is what we’ve been working towards: solving problems. What actually would address the problems we identified in the previous stage? Write that down.</li>
+  <li>
+<strong>Of those solutions, what are you going to do? (“The Strategics”)</strong> This is the decisional commitment. Remember, we haven’t replaced the initial stage’s “what are we going to do’s”—those are still happening—but rather worked towards a new list of “everything would sure be a lot better/faster/stronger if we did this first or in-addition-to”.</li>
 </ol>
 
 <p>…and then you write that into the planning template to report it out. And in this case, the “justification” for doing The Strategics is listing all of the stuff that you were going to do anyway.</p>
@@ -326,7 +335,8 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>Let’s start with the most controversial one.</p>
 
-<h3 id="objectnot_nil-and-boolean-extensions"><code>Object#not_nil?</code> and boolean extensions</h3>
+<h3 id="objectnot_nil-and-boolean-extensions">
+<code>Object#not_nil?</code> and boolean extensions</h3>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/extensions/ext_object_boolean_nil.rb</span>
 
@@ -361,7 +371,8 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>And then you can see where that led me wanting to distinguish between truthy and falsey and <em>true</em> true and <em>false</em> false. Predicates are great!</p>
 
-<h3 id="timestamptz-default"><code>timestamptz</code> default</h3>
+<h3 id="timestamptz-default">
+<code>timestamptz</code> default</h3>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/active_record_timezones.rb</span>
 
@@ -528,7 +539,8 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>This is a fun patch that causes <code>I18n.raise_on_missing_translations</code> to raise on any missing translation across <em>all available locales</em>, not just the current locale.</p>
 
-<h3 id="i18n_tasks--psych-yaml-mangling"><code>i18n_tasks</code> / Psych YAML mangling</h3>
+<h3 id="i18n_tasks--psych-yaml-mangling">
+<code>i18n_tasks</code> / Psych YAML mangling</h3>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/i18n_tasks_normalize.rb</span>
 
@@ -676,7 +688,8 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <p>There’s two features here:</p>
 
 <ul>
-  <li><code>Markdown.convert(string)</code> and <code>Markdown.inline(string)</code> are simple helpers that turn a string of markdown formatted text into html</li>
+  <li>
+<code>Markdown.convert(string)</code> and <code>Markdown.inline(string)</code> are simple helpers that turn a string of markdown formatted text into html</li>
   <li>The entirety rest of the code duplicates Rails i18n behavior for html-safing <code>_html</code> keys. Any i18n key that ends in <code>_md</code> will convert the value from markdown to html, and then mark it as html safe. I love authoring complex i18n keys in markdown (especially when <code>i18n_tasks</code>/Psych doesn’t mangle the newlines, see previously).</li>
 </ul>
 
@@ -724,7 +737,8 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>Somone should make this a configuration option 🫵</p>
 
-<h3 id="view-components-that-can-broadcast_later">View Components that can <code>broadcast_later</code></h3>
+<h3 id="view-components-that-can-broadcast_later">View Components that can <code>broadcast_later</code>
+</h3>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/view_component.rb</span>
 
@@ -1021,8 +1035,10 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <p>This section is where I tell you what works for me: <strong>Specificity and economy.</strong> Say the things themselves, and do it directly without a lot of leadup or padding out.</p>
 
 <ul>
-  <li><strong>“Specificity is the soul of narrative”</strong>, <a href="https://maximumfun.org/episodes/judge-john-hodgman/episode-738-i-was-dreaming-when-i-wrote-this-so-sue-me-if-i-judge-too-fast-live-in-portland-me/">attributed to John Hodman</a> via <a href="https://chris.molanphy.com/why-olivia-rodrigos-drivers-license-had-the-biggest-debut-since-wap/">“Why Olivia Rodrigo’s “Drivers License” Had the Biggest Debut Since “WAP”</a>.</li>
-  <li><strong>“If I had more time, I would have written a shorter letter.”</strong> <a href="https://quoteinvestigator.com/2012/04/28/shorter-letter/">No one knows</a> where that one comes from, but it’s true: writing clearly, directly, and efficiently is the hard part of writing well.</li>
+  <li>
+<strong>“Specificity is the soul of narrative”</strong>, <a href="https://maximumfun.org/episodes/judge-john-hodgman/episode-738-i-was-dreaming-when-i-wrote-this-so-sue-me-if-i-judge-too-fast-live-in-portland-me/">attributed to John Hodman</a> via <a href="https://chris.molanphy.com/why-olivia-rodrigos-drivers-license-had-the-biggest-debut-since-wap/">“Why Olivia Rodrigo’s “Drivers License” Had the Biggest Debut Since “WAP”</a>.</li>
+  <li>
+<strong>“If I had more time, I would have written a shorter letter.”</strong> <a href="https://quoteinvestigator.com/2012/04/28/shorter-letter/">No one knows</a> where that one comes from, but it’s true: writing clearly, directly, and efficiently is the hard part of writing well.</li>
 </ul>
 
 <p>Because this is the section where I laundry list the things I <em>really</em> want to share. And because everything else was a leadup to explain why you might spend time reading it… here is a personal example. This is the kind of thing my dad posts, all the time, on Facebook. It’s mildly perfect.</p>
@@ -1039,7 +1055,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>Detail, detail, detail, and a joke at the end. It’s arguably a shaggy dog story leading up to the humor, but it works because there isn’t extraneous structure or padding or filler. In the comments, my dad <a href="https://www.britishpathe.com/asset/196404/">even found a film archive</a> that has the two of them in it (at 8:54). It means something.</p>
 
-<p><img src="/uploads/2026/whitehorse.jpg" alt="" /></p>
+<p><img src="https://island94.org/uploads/2026/whitehorse.jpg" alt=""></p>
 
 <h3 id="back-to-the-prompt">Back to the prompt</h3>
 
@@ -1062,7 +1078,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
           <p>From Benji Edward’s <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">“10 things I learned from burning myself out with AI coding agents”</a> describing the challenge of maintaining novelty during AI coding:</p>
 
 <blockquote>
-  <p>Due to what might poetically be called “preconceived notions” baked into a coding model’s neural network (more technically, statistical semantic associations), it can be difficult to get AI agents to create truly novel things, even if you carefully spell out what you want.<br />
+  <p>Due to what might poetically be called “preconceived notions” baked into a coding model’s neural network (more technically, statistical semantic associations), it can be difficult to get AI agents to create truly novel things, even if you carefully spell out what you want.<br>
 For example, I spent four days trying to get Claude Code to create an Atari 800 version of my HTML game <em>Violent Checkers</em>, but it had trouble because in the game’s design, the squares on the checkerboard don’t matter beyond their starting positions. No matter how many times I told the agent (and made notes in my Claude project files), it would come back to trying to center the pieces to the squares, snap them within squares, or use the squares as a logical basis of the game’s calculations when they should really just form a background image.</p>
 
   <p>To get around this in the Atari 800 version, I started over and told Claude that I was creating a game with a UFO (instead of a circular checker piece) flying over a field of adjacent squares—never once mentioning the words “checker,” “checkerboard,” or “checkers.” With that approach, I got the results I wanted.</p>
@@ -1091,7 +1107,8 @@ For example, I spent four days trying to get Claude Code to create an Atari 800 
 <ul>
   <li>It’s “more modern”, meaning newer, I guess.</li>
   <li>It has more features, or a unique architecture.</li>
-  <li><em>Everybody</em>’s doing it. Or maybe, this particular <em>someone</em> is doing it. Or <em>nobody</em> is doing it, except for the successful ones.</li>
+  <li>
+<em>Everybody</em>’s doing it. Or maybe, this particular <em>someone</em> is doing it. Or <em>nobody</em> is doing it, except for the successful ones.</li>
 </ul>
 
 <p>All of this has some flavor of: I want to be different than everyody else, but also the same as the people who are succeeding.</p>
@@ -1156,11 +1173,15 @@ For example, I spent four days trying to get Claude Code to create an Atari 800 
 <p>If you, dear developer, find yourself in the second bucket, here’s my advice.</p>
 
 <ul>
-  <li><strong>If performance matters, like actually matters, use Sidekiq Enterprise or Karafka.</strong> <em>But it’s complicated</em>, you comment. <em>It costs money. No one uses it anymore. It’s not modern.</em> Shush. Sidekiq Enterprise and Karafka are, hands down the best for performance outside of building it in-house (a legit choice we won’t explore here). You can make it complicated by trying to precisely nail down what is meant by “performance” (throughput, latency, resources, spiky, steady, whatever), but if you use the word superlatively–“most performant”–your choice is made.</li>
-  <li><strong>Otherwise:</strong>
+  <li>
+<strong>If performance matters, like actually matters, use Sidekiq Enterprise or Karafka.</strong> <em>But it’s complicated</em>, you comment. <em>It costs money. No one uses it anymore. It’s not modern.</em> Shush. Sidekiq Enterprise and Karafka are, hands down the best for performance outside of building it in-house (a legit choice we won’t explore here). You can make it complicated by trying to precisely nail down what is meant by “performance” (throughput, latency, resources, spiky, steady, whatever), but if you use the word superlatively–“most performant”–your choice is made.</li>
+  <li>
+<strong>Otherwise:</strong>
     <ul>
-      <li><strong>If you’re using MySQL or SQLite, use SolidQueue.</strong> it’s your best option for those databases, and it’s really good in an absolute sense too. And it’s getting even better. it should have GoodJob-esque batches soon. No shade, all love.</li>
-      <li><strong>If you’re using Postgres, use GoodJob.</strong> It’s full featured, and those features are implemented simple-like because they use Postgres-only features; there’s no workaround complexity for other databases. Want to break all the rules of encapsulation and fiddle with the job data? It’s one table. FANG uses GoodJob. It’s modern.</li>
+      <li>
+<strong>If you’re using MySQL or SQLite, use SolidQueue.</strong> it’s your best option for those databases, and it’s really good in an absolute sense too. And it’s getting even better. it should have GoodJob-esque batches soon. No shade, all love.</li>
+      <li>
+<strong>If you’re using Postgres, use GoodJob.</strong> It’s full featured, and those features are implemented simple-like because they use Postgres-only features; there’s no workaround complexity for other databases. Want to break all the rules of encapsulation and fiddle with the job data? It’s one table. FANG uses GoodJob. It’s modern.</li>
     </ul>
   </li>
 </ul>
