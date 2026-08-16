@@ -67,6 +67,17 @@ RSpec.describe Post do
     end
   end
 
+  describe '#content with base_url:' do
+    it 'rewrites root-relative media URLs to be absolute against the given base URL' do
+      body = "![alt text](/uploads/2024/example.png)"
+
+      with_temporary_post(filename: "2026-01-01-rewrite-media-test-post.md", body: body) do |post|
+        expect(post.content).to include('src="/uploads/2024/example.png"')
+        expect(post.content(base_url: "https://island94.org")).to include('src="https://island94.org/uploads/2024/example.png"')
+      end
+    end
+  end
+
   describe '#published?' do
     it 'is true when the frontmatter has no published key' do
       post = described_class.new(frontmatter: {})

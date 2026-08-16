@@ -2,6 +2,8 @@
 class Post < ApplicationModel
   include Markdownable
 
+  MEDIA_URL_ATTRIBUTES = %w[src href].freeze
+
   attribute :filepath, :string
   attribute :frontmatter, default: -> { {} }
   attribute :body, :string
@@ -82,8 +84,11 @@ class Post < ApplicationModel
     frontmatter.fetch("title", "")
   end
 
-  def content
+  def content(base_url: nil)
     @_content ||= render_markdown(body)
+    return @_content unless base_url
+
+    rewrite_media_urls(@_content, base_url)
   end
 
   def published_at
@@ -115,6 +120,21 @@ class Post < ApplicationModel
   end
 
   private
+
+  def rewrite_media_urls(html, base_url)
+    fragment = Nokogiri::HTML::DocumentFragment.parse(html)
+
+    fragment.css("[src], [href]").each do |element|
+      MEDIA_URL_ATTRIBUTES.each do |attribute|
+        value = element[attribute]
+        next unless value&.start_with?("/")
+
+        element[attribute] = URI.join(base_url, value).to_s
+      end
+    end
+
+    fragment.to_html.html_safe # rubocop:disable Rails/OutputSafety
+  end
 
   def raw_slug
     filename.split("-", 4).last
