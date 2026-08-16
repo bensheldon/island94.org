@@ -22,9 +22,19 @@ jobs:
   new_bookmark:
     name: Create new bookmark
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.BOT_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
       - name: Checkout code
         uses: actions/checkout@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
       # Dependencies
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -53,6 +63,7 @@ jobs:
         id: create_pr
         uses: peter-evans/create-pull-request@v8
         with:
+          token: ${{ steps.app-token.outputs.token }}
           title: "Add bookmark for ${{ github.event.inputs.bookmark_link }}"
           body: ""
           branch-suffix: timestamp
