@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"708cf2fedccdec93e551da639f4f2c5b"
+    etag: W/"80c213c36b287cd1d7bfbc076b572c2f"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/donmoynihan-substack-com-p-what-could-a-post-trump-governance":
+    build_path: bookmarks/2026/08/donmoynihan-substack-com-p-what-could-a-post-trump-governance.html
+    etag: W/"fdf6a5f76fe343cd304531eb817e4083"
   "/bookmarks/2026/08/defector-com-humanists-have-done-nothing-wrong":
     build_path: bookmarks/2026/08/defector-com-humanists-have-done-nothing-wrong.html
     etag: W/"85ae57bc3172036bb33dcd7cf4932c4e"
