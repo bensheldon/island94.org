@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"b44db138bd8286d42f1cbcfd8ea752b7"
+    etag: W/"c8f16d3028761ba4eab67f71c12ea894"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/www-futilitycloset-com-2026-08-18-bhartrharis-paradox":
+    build_path: bookmarks/2026/08/www-futilitycloset-com-2026-08-18-bhartrharis-paradox.html
+    etag: W/"0c877029a61255ecea3cb2f3d3d2af64"
   "/bookmarks/2026/08/railsdesigner-com-color-for-rails-developers-ref-rss":
     build_path: bookmarks/2026/08/railsdesigner-com-color-for-rails-developers-ref-rss.html
     etag: W/"3c54665964048a8b6210c13d38b0846f"
