@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c8f16d3028761ba4eab67f71c12ea894"
+    etag: W/"ac5f453faee3020755f7d0c67dee2881"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/www-meditationsinanemergency-com-a-is-for-airtight-categories-b-for-blanket-statements-c-for-cherrypicking":
+    build_path: bookmarks/2026/08/www-meditationsinanemergency-com-a-is-for-airtight-categories-b-for-blanket-statements-c-for-cherrypicking.html
+    etag: W/"be9e250b8cc80585335cb834812faace"
   "/bookmarks/2026/08/www-futilitycloset-com-2026-08-18-bhartrharis-paradox":
     build_path: bookmarks/2026/08/www-futilitycloset-com-2026-08-18-bhartrharis-paradox.html
     etag: W/"0c877029a61255ecea3cb2f3d3d2af64"
