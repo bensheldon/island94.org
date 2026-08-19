@@ -16,7 +16,7 @@ paths:
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
   "/search.json":
     build_path: search.json
-    etag: W/"ba78a9bfeb1eaf5055671bb27eff8e0d"
+    etag: W/"4a7ea3d41608a1fe6375795c5ecb9291"
   "/feed.xml":
     build_path: feed.xml
     etag: W/"d2f10507aef879bb319d89b1700535cf"
@@ -18823,7 +18823,7 @@ paths:
     etag: W/"557d26d47b085a9a44748a171b11b9df"
   "/2019/04/quantitative-usability-assistive-technology-and-the-right-to-privacy":
     build_path: 2019/04/quantitative-usability-assistive-technology-and-the-right-to-privacy.html
-    etag: W/"6b9dea69398898761483ac013d90fa5f"
+    etag: W/"f0cb8b16cab334e0cae4b5c1ad2fbf57"
   "/2019/04/weeknotes-for-april-7-2019":
     build_path: 2019/04/weeknotes-for-april-7-2019.html
     etag: W/"5ccc3e5a255644e56f9fffa79efddf07"
@@ -22180,7 +22180,7 @@ paths:
     etag: W/"450e541bfd32b154efebf796f17189dc"
   "/posts/17":
     build_path: posts/17.html
-    etag: W/"01fd3c4e840654ec6e85b483bd0d3330"
+    etag: W/"4013b71906b2603d7a940c0137f905b2"
   "/posts/18":
     build_path: posts/18.html
     etag: W/"1e520afa978ddb5ff796409c5d1e7e21"
