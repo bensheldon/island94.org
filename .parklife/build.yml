@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"11528795b989705cec174e3a91912f0e"
+    etag: W/"5e0d8f5435700e9116bef27adf2da7e4"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/www-eatingpolicy-com-p-checking-in-on-outcomes-reviews":
+    build_path: bookmarks/2026/08/www-eatingpolicy-com-p-checking-in-on-outcomes-reviews.html
+    etag: W/"947a97ca080f6107c961de07fde8e9a6"
   "/bookmarks/2026/08/martinfowler-com-rachels-ramblings-citizens-agents-experts-html":
     build_path: bookmarks/2026/08/martinfowler-com-rachels-ramblings-citizens-agents-experts-html.html
     etag: W/"c85c8f9b1cc219da2645efcff74ccf49"
