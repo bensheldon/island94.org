@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"5e0d8f5435700e9116bef27adf2da7e4"
+    etag: W/"9ee97dd721313f3be3a39157a1b2621a"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/jasonstanleyantifascist-substack-com-p-it-sure-looks-like-jason-arday-was":
+    build_path: bookmarks/2026/08/jasonstanleyantifascist-substack-com-p-it-sure-looks-like-jason-arday-was.html
+    etag: W/"42c7a85117a01777cd7aca18712ccb45"
   "/bookmarks/2026/08/www-eatingpolicy-com-p-checking-in-on-outcomes-reviews":
     build_path: bookmarks/2026/08/www-eatingpolicy-com-p-checking-in-on-outcomes-reviews.html
     etag: W/"947a97ca080f6107c961de07fde8e9a6"
