@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"ac5f453faee3020755f7d0c67dee2881"
+    etag: W/"11528795b989705cec174e3a91912f0e"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"d2f10507aef879bb319d89b1700535cf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"f4c09e15dd070911c395882a6207c34d"
+    etag: W/"760fd5171a510c793f4c0331dc06db33"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/martinfowler-com-rachels-ramblings-citizens-agents-experts-html":
+    build_path: bookmarks/2026/08/martinfowler-com-rachels-ramblings-citizens-agents-experts-html.html
+    etag: W/"c85c8f9b1cc219da2645efcff74ccf49"
   "/bookmarks/2026/08/www-meditationsinanemergency-com-a-is-for-airtight-categories-b-for-blanket-statements-c-for-cherrypicking":
     build_path: bookmarks/2026/08/www-meditationsinanemergency-com-a-is-for-airtight-categories-b-for-blanket-statements-c-for-cherrypicking.html
     etag: W/"be9e250b8cc80585335cb834812faace"
