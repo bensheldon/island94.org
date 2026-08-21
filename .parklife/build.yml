@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"9ee97dd721313f3be3a39157a1b2621a"
+    etag: W/"207e4f23d7a3c797c86a00ced9e08663"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/lethain-com-decisions-not-dates":
+    build_path: bookmarks/2026/08/lethain-com-decisions-not-dates.html
+    etag: W/"60df843c92c961fbffc024fd4df8a125"
   "/bookmarks/2026/08/jasonstanleyantifascist-substack-com-p-it-sure-looks-like-jason-arday-was":
     build_path: bookmarks/2026/08/jasonstanleyantifascist-substack-com-p-it-sure-looks-like-jason-arday-was.html
     etag: W/"42c7a85117a01777cd7aca18712ccb45"
