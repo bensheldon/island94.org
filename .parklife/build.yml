@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"2c71100004213aa7743abbbb28c8d1af"
+    etag: W/"58e011103f445eb076b8463cfb811c67"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/tedium-co-2026-08-09-vibe-coding-insincerity":
+    build_path: bookmarks/2026/08/tedium-co-2026-08-09-vibe-coding-insincerity.html
+    etag: W/"47254d6c97575980019168f650e5ce82"
   "/bookmarks/2026/08/bonsaitonight-com-2026-08-21-draft-judging-instructions-for-the-pbe":
     build_path: bookmarks/2026/08/bonsaitonight-com-2026-08-21-draft-judging-instructions-for-the-pbe.html
     etag: W/"6a4093854a25c995c6b2e4674c227e46"
