@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"207e4f23d7a3c797c86a00ced9e08663"
+    etag: W/"2c71100004213aa7743abbbb28c8d1af"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"d2f10507aef879bb319d89b1700535cf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"a4de20e01f5999801a87d8173d24a492"
+    etag: W/"7b942900f9611836fd1ec6155ad43d21"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/bonsaitonight-com-2026-08-21-draft-judging-instructions-for-the-pbe":
+    build_path: bookmarks/2026/08/bonsaitonight-com-2026-08-21-draft-judging-instructions-for-the-pbe.html
+    etag: W/"6a4093854a25c995c6b2e4674c227e46"
   "/bookmarks/2026/08/lethain-com-decisions-not-dates":
     build_path: bookmarks/2026/08/lethain-com-decisions-not-dates.html
     etag: W/"60df843c92c961fbffc024fd4df8a125"
