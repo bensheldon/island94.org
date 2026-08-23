@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"ca5738415410db8e5b6a9166c0bb8165"
+    etag: W/"c4c7834e76c54d04f5b9a8b48a4143f7"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/simonwillison-net-2026-aug-6-simon-willison-on-technical-blogging-atom-everything":
+    build_path: bookmarks/2026/08/simonwillison-net-2026-aug-6-simon-willison-on-technical-blogging-atom-everything.html
+    etag: W/"1be2bca73bf64e7290bea487872f15b0"
   "/bookmarks/2026/08/www-notesfromthecircus-com-p-return-the-favor":
     build_path: bookmarks/2026/08/www-notesfromthecircus-com-p-return-the-favor.html
     etag: W/"4125a576d46a9e73233cc238790302ae"
