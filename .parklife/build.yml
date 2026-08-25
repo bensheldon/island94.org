@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c4c7834e76c54d04f5b9a8b48a4143f7"
+    etag: W/"c36b25e54091ceb54eacf53e03483ba7"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"d2f10507aef879bb319d89b1700535cf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"71e6df16e9a3b8e04b34ba42034fe071"
+    etag: W/"735459605d9c6db75917cf25537015bf"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/www-astralcodexten-com-p-re-re-re-pritchard-on-liberal-happiness":
+    build_path: bookmarks/2026/08/www-astralcodexten-com-p-re-re-re-pritchard-on-liberal-happiness.html
+    etag: W/"464f7997e3d76bbe171c67870e517ae6"
   "/bookmarks/2026/08/simonwillison-net-2026-aug-6-simon-willison-on-technical-blogging-atom-everything":
     build_path: bookmarks/2026/08/simonwillison-net-2026-aug-6-simon-willison-on-technical-blogging-atom-everything.html
     etag: W/"1be2bca73bf64e7290bea487872f15b0"
