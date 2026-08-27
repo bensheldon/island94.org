@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"c60ae45a82078a1f5b1c357b3c81ebf9"
+    etag: W/"d31c1a6e7d239b5a55907453c6545f7d"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/www-woman-of-letters-com-p-ross-barkan-vs-the-machine":
+    build_path: bookmarks/2026/08/www-woman-of-letters-com-p-ross-barkan-vs-the-machine.html
+    etag: W/"3d67975524ab2501e412fd8b99181842"
   "/bookmarks/2026/08/newsletters-feedbinusercontent-com-a3d-a3d4e98f49cccf89693218ccf77adc3efb6b87b0-html":
     build_path: bookmarks/2026/08/newsletters-feedbinusercontent-com-a3d-a3d4e98f49cccf89693218ccf77adc3efb6b87b0-html.html
     etag: W/"3a2bd6b008244fb29989427a53bf3736"
