@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"d717c049b6ac4d99c161f3a2f416c4ee"
+    etag: W/"10557699c22a4813aace82a90db2d3a3"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"d2f10507aef879bb319d89b1700535cf"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"4d9583ae369a0ee71563987567ef31ed"
+    etag: W/"b2a36483ad0b882c7a6d7c05f7919b82"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/08/www-wheresyoured-at-the-ai-haters-manifesto":
+    build_path: bookmarks/2026/08/www-wheresyoured-at-the-ai-haters-manifesto.html
+    etag: W/"ab647b3f5b186069476240d067e6a288"
   "/bookmarks/2026/08/newsletter-techworld-with-milan-com-p-20-lessons-from-20-years-in-tech-ref-labnotes-org":
     build_path: bookmarks/2026/08/newsletter-techworld-with-milan-com-p-20-lessons-from-20-years-in-tech-ref-labnotes-org.html
     etag: W/"0175fcaf02561ba7cfbffd43e2f6b2f4"
