@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"5b91279b4b5eafd067ffbf5a02aecb09"
+    etag: W/"6b1cfc16a63b246df9343ab13d8d2e25"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/donmoynihan-substack-com-p-which-stories-about-academia-matter":
+    build_path: bookmarks/2026/09/donmoynihan-substack-com-p-which-stories-about-academia-matter.html
+    etag: W/"a7d3ebc81487ae3e6a003f6dab54f961"
   ? "/bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-09-02-yale-med-school-prof-tells-his-postdocs-work-extra-hours-at-my-command-or-youre-no-better-than-the-guy-who-c"
   : build_path: bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-09-02-yale-med-school-prof-tells-his-postdocs-work-extra-hours-at-my-command-or-youre-no-better-than-the-guy-who-c.html
     etag: W/"43c6719252ad1577228bdb94fb1c70b1"
