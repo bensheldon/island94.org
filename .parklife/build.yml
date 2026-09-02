@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"10557699c22a4813aace82a90db2d3a3"
+    etag: W/"5b91279b4b5eafd067ffbf5a02aecb09"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  ? "/bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-09-02-yale-med-school-prof-tells-his-postdocs-work-extra-hours-at-my-command-or-youre-no-better-than-the-guy-who-c"
+  : build_path: bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-09-02-yale-med-school-prof-tells-his-postdocs-work-extra-hours-at-my-command-or-youre-no-better-than-the-guy-who-c.html
+    etag: W/"43c6719252ad1577228bdb94fb1c70b1"
   "/bookmarks/2026/08/www-wheresyoured-at-the-ai-haters-manifesto":
     build_path: bookmarks/2026/08/www-wheresyoured-at-the-ai-haters-manifesto.html
     etag: W/"ab647b3f5b186069476240d067e6a288"
