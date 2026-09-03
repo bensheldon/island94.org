@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"165f41429f2ea1520c3d82b480e3101c"
+    etag: W/"ff03f2675810f7ab0c3741cd59f736f4"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/thebaffler-com-salvos-paid-phones-kolitz":
+    build_path: bookmarks/2026/09/thebaffler-com-salvos-paid-phones-kolitz.html
+    etag: W/"5b1eb65beb027ff4b4bf2fcfbd09d6d4"
   "/bookmarks/2026/09/lea-verou-me-blog-2026-dark-mode-toggles-2":
     build_path: bookmarks/2026/09/lea-verou-me-blog-2026-dark-mode-toggles-2.html
     etag: W/"20c78bc4ad1a63aac91c78a63b30fef1"
