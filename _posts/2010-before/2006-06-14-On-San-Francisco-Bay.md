@@ -30,4 +30,3 @@ San Francisco's cool, cloudy weather and excellent sailing is made possible by t
 ![Scott relaxes](/uploads/2006/on-san-francisco-bay-6.jpg)
 
 +(Thanks Scott for the corrections)+
-

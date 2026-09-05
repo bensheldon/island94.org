@@ -21,7 +21,6 @@ Your home would provide the greatest fit for us as we aim to continue to contrib
 
 Our offer is fair given the condition, amenities and comparable sales, and we aim for being the best buyer to steward this home and the neighborhood. We look forward to your consideration of our offer for [street address].
 
-
 Sincerely,<br/>
 Ben and Angelina
 

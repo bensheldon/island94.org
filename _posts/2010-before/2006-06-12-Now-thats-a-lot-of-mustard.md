@@ -64,4 +64,3 @@ At the top, I crossed through an amazing glen of sloping, ivyed (another invasiv
 ![Pack o' Dogs](/uploads/2006/now-thats-a-lot-of-mustard-11.jpg)
 
 ![Truck o' dogs](/uploads/2006/now-thats-a-lot-of-mustard-12.jpg)
-

@@ -21,7 +21,7 @@ On April 25, 2012, I sent this email to Tom Carden:
 
 > This week I came across a gist of yours and eventually made my way to nodemap while researching how to generate server-side map tiles. Thank you so much for putting those pieces together; they're fantastic! I matched your code with node-canvas-heroku to get it running in the cloud and it's pretty fantastic:
 >
-> [http://morning-spring-2292.herokuapp.com/](http://morning-spring-2292.herokuapp.com/)
+>  [http://morning-spring-2292.herokuapp.com/](http://morning-spring-2292.herokuapp.com/)
 >
 > Anyways, just wanted to send you a big thanks for the code and inspiration. I'm working on building a node-based utfgrid renderer to bootstrap an entire wax interaction layer... all without Mapnik (though maybe I should just work on packaging that for Heroku).
 >

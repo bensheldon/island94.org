@@ -19,4 +19,3 @@ Monday was Saul and my's first Monday Night Write (MNW); a time to get together,
 ![Saul at Monday Night Write](/uploads/2006/first-monday-night-write-1.jpg)
 
 Perhaps the longest novel in the English language is _The Story of the Vivian Girls_ written by [Harvey Darger](https://en.wikipedia.org/wiki/Henry_Darger); it runs to 15,143 pages. Also, the letters MNW, if rotated upside down, spell MNW.
-

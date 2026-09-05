@@ -27,4 +27,3 @@ music by Mutandina
 magnatune.com
 
 I strapped the camera to my bike using some velcro cable ties and a sock for shock absorption.
-

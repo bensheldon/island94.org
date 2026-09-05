@@ -30,4 +30,3 @@ And the article is chock full of fun, familiar anecdotes:
 From [Mission Measurement](http://www.missionmeasurement.com/content/thought-capital/thought-scraps/2009/10/30/low-overhead-does-not-equal-better-organizations) by way of [Entry Level Living's Allison Jones](http://entrylevelliving.wordpress.com/). Illustration by [David Plunkert](http://www.spurdesign.com/DP/index.html) (it's included in the article).
 
 [![np-starvation-graphic](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-graphic-500x650.png "np-starvation-graphic") ](/uploads/2009-10-30-Starvation-begets-starvation/np-starvation-graphic.png)
-

@@ -2,6 +2,7 @@
 published: true
 title: Japanese processes
 ---
+
 ### Jugyō Kenkyū ("Lesson Study”)
 
 > “Everything we do in the U.S. is focused on the effectiveness of the individual. ‘Is this teacher effective?’ Not, ‘Are the methods they’re using effective, and could they use other methods?’” — James Hiebert

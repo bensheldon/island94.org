@@ -17,7 +17,7 @@ One: Albert Burneko’s [“Toward a theory of Kevin Roose”](https://defector.
 
 Two: Ed Zitrain’s [“Make fun of them”](https://www.wheresyoured.at/make-fun-of-them/) (emphasis in the original):
 
-> In my opinion, there’s nothing more cynical than watching billions of people get shipped increasingly-shitty and expensive solutions and then **get defensive of the people shipping them,** and hostile to the people who are complaining that the products they use suck**.**
+>  In my opinion, there’s nothing more cynical than watching billions of people get shipped increasingly-shitty and expensive solutions and then **get defensive of the people shipping them,** and hostile to the people who are complaining that the products they use suck**.**
 
 ### In the day to day
 

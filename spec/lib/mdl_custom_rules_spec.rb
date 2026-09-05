@@ -41,6 +41,19 @@ RSpec.describe "custom mdl rules for weird whitespace" do
     expect(stdout.scan(/^.*CUSTOM003.*$/).join).to include(":1:")
   end
 
+  it "does not flag or collapse nested-list indentation after a blockquote marker" do
+    text = "> * Examples of pain:\n>   * Devise.\n>     * a nested detail\n"
+    stdout, fixed = run_mdl(text, fix: true)
+    expect(stdout).not_to include("CUSTOM003")
+    expect(fixed).to eq(text)
+  end
+
+  it "still flags and collapses a genuine doubled space inside blockquote content" do
+    stdout, fixed = run_mdl("> some  doubled space\n", fix: true)
+    expect(stdout).to include("CUSTOM003")
+    expect(fixed).to eq("> some doubled space\n")
+  end
+
   it "flags trailing whitespace" do
     stdout, = run_mdl("line one \nline two\n")
     expect(stdout).to include("MD009")
@@ -51,6 +64,26 @@ RSpec.describe "custom mdl rules for weird whitespace" do
     expect(stdout).not_to include("MD009")
   end
 
+  it "flags multiple consecutive blank lines" do
+    stdout, = run_mdl("paragraph one\n\n\nparagraph two\n")
+    expect(stdout).to include("MD012")
+  end
+
+  it "does not flag a single blank line between paragraphs" do
+    stdout, = run_mdl("paragraph one\n\nparagraph two\n")
+    expect(stdout).not_to include("MD012")
+  end
+
+  it "flags a heading not surrounded by blank lines" do
+    stdout, = run_mdl("paragraph\n### Heading\nmore text\n")
+    expect(stdout).to include("MD022")
+  end
+
+  it "does not flag a heading already surrounded by blank lines" do
+    stdout, = run_mdl("paragraph\n\n### Heading\n\nmore text\n")
+    expect(stdout).not_to include("MD022")
+  end
+
   it "fixes all of the above in one pass" do
     lines = [
       "the [\u{FFFC}`thing`\u{FFFC}](https://example.com) library",
@@ -58,6 +91,7 @@ RSpec.describe "custom mdl rules for weird whitespace" do
       "before\u{00A0}`code`\u{00A0}after",
       "",
       "the Fiber  `resume` behavior",
+      "",
       "",
       "trailing space here" + " ",
     ]

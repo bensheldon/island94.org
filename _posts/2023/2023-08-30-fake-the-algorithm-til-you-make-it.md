@@ -60,4 +60,3 @@ end
 That's a relatively lightweight strategy, that you can run in real-time and if there is enough engagement can appear effective. And if you don't have enough engagement, again, enrich it with some deterministically random results.
 
 It's basic but you can also add in other kinds of engagement and weigh them differently or whatever. It's all good. Then you have massive success and hire a real datascience team.
-

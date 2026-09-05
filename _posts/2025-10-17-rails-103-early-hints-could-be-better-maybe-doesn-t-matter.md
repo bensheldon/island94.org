@@ -121,4 +121,3 @@ $ curl -s -k -v --http2 https://code103.hotmann.de 2>&1 | grep -A 5 -E '103 Earl
 <
 # ... ok, that returns something
 ```
-

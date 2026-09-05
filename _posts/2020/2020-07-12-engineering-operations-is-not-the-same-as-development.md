@@ -42,6 +42,7 @@ Examples of problems identified during our hour of Apps & Docs:
 - Forever optimizing headless Firefox, writing flexible and reliable Selenium scripts, and managing an increasing fleet of specialized jobworkers
 
 ## Trade operational risk for speed of learning
+
 We can't predict the exact operational issues we'll experience during a given day, but by scheduling and protecting one hour per day for operational tasks, we can deliberately trade risk for flexibility. Flexibility comes because we can accept small risks by introducing incomplete or manual-intervention-required workflows into the system. We do not have to build for every edge case or automate every action. We can develop features faster and create more opportunities to learn with real users in a real operational environment. This is an operationalization of our engineering principle "don't argue, ship".
 
 ## Takeaways

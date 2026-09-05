@@ -97,4 +97,3 @@ Something I learned a long time ago, from watching browser recordings (true stor
 - ⭐️ the [GitHub repository](https://github.com/bensheldon/spectator_sport) to help elevate its visibility
 - Subscribe to my [email announcements list](https://scattergun.email/public/mailing_lists/eXKwMBZ6YkdlXra3/subscribe)
 - Sponsor my development with $$$ via [GitHub Sponsors](https://github.com/sponsors/bensheldon)
-

@@ -25,4 +25,5 @@ Which is... a not unreasonable reaction. In the words of a close friend "This is
 I get it. I think about how much self-work I've done in my own life to reply to "I like your X" with simply "Thanks!" (and not "oh, and I like your.." or "oh, it's not that great").
 
 ## What's next
+
 Two quarterly activities are upcoming that I'm excited to be organizing for the first time: engineering rotations and OKR setting. I'm sure I'll learn a lot.

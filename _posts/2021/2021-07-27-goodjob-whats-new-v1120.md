@@ -83,6 +83,3 @@ Don't take my word for what a good job it is. Check out the new GoodJob Dashboar
 Code, documentation, and curiosity-based contributions are welcome! Check out the [GoodJob Backlog](https://github.com/bensheldon/good_job/projects/1) , comment on or open a Github Issue, or make a Pull Request.
 
 I also have a [GitHub Sponsors Profile](https://github.com/sponsors/bensheldon) if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.
-
-
-

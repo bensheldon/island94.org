@@ -35,7 +35,6 @@ From ["The Vision 2 and the Severing of Politics from Video Games"](https://www.
 
 Penelope Trunk’s ["Here’s the high-priced advice college applicants buy that doesn’t trigger the FBI"](https://web.archive.org/web/20190406115706/http://blog.penelopetrunk.com/2019/03/14/heres-the-high-priced-advice-college-applicants-buy-that-doesnt-trigger-the-fbi/)
 
-
 :
 
 > …the workplace is just like college admissions. You learn the rules and use them to your advantage. So teach your kids when they’re young that the higher the stakes the game is, the more arcane the rules are. And the more arcane the rules, the more likely it is that you can find a backdoor route to the top.

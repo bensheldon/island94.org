@@ -83,4 +83,3 @@ This is a 3 bowl, 1 pot, 1 baking dish recipe. The overall flow is:
 - Remove from the oven and **rest for about 5 minutes**.
 - Run a knife or spatula around the edge to loosen the rice from the pie plate, then **invert onto a serving plate**.
 - **Sprinkle with the parsley and pistachios** and serve with the **lemon wedges on the side**.
-

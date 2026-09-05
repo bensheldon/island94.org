@@ -26,6 +26,7 @@ Usually your Earth found and could recover a steady state! That's [homeostasis](
 > Homeostasis is brought about by a natural resistance to change when already in the optimal conditions, and equilibrium is maintained by many regulatory mechanisms: it is thought to be the central motivation for all organic action.
 
 ## Terroir
+
 From Vicki Boykis's [“The Art of the Long Goodbye”](https://vicki.substack.com/p/the-art-of-the-long-goodbye) :
 
 > A few years ago, I read the Southern Reach trilogy, by Jeff Van Der Meer….

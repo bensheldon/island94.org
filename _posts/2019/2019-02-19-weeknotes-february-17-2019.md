@@ -42,7 +42,7 @@ I follow several blogs that are all-in on Event Sourcing; reading [“Event Sour
 
 > **What’s the take away here? Should I event source or not!?**  
 >
-> I think you can generally answer it with some alone time, deep introspection, and two questions:  
+>  I think you can generally answer it with some alone time, deep introspection, and two questions:  
 >
 > 1. For which core problem is event sourcing the solution?
 > 2. Is what you actually want just a plain old queue?

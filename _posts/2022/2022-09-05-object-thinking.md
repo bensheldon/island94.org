@@ -34,7 +34,6 @@ This wasn't quite the book I wanted, though I enjoyed the introduction and the c
 > * Software development is like riding a surfboard—there is no process that will assure a successful ride, nor is there any process that will assure that you will interact propitiously with the other surfers sharing the same wave. Published processes, like published methods, provide observational data from which you can learn and thereby improve your innate abilities—just as observation of master surfers enables you to improve yourself.
 > * No model has any value other than to assist in object thinking and to provide a means for interpersonal communication. If you can model your objects and your scenarios in your head while engaged in writing code, and if those mental models are consistent with object thinking, great! No need to write them down. If you and your colleagues use a visual model on a whiteboard as an aid in talking about scenarios and in clarifying your collective thinking about those scenarios, and you erase the board when you're done meeting, also great! If your models are crudely drawn and use only a subset of the syntax defined here (or a completely different syntax that you and your colleagues collectively agree upon), still great! Model when you must, what you must, and only what you must.
 
-
 Here's the good stuff, though it doesn't have much of a developmental model:
 
 <blockquote markdown="1">

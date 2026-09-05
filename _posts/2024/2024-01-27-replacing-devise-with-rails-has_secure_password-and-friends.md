@@ -101,6 +101,7 @@ I'll explain that `password_salt` in a bit.
 To verify this, you want to do use something like this: `User.find_by_token_for(:email_confirmation, value_from_the_link)`.
 
 btw security: when you put a link in an email message, you can only use a `GET` , because emails can't reliably submit web forms (some clients can, but it's weird and unreliable). So your link is going to look like `https://example.com/account/reset_password?token=blahblahblahblahblah`. If there is any links to 3rd party resources like script tags or off-domain images, you will [leak the token through the `referrer`](https://portswigger.net/kb/issues/00500400_cross-domain-referer-leakage) when the page is loaded with the `?token=` in the URL. [Devise never fixed it (😱)](https://github.com/heartcombo/devise/pull/4366) . What you should do is take value out of the query param and put it in the session and redirect back to the same page without the query parameter and use the session value instead. (Fun fact: this is a bug bounty that got me paid.)
+
 ### Authenticatable salts
 
 Here's where I explain that `password_salt` value.
@@ -257,6 +258,3 @@ If you want to put stuff into not-the-session cookies, those cookies can be acce
 ### Closing thoughts
 
 That was all the interesting bits for me. I also learned quite a bit poking around Dave Kimura’s [ActionAuth](https://github.com/kobaltz/action_auth) (thank you!), and am thankful for the many years of service I’ve gotten from Devise.
-
-
-

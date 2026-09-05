@@ -86,5 +86,3 @@ All this work did generate some upstream issues and PRs. I mostly worked around 
 ### Notes, right?
 
 Yep, these are my notes. Maybe they’re helpful. No big denouement. The feature works, I’m happy with it, my teammates are happy, and I probably wouldn’t have attempted it at all if I didn’t have such positive thoughts about Action Cable going in, even if the work itself got deeply into the weeds.
-
-

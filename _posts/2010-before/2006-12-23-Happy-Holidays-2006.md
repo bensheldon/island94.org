@@ -17,4 +17,3 @@ redirect_from:
 ---
 
 <video src="/uploads/videos/bensheldon-happyholidays2006530.mp4" poster="/uploads/videos/bensheldon-happyholidays2006530.jpg" controls></video>
-

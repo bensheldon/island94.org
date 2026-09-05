@@ -39,6 +39,6 @@ WAIT, WHAT?! Why? I described that bad things happen if the pool size is *too sm
 
 I know this is wild advice, but it’s based on facts and experience. Even Rails maintainers have intentions [to remove this configuration option entirely](https://github.com/rails/rails/pull/51073#issuecomment-1942762197):
 
-> …we want the pool not to have a limit by default anymore.
+>  …we want the pool not to have a limit by default anymore.
 
 So please, stop sweating the precise, exact, perfect database connection pool value. Set it to something really big, that can never be too small, and never worry about it again.

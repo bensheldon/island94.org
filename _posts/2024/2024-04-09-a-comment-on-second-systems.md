@@ -59,4 +59,3 @@ I really enjoyed this book, and reading it I flipped between three predominant t
 - Wouldn’t it be inspiring to live in a world where your team believes that software can actually improve without replacing it entirely?
 
 </blockquote>
-

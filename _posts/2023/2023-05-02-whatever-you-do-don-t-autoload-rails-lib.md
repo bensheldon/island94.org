@@ -35,7 +35,7 @@ What should you do instead?
 
 DHH [writes](https://github.com/rails/rails/pull/47843#issuecomment-1515367267):
 
-> `lib/` is intended to be for non-app specific library code that just happens to live in the app for now (usually pending extraction into open source or whatever). Everything app specific that's part of the domain model should live in `app/models` (that directory is for POROs as much as ARs)... Stuff like a generic PhoneNumberFormatter is exactly what `lib/` is intended for. And if it's app specific, for some reason, then `app/models` is fine.
+>  `lib/` is intended to be for non-app specific library code that just happens to live in the app for now (usually pending extraction into open source or whatever). Everything app specific that's part of the domain model should live in `app/models` (that directory is for POROs as much as ARs)... Stuff like a generic PhoneNumberFormatter is exactly what `lib/` is intended for. And if it's app specific, for some reason, then `app/models` is fine.
 
 The omakase solution is to manually require files from `lib/` or use `app/models` generically to mean "Domain Models" rather than solely Active Record models. That's great! Do that.
 

@@ -33,4 +33,3 @@ Today was overcast but everyone was in good spirits. So though we had only medio
 The photo above is Boston Harbor's outer berth just south of Deer Island. Ships will offload a portion of their cargo here for a shallower draft. This enables the ship to enter Boston Harbor at anytime, as opposed to waiting until high tide.
 
 For tourist info on the Boston Harbor Islands visit the [Visitor's Guide](https://web.archive.org/web/20060712152158/http://www.bostonislands.org:80/) and for more nutty info read [this article](https://www.bizjournals.com/boston/stories/2002/07/01/focus2.html).
-

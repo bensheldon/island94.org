@@ -20,6 +20,7 @@ I’ve been blogging here for 20 years and this blog has been through it all: Dr
 For the past decade the blog has largely been in markdown files, which I don’t intend to change. Over the past 2 years I also exported 15 years of pinboard/del.icio.us bookmarks, and my Kindle book highlights into markdown-managed files too. I’ve also dialed in some [GitHub Action and Apple Shortcut powered integrations](https://island94.org/2024/1/trigger-github-actions-workflows-from-apple-shortcuts). I’m really happy with Markdown files in a git repo, scripted with Ruby.
 
 …but there’s more than _just_ Ruby.
+
 ### Mastery
 
 I’m heavily invested in the Ruby on Rails ecosystem. I think it’s fair to say I have mastery in Rails: I’m comfortable building applications with it, navigating and extending the framework code, intuiting the conceptual vision of the core team, and being involved in the life of the comunity where I’ve earned some positive social capital to spend as needed.

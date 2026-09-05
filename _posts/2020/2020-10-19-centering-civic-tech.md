@@ -19,7 +19,6 @@ But our job as civic technologists isn’t to be the hero of the stories we stum
 
 </blockquote>
 
-
 They line up with Code for America's pillars of "Show what's possible", "Help people do it themselves" and "Build a movement" (though the latter is rather more grandiose than _understand and support_).
 
 As we called these in my previous career, Direct Service, Capacity Building, and [Roy Johnson](http://putsomegratitudeinyourattitude.com/About.html) ("Put some gratitude in your attitude!").

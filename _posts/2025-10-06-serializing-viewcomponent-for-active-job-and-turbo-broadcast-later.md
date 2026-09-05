@@ -37,6 +37,7 @@ end
 ```
 
 That’s a simple example
+
 ### Making a renderable work _later_
 
 The ViewComponent team can be really proud of [achieving first-class support Rails](https://github.com/rails/rails/pull/37919) for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a `renderable`.
@@ -116,6 +117,3 @@ end
 ```
 
 **Real talk:** I haven't packaged this into a gem. I didn't want to maintain it for everyone, and there’s some View Component features (like collections) it doesn’t handle yet because I haven’t used them (yet). I think this sort of thing is first class behavior for the current state of Rails and Active Job and Turbo, and I'd rather the library maintainers figure out what the best balance of ergonomics, complexity, and performance is for them. I've been gently poking them about it in their Slack; they're great and I believe we can arrive at something even better than this patch I’m running with myself for now 💖
-
-
-

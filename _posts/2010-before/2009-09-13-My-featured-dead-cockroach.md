@@ -22,4 +22,3 @@ A [photo](http://www.flickr.com/photos/bensheldon/1306195094/) I took in the hal
 There is a tiny bit of controversy though: I was made aware the photo was being used when a [good samaritan](http://www.tomtwigg.com/) emailed the author saying _Wired_ had not respected the Creative Commons Attribution--**Non-Commercial**
 
 --Share-Alike license under which the image had been posted to Flickr. We're currently awaiting a response from the article's editor.
-

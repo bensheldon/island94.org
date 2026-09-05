@@ -27,4 +27,3 @@ In case you're curious, this is the translated text:
 > Are you guys well? Miss you very much, hope to see you again [.---](http://www.reddit.com/r/pics/comments/9ycx7/you_are_to_assume_the_role_of_a_chinese_immigrant/c0f0dks)
 
 Other examples mentioned in the comments [are](http://www.reddit.com/r/pics/comments/9ycx7/you_are_to_assume_the_role_of_a_chinese_immigrant/c0f0lfv) "Write a journal entry from the point of view of an English explorer seeing Africans for the first time" [and](http://www.reddit.com/r/pics/comments/9ycx7/you_are_to_assume_the_role_of_a_chinese_immigrant/c0f18yk) "Write one set in the present day about if Germany had won WW2 (and had invaded the UK in doing so)."
-

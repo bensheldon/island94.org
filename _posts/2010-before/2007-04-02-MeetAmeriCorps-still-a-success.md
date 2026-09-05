@@ -26,4 +26,3 @@ Most importantly, we're working on stepping up our outreach. Unlike what some of
 **Physical objects are best**, so I'm in the process of designing a postcard to mail out to AmeriCorps host organizations.
 
 Also, because MeetAmeriCorps.com already has so many [members across the country](http://meetamericorps.com/map), we can have them lend a hand too in outreach activities. That's always a benefit of working with AmeriCorps: we love to help.
-

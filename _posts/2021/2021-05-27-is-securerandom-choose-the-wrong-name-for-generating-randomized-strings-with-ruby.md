@@ -57,5 +57,3 @@ require 'securerandom'
 SecureRandom.send :choose, "😀😍🙃🤪😎".chars, 3
 # => "😍😎😍"
 ```
-
-

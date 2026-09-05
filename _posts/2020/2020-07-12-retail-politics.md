@@ -5,7 +5,6 @@ title: Retail politics
 ---
 I will quote anything that reinforces the necessity of showing up. From SF Weekly's ["The Many Faces of Leland Yee: A Politician's Calculated Rise and Dramatic Fall"](https://archives.sfweekly.com/sanfrancisco/the-many-faces-of-leland-yee-a-politicians-calculated-rise-and-dramatic-fall/Content?oid=2949247&showFullText=true) :
 
-
 <blockquote markdown="1">
 
 Upon reflection, Yee's principles may be ever-shifting and his policies may be decorative, but he found a way around this: by being omnipresent.

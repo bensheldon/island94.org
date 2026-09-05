@@ -21,16 +21,16 @@ One of my AmeriCorps members asked for resources on technology needs-assessment 
 >
 > 1. Do you ever, or often, think, “there must be an easier way to do this?” If so, please list and describe as many of the things or situations as you can to which this statement would apply:
 >
-> 1.
+>   1.
 >
-> 2.
+>   2.
 >
-> 3.
+>   3.
 >
-> 4.
+>   4.
 >
-> 5.
-> [Note: All of the following questions repeat this format, but the phrase "If so, please list and describe as many of the things or situations as you can to which this statement would apply: #1-5" is omitted for brevity ]
+>   5.
+>   [Note: All of the following questions repeat this format, but the phrase "If so, please list and describe as many of the things or situations as you can to which this statement would apply: #1-5" is omitted for brevity ]
 >
 > 2. Do you ever, or often, think, “I could do this faster if only...”
 > 3. Do you ever, or often, think, “I wish I had a helper to help me do...”

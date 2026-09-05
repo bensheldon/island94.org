@@ -56,8 +56,3 @@ From the outside, _object_ perspective, these are all have the same interchangea
 - The implementation is up to you!
 
 Unfortunately, the moment the internals come into play, it gets messy. But I don't think that should take away from the external perspective.
-
-
-
-
-

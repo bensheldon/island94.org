@@ -35,6 +35,6 @@ In all, if you care about civic technology and want to know the major story poin
 
 Lastly and memorably, Jen recounts serving on a task force addressing pandemic unemployment insurance. Writing with a vague yet startling honesty that haunts my own recollections:
 
-> The state should not have needed a task force to tell the EDD what it already knew, and it shouldn’t have needed us to secure permission to act on it. These things are never said out loud—neither the permission we had nor [administrator] Paula’s lack of it. But when we were gone, so was that permission. And soon after, for reasons that were not clear to me, a new backlog began to accrue.
+>  The state should not have needed a task force to tell the EDD what it already knew, and it shouldn’t have needed us to secure permission to act on it. These things are never said out loud—neither the permission we had nor [administrator] Paula’s lack of it. But when we were gone, so was that permission. And soon after, for reasons that were not clear to me, a new backlog began to accrue.
 
 This passage brings into focus the qualities that characterize my own experience with civic tech: power, permission, access, the parasocial qualities of professional relationships, and the fleeting closures of our ongoing experiments to live together in liberal democracy. I hope Jen is doing well, and though I didn't write this explicitly in my last email, I'd love to hear from her.

@@ -29,17 +29,28 @@ end
 
 rule "CUSTOM003", "No doubled spaces mid-line" do
   tags :whitespace
+  # Spaces right after a blockquote prefix (">", ">>", "> > ", etc.) are indentation for a
+  # nested list, not mid-sentence spacing -- collapsing them would change the list nesting.
+  blockquote_prefix = /\A(?:>[ \t]*)*/
+  doubled_space = /(?<=\S) {2,}(?=\S)/
+
   check do |doc|
     codeblock_lines = doc.find_type_elements(:codeblock).flat_map do |e|
       linenum = doc.element_linenumber(e)
       (linenum..(linenum + e.value.lines.count)).to_a
     end
 
-    doc.matching_lines(/\S {2,}\S/) - codeblock_lines
+    doc.lines.each_index.select do |i|
+      line = doc.lines[i]
+      line.sub(blockquote_prefix, "").match?(doubled_space)
+    end.map { |i| i + 1 } - codeblock_lines
   end
   fix do |doc, lines|
     lines.each do |linenum|
-      doc.lines[linenum - 1] = doc.lines[linenum - 1].gsub(/(?<=\S) {2,}(?=\S)/, " ")
+      line = doc.lines[linenum - 1]
+      prefix = line[blockquote_prefix]
+      content = line[prefix.length..]
+      doc.lines[linenum - 1] = prefix + content.gsub(doubled_space, " ")
     end
   end
 end

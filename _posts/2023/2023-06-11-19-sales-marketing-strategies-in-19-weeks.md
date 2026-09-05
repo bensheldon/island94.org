@@ -13,7 +13,7 @@ Or: boil the sales & marketing ocean with these spreadsheets and punchlists (a m
 
 There are lots of quotes from like Paul Graham, Peter Thiel, Marc Andreesen. This is what one signs up for in a book like this. Also replace "traction" with "sales and marketing":
 
-> ...spend your time constructing your product or service and testing traction channels *in parallel*.... We strongly believe that many startups give up way too early... You should always have an explicit traction goal you’re working toward.
+>  ...spend your time constructing your product or service and testing traction channels *in parallel*.... We strongly believe that many startups give up way too early... You should always have an explicit traction goal you’re working toward.
 >
 > ...The importance of choosing the right traction goal cannot be overstated. Are you going for growth or “profitability, or something in between? If you need to raise money in X months, what traction do you need to show to do so? These are the types of questions that help you determine the right traction goal.
 >
@@ -33,7 +33,7 @@ And then the spreadsheets. There are pictures of spreadsheets, and descriptions 
 3. Are the customers that you are getting through this channel the kind of customers that you want right now?
 4. What's the lifetime value of this customer
 
-> "...we encourage you to be as quantitative as possible, even if it is just guesstimating at first.”
+>  "...we encourage you to be as quantitative as possible, even if it is just guesstimating at first.”
 
 And the 19 strategies:
 

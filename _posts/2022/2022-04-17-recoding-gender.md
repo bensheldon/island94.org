@@ -11,6 +11,7 @@ tags:
 
 
 # Recoding gender
+
 I enjoyed the book. It’s a quick survey of early computing and software history, and the lens of gender makes a lot of it new.
 
 A few themes stuck out to me, from my standpoint of 2022:
@@ -27,7 +28,7 @@ Sure sounds like contemporary collaborative practices:
 
 ...and Agile:
 
-> Women may have been uniquely situated to participate in these innovations because of their gendered role in the workplace. As working programmers—and as the staff members who stereotypically were asked to assist customers or in-house users—women had both the expertise to devise solutions and the incentive to make programming easier for experts and novices alike. And although women usually lacked the formal authority to impose workplace practices, this was unnecessary in a computer culture that left the choice of techniques largely up to programmers themselves.  
+>  Women may have been uniquely situated to participate in these innovations because of their gendered role in the workplace. As working programmers—and as the staff members who stereotypically were asked to assist customers or in-house users—women had both the expertise to devise solutions and the incentive to make programming easier for experts and novices alike. And although women usually lacked the formal authority to impose workplace practices, this was unnecessary in a computer culture that left the choice of techniques largely up to programmers themselves.  
 
 On productivity and the never-realized goal of getting rid of programming as a specialization:
 
@@ -38,7 +39,7 @@ On productivity and the never-realized goal of getting rid of programming as a s
 An ongoing discussion about what happens.
 
 > The term software engineering has become common enough today that its provocative effect has been lost. Yet when the term was introduced at Garmisch, it was purely aspirational. Rather than claiming to describe actual practices, the organizers named an ideal that did not yet exist. Nor was it obvious that engineering was the best model for programming. The computing literature of the 1960s is rife with competing metaphors, each or which was chosen to make a particular claim about the nature of programming. Some managers continued to view programming as creative art or craft—and in a positive sense, rather than as a problem to Be cured by imposing scientific rationality. In the academic community, computer science was often seen as a branch of mathematics, which had a higher intellectual status than engineering. The 1970 *On the Management* of Computer Programming, a book that targeted a business audience, ignored the new term software engineering and preferred to use managerial skill as its ideal. Maurice Wilkes argued in 1976 that the term *engineering* did not realistically represent the process of creating a large program. He suggested instead that "There are some analogies between writing a program and writing a treatise or a paper." Computer industry writers invoked a host of other professions to emulate, including accounting (for its certification standards), medicine (for its skilled teamwork and strong professional societies), architecture (as a model for coherent design and precise specification), aviation (for its recognition of the dire consequences of failure), or even cooking (as a time sensitive production process).  
-> …  
+>  …  
 > Given this gendered status hierarchy, some practitioners—women as well as men—may have believed that programmers would rise in stature by adopting the title of engineer. An unintended consequence of this move may have been to make programming and computer science less inviting to women, helping to explain the historical puzzle of why women took a leading role in the first wave of software improvements but become much less visible in the software engineering era.  
 > ….  
 > “For instance, getting your requirements right initially; understanding the materials you’re working with.” Susan Graham, the daughter of a mechanical engineer, got her Ph.D. in computer science a few years after Garmisch and easily identified as a software engineer. Referring to the process of checking the semantics of a programming language, Graham characterized engineering practice as trial-and-error: "You write a compiler, and then you do a lot of testing against real programs, and you try to see whether the right thing happens. And that's why it's engineer ing!" These examples demonstrate again the diverse meanings of engineering, as well as female practitioners ability to prioritize those aspects of engineering that matched their own needs, experiences, and values.  

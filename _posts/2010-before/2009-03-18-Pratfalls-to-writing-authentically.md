@@ -25,4 +25,3 @@ I go back and forth with my mom---a library media teacher---about information li
 > 8. used six words where his reader needed only two.
 >
 > The best writers commit these sins. You cannot rid your writing of them, but you can learn the identifying marks of the snakes and where they are likely to slither into your paragraphs.
-

@@ -26,8 +26,6 @@ This time, Jules and I had a free-ranging discussion on the nonprofit sector and
 
 Listen to the program below
 
-
-
 [![Video thumbnail. Click to play.](http://blip.tv/file/get/Bensheldon-ThinkingOutLoud152.mp3.jpg "Click to play") ](http://blip.tv/file/get/Bensheldon-ThinkingOutLoud152.mp3)
 
 [Click to play](http://blip.tv/file/get/Bensheldon-ThinkingOutLoud152.mp3)

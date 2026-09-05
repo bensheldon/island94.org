@@ -60,6 +60,7 @@ end
 I write my database migrations using `table.datetime` and it generates `timestamptz` columns. I guess this is fine.
 
 ### `Capybara.threadsafe`
+
 ```ruby
 # config/initializers/capybara.rb
 
@@ -69,6 +70,7 @@ Capybara.threadsafe = true
 I use Capybara as my harness for webdriving automations, rather than writing raw Selenium (never again!).
 
 ### Custom Types
+
 ```ruby
 # config/initializers/custom_types.rb
 

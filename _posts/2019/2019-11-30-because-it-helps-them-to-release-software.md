@@ -10,4 +10,3 @@ From Graham Lee's [The value of the things on the left](https://www.sicpers.info
 > That software engineering department now has different management and is Agile. They have releases at least every month (they already released daily, though those releases were of minimal scope). They respond to change rather than follow a plan (they already did this, though through hefty “change control” procedures). They meet daily to discuss progress (they already did this).
 >
 > But, importantly, they do the things they do because it helps them release software, not because it helps them hit project milestones. The revolution really did land there.
-

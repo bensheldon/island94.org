@@ -50,7 +50,7 @@ The following section will show how these objects are put together. Again, this 
 
 Concurrent Ruby describes a [`Concurrent::Event`](https://github.com/ruby-concurrency/concurrent-ruby/blob/9f40827be9a8a192a6993a8d157bd3ed0662ada0/lib/concurrent-ruby/concurrent/atomic/event.rb) as:
 
-> Old school kernel-style event reminiscent of Win32 programming in C++.
+>  Old school kernel-style event reminiscent of Win32 programming in C++.
 
 I don’t know what that means exactly, but an Event can be in either a set or unset state, and it can wait (with a timeout!) and be awakened via signals across threads.
 

@@ -143,7 +143,6 @@ window.Confetti = function () {
     return Math.floor(Math.random() * (to - from + 1) + from);
   }
 
-
   function Update() {
     var remainingFlakes = 0;
     var particle;

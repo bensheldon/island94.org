@@ -40,7 +40,6 @@ CCTV already has a process in which member's can submit content nodes. In 4.7, t
 
 To do this, I created a new module that invoked hook_nodeapi:
 
-
 ```php
 /\*\*\ * Implementation of hook_nodeapi\ * /
 

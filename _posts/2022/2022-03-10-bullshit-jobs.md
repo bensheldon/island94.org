@@ -26,4 +26,3 @@ There was quite a bit about feminization of work:
 And distinctions between Michel Foucault’s power and domination (or Sarah Schulman’s conflict and abuse):
 
 > …unlike actual BDSM play, where there’s always a safe-word, when “normal” people fall into the same dynamic, there’s never such an easy way out. “You can’t say ‘orange’ to your boss.” It’s always occurred to me this insight is important and could even become the basis for a theory of social liberation.  
-

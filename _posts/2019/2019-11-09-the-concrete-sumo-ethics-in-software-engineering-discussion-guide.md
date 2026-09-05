@@ -69,4 +69,3 @@ These sections have been selected for brevity and focus. The paper has been [des
   - Who pays early? Later? What are the costs?
 
 - In what ways, if any, has this reading made you think you would act differently in the future?
-
