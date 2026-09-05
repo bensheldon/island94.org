@@ -61,4 +61,3 @@ One tree in the grove is set back off the street. It has a wound on its sunset s
 ### the html hex or rgb of a color you like
 
 20 212 74 or #14D44A
-

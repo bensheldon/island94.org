@@ -8,7 +8,6 @@ redirect_from:
 - "?p=697"
 ---
 
- 
 
 [![](/uploads/2009-09-09-REMOVED-Boston-Subway-in-Vector-Format-SVG/MBTA-removed-600x626.png "MBTA-removed") ](/uploads/2009-09-09-REMOVED-Boston-Subway-in-Vector-Format-SVG/MBTA-removed.png)
 
@@ -17,5 +16,3 @@ I've started working on my Christmas gifts for this year. Last year it was [butt
 So I had to copy by hand. The map is actually quite a piece of work: the lines have funky uneven curves, the Green Line changes width as it splits and some of the stations aren't well-centered on the line. My map does not take any of that into account... so perhaps its better than the original.
 
 Should anyone else run across the need, please feel welcome to use my evening's work. Download the Boston Subway in SVG Format.
-
- 

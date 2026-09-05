@@ -19,4 +19,3 @@ Future fellow VISTA Leader Danielle and I were all about Boston yesterday: Josh 
 ![Taking a picture of the Hancock Building](/uploads/2006/meta-photography-in-boston-1.jpg) ![A picture of the Hancock Building](/uploads/2006/meta-photography-in-boston-2.jpg)
 
 ![A picture of the Hancock Building](/uploads/2006/meta-photography-in-boston-3.jpg) ![Public Garden after Dark](/uploads/2006/meta-photography-in-boston-4.jpg)
-

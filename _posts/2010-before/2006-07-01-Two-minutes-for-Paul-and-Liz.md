@@ -16,4 +16,3 @@ redirect_from:
 <video src="/uploads/videos/bensheldon-2minutesforpaulandliz310.mp4" poster="/uploads/videos/bensheldon-2minutesforpaulandliz310.jpg" controls></video>
 
 A wedding tribute for Paul and Elizabeth Hansen. With all that was going on at their wedding, they maybe didn't have time to enjoy all the little pieces. Here is one of them.
-

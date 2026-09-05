@@ -23,4 +23,3 @@ Despite the fact that one of these days the whole darn school is going crumble i
 ![Towards South Boston and the WTC](/uploads/2006/evening-cruise-on-boston-harbor-3.jpg) ![Downtown Boston from the Bay](/uploads/2006/evening-cruise-on-boston-harbor-4.jpg)
 
 ![Off East Boston](/uploads/2006/evening-cruise-on-boston-harbor-5.jpg) ![UMass. Boston dock](/uploads/2006/evening-cruise-on-boston-harbor-6.jpg)
-

@@ -5,7 +5,7 @@ published: true
 tags: ["Ruby on Rails"]
 ---
 
-I was recently part of a [Mastodon discussion](https://github.com/mastodon/mastodon/pull/39990) about the best way to run code in a Rails application before Puma boots. The need for this is that sometimes you want some code that _only_ runs within a webserver, not when running rake tasks or rails commands or opening the console. 
+I was recently part of a [Mastodon discussion](https://github.com/mastodon/mastodon/pull/39990) about the best way to run code in a Rails application before Puma boots. The need for this is that sometimes you want some code that _only_ runs within a webserver, not when running rake tasks or rails commands or opening the console.
 
 Here we go…
 
@@ -17,15 +17,15 @@ Rails 6.1 added a [`Railtie#server` hook](https://github.com/rails/rails/pull/39
 
 ### In your `config.ru`
 
-The Rackup configuration file only gets evaluated by a webserver, so that is a natural place to invoke your webserver-only code. 
+The Rackup configuration file only gets evaluated by a webserver, so that is a natural place to invoke your webserver-only code.
 
 **Aside:** like `boot.rb`, I either find *interesting things* lurking around in `configu.ru` , or it’s one of those files that hasn’t been touched since `rails new` was first run.
 
 ### As a Puma plugin
 
-If you’re dedicated to Puma, [write a simple plugin for it](https://github.com/puma/puma/blob/b8341dc946f0a2444e5ea6730d1967ca53c8d006/docs/plugins.md). Puma plugins also allow hooking into more sophisticated places than simply “before it starts”. 
+If you’re dedicated to Puma, [write a simple plugin for it](https://github.com/puma/puma/blob/b8341dc946f0a2444e5ea6730d1967ca53c8d006/docs/plugins.md). Puma plugins also allow hooking into more sophisticated places than simply “before it starts”.
 
-tbh, I wasn’t aware of Puma plugins as an integration point until [Solid Queue shipped a Puma plugin](https://github.com/rails/solid_queue/blob/86f3d92f1dd68547ec0ebe960fc9933c203d9e51/lib/puma/plugin/solid_queue.rb) for its in-webserver mode.  I like it!
+tbh, I wasn’t aware of Puma plugins as an integration point until [Solid Queue shipped a Puma plugin](https://github.com/rails/solid_queue/blob/86f3d92f1dd68547ec0ebe960fc9933c203d9e51/lib/puma/plugin/solid_queue.rb) for its in-webserver mode. I like it!
 
 ### By searching the callstack
 

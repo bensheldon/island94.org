@@ -20,4 +20,3 @@ redirect_from:
   ![Ladybug in the Garden](/uploads/2007/small-things-of-spring-2.jpg)
 
   ![Early Grapes](/uploads/2007/small-things-of-spring-3.jpg)
-

@@ -18,7 +18,7 @@ On Saturday I presented on Mapping at the Technology 2.0 community summit conven
 
 > 1. introduce the technology (mapping) with a very short description and reference to particular brand names (if that helps)
 >
-> 2. say how they use it and why it works for their purposes ("I use  google maps to...")
+> 2. say how they use it and why it works for their purposes ("I use google maps to...")
 >
 > 3. demonstrate online (if this helps)
 >
@@ -32,11 +32,11 @@ I shared a panel with Curtis Henderson (BNN), Denise Moorehead ( [Third Sector N
 
   [![Mapping Relationships](/uploads/2009-09-14-Technology-20-Mapping-Presentation/Mapping-Relationships-500x565.png "Mapping Relationships") ](/uploads/2009-09-14-Technology-20-Mapping-Presentation/Mapping-Relationships.png)
 
-2. I showed the excellent [Boston Chinatown map](http://www.bostonchinatown.org/) from Paul Niwa of Northeastern University which explores social linkages and the flow of news and information in a community.  This type of visual representation allows us to very quickly see relationships and make inferences from what otherwise would be a very complicated explanation.
+2. I showed the excellent [Boston Chinatown map](http://www.bostonchinatown.org/) from Paul Niwa of Northeastern University which explores social linkages and the flow of news and information in a community. This type of visual representation allows us to very quickly see relationships and make inferences from what otherwise would be a very complicated explanation.
 
 [![bostonchinatown](/uploads/2009-09-14-Technology-20-Mapping-Presentation/bostonchinatown-500x369.png "bostonchinatown") ](/uploads/2009-09-14-Technology-20-Mapping-Presentation/bostonchinatown.png)
 
-3. So much of the formal knowledge we have about the world around us is tied up in spreadsheets. While it's information rich, it can be difficult to analyze, or, from a community building perspective, it's difficult to motivate people towards action by just showing them a chunk of text. To contrast, I first pulled up the Boston city website, which showcases the [Boston neighborhoods](http://www.cityofboston.gov/neighborhoods/) as a uninspiring drop-down list.  I then showed the awesome [Boston Neighborhood Map](http://bostonneighborhoodmap.com/) by Cosmo Catalano that was built using data from the Boston Redevelopment Authority and probably equal amounts of guesswork. The map provides much richer information than any amount of text could.
+3. So much of the formal knowledge we have about the world around us is tied up in spreadsheets. While it's information rich, it can be difficult to analyze, or, from a community building perspective, it's difficult to motivate people towards action by just showing them a chunk of text. To contrast, I first pulled up the Boston city website, which showcases the [Boston neighborhoods](http://www.cityofboston.gov/neighborhoods/) as a uninspiring drop-down list. I then showed the awesome [Boston Neighborhood Map](http://bostonneighborhoodmap.com/) by Cosmo Catalano that was built using data from the Boston Redevelopment Authority and probably equal amounts of guesswork. The map provides much richer information than any amount of text could.
 
 [![cityofboston-list](/uploads/2009-09-14-Technology-20-Mapping-Presentation/cityofboston-list-499x408.png "cityofboston-list") ](/uploads/2009-09-14-Technology-20-Mapping-Presentation/cityofboston-list.png)
 
@@ -46,7 +46,7 @@ I shared a panel with Curtis Henderson (BNN), Denise Moorehead ( [Third Sector N
 
 [![eastsomerville](/uploads/2009-09-14-Technology-20-Mapping-Presentation/eastsomerville-500x409.png "eastsomerville") ](/uploads/2009-09-14-Technology-20-Mapping-Presentation/eastsomerville.png)
 
-5. To continue talking about mapping community resources, I showed the  [Social Capital Incorporated Lynn Community Guide](http://www.scilynn.org/guide/index) (the [SCI Dorchester](http://www.scidorchester.org/) website was down at the time). The guide provides good contrast because it allows you to both show a list of services and their addresses as well as those services on a map, clearly demonstrating how a map can make information more accessible to questions like "which location is nearest to your home?" (as an aside, I helped the late Paul Hansen develop the original _MyDorchester_ website that has been used as a template for their other community websites).
+5. To continue talking about mapping community resources, I showed the [Social Capital Incorporated Lynn Community Guide](http://www.scilynn.org/guide/index) (the [SCI Dorchester](http://www.scidorchester.org/) website was down at the time). The guide provides good contrast because it allows you to both show a list of services and their addresses as well as those services on a map, clearly demonstrating how a map can make information more accessible to questions like "which location is nearest to your home?" (as an aside, I helped the late Paul Hansen develop the original _MyDorchester_ website that has been used as a template for their other community websites).
 
 [![sci-lynn](/uploads/2009-09-14-Technology-20-Mapping-Presentation/sci-lynn-500x412.png "sci-lynn") ](/uploads/2009-09-14-Technology-20-Mapping-Presentation/sci-lynn.png)
 

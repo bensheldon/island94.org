@@ -17,4 +17,3 @@ redirect_from:
   ![](/uploads/2005/my-pigeons-in-a-row-1.jpg)
 
   I don’t know anything about Massbank, but the pigeons are lined up like a Coney Island rifle booth. They’d be almost as blue as this sky.
-

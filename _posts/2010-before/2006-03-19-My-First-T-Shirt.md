@@ -25,7 +25,6 @@ The design I decided to print was one of the doodles I had done a week or so ago
 
 The process basically was:
 
-
 1. Clean off a screen, which is a fine mesh in a wooden frame
 
 2. Mix together the emulsion, which is a bunch of thick green stuff, with a little bit of yellow photo sensitive hardener. Apparently on their own they like to stain, and together they really like to stain.

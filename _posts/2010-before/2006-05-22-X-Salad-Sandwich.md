@@ -37,4 +37,3 @@ Only God knows what substance they Mayonaise Advisory Council will think of addi
 ![Dean vs. Mayo](/uploads/2006/x-salad-sandwich-1.jpg)
 
 \_Dean eats his heart out\_
-

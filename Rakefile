@@ -39,6 +39,18 @@ task :new_bookmark, [:link, :title, :tags, :notes] => :environment do |_t, args|
 
   bookmark = Bookmark.create!(link: link, title: title, tags: tags, notes: notes)
 
+  # Bookmark notes/titles are often pasted or scraped from third-party web pages, which can
+  # carry over invisible/no-break whitespace. Fix that here, at save time, rather than linting
+  # the whole (mostly untouched, historical) _bookmarks archive.
+  system(
+    "bundle", "exec", "mdl",
+    "--style", Rails.root.join(".mdl_style.rb").to_s,
+    "--rulesets", Rails.root.join(".mdl_rules.rb").to_s,
+    "--ignore-front-matter",
+    "--fix",
+    bookmark.filepath
+  )
+
   $stdout.puts "=== Generating bookmark ==="
   $stdout.puts bookmark.project_filepath
 end

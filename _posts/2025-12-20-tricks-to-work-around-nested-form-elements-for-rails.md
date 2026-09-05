@@ -15,11 +15,11 @@ There’s three practical things, and one conceptual, that are going to challeng
 
 **You cannot nest a `<form>` element within another `<form>` element.** When rendering the page, the browser will remove it, or ignore it; regardless it won’t work. Doubly annoying because Chrome’s DevTools will simply remove the element; you have to use `view-source` to witness your mistake.
 
-Some designs would really benefit from a form nested in another form. For example: You have a screen with a bunch of inputs to update a record, and you want to put a “Destroy” button visually adjacent to the “Update” button. Or, for example: you are displaying a list of records that is wrapped entirely in one big form element so that each item can be checked/unchecked to apply actions upon multiple records _and_ you want to be able to have buttons to perform actions on records individually in the list too.  Remember, you always want to put destructive or mutating actions behind a POST button rather than a GET link. It can be tricky. Here’s an example of a design challenge in the GoodJob Dashboard:
+Some designs would really benefit from a form nested in another form. For example: You have a screen with a bunch of inputs to update a record, and you want to put a “Destroy” button visually adjacent to the “Update” button. Or, for example: you are displaying a list of records that is wrapped entirely in one big form element so that each item can be checked/unchecked to apply actions upon multiple records _and_ you want to be able to have buttons to perform actions on records individually in the list too. Remember, you always want to put destructive or mutating actions behind a POST button rather than a GET link. It can be tricky. Here’s an example of a design challenge in the GoodJob Dashboard:
 
 ![A screenshot from the GoodJob dashboard](/uploads/2025/goodjob-forms.png)
 
-**HTML forms only support two HTTP methods: `GET` and `POST`.** All the other one’s (`PUT`, `PATCH`, `DELETE` ) are valid _HTTP_ methods, but you can’t use them in an _HTML_ form. Rails works around this with its form helpers by adding a hidden input named `_method` that puts the unsupported method in the formdata, or using Javascript `fetch`  or `XMLHttpRequest`.
+**HTML forms only support two HTTP methods: `GET` and `POST`.** All the other one’s (`PUT`, `PATCH`, `DELETE` ) are valid _HTTP_ methods, but you can’t use them in an _HTML_ form. Rails works around this with its form helpers by adding a hidden input named `_method` that puts the unsupported method in the formdata, or using Javascript `fetch` or `XMLHttpRequest`.
 
 **You need a CSRF token.** The form payload must contain the CSRF token payload, which Rails form helpers include as a hidden form element. If the payload doesn’t have a CSRF token, Rails will reject it. THe CSRF token really is important, please don’t disable it. Maybe that’ll [go away someday](https://github.com/rails/rails/pull/56350), but not today
 
@@ -89,7 +89,7 @@ This works perfectly fine because the Form URL for both the `update` and `destro
 
 **But what about the duplicate `_method` keys?** [Rails \(or maybe Rack\)](https://github.com/rails/rails/pull/53471). when it comes to duplicate keys, will expose only the last value in the params hash. It’s only if you named the key with square brackets like `foo[]` does it become an array of values. This isn’t HTTP, but rather a convention of Rails/Rack for parsing form-data into Ruby data objects.
 
-If we want a different URL, we can use [HTML’s ￼`formaction=`￼ attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#formaction) to change where the Form is posted:
+If we want a different URL, we can use [HTML’s `formaction=` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#formaction) to change where the Form is posted:
 
 `<%= f.button "Fancy Delete", name: "_method", value: "delete", formaction: fancy_post_path(@post) %>`
 
@@ -98,7 +98,7 @@ If we want a different URL, we can use [HTML’s ￼`formaction=`￼ attribute](
 ```
 <form action="/posts/42">
   <input type="hidden" name="_method" value="put">
-  
+
   <button>Save</button> <!-- the regular form button -->
   <button name="_method" value="delete" formaction="/posts/42/fancy">
     Fancy Delete
@@ -108,7 +108,7 @@ If we want a different URL, we can use [HTML’s ￼`formaction=`￼ attribute](
 
 Pretty sweet!
 
-One more tool in our toolbox: In addition to `formaction` which changes the payload target URL, we can [redirect our button to an entirely different form using the ￼`form=`￼ attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/form) on the button and targeting the other form by `id`:
+One more tool in our toolbox: In addition to `formaction` which changes the payload target URL, we can [redirect our button to an entirely different form using the `form=` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/form) on the button and targeting the other form by `id`:
 
 ```html
 <form action="/posts/42" method="POST">

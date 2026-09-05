@@ -25,4 +25,3 @@ Today was a beautiful, bright and sunny Sunday and my friends Dandy, Danielle, S
 The Mystic River not only has a movie named after it, but comes from the Native American word "Missi-Tuk", which translates to "great tidal river." The river has a long history of pollution from surrounding factories and chemical plants. Two Superfund sites sit within the river's watershed: [Wells G & H](http://www.epa.gov/region01/superfund/sites/wellsgh) and [Industriplex](http://www.epa.gov/region01/superfund/sites/industriplex) .
 
 ![Ship of fools](/uploads/2006/canoes-on-the-mystic-river-2.jpg)
-

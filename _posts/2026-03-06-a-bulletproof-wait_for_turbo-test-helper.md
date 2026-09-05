@@ -11,13 +11,13 @@ I like Hotwired Turbo like I liked UJS (Unobtrusive Javascript): it adds a few s
 
 Turbo adds some attributes to the webpage DOM that we can look for in our tests to ensure that things are in the right state. But it’s tricky. Let’s start with the trickiest thing first.
 
-Turbo sets `aria-busy`  when navigation is happening:
+Turbo sets `aria-busy` when navigation is happening:
 
 - Turbo Drive sets `html[aria-busy]` when navigating
 - Turbo Frames set `turbo-frame[aria-busy]` when navigating
 - Turbo forms set `form[aria-busy]` when submitting
 
-…but when doing a very typical Submit-a-Form-and-Redirect operation, Turbo drops the `[aria-busy]` for a brief moment after the form submit returns a redirect response but before navigating to the redirected page sets the `[aria-busy]` again. That sucks. 
+…but when doing a very typical Submit-a-Form-and-Redirect operation, Turbo drops the `[aria-busy]` for a brief moment after the form submit returns a redirect response but before navigating to the redirected page sets the `[aria-busy]` again. That sucks.
 
 The other things we need to be aware of and wait for are more pedestrian:
 
@@ -72,7 +72,7 @@ document.addEventListener("turbo:submit-end", function(event) {
 
 The carve-out logic for setting `data-turbo-loading` on `turbo:submit-start` and removing it on `turbo:submit-end` is a bit complicated:
 
-- We don't want to set `data-turbo-loading` on Turbo Frames because Turbo Frames don’t emit `turbo:load` events so the attribute would never be removed. More importantly and fortunately, Turbo Frames don’t suffer from an `aria-busy` gap. 
+- We don't want to set `data-turbo-loading` on Turbo Frames because Turbo Frames don’t emit `turbo:load` events so the attribute would never be removed. More importantly and fortunately, Turbo Frames don’t suffer from an `aria-busy` gap.
 - And we don’t want to remove `data-turbo-loading` if it’s a redirect, to bridge the `aria-busy` gap mentioned earlier. We'll wait for the subsequent `turbo:load` to clean it up.
 
 There it is. Now you just need to put `wait_for_turbo` before any action that could potentially engage Turbo e.g.

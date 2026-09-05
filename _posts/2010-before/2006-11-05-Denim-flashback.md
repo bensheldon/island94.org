@@ -32,4 +32,3 @@ Buying pants is always exciting for me; I never even owned a pair until I was 13
 In side note, it was pouring rain last Saturday when I went out to Southie to buy the jeans. Jonesies is far up on East Broadway; and while I caught the #9 bus there, I walked/swam back.
 
 ![Pouring rain in southie](/uploads/2006/denim-flashback-3.jpg) ![Don't open that window](/uploads/2006/denim-flashback-4.jpg)
-

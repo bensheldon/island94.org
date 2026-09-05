@@ -26,4 +26,3 @@ It rained all day Sunday, so there was nothing else to do but take pictures of d
 ![Wine grapes](/uploads/2006/rhode-island-turf-and-grapes-2.jpg)
 
 ![Wine grapes](/uploads/2006/rhode-island-turf-and-grapes-3.jpg) ![Wine grapes](/uploads/2006/rhode-island-turf-and-grapes-4.jpg)
-
