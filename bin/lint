@@ -58,11 +58,12 @@ FileUtils.chdir APP_ROOT do
   end
 
   puts "\n== MDL =="
-  mdl_changed_files = changed_files.grep(/^_(posts|bookmarks)\/.*\.md$/)
+  mdl_changed_files = changed_files.grep(%r{^_posts/.*\.md$})
 
   if !options[:diff] || mdl_changed_files.any?
-    targets = options[:diff] ? mdl_changed_files.join(" ") : "_posts _bookmarks"
-    system! "bundle exec mdl --style .mdl_style.rb --ignore-front-matter #{targets}"
+    targets = options[:diff] ? mdl_changed_files.join(" ") : "_posts"
+    fix_flag = options[:nofix] ? "" : "--fix "
+    system! "bundle exec mdl --style .mdl_style.rb --rulesets .mdl_rules.rb --ignore-front-matter #{fix_flag}#{targets}"
   else
     puts "No changes to markdown files."
   end
