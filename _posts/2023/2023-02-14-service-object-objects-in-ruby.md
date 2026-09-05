@@ -23,17 +23,17 @@ MY_DECREE = -> { do_something }
 
 # ok, but without the shouty all-caps
 module MyDecree
-  def self.call 
-    do_something 
-  end 
+  def self.call
+    do_something
+  end
 end
 
 # ok, but what about when it gets really complex
-class MyDecree 
+class MyDecree
   def self.call(variable)
-    new(variable).call 
+    new(variable).call
   end
-  
+
   def new(variable)
     @variable = variable
   end

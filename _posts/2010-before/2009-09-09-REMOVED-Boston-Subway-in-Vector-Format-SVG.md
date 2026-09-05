@@ -8,7 +8,7 @@ redirect_from:
 - "?p=697"
 ---
 
- 
+
 
 [![](/uploads/2009-09-09-REMOVED-Boston-Subway-in-Vector-Format-SVG/MBTA-removed-600x626.png "MBTA-removed") ](/uploads/2009-09-09-REMOVED-Boston-Subway-in-Vector-Format-SVG/MBTA-removed.png)
 
@@ -18,4 +18,4 @@ So I had to copy by hand. The map is actually quite a piece of work: the lines h
 
 Should anyone else run across the need, please feel welcome to use my evening's work. Download the Boston Subway in SVG Format.
 
- 
+

@@ -9,7 +9,7 @@ layout: book
 tags: [software, "Object Oriented Programming"]
 ---
 
-I'm looking for a book that helps align the practice of software development with the rest of my life, In the sense of a humanistic neural plasticity, an approach that harmonizes rather than hegemonizes (or ignores) the rest of my life. 
+I'm looking for a book that helps align the practice of software development with the rest of my life, In the sense of a humanistic neural plasticity, an approach that harmonizes rather than hegemonizes (or ignores) the rest of my life.
 
 <blockquote markdown="1">
 
@@ -25,8 +25,8 @@ This book is based on the following beliefs:
 I initially found this book searching for "Sapir-Whorf" on the O'Reilly Bookshelf. To the extent that it approaches things humanistically, this is it:
 
 > **Inheritance**: Humans naturally aggregate similar things into sets (or classes). Another "natural" kind of thinking is to create *taxonomies*—hierarchical relationships among the sets.
-> 
-> **Responsibility**:  If an object states that it is capable of providing a given service, it should perform that service in all circumstances, and the results should be consistent... Responsibility implies that an object must assume control of itself.
+>
+> **Responsibility**: If an object states that it is capable of providing a given service, it should perform that service in all circumstances, and the results should be consistent... Responsibility implies that an object must assume control of itself.
 
 This wasn't quite the book I wanted, though I enjoyed the introduction and the conclusion. The middle was a bunch of methodology that, well, was fine, but I probably won't think about again; the conclusion does admit that the methodology and modeling section is written primarily as legitimating material for academic formalists and can be transcended and discarded. So that's cool (but I would have appreciated that being said upfront than afterwards).
 

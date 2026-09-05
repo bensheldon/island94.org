@@ -67,7 +67,7 @@ Hence my writing this out, cause on that last bit, I dunno. And given how rarely
 **Random note:** While looking through my (other) notebook, I found shorter commentary along similar lines that I [commented on Reddit in reply to someone being grumpy about producing a portfolio of side projects](https://www.reddit.com/r/webdev/comments/qlheml/comment/hj5s9ae/):
 
 > I'm not the commenter you're responding to. But I am also a hiring manager and want to try to meet both of you in the middle.
-> 
-> The thing that I want to evaluate, by seeing some non-school projects, is that the candidate has an understanding of how *Information Technology* can be used to solve a problem. Some of that is technological (does it work), and some of it is telling the story (eg input or take data and transform it in a new or novel way that solves a human-understandable problem). It's "design" to the end of demonstrating you understand the overall problem space of how technology is applied to a problem. And calibrated to what's expected of someone coming out of a (effective) bootcamp.
-> 
+>
+> The thing that I want to evaluate, by seeing some non-school projects, is that the candidate has an understanding of how *Information Technology* can be used to solve a problem. Some of that is technological (does it work), and some of it is telling the story (eg input or take data and transform it in a new or novel way that solves a human-understandable problem). It's "design" to the end of demonstrating you understand the overall problem space of how technology is applied to a problem. And calibrated to what's expected of someone coming out of a (effective) bootcamp.
+>
 > And when I've got 150 candidates for an entry level position, the candidates who can communicate that effectively will stand out.

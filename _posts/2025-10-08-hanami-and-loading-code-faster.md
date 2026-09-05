@@ -48,11 +48,11 @@ class MyClass
 end
 ```
 
-Keys are global, and keys whose objects have been loaded live in  `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app["thekey"]` when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don't have to. This is [powered by `dry-system`](https://dry-rb.org/gems/dry-system/).
+Keys are global, and keys whose objects have been loaded live in `Hanami.app.keys` . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with `Hanami.app["thekey"]` when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don't have to. This is [powered by `dry-system`](https://dry-rb.org/gems/dry-system/).
 
 Not _everything_ has to have a key. Functional components in Hanami have a key, but classes that embody a bit of data (in Hanami these are called Structs) do not have entries in the app container, and therefore don't have keys.
 
-If you have something functional coming from outside Hanami, like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/). 
+If you have something functional coming from outside Hanami, like that `ApiClient` in the code above or coming from a non-Hanami specific gem or wherever, then you can give them a key and define their lifecycle within the application [via a Provider](https://guides.hanamirb.org/v2.2/app/providers/).
 
 **Briefly, commentary:** Some common Rails development discourse is “Rails is too magic”, which is leveled because Rails framework can work out what constants you mean without directly referencing them (e.g. `has_many :comments` implies there’s an Active Record `Comment`), and “just use a PORO” (plain old ruby object) when a developer is trying to painfully jam _everything_ into narrow Rails framework primitives. With Hanami:
 - Hanami has quite a bit of like “here’s a string, now it’s an object 🪄” , but it is consistently applied everywhere and has some nice benefits beyond just brevity, like overloading dependencies.
@@ -94,26 +94,26 @@ In the Hanami Discord, Tim shared a proposal for building out a plugin system fo
 Ending on what I originally shared with Tim to start our discussion, which I share partly cause I think it’s funny how easily I can type out 500 words today on a thesis of like “why code loading in Ruby is hard”:
 
 > **Making boot fast; don’t load the code unless you need it**
-> 
+>
 > Don’t load code until/unless you need it. DEFINITELY don’t create database connections or make any http calls or invoke other services. How Rails does it, Rails autoloads as much as possible (framework, plugin/extension, and application code), either via Ruby Autoload or Zeitwerk. The architecture challenge is: how do you set up configuration properties, so that *when* the code is loaded (and all the different pieces of framework/plugin/extension/application get their fingers on it), it is configured with the properties y’all ultimately want on it? There are two mechanisms:
 >
 > - A configuration hash, that is intended to be made up (somewhat) of primitives that are dependency free and thus don’t load a bunch of code themselves,
 > * A callback hook that is placed within autoloaded code, that one can register against and use it to pull data out of configuration (framework/plugin/extension) or override/overload behavior (your application), that is only triggered when the code is loaded for reals. Extensions put this in a Railtie, maybe you put it in an initializer.,
->  The practical problems are:
+> The practical problems are:
 >
 > * Ideally everything was stateless and just pulled values from configuration and got torn down after every request/transaction/task, but also:
->   * Some objects are long-lived, and you don’t want to constantly be tearing them down,
->   * Sometimes locality of properties is nice and it would be annoying to be like “either use this locally assigned value OR use this value from really far away in this super deep config object”.,
->   * Hopefully that config object is thread and fiber safe if you’re gonna be changing it later and you’re not really sure what’s happening right then in your application lifecycle.,
+> * Some objects are long-lived, and you don’t want to constantly be tearing them down,
+> * Sometimes locality of properties is nice and it would be annoying to be like “either use this locally assigned value OR use this value from really far away in this super deep config object”.,
+> * Hopefully that config object is thread and fiber safe if you’re gonna be changing it later and you’re not really sure what’s happening right then in your application lifecycle.,
 > * A hook doesn’t exist in the place that you want to hook into, so you either have to:
->   * go upstream and get a hook added; which is annoying (just hook every class and feature, why not?!),
->   * load the code prematurely so you can directly modify it,
+> * go upstream and get a hook added; which is annoying (just hook every class and feature, why not?!),
+> * load the code prematurely so you can directly modify it,
 > * When something else (framework/plugin/extension/application) prematurely loads the code (chaotically or intentionally), before you add your own configuration or before you register a hook callback, and the behavior is stateful or had to be backed out (example: it’s configuration for connections in a connection pool and early invocation fills the pool with connection objects with premature configuration. So to re-configure you have to drain the pool of the old prematurely configured connections and maybe that’s hard),
 > * Examples of pain:
->   * Devise.
->     * It’s route (devise_for) loads your active record model, when routes load, which in < Rails 8.0 was when your app boots, which is premature otherwise,
->     * Changing the layout of devise controllers. They don’t have load hooks (maybe they should?). You can subclass them and manually mount them in your app, but htat’s annoying,
->   * Every initializer where you try to assign config and maybe it won’t work cause something else already hooked it and loaded it and it’s baked.,
+> * Devise.
+> * It’s route (devise_for) loads your active record model, when routes load, which in < Rails 8.0 was when your app boots, which is premature otherwise,
+> * Changing the layout of devise controllers. They don’t have load hooks (maybe they should?). You can subclass them and manually mount them in your app, but htat’s annoying,
+> * Every initializer where you try to assign config and maybe it won’t work cause something else already hooked it and loaded it and it’s baked.,
 >
 > **How Hanami does it:**
 >

@@ -22,7 +22,7 @@ One of my first questions in the training was the ethical/political dimension to
 > - there is no intention of using the information gathered, the plans made, or the excitement generated when people become involved.
 > - people are attached to a particular outcome.
 > - truth telling is not an accepted norm in an organization.
-> - people are so busy, they are unwilling to set aside the time needed to engage in participatory processes or follow through on their collective decisions.
+> - people are so busy, they are unwilling to set aside the time needed to engage in participatory processes or follow through on their collective decisions.
 > - there is no apparent need to do things differently
 > - the leader does not champion participation
 > - people want a quick ﬁx to a deep problem

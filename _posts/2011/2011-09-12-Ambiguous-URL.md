@@ -13,7 +13,7 @@ redirect_from:
 
 ![](/uploads/2011-09-12-Ambiguous-URL/donorschoose-on-coke-machine.jpg "donorschoose-on-coke-machine")
 
-_Photo from  [awesome teacher @paulramsay](https://twitter.com/#!/paularamsay/status/111634486302740481/) who used PrintAndShare.org to [ share his classroom's DonorsChoose Project.](http://www.donorschoose.org/donors/proposal.html?id=617291)_
+_Photo from [awesome teacher @paulramsay](https://twitter.com/#!/paularamsay/status/111634486302740481/) who used PrintAndShare.org to [share his classroom's DonorsChoose Project.](http://www.donorschoose.org/donors/proposal.html?id=617291)_
 
 As a result of building [PrintAndShare.org](http://printandshare.org/) I am hyper-sensitive to the drawbacks of URLs---which is my service's weakest link. I'm using bit.ly shortened URLs that unfortunately have an ambiguous mix of upper and lower-case letters; ambiguous both in terms of typeface (els and ones may look identical), but also that many people expect URLs to ignore case; for bit.ly that can be difference between reaching the specified DonorsChoose project page or... well... _anything_ else on the internet which, statistically-speaking, I can say is something they definitely don't wish to see.
 

@@ -31,11 +31,11 @@ From the [John F. Kennedy Presidential Library & Museum](http://www.jfklibrary.o
 >
 > PT BOAT PINS - the Campaign Emblem in 3 different styles
 >
-> Lapel Pins for Men   )
+> Lapel Pins for Men )
 >
-> Tie Clasps for Men   )    Samples enclosed
+> Tie Clasps for Men ) Samples enclosed
 >
-> Pins for Ladies      )
+> Pins for Ladies )
 >
 > HOW OPERATION HIGH HOPES WORKS
 >

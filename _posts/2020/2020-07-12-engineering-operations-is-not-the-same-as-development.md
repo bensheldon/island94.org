@@ -27,7 +27,7 @@ Our applicants themselves can cause operational risks. As we target new populati
 
 In this system, we cannot reliably (or affordably, with time and resources) predict how this system will respond as it scales to new users or integrates with new counties.
 
-##  Creating safety with staff and time
+## Creating safety with staff and time
 
 We ensure that foodstamp applications are submitted in a timely manner through existing staff and dedicated time. Because we cannot reliably predict how our system scales or responds to changes, we have systems that alerts us to the risk of operational failure and engineers who are available to respond, remediate, and harden against similar circumstances in the future.
 

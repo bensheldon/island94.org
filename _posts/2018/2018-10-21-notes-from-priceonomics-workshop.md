@@ -5,7 +5,7 @@ date: '2018-10-21 20:26 -0700'
 
 ---
 
-These are my notes from attending a full-day in-person Priceonomics Bootcamp; they now have an online [Priceonomics Content Marketing Bootcamp](https://priceonomics.teachable.com/p/priceonomics-content-marketing-bootcamp/).  Most of this is covered in their [The Content Marketing Handbook](https://priceonomics.com/the-content-marketing-handbook/) or on their blog and operationalized through their [Content Tracker](https://web.archive.org/web/20170515131419/https://stats.priceonomics.com/measure/dashboard/). It's fantastic.
+These are my notes from attending a full-day in-person Priceonomics Bootcamp; they now have an online [Priceonomics Content Marketing Bootcamp](https://priceonomics.teachable.com/p/priceonomics-content-marketing-bootcamp/). Most of this is covered in their [The Content Marketing Handbook](https://priceonomics.com/the-content-marketing-handbook/) or on their blog and operationalized through their [Content Tracker](https://web.archive.org/web/20170515131419/https://stats.priceonomics.com/measure/dashboard/). It's fantastic.
 
 ## The Priceonomics Story:
 1. What they were doing at the time: had a business pricing stuff
@@ -66,7 +66,7 @@ Spend 40 hours on pulling together the data. Priceonomics takes 3 week for a ful
 - **THE BUMP**. 1000 simultaneous people. leads to it being organically shared.
 - Journalists are the only channel you control.
 	- Make a list of 50 journalists who would be interested in your data
-	- Craft your pitch to them in a short email draft (don't send it).  **Write the journalist email draft before you write your article**
+	- Craft your pitch to them in a short email draft (don't send it). **Write the journalist email draft before you write your article**
 	- Start writing your article
 	- Send the journalist a short, individualized message
 	- It takes just one

@@ -7,9 +7,9 @@ From Cyd Harrell's excellent ["A Civic Technoligists Practice Guide"](https://cy
 
 <blockquote markdown="1">
 
-Because its goal is change, civic tech embodies an interesting split between demonstrating and operationalizing the potential of modern tech. I like to call these two branches showing what’s possible and doing what’s necessary. Many projects are a mix of the two, but they require different mindsets. 
+Because its goal is change, civic tech embodies an interesting split between demonstrating and operationalizing the potential of modern tech. I like to call these two branches showing what’s possible and doing what’s necessary. Many projects are a mix of the two, but they require different mindsets.
 
-“Showing what’s possible” is about speed, prototyping, design, public feedback, and data. These are often web projects because web tools are great for those purposes. 
+“Showing what’s possible” is about speed, prototyping, design, public feedback, and data. These are often web projects because web tools are great for those purposes.
 
 “Doing what’s necessary,” on the other hand, is about shifting the underlying practices and systems: back-end systems, security, and procurement; hiring and team composition; even shifting budget priorities.”
 

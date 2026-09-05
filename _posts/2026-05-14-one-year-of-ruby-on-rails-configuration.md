@@ -57,7 +57,7 @@ ActiveSupport.on_load(:active_record_postgresqladapter) do
 end
 ```
 
-I write my database migrations using `table.datetime` and it generates `timestamptz` columns.  I guess this is fine.
+I write my database migrations using `table.datetime` and it generates `timestamptz` columns. I guess this is fine.
 
 ### `Capybara.threadsafe`
 ```ruby
@@ -278,7 +278,7 @@ end
 I18n::Tasks::Data::Adapter::YamlAdapter.singleton_class.prepend I18nTaskYamlExt
 ```
 
-Ok, `i18n_tasks` is absolutely essential for doing localization. But it works by roundtripping your YAML through Psych.  This patch does 2 things:
+Ok, `i18n_tasks` is absolutely essential for doing localization. But it works by roundtripping your YAML through Psych. This patch does 2 things:
 
 - It makes Psych output every string as _strictly either_ a doublequoted string or, if it contains a newline, as literal-block (`key: |`). Without the patch, Psych will swap around single and doublequoted strings and convert literal-blocks to double-quoted strings with `\n`s
 - Emojis don't get mangled.
@@ -294,7 +294,7 @@ ActiveSupport.on_load(:action_mailer) do
 end
 ```
 
-I'm one of the rare true-fans of Action Mailer who wants to deliver messages to *more* channels via Action Mailer, not none.  Our app uses Action Mailer to construct and deliver SMS messages too via a custom delivery method. I've [touched on](https://island94.org/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants) this previously.
+I'm one of the rare true-fans of Action Mailer who wants to deliver messages to *more* channels via Action Mailer, not none. Our app uses Action Mailer to construct and deliver SMS messages too via a custom delivery method. I've [touched on](https://island94.org/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants) this previously.
 
 ### Markdown
 

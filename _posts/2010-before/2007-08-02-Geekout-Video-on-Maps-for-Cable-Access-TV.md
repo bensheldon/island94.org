@@ -70,7 +70,7 @@ function cambridge_mediamap_nodeapi(&$node, $op, $teaser, $page) {
       break;
     case 'delete':
       db_query('DELETE FROM {cambridge_mediamap} WHERE nid = %d', $node - > nid);
-      break;  
+      break;  
     case 'view':
       break;
   }
@@ -184,7 +184,7 @@ function cambridge_mediamap_map() {
     'type' => variable_get('cambridge_mediamap_default_type', 'Satellite'),
     'markers' => $markers,
   );
-   
+
   return gmap_draw_map($map);
 }
 ```

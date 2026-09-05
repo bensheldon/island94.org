@@ -22,7 +22,7 @@ This is coming from the [Dreyfus Model of Skills Acquisition](https://www.kaizen
 
 <blockquote markdown="1">
 
-1. Novice: 
+1. Novice:
     - “rigid adherence to taught rules or plans”
     - no exercise of “discretionary judgment”
 2. Advanced beginner

@@ -12,7 +12,7 @@ redirect_from:
 
 The [International Fund for Agricultural Development](http://www.ifad.org/) published _[Good Practices in Participatory Mapping](http://www.ifad.org/pub/map/PM_web.pdf)_ [PDF] last summer. In it they mention Sherry Arnstein's _[A Ladder of Citizen Participation](http://lithgow-schmidt.dk/sherry-arnstein/ladder-of-citizen-participation.html)_ (JAIP, Vol. 35, No. 4, July 1969, pp. 216-224).
 
-> There is a critical difference between going through the empty ritual of participation and having the real power needed to affect the outcome of the process. This difference is brilliantly capsulized in a poster painted last spring [1968] by the French students to explain the student-worker rebellion.  The poster highlights the fundamental point that participation without redistribution of power is an empty and frustrating process for the powerless. It allows the powerholders to claim that all sides were considered, but makes it possible for only some of those sides to benefit. It maintains the status quo.
+> There is a critical difference between going through the empty ritual of participation and having the real power needed to affect the outcome of the process. This difference is brilliantly capsulized in a poster painted last spring [1968] by the French students to explain the student-worker rebellion. The poster highlights the fundamental point that participation without redistribution of power is an empty and frustrating process for the powerless. It allows the powerholders to claim that all sides were considered, but makes it possible for only some of those sides to benefit. It maintains the status quo.
 
 Arnstein introduces a ladder typology whose subject matter is all too familiar:
 

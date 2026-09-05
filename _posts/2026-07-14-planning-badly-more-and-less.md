@@ -5,7 +5,7 @@ published: true
 tags: []
 ---
 
-The following is some notes I've collected over my twenty years of career, some in tech, some in nonprofit and academia and government, and some as a strategic planning consultant. 
+The following is some notes I've collected over my twenty years of career, some in tech, some in nonprofit and academia and government, and some as a strategic planning consultant.
 
 I'll cover the most common stumbles I've seen, and end with a little bit of advice for doing better. This is not intended to be an essay, or some something comprehensive like [_Good Strategy, Bad Strategy_](https://www.goodreads.com/book/show/11721966-good-strategy-bad-strategy). Just fun stuff I occassionally try to describe to others.
 
@@ -23,7 +23,7 @@ So to the extent that planning habitually hovers around 3 items per category, th
 
 ### Operational Planning and Strategic Planning
 
-What's the point of planning? 
+What's the point of planning?
 
 - To capture the entirety of people's work and responsibilities and ensure there is proper direction and resources to achieve it all …or…
 - To apply an unnatural focus upon a critical opportunity or risk that might not otherwise get the attention it needs to be addressed.
@@ -58,7 +58,7 @@ Have some backbone, and simply remind them of current plan. I think a lot of the
 
 ### Measures and Targets are different
 
-I’ve observed people try to find a nihilism between the statements “You can’t manage what you don’t measure” and “When a measure becomes a target, it ceases to be a good measure” (Goodhart’s Law). Whereas I think you just have to allow both to be true at once and allow “target” and “measure” to mean different things. 
+I’ve observed people try to find a nihilism between the statements “You can’t manage what you don’t measure” and “When a measure becomes a target, it ceases to be a good measure” (Goodhart’s Law). Whereas I think you just have to allow both to be true at once and allow “target” and “measure” to mean different things.
 
 The Target is what you aim directly at. A Measure is just something you look at occassionally or from the side of your eye and say “huh, interesting”.
 
@@ -70,22 +70,22 @@ For anything that you’re asked to track as “percentages to completion” you
 
 The outcome you want is both that you know what you’re trying to achieve (regardless of what you publicly commit to) and you look good doing it.
 
-My advice for anyone in charge is to simply make 100% the achievable target and avoid all of this triangulative nonsense. 
+My advice for anyone in charge is to simply make 100% the achievable target and avoid all of this triangulative nonsense.
 
 Percentages are also annoying when you’re measuring progress towards some boolean done-or-not-done where there’s no benefit until it’s done. 80% of zero value is still zero value.
 
-In my opinion, the entire reason to report on progress is to have some shared context for if or when you need to ask for more resources to finish it out. Same with stoplights. If the only shared context is “things were green but now they’re yellow” that’s not useful; in the same way as “if some projects aren’t yellow, that means we’re not working hard enough” sucks too. Also when percentages or stoplights get averaged and rolled-up 🙄. 
+In my opinion, the entire reason to report on progress is to have some shared context for if or when you need to ask for more resources to finish it out. Same with stoplights. If the only shared context is “things were green but now they’re yellow” that’s not useful; in the same way as “if some projects aren’t yellow, that means we’re not working hard enough” sucks too. Also when percentages or stoplights get averaged and rolled-up 🙄.
 
 ### Writing a plan vs doing planning
 
-The most common pattern I see for“planning enablement” is the company provides a template for the final document. e.g. fill out this template and turn it in and that’s your plan. 
+The most common pattern I see for“planning enablement” is the company provides a template for the final document. e.g. fill out this template and turn it in and that’s your plan.
 
 Template-first planning means that a planning process then becomes:
 
 1. First, filling in the “what are you going to do?” section
 2. Second, making up something narratively consistent to fill out everything else
 
-I see this happen everywhere. People already have stewing what they want to do, and then everything else is backwards justification. 
+I see this happen everywhere. People already have stewing what they want to do, and then everything else is backwards justification.
 
 *This backwards-justification is one of the key dynamics that we’re going to try to overcome as I now shift towards **how I think you should plan instead**.*
 
@@ -95,19 +95,19 @@ The main idea in how I think you should plan is that you break the planning down
 
 *Aside: None of this is my new idea. Creating conceptual distance is core part of [Synectics](https://en.wikipedia.org/wiki/Synectics) (yes, Steve Krug once mentions it) and a lot of this process comes from taking lots of trainings in [Technology of Participation](https://www.top-training.net/w/), which has [entire books on gestalt theory](https://www.amazon.com/Getting-Bottom-ToP-Methodologies-Participation/dp/1532033680) and such.*
 
-So of separate stages, that means that you force yourself to do each piece separately, rather than starting at the end (“what you want to do”) and working backwards or all at once.  The stages are:
+So of separate stages, that means that you force yourself to do each piece separately, rather than starting at the end (“what you want to do”) and working backwards or all at once. The stages are:
 
-1. **What’s going on?** (the dry name here is “Environmental Scan”)  Laundry list any new themes, priorities, developments that have happened inside the company and outside it since the last planning process. Go look at the last plan too. “We said we were gonna do X” is a good thing to list here. *The thing to be aware of is that people are dying to shout “what we are going to do” so everything at this stage is still somewhat suspect. But that’s fine, we recognize thatand move forward.*
+1. **What’s going on?** (the dry name here is “Environmental Scan”) Laundry list any new themes, priorities, developments that have happened inside the company and outside it since the last planning process. Go look at the last plan too. “We said we were gonna do X” is a good thing to list here. *The thing to be aware of is that people are dying to shout “what we are going to do” so everything at this stage is still somewhat suspect. But that’s fine, we recognize thatand move forward.*
 2. **What are we going to do?** That’s right, get it out there. Shake it out. List the things you want to do. Yes, you’re going to do them. They are very important. They are! I think it’s really important at this stage to let people linger and make sure they see those things they want to do captured. These are the things that are going to happen.
 3. **What makes it hard to do those things? (“Barriers”)** Like, really, why are they such big things that you felt the need to articulate them so badly. There’s lots of important work that just happens, so why spotlight those things? What are the problems you’re trying to overcome by spotlighting them? This is usually like resource problems, or distractions, or actual disagreements between leaders, or some other problem that constantly steals focus. Remember, you’re not trying to _justify_ the thing from the previous stage, you’re trying to explain why you would ever need to justify them in the first place. Why can’t the work just happen?
 4. **Of those things that make it hard, what do you have control over?** It’s possible to work this question into the previous stage, but I like to allow people to let loose with all their grievances before trying to narrow them down slightly. This is a good spot though to fully divorce people from the “what I want to do”-brainspace by engaging them with something else to problem solve around….
 5. **Of the barriers, what can you do to overcome or route around them?** Here we go, this is what we’ve been working towards: solving problems. What actually would address the problems we identified in the previous stage? Write that down.
-6. **Of those solutions, what are you going to do? (“The Strategics”)** This is the decisional commitment. Remember, we haven’t replaced the initial stage’s “what are we going to do’s”—those are still happening—but rather worked towards a new list of “everything would sure be a lot better/faster/stronger if we did this first or in-addition-to”. 
+6. **Of those solutions, what are you going to do? (“The Strategics”)** This is the decisional commitment. Remember, we haven’t replaced the initial stage’s “what are we going to do’s”—those are still happening—but rather worked towards a new list of “everything would sure be a lot better/faster/stronger if we did this first or in-addition-to”.
 
-…and then you write that into the planning template to report it out. And in this case, the “justification” for doing The Strategics is listing all of the stuff that you were going to do anyway. 
+…and then you write that into the planning template to report it out. And in this case, the “justification” for doing The Strategics is listing all of the stuff that you were going to do anyway.
 
 ### But you can do this badly too, right?
 
-Sure of course, we can do *anything* badly. It’s possible to wash the initial “what are are we going to do’s” through this entire process and end up exactly where you started, but with several hundred words of retcon around it. That happens. 
+Sure of course, we can do *anything* badly. It’s possible to wash the initial “what are are we going to do’s” through this entire process and end up exactly where you started, but with several hundred words of retcon around it. That happens.
 
 …but at least I believe this process affords some potential of not doing that, whereas I think most default planning processes (fill out the template) almost guarantee you end up where you started.

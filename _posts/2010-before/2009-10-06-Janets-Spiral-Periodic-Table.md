@@ -22,7 +22,7 @@ I had to scan Janet's Spiral out of the book since I couldn't find it on the int
 
 _**Update: **_
 
-_ Having just printed off and built the paper template included in the patent application, I must admit the design is a unique and  innovative._
+_ Having just printed off and built the paper template included in the patent application, I must admit the design is a unique and innovative._
 
 Below is from the [patent](http://www.google.com/patents?id=ynliAAAAEBAJ&zoom=4&dq=%233581409&pg=PA1#v=onepage&q=%233581409&f=false):
 

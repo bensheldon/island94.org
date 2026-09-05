@@ -16,4 +16,4 @@ redirect_from:
 
 Regular readers of this blog are aware that posts rarely reference the present, let along the contemporary. But on [Day of the Shirt](http://dayoftheshirt.com), I felt compunction: a daily t-shirt aggregator is nothing but contemporary---it's a 1-page website. So I took down Day of the Shirt today to protest SOPA/PIPA legislation.
 
-And, as any organizer can tell you, going on strike takes more time and effort than _not_ striking---cron scripts don't  just turn themselves off.
+And, as any organizer can tell you, going on strike takes more time and effort than _not_ striking---cron scripts don't just turn themselves off.
