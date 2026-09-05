@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Converting a Ruby block interface to start/stop methods with a Fiber | Island94.org</title>
+  
+
+  <link rel="stylesheet" href="/assets/application-c31b21bc688426a89aeb8504c37610396fc40eb398ab03565e0258c2b123d099.css" data-turbo-track="reload" />
+  
+  <script src="/assets/vite/assets/application-DMmR6YbA.js" crossorigin="" type="module"></script>
+
+  <script type="text/javascript">
+    function setTheme() {
+      let theme = localStorage.getItem('theme');
+      if (!["light", "dark"].includes(theme)) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    setTheme();
+    document.addEventListener('turbo:load', setTheme);
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="Island94.org" href="https://island94.org/feed.xml">
+
+  
+</head>
+<body data-controller="search">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 flex-column">
+  <div class="container">
+    <a class="navbar-brand" href="/">Island94.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/archives">Archives</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags">Tags</a></li>
+        <li class="nav-item"><a class="nav-link" href="/feed.xml">RSS Feed <i class="bi bi-rss-fill"></i></a></li>
+
+        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+          <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-light-500"></div>
+          <hr class="d-lg-none my-0 text-light-500">
+        </li>
+
+        <li class="nav-item dropdown" data-controller="theme">
+          <button
+            data-theme-target="switcher"
+            class="btn btn-link nav-link dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown">
+            <i data-theme-target="activeIcon" class="bi bi-circle-half"></i>
+            <span data-theme-target="switcherText">Theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="light"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-sun"></i> Light
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="dark"
+                data-action="theme#switch"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill"></i> Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-theme-value="auto"
+                data-action="theme#switch"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i> Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form id="search" class="d-flex" action="/search" method="get">
+        <div class="input-group">
+          <input data-search-target="input" data-action="input->search#syncInputs" id="search-box" class="form-control search" role="search" name="q" placeholder="Search" aria-label="Search" results="0" type="text" autocomplete="off">
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text-muted fst-italic">
+      — Ben Sheldon's personal blog and <a href="/2012/04/a-commonplace-book">commonplace book</a>.
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container container-body">
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a class="post-link" href="/2026/09/converting-a-ruby-block-interface-to-start-stop-methods-with-a-fiber"><p>Converting a Ruby block interface to start/stop methods with a Fiber</p>
+</a>
+    </h1>
+    <p class="post-meta text-muted">
+        <time datetime="2026-09-05T12:00:00Z" itemprop="datePublished">September 5, 2026</time>
+
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>One of the small joys of computer programming is reading some code and thinking <em>aha, that’s nice</em>.</p>
+
+<p>I recently encountered this feeling of <em>aha</em> while reading the docs for the <a href="https://github.com/YusukeIwaki/playwright-ruby-client"><code>playwright-ruby-client</code></a>’s set up code for Capybara <a href="https://playwright-ruby-client.vercel.app/docs/article/guides/rails_integration_with_null_driver">which described a mismatch between the Playwright and RSpec interface</a>:</p>
+
+<blockquote>
+  <p>The challenge is that <code>Playwright.create</code> and <code>playwright.chromium.launch</code> are block-scoped APIs — the browser shuts down when the block exits. RSpec has <code>before(:suite)</code> and <code>after(:suite)</code> but no <code>around(:suite)</code>. A Fiber bridges the gap: <code>start!</code> resumes the fiber until it yields the browser back, and <code>stop!</code> resumes it again so both blocks exit cleanly.</p>
+</blockquote>
+
+<p>I’ll get to <em>that</em> code in a moment, but to set up the explanation: I have written <em>a lot</em> of code that converts <code>start</code>- and <code>stop</code>-like methods into a block interface. That looks something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">with_resource</span>
+  <span class="n">resource</span> <span class="o">=</span> <span class="no">ResourceLibrary</span><span class="p">.</span><span class="nf">start!</span>
+  <span class="k">yield</span> <span class="n">resource</span>
+<span class="k">ensure</span>
+  <span class="no">ResourceLibrary</span><span class="p">.</span><span class="nf">stop!</span>
+<span class="k">end</span>
+
+<span class="c1"># and then used it like</span>
+<span class="n">with_resource</span> <span class="k">do</span> <span class="o">|</span><span class="n">resource</span><span class="o">|</span>
+  <span class="n">my_code_does_stuff_with</span> <span class="n">resource</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>…but I can’t remember a time when I’ve gone the other way: when a library only provides a block-style interface and I needed to convert it to distinct start and stop methods.</p>
+
+<p>If I hadn’t seen this <code>playwright-ruby-client</code> documentation, I’d have probably imagined doing it with a Thread and Queues to smuggle the resource out of a block. Something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ThreadedResourceWrapper</span>
+  <span class="nb">attr_reader</span> <span class="ss">:resource</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@control_queue</span> <span class="o">=</span> <span class="no">Queue</span><span class="p">.</span><span class="nf">new</span>
+    <span class="vi">@resource_queue</span> <span class="o">=</span> <span class="no">Queue</span><span class="p">.</span><span class="nf">new</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">start!</span>
+    <span class="vi">@thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+      <span class="no">ResourceLibrary</span><span class="p">.</span><span class="nf">open</span> <span class="k">do</span> <span class="o">|</span><span class="n">the_resource</span><span class="o">|</span>
+        <span class="vi">@resource_queue</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">the_resource</span><span class="p">)</span>
+        <span class="vi">@control_queue</span><span class="p">.</span><span class="nf">pop</span> <span class="c1"># Pause the thread</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="vi">@resource</span> <span class="o">=</span> <span class="vi">@resource_queue</span><span class="p">.</span><span class="nf">pop</span> <span class="c1"># Smuggle out the resource</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">stop!</span>
+    <span class="vi">@control_queue</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="ss">:stop</span><span class="p">)</span> <span class="c1"># Resume the thread to end the block</span>
+    <span class="vi">@thread</span><span class="p">.</span><span class="nf">join</span>
+    <span class="vi">@resource</span> <span class="o">=</span> <span class="kp">nil</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Instead, I’m impressed with using a simple Fiber (blocking, no scheduler) to effectively do the same thing, but without the (slight) overhead of a separate thread:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FiberResourceWrapper</span>
+  <span class="nb">attr_reader</span> <span class="ss">:resource</span>
+
+  <span class="k">def</span> <span class="nf">start</span>
+    <span class="vi">@fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+      <span class="no">ResourceLibrary</span><span class="p">.</span><span class="nf">open</span> <span class="k">do</span> <span class="o">|</span><span class="n">the_resource</span><span class="o">|</span>
+        <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span> <span class="n">the_resource</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="vi">@resource</span> <span class="o">=</span> <span class="vi">@fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># Resume #1: Run the fiber to smuggle out the resource</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">stop</span>
+    <span class="vi">@fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># Resume #2: resume the fiber to end the block</span>
+    <span class="vi">@resource</span> <span class="o">=</span> <span class="kp">nil</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Of light commentary: The usage of two <code>Queue</code> objects in the <code>ThreadedResourceWrapper</code> is slightly complicated for managing the execution flow… and I also find the Fiber <code>resume</code> behavior to be slightly confusing (or at least require <em>extra attention</em>) because a Fiber has to be explicitly <code>resume</code>’d after initialization to run at all, unlike a Thread which starts executing immediately (well, implicitly but concurrently)</p>
+
+<p>And lastly, for fun, I imagined how I might use this new Fiber knowledge to patch an <code>around_suite</code> callback into RSpec so I didn’t have to wrap every individual resource:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">RSpecAroundSuite</span>
+  <span class="k">def</span> <span class="nf">around_suite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="n">fiber</span> <span class="o">=</span> <span class="kp">nil</span>
+
+    <span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+      <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:suite</span><span class="p">)</span> <span class="k">do</span>
+        <span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+          <span class="n">run_suite</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span> <span class="p">}</span>
+          <span class="n">run_suite</span><span class="p">.</span><span class="nf">define_singleton_method</span><span class="p">(</span><span class="ss">:run</span><span class="p">)</span> <span class="p">{</span> <span class="n">call</span> <span class="p">}</span> <span class="c1"># allow `suite.run` to be analogous to `example.run`</span>
+
+          <span class="n">block</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">run_suite</span><span class="p">)</span>
+        <span class="k">end</span>
+
+        <span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span>
+      <span class="k">end</span>
+
+      <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:suite</span><span class="p">)</span> <span class="k">do</span>
+        <span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span><span class="no">RSpecAroundSuite</span><span class="p">)</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">around_suite</span> <span class="k">do</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span>
+  <span class="no">ResourceLibrary</span><span class="p">.</span><span class="nf">open</span> <span class="k">do</span> <span class="o">|</span><span class="n">the_resource</span><span class="o">|</span>
+    <span class="vg">$resource</span> <span class="o">=</span> <span class="n">the_resource</span> <span class="c1"># assign it to somewhere accessible</span>
+    <span class="n">suite</span><span class="p">.</span><span class="nf">run</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+  </div>
+</article>
+
+
+<div class="card my-4">
+  <div class="card-body">
+    Discuss this with me on
+      <a href="https://ruby.social/@bensheldon"><i class="bi bi-mastodon" style="margin-right: 0.2em"></i>Mastodon</a>,
+      <a href="https://bensheldon.bsky.social"><i class="bi bi-bluesky" style="margin-right: 0.2em"></i>Bluesky</a>,
+      or suggest a change on
+      <a href="https://github.com/bensheldon/island94.org/blob/main/_posts/2026-09-05-converting-a-ruby-block-interface-to-start-stop-methods-with-a-fiber.md" style="text-wrap: nowrap"><i class="bi bi-github" style="margin-right: 0.2em"></i>GitHub</a>.
+  </div>
+</div>
+
+  </div>
+
+  <script nomodule="nomodule" src="/assets/vite/assets/polyfills-legacy-DeTkG8vT.js"></script><script nomodule="nomodule">System.import('/assets/vite/assets/application-legacy-D-GVNTyO.js')</script>
+</body>
+</html>
