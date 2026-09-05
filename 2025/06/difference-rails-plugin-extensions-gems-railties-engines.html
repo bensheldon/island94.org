@@ -130,7 +130,7 @@
     <p>There’s overlapping terminology that describes the act of packaging up some new behavior for Rails. I think of two gems I maintain that are of vastly different scales</p>
 
 <ul>
-  <li><a href="https://github.com/bensheldon/activerecord-has_some_of_many">￼<code>activerecord-has_some_of_many</code>￼</a> which adds two new tiny association methods to Active Record models in 150 lines of code.</li>
+  <li><a href="https://github.com/bensheldon/activerecord-has_some_of_many"><code>activerecord-has_some_of_many</code></a> which adds two new tiny association methods to Active Record models in 150 lines of code.</li>
   <li><a href="https://github.com/bensheldon/good_job">GoodJob</a>, which is an entire Active Job backend with a mountable Web Dashboard and database models and custom job extensions in 10k lines of code.</li>
 </ul>
 
@@ -154,7 +154,7 @@
   <li><strong>Rails Extension</strong>: A small monkeypatch or tiny new behavior to existing Rails behaviors (Active Record, Active Job, etc.). Especially if it’s not even a gem: simply a file you wrote a blog post about that gets copied into <code>config/extensions</code> and then <code>require_relative</code>’d in <code>config/application.rb</code>.</li>
   <li><strong>Rails Gem</strong> : Reductively, a gem is a load path for some code, and some ownership metadata, and maybe it’s been published to Rubygems.org. Nothing special.</li>
   <li>⭐️ <strong>Rails Plugin</strong>. A generic name covers all situations imo, regardless of size, scope, or complexity.</li>
-  <li><strong>Railtie</strong>: When you write a gem that plugs into the Rails framework, you create <a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">special file</a> named <code>lib/railtie.rb</code> that has a class that inherits from `<a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">Rails::Railtie</a> that contains a DSL to configure how your gem’s behavior interfaces with Rails (configuration, initialization, etc.). I think Railtie is a bit of an odd-duck terminology-wise, but it makes sense considering…</li>
+  <li><strong>Railtie</strong>: When you write a gem that plugs into the Rails framework, you create <a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">special file</a> named <code>lib/railtie.rb</code> that has a class that inherits from `<a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">Rails::Railtie</a> that contains a DSL to configure how your gem’s behavior interfaces with Rails (configuration, initialization, etc.). I think Railtie is a bit of an odd-duck terminology-wise, but it makes sense considering…</li>
   <li><strong>Rails Engine</strong>: An “Engine” is <em>nearly</em> identical to a Railtie, but the file is named <code>lib/engine.rb</code> and it has a class that inherits from <code>Rails::Engine</code>. But <code>Rails::Engine</code> itself inherits from <code>Rails::Railtie</code>, so this is a matter of degrees. Your gem absolutely <em>needs</em> to use the Engine behavior if it wants to create mountable routes (though I guess you can mount a vanilla Rack app) or inherit from Rails Base classes like <code>ActiveRecord::Base</code>, <code>ActionController::Base</code>, <code>ActiveJob::Base</code>, etc. which live in the Engine’s own <code>app/</code> directory.</li>
 </ul>
 

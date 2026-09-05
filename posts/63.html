@@ -293,7 +293,7 @@
       <span class="k">break</span><span class="p">;</span>
     <span class="k">case</span> <span class="s1">'delete'</span><span class="o">:</span>
       <span class="nf">db_query</span><span class="p">(</span><span class="s1">'DELETE FROM {cambridge_mediamap} WHERE nid = %d'</span><span class="p">,</span> <span class="nv">$node</span> <span class="o">-</span> <span class="o">&gt;</span> <span class="n">nid</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span><span class="err">  </span>
+      <span class="k">break</span><span class="p">;</span>  
     <span class="k">case</span> <span class="s1">'view'</span><span class="o">:</span>
       <span class="k">break</span><span class="p">;</span>
   <span class="p">}</span>
@@ -405,7 +405,7 @@ function cambridge_mediamap_map() {
     'type' =&gt; variable_get('cambridge_mediamap_default_type', 'Satellite'),
     'markers' =&gt; $markers,
   );
-   
+
   return gmap_draw_map($map);
 }
 </code></pre>
@@ -850,7 +850,6 @@ function cambridge_mediamap_map() {
 <p><img src="/uploads/2007/small-things-of-spring-2.jpg" alt="Ladybug in the Garden" /></p>
 
 <p><img src="/uploads/2007/small-things-of-spring-3.jpg" alt="Early Grapes" /></p>
-
 
   </div>
 </article>

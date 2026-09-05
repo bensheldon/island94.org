@@ -157,7 +157,7 @@
 <p>GoodJob v2.5.0 <a href="https://github.com/bensheldon/good_job/pull/423">changed the cron locking strategy</a>. Instead of using Concurrency Control’s advisory locks, GoodJob uses a unique compound index to prevent the same cron job from being enqueued/<code>INSERT</code>ed into the database multiple times.</p>
 
 <ul>
-  <li>In addition to the existing <code>cron_key</code> column in job records, the change added a new timestamp column, <code>cron_at</code> to  store when the cron job is enqueued.</li>
+  <li>In addition to the existing <code>cron_key</code> column in job records, the change added a new timestamp column, <code>cron_at</code> to store when the cron job is enqueued.</li>
   <li>Added a unique index on <code>[cron_key, cron_at]</code> to ensure that only one job is inserted for the given key and time.</li>
   <li>Handled the expected <code>ActiveRecord::RecordNotUnique</code> when multiple cron processes try to enqueue the same cron job simultaneously and the unique index prevents the <code>INSERT</code> from taking place</li>
 </ul>

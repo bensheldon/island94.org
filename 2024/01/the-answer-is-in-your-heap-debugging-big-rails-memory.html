@@ -139,7 +139,7 @@
 
 <ul>
   <li>Was the memory increase at startup or over time? Not at boot, but memory increased very quickly.</li>
-  <li>Did anything change with Puma configuration?  Nope.</li>
+  <li>Did anything change with Puma configuration? Nope.</li>
   <li>
     <p>Get set up with <a href="https://github.com/zombocom/derailed_benchmarks"><code>derailed_benchmarks</code></a>, and create a <code>bin/profile</code> Rails binstub to make it easy to boot into a production-like configuration for profiling. Here’s what my very polished one looks like:</p>
 
@@ -270,7 +270,7 @@ diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_di
 
 <h3 id="the-explanation">The explanation</h3>
 
-<p>Using Rails’ git history, we were able to find that a <a href="https://github.com/rails/rails/pull/46974">change</a> had been made to the <code>RoutesProxy</code> ’s behavior of dynamically creating a new method: a <code>class_eval</code>  had been changed to an <code>instance_eval</code>.</p>
+<p>Using Rails’ git history, we were able to find that a <a href="https://github.com/rails/rails/pull/46974">change</a> had been made to the <code>RoutesProxy</code> ’s behavior of dynamically creating a new method: a <code>class_eval</code> had been changed to an <code>instance_eval</code>.</p>
 
 <p>Calling <code>instance_eval "def method...."</code> is what introduced a new singleton class, because that new method is only defined on that one object instance. Singleton classes can be cached by the Ruby VM (they’ll be purged when the cache fills up), and that’s what, through that chain of objects, was causing the model instances to stick around longer than expected and bloat up the memory! It’s not that <code>instance_eval</code>ing new methods is itself inherently problematic, but when those singleton methods are defined on an object that references an instance of an Action Controller, which has many instance variables that contained big Active Record objects…. that’s a problem.</p>
 

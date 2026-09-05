@@ -138,6 +138,7 @@
 <p>, <a href="https://ruby.libhunt.com/newsletter/219">Awesome Ruby</a>, and was as high as #8 on <a href="https://news.ycombinator.com/item?id=23928891">Hacker News</a>. GoodJob has since received nearly <a href="https://github.com/bensheldon/good_job">500 stars on Github</a>.</p>
 
 <h2 id="async-mode">Async mode</h2>
+
 <p>In addition to the <code>$ good_job</code> executable, GoodJob now can execute jobs inside the webserver process itself. For light workloads and simple applications, combining web and worker into a single process is very economical, especially when running on Heroku’s free or hobby plans.</p>
 
 <p>GoodJob’s async execution is compatible with Puma, in multithreaded (<code>RAILS_MAX_THREADS</code>), multi-process (<code>WEB_CONCURRENCY</code>), and memory efficient <code>preload_app!</code> configurations. GoodJob is built with Concurrent Ruby which offers excellent thread and process-forking safety guarantees. Read the <a href="https://github.com/bensheldon/good_job#executing-jobs-async--in-process">GoodJob async documentation</a> for more details.</p>
@@ -145,9 +146,11 @@
 <p>On a personal level, I’m very excited to have this feature in GoodJob. Async execution was <em>the</em> compelling reason I had previously adopted Que, another Postgres-based backend, in multiple projects and I was heartbroken when <a href="https://github.com/que-rb/que/issues/238#issuecomment-480648845">Que dropped support for async execution</a>.</p>
 
 <h2 id="improved-documentation">Improved documentation</h2>
+
 <p>Since GoodJob was released 3 weeks ago, the documentation has been significantly expanded. It contains more code and examples for ensuring reliability and handling job errors. I’ve had dozens of people ask questions through <a href="https://github.com/bensheldon/good_job/issues">Github Issues</a> and <a href="https://www.rubyonrails.link">Ruby on Rails Link Slack</a>.</p>
 
 <h2 id="upcoming">Upcoming</h2>
+
 <p>In the next release, v1.2, I plan to simplify the creation of multiple dedicated threadpools within a single process. The goal is to provide an economical solution to congestion when the execution of a number of slow, low-priority jobs (elephants) are being performed and there are no execution resources available for newly introduced fast, high priority jobs (mice) until the currently executing elephants complete.</p>
 
 <p>A proposed configuration, for example:</p>
@@ -157,6 +160,7 @@
 <p>…would allocate 2 dedicated threads for jobs enqueued on the mice queue, and 4 threads for the elephants queue. Learn more in the <a href="https://github.com/bensheldon/good_job/issues/45">feature’s Github Issue</a>.</p>
 
 <h2 id="contribute">Contribute</h2>
+
 <p>GoodJob continues to be enjoyable to develop and build upon Rails’ ActiveJob and Concurrent Ruby. Contributions are welcomed: check out the <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a>, comment on or open a Github Issue, or make a Pull Request.</p>
 
   </div>

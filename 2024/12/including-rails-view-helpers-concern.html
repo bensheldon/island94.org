@@ -137,8 +137,8 @@
 <p><strong>Never include a module from <code>app/helpers</code> into anything in your application.</strong> Don’t do it.</p>
 
 <ul>
-  <li>Modules defined in <code>app/helpers</code> should exclusively be View Helpers. Every module in the <code>app/helpers</code> directory is automatically included into Views/Partials, and available within Controllers via the <code>helpers</code> proxy  e.g. <code>helpers.the_method</code> in Controllers or <code>ApplicationController.helpers.the_method</code> anywhere else.</li>
-  <li>Including View Helpers into other files (Controllers, Models, etc.) creates a risk that some methods may <em>not</em>  be safely callable because they depend on View Context that isn’t present. (They’re also hell to type with Sorbet.)</li>
+  <li>Modules defined in <code>app/helpers</code> should exclusively be View Helpers. Every module in the <code>app/helpers</code> directory is automatically included into Views/Partials, and available within Controllers via the <code>helpers</code> proxy e.g. <code>helpers.the_method</code> in Controllers or <code>ApplicationController.helpers.the_method</code> anywhere else.</li>
+  <li>Including View Helpers into other files (Controllers, Models, etc.) creates a risk that some methods may <em>not</em> be safely callable because they depend on View Context that isn’t present. (They’re also hell to type with Sorbet.)</li>
   <li>If you do have includable mixins (“bucket of methods”) that do make sense to be included into lots of different classes (Controllers, Models, Views, etc.), make them a concern and don’t put them in <code>app/helpers</code>.</li>
 </ul>
 
@@ -169,11 +169,16 @@
 <span class="k">end</span>
 </code></pre></div>  </div>
 
-  <p>This has problem because the helper can’t access anything that is defined in the view level context class.</p>
+  <p>This has problem because the helper can’t access anything that is
+defined in the view level context class.</p>
 
-  <p>Also all public methods of the helper become available in the controller what can lead to undesirable methods being routed and behaving as actions.</p>
+  <p>Also all public methods of the helper become available in the controller
+what can lead to undesirable methods being routed and behaving as
+actions.</p>
 
-  <p>Also if you helper depends on other helpers or even Action View helpers you need to include each one of these dependencies in your controller otherwise your helper is not going to work.</p>
+  <p>Also if you helper depends on other helpers or even Action View helpers
+you need to include each one of these dependencies in your controller
+otherwise your helper is not going to work.</p>
 
 </blockquote>
 
@@ -201,7 +206,7 @@
 <p>And this is what you might do about them:</p>
 
 <ul>
-  <li><strong>Stop and remove <code>include MyHelper</code> from Controllers.</strong>  Instead, you can access any View Helper method in a controller via <code>helpers.the_name_of_the_method</code></li>
+  <li><strong>Stop and remove <code>include MyHelper</code> from Controllers.</strong> Instead, you can access any View Helper method in a controller via <code>helpers.the_name_of_the_method</code></li>
   <li><strong>Move Concerns and Dependencies out of <code>app/helpers</code>.</strong> If what is currently in <code>app/helpers</code> is not a View Helper, move it:
     <ul>
       <li>Application-level Concerns should be moved into <code>app/concerns</code></li>
@@ -211,7 +216,7 @@
   </li>
   <li><strong>Never include a module from <code>app/helpers</code> anywhere.</strong> Don’t do it.</li>
   <li><strong>Use the Controller <code>helpers</code> proxy or <code>ApplicationController.helpers.the_helper_method</code></strong> to access helpers (like <code>ActionView::Helpers::DateHelper</code>) in Controller or other Object contexts.</li>
-  <li><strong>Invert the relationship between Helpers and Concerns.</strong> If you have behavior that you want available to lots of different kinds of components <em>and</em> views, start by creating a Concern, and then include that Concern <em>into</em> a View Helper or <code>ApplicationHelper</code>.  Don’t go the other direction.</li>
+  <li><strong>Invert the relationship between Helpers and Concerns.</strong> If you have behavior that you want available to lots of different kinds of components <em>and</em> views, start by creating a Concern, and then include that Concern <em>into</em> a View Helper or <code>ApplicationHelper</code>. Don’t go the other direction.</li>
   <li><strong>Invert the relationship between Views and Controllers.</strong> If you have a private method that is specific to a single controller, and you want to expose that method to the controller’s views, you can expose that method to the views directly using <code>helper_method :the_method_name</code> . Use this sparingly, because it extends singleton View objects which deoptimizes the Ruby VM; but really, don’t twist yourself into knots to avoid it either, that’s what it’s there for.</li>
   <li><strong>(optional but recommended) Rename the constant too, not just move it, when it’s not a View Helper.</strong> Naming things is hard, but <code>*Helper</code> is… not very descriptive. While it’s the placement in <code>app/helpers</code> that brings the automatic behavior… so it’s not <em>technically</em> a problem to have a <code>SomethingHelper</code> that isn’t a View Helper living in <code>app/controllers/concerns</code> … it is confusing to have non-helpers named <code>SomethingHelper</code>. Some suggestions for renaming Concerns and Dependencies:
     <ul>

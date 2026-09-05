@@ -156,9 +156,9 @@
 
 <p><code>I18n</code> configuration needs to be thread-local, so that a multithreaded webserver like Puma can serve a web request to the GoodJob Dashboard in Ukrainian (per the previous scenario) while <em>also</em> serving a web request for the parent Rails application in French (or raise an exception if someone tries to access it in Italian).</p>
 
-<p>Unfortunately,  <code>I18n.current_locale</code> is the only configuration value that delegates to a thread-locale variable. All other configuration values are <a href="https://github.com/ruby-i18n/i18n/blob/7cf09474b77fd41e65d979134b0525f67cf371b0/lib/i18n/config.rb#L58">implemented as global <code>@@</code> class variables</a> on <code>I18n.config</code>. This makes sense when thinking of a monolithic application, but not when a Rails application is made up of multiple Engines or components that serve different purposes and audiences (the frontend visitor and the backend administrator). I struggled <em>a lot</em> figuring out a workaround for this, until I discovered that <code>I18n.config</code> is <em>also</em> thread-local.</p>
+<p>Unfortunately, <code>I18n.current_locale</code> is the only configuration value that delegates to a thread-locale variable. All other configuration values are <a href="https://github.com/ruby-i18n/i18n/blob/7cf09474b77fd41e65d979134b0525f67cf371b0/lib/i18n/config.rb#L58">implemented as global <code>@@</code> class variables</a> on <code>I18n.config</code>. This makes sense when thinking of a monolithic application, but not when a Rails application is made up of multiple Engines or components that serve different purposes and audiences (the frontend visitor and the backend administrator). I struggled <em>a lot</em> figuring out a workaround for this, until I discovered that <code>I18n.config</code> is <em>also</em> thread-local.</p>
 
-<p><strong>Swap out the entire <code>I18n.config</code>  value with your Engine’s own <code>I18n::Config</code>-compatible object:</strong></p>
+<p><strong>Swap out the entire <code>I18n.config</code> value with your Engine’s own <code>I18n::Config</code>-compatible object:</strong></p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/good_job/application_controller.rb</span>
 <span class="k">module</span> <span class="nn">GoodJob</span>
@@ -211,12 +211,12 @@
 <p>First, time helper translations should be namespaced in the yaml translation files:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/locales/en.yml</span>
-<span class="na">good_job</span><span class="pi">:</span> 
+<span class="na">good_job</span><span class="pi">:</span>
   <span class="c1"># ...</span>
   <span class="na">datetime</span><span class="pi">:</span>
     <span class="na">distance_in_words</span><span class="pi">:</span>
     <span class="c1"># ...</span>
-  <span class="na">format</span><span class="pi">:</span> 
+  <span class="na">format</span><span class="pi">:</span>
     <span class="c1"># ...</span>
   <span class="c1"># ...</span>
 </code></pre></div></div>

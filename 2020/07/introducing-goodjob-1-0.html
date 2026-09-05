@@ -163,19 +163,19 @@
 
 <h3 id="multi-threaded">Multi-threaded</h3>
 
-<p>GoodJob uses <a href="https://github.com/ruby-concurrency/concurrent-ruby">Concurrent::Ruby</a>  to scale and manage jobs across multiple threads. “<em>Concurrent Ruby makes one of the strongest thread-safety guarantees of any Ruby concurrency library”.</em>  Ruby on Rails has adopted Concurrent Ruby, and GoodJob follows its lead and <a href="https://guides.rubyonrails.org/threading_and_code_execution.html">thread-execution and safety guidelines</a>.</p>
+<p>GoodJob uses <a href="https://github.com/ruby-concurrency/concurrent-ruby">Concurrent::Ruby</a> to scale and manage jobs across multiple threads. “<em>Concurrent Ruby makes one of the strongest thread-safety guarantees of any Ruby concurrency library”.</em> Ruby on Rails has adopted Concurrent Ruby, and GoodJob follows its lead and <a href="https://guides.rubyonrails.org/threading_and_code_execution.html">thread-execution and safety guidelines</a>.</p>
 
 <p>In building GoodJob I leaned heavily on my positive experiences running Que, another multithreaded backend, on Heroku. Threads are great for balancing simplicity, economy, and performance for typical IO-bound workloads like heavy database queries, API requests, Selenium web-driving, or sending emails.</p>
 
-<p>A feature that won’t be in GoodJob 1.0, but I hope to implement soon, is the ability to run the GoodJob scheduler inside the webserver process (“async mode”). This was a feature  <a href="https://github.com/que-rb/que/issues/238#issuecomment-480648845">withdrawn from Que</a> , but I believe can be safely implemented with Concurrent Ruby. An async mode would offer even greater economy, for example, in Heroku’s constrained environment.</p>
+<p>A feature that won’t be in GoodJob 1.0, but I hope to implement soon, is the ability to run the GoodJob scheduler inside the webserver process (“async mode”). This was a feature <a href="https://github.com/que-rb/que/issues/238#issuecomment-480648845">withdrawn from Que</a> , but I believe can be safely implemented with Concurrent Ruby. An async mode would offer even greater economy, for example, in Heroku’s constrained environment.</p>
 
 <h3 id="goodjob-is-right-for-me">GoodJob is right for me</h3>
 
-<p>GoodJob’s design is based directly on my experience in 2-pizza, full-stack teams, and as an economy-minded solo developer. GoodJob already powers  <a href="https://dayoftheshirt.com/">Day of the Shirt</a> and <a href="https://brompt.com/">Brompt</a> performing tens-of-thousands of real-world jobs a day.</p>
+<p>GoodJob’s design is based directly on my experience in 2-pizza, full-stack teams, and as an economy-minded solo developer. GoodJob already powers <a href="https://dayoftheshirt.com/">Day of the Shirt</a> and <a href="https://brompt.com/">Brompt</a> performing tens-of-thousands of real-world jobs a day.</p>
 
 <h3 id="is-goodjob-right-for-you">Is GoodJob right for you?</h3>
 
-<p><a href="https://github.com/bensheldon/good_job">Try it out</a>  and let me know.</p>
+<p><a href="https://github.com/bensheldon/good_job">Try it out</a> and let me know.</p>
 
   </div>
 </article>

@@ -245,7 +245,6 @@ To access local variables named with reserved keywords in your ERB template when
 
 </blockquote>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -274,7 +273,6 @@ To access local variables named with reserved keywords in your ERB template when
   <li><a href="https://topenddevs.com/podcasts/ruby-rogues/episodes/examining-goodjob-solidq-and-more-ruby-623">The Ruby Rogues</a> from January, 2024.</li>
 </ul>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -299,7 +297,7 @@ To access local variables named with reserved keywords in your ERB template when
   <li>There can be a <strong>performance harm</strong> (or at least non-useful database processing and <a href="https://github.com/rails/rails/issues/14645">memory growth</a>) if your application produces a lot of preparable queries that are never reused again.</li>
 </ul>
 
-<p>By default, Rails will have the database store 1,000 queries (<code>statement_limit: 1000</code>). Many huge Rails monoliths (like GitHub, where I work) disable prepared statements (<code>prepared_statements: false</code>) because there is too much query heterogeneity to get a performance benefit and the database spends extra and unnecessary cycles storing and evicting unused prepared statements.  But that’s maybe not your application!</p>
+<p>By default, Rails will have the database store 1,000 queries (<code>statement_limit: 1000</code>). Many huge Rails monoliths (like GitHub, where I work) disable prepared statements (<code>prepared_statements: false</code>) because there is too much query heterogeneity to get a performance benefit and the database spends extra and unnecessary cycles storing and evicting unused prepared statements. But that’s maybe not your application!</p>
 
 <p>Structurally similar queries can still have variable values inside of them: these are called <strong>bind parameters</strong>. For example, in GoodJob, I want pop jobs that are scheduled to run right now. In SQL that might look like:</p>
 
@@ -313,7 +311,7 @@ To access local variables named with reserved keywords in your ERB template when
 
 <p>That’s the good stuff! That’s ideal and preparable 👍</p>
 
-<p>But that’s raw SQL, now how to do that in Active Record? In the following exploration, I’m using the private <code>to_sql_and_binds</code> method in Active Record; I’m also using the private Arel API. This is all private and subject to change, so be sure to write some tests around this behavior if you do choose to use it.  Here’s some <a href="https://github.com/bensheldon/rails_tricks/blob/6c686c987ee9996bbad8a6ade1f92184c5a9ebf6/bind_params.rb">quick experiments</a> I’ve done:</p>
+<p>But that’s raw SQL, now how to do that in Active Record? In the following exploration, I’m using the private <code>to_sql_and_binds</code> method in Active Record; I’m also using the private Arel API. This is all private and subject to change, so be sure to write some tests around this behavior if you do choose to use it. Here’s some <a href="https://github.com/bensheldon/rails_tricks/blob/6c686c987ee9996bbad8a6ade1f92184c5a9ebf6/bind_params.rb">quick experiments</a> I’ve done:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">job</span> <span class="o">=</span> <span class="no">Job</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">scheduled_at: </span><span class="mi">10</span><span class="p">.</span><span class="nf">minutes</span><span class="p">.</span><span class="nf">ago</span><span class="p">)</span>
 
@@ -512,15 +510,15 @@ window.Confetti = function () {
   }
 
   // $(document).ready(function () {
-  //   SetGlobals();
-  //   InitializeConfetti();
+  // SetGlobals();
+  // InitializeConfetti();
   //
-  //   $(window).resize(function () {
-  //     W = window.innerWidth;
-  //     H = window.innerHeight;
-  //     canvas.width = W;
-  //     canvas.height = H;
-  //   });
+  // $(window).resize(function () {
+  // W = window.innerWidth;
+  // H = window.innerHeight;
+  // canvas.width = W;
+  // canvas.height = H;
+  // });
   // });
 
   function SetGlobals() {
@@ -558,7 +556,6 @@ window.Confetti = function () {
   function RandomFromTo(from, to) {
     return Math.floor(Math.random() * (to - from + 1) + from);
   }
-
 
   function Update() {
     var remainingFlakes = 0;
@@ -673,10 +670,10 @@ window.Confetti = function () {
       InitializeConfetti();
 
       // $(window).resize(function () {
-      //   W = window.innerWidth;
-      //   H = window.innerHeight;
-      //   canvas.width = W;
-      //   canvas.height = H;
+      // W = window.innerWidth;
+      // H = window.innerHeight;
+      // canvas.width = W;
+      // canvas.height = H;
       // });
     },
     start: function() {
@@ -805,7 +802,7 @@ window.Confetti = function () {
 
 <p>I’ll eventually rename the database column, but this was a zero-migration change.</p>
 
-<p>Also, you might need to use <code>validations: false</code>  on <code>has_secure_password</code> and implement your own validations if you have custom onboarding flows like me. Read <a href="https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html">the docs</a> and the <a href="https://github.com/rails/rails/blob/68eade83c87ae309191add6dfa4959d7d7e07464/activemodel/lib/active_model/secure_password.rb#L114">Rails code</a>.</p>
+<p>Also, you might need to use <code>validations: false</code> on <code>has_secure_password</code> and implement your own validations if you have custom onboarding flows like me. Read <a href="https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html">the docs</a> and the <a href="https://github.com/rails/rails/blob/68eade83c87ae309191add6dfa4959d7d7e07464/activemodel/lib/active_model/secure_password.rb#L114">Rails code</a>.</p>
 
 <p>When authenticating on sign in, you’ll want to use <code>User.authenticate_by(email:, password:)</code>, which is intended to avoid timing attacks.</p>
 
@@ -827,7 +824,8 @@ window.Confetti = function () {
 
 <p>To verify this, you want to do use something like this: <code>User.find_by_token_for(:email_confirmation, value_from_the_link)</code>.</p>
 
-<p>btw security: when you put a link in an email message, you can only use a <code>GET</code> , because emails can’t reliably submit web forms (some clients can, but it’s weird and unreliable). So your link is going to look like <code>https://example.com/account/reset_password?token=blahblahblahblahblah</code>. If there is any links to 3rd party resources like script tags or off-domain images, you will <a href="https://portswigger.net/kb/issues/00500400_cross-domain-referer-leakage">leak the token through the <code>referrer</code></a>  when the page is loaded with the <code>?token=</code> in the URL. <a href="https://github.com/heartcombo/devise/pull/4366">Devise never fixed it (😱)</a> . What you should do is take value out of the query param and put it in the session and redirect back to the same page without the query parameter and use the session value instead. (Fun fact: this is a bug bounty that got me paid.)</p>
+<p>btw security: when you put a link in an email message, you can only use a <code>GET</code> , because emails can’t reliably submit web forms (some clients can, but it’s weird and unreliable). So your link is going to look like <code>https://example.com/account/reset_password?token=blahblahblahblahblah</code>. If there is any links to 3rd party resources like script tags or off-domain images, you will <a href="https://portswigger.net/kb/issues/00500400_cross-domain-referer-leakage">leak the token through the <code>referrer</code></a> when the page is loaded with the <code>?token=</code> in the URL. <a href="https://github.com/heartcombo/devise/pull/4366">Devise never fixed it (😱)</a> . What you should do is take value out of the query param and put it in the session and redirect back to the same page without the query parameter and use the session value instead. (Fun fact: this is a bug bounty that got me paid.)</p>
+
 <h3 id="authenticatable-salts">Authenticatable salts</h3>
 
 <p>Here’s where I explain that <code>password_salt</code> value.</p>
@@ -980,7 +978,6 @@ window.Confetti = function () {
 
 <p>That was all the interesting bits for me. I also learned quite a bit poking around Dave Kimura’s <a href="https://github.com/kobaltz/action_auth">ActionAuth</a> (thank you!), and am thankful for the many years of service I’ve gotten from Devise.</p>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -1025,7 +1022,7 @@ window.Confetti = function () {
 
 <h3 id="the-isolated-component">The isolated component</h3>
 
-<p>When I was working at a website hosting startup, we had one component that I could just never get the support to integrate into the larger application. It was the form that would create a new website project for the user.  When the startup began, the original technical architecture was a bunch of interlinked but separated components: User Registration, User Account Management, Website Creation, Website Management, Organization Management, Agency/Reseller Management, etc. It made sense early as the business was figuring out what worked as a business, and then during my tenure we brought those components together into a unified application. Well, almost all of them.</p>
+<p>When I was working at a website hosting startup, we had one component that I could just never get the support to integrate into the larger application. It was the form that would create a new website project for the user. When the startup began, the original technical architecture was a bunch of interlinked but separated components: User Registration, User Account Management, Website Creation, Website Management, Organization Management, Agency/Reseller Management, etc. It made sense early as the business was figuring out what worked as a business, and then during my tenure we brought those components together into a unified application. Well, almost all of them.</p>
 
 <p>There was a lot of give and take in the product integration; sometimes me and the other engineers would just <em>do it</em> and other times we’d defer it until there was a particular feature that necessitated it, and then we’d include that extra work in our estimates. It frequently took a <a href="https://speakerdeck.com/bensheldon/real-world-dashboard">couple passes</a> of <a href="https://speakerdeck.com/bensheldon/dashboard-performance-brownbag">code cleanup</a> and bringing it onto the design system, and that was ok. That’s the job!</p>
 
@@ -1103,7 +1100,7 @@ window.Confetti = function () {
 
 <ul>
   <li>Was the memory increase at startup or over time? Not at boot, but memory increased very quickly.</li>
-  <li>Did anything change with Puma configuration?  Nope.</li>
+  <li>Did anything change with Puma configuration? Nope.</li>
   <li>
     <p>Get set up with <a href="https://github.com/zombocom/derailed_benchmarks"><code>derailed_benchmarks</code></a>, and create a <code>bin/profile</code> Rails binstub to make it easy to boot into a production-like configuration for profiling. Here’s what my very polished one looks like:</p>
 
@@ -1234,7 +1231,7 @@ diff = Sheap::Diff.new("/Users/bensheldon/Repositories/sciencehistory/scihist_di
 
 <h3 id="the-explanation">The explanation</h3>
 
-<p>Using Rails’ git history, we were able to find that a <a href="https://github.com/rails/rails/pull/46974">change</a> had been made to the <code>RoutesProxy</code> ’s behavior of dynamically creating a new method: a <code>class_eval</code>  had been changed to an <code>instance_eval</code>.</p>
+<p>Using Rails’ git history, we were able to find that a <a href="https://github.com/rails/rails/pull/46974">change</a> had been made to the <code>RoutesProxy</code> ’s behavior of dynamically creating a new method: a <code>class_eval</code> had been changed to an <code>instance_eval</code>.</p>
 
 <p>Calling <code>instance_eval "def method...."</code> is what introduced a new singleton class, because that new method is only defined on that one object instance. Singleton classes can be cached by the Ruby VM (they’ll be purged when the cache fills up), and that’s what, through that chain of objects, was causing the model instances to stick around longer than expected and bloat up the memory! It’s not that <code>instance_eval</code>ing new methods is itself inherently problematic, but when those singleton methods are defined on an object that references an instance of an Action Controller, which has many instance variables that contained big Active Record objects…. that’s a problem.</p>
 

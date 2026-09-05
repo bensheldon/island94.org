@@ -139,8 +139,8 @@
 <p><strong>Never include a module from <code>app/helpers</code> into anything in your application.</strong> Don’t do it.</p>
 
 <ul>
-  <li>Modules defined in <code>app/helpers</code> should exclusively be View Helpers. Every module in the <code>app/helpers</code> directory is automatically included into Views/Partials, and available within Controllers via the <code>helpers</code> proxy  e.g. <code>helpers.the_method</code> in Controllers or <code>ApplicationController.helpers.the_method</code> anywhere else.</li>
-  <li>Including View Helpers into other files (Controllers, Models, etc.) creates a risk that some methods may <em>not</em>  be safely callable because they depend on View Context that isn’t present. (They’re also hell to type with Sorbet.)</li>
+  <li>Modules defined in <code>app/helpers</code> should exclusively be View Helpers. Every module in the <code>app/helpers</code> directory is automatically included into Views/Partials, and available within Controllers via the <code>helpers</code> proxy e.g. <code>helpers.the_method</code> in Controllers or <code>ApplicationController.helpers.the_method</code> anywhere else.</li>
+  <li>Including View Helpers into other files (Controllers, Models, etc.) creates a risk that some methods may <em>not</em> be safely callable because they depend on View Context that isn’t present. (They’re also hell to type with Sorbet.)</li>
   <li>If you do have includable mixins (“bucket of methods”) that do make sense to be included into lots of different classes (Controllers, Models, Views, etc.), make them a concern and don’t put them in <code>app/helpers</code>.</li>
 </ul>
 
@@ -171,11 +171,16 @@
 <span class="k">end</span>
 </code></pre></div>  </div>
 
-  <p>This has problem because the helper can’t access anything that is defined in the view level context class.</p>
+  <p>This has problem because the helper can’t access anything that is
+defined in the view level context class.</p>
 
-  <p>Also all public methods of the helper become available in the controller what can lead to undesirable methods being routed and behaving as actions.</p>
+  <p>Also all public methods of the helper become available in the controller
+what can lead to undesirable methods being routed and behaving as
+actions.</p>
 
-  <p>Also if you helper depends on other helpers or even Action View helpers you need to include each one of these dependencies in your controller otherwise your helper is not going to work.</p>
+  <p>Also if you helper depends on other helpers or even Action View helpers
+you need to include each one of these dependencies in your controller
+otherwise your helper is not going to work.</p>
 
 </blockquote>
 
@@ -203,7 +208,7 @@
 <p>And this is what you might do about them:</p>
 
 <ul>
-  <li><strong>Stop and remove <code>include MyHelper</code> from Controllers.</strong>  Instead, you can access any View Helper method in a controller via <code>helpers.the_name_of_the_method</code></li>
+  <li><strong>Stop and remove <code>include MyHelper</code> from Controllers.</strong> Instead, you can access any View Helper method in a controller via <code>helpers.the_name_of_the_method</code></li>
   <li><strong>Move Concerns and Dependencies out of <code>app/helpers</code>.</strong> If what is currently in <code>app/helpers</code> is not a View Helper, move it:
     <ul>
       <li>Application-level Concerns should be moved into <code>app/concerns</code></li>
@@ -213,7 +218,7 @@
   </li>
   <li><strong>Never include a module from <code>app/helpers</code> anywhere.</strong> Don’t do it.</li>
   <li><strong>Use the Controller <code>helpers</code> proxy or <code>ApplicationController.helpers.the_helper_method</code></strong> to access helpers (like <code>ActionView::Helpers::DateHelper</code>) in Controller or other Object contexts.</li>
-  <li><strong>Invert the relationship between Helpers and Concerns.</strong> If you have behavior that you want available to lots of different kinds of components <em>and</em> views, start by creating a Concern, and then include that Concern <em>into</em> a View Helper or <code>ApplicationHelper</code>.  Don’t go the other direction.</li>
+  <li><strong>Invert the relationship between Helpers and Concerns.</strong> If you have behavior that you want available to lots of different kinds of components <em>and</em> views, start by creating a Concern, and then include that Concern <em>into</em> a View Helper or <code>ApplicationHelper</code>. Don’t go the other direction.</li>
   <li><strong>Invert the relationship between Views and Controllers.</strong> If you have a private method that is specific to a single controller, and you want to expose that method to the controller’s views, you can expose that method to the views directly using <code>helper_method :the_method_name</code> . Use this sparingly, because it extends singleton View objects which deoptimizes the Ruby VM; but really, don’t twist yourself into knots to avoid it either, that’s what it’s there for.</li>
   <li><strong>(optional but recommended) Rename the constant too, not just move it, when it’s not a View Helper.</strong> Naming things is hard, but <code>*Helper</code> is… not very descriptive. While it’s the placement in <code>app/helpers</code> that brings the automatic behavior… so it’s not <em>technically</em> a problem to have a <code>SomethingHelper</code> that isn’t a View Helper living in <code>app/controllers/concerns</code> … it is confusing to have non-helpers named <code>SomethingHelper</code>. Some suggestions for renaming Concerns and Dependencies:
     <ul>
@@ -360,7 +365,7 @@
 
 <h3 id="onto-the-technical-bits">Onto the technical bits</h3>
 
-<p><strong>Boring-ass Rails</strong> I shouldn’t be shocked by now, with so many proof points over my career, but I am: how simple it is, with experience, to respond to rapidly shifting requirements in fairly-vanilla Rails: CRUD, fat controllers, fat models, fat jobs, validation contexts,  ERB, form builders, UJS, system tests, seeds, factories…. it’s not particularly difficult or mentally stimulating; it’s simply hands-on-keyboard time with the satisfaction of being <em>done</em> with that feature or capability and on to the next one, and the next one, and the next one. (aside: there’s a “Patterns vs Platform” thought floating around here)</p>
+<p><strong>Boring-ass Rails</strong> I shouldn’t be shocked by now, with so many proof points over my career, but I am: how simple it is, with experience, to respond to rapidly shifting requirements in fairly-vanilla Rails: CRUD, fat controllers, fat models, fat jobs, validation contexts, ERB, form builders, UJS, system tests, seeds, factories…. it’s not particularly difficult or mentally stimulating; it’s simply hands-on-keyboard time with the satisfaction of being <em>done</em> with that feature or capability and on to the next one, and the next one, and the next one. (aside: there’s a “Patterns vs Platform” thought floating around here)</p>
 
 <p><strong>A walking skeleton.</strong> It’s ingrained in me that you <code>rails new</code> and then immediately set up CI and a production deployment pipeline… but when I did it in pair with my second engineer for the first time, they were like “I wouldn’t have thought of doing that.” So I mention it.</p>
 
@@ -390,11 +395,11 @@
 
 <p><strong>Overusing Scenic Views and SQL Counts.</strong> There were several features near the end of the project that we fit in without significantly rearranging the data structure, specifically around reporting precision and a fifo-waitlisting feature. There were several messy Scenic-powered Views that used Window Functions and other complex queries; this was the source of the only significant outage I remember: joining a relation to a database view that resulted in a table scan that kicked over the database. There was also several places where we made complex association counters as optimized database queries rather than counter caches, <a href="https://medium.com/@eric.programmer/the-sql-alternative-to-counter-caches-59e2098b7d7">in the spirit of this</a>, that were messy but ok; 50/50 would do again.</p>
 
-<p><strong>Telecom Outages.</strong>  The <em>most</em> out of our control, there was a  <a href="https://www.theverge.com/2020/6/17/21293950/t-mobile-outage-june-explainer">major telecom outage</a> during the most critical part of the project that required a lot of recovery work to ensure SMS activation codes were delivered.</p>
+<p><strong>Telecom Outages.</strong> The <em>most</em> out of our control, there was a <a href="https://www.theverge.com/2020/6/17/21293950/t-mobile-outage-june-explainer">major telecom outage</a> during the most critical part of the project that required a lot of recovery work to ensure SMS activation codes were delivered.</p>
 
-<p><strong>ZIP to FIPS.</strong> Ok, not truly <em>technical</em> but when I was writing this and refamiliarizing myself with the codebase, I was reminded of how much of <em>the work</em> is interpreting between geographic data systems and the overrides on overrides because different parties are using different data sets from different providers and provenances. <a href="https://github.com/codeforamerica/drai/blob/a0442ee5689f09e6ede1b7eec6f29dd0f0c36f26/app/lib/zip_code.rb">Yeeesh!</a>  This is why you save your innovation tokens by writing boring-ass Rails… to spend it on this nonsense.</p>
+<p><strong>ZIP to FIPS.</strong> Ok, not truly <em>technical</em> but when I was writing this and refamiliarizing myself with the codebase, I was reminded of how much of <em>the work</em> is interpreting between geographic data systems and the overrides on overrides because different parties are using different data sets from different providers and provenances. <a href="https://github.com/codeforamerica/drai/blob/a0442ee5689f09e6ede1b7eec6f29dd0f0c36f26/app/lib/zip_code.rb">Yeeesh!</a> This is why you save your innovation tokens by writing boring-ass Rails… to spend it on this nonsense.</p>
 
-<p><strong>Open Source.</strong> I <a href="https://island94.org/2019/01/what-are-the-rewards">don’t imagine</a>  I would even be writing this if the project code wasn’t publicly available <a href="https://github.com/codeforamerica/drai">on GitHub</a>. I’ve frequently linked to bits when folks on Reddit ask for Rails examples, and for every story here I can find a reference to: a PR, a commit, a piece of code (the ticket backlog was in Pivotal Tracker RIP). In my contemporaneous notes, I discovered I had written “Week of March 9, 2020… Org Open Source Strategy Plan… license… contributing… marketing… talent”; clearly that didn’t happen at large (someday GetCalFresh, someday?) but it probably had an effect in this small, for which I am grateful to the many people who let it happen.</p>
+<p><strong>Open Source.</strong> I <a href="https://island94.org/2019/01/what-are-the-rewards">don’t imagine</a> I would even be writing this if the project code wasn’t publicly available <a href="https://github.com/codeforamerica/drai">on GitHub</a>. I’ve frequently linked to bits when folks on Reddit ask for Rails examples, and for every story here I can find a reference to: a PR, a commit, a piece of code (the ticket backlog was in Pivotal Tracker RIP). In my contemporaneous notes, I discovered I had written “Week of March 9, 2020… Org Open Source Strategy Plan… license… contributing… marketing… talent”; clearly that didn’t happen at large (someday GetCalFresh, someday?) but it probably had an effect in this small, for which I am grateful to the many people who let it happen.</p>
 
   </div>
 </article>
@@ -416,7 +421,7 @@
 
 <p><strong>Spectator Sport</strong> creates and replays video-like recordings of your live, production website, via a self-hosted Ruby on Rails Engine that lives in your application.</p>
 
-<p>Spectator Sport uses the <a href="https://www.rrweb.io/">rrweb library</a> to create recordings of your website’s DOM as your users interact with it, from the perspective of their web browser’s screen (html, css, images, dynamic content, mouse movements and clicks, navigation).  These recordings are stored in your Active Record database for replay by developers and administrators to analyze user behavior, reproduce bugs, and make building for the web more engaging, satisfying, and fun.</p>
+<p>Spectator Sport uses the <a href="https://www.rrweb.io/">rrweb library</a> to create recordings of your website’s DOM as your users interact with it, from the perspective of their web browser’s screen (html, css, images, dynamic content, mouse movements and clicks, navigation). These recordings are stored in your Active Record database for replay by developers and administrators to analyze user behavior, reproduce bugs, and make building for the web more engaging, satisfying, and fun.</p>
 
 <p><strong>Here’s a proof of concept demo.</strong> It’s very, very, very, very rough and early, but everyone I have demoed it for says “wow, that is totally different and much better than I imagined it when you first explained it me”: <a href="https://spectator-sport-demo-1ca285490d99.herokuapp.com">https://spectator-sport-demo-1ca285490d99.herokuapp.com</a></p>
 
@@ -515,7 +520,6 @@
   <li>Sponsor my development with $$$ via <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors</a></li>
 </ul>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -570,7 +574,7 @@
   </li>
   <li><strong>Safety, Security</strong>
     <ul>
-      <li>Avoiding thread safety issues, like globally held objects and privacy violations, not leaking data between requests, or retaining big objects in memory.  <a href="https://rubykaigi.org/2024/presentations/jhawthorn.html">Profile</a>, <a href="https://www.youtube.com/watch?v=pQ1XCrwq1qc">profile</a>, <a href="https://island94.org/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory">profile</a>.</li>
+      <li>Avoiding thread safety issues, like globally held objects and privacy violations, not leaking data between requests, or retaining big objects in memory. <a href="https://rubykaigi.org/2024/presentations/jhawthorn.html">Profile</a>, <a href="https://www.youtube.com/watch?v=pQ1XCrwq1qc">profile</a>, <a href="https://island94.org/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory">profile</a>.</li>
       <li>Seeking object locality (or avoiding globalness) by storing objects on instances of controllers and jobs (or their attributes) and embracing the natural lifecycles provided by the framework. Frequently a developer desires not to call <code>SomeObject.new</code> at the usage-site, but to have a DSL-like callable method already ready in the appropriate scope (eg. <code>current_some_object</code>). We love a good DSL and they can be difficult to get right.</li>
     </ul>
   </li>
@@ -625,7 +629,7 @@
   </li>
   <li><strong>Automating and Scaling: Packwerk, Sorbet, Rubocop</strong>
     <ul>
-      <li>We do our best to encode our knowledge and shape the application through tooling; that’s how our team scales!  We send our custom rules upstream, too.</li>
+      <li>We do our best to encode our knowledge and shape the application through tooling; that’s how our team scales! We send our custom rules upstream, too.</li>
       <li>But it’s complicated! Sometimes that means that developers may focus on designing their code <a href="https://island94.org/2024/09/the-novice-problem">in response to the automated tooling</a> and ending up with a less effective design or even introduce global risks and impacts to the application. At worst, a developer might even glaze over the linter’s intent by smuggling their design through a spelling or arrangement the linter doesn’t recognize 💀 Unfortunately the most important things are often the most abstract and arguable and difficult to detect or automatically warn about. We regret when we do have to tell folks that an approach is untenable in a PR or even after the fact when we notice production metrics have degraded.</li>
     </ul>
   </li>
@@ -777,7 +781,6 @@
 
 </blockquote>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -810,7 +813,7 @@
 
 <p>Code reloading and autoloading not working correctly is a huge pain. It’s not great, at all!</p>
 
-<p>The history of code reloading and autoloading came up recently in the <a href="https://www.railsspeed.com">Rails Performance Slack</a>. A  developer working on an old Rails application asked what Spork was (a forking preloader), and whether it was necessary (not necessarily). As a Rails Developer who is increasingly aware of my <del>age</del> experience (I started working with Rails in 2012, long after it first launched in 2004, but it’s still been a minute), I realized I had something to share.</p>
+<p>The history of code reloading and autoloading came up recently in the <a href="https://www.railsspeed.com">Rails Performance Slack</a>. A developer working on an old Rails application asked what Spork was (a forking preloader), and whether it was necessary (not necessarily). As a Rails Developer who is increasingly aware of my <del>age</del> experience (I started working with Rails in 2012, long after it first launched in 2004, but it’s still been a minute), I realized I had something to share.</p>
 
 <p>Over history, various strategies have been taken to make the development loop faster because that’s so important. Those strategies usually boil down to:</p>
 
@@ -995,7 +998,7 @@ from code loaded at boot.
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>GoodJob version 4.0 has been released! 🎉 GoodJob v4 has breaking changes that should be addressed through a transitionary v3.99 release, but if you’ve kept up with v3.x releases and migrations, you’re likely ready to upgrade 🚀</p>
+    <p>GoodJob version 4.0 has been released! 🎉 GoodJob v4 has breaking changes that should be addressed through a transitionary v3.99 release, but if you’ve kept up with v3.x releases and migrations, you’re likely ready to upgrade 🚀</p>
 
 <p>The <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#upgrading-v3-to-v4">README has an upgrade guide</a>. If you’d like to leave feedback about this release, please comment on the <a href="https://github.com/bensheldon/good_job/discussions/1396">GitHub Discussions post 📣</a></p>
 
@@ -1003,9 +1006,9 @@ from code loaded at boot.
 
 <h3 id="breaking-changes-to-job-schema">Breaking changes to job schema</h3>
 
-<p>GoodJob v4 changes how job and job execution records are stored in the database; moving from job and executions being commingled in the <code>good_jobs</code> table to Jobs (still in <code>good_jobs</code>) having many discrete Execution records in the <code>good_job_executions</code> table.</p>
+<p>GoodJob v4 changes how job and job execution records are stored in the database; moving from job and executions being commingled in the <code>good_jobs</code> table to Jobs (still in <code>good_jobs</code>) having many discrete Execution records in the <code>good_job_executions</code> table.</p>
 
-<p>To safely upgrade, all unfinished jobs must use the new schema relationship, tracked in the <code>good_jobs.is_discrete</code> column. This change was transparently introduced in GoodJob <a href="https://github.com/bensheldon/good_job/releases/tag/v3.15.4">v3.15.4 (April 2023)</a>, so your application is likely ready-to-upgrade already if you have kept up with GoodJob updates and migrations. You can check by running <code>v3.99</code>’s <code>GoodJob.v4_ready?</code> in production or run the following SQL query on the production database and check it returns zero: <code>SELECT COUNT(*) FROM "good_jobs" WHERE finished_at IS NULL AND is_discrete IS NOT TRUE</code>. If not all unfinished jobs are stored in the new format, either wait to upgrade until those jobs finish or discard them. If you upgrade prematurely to v4 without allowing those jobs to finish, they may never be performed.</p>
+<p>To safely upgrade, all unfinished jobs must use the new schema relationship, tracked in the <code>good_jobs.is_discrete</code> column. This change was transparently introduced in GoodJob <a href="https://github.com/bensheldon/good_job/releases/tag/v3.15.4">v3.15.4 (April 2023)</a>, so your application is likely ready-to-upgrade already if you have kept up with GoodJob updates and migrations. You can check by running <code>v3.99</code>’s <code>GoodJob.v4_ready?</code> in production or run the following SQL query on the production database and check it returns zero: <code>SELECT COUNT(*) FROM "good_jobs" WHERE finished_at IS NULL AND is_discrete IS NOT TRUE</code>. If not all unfinished jobs are stored in the new format, either wait to upgrade until those jobs finish or discard them. If you upgrade prematurely to v4 without allowing those jobs to finish, they may never be performed.</p>
 
 <h3 id="other-notable-changes">Other notable changes</h3>
 
@@ -1013,9 +1016,9 @@ from code loaded at boot.
 
 <ul>
   <li>Only supports Rails 6.1+, CRuby 3.0+ and JRuby 9.4+, Postgres 12+. Rails 6.0 is no longer supported. CRuby 2.6 and 2.7 are no longer supported. JRuby 9.3 is no longer supported.</li>
-  <li>Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job’s definition of priority.</li>
-  <li>Enqueues and executes jobs via the <code>GoodJob::Job</code> model instead of <code>GoodJob::Execution</code></li>
-  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>””</code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
+  <li>Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job’s definition of priority.</li>
+  <li>Enqueues and executes jobs via the <code>GoodJob::Job</code> model instead of <code>GoodJob::Execution</code></li>
+  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>””</code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
 </ul>
 
 <h3 id="new-features">New Features</h3>
@@ -1027,8 +1030,8 @@ from code loaded at boot.
   <li>Bulk enqueueing including support for Active Job’s <code>perform_all_later</code>.</li>
   <li><a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#labelled-jobs">Labelled jobs</a></li>
   <li>Throttling added to <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#concurrency-controls">Concurrency Controls</a></li>
-  <li>Improvements to the <a href="https://goodjob-demo.herokuapp.com/good_job/jobs">Web Dashboard</a>, including Dark Mode, performance dashboard, and improved UI,  and customizable templates.</li>
-  <li>Storage of error backtraces. Improved handling of job error conditions, including signal interruptions. Added <code>GoodJob.current_thread_running?</code> and <code>GoodJob.current_thread_shutting_down?</code> to support job iteration.</li>
+  <li>Improvements to the <a href="https://goodjob-demo.herokuapp.com/good_job/jobs">Web Dashboard</a>, including Dark Mode, performance dashboard, and improved UI, and customizable templates.</li>
+  <li>Storage of error backtraces. Improved handling of job error conditions, including signal interruptions. Added <code>GoodJob.current_thread_running?</code> and <code>GoodJob.current_thread_shutting_down?</code> to support job iteration.</li>
   <li><a href="https://github.com/bensheldon/good_job/pull/665">Ordered Queues</a>, <a href="https://github.com/bensheldon/good_job/pull/727"><code>queue_select_limit</code></a> and further options for configuring queue order and performance.</li>
   <li>Improvements to Cron / Repeating Jobs.</li>
   <li>Operational improvements including <code>systemd</code> integration, improved health checks.</li>

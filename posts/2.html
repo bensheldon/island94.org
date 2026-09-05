@@ -167,7 +167,7 @@
 
 <p>“Eliminate valueless choices” is a powerful principle, as part of the Rails Manifesto. Solid Queue is a good choice, <em>especially</em> if you don’t have to choose. This alone is an incredibly powerful reason to Solid Queue. <strong>You probably chose Rails for the lore.</strong> There’s a manifesto. And it’s actually good. Conceptual integrity is important. Make the center hold.</p>
 
-<p>But if you’ve been following the Rails discourse for a while, you’ll know not everyone agrees that omakase is <em>best</em>, or best for them. Lots of people quietly (and loudly!) go their own way. <em>Callbacks are the worst,</em> they comment underneath every single Reddit post. <em>Nobody actually uses ActionMailer. Why isn’t there a Services directory?  That pattern encourages methods that are too long! All those Concerns, are you for real? Nobody does it that way anymore. It’s not modern.</em></p>
+<p>But if you’ve been following the Rails discourse for a while, you’ll know not everyone agrees that omakase is <em>best</em>, or best for them. Lots of people quietly (and loudly!) go their own way. <em>Callbacks are the worst,</em> they comment underneath every single Reddit post. <em>Nobody actually uses ActionMailer. Why isn’t there a Services directory? That pattern encourages methods that are too long! All those Concerns, are you for real? Nobody does it that way anymore. It’s not modern.</em></p>
 
 <p>More recently 37 Signals has started releasing source code for several of their applications, and yes, they’re for real and yes, they do still do it that way. But Rails is a big framework (“Batteries included”) and you don’t have to use everything (“No one paradigm”). You can swap something out and remain lore canon.</p>
 
@@ -248,11 +248,11 @@
 
 <p><strong>You cannot nest a <code>&lt;form&gt;</code> element within another <code>&lt;form&gt;</code> element.</strong> When rendering the page, the browser will remove it, or ignore it; regardless it won’t work. Doubly annoying because Chrome’s DevTools will simply remove the element; you have to use <code>view-source</code> to witness your mistake.</p>
 
-<p>Some designs would really benefit from a form nested in another form. For example: You have a screen with a bunch of inputs to update a record, and you want to put a “Destroy” button visually adjacent to the “Update” button. Or, for example: you are displaying a list of records that is wrapped entirely in one big form element so that each item can be checked/unchecked to apply actions upon multiple records <em>and</em> you want to be able to have buttons to perform actions on records individually in the list too.  Remember, you always want to put destructive or mutating actions behind a POST button rather than a GET link. It can be tricky. Here’s an example of a design challenge in the GoodJob Dashboard:</p>
+<p>Some designs would really benefit from a form nested in another form. For example: You have a screen with a bunch of inputs to update a record, and you want to put a “Destroy” button visually adjacent to the “Update” button. Or, for example: you are displaying a list of records that is wrapped entirely in one big form element so that each item can be checked/unchecked to apply actions upon multiple records <em>and</em> you want to be able to have buttons to perform actions on records individually in the list too. Remember, you always want to put destructive or mutating actions behind a POST button rather than a GET link. It can be tricky. Here’s an example of a design challenge in the GoodJob Dashboard:</p>
 
 <p><img src="/uploads/2025/goodjob-forms.png" alt="A screenshot from the GoodJob dashboard" /></p>
 
-<p><strong>HTML forms only support two HTTP methods: <code>GET</code> and <code>POST</code>.</strong> All the other one’s (<code>PUT</code>, <code>PATCH</code>, <code>DELETE</code> ) are valid <em>HTTP</em> methods, but you can’t use them in an <em>HTML</em> form. Rails works around this with its form helpers by adding a hidden input named <code>_method</code> that puts the unsupported method in the formdata, or using Javascript <code>fetch</code>  or <code>XMLHttpRequest</code>.</p>
+<p><strong>HTML forms only support two HTTP methods: <code>GET</code> and <code>POST</code>.</strong> All the other one’s (<code>PUT</code>, <code>PATCH</code>, <code>DELETE</code> ) are valid <em>HTTP</em> methods, but you can’t use them in an <em>HTML</em> form. Rails works around this with its form helpers by adding a hidden input named <code>_method</code> that puts the unsupported method in the formdata, or using Javascript <code>fetch</code> or <code>XMLHttpRequest</code>.</p>
 
 <p><strong>You need a CSRF token.</strong> The form payload must contain the CSRF token payload, which Rails form helpers include as a hidden form element. If the payload doesn’t have a CSRF token, Rails will reject it. THe CSRF token really is important, please don’t disable it. Maybe that’ll <a href="https://github.com/rails/rails/pull/56350">go away someday</a>, but not today</p>
 
@@ -319,7 +319,7 @@ _method=delete
 
 <p><strong>But what about the duplicate <code>_method</code> keys?</strong> <a href="https://github.com/rails/rails/pull/53471">Rails (or maybe Rack)</a>. when it comes to duplicate keys, will expose only the last value in the params hash. It’s only if you named the key with square brackets like <code>foo[]</code> does it become an array of values. This isn’t HTTP, but rather a convention of Rails/Rack for parsing form-data into Ruby data objects.</p>
 
-<p>If we want a different URL, we can use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#formaction">HTML’s ￼<code>formaction=</code>￼ attribute</a> to change where the Form is posted:</p>
+<p>If we want a different URL, we can use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#formaction">HTML’s <code>formaction=</code> attribute</a> to change where the Form is posted:</p>
 
 <p><code>&lt;%= f.button "Fancy Delete", name: "_method", value: "delete", formaction: fancy_post_path(@post) %&gt;</code></p>
 
@@ -327,7 +327,7 @@ _method=delete
 
 <pre><code>&lt;form action="/posts/42"&gt;
   &lt;input type="hidden" name="_method" value="put"&gt;
-  
+
   &lt;button&gt;Save&lt;/button&gt; &lt;!-- the regular form button --&gt;
   &lt;button name="_method" value="delete" formaction="/posts/42/fancy"&gt;
     Fancy Delete
@@ -337,7 +337,7 @@ _method=delete
 
 <p>Pretty sweet!</p>
 
-<p>One more tool in our toolbox: In addition to <code>formaction</code> which changes the payload target URL, we can <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/form">redirect our button to an entirely different form using the ￼<code>form=</code>￼ attribute</a> on the button and targeting the other form by <code>id</code>:</p>
+<p>One more tool in our toolbox: In addition to <code>formaction</code> which changes the payload target URL, we can <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/form">redirect our button to an entirely different form using the <code>form=</code> attribute</a> on the button and targeting the other form by <code>id</code>:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/posts/42"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"_method"</span> <span class="na">value=</span><span class="s">"put"</span><span class="nt">&gt;</span>
@@ -434,7 +434,7 @@ _method=delete
   <div class="post-content" itemprop="articleBody">
     <p>I recently went on a brief deep dive into 103 Early Hints because I looked at a <a href="https://github.com/shakacode/shakapacker/pull/722">Shakapacker PR</a> for adding 103 Early Hints support. Here’s what I learned.</p>
 
-<p>Briefly, <a href="https://developer.chrome.com/docs/web-platform/early-hints">103 Early Hints</a> is a status code for an HTTP response that happens <em>before</em> a regular HTTP response with content like HTML. The frontrunning response hints to the browser what additional assets (javascript, css) the browser will have to load when it renders the subsequent HTTP response with all the content. The idea being that the browser <em>could</em>  load those resources while waiting for the full content response to be transmitted, and thus load and render the complete page with all its assets faster overall.</p>
+<p>Briefly, <a href="https://developer.chrome.com/docs/web-platform/early-hints">103 Early Hints</a> is a status code for an HTTP response that happens <em>before</em> a regular HTTP response with content like HTML. The frontrunning response hints to the browser what additional assets (javascript, css) the browser will have to load when it renders the subsequent HTTP response with all the content. The idea being that the browser <em>could</em> load those resources while waiting for the full content response to be transmitted, and thus load and render the complete page with all its assets faster overall.</p>
 
 <p>If you look at a response that includes 103 Early Hints, it looks like 2 responses:</p>
 
@@ -446,7 +446,7 @@ date: Fri, 17 Oct 2025 15:07:24 GMT
 content-type: text/html; charset=utf-8
 link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload
 
-&lt;html&gt; 
+&lt;html&gt;
 ... the content
 </code></pre>
 
@@ -466,11 +466,11 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 <p><strong>There should only be one 103 Early Hint response.</strong> According to <a href="https://datatracker.ietf.org/doc/html/rfc8297">the RFC</a>, there can be multiple 103 responses, but according to the Browsers, they only look at the first 103 response.</p>
 
 <blockquote>
-  <p>A server might send multiple 103 responses, for example, following a redirect. <strong>Browsers only process the first early hints response</strong>, and this response must be discarded if the request results in a cross-origin redirect. — <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103">MDN</a></p>
+  <p>A server might send multiple 103 responses, for example, following a redirect. <strong>Browsers only process the first early hints response</strong>, and this response must be discarded if the request results in a cross-origin redirect. — <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103">MDN</a></p>
 </blockquote>
 
 <blockquote>
-  <p><strong>Chrome ignores the second and following Early Hints responses. Chrome only handles the first Early Hints response</strong> so that Chrome doesn’t apply inconsistent security policies (e.g. Content-Security-Policy). — <a href="https://source.chromium.org/chromium/chromium/src/+/main:docs/early-hints.md;l=18?q=early%20hints&amp;ss=chromium%2Fchromium%2Fsrc:docs%2F">Chromium Docs</a></p>
+  <p><strong>Chrome ignores the second and following Early Hints responses. Chrome only handles the first Early Hints response</strong> so that Chrome doesn’t apply inconsistent security policies (e.g. Content-Security-Policy). — <a href="https://source.chromium.org/chromium/chromium/src/+/main:docs/early-hints.md;l=18?q=early%20hints&amp;ss=chromium%2Fchromium%2Fsrc:docs%2F">Chromium Docs</a></p>
 </blockquote>
 
 <p>Rails emits a 103 Early Hint response each and every time your application calls <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.</p>
@@ -481,14 +481,14 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In the Puma webserver</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="k">do</span> <span class="o">|</span><span class="n">early_hints_str</span><span class="o">|</span>
-  <span class="n">fast_write_str</span> <span class="n">socket</span><span class="p">,</span> <span class="s2">"HTTP/1.1 103 Early Hints</span><span class="se">\r\n</span><span class="si">#{</span><span class="n">early_hints_str</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">"</span> 
+  <span class="n">fast_write_str</span> <span class="n">socket</span><span class="p">,</span> <span class="s2">"HTTP/1.1 103 Early Hints</span><span class="se">\r\n</span><span class="si">#{</span><span class="n">early_hints_str</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">"</span>
 <span class="k">end</span>
 
 <span class="c1"># In the application</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="s2">"link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><strong>The 103 Early Hint response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</strong> As mentioned, the 103 Early Hint response gets triggered when using <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.  Those usually are used in a Rails Layout <code>erb</code> file.</p>
+<p><strong>The 103 Early Hint response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</strong> As mentioned, the 103 Early Hint response gets triggered when using <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>. Those usually are used in a Rails Layout <code>erb</code> file.</p>
 
 <p>In Rails, Layouts get rendered last, after the view is rendered, which means that 103 Early Hints get emitted when the response is almost done being constructed: after the controller action, after the databae queries, after most of the HTML has been rendered to a string.</p>
 
@@ -499,10 +499,10 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 <p>I can’t actually get 103 Early Hints to be returned all the way to me in any of my production environments. Likely because there is a network device, reverse proxy, load balancer, CDN, or something that’s blocking them.</p>
 
 <ul>
-  <li>👎 Heroku with Router 2.0 and custom domain</li>
-  <li>👎 Heroku behind Cloudfront</li>
-  <li>👎 Digital Ocean App Platform behind Cloudflare</li>
-  <li>👎 AWS ECS+Fargate behind an ALB (this one actually breaks the website: <code>HTTP/2 stream 1 was not closed cleanly</code>)</li>
+  <li>👎 Heroku with Router 2.0 and custom domain</li>
+  <li>👎 Heroku behind Cloudfront</li>
+  <li>👎 Digital Ocean App Platform behind Cloudflare</li>
+  <li>👎 AWS ECS+Fargate behind an ALB (this one actually breaks the website: <code>HTTP/2 stream 1 was not closed cleanly</code>)</li>
 </ul>
 
 <p>I can see them working locally, using Puma or Puma behind Thruster, but in production…. nada. Obviously this isn’t comprehensive list of production environments, but they’re the ones <em>I</em> am using.</p>
@@ -552,7 +552,6 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 &lt;
 <span class="c"># ... ok, that returns something</span>
 </code></pre></div></div>
-
 
   </div>
 </article>
@@ -611,7 +610,7 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Keys are global, and keys whose objects have been loaded live in  <code>Hanami.app.keys</code> . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with <code>Hanami.app["thekey"]</code> when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don’t have to. This is <a href="https://dry-rb.org/gems/dry-system/">powered by <code>dry-system</code></a>.</p>
+<p>Keys are global, and keys whose objects have been loaded live in <code>Hanami.app.keys</code> . If the key’s object hasn’t been loaded yet, it will be converted from a string to… whatever (not just constants)… when it’s needed to execute. Individual objects can be accessed with <code>Hanami.app["thekey"]</code> when debugging, but normal code should get them injected from Deps. By convention, keys match a class name but they don’t have to. This is <a href="https://dry-rb.org/gems/dry-system/">powered by <code>dry-system</code></a>.</p>
 
 <p>Not <em>everything</em> has to have a key. Functional components in Hanami have a key, but classes that embody a bit of data (in Hanami these are called Structs) do not have entries in the app container, and therefore don’t have keys.</p>
 
@@ -766,13 +765,14 @@ party gems.</li>
 </code></pre></div></div>
 
 <p>That’s a simple example</p>
+
 <h3 id="making-a-renderable-work-later">Making a renderable work <em>later</em></h3>
 
 <p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">achieving first-class support Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code>.</p>
 
 <p>For ViewComponent to be compatible with Turbo Broadcasting <em>later</em>, those View Components need to be serializable by Active Job. That’s because Turbo Rail’s <code>broadcast_*_later_to</code> takes the arguments it was passed and serializes them into a job so they can be run elsewhere better/faster/stronger.</p>
 
-<p>To serialize a ViewComponent, we need to collect its initialization arguments, so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its  <code>initialize</code> method. To patch into that, there’s a couple of different strategies I thought of taking:</p>
+<p>To serialize a ViewComponent, we need to collect its initialization arguments, so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its <code>initialize</code> method. To patch into that, there’s a couple of different strategies I thought of taking:</p>
 
 <ul>
   <li>Make the developer figure out which properties of an existing ViewComponent (ivars, attributes) should be grabbed and how to do that.</li>
@@ -847,7 +847,6 @@ party gems.</li>
 
 <p><strong>Real talk:</strong> I haven’t packaged this into a gem. I didn’t want to maintain it for everyone, and there’s some View Component features (like collections) it doesn’t handle yet because I haven’t used them (yet). I think this sort of thing is first class behavior for the current state of Rails and Active Job and Turbo, and I’d rather the library maintainers figure out what the best balance of ergonomics, complexity, and performance is for them. I’ve been gently poking them about it in their Slack; they’re great and I believe we can arrive at something even better than this patch I’m running with myself for now 💖</p>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -906,7 +905,7 @@ party gems.</li>
 
 <p>In the browser/client: You have a Connection, a Connection “opens” and “closes”, but also “reconnects” (reopens?). Then you create a Subscription on the Connection by Subscribing to a named Channel (which is a backend/server concept); Subscriptions have a “connected” callback when <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscription.js#L9">“subscription has been successfully completed”</a> (subscribed?) and “disconnected” <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscription.js#L13">“when the client has disconnected with the server”</a> (a Connection disconnect). If the Connection closes, reconnects, and reopens, then the Channel’s disconnected and reconnected callbacks are triggered again. Subscriptions can also be <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/subscriptions.js#L50">“rejected”</a>. You can see some of this drift too in the <a href="https://github.com/rails/rails/blob/b927e4d45907a3c2eaecc9a31095337856b71e95/actioncable/app/javascript/action_cable/internal.js#L2-L8">message types key/value constants</a> .</p>
 
-<p>…as a concrete example: you don’t <code>connection.subscribe(channelName, ...)</code> you <code>consumer.subscriptions.create(channelName, ...)</code> (oh jeez, it’s called Consumer). Turbo Rails tries to clean up some of this as you can call <code>cable.subscribeTo(channelName, ...)</code>to subscribe to a Channel using Turbo Stream Broadcasts’ existing connection. But even that is compromised because you don’t <code>subscribeTo</code> a channel, you <code>subscribeTo</code> by passing an object of <code>{ channel: channelName, params: paramsforChannelSubscribe }</code> .  Here’s an <a href="https://github.com/basecamp/once-campfire/blob/3d0a10dbdd6d24941f22595072c2021f0c2dca10/app/javascript/controllers/presence_controller.js#L13">example from Campfire.</a></p>
+<p>…as a concrete example: you don’t <code>connection.subscribe(channelName, ...)</code> you <code>consumer.subscriptions.create(channelName, ...)</code> (oh jeez, it’s called Consumer). Turbo Rails tries to clean up some of this as you can call <code>cable.subscribeTo(channelName, ...)</code>to subscribe to a Channel using Turbo Stream Broadcasts’ existing connection. But even that is compromised because you don’t <code>subscribeTo</code> a channel, you <code>subscribeTo</code> by passing an object of <code>{ channel: channelName, params: paramsforChannelSubscribe }</code> . Here’s an <a href="https://github.com/basecamp/once-campfire/blob/3d0a10dbdd6d24941f22595072c2021f0c2dca10/app/javascript/controllers/presence_controller.js#L13">example from Campfire.</a></p>
 
 <p>On the server, I have accepted that the Connection/Channel/Streams challenges me, which is probably because of the inherent complexity of multiplexing Streams (no, not Turbo “Streams”, Action Cable “Streams”) over Channels that are themselves multiplexed over connection(s), and it makes my head spin. . That Channels connect Streams, and one Broadcasts on Streams, and one can also <code>transmit</code> on a channel to a specific client in a Channel, and often one does <code>broadcast(channel, payload)</code> but <code>channel</code> may be the name of a Stream. My intuition is that Streams were bolted onto Action Cable’s Channel implementation rather part of the initial conception though it all <a href="https://github.com/rails/rails/pull/22586">landed in Rails at once</a>.</p>
 
@@ -936,7 +935,7 @@ party gems.</li>
 
 <ul>
   <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/50039">Add ability to detect a half-open connection</a> by adding a client <code>pong</code> to the existing server <code>ping</code>. Action Cable currently <a href="https://github.com/rails/rails/blob/4b494a53e1e10f0c523266c38d4f7f22b40fa021/actioncable/app/javascript/action_cable/connection.js#L142-L143">filters out ping messages</a>, so not possible to do a pong or heartbeat without a change or patch.</li>
-  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/44653">ActionCable: Subscribe uniquely</a> about weird behavior when  subscriptions with duplicated identifiers happen</li>
+  <li><code>rails/rails</code>: <a href="https://github.com/rails/rails/pull/44653">ActionCable: Subscribe uniquely</a> about weird behavior when subscriptions with duplicated identifiers happen</li>
   <li><code>hotwired/turbo-rails</code>: <a href="https://github.com/hotwired/turbo-rails/issues/559">“Duplicate requests from repeated turbo-cable-stream-source signed-stream-name values”</a></li>
   <li><code>hotwired/stimulus</code> <a href="https://github.com/hotwired/stimulus/issues/698">How to know when every stimulus controllers are connected ?</a></li>
 </ul>
@@ -957,7 +956,6 @@ party gems.</li>
 <h3 id="notes-right">Notes, right?</h3>
 
 <p>Yep, these are my notes. Maybe they’re helpful. No big denouement. The feature works, I’m happy with it, my teammates are happy, and I probably wouldn’t have attempted it at all if I didn’t have such positive thoughts about Action Cable going in, even if the work itself got deeply into the weeds.</p>
-
 
   </div>
 </article>
@@ -1009,11 +1007,11 @@ party gems.</li>
 
 <h3 id="making-a-renderable-work-later">Making a renderable work <em>later</em></h3>
 
-<p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">adding first-class support to Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code>  .</p>
+<p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">adding first-class support to Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code> .</p>
 
 <p>For ViewComponent to be compatible with Turbo Broadcasting <em>later</em>, those View Components need to be serializable by Active Job. That’s because Turbo Rail’s <code>broadcast_*_later_to</code> takes the arguments it was passed and serializes them into a job so they can be run elsewhere better/faster/stronger.</p>
 
-<p>To serialize a ViewComponent, we need to collect its initialization arguments so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its  <code>initialize</code> method. To patch into that, there are a couple of different strategies I thought of taking:</p>
+<p>To serialize a ViewComponent, we need to collect its initialization arguments so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its <code>initialize</code> method. To patch into that, there are a couple of different strategies I thought of taking:</p>
 
 <ul>
   <li>
@@ -1027,7 +1025,7 @@ party gems.</li>
   </li>
 </ul>
 
-<p>I respect that ViewComponent maintainers really want a ViewComponent to be <em>just like any other Ruby object</em> that you create with <code>new</code> and <code>initialize</code> , but it makes this particular goal, serialization, rather difficult. You can maybe see the ViewComponent maintainers ran into a few problems with initialization themselves: a collection of ViewComponents can optionally have each member initialized with an iteration number, but to do that <a href="https://github.com/ViewComponent/view_component/blob/1ed16e33ad70e45ffc08de3b68760a83d08e912e/lib/view_component/base.rb#L667-L712">ViewComponent has to introspect the <code>initialize</code> parameters</a>  to determine if the object implements the iteration parameter to decide whether to send it 🫠 That parameter introspection also means that we can’t simply prepend a redefined generic <code>initialize(*args, **kwargs)</code> because that would break the collection feature. Not great 💛</p>
+<p>I respect that ViewComponent maintainers really want a ViewComponent to be <em>just like any other Ruby object</em> that you create with <code>new</code> and <code>initialize</code> , but it makes this particular goal, serialization, rather difficult. You can maybe see the ViewComponent maintainers ran into a few problems with initialization themselves: a collection of ViewComponents can optionally have each member initialized with an iteration number, but to do that <a href="https://github.com/ViewComponent/view_component/blob/1ed16e33ad70e45ffc08de3b68760a83d08e912e/lib/view_component/base.rb#L667-L712">ViewComponent has to introspect the <code>initialize</code> parameters</a> to determine if the object implements the iteration parameter to decide whether to send it 🫠 That parameter introspection also means that we can’t simply prepend a redefined generic <code>initialize(*args, **kwargs)</code> because that would break the collection feature. Not great 💛</p>
 
 <p>So, given the compromises I’m willing to make between ergonomics and complexity and performance, given my abilities, and my experience, and what I know at this time…. I decided to simply make a new initializing class method, named <code>serializable</code>. If I want my ViewComponent to be serializable, I initialize it with <code>MyComponent.serializable(foo, bar:)</code>.</p>
 
@@ -1156,7 +1154,7 @@ party gems.</li>
 
 <h3 id="gzip-but-maybe-you-dont-need-it">GZip, but maybe you don’t need it</h3>
 
-<p>So… everything in web development is connected. While wondering why new copies of every <code>.gz</code> file were being committed on every build, I remembered what my buddy Rob recently did in Rails: <a href="https://github.com/rails/rails/pull/55382"><code>MakeActiveSupport::Gzip.compress</code>￼deterministic</a>.</p>
+<p>So… everything in web development is connected. While wondering why new copies of every <code>.gz</code> file were being committed on every build, I remembered what my buddy Rob recently did in Rails: <a href="https://github.com/rails/rails/pull/55382"><code>MakeActiveSupport::Gzip.compress</code>deterministic</a>.</p>
 
 <blockquote>
   <p>I have some tests of code that uses <code>ActiveSupport::Gzip.compress</code> that have been flaky for a long time, and recently discovered this is because the output of that method includes the timestamp of when it was compressed. If two calls with the same input happen during different seconds, then you get different output (so, in my flaky tests, they fail to compare correctly).</p>
@@ -1203,7 +1201,7 @@ party gems.</li>
 
 <p>…but not the one set by <code>GZip#mtime=</code>. I cannot find any evidence anywhere that value, <em>in the contents of the gzip file</em> matters. Nada. All it does is make the gzip file’s <em>contents</em> be different, because of that one tiny value being included. I can’t imagine anything cares about the original mtime when it’s unzipped, that wasn’t already transmitted via the Last-Modified HTTP header. What am I missing?</p>
 
-<p>Of the evidence I have, it seems like developers set <code>GZip#mtime=</code>… because it’s an option? I couldn’t find a reason <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in the Sprockets history</a>. I noticed that Rack::Deflater does the same for reasons I haven’t figured out <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in their history</a> either.  This behavior probably is not busting <em>a lot</em> of content-based caches unnecessarily, but it probably does some. So maybe don’t do it unless you need to.</p>
+<p>Of the evidence I have, it seems like developers set <code>GZip#mtime=</code>… because it’s an option? I couldn’t find a reason <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in the Sprockets history</a>. I noticed that Rack::Deflater does the same for reasons I haven’t figured out <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in their history</a> either. This behavior probably is not busting <em>a lot</em> of content-based caches unnecessarily, but it probably does some. So maybe don’t do it unless you need to.</p>
 
   </div>
 </article>
@@ -1273,7 +1271,7 @@ party gems.</li>
 
 <p>From my own experience of writing that grant application I mentioned at the beginning of this post, and enumerating all of the AI-powered features that we’ve built already, are prototyping, or confidently believe we can deliver in the near-term future… it’s quite a lot. And it’s not that different from anything that’s come before: building concrete stuff that concretely works. I wrote <a href="https://island94.org/2025/01/how-im-thinking-about-ai-llms">something similar</a> back in January too, so maybe this feeling is here to stay.</p>
 
-<p>The places where I struggled most to write about was in how many places, about trust and safety and risk and capacity… was explaining how we’re using functions that are quite simply exposed via the SDK. AWS Bedrock is how Amazon Web Services provides AI models as a billable resource developers can use. The SDK is how you invoke those AI models from your application.  <em>Just put the method signature in the bag.</em>  It’s all documented: the <code>#converse_stream</code> method, pretty much the only method to use: no joke, has <a href="https://github.com/aws/aws-sdk-ruby/blob/208a24482111145a209ff0a4a8fedf7a802b6993/gems/aws-sdk-bedrockruntime/lib/aws-sdk-bedrockruntime/client.rb#L1583-L2587">1003 lines of documentation above it describing all of the options to pass, and and all of the data that gets returned</a>:</p>
+<p>The places where I struggled most to write about was in how many places, about trust and safety and risk and capacity… was explaining how we’re using functions that are quite simply exposed via the SDK. AWS Bedrock is how Amazon Web Services provides AI models as a billable resource developers can use. The SDK is how you invoke those AI models from your application. <em>Just put the method signature in the bag.</em> It’s all documented: the <code>#converse_stream</code> method, pretty much the only method to use: no joke, has <a href="https://github.com/aws/aws-sdk-ruby/blob/208a24482111145a209ff0a4a8fedf7a802b6993/gems/aws-sdk-bedrockruntime/lib/aws-sdk-bedrockruntime/client.rb#L1583-L2587">1003 lines of documentation above it describing all of the options to pass, and and all of the data that gets returned</a>:</p>
 
 <ul>
   <li>Providing an inference prompt</li>
@@ -1281,14 +1279,14 @@ party gems.</li>
   <li>Tool usage, which is how models can coerced to produce structured output</li>
   <li>Contextual grounding, to coerce the model to use context from the input rather than its foundational training sources.</li>
   <li>Guardrails and safety filters, to do additional checks on the output, sometimes by other models.</li>
-  <li>…and all of the limitations and constraints that are very <em>real</em> and <em>tangible</em>. By which I mean  the maximum number of items one can send in an array or the maximum number of bytes that can be sent as a base64-encoded string.</li>
+  <li>…and all of the limitations and constraints that are very <em>real</em> and <em>tangible</em>. By which I mean the maximum number of items one can send in an array or the maximum number of bytes that can be sent as a base64-encoded string.</li>
 </ul>
 
 <p>Every option is very concretely about passing a simple hash of data in, and getting a hash of data out. <em>Just put the Ruby Hash in the bag.</em></p>
 
 <p>To analogously compare this to one of the oldest and boringest AWS services, the Simple Storage Service, there is, with one hand, waving about how “the capability to store and retrieve an unlimited amount of data will change the world” and, and then with the other hand precisely “overriding the Content-Type of an S3 file upload”. Reading the method signature is the latter.</p>
 
-<p>And I don’t mean to imply everything in that 1003 line docblock is all you need to know. But you might wonder, say “When might I want to get a <code>resp.output.message.content[0].citations_content.citations #=&gt; Array</code>?” and then you google it and go down a rabbit hole to learn that citations are just another form of tool usage and <em><a href="https://repost.aws/questions/QUKwoMWVdCRQ6Y_drrZNXZPg/how-to-have-a-bedrock-agent-reliably-include-knowledge-base-citations-in-the-final-response-of-invokeagent-for-agents-for-amazon-bedrock-runtime">sometimes the model won’t do it</a></em> which if you keep digging down that rabbit hole everything becomes evident that these are, at heart, still probabilistic text generators that are useful and interesting <em>in the same way S3 is useful and interesting, and also isn’t.</em>  It’s a totally different conversation.</p>
+<p>And I don’t mean to imply everything in that 1003 line docblock is all you need to know. But you might wonder, say “When might I want to get a <code>resp.output.message.content[0].citations_content.citations #=&gt; Array</code>?” and then you google it and go down a rabbit hole to learn that citations are just another form of tool usage and <em><a href="https://repost.aws/questions/QUKwoMWVdCRQ6Y_drrZNXZPg/how-to-have-a-bedrock-agent-reliably-include-knowledge-base-citations-in-the-final-response-of-invokeagent-for-agents-for-amazon-bedrock-runtime">sometimes the model won’t do it</a></em> which if you keep digging down that rabbit hole everything becomes evident that these are, at heart, still probabilistic text generators that are useful and interesting <em>in the same way S3 is useful and interesting, and also isn’t.</em> It’s a totally different conversation.</p>
 
 <p>So, if there’s any takeways to be had here:</p>
 

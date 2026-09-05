@@ -129,7 +129,7 @@
   <div class="post-content" itemprop="articleBody">
     <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> version 1.2 has been released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a>.</p>
 
-<p>GoodJob’s v1.2 release adds  multithreaded queue isolation for easier congestion management, and usage of Postgres LISTEN/NOTIFY to greatly reduce queue latency.</p>
+<p>GoodJob’s v1.2 release adds multithreaded queue isolation for easier congestion management, and usage of Postgres LISTEN/NOTIFY to greatly reduce queue latency.</p>
 
 <p>Version 1.2 comes out 2 weeks after GoodJob v1.1, and 5 weeks after GoodJob’s initial v1.0 release.</p>
 
@@ -158,9 +158,9 @@
 
 <h2 id="listennotify">LISTEN/NOTIFY</h2>
 
-<p>GoodJob now uses Postgres LISTEN/NOTIFY to push newly enqueued jobs for immediate execution.  LISTEN/NOTIFY greatly reduces queue latency, the time between when a job is enqueued and execution begins.</p>
+<p>GoodJob now uses Postgres LISTEN/NOTIFY to push newly enqueued jobs for immediate execution. LISTEN/NOTIFY greatly reduces queue latency, the time between when a job is enqueued and execution begins.</p>
 
-<p>LISTEN/NOTIFY works alongside GoodJob’s polling mechanism.  Together, jobs queued for immediate execution (<code>ExampleJob.perform_later</code>) are executed immediately, while future scheduled jobs (<code>ExampleJob.set(wait: 1.hour).perform_later</code>) are executed at (or near) their set time.</p>
+<p>LISTEN/NOTIFY works alongside GoodJob’s polling mechanism. Together, jobs queued for immediate execution (<code>ExampleJob.perform_later</code>) are executed immediately, while future scheduled jobs (<code>ExampleJob.set(wait: 1.hour).perform_later</code>) are executed at (or near) their set time.</p>
 
 <h2 id="upcoming">Upcoming</h2>
 

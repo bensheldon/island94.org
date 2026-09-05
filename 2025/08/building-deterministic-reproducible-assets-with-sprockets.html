@@ -174,7 +174,7 @@
 
 <h3 id="gzip-but-maybe-you-dont-need-it">GZip, but maybe you don’t need it</h3>
 
-<p>So… everything in web development is connected. While wondering why new copies of every <code>.gz</code> file were being committed on every build, I remembered what my buddy Rob recently did in Rails: <a href="https://github.com/rails/rails/pull/55382"><code>MakeActiveSupport::Gzip.compress</code>￼deterministic</a>.</p>
+<p>So… everything in web development is connected. While wondering why new copies of every <code>.gz</code> file were being committed on every build, I remembered what my buddy Rob recently did in Rails: <a href="https://github.com/rails/rails/pull/55382"><code>MakeActiveSupport::Gzip.compress</code>deterministic</a>.</p>
 
 <blockquote>
   <p>I have some tests of code that uses <code>ActiveSupport::Gzip.compress</code> that have been flaky for a long time, and recently discovered this is because the output of that method includes the timestamp of when it was compressed. If two calls with the same input happen during different seconds, then you get different output (so, in my flaky tests, they fail to compare correctly).</p>
@@ -221,7 +221,7 @@
 
 <p>…but not the one set by <code>GZip#mtime=</code>. I cannot find any evidence anywhere that value, <em>in the contents of the gzip file</em> matters. Nada. All it does is make the gzip file’s <em>contents</em> be different, because of that one tiny value being included. I can’t imagine anything cares about the original mtime when it’s unzipped, that wasn’t already transmitted via the Last-Modified HTTP header. What am I missing?</p>
 
-<p>Of the evidence I have, it seems like developers set <code>GZip#mtime=</code>… because it’s an option? I couldn’t find a reason <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in the Sprockets history</a>. I noticed that Rack::Deflater does the same for reasons I haven’t figured out <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in their history</a> either.  This behavior probably is not busting <em>a lot</em> of content-based caches unnecessarily, but it probably does some. So maybe don’t do it unless you need to.</p>
+<p>Of the evidence I have, it seems like developers set <code>GZip#mtime=</code>… because it’s an option? I couldn’t find a reason <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in the Sprockets history</a>. I noticed that Rack::Deflater does the same for reasons I haven’t figured out <a href="https://github.com/rack/rack/commit/d2d51ff05966b36c40dc9439437e82d0a23f2b88">in their history</a> either. This behavior probably is not busting <em>a lot</em> of content-based caches unnecessarily, but it probably does some. So maybe don’t do it unless you need to.</p>
 
   </div>
 </article>

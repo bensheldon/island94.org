@@ -165,7 +165,7 @@
   </li>
   <li><strong>Safety, Security</strong>
     <ul>
-      <li>Avoiding thread safety issues, like globally held objects and privacy violations, not leaking data between requests, or retaining big objects in memory.  <a href="https://rubykaigi.org/2024/presentations/jhawthorn.html">Profile</a>, <a href="https://www.youtube.com/watch?v=pQ1XCrwq1qc">profile</a>, <a href="https://island94.org/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory">profile</a>.</li>
+      <li>Avoiding thread safety issues, like globally held objects and privacy violations, not leaking data between requests, or retaining big objects in memory. <a href="https://rubykaigi.org/2024/presentations/jhawthorn.html">Profile</a>, <a href="https://www.youtube.com/watch?v=pQ1XCrwq1qc">profile</a>, <a href="https://island94.org/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory">profile</a>.</li>
       <li>Seeking object locality (or avoiding globalness) by storing objects on instances of controllers and jobs (or their attributes) and embracing the natural lifecycles provided by the framework. Frequently a developer desires not to call <code>SomeObject.new</code> at the usage-site, but to have a DSL-like callable method already ready in the appropriate scope (eg. <code>current_some_object</code>). We love a good DSL and they can be difficult to get right.</li>
     </ul>
   </li>
@@ -220,7 +220,7 @@
   </li>
   <li><strong>Automating and Scaling: Packwerk, Sorbet, Rubocop</strong>
     <ul>
-      <li>We do our best to encode our knowledge and shape the application through tooling; that’s how our team scales!  We send our custom rules upstream, too.</li>
+      <li>We do our best to encode our knowledge and shape the application through tooling; that’s how our team scales! We send our custom rules upstream, too.</li>
       <li>But it’s complicated! Sometimes that means that developers may focus on designing their code <a href="https://island94.org/2024/09/the-novice-problem">in response to the automated tooling</a> and ending up with a less effective design or even introduce global risks and impacts to the application. At worst, a developer might even glaze over the linter’s intent by smuggling their design through a spelling or arrangement the linter doesn’t recognize 💀 Unfortunately the most important things are often the most abstract and arguable and difficult to detect or automatically warn about. We regret when we do have to tell folks that an approach is untenable in a PR or even after the fact when we notice production metrics have degraded.</li>
     </ul>
   </li>

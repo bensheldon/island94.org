@@ -135,7 +135,7 @@
 <ol>
   <li>Bookmarks are organized as individual yaml files, in this <a href="https://github.com/bensheldon/island94.org/tree/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/_bookmarks">blog’s repository</a>.</li>
   <li>A <a href="https://github.com/bensheldon/island94.org/blob/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/scripts/bookmark.rb">Ruby script</a> to take some simple inputs (url, title, notes), generate a new yaml file, and commit it to the repo using Octokit.</li>
-  <li>A GitHub Actions <a href="https://github.com/bensheldon/island94.org/blob/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/.github/workflows/bookmark.yml#L3-L20">workflow that accepts those same inputs</a>  and can be manually triggered, that runs the script. One thing to note is that I echo the inputs to <code>$GITHUB_STEP_SUMMARY</code> early in the workflow in case a later step errors, so I won’t lose the bookmark details and can go back later and manually fix it up.</li>
+  <li>A GitHub Actions <a href="https://github.com/bensheldon/island94.org/blob/a524b8fce50bb315d1a1f1e9c27e572a7af31ccc/.github/workflows/bookmark.yml#L3-L20">workflow that accepts those same inputs</a> and can be manually triggered, that runs the script. One thing to note is that I echo the inputs to <code>$GITHUB_STEP_SUMMARY</code> early in the workflow in case a later step errors, so I won’t lose the bookmark details and can go back later and manually fix it up.</li>
   <li>An Apple Shortcut that asks for those inputs (either implicitly via the Share Sheet or via text inputs) and then manually triggers the GitHub Actions workflow via the GitHub API.</li>
 </ol>
 
@@ -188,9 +188,9 @@
     <ul>
   <li>I’ve now watched the Taylor Swift Eras movie twice, once at home, and a second time over the holidays with niece (completely) and nephew (partly). My most burning question is whether Taylor menaces the same dancer every show’s “Tolerate it”, or if they share rhetorical pain. My <a href="https://joe-steel.com/2023-11-28-Apple-Music-Replays-Broken-Record.html">Apple Music Replay</a> also ranked highly with Taylor Swift, though also apparently Andrew McMahon; unexpected.</li>
   <li>I started playing Talos Principle 1 after beating 2, though it’s a lot more intense with guns and exploding things and so many timing-based puzzles. I’ve almost beaten it… but also took a break to play Super Mario Wonder which is much more fun fun (especially, again, with niece and nephew).</li>
-  <li>I finished reading “Babel”, started then stopped reading “Wolf Hall”, and am picking my way through “Less”. There’s several nonfiction books in there that I’ve read about chapter of, but nothing so memorable to note here. Prior to that I read “Translation State”, and realizing I didn’t remember half of what was happening, re-read the previous 4 Imperial Radch books, which only now makes me think I should read-read Translation State again for the clean sweep. And I guess I finished the latest Bruno book,  “A Chateau Under Siege”, and it was fine (there’s only so many times one can describe Kir Royale, and I think we’re past it).</li>
+  <li>I finished reading “Babel”, started then stopped reading “Wolf Hall”, and am picking my way through “Less”. There’s several nonfiction books in there that I’ve read about chapter of, but nothing so memorable to note here. Prior to that I read “Translation State”, and realizing I didn’t remember half of what was happening, re-read the previous 4 Imperial Radch books, which only now makes me think I should read-read Translation State again for the clean sweep. And I guess I finished the latest Bruno book, “A Chateau Under Siege”, and it was fine (there’s only so many times one can describe Kir Royale, and I think we’re past it).</li>
   <li>I believe the Crumpler Soupansalad Son-o is the perfect jacket-and-book-and-water-bottle-and-also-half-gallon-of-milk-and-greek-yogurt bag. It also hasn’t been made in like 15 years so I bought another one on eBay (I attempted to do this via Poshmark 6 months ago but it failed to deliver). Now I own two: my longtime bag in brown, the new one in black.</li>
-  <li>After 7 years of service, I’ve stepped down from my church’s Property Committee. The buildings are being sold. As Boenhoeffer wrote, albeit about Germany’s embrace of fascism and not a congregational vote on the role of real-estate within a small church’s modest investment portfolio: “If you board the wrong train, it is no use running along the corridor in the other direction.”  I’m currently serving on zero committees anywhere; a special moment.</li>
+  <li>After 7 years of service, I’ve stepped down from my church’s Property Committee. The buildings are being sold. As Boenhoeffer wrote, albeit about Germany’s embrace of fascism and not a congregational vote on the role of real-estate within a small church’s modest investment portfolio: “If you board the wrong train, it is no use running along the corridor in the other direction.” I’m currently serving on zero committees anywhere; a special moment.</li>
   <li>
     <p>Reflecting on my past year at GitHub, I’ll just <a href="https://rachelandrew.co.uk/archives/2024/01/01/2023-in-review/">directly quote Rachel Andrew’s blog</a>; search and replace as necessary:</p>
 
@@ -232,7 +232,7 @@
 
 <p>I admit, I didn’t run Solid Queue in production. I poked through the code, got the development environment set up (spent the majority of my time trying to get <code>mysql2</code> to compile, which is no surprise for me; <a href="https://github.blog/2022-08-25-introducing-trilogy-a-new-database-adapter-for-ruby-on-rails/">Trilogy is my day job</a>), ran the test suite and tried TDDing a new feature for it: <code>perform_all_later</code> support. These are just my notes, something to refer back to.</p>
 
-<p><strong>Lots of database tables:</strong> Solid Queue has many database tables. There is a “hot” table (my terminology) in which job records are queued/dequeued/locked from by all the workers, and then several other tables where job records are staged (e.g. they’re scheduled in the future, so don’t insert them into the hot table yet) or archived after they complete/error.  This seems smart because that hot table and its indexes stays compact and single purpose, which is good for performance. Compare that to GoodJob in which the jobs table has like 8 indexes to cover both queue/dequeue and Dashboard listings and everything else, which <em>does</em> slow down inserts and updates. I’ve had the impression with GoodJob that orchestrating across multiple tables would be more difficult (everything is tradeoffs!), so I’m very curious to see an alternative implementation in Solid Queue.</p>
+<p><strong>Lots of database tables:</strong> Solid Queue has many database tables. There is a “hot” table (my terminology) in which job records are queued/dequeued/locked from by all the workers, and then several other tables where job records are staged (e.g. they’re scheduled in the future, so don’t insert them into the hot table yet) or archived after they complete/error. This seems smart because that hot table and its indexes stays compact and single purpose, which is good for performance. Compare that to GoodJob in which the jobs table has like 8 indexes to cover both queue/dequeue and Dashboard listings and everything else, which <em>does</em> slow down inserts and updates. I’ve had the impression with GoodJob that orchestrating across multiple tables would be more difficult (everything is tradeoffs!), so I’m very curious to see an alternative implementation in Solid Queue.</p>
 
 <p><em>Note: I wasn’t successfully able to implement <code>perform_all_later</code> in my 1 hour timebox because it was more complicated than an <code>insert_all</code> because of the necessity of writing to multiple tables.</em></p>
 
@@ -246,7 +246,7 @@
 
 <p><strong>Queue priority:</strong> Nice! I have <em>opinions</em> about how people set up their application’s queues, along the lines of: many people do it wrong, imo. Solid Queue looks like it provides a lot of good flexibility to let people easily migrate and configure their queues initially (though wrongly, by dependency, imo), but then reorient them more performantly (by latency, again imo). A single thread-pool/worker can pull from multiple queues.</p>
 
-<p><strong>Care</strong>. I notice lots of little things that are nice in Solid Queue. The code is clean. The indexes are named for their purpose/usage rather than just like <code>index_table_column_column</code>.  The Puma Plugin is nice. There are things in GoodJob that I dream about what a clean-room, lessons-learned reimplementation would look like, but it’s never top of my priorities, and some things are never going back in the stable (table names are basically forever). Reading the Solid Queue code was a vicarious-nice! experience.</p>
+<p><strong>Care</strong>. I notice lots of little things that are nice in Solid Queue. The code is clean. The indexes are named for their purpose/usage rather than just like <code>index_table_column_column</code>. The Puma Plugin is nice. There are things in GoodJob that I dream about what a clean-room, lessons-learned reimplementation would look like, but it’s never top of my priorities, and some things are never going back in the stable (table names are basically forever). Reading the Solid Queue code was a vicarious-nice! experience.</p>
 
 <p><strong>Differences.</strong> Do they even matter? I dunno:</p>
 
@@ -275,7 +275,7 @@
 
   <div class="post-content" itemprop="articleBody">
     <ul>
-  <li>One of my coworkers said this week “You’ve been an engineering director and in leadership before, right? I appreciate your perspective; any advice and resources you’d recommend?” So that set my mind racing. I dunno. On one hand, it’s like, well, first, you grind out 10 years of 1-year of experience 10 times, but do it <a href="https://transmissionproject.org/projects.html">50 times a year</a>.  On the other, <a href="https://medium.com/@livlab/dont-work-with-psychopaths-b1a848914455">keep a delta file</a> and I also think about <a href="https://www.goodreads.com/en/book/show/566213">Secrets of Consulting</a> quite a lot (content warning: I haven’t re-read it in a long time; I tried reading the same author’s <em>The Psychology of Computer Programming</em> more recently and couldn’t do it).</li>
+  <li>One of my coworkers said this week “You’ve been an engineering director and in leadership before, right? I appreciate your perspective; any advice and resources you’d recommend?” So that set my mind racing. I dunno. On one hand, it’s like, well, first, you grind out 10 years of 1-year of experience 10 times, but do it <a href="https://transmissionproject.org/projects.html">50 times a year</a>. On the other, <a href="https://medium.com/@livlab/dont-work-with-psychopaths-b1a848914455">keep a delta file</a> and I also think about <a href="https://www.goodreads.com/en/book/show/566213">Secrets of Consulting</a> quite a lot (content warning: I haven’t re-read it in a long time; I tried reading the same author’s <em>The Psychology of Computer Programming</em> more recently and couldn’t do it).</li>
   <li>Work otherwise is in the final marathon of promo packets and performance reviews and quarterly planning and a reorg and oh, the next version of Ruby is released in 3 weeks and it’s go time. Then we do it all again. I love my team so much.</li>
   <li>I finished reading <a href="https://www.goodreads.com/series/305076-the-final-architecture">The Final Architecture</a> series. I didn’t enjoy it as much as Children of Time (“the octopus books”). After reading all the Gateway books and 3-body problem books, I’m a bit over the idea that there’s a malicious (or at least self-interested) group of people who are unhappy with the current value of the Planck constant <em>and are doing something about it</em>. I was into the subplot of alien criminality.</li>
   <li>
@@ -400,10 +400,10 @@
 <ul>
   <li><strong>SIGKILL Safety</strong>. Recovering from a SIGKILL (or someone unplugging the power cord) is always number one in my mind when thinking of GoodJob. That informed my desire to use Advisory Locks (which are automatically released on disconnect), and my future thinking about heartbeats if GoodJob switched over to using <code>FOR UPDATE SKIP LOCK</code> instead of Advisory Locks. I do not think jobs should be limited to a specific timeout (as Delayed Job’s design uses) as that also creates significant retry latency when resumed, and jobs definitely shouldn’t be wrapped with a transaction either.</li>
   <li><strong>(Human) Exception and Retry Workflows</strong>. Everybody has a different workflow for how they deal with errors, and I believe that a backend needs to track, report (e.g. send to Sentry or Bugsnag) and expose the various reasons an error appears: retried, retry stopped, explicitly discarded, SIGKILLed/interrupted, unhandled error, etc. I still am dialing this in on GoodJob because there is wide variability of how people and teams manage their error workflows. I’m always learning something new. For example, there are very different answers on “when using <code>retry_on SpecialError, attempts: 3</code> should the 4th error be reported to the exception tracker? What about an explicit <code>discard_on</code>? Should a <code>discard_on</code> error be reviewed and reenqueued or not?” If a job is SIGKILLed/interrupted, should it be automatically restarted or held for manual review? Everyone seems to do it differently! I haven’t cracked the code on what is “ideal” or reasonable to say “nope, don’t do it <em>that</em> way.” Active Job’s error handling isn’t clear cut either, so maybe we can make that better and come around to a more opinionated (but still inclusive) design. Maybe!</li>
-  <li><strong>Process Harnesses</strong>. I think it’s interesting that Rails might ship with a 1st party queue backend before it ships with a 1st party webserver: there is a lot of operational overlap. Signal handling, timeouts, daemonization, liveness and healthcheck probes, monitoring and scaling instrumentation. There’s quite a lot of ground to cover, and a lot different systems and tooling: Kubernetes,  systemd, rc.d, Heroku, Judoscale, to name just a few of the various operational targets that I’ve spent considerable time supporting.</li>
+  <li><strong>Process Harnesses</strong>. I think it’s interesting that Rails might ship with a 1st party queue backend before it ships with a 1st party webserver: there is a lot of operational overlap. Signal handling, timeouts, daemonization, liveness and healthcheck probes, monitoring and scaling instrumentation. There’s quite a lot of ground to cover, and a lot different systems and tooling: Kubernetes, systemd, rc.d, Heroku, Judoscale, to name just a few of the various operational targets that I’ve spent considerable time supporting.</li>
   <li><strong>Repeating Jobs / Clock Process</strong>. It took me <a href="https://github.com/bensheldon/good_job/issues/255">a while to come around to this</a> in GoodJob, but I believe that performing work <em>repetitively on a schedule</em> (“cron-like”) is very much in the same problem-domain as background jobs. There’s lots of different ways to design it that I don’t feel strongly about, for example GoodJob minimizes autoloading by keeping schedules separate from job classes, but I do think it is necessary to plan for scheduled jobs in a well-architected Rails application.</li>
   <li><strong>Unique Jobs, Throttles, Fuses and other Concurrency Controls</strong>,. Similarly to Repeating Jobs, demand is high for everything I’d bucket under “concurrency controls”, which I’ll say covers both enqueue and dequeue complexity. And these features are tough because they sit in counterbalance to overall performance: do you want to run jobs faster or smarter? And these are the features that I think are legit because there are other features below under Queue Design that I think are bunk. There’s a lot of discernment to do!</li>
-  <li><strong>Queue design and multi-queue execution pools</strong>. I do think queue design is a place where lots of people do it wrong. I believe queues should be organized by maximum total latency SLO (<code>latency_15s</code>, <code>latency_15m</code> , <code>latency_8h</code>) and <em>not</em> by their purpose or dependencies  (<code>mailers</code>, <code>billing</code>, <code>api</code>). <a href="https://www.railsspeed.com/">Nate Berkopec believes similarly.</a> And I think that informs that <strong>execution pools (e.g. thread pools) should be able to work from multiple queues and have independent concurrency configuration (e.g. number of threads)</strong>, both to ease transition from the latter to the former, but also because it allows sharing resources as optimally as possible (having 3 separate pools that pull from <code>"latency_15s"</code>, <code>"latency_15m, latency_15s"</code>, and <code>"latency_8h,*"</code> in GoodJob’s syntax). I personally think concepts like priority or ordered-queues lead to bad queue design, so I wouldn’t sweat that. Any ordering regime more complex than first-in-first-out (FIFO) prioritizes capacity (or lack thereof) over latency. This might sound strange coming from me who champions running workloads in the webbrowser on tiny dynos, but it’s different in my mind: I don’t think it’s possible to meet a latency target through prioritization when there is a fundamental lack of capacity.</li>
+  <li><strong>Queue design and multi-queue execution pools</strong>. I do think queue design is a place where lots of people do it wrong. I believe queues should be organized by maximum total latency SLO (<code>latency_15s</code>, <code>latency_15m</code> , <code>latency_8h</code>) and <em>not</em> by their purpose or dependencies (<code>mailers</code>, <code>billing</code>, <code>api</code>). <a href="https://www.railsspeed.com/">Nate Berkopec believes similarly.</a> And I think that informs that <strong>execution pools (e.g. thread pools) should be able to work from multiple queues and have independent concurrency configuration (e.g. number of threads)</strong>, both to ease transition from the latter to the former, but also because it allows sharing resources as optimally as possible (having 3 separate pools that pull from <code>"latency_15s"</code>, <code>"latency_15m, latency_15s"</code>, and <code>"latency_8h,*"</code> in GoodJob’s syntax). I personally think concepts like priority or ordered-queues lead to bad queue design, so I wouldn’t sweat that. Any ordering regime more complex than first-in-first-out (FIFO) prioritizes capacity (or lack thereof) over latency. This might sound strange coming from me who champions running workloads in the webbrowser on tiny dynos, but it’s different in my mind: I don’t think it’s possible to meet a latency target through prioritization when there is a fundamental lack of capacity.</li>
   <li><strong>Labels</strong>. Per the previous point, though I have yet to implement this in GoodJob (soon!), I think that giving developers the option to label their jobs might break their bad habit of using queue names as functional labels, instead of what I believe queues should be appropriately used for: latency and quality-of-service thresholds. I mention it here just in case that informs Solid Queue’s design.</li>
   <li><strong>Observability</strong>. GoodJob maintains a lot of bookkeeping, keeping job and granular execution data around after execution so it can be inspected. People seem to like that, and it’s necessary to keep them around for calculating accurate latency metrics, though it all is a trade-off against performance. It makes for a fun Web Dashboard too.</li>
   <li><strong>Performance Envelope.</strong> I dunno, I mention this just because I think people spend an inordinate amount of time comparing queue backend performance and asking “do the jobs go brrrrr?” GoodJob targets the small and medium end of projects (though some big ones use it too) and prioritizes operational simplicity over performance. That works for me (and a lot of others!) but also isn’t really reflective of the scale of companies leading Rails development. There’s a tension here.</li>
@@ -480,7 +480,7 @@
 
 <span class="n">beta_store</span> <span class="o">=</span> <span class="no">GroceryStore</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">beta_store</span><span class="p">.</span><span class="nf">vegetable</span> <span class="c1"># defines @vegetable first</span>
-<span class="n">beta_store</span><span class="p">.</span><span class="nf">fruit</span> <span class="c1"># defines #fruit second </span>
+<span class="n">beta_store</span><span class="p">.</span><span class="nf">fruit</span> <span class="c1"># defines #fruit second</span>
 </code></pre></div></div>
 
 <p>In this example, <code>alpha_store</code> and <code>beta_store</code> do not share the same object shape because the order in which their instance variables are defined depends on the order the application calls their methods. This code is not Object Shape friendly.</p>
@@ -536,7 +536,7 @@
 
   <span class="k">def</span> <span class="nf">fruit</span>
     <span class="k">return</span> <span class="vi">@fruit</span> <span class="k">unless</span> <span class="vi">@fruit</span> <span class="o">==</span> <span class="no">NULL</span>
-    <span class="vi">@fruit</span> <span class="o">=</span> <span class="n">an_expensive_operation</span> 
+    <span class="vi">@fruit</span> <span class="o">=</span> <span class="n">an_expensive_operation</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div></div>
@@ -551,7 +551,7 @@
 
   <span class="k">def</span> <span class="nf">produce</span><span class="p">(</span><span class="n">type</span><span class="p">)</span>
     <span class="k">return</span> <span class="vi">@produce</span><span class="p">[</span><span class="n">type</span><span class="p">]</span> <span class="k">if</span> <span class="vi">@produce</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="n">type</span><span class="p">)</span>
-    <span class="vi">@produce</span><span class="p">[</span><span class="n">type</span><span class="p">]</span> <span class="o">=</span> <span class="n">an_expensive_operation</span><span class="p">(</span><span class="n">type</span><span class="p">)</span> 
+    <span class="vi">@produce</span><span class="p">[</span><span class="n">type</span><span class="p">]</span> <span class="o">=</span> <span class="n">an_expensive_operation</span><span class="p">(</span><span class="n">type</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div></div>
@@ -608,7 +608,7 @@
 
 <p>Please think of this the next time you hear (or say) something bad about consensus. Consensus is pretty great, and even better when used from the start.</p>
 
-<p><em>The Institute for Cultural Affairs has <a href="https://www.top-training.net/w/schedule/">lots of trainings</a>  on consensus-based facilitation. The <a href="https://strategicfacilitation.com">Center for Strategic Facilitation</a> is the Bay Area’s local trainer and service provider, but there are trainers and service providers all over the globe.</em></p>
+<p><em>The Institute for Cultural Affairs has <a href="https://www.top-training.net/w/schedule/">lots of trainings</a> on consensus-based facilitation. The <a href="https://strategicfacilitation.com">Center for Strategic Facilitation</a> is the Bay Area’s local trainer and service provider, but there are trainers and service providers all over the globe.</em></p>
 
 <p><em>There is a system known as <a href="https://en.wikipedia.org/wiki/Formal_consensus">“Formal Consensus”</a> which gained some notability during the <a href="https://en.wikipedia.org/wiki/1999_Seattle_WTO_protests">1999 “Battle of Seattle” WTO protests</a> as a means of empowering small groups, particularly indigenous representatives, by providing a limited and fixed number of “blocks” during deliberations to stop actions proposed by far larger groups. Also how my buddy organized <a href="https://github.com/freegeekchicago/fgc-docs/blob/4dc37cbb76eaf766274f30fcb1f9df9d5bc199df/constitution.md#governance">FreeGeek Chicago</a>. I have <strong>never</strong> heard anyone in Bay Area tech reference any of this in regards to what they mean by consensus.</em></p>
 
@@ -684,7 +684,6 @@
 
 <p>It’s basic but you can also add in other kinds of engagement and weigh them differently or whatever. It’s all good. Then you have massive success and hire a real datascience team.</p>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -702,11 +701,11 @@
   <div class="post-content" itemprop="articleBody">
     <p>Working on <a href="https://github.com/bensheldon/good_job">GoodJob</a>, I spend a lot of time thinking about multithreaded behavior in Ruby. One piece of Ruby functionality that I don’t see written about very often is <code>Thread.handle_interrupt</code>. <em>Big thanks to John Bachir and Matthew Draper for talking through its usage with me.</em></p>
 
-<p><strong>Some background about interrupts:</strong> In Ruby, exceptions can be raised anywhere and at anytime in a thread by other threads (including the main thread, that’s how <code>timeout</code> works). Even <code>rescue</code> and  <code>ensure</code> blocks can be interrupted. Everywhere. Most of the time this isn’t something you need to think about (unless you’re <a href="https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts">using Timeout</a> or <code>rack-timeout</code> or doing explicit multithreaded code). But if you are, it’s important to think and code defensively.</p>
+<p><strong>Some background about interrupts:</strong> In Ruby, exceptions can be raised anywhere and at anytime in a thread by other threads (including the main thread, that’s how <code>timeout</code> works). Even <code>rescue</code> and <code>ensure</code> blocks can be interrupted. Everywhere. Most of the time this isn’t something you need to think about (unless you’re <a href="https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts">using Timeout</a> or <code>rack-timeout</code> or doing explicit multithreaded code). But if you are, it’s important to think and code defensively.</p>
 
 <p>Starting with an example:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="n">open_work</span>
   <span class="n">do_work</span>
 <span class="k">ensure</span>
@@ -724,7 +723,7 @@
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># :immediate is the default and will interrupt immediately</span>
 <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediate</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
 
-<span class="c1"># :on_blocking interrupts only when the GVL is released </span>
+<span class="c1"># :on_blocking interrupts only when the GVL is released</span>
 <span class="c1"># e.g. IO outside Ruby</span>
 <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="p">{</span> <span class="n">close_work</span> <span class="p">}</span>
 
@@ -736,18 +735,18 @@
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
   <span class="n">ruby_stuff</span>
-  
+
   <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
    <span class="n">really_important_work</span>
   <span class="k">end</span>
-  
+
   <span class="n">file_io</span> <span class="c1"># &lt;= this can be interrupted</span>
 <span class="k">end</span>  
 </code></pre></div></div>
 
 <p><strong>FYI BE AWARE:</strong> Remember, the interrupt behavior is only affected <em>within</em> the <code>handle_interrupt</code> block. The following code <strong>has a problem</strong>:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="n">open_work</span>
   <span class="n">do_work</span>
 <span class="k">ensure</span>
@@ -764,11 +763,11 @@
   <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
 </code></pre></div></div>
 
-<p>There’s a “seam” right there between the <code>ensure</code> and the <code>Thread.handle_interrupt</code> where interrupts <em>can happen!</em> Sure, it’s probably rare that an interrupt would hit right then and there, but if you went to the trouble to guard against it, it’s likely very bad if it did happen. And it happens!  <a href="https://itnext.io/why-puma-workers-constantly-hung-and-how-we-fixed-by-discovering-the-bug-of-ruby-v2-5-8-and-v2-6-6-7fa0fd0a1958">“Why puma workers constantly hung, and how we fixed by discovering the bug of Ruby v2.5.8 and v2.6.6”</a></p>
+<p>There’s a “seam” right there between the <code>ensure</code> and the <code>Thread.handle_interrupt</code> where interrupts <em>can happen!</em> Sure, it’s probably rare that an interrupt would hit right then and there, but if you went to the trouble to guard against it, it’s likely very bad if it did happen. And it happens! <a href="https://itnext.io/why-puma-workers-constantly-hung-and-how-we-fixed-by-discovering-the-bug-of-ruby-v2-5-8-and-v2-6-6-7fa0fd0a1958">“Why puma workers constantly hung, and how we fixed by discovering the bug of Ruby v2.5.8 and v2.6.6”</a></p>
 
 <p><strong>HOW TO USE IT APPROPRIATELY:</strong> This is the pattern you likely want:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:never</span><span class="p">)</span> <span class="k">do</span>
     <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediately</span><span class="p">)</span> <span class="k">do</span>
       <span class="n">open_work</span>
@@ -784,7 +783,7 @@
 
 <p>There’s another pattern you might also be able to use with <code>:on_blocking</code>:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
     <span class="n">open_work</span>
     <span class="n">do_work</span>
@@ -800,7 +799,7 @@
 
 <p>But it does get tricky if, for example, the <code>do_work</code> is some Ruby calculation that is unbounded (I dunno, maybe a problematic regex or someone accidentally decided to calculate prime numbers or something). Then the Ruby code will not be interrupted at all and your thread will hang. That’s bad too. So you’d then need to do something like this:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> 
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thread</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:on_blocking</span><span class="p">)</span> <span class="k">do</span>
     <span class="n">open_work</span>
     <span class="no">Thread</span><span class="p">.</span><span class="nf">handle_interrupt</span><span class="p">(</span><span class="no">Exception</span><span class="p">:</span> <span class="ss">:immediately</span><span class="p">)</span> <span class="k">do</span>

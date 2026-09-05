@@ -327,7 +327,7 @@
 <blockquote>
   <p>I’m not the commenter you’re responding to. But I am also a hiring manager and want to try to meet both of you in the middle.</p>
 
-  <p>The thing that I want to evaluate, by seeing some non-school projects, is that the candidate has an understanding of how <em>Information Technology</em> can be used to solve a problem. Some of that is technological (does it work), and some of it is telling the story (eg input or take data and transform it in a new or novel way that solves a human-understandable problem). It’s “design” to the end of demonstrating you understand the overall problem space of how technology is applied to a problem. And calibrated to what’s expected of someone coming out of a (effective) bootcamp.</p>
+  <p>The thing that I want to evaluate, by seeing some non-school projects, is that the candidate has an understanding of how <em>Information Technology</em> can be used to solve a problem. Some of that is technological (does it work), and some of it is telling the story (eg input or take data and transform it in a new or novel way that solves a human-understandable problem). It’s “design” to the end of demonstrating you understand the overall problem space of how technology is applied to a problem. And calibrated to what’s expected of someone coming out of a (effective) bootcamp.</p>
 
   <p>And when I’ve got 150 candidates for an entry level position, the candidates who can communicate that effectively will stand out.</p>
 </blockquote>
@@ -411,7 +411,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>If you’re dedicated to Puma, <a href="https://github.com/puma/puma/blob/b8341dc946f0a2444e5ea6730d1967ca53c8d006/docs/plugins.md">write a simple plugin for it</a>. Puma plugins also allow hooking into more sophisticated places than simply “before it starts”.</p>
 
-<p>tbh, I wasn’t aware of Puma plugins as an integration point until <a href="https://github.com/rails/solid_queue/blob/86f3d92f1dd68547ec0ebe960fc9933c203d9e51/lib/puma/plugin/solid_queue.rb">Solid Queue shipped a Puma plugin</a> for its in-webserver mode.  I like it!</p>
+<p>tbh, I wasn’t aware of Puma plugins as an integration point until <a href="https://github.com/rails/solid_queue/blob/86f3d92f1dd68547ec0ebe960fc9933c203d9e51/lib/puma/plugin/solid_queue.rb">Solid Queue shipped a Puma plugin</a> for its in-webserver mode. I like it!</p>
 
 <h3 id="by-searching-the-callstack">By searching the callstack</h3>
 
@@ -551,10 +551,10 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p><em>Aside: None of this is my new idea. Creating conceptual distance is core part of <a href="https://en.wikipedia.org/wiki/Synectics">Synectics</a> (yes, Steve Krug once mentions it) and a lot of this process comes from taking lots of trainings in <a href="https://www.top-training.net/w/">Technology of Participation</a>, which has <a href="https://www.amazon.com/Getting-Bottom-ToP-Methodologies-Participation/dp/1532033680">entire books on gestalt theory</a> and such.</em></p>
 
-<p>So of separate stages, that means that you force yourself to do each piece separately, rather than starting at the end (“what you want to do”) and working backwards or all at once.  The stages are:</p>
+<p>So of separate stages, that means that you force yourself to do each piece separately, rather than starting at the end (“what you want to do”) and working backwards or all at once. The stages are:</p>
 
 <ol>
-  <li><strong>What’s going on?</strong> (the dry name here is “Environmental Scan”)  Laundry list any new themes, priorities, developments that have happened inside the company and outside it since the last planning process. Go look at the last plan too. “We said we were gonna do X” is a good thing to list here. <em>The thing to be aware of is that people are dying to shout “what we are going to do” so everything at this stage is still somewhat suspect. But that’s fine, we recognize thatand move forward.</em></li>
+  <li><strong>What’s going on?</strong> (the dry name here is “Environmental Scan”) Laundry list any new themes, priorities, developments that have happened inside the company and outside it since the last planning process. Go look at the last plan too. “We said we were gonna do X” is a good thing to list here. <em>The thing to be aware of is that people are dying to shout “what we are going to do” so everything at this stage is still somewhat suspect. But that’s fine, we recognize thatand move forward.</em></li>
   <li><strong>What are we going to do?</strong> That’s right, get it out there. Shake it out. List the things you want to do. Yes, you’re going to do them. They are very important. They are! I think it’s really important at this stage to let people linger and make sure they see those things they want to do captured. These are the things that are going to happen.</li>
   <li><strong>What makes it hard to do those things? (“Barriers”)</strong> Like, really, why are they such big things that you felt the need to articulate them so badly. There’s lots of important work that just happens, so why spotlight those things? What are the problems you’re trying to overcome by spotlighting them? This is usually like resource problems, or distractions, or actual disagreements between leaders, or some other problem that constantly steals focus. Remember, you’re not trying to <em>justify</em> the thing from the previous stage, you’re trying to explain why you would ever need to justify them in the first place. Why can’t the work just happen?</li>
   <li><strong>Of those things that make it hard, what do you have control over?</strong> It’s possible to work this question into the previous stage, but I like to allow people to let loose with all their grievances before trying to narrow them down slightly. This is a good spot though to fully divorce people from the “what I want to do”-brainspace by engaging them with something else to problem solve around….</li>
@@ -636,9 +636,10 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>I write my database migrations using <code>table.datetime</code> and it generates <code>timestamptz</code> columns.  I guess this is fine.</p>
+<p>I write my database migrations using <code>table.datetime</code> and it generates <code>timestamptz</code> columns. I guess this is fine.</p>
 
 <h3 id="capybarathreadsafe"><code>Capybara.threadsafe</code></h3>
+
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/capybara.rb</span>
 
 <span class="no">Capybara</span><span class="p">.</span><span class="nf">threadsafe</span> <span class="o">=</span> <span class="kp">true</span>
@@ -647,6 +648,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <p>I use Capybara as my harness for webdriving automations, rather than writing raw Selenium (never again!).</p>
 
 <h3 id="custom-types">Custom Types</h3>
+
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/custom_types.rb</span>
 
 <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">to_prepare</span> <span class="k">do</span>
@@ -852,7 +854,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <span class="no">I18n</span><span class="o">::</span><span class="no">Tasks</span><span class="o">::</span><span class="no">Data</span><span class="o">::</span><span class="no">Adapter</span><span class="o">::</span><span class="no">YamlAdapter</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">I18nTaskYamlExt</span>
 </code></pre></div></div>
 
-<p>Ok, <code>i18n_tasks</code> is absolutely essential for doing localization. But it works by roundtripping your YAML through Psych.  This patch does 2 things:</p>
+<p>Ok, <code>i18n_tasks</code> is absolutely essential for doing localization. But it works by roundtripping your YAML through Psych. This patch does 2 things:</p>
 
 <ul>
   <li>It makes Psych output every string as <em>strictly either</em> a doublequoted string or, if it contains a newline, as literal-block (<code>key: |</code>). Without the patch, Psych will swap around single and doublequoted strings and convert literal-blocks to double-quoted strings with <code>\n</code>s</li>
@@ -869,7 +871,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>I’m one of the rare true-fans of Action Mailer who wants to deliver messages to <em>more</em> channels via Action Mailer, not none.  Our app uses Action Mailer to construct and deliver SMS messages too via a custom delivery method. I’ve <a href="https://island94.org/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants">touched on</a> this previously.</p>
+<p>I’m one of the rare true-fans of Action Mailer who wants to deliver messages to <em>more</em> channels via Action Mailer, not none. Our app uses Action Mailer to construct and deliver SMS messages too via a custom delivery method. I’ve <a href="https://island94.org/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants">touched on</a> this previously.</p>
 
 <h3 id="markdown">Markdown</h3>
 
@@ -1105,7 +1107,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <p>Turbo adds some attributes to the webpage DOM that we can look for in our tests to ensure that things are in the right state. But it’s tricky. Let’s start with the trickiest thing first.</p>
 
-<p>Turbo sets <code>aria-busy</code>  when navigation is happening:</p>
+<p>Turbo sets <code>aria-busy</code> when navigation is happening:</p>
 
 <ul>
   <li>Turbo Drive sets <code>html[aria-busy]</code> when navigating</li>
@@ -1243,7 +1245,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <blockquote>
   <p>Yes, I know this book is incomplete.</p>
 
-  <p>There’s not enough in <em>Reign</em> about the pivotal role of the media in manufacturing consent for the War on Terror. There’s nowhere <em>near</em> enough about the economic forces driving the war, both specific and structural. Ultimately, I found that attempting either analysis swallowed the actual narrative events of the war and <em>still</em> felt superficial. These subjects require books in their own right—particularly one I’m tossing around in my head called <em>Capitalism and Terrorism.</em> (That book is the forum to go into the U.S.–Saudi relationship and its place in all this, I found . . . after failing to get it into <em>Reign</em> satisfactorily.) I chose to attempt to do one thing well instead of three things badly.</p>
+  <p>There’s not enough in <em>Reign</em> about the pivotal role of the media in manufacturing consent for the War on Terror. There’s nowhere <em>near</em> enough about the economic forces driving the war, both specific and structural. Ultimately, I found that attempting either analysis swallowed the actual narrative events of the war and <em>still</em> felt superficial. These subjects require books in their own right—particularly one I’m tossing around in my head called <em>Capitalism and Terrorism.</em> (That book is the forum to go into the U.S.–Saudi relationship and its place in all this, I found . . . after failing to get it into <em>Reign</em> satisfactorily.) I chose to attempt to do one thing well instead of three things badly.</p>
 
   <p>That leads to the second way <em>Reign</em> is incomplete. I had to make a lot of cuts. They were a function of <em>Reign</em>’s particular critique, as well as the unavoidable reality that I have a twenty-year palette of events and a contractually stipulated word limit. (Someone have me on their podcast to talk about Michelle Malkin bullying Dunkin’ Donuts because she was mad Rachael Ray appeared in a commercial wearing a scarf that looked kind of like a kaffiyeh.) Even after all those cuts, at all times writing this book, a voice in my head objects that I’m presenting the “We Didn’t Start the Fire” version of the Forever War. So if I didn’t dwell long enough on events you think are crucial, know that I tried, and please research and write your own versions that outdo mine.</p>
 
@@ -1309,13 +1311,13 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 <p>Because this is the section where I laundry list the things I <em>really</em> want to share. And because everything else was a leadup to explain why you might spend time reading it… here is a personal example. This is the kind of thing my dad posts, all the time, on Facebook. It’s mildly perfect.</p>
 
 <blockquote>
-  <p>Yesterday morning Constance and I watched the funeral of Prince Philip starting at 6:30am.  She has this button of him, and I have this souvenir of the Royal Visit to Whitehorse in 1959.  My father was to cover it for Newsweek.  He got press credentials for both of us from Ottawa.  I was to be his assistant.  I was 12 years old.</p>
+  <p>Yesterday morning Constance and I watched the funeral of Prince Philip starting at 6:30am. She has this button of him, and I have this souvenir of the Royal Visit to Whitehorse in 1959. My father was to cover it for Newsweek. He got press credentials for both of us from Ottawa. I was to be his assistant. I was 12 years old.</p>
 
-  <p>We flew down to Whitehorse from Fairbanks on a Lions Club charter flight.  We were at the airport for the arrival.  The press plane came first, and then the plane with Queen Elizabeth and Prince Philip.  The stairs were all folded up inside the front door of the plane.  They were deployed and the Queen and Prince Philip descended.  A First Nations (that phrase was not used then) girl gave the Queen some flowers, and local dignataries were presented.  By now the press were pretty jaded, and they just stood and watched.  Other noteworthy events were the ride on the White Pass &amp; Yukon train and the church service.  After a visit to the McBride Museum the Royal Couple boarded the train and stood on the rear platform, waving to the crowded.  They were talking to each other out of the corner of their mouths.  The press boarded and the train departed.  The royal party was in the last car and the press were in the leading 3 or 4 cars.  We stopped at a cross road outside of town and Queen Elizabeth and Prince Philip got into a waiting car to go back into town.</p>
+  <p>We flew down to Whitehorse from Fairbanks on a Lions Club charter flight. We were at the airport for the arrival. The press plane came first, and then the plane with Queen Elizabeth and Prince Philip. The stairs were all folded up inside the front door of the plane. They were deployed and the Queen and Prince Philip descended. A First Nations (that phrase was not used then) girl gave the Queen some flowers, and local dignataries were presented. By now the press were pretty jaded, and they just stood and watched. Other noteworthy events were the ride on the White Pass &amp; Yukon train and the church service. After a visit to the McBride Museum the Royal Couple boarded the train and stood on the rear platform, waving to the crowded. They were talking to each other out of the corner of their mouths. The press boarded and the train departed. The royal party was in the last car and the press were in the leading 3 or 4 cars. We stopped at a cross road outside of town and Queen Elizabeth and Prince Philip got into a waiting car to go back into town.</p>
 
-  <p>The train continued on to Carcross, where there was an open bar to the press.  Someone offered to take my father and me for a boat ride on the lake.  We did that.  On another day there was to be a trip to Dawson City.  The Queen did not feel well and only Philip went.  When he returned he was piloting, and landed the plane.  There were episodes on “The Crown” where he was learning to fly.  When they returned to London it was announced she was pregnant.  That was Prince Andrew.</p>
+  <p>The train continued on to Carcross, where there was an open bar to the press. Someone offered to take my father and me for a boat ride on the lake. We did that. On another day there was to be a trip to Dawson City. The Queen did not feel well and only Philip went. When he returned he was piloting, and landed the plane. There were episodes on “The Crown” where he was learning to fly. When they returned to London it was announced she was pregnant. That was Prince Andrew.</p>
 
-  <p>The other event I remember was the service at the log church.  There were a lot of Canadian army officers standing around in their uniforms with all their medals.  There were some with service medals going back to George V.  For some reason I crossed a security line.  An army officer stopped me, and I pointed to my badge.  He studied  it, and said “I don’t know why they are giving press credentials to 12 year olds now.”  He let me through.</p>
+  <p>The other event I remember was the service at the log church. There were a lot of Canadian army officers standing around in their uniforms with all their medals. There were some with service medals going back to George V. For some reason I crossed a security line. An army officer stopped me, and I pointed to my badge. He studied it, and said “I don’t know why they are giving press credentials to 12 year olds now.” He let me through.</p>
 </blockquote>
 
 <p>Detail, detail, detail, and a joke at the end. It’s arguably a shaggy dog story leading up to the humor, but it works because there isn’t extraneous structure or padding or filler. In the comments, my dad <a href="https://www.britishpathe.com/asset/196404/">even found a film archive</a> that has the two of them in it (at 8:54). It means something.</p>
@@ -1350,7 +1352,7 @@ curl <span class="nt">-s</span> <span class="s2">"https://uploads.github.com/use
 
 <blockquote>
   <p>Due to what might poetically be called “preconceived notions” baked into a coding model’s neural network (more technically, statistical semantic associations), it can be difficult to get AI agents to create truly novel things, even if you carefully spell out what you want.<br />
-For example, I spent four days trying to get Claude Code to create an Atari 800 version of my HTML game <em>Violent Checkers</em>, but it had trouble because in the game’s design, the squares on the checkerboard don’t matter beyond their starting positions. No matter how many times I told the agent (and made notes in my Claude project files), it would come back to trying to center the pieces to the squares, snap them within squares, or use the squares as a logical basis of the game’s calculations when they should really just form a background image.</p>
+For example, I spent four days trying to get Claude Code to create an Atari 800 version of my HTML game <em>Violent Checkers</em>, but it had trouble because in the game’s design, the squares on the checkerboard don’t matter beyond their starting positions. No matter how many times I told the agent (and made notes in my Claude project files), it would come back to trying to center the pieces to the squares, snap them within squares, or use the squares as a logical basis of the game’s calculations when they should really just form a background image.</p>
 
   <p>To get around this in the Atari 800 version, I started over and told Claude that I was creating a game with a UFO (instead of a circular checker piece) flying over a field of adjacent squares—never once mentioning the words “checker,” “checkerboard,” or “checkers.” With that approach, I got the results I wanted.</p>
 </blockquote>

@@ -254,7 +254,6 @@
 
 <p>So to wrap it up: sure, maybe it can all go in the Active Record model.</p>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -271,8 +270,8 @@
 
   <div class="post-content" itemprop="articleBody">
     <ul>
-  <li>I am on a new work adventure. I gave my notice at GitHub and will be doing <a href="https://www.gsb.stanford.edu/experience/news-history/charlotte-weiner-mba-24-opening-door-billions-unclaimed-public-benefits">this</a>  full-time starting in April. The new job should be a nice combination of a cozy “this again” and some thrilling new.</li>
-  <li>I finished reading <em>Careless People</em>; recommend as a good sequence of business  trainwrecks that will leave you wondering if <em>this one</em> is penultimate trainwreck (spoiler: it’s not). Now I’m reading <em>Wicked</em>; I didn’t really like the beginning but it’s gotten more interesting.</li>
+  <li>I am on a new work adventure. I gave my notice at GitHub and will be doing <a href="https://www.gsb.stanford.edu/experience/news-history/charlotte-weiner-mba-24-opening-door-billions-unclaimed-public-benefits">this</a> full-time starting in April. The new job should be a nice combination of a cozy “this again” and some thrilling new.</li>
+  <li>I finished reading <em>Careless People</em>; recommend as a good sequence of business trainwrecks that will leave you wondering if <em>this one</em> is penultimate trainwreck (spoiler: it’s not). Now I’m reading <em>Wicked</em>; I didn’t really like the beginning but it’s gotten more interesting.</li>
   <li>I finished <em>Severance</em>. Hopefully without spoilers, the consistent plot driver seems to be “Mark (yes) sucks”. So now just <em>White Lotus</em> and with palate cleansers of <em>Say Yes to the Dress</em>.</li>
   <li>I have been desultorily playing <a href="https://bracket.city/">Bracket City</a>; the scoring system generates no motivation for me but it’s fun to have found another use for the decades spent training my brain to parse deeply nested hierarchical syntax. I was also told that LinkedIn has games, and other than being “Faster than 95% of CEOs” at Queens, I have already lost my streak.</li>
   <li>I asked on Rails Performance Slack how to better delegate Rails model association accessors and got <a href="https://gist.github.com/bensheldon/2075bf807277697681c69f382fc96e9c">some good ideas</a>.</li>
@@ -297,7 +296,7 @@
   <div class="post-content" itemprop="articleBody">
     <ul>
   <li>We have promoted another cat to fostering: Merlin, the cat formerly known as Gray Cat.</li>
-  <li>I finished the latest <em>Bruno, Chief of Police</em> book. I read it for the food and culture, but it has some bad descriptions of hacking in this one.  I started <em>The Midnight Library</em>, which as close as you can imagine to a TED talk but actually a novel. Next is <em>Careless People</em>, which I’m looking forward to; hopefully as exhilarating/vicariously-traumatic as <em>Exit Interview</em>.</li>
+  <li>I finished the latest <em>Bruno, Chief of Police</em> book. I read it for the food and culture, but it has some bad descriptions of hacking in this one. I started <em>The Midnight Library</em>, which as close as you can imagine to a TED talk but actually a novel. Next is <em>Careless People</em>, which I’m looking forward to; hopefully as exhilarating/vicariously-traumatic as <em>Exit Interview</em>.</li>
   <li>At work the latest is that all planning must snap to 1-month objectives. “If you don’t produce a plan, someone will produce one for you” is an advice. Super proud of the work: doing Pitchfork, kicking the tires on <code>ruby/json</code>, adding more knobs to Active Record. My Incident Commander shift was this week too; 2pm - 8pm really destroys the possibility of pre-dinner errands. I did go to a Mustqche Harbor show while on secondary Friday night and nothing bad happened (though I was still 15 minutes from home should something have).</li>
   <li>I bought a RailsConf supporter ticket. I submitted a panel discussion talk, so even if that’s accepted, I think I’ll still need a ticket. It’s for a good cause.</li>
   <li>Some new Playdate games. <em>Echo: The Oracle’s Scroll</em> was the only one I’ve beaten so far, despite fiddly jumping puzzle, and the surprise ending by which I mean I was surprised when I went to chat with an owl-person and then the credits rolled.</li>
@@ -451,7 +450,7 @@
 
 <ul>
   <li>When the thread goes from executing Ruby to doing IO, it releases the GVL (usually; it’s mostly considered a bug in the IO library if it doesn’t). When the thread is done with its IO operation, the Thread goes to the back of the queue.</li>
-  <li>When the thread has been executing for longer than the length of the thread “quantum”, the Ruby VM takes back the GVL and the thread steps to the back of the queue again.  The Ruby thread quantum default is 100ms (this is configurable via <code>Thread#priority</code> or <a href="https://bugs.ruby-lang.org/issues/20861">directly as of Ruby 3.4</a>).</li>
+  <li>When the thread has been executing for longer than the length of the thread “quantum”, the Ruby VM takes back the GVL and the thread steps to the back of the queue again. The Ruby thread quantum default is 100ms (this is configurable via <code>Thread#priority</code> or <a href="https://bugs.ruby-lang.org/issues/20861">directly as of Ruby 3.4</a>).</li>
 </ul>
 
 <p>That second scenario is rather interesting. When a Ruby thread starts running, the Ruby VM uses yet another background thread (at the VM level) that sleeps for 10ms (the “tick”) and then checks how long the Ruby thread has been running for. If the thread has been running for longer then the length of the quantum, the Ruby VM takes back the GVL from the active thread (“preemption”) and gives the GVL to the next thread waiting in the GVL queue. The thread that was previously executing now goes to the back of the queue. In other words: the thread quantum determines how quickly threads shuffle through the queue and no less/faster than the tick.</p>
@@ -514,6 +513,7 @@
 <p>For the past decade the blog has largely been in markdown files, which I don’t intend to change. Over the past 2 years I also exported 15 years of pinboard/del.icio.us bookmarks, and my Kindle book highlights into markdown-managed files too. I’ve also dialed in some <a href="https://island94.org/2024/1/trigger-github-actions-workflows-from-apple-shortcuts">GitHub Action and Apple Shortcut powered integrations</a>. I’m really happy with Markdown files in a git repo, scripted with Ruby.</p>
 
 <p>…but there’s more than <em>just</em> Ruby.</p>
+
 <h3 id="mastery">Mastery</h3>
 
 <p>I’m heavily invested in the Ruby on Rails ecosystem. I think it’s fair to say I have mastery in Rails: I’m comfortable building applications with it, navigating and extending the framework code, intuiting the conceptual vision of the core team, and being involved in the life of the comunity where I’ve earned some positive social capital to spend as needed.</p>
@@ -524,7 +524,7 @@
 
 <h3 id="parklife-with-ruby-on-rails">Parklife with Ruby on Rails</h3>
 
-<p>I hope I’m not diminishing <a href="https://parklife.dev/">Parklife</a> by writing that it isn’t functionally <em>much</em> more  than <code>wget</code>. It’s in Ruby and mounts+crawls a Rack-based web application, does a little bit to rewrite the base URLs, and spits out a directory of static HTML files. That’s it! It’s great!</p>
+<p>I hope I’m not diminishing <a href="https://parklife.dev/">Parklife</a> by writing that it isn’t functionally <em>much</em> more than <code>wget</code>. It’s in Ruby and mounts+crawls a Rack-based web application, does a little bit to rewrite the base URLs, and spits out a directory of static HTML files. That’s it! It’s great!</p>
 
 <p>It was pretty easy for me to make a lightweight Ruby on Rails app, that loaded up all my markdown-formatted content and frontmatter, and spat them out again as Controllers and ERB Views.</p>
 
@@ -590,7 +590,7 @@
 
 <p>I wrote this to share with some folks I’m collaborating with on building AI-augmented workflows. I’ve struggled to find something that is both condensed and whose opinionations match my own. So I wrote it myself.</p>
 
-<p>The following explanation is intended to be accurate, but not particularly precise.  For example, there is ChatGPT the product, there is an LLM at the bottom, and then in the middle there are other functions and capabilities. Or Claude or AWS Nova or Llama. These things are more than <em>*just*</em> LLMs, but they are also <em>not much</em> more than an LLM. Some of these tools can also interpret images and documents and audio and video. To do so, they’re passing those documents through specialized functions like OCR (optical character recognition), voice-recognition and image-recognition tools and then those results are turned into more text input. And some of them can take “Actions” with “Agents” which is still based on text output, just being structured and fed into something else. It’s text text text.</p>
+<p>The following explanation is intended to be accurate, but not particularly precise. For example, there is ChatGPT the product, there is an LLM at the bottom, and then in the middle there are other functions and capabilities. Or Claude or AWS Nova or Llama. These things are more than <em>*just*</em> LLMs, but they are also <em>not much</em> more than an LLM. Some of these tools can also interpret images and documents and audio and video. To do so, they’re passing those documents through specialized functions like OCR (optical character recognition), voice-recognition and image-recognition tools and then those results are turned into more text input. And some of them can take “Actions” with “Agents” which is still based on text output, just being structured and fed into something else. It’s text text text.</p>
 
 <p>(also, if something is particularly wrong, let me know please)</p>
 

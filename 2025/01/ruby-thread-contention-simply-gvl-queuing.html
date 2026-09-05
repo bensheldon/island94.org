@@ -161,7 +161,7 @@
 
 <ul>
   <li>When the thread goes from executing Ruby to doing IO, it releases the GVL (usually; it’s mostly considered a bug in the IO library if it doesn’t). When the thread is done with its IO operation, the Thread goes to the back of the queue.</li>
-  <li>When the thread has been executing for longer than the length of the thread “quantum”, the Ruby VM takes back the GVL and the thread steps to the back of the queue again.  The Ruby thread quantum default is 100ms (this is configurable via <code>Thread#priority</code> or <a href="https://bugs.ruby-lang.org/issues/20861">directly as of Ruby 3.4</a>).</li>
+  <li>When the thread has been executing for longer than the length of the thread “quantum”, the Ruby VM takes back the GVL and the thread steps to the back of the queue again. The Ruby thread quantum default is 100ms (this is configurable via <code>Thread#priority</code> or <a href="https://bugs.ruby-lang.org/issues/20861">directly as of Ruby 3.4</a>).</li>
 </ul>
 
 <p>That second scenario is rather interesting. When a Ruby thread starts running, the Ruby VM uses yet another background thread (at the VM level) that sleeps for 10ms (the “tick”) and then checks how long the Ruby thread has been running for. If the thread has been running for longer then the length of the quantum, the Ruby VM takes back the GVL from the active thread (“preemption”) and gives the GVL to the next thread waiting in the GVL queue. The thread that was previously executing now goes to the back of the queue. In other words: the thread quantum determines how quickly threads shuffle through the queue and no less/faster than the tick.</p>

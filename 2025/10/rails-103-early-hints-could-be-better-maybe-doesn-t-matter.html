@@ -129,7 +129,7 @@
   <div class="post-content" itemprop="articleBody">
     <p>I recently went on a brief deep dive into 103 Early Hints because I looked at a <a href="https://github.com/shakacode/shakapacker/pull/722">Shakapacker PR</a> for adding 103 Early Hints support. Here’s what I learned.</p>
 
-<p>Briefly, <a href="https://developer.chrome.com/docs/web-platform/early-hints">103 Early Hints</a> is a status code for an HTTP response that happens <em>before</em> a regular HTTP response with content like HTML. The frontrunning response hints to the browser what additional assets (javascript, css) the browser will have to load when it renders the subsequent HTTP response with all the content. The idea being that the browser <em>could</em>  load those resources while waiting for the full content response to be transmitted, and thus load and render the complete page with all its assets faster overall.</p>
+<p>Briefly, <a href="https://developer.chrome.com/docs/web-platform/early-hints">103 Early Hints</a> is a status code for an HTTP response that happens <em>before</em> a regular HTTP response with content like HTML. The frontrunning response hints to the browser what additional assets (javascript, css) the browser will have to load when it renders the subsequent HTTP response with all the content. The idea being that the browser <em>could</em> load those resources while waiting for the full content response to be transmitted, and thus load and render the complete page with all its assets faster overall.</p>
 
 <p>If you look at a response that includes 103 Early Hints, it looks like 2 responses:</p>
 
@@ -141,7 +141,7 @@ date: Fri, 17 Oct 2025 15:07:24 GMT
 content-type: text/html; charset=utf-8
 link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload
 
-&lt;html&gt; 
+&lt;html&gt;
 ... the content
 </code></pre>
 
@@ -161,11 +161,11 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 <p><strong>There should only be one 103 Early Hint response.</strong> According to <a href="https://datatracker.ietf.org/doc/html/rfc8297">the RFC</a>, there can be multiple 103 responses, but according to the Browsers, they only look at the first 103 response.</p>
 
 <blockquote>
-  <p>A server might send multiple 103 responses, for example, following a redirect. <strong>Browsers only process the first early hints response</strong>, and this response must be discarded if the request results in a cross-origin redirect. — <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103">MDN</a></p>
+  <p>A server might send multiple 103 responses, for example, following a redirect. <strong>Browsers only process the first early hints response</strong>, and this response must be discarded if the request results in a cross-origin redirect. — <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103">MDN</a></p>
 </blockquote>
 
 <blockquote>
-  <p><strong>Chrome ignores the second and following Early Hints responses. Chrome only handles the first Early Hints response</strong> so that Chrome doesn’t apply inconsistent security policies (e.g. Content-Security-Policy). — <a href="https://source.chromium.org/chromium/chromium/src/+/main:docs/early-hints.md;l=18?q=early%20hints&amp;ss=chromium%2Fchromium%2Fsrc:docs%2F">Chromium Docs</a></p>
+  <p><strong>Chrome ignores the second and following Early Hints responses. Chrome only handles the first Early Hints response</strong> so that Chrome doesn’t apply inconsistent security policies (e.g. Content-Security-Policy). — <a href="https://source.chromium.org/chromium/chromium/src/+/main:docs/early-hints.md;l=18?q=early%20hints&amp;ss=chromium%2Fchromium%2Fsrc:docs%2F">Chromium Docs</a></p>
 </blockquote>
 
 <p>Rails emits a 103 Early Hint response each and every time your application calls <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.</p>
@@ -176,14 +176,14 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In the Puma webserver</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="k">do</span> <span class="o">|</span><span class="n">early_hints_str</span><span class="o">|</span>
-  <span class="n">fast_write_str</span> <span class="n">socket</span><span class="p">,</span> <span class="s2">"HTTP/1.1 103 Early Hints</span><span class="se">\r\n</span><span class="si">#{</span><span class="n">early_hints_str</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">"</span> 
+  <span class="n">fast_write_str</span> <span class="n">socket</span><span class="p">,</span> <span class="s2">"HTTP/1.1 103 Early Hints</span><span class="se">\r\n</span><span class="si">#{</span><span class="n">early_hints_str</span><span class="si">}</span><span class="se">\r\n</span><span class="s2">"</span>
 <span class="k">end</span>
 
 <span class="c1"># In the application</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s2">"rack.early_hints"</span><span class="p">]</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="s2">"link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; as=script; rel=modulepreload"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><strong>The 103 Early Hint response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</strong> As mentioned, the 103 Early Hint response gets triggered when using <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>.  Those usually are used in a Rails Layout <code>erb</code> file.</p>
+<p><strong>The 103 Early Hint response should be emitted in a <code>before_action</code> instead of near the tail-end of the response.</strong> As mentioned, the 103 Early Hint response gets triggered when using <code>javascript_include_tag</code>, <code>stylesheet_link_tag</code>, or <code>preload_link_tag</code>. Those usually are used in a Rails Layout <code>erb</code> file.</p>
 
 <p>In Rails, Layouts get rendered last, after the view is rendered, which means that 103 Early Hints get emitted when the response is almost done being constructed: after the controller action, after the databae queries, after most of the HTML has been rendered to a string.</p>
 
@@ -194,10 +194,10 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 <p>I can’t actually get 103 Early Hints to be returned all the way to me in any of my production environments. Likely because there is a network device, reverse proxy, load balancer, CDN, or something that’s blocking them.</p>
 
 <ul>
-  <li>👎 Heroku with Router 2.0 and custom domain</li>
-  <li>👎 Heroku behind Cloudfront</li>
-  <li>👎 Digital Ocean App Platform behind Cloudflare</li>
-  <li>👎 AWS ECS+Fargate behind an ALB (this one actually breaks the website: <code>HTTP/2 stream 1 was not closed cleanly</code>)</li>
+  <li>👎 Heroku with Router 2.0 and custom domain</li>
+  <li>👎 Heroku behind Cloudfront</li>
+  <li>👎 Digital Ocean App Platform behind Cloudflare</li>
+  <li>👎 AWS ECS+Fargate behind an ALB (this one actually breaks the website: <code>HTTP/2 stream 1 was not closed cleanly</code>)</li>
 </ul>
 
 <p>I can see them working locally, using Puma or Puma behind Thruster, but in production…. nada. Obviously this isn’t comprehensive list of production environments, but they’re the ones <em>I</em> am using.</p>
@@ -247,7 +247,6 @@ link: &lt;/application.css&gt;; as=style; rel=preload,&lt;/application.js&gt;; a
 &lt;
 <span class="c"># ... ok, that returns something</span>
 </code></pre></div></div>
-
 
   </div>
 </article>

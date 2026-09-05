@@ -127,7 +127,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>GoodJob version 4.0 has been released! 🎉 GoodJob v4 has breaking changes that should be addressed through a transitionary v3.99 release, but if you’ve kept up with v3.x releases and migrations, you’re likely ready to upgrade 🚀</p>
+    <p>GoodJob version 4.0 has been released! 🎉 GoodJob v4 has breaking changes that should be addressed through a transitionary v3.99 release, but if you’ve kept up with v3.x releases and migrations, you’re likely ready to upgrade 🚀</p>
 
 <p>The <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#upgrading-v3-to-v4">README has an upgrade guide</a>. If you’d like to leave feedback about this release, please comment on the <a href="https://github.com/bensheldon/good_job/discussions/1396">GitHub Discussions post 📣</a></p>
 
@@ -135,9 +135,9 @@
 
 <h3 id="breaking-changes-to-job-schema">Breaking changes to job schema</h3>
 
-<p>GoodJob v4 changes how job and job execution records are stored in the database; moving from job and executions being commingled in the <code>good_jobs</code> table to Jobs (still in <code>good_jobs</code>) having many discrete Execution records in the <code>good_job_executions</code> table.</p>
+<p>GoodJob v4 changes how job and job execution records are stored in the database; moving from job and executions being commingled in the <code>good_jobs</code> table to Jobs (still in <code>good_jobs</code>) having many discrete Execution records in the <code>good_job_executions</code> table.</p>
 
-<p>To safely upgrade, all unfinished jobs must use the new schema relationship, tracked in the <code>good_jobs.is_discrete</code> column. This change was transparently introduced in GoodJob <a href="https://github.com/bensheldon/good_job/releases/tag/v3.15.4">v3.15.4 (April 2023)</a>, so your application is likely ready-to-upgrade already if you have kept up with GoodJob updates and migrations. You can check by running <code>v3.99</code>’s <code>GoodJob.v4_ready?</code> in production or run the following SQL query on the production database and check it returns zero: <code>SELECT COUNT(*) FROM "good_jobs" WHERE finished_at IS NULL AND is_discrete IS NOT TRUE</code>. If not all unfinished jobs are stored in the new format, either wait to upgrade until those jobs finish or discard them. If you upgrade prematurely to v4 without allowing those jobs to finish, they may never be performed.</p>
+<p>To safely upgrade, all unfinished jobs must use the new schema relationship, tracked in the <code>good_jobs.is_discrete</code> column. This change was transparently introduced in GoodJob <a href="https://github.com/bensheldon/good_job/releases/tag/v3.15.4">v3.15.4 (April 2023)</a>, so your application is likely ready-to-upgrade already if you have kept up with GoodJob updates and migrations. You can check by running <code>v3.99</code>’s <code>GoodJob.v4_ready?</code> in production or run the following SQL query on the production database and check it returns zero: <code>SELECT COUNT(*) FROM "good_jobs" WHERE finished_at IS NULL AND is_discrete IS NOT TRUE</code>. If not all unfinished jobs are stored in the new format, either wait to upgrade until those jobs finish or discard them. If you upgrade prematurely to v4 without allowing those jobs to finish, they may never be performed.</p>
 
 <h3 id="other-notable-changes">Other notable changes</h3>
 
@@ -145,9 +145,9 @@
 
 <ul>
   <li>Only supports Rails 6.1+, CRuby 3.0+ and JRuby 9.4+, Postgres 12+. Rails 6.0 is no longer supported. CRuby 2.6 and 2.7 are no longer supported. JRuby 9.3 is no longer supported.</li>
-  <li>Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job’s definition of priority.</li>
-  <li>Enqueues and executes jobs via the <code>GoodJob::Job</code> model instead of <code>GoodJob::Execution</code></li>
-  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>””</code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
+  <li>Changes job priority to give smaller numbers higher priority (default: 0), in accordance with Active Job’s definition of priority.</li>
+  <li>Enqueues and executes jobs via the <code>GoodJob::Job</code> model instead of <code>GoodJob::Execution</code></li>
+  <li>Changes the behavior of <code>config.good_job.cleanup_interval_jobs</code>, <code>GOOD_JOB_CLEANUP_INTERVAL_JOBS</code>, <code>config.good_job.cleanup_interval_seconds</code>, or <code>GOOD_JOB_CLEANUP_INTERVAL_SECONDS</code> set to <code>nil</code> or <code>””</code> to no longer disable count- or time-based cleanups. Instead, now set to <code>false</code> to disable, or <code>-1</code> to run a cleanup after every job execution.</li>
 </ul>
 
 <h3 id="new-features">New Features</h3>
@@ -159,8 +159,8 @@
   <li>Bulk enqueueing including support for Active Job’s <code>perform_all_later</code>.</li>
   <li><a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#labelled-jobs">Labelled jobs</a></li>
   <li>Throttling added to <a href="https://github.com/bensheldon/good_job?tab=readme-ov-file#concurrency-controls">Concurrency Controls</a></li>
-  <li>Improvements to the <a href="https://goodjob-demo.herokuapp.com/good_job/jobs">Web Dashboard</a>, including Dark Mode, performance dashboard, and improved UI,  and customizable templates.</li>
-  <li>Storage of error backtraces. Improved handling of job error conditions, including signal interruptions. Added <code>GoodJob.current_thread_running?</code> and <code>GoodJob.current_thread_shutting_down?</code> to support job iteration.</li>
+  <li>Improvements to the <a href="https://goodjob-demo.herokuapp.com/good_job/jobs">Web Dashboard</a>, including Dark Mode, performance dashboard, and improved UI, and customizable templates.</li>
+  <li>Storage of error backtraces. Improved handling of job error conditions, including signal interruptions. Added <code>GoodJob.current_thread_running?</code> and <code>GoodJob.current_thread_shutting_down?</code> to support job iteration.</li>
   <li><a href="https://github.com/bensheldon/good_job/pull/665">Ordered Queues</a>, <a href="https://github.com/bensheldon/good_job/pull/727"><code>queue_select_limit</code></a> and further options for configuring queue order and performance.</li>
   <li>Improvements to Cron / Repeating Jobs.</li>
   <li>Operational improvements including <code>systemd</code> integration, improved health checks.</li>

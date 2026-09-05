@@ -135,7 +135,7 @@
   <li>There can be a <strong>performance harm</strong> (or at least non-useful database processing and <a href="https://github.com/rails/rails/issues/14645">memory growth</a>) if your application produces a lot of preparable queries that are never reused again.</li>
 </ul>
 
-<p>By default, Rails will have the database store 1,000 queries (<code>statement_limit: 1000</code>). Many huge Rails monoliths (like GitHub, where I work) disable prepared statements (<code>prepared_statements: false</code>) because there is too much query heterogeneity to get a performance benefit and the database spends extra and unnecessary cycles storing and evicting unused prepared statements.  But that’s maybe not your application!</p>
+<p>By default, Rails will have the database store 1,000 queries (<code>statement_limit: 1000</code>). Many huge Rails monoliths (like GitHub, where I work) disable prepared statements (<code>prepared_statements: false</code>) because there is too much query heterogeneity to get a performance benefit and the database spends extra and unnecessary cycles storing and evicting unused prepared statements. But that’s maybe not your application!</p>
 
 <p>Structurally similar queries can still have variable values inside of them: these are called <strong>bind parameters</strong>. For example, in GoodJob, I want pop jobs that are scheduled to run right now. In SQL that might look like:</p>
 
@@ -149,7 +149,7 @@
 
 <p>That’s the good stuff! That’s ideal and preparable 👍</p>
 
-<p>But that’s raw SQL, now how to do that in Active Record? In the following exploration, I’m using the private <code>to_sql_and_binds</code> method in Active Record; I’m also using the private Arel API. This is all private and subject to change, so be sure to write some tests around this behavior if you do choose to use it.  Here’s some <a href="https://github.com/bensheldon/rails_tricks/blob/6c686c987ee9996bbad8a6ade1f92184c5a9ebf6/bind_params.rb">quick experiments</a> I’ve done:</p>
+<p>But that’s raw SQL, now how to do that in Active Record? In the following exploration, I’m using the private <code>to_sql_and_binds</code> method in Active Record; I’m also using the private Arel API. This is all private and subject to change, so be sure to write some tests around this behavior if you do choose to use it. Here’s some <a href="https://github.com/bensheldon/rails_tricks/blob/6c686c987ee9996bbad8a6ade1f92184c5a9ebf6/bind_params.rb">quick experiments</a> I’ve done:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">job</span> <span class="o">=</span> <span class="no">Job</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">scheduled_at: </span><span class="mi">10</span><span class="p">.</span><span class="nf">minutes</span><span class="p">.</span><span class="nf">ago</span><span class="p">)</span>
 

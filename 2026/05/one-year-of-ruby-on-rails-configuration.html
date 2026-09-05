@@ -177,9 +177,10 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>I write my database migrations using <code>table.datetime</code> and it generates <code>timestamptz</code> columns.  I guess this is fine.</p>
+<p>I write my database migrations using <code>table.datetime</code> and it generates <code>timestamptz</code> columns. I guess this is fine.</p>
 
 <h3 id="capybarathreadsafe"><code>Capybara.threadsafe</code></h3>
+
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/capybara.rb</span>
 
 <span class="no">Capybara</span><span class="p">.</span><span class="nf">threadsafe</span> <span class="o">=</span> <span class="kp">true</span>
@@ -188,6 +189,7 @@
 <p>I use Capybara as my harness for webdriving automations, rather than writing raw Selenium (never again!).</p>
 
 <h3 id="custom-types">Custom Types</h3>
+
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/initializers/custom_types.rb</span>
 
 <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">to_prepare</span> <span class="k">do</span>
@@ -393,7 +395,7 @@
 <span class="no">I18n</span><span class="o">::</span><span class="no">Tasks</span><span class="o">::</span><span class="no">Data</span><span class="o">::</span><span class="no">Adapter</span><span class="o">::</span><span class="no">YamlAdapter</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">prepend</span> <span class="no">I18nTaskYamlExt</span>
 </code></pre></div></div>
 
-<p>Ok, <code>i18n_tasks</code> is absolutely essential for doing localization. But it works by roundtripping your YAML through Psych.  This patch does 2 things:</p>
+<p>Ok, <code>i18n_tasks</code> is absolutely essential for doing localization. But it works by roundtripping your YAML through Psych. This patch does 2 things:</p>
 
 <ul>
   <li>It makes Psych output every string as <em>strictly either</em> a doublequoted string or, if it contains a newline, as literal-block (<code>key: |</code>). Without the patch, Psych will swap around single and doublequoted strings and convert literal-blocks to double-quoted strings with <code>\n</code>s</li>
@@ -410,7 +412,7 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>I’m one of the rare true-fans of Action Mailer who wants to deliver messages to <em>more</em> channels via Action Mailer, not none.  Our app uses Action Mailer to construct and deliver SMS messages too via a custom delivery method. I’ve <a href="https://island94.org/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants">touched on</a> this previously.</p>
+<p>I’m one of the rare true-fans of Action Mailer who wants to deliver messages to <em>more</em> channels via Action Mailer, not none. Our app uses Action Mailer to construct and deliver SMS messages too via a custom delivery method. I’ve <a href="https://island94.org/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants">touched on</a> this previously.</p>
 
 <h3 id="markdown">Markdown</h3>
 

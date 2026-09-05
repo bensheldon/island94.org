@@ -175,7 +175,7 @@
 <p>Sidekiq’s Problems and Troubleshooting <a href="https://github.com/sidekiq/sidekiq/wiki/Problems-and-Troubleshooting#autoloading">explains</a>:</p>
 
 <blockquote>
-  <p>A <code>lib/</code> directory will only cause pain. Move the code to <code>app/lib/</code> and make sure the code inside follows the class/filename conventions.</p>
+  <p>A <code>lib/</code> directory will only cause pain. Move the code to <code>app/lib/</code> and make sure the code inside follows the class/filename conventions.</p>
 </blockquote>
 
 <p>The best practice is to create an <code>app/lib/</code> directory to home these files. <a href="https://github.com/mastodon/mastodon/tree/c62604b5f69c3ad7f5449e0a7dc26606adebb777/app/lib">Mastodon</a> does it, as do <a href="https://github.com/search?type=code&amp;auto_enroll=true&amp;q=path%3A%2F%5Eapp%5C%2Flib%5C%2F.*%5C.rb%2F">many others</a>.</p>

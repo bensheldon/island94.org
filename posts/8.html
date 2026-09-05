@@ -158,9 +158,9 @@
 
 <p><code>I18n</code> configuration needs to be thread-local, so that a multithreaded webserver like Puma can serve a web request to the GoodJob Dashboard in Ukrainian (per the previous scenario) while <em>also</em> serving a web request for the parent Rails application in French (or raise an exception if someone tries to access it in Italian).</p>
 
-<p>Unfortunately,  <code>I18n.current_locale</code> is the only configuration value that delegates to a thread-locale variable. All other configuration values are <a href="https://github.com/ruby-i18n/i18n/blob/7cf09474b77fd41e65d979134b0525f67cf371b0/lib/i18n/config.rb#L58">implemented as global <code>@@</code> class variables</a> on <code>I18n.config</code>. This makes sense when thinking of a monolithic application, but not when a Rails application is made up of multiple Engines or components that serve different purposes and audiences (the frontend visitor and the backend administrator). I struggled <em>a lot</em> figuring out a workaround for this, until I discovered that <code>I18n.config</code> is <em>also</em> thread-local.</p>
+<p>Unfortunately, <code>I18n.current_locale</code> is the only configuration value that delegates to a thread-locale variable. All other configuration values are <a href="https://github.com/ruby-i18n/i18n/blob/7cf09474b77fd41e65d979134b0525f67cf371b0/lib/i18n/config.rb#L58">implemented as global <code>@@</code> class variables</a> on <code>I18n.config</code>. This makes sense when thinking of a monolithic application, but not when a Rails application is made up of multiple Engines or components that serve different purposes and audiences (the frontend visitor and the backend administrator). I struggled <em>a lot</em> figuring out a workaround for this, until I discovered that <code>I18n.config</code> is <em>also</em> thread-local.</p>
 
-<p><strong>Swap out the entire <code>I18n.config</code>  value with your Engine’s own <code>I18n::Config</code>-compatible object:</strong></p>
+<p><strong>Swap out the entire <code>I18n.config</code> value with your Engine’s own <code>I18n::Config</code>-compatible object:</strong></p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/good_job/application_controller.rb</span>
 <span class="k">module</span> <span class="nn">GoodJob</span>
@@ -213,12 +213,12 @@
 <p>First, time helper translations should be namespaced in the yaml translation files:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/locales/en.yml</span>
-<span class="na">good_job</span><span class="pi">:</span> 
+<span class="na">good_job</span><span class="pi">:</span>
   <span class="c1"># ...</span>
   <span class="na">datetime</span><span class="pi">:</span>
     <span class="na">distance_in_words</span><span class="pi">:</span>
     <span class="c1"># ...</span>
-  <span class="na">format</span><span class="pi">:</span> 
+  <span class="na">format</span><span class="pi">:</span>
     <span class="c1"># ...</span>
   <span class="c1"># ...</span>
 </code></pre></div></div>
@@ -280,7 +280,7 @@
 <p>Lastly and memorably, Jen recounts serving on a task force addressing pandemic unemployment insurance. Writing with a vague yet startling honesty that haunts my own recollections:</p>
 
 <blockquote>
-  <p>The state should not have needed a task force to tell the EDD what it already knew, and it shouldn’t have needed us to secure permission to act on it. These things are never said out loud—neither the permission we had nor [administrator]  Paula’s lack of it. But when we were gone, so was that permission. And soon after, for reasons that were not clear to me, a new backlog began to accrue.</p>
+  <p>The state should not have needed a task force to tell the EDD what it already knew, and it shouldn’t have needed us to secure permission to act on it. These things are never said out loud—neither the permission we had nor [administrator] Paula’s lack of it. But when we were gone, so was that permission. And soon after, for reasons that were not clear to me, a new backlog began to accrue.</p>
 </blockquote>
 
 <p>This passage brings into focus the qualities that characterize my own experience with civic tech: power, permission, access, the parasocial qualities of professional relationships, and the fleeting closures of our ongoing experiments to live together in liberal democracy. I hope Jen is doing well, and though I didn’t write this explicitly in my last email, I’d love to hear from her.</p>
@@ -319,7 +319,6 @@
   <p>For example, when an organization decides to invest into its engineering brand, the initial plan will often focus on project execution. It’ll include a goal for publishing frequency, ensuring content is representationally accurate across different engineering sub-domains, and how to incentivize participants to contribute. If you follow the project plan carefully, you will technically have built an engineering brand, but my experience is that it’ll be both more work and less effective than a less systematic approach.</p>
 
 </blockquote>
-
 
   </div>
 </article>
@@ -383,12 +382,12 @@
   <li><strong>Search Engine Marketing</strong></li>
   <li><strong>Social and Display Ads</strong></li>
   <li><strong>Offline Ads</strong></li>
-  <li><strong>Search Engine Optimization</strong>: fat-head (narrow ranking) and long-tail (lots of landing page content, content marketing farming) strategies. Google Adword’s Keyword Planner,  Open Site Explorer.</li>
+  <li><strong>Search Engine Optimization</strong>: fat-head (narrow ranking) and long-tail (lots of landing page content, content marketing farming) strategies. Google Adword’s Keyword Planner, Open Site Explorer.</li>
   <li><strong>Content Marketing</strong>. Spend 6 months blogging do stuff that doesn’t scale (contact influential people, do guest posts, write about recent news events, nerd out)</li>
   <li><strong>Email Marketing</strong>: with your own mailing list or advertise on other mailing lists. Transactional funnel reminders, retention, upselling/expansion, referral emails too.</li>
   <li><strong>Viral Marketing</strong>: map out the loop.</li>
   <li><strong>Engineering as Marketing</strong>: giveaway tools/services (lol, examples are all SEO companies building free SEO tools for marketers, not necessarily engineering)</li>
-  <li><strong>Business Development</strong>: partnerships, joint ventures, licensing, distribution, supply. Boil the ocean of potential partners, spreadsheet and pipeline it.  Identify who is in charge of the partner’s metric you’re targeting, and make your cold emails forwardable. Write a memo to yourself afterwords “how the deal was done” (how long it took to get to milestones, key contacts, sticking points, partner’s specific interests and influences)</li>
+  <li><strong>Business Development</strong>: partnerships, joint ventures, licensing, distribution, supply. Boil the ocean of potential partners, spreadsheet and pipeline it. Identify who is in charge of the partner’s metric you’re targeting, and make your cold emails forwardable. Write a memo to yourself afterwords “how the deal was done” (how long it took to get to milestones, key contacts, sticking points, partner’s specific interests and influences)</li>
   <li><strong>Sales</strong>. It’s sales! lol, about time wasters (“have you ever brought other technology into your company?”)</li>
   <li><strong>Affiliate Programs</strong></li>
   <li><strong>Existing Platforms</strong></li>
@@ -574,7 +573,7 @@
 <p>A couple things to call out here:</p>
 
 <ul>
-  <li>The  <code>GLOBAL_TIMER_SET</code> is necessary so that all ScheduledTasks are added to the same TimerSet. In Concurrent Ruby, this is <code>Concurrent.global_timer_set</code>, though a <code>ScheduledTask.execute</code> can be given an explicit <code>timer_set:</code> parameter if an application has multiple TimerSets (for example, GoodJob initializes its own TimerSet for finer lifecycle management).</li>
+  <li>The <code>GLOBAL_TIMER_SET</code> is necessary so that all ScheduledTasks are added to the same TimerSet. In Concurrent Ruby, this is <code>Concurrent.global_timer_set</code>, though a <code>ScheduledTask.execute</code> can be given an explicit <code>timer_set:</code> parameter if an application has multiple TimerSets (for example, GoodJob initializes its own TimerSet for finer lifecycle management).</li>
   <li>The <code>&lt;=&gt;</code> comparison operator, which will be used to keep our list of tasks sorted with the soonest tasks first.</li>
 </ul>
 
@@ -636,7 +635,7 @@
   <li>The magic happens in <code>#process_tasks</code>, which creates a new thread and starts up a loop. It loops over the first task in the queue (the soonest):
     <ul>
       <li>If there is no task, it breaks the loop and exits the thread.</li>
-      <li>If there is a task, it checks whether it’s time to run, and if so, runs it. If it’s not time yet, it uses the <code>Event#wait</code> until it <em>is</em> time to run, or 60 seconds, whichever is sooner. That 60 seconds is a magic number in the real implementation, and I assume that’s to reduce clock drift. Remember,  <code>Event#wait</code> is signalable, so if a new task is added, the loop will be immediately restarted and the delay recalculated.</li>
+      <li>If there is a task, it checks whether it’s time to run, and if so, runs it. If it’s not time yet, it uses the <code>Event#wait</code> until it <em>is</em> time to run, or 60 seconds, whichever is sooner. That 60 seconds is a magic number in the real implementation, and I assume that’s to reduce clock drift. Remember, <code>Event#wait</code> is signalable, so if a new task is added, the loop will be immediately restarted and the delay recalculated.</li>
       <li>In real Concurrent Ruby, <code>task.run</code> is posted to a separate thread pool where it won’t block or slow down the loop.</li>
     </ul>
   </li>
@@ -730,7 +729,7 @@
 <p>Sidekiq’s Problems and Troubleshooting <a href="https://github.com/sidekiq/sidekiq/wiki/Problems-and-Troubleshooting#autoloading">explains</a>:</p>
 
 <blockquote>
-  <p>A <code>lib/</code> directory will only cause pain. Move the code to <code>app/lib/</code> and make sure the code inside follows the class/filename conventions.</p>
+  <p>A <code>lib/</code> directory will only cause pain. Move the code to <code>app/lib/</code> and make sure the code inside follows the class/filename conventions.</p>
 </blockquote>
 
 <p>The best practice is to create an <code>app/lib/</code> directory to home these files. <a href="https://github.com/mastodon/mastodon/tree/c62604b5f69c3ad7f5449e0a7dc26606adebb777/app/lib">Mastodon</a> does it, as do <a href="https://github.com/search?type=code&amp;auto_enroll=true&amp;q=path%3A%2F%5Eapp%5C%2Flib%5C%2F.*%5C.rb%2F">many others</a>.</p>
@@ -860,7 +859,7 @@
 
   <p>‘Maybe it’s the default position of humans when they feel threatened,’ I ventured, ‘although if I’m honest, I know a lot of people who claim to have “nothing against rabbits” but tacitly do nothing against the overt leporiphobia that surrounds them.’</p>
 
-  <p>‘Or maybe it’s just satire for comedy’s sake and nothing else,’ added Connie, ‘or even more useless, satire that provokes a few guffaws but only low to middling outrage – but is coupled with more talk and no action. A sort of  . . . empty cleverness.’</p>
+  <p>‘Or maybe it’s just satire for comedy’s sake and nothing else,’ added Connie, ‘or even more useless, satire that provokes a few guffaws but only low to middling outrage – but is coupled with more talk and no action. A sort of . . . empty cleverness.’</p>
 
   <p>‘Maybe a small puff in the right moral direction is the best that could be hoped for,’ added Finkle thoughtfully. ‘Perhaps that’s what satire does – not change things wholesale but nudge the collective consciousness in a direction that favours justice and equality. Is there any more walnut cake?’</p>
 
@@ -929,7 +928,7 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>In the matching controller, I create static constants that define hashes of files that are matched and served, which I store in a <code>app/frontend</code> directory in my Rails Engine. <em>I want paths to be explicit for security reasons because passing any sort of dynamic file path through the URL could be a path traversal vulnerability.</em> All of the frontend assets are stored in  <code>app/frontend</code> and served out of this controller:</p>
+<p>In the matching controller, I create static constants that define hashes of files that are matched and served, which I store in a <code>app/frontend</code> directory in my Rails Engine. <em>I want paths to be explicit for security reasons because passing any sort of dynamic file path through the URL could be a path traversal vulnerability.</em> All of the frontend assets are stored in <code>app/frontend</code> and served out of this controller:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/good_job/frontends_controller.rb</span>
 
@@ -992,7 +991,7 @@
   <span class="nt">&lt;</span><span class="err">%</span><span class="na">#</span> <span class="na">Note:</span> <span class="na">Do</span> <span class="na">not</span> <span class="na">use</span> <span class="na">asset</span> <span class="na">tag</span> <span class="na">helpers</span> <span class="na">to</span> <span class="na">avoid</span> <span class="na">paths</span> <span class="na">being</span> <span class="na">overriden</span> <span class="na">by</span> <span class="na">config.asset_host</span> <span class="err">%</span><span class="nt">&gt;</span>
   <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.link</span> <span class="na">rel:</span> <span class="err">"</span><span class="na">stylesheet</span><span class="err">",</span> <span class="na">href:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:bootstrap</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:css</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
   <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.link</span> <span class="na">rel:</span> <span class="err">"</span><span class="na">stylesheet</span><span class="err">",</span> <span class="na">href:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:style</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:css</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
-	
+
   <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">src:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:bootstrap</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
   <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">src:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:chartjs</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>
   <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">tag.script</span> <span class="err">"",</span> <span class="na">src:</span> <span class="na">frontend_static_path</span><span class="err">(</span><span class="na">:rails_ujs</span><span class="err">,</span> <span class="na">format:</span> <span class="na">:js</span><span class="err">,</span> <span class="na">v:</span> <span class="na">GoodJob::VERSION</span><span class="err">,</span> <span class="na">locale:</span> <span class="na">nil</span><span class="err">),</span> <span class="na">nonce:</span> <span class="na">content_security_policy_nonce</span> <span class="err">%</span><span class="nt">&gt;</span>

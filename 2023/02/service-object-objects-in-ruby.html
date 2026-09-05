@@ -146,17 +146,17 @@
 
 <span class="c1"># ok, but without the shouty all-caps</span>
 <span class="k">module</span> <span class="nn">MyDecree</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span> 
-    <span class="n">do_something</span> 
-  <span class="k">end</span> 
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span>
+    <span class="n">do_something</span>
+  <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="c1"># ok, but what about when it gets really complex</span>
-<span class="k">class</span> <span class="nc">MyDecree</span> 
+<span class="k">class</span> <span class="nc">MyDecree</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
-    <span class="n">new</span><span class="p">(</span><span class="n">variable</span><span class="p">).</span><span class="nf">call</span> 
+    <span class="n">new</span><span class="p">(</span><span class="n">variable</span><span class="p">).</span><span class="nf">call</span>
   <span class="k">end</span>
-  
+
   <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
     <span class="vi">@variable</span> <span class="o">=</span> <span class="n">variable</span>
   <span class="k">end</span>
@@ -181,7 +181,6 @@
 </ul>
 
 <p>Unfortunately, the moment the internals come into play, it gets messy. But I don’t think that should take away from the external perspective.</p>
-
 
   </div>
 </article>

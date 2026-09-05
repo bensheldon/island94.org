@@ -247,7 +247,7 @@
 
 <p>That’s pretty much it!</p>
 
-<p>If you’re uncomfortable patching things, Tim Masliuchenko has a gem called  <a href="https://github.com/timfjord/i18n-transformers"><code>I18n::Transformers</code></a> that makes it easy create custom key-based transformations. I believe you’ll still need to patch into the HTML safety behavior of Rails though—and anything involving marking things as HTML-safe should be always be scrutinized for <a href="https://guides.rubyonrails.org/security.html#cross-site-scripting-xss">XSS</a> potential.</p>
+<p>If you’re uncomfortable patching things, Tim Masliuchenko has a gem called <a href="https://github.com/timfjord/i18n-transformers"><code>I18n::Transformers</code></a> that makes it easy create custom key-based transformations. I believe you’ll still need to patch into the HTML safety behavior of Rails though—and anything involving marking things as HTML-safe should be always be scrutinized for <a href="https://guides.rubyonrails.org/security.html#cross-site-scripting-xss">XSS</a> potential.</p>
 
 <p>Here’s the full initializer I have, including how I get Kramdown to create “inline” markdown:</p>
 
@@ -333,7 +333,7 @@
   <div class="post-content" itemprop="articleBody">
     <p>The following is the bones of a half-written essay I’ve had kicking around in my drafts for the past 3 years, occassionally updated. I recently read <em>two</em> things that said it all better anyways, but if you read through you get my perspectives as someone in software cooking the goose.</p>
 
-<p>One:  Albert Burneko’s <a href="https://defector.com/toward-a-theory-of-kevin-roose">“Toward a theory of Kevin Roose”</a>:</p>
+<p>One: Albert Burneko’s <a href="https://defector.com/toward-a-theory-of-kevin-roose">“Toward a theory of Kevin Roose”</a>:</p>
 
 <blockquote>
   <p>My suspicion, my awful awful newfound theory, is that there are people with a sincere and even kind of innocent belief that we are all just picking winners, in everything: that ideology, advocacy, analysis, criticism, affinity, even taste and style and association are essentially predictions. That what a person tries to do, the essential task of a person, is to identify who and what is going to come out on top, and align with it. The rest—what you say, what you do—is just enacting your pick and working in service to it.</p>
@@ -346,7 +346,7 @@
 <p>Two: Ed Zitrain’s <a href="https://www.wheresyoured.at/make-fun-of-them/">“Make fun of them”</a> (emphasis in the original):</p>
 
 <blockquote>
-  <p>In my opinion, there’s nothing more cynical than watching billions of people get shipped increasingly-shitty and expensive solutions and then <strong>get defensive of the people shipping them,</strong> and hostile to the people who are complaining that the products they use suck<strong>.</strong> </p>
+  <p>In my opinion, there’s nothing more cynical than watching billions of people get shipped increasingly-shitty and expensive solutions and then <strong>get defensive of the people shipping them,</strong> and hostile to the people who are complaining that the products they use suck<strong>.</strong></p>
 </blockquote>
 
 <h3 id="in-the-day-to-day">In the day to day</h3>
@@ -372,7 +372,7 @@
 
 <ul>
   <li>Materiality: an awareness of where they <em>are</em> doing the work, and that’s also sorta doublechecking that they are aware that other people actually exist too. You read enough Ask a Manager and you realize <em>a lot</em> of powerful people struggle with object permanence when someone is outside their sight lines.</li>
-  <li>Operationalization: a set of personal playbooks for making things happen. For example, I’m a big fan of skip 1:1s (when you meet with your report’s reports, or your manager’s manager) and will make point of intentionally setting those up. I have lots of opinions about what a minimally-viable-career-progression system looks like: career ladders and performance evaluation processes and calibration meeting agendas and 1:1 templates. Or more discipline specific, like inventories and gapping templates and decision docs,  In any job we don’t have to use <em>mine</em> but I sorta expect an experienced manager to have them in their back pocket and be interested in talking about them.</li>
+  <li>Operationalization: a set of personal playbooks for making things happen. For example, I’m a big fan of skip 1:1s (when you meet with your report’s reports, or your manager’s manager) and will make point of intentionally setting those up. I have lots of opinions about what a minimally-viable-career-progression system looks like: career ladders and performance evaluation processes and calibration meeting agendas and 1:1 templates. Or more discipline specific, like inventories and gapping templates and decision docs, In any job we don’t have to use <em>mine</em> but I sorta expect an experienced manager to have them in their back pocket and be interested in talking about them.</li>
 </ul>
 
 <p>All of which is to ask: <strong>take me to your gemba</strong>, ideally, and help me understand how it differs from your worst one too. <em><a href="https://en.wikipedia.org/wiki/Gemba">The Gemba</a></em> being the location where the work happens. Pedantically, it’s where the value is actually created, like the factory floor, but in this knowledge-heavy work… who can say? Our most valuable assets go home every night, right?</p>
@@ -446,7 +446,7 @@
     <p>There’s overlapping terminology that describes the act of packaging up some new behavior for Rails. I think of two gems I maintain that are of vastly different scales</p>
 
 <ul>
-  <li><a href="https://github.com/bensheldon/activerecord-has_some_of_many">￼<code>activerecord-has_some_of_many</code>￼</a> which adds two new tiny association methods to Active Record models in 150 lines of code.</li>
+  <li><a href="https://github.com/bensheldon/activerecord-has_some_of_many"><code>activerecord-has_some_of_many</code></a> which adds two new tiny association methods to Active Record models in 150 lines of code.</li>
   <li><a href="https://github.com/bensheldon/good_job">GoodJob</a>, which is an entire Active Job backend with a mountable Web Dashboard and database models and custom job extensions in 10k lines of code.</li>
 </ul>
 
@@ -470,7 +470,7 @@
   <li><strong>Rails Extension</strong>: A small monkeypatch or tiny new behavior to existing Rails behaviors (Active Record, Active Job, etc.). Especially if it’s not even a gem: simply a file you wrote a blog post about that gets copied into <code>config/extensions</code> and then <code>require_relative</code>’d in <code>config/application.rb</code>.</li>
   <li><strong>Rails Gem</strong> : Reductively, a gem is a load path for some code, and some ownership metadata, and maybe it’s been published to Rubygems.org. Nothing special.</li>
   <li>⭐️ <strong>Rails Plugin</strong>. A generic name covers all situations imo, regardless of size, scope, or complexity.</li>
-  <li><strong>Railtie</strong>: When you write a gem that plugs into the Rails framework, you create <a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">special file</a> named <code>lib/railtie.rb</code> that has a class that inherits from `<a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">Rails::Railtie</a> that contains a DSL to configure how your gem’s behavior interfaces with Rails (configuration, initialization, etc.). I think Railtie is a bit of an odd-duck terminology-wise, but it makes sense considering…</li>
+  <li><strong>Railtie</strong>: When you write a gem that plugs into the Rails framework, you create <a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">special file</a> named <code>lib/railtie.rb</code> that has a class that inherits from `<a href="https://api.rubyonrails.org/classes/Rails/Railtie.html">Rails::Railtie</a> that contains a DSL to configure how your gem’s behavior interfaces with Rails (configuration, initialization, etc.). I think Railtie is a bit of an odd-duck terminology-wise, but it makes sense considering…</li>
   <li><strong>Rails Engine</strong>: An “Engine” is <em>nearly</em> identical to a Railtie, but the file is named <code>lib/engine.rb</code> and it has a class that inherits from <code>Rails::Engine</code>. But <code>Rails::Engine</code> itself inherits from <code>Rails::Railtie</code>, so this is a matter of degrees. Your gem absolutely <em>needs</em> to use the Engine behavior if it wants to create mountable routes (though I guess you can mount a vanilla Rack app) or inherit from Rails Base classes like <code>ActiveRecord::Base</code>, <code>ActionController::Base</code>, <code>ActiveJob::Base</code>, etc. which live in the Engine’s own <code>app/</code> directory.</li>
 </ul>
 
@@ -524,7 +524,6 @@
 
 <p>I beat the game <a href="https://en.wikipedia.org/wiki/Yoku%27s_Island_Express">Yoku’s Island Express</a>, which was a delightful experience on my desired theme of nice metroidvania (recommendations please). I also just started <a href="https://play.date/games/seasons/two/">Season 2 of Playdate</a>, which was a reason to find and charge it. On the theme of small handhelds, I ordered an <a href="https://www.adafruit.com/product/6323">Adafruit USB C Resistor Fixer</a> (say that 5 times fast) for the RGB30 that was collecting dust until I discovered some Pico 8 games I’d like to play.</p>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -548,9 +547,9 @@
 
   <p>I like when people ask me how Defector is doing. Thanks to subscribers like you, I get to say that not only that Defector is doing well, but that I love my work.</p>
 
-  <p>I spent most of my life as a writer in jobs that were always and obviously impermanent. Roughly every 20 months, the people running things—people I never saw, and who had no interest in the work we did—would get bored, or nervous, or fall for some dippy executive fad, and <a href="https://defector.com/three-newsrooms-imploded-around-me-in-under-a-year">pivot some number of us out of our jobs</a>. Basically every innovation in media over the last few decades has been some version of this: an attempt by executive types to see how much less they can do, and how long they can get away with making everything <a href="https://defector.com/henry-blodget-invents-hires-sexually-harasses-blogs-about-nonexistent-ai-subordinate">smaller</a>, <a href="https://defector.com/the-familiarity-and-sadness-of-watching-the-washington-post-go-to-hell">sadder</a>, and <a href="https://defector.com/horny-sports-blogging-makes-a-bewildering-return-to-sports-illustrated">worse</a>.</p>
+  <p>I spent most of my life as a writer in jobs that were always and obviously impermanent. Roughly every 20 months, the people running things—people I never saw, and who had no interest in the work we did—would get bored, or nervous, or fall for some dippy executive fad, and <a href="https://defector.com/three-newsrooms-imploded-around-me-in-under-a-year">pivot some number of us out of our jobs</a>. Basically every innovation in media over the last few decades has been some version of this: an attempt by executive types to see how much less they can do, and how long they can get away with making everything <a href="https://defector.com/henry-blodget-invents-hires-sexually-harasses-blogs-about-nonexistent-ai-subordinate">smaller</a>, <a href="https://defector.com/the-familiarity-and-sadness-of-watching-the-washington-post-go-to-hell">sadder</a>, and <a href="https://defector.com/horny-sports-blogging-makes-a-bewildering-return-to-sports-illustrated">worse</a>.</p>
 
-  <p>The most fundamental benefit of owning your workplace, as we do at Defector, is that we just don’t have to worry about that. Instead, we’re trying to solve the opposite problem: how to make the site <a href="https://defector.com/saquon-barkley-lured-me-to-an-arena-where-i-learned-passive-income-is-holy">better</a> and <a href="https://defector.com/what-did-she-see-at-the-end">broader</a> and <a href="https://defector.com/confessions-of-a-spelling-bee-pronouncer">more surprising</a> and <a href="https://defector.com/dave-mckenna-insists-they-have-ham-trucks-in-france">more fun</a>, tinkering towards the right balance of <a href="https://defector.com/for-sale-the-end-and-the-means-to-wait-for-it">smart</a> and <a href="https://defector.com/is-jon-heyman-paying-too-much-for-blueberries">stupid</a>. If you replace mystified Executive Maneuvers with the less abstract challenge of “writing good blogs for people who like to read,” this turns out to be both a good job and a viable business.</p>
+  <p>The most fundamental benefit of owning your workplace, as we do at Defector, is that we just don’t have to worry about that. Instead, we’re trying to solve the opposite problem: how to make the site <a href="https://defector.com/saquon-barkley-lured-me-to-an-arena-where-i-learned-passive-income-is-holy">better</a> and <a href="https://defector.com/what-did-she-see-at-the-end">broader</a> and <a href="https://defector.com/confessions-of-a-spelling-bee-pronouncer">more surprising</a> and <a href="https://defector.com/dave-mckenna-insists-they-have-ham-trucks-in-france">more fun</a>, tinkering towards the right balance of <a href="https://defector.com/for-sale-the-end-and-the-means-to-wait-for-it">smart</a> and <a href="https://defector.com/is-jon-heyman-paying-too-much-for-blueberries">stupid</a>. If you replace mystified Executive Maneuvers with the less abstract challenge of “writing good blogs for people who like to read,” this turns out to be both a good job and a viable business.</p>
 
   <p>But even after filtering out the noise from upstairs, there are plenty of other things to worry about. Chief among them is making sure that those good blogs reliably get in front of both existing subscribers like you and new ones we’d like to bring into the fold. All of those bad, previous jobs happened on an internet that worked better than our current one. Then as now, the people in charge were craven and nasty and dumb, but it was easier to find things, and there were notably more non-toxic places in which to talk about it all.</p>
 
@@ -593,7 +592,7 @@ David</p>
 
 <hr />
 
-<p>I have been doing lots of research and having interesting conversations about customer/client/caseworker/constituent relationship management. Not so much “salesforce”  or “hubspot” but how to break down identities and artifacts and tasks; differentiating between task-based from case-based models, and worker activity from supervisory concerns. <em>If you have experience, or opinions, or related traumas, I’d love to chat: ben@openfrontdoor.com.</em></p>
+<p>I have been doing lots of research and having interesting conversations about customer/client/caseworker/constituent relationship management. Not so much “salesforce” or “hubspot” but how to break down identities and artifacts and tasks; differentiating between task-based from case-based models, and worker activity from supervisory concerns. <em>If you have experience, or opinions, or related traumas, I’d love to chat: ben@openfrontdoor.com.</em></p>
 
 <hr />
 
@@ -645,7 +644,7 @@ David</p>
 
 <hr />
 
-<p>Using ChatGPT’s Web Search is ok. “Find me articles, marketing posts, and conference talks about [something]”. I have to follow up several times slightly differently (“anything else? What about lightning talks?”) and copy resulting links into a separate doc to organize to have something approaching comprehensive….  But pretty good and better than what I can get out of either Kagi or Google. I ignore the summaries and chatty nonsense and just copy the links and read them myself. Sorry climate and future generations.</p>
+<p>Using ChatGPT’s Web Search is ok. “Find me articles, marketing posts, and conference talks about [something]”. I have to follow up several times slightly differently (“anything else? What about lightning talks?”) and copy resulting links into a separate doc to organize to have something approaching comprehensive…. But pretty good and better than what I can get out of either Kagi or Google. I ignore the summaries and chatty nonsense and just copy the links and read them myself. Sorry climate and future generations.</p>
 
 <hr />
 
@@ -658,7 +657,7 @@ David</p>
   sudo apt-get -yqq install libvips-dev
 
 # After
-- name: "Install packages" 
+- name: "Install packages"
   uses: awalsh128/cache-apt-pkgs-action@7ca5f46d061ad9aa95863cd9b214dd48edef361d
   with:
   packages: libvips-dev
@@ -730,7 +729,7 @@ export default class extends Controller {
 
 <hr />
 
-<p>I’m having a great time being a technical cofounder to my (everything else!) cofounder.  It’s fun explaining what I am doing. And we have fun shouting “Monolith!” and “Skateboard [MVP]” all day long.</p>
+<p>I’m having a great time being a technical cofounder to my (everything else!) cofounder. It’s fun explaining what I am doing. And we have fun shouting “Monolith!” and “Skateboard [MVP]” all day long.</p>
 
 <p>An example of an explanation I gave: one of our client advocate tools is a Twilio-powered Voice Conference Bridge where we can dial in any number of participants which helps shadow and assist our clients in their welfare application journey. We wanted to add DTMF tones for dialing extensions and navigating IVR systems. Unfortunately, the Twilio API that I used initially (<em>Create a Conference Bridge, then create a Participant Call</em>) doesn’t support DTMF tones so I had to flip the logic to a different API (<em>Create a Call, then add it to a Conference Bridge as a Participant)</em>. Figuring that out was a couple hours of reading docs and SDK code, feeling confident I wasn’t overlooking something, creating a runner script to bench test it, and finally putting the pieces into their production-ready places which was only like 20 lines of code at the end. That’s where the time goes.</p>
 
@@ -745,7 +744,7 @@ export default class extends Controller {
 
   <p>GitHub’s CEO said (not published) something similar (internally) 2 weeks before I left. I sweated it for a day, then DMed him and said “as a manager, I’m not aware of any LLM api that is approved for my use for internal admin stuff?” and he pointed me to the GitHub Models product that is totally unreferenced on any of the internal docs about staff AI tools. I poked that enablement team to add it, and I dunno if the CEO actually followed up with anyone to debug the low awareness (the story of my DM got retold at a different meeting as one about security, but it was really my complete unawareness and its absence on any of the tool lists that were intended to be the starting place for staff to integrate AI into their work).</p>
 
-  <p>TLDR: in a culture of opennness (safety to DM the CEO about the policy) and learning (the policy is the start not the end of discussion). I could see the pronouncement to be catalytic.</p>
+  <p>TLDR: in a culture of opennness (safety to DM the CEO about the policy) and learning (the policy is the start not the end of discussion). I could see the pronouncement to be catalytic.</p>
 </blockquote>
 
 <p>And</p>

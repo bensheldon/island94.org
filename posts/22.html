@@ -129,8 +129,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p><a href="http://dayoftheshirt.com"><img src="/uploads/2013-06/dayoftheshirt-2012.png" alt="dayoftheshirt-2012" /> </a><br />
- </p>
+    <p><a href="http://dayoftheshirt.com"><img src="/uploads/2013-06/dayoftheshirt-2012.png" alt="dayoftheshirt-2012" /> </a></p>
 
 <p>2012 was a big year for <a href="http://dayoftheshirt.com">Day of the Shirt</a>: it moved from being one of a constellation of hobby projects to becoming the main focus of my spare development time and a largely self-sustaining business.</p>
 
@@ -315,7 +314,7 @@
     <p>Event-based: a server will constantly be getting requests (at different urls, on different ports) that need to be responded to in different ways when those events take place</p>
   </li>
   <li>
-    <p>Asynchronous: in dealing with a request, a server will need to load other data (from a file, a database, another server like Twitter), and you don’t want your entire server to just lock up while it waits for that external service (we call this I/O for “Input/Output”) to finish. For a typical web request, the <em>majority</em> of time will be spent waiting on  I/O.</p>
+    <p>Asynchronous: in dealing with a request, a server will need to load other data (from a file, a database, another server like Twitter), and you don’t want your entire server to just lock up while it waits for that external service (we call this I/O for “Input/Output”) to finish. For a typical web request, the <em>majority</em> of time will be spent waiting on I/O.</p>
   </li>
 </ul>
 
@@ -339,7 +338,7 @@
   </li>
 </ol>
 
-<p>Example of all 3: visualizing traffic going through a Node.js load-balancer by geolocating the requesting IP address and sending them to a map  in the web browser in real-time via Socket.io: <a href="http://vimeo.com/48470307">http://vimeo.com/48470307</a></p>
+<p>Example of all 3: visualizing traffic going through a Node.js load-balancer by geolocating the requesting IP address and sending them to a map in the web browser in real-time via Socket.io: <a href="http://vimeo.com/48470307">http://vimeo.com/48470307</a></p>
 
 <p><a href="http://vimeo.com/48470307"><img src="/uploads/2012-12/maptail-600x330.png" alt="maptail" /> </a></p>
 
@@ -377,7 +376,6 @@
 
 <p><img src="/uploads/2012-12/nodejs-cost.png" alt="nodejs-cost" /></p>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -402,11 +400,9 @@
 
 <p><strong>Awesome explanation:</strong> The mayor runs through the streets of Chicago, leaping over newly-reported civic issues and collecting coins as those civic problems are fixed.</p>
 
-<p>I really like this application, not only because of its visual style, but because it lets you engage with the 311 data in a completely novel way: aurally. Turn up those speakers and let the website run in the background for about 30 minutes. Spinies (new requests) come in waves, and coin blocks (updated/closed requests) are disappointingly rare. Sure, I could have just created a chart of statistics, but I think actually <em>experiencing</em> requests as they come in makes you think differently about both the people who submitted a request and the 311 operators and city staff who are receiving them (just think about what caused those restaurant complaints… or maybe don’t).</p>
+<p>I really like this application, not only because of its visual style, but because it lets you engage with the 311 data in a completely novel way: aurally. Turn up those speakers and let the website run in the background for about 30 minutes. Spinies (new requests) come in waves, and coin blocks (updated/closed requests) are disappointingly rare. Sure, I could have just created a chart of statistics, but I think actually <em>experiencing</em> requests as they come in makes you think differently about both the people who submitted a request and the 311 operators and city staff who are receiving them (just think about what caused those restaurant complaints… or maybe don’t).</p>
 
 <p>The application is built with Node.js, which fetches and caches 311 requests, and a Backbone-based web-app, communicating via socket.io, which manages all of interface and animation. The source is on <a href="https://github.com/codeforamerica/super-mayor">Github</a>.</p>
-
-<p> </p>
 
   </div>
 </article>
@@ -426,7 +422,7 @@
   <div class="post-content" itemprop="articleBody">
     <p><img src="/uploads/2012-08/civicsgarden-large-600x266.png" alt="" title="civicsgarden-large" /></p>
 
-<p>The core assumption of engagement applications is that people will do an activity consistently and repeatedly if you just structure the experience and incentivize it correctly — even if it’s asinine.  The justification for <em>civic</em> engagement apps can be similarly foolish: people will perform a potentially beneficial activity that they aren’t currently doing if we give them the ability to do it on the internet (or via SMS, or iPhone, etc.). That’s why I built <a href="http://civicsgarden.herokuapp.com">Civics Garden</a>.</p>
+<p>The core assumption of engagement applications is that people will do an activity consistently and repeatedly if you just structure the experience and incentivize it correctly — even if it’s asinine. The justification for <em>civic</em> engagement apps can be similarly foolish: people will perform a potentially beneficial activity that they aren’t currently doing if we give them the ability to do it on the internet (or via SMS, or iPhone, etc.). That’s why I built <a href="http://civicsgarden.herokuapp.com">Civics Garden</a>.</p>
 
 <p>A few months ago a Code for America email thread came around asking how “If you could tell the story of how government works, what would you say?” I pushed back with the idea that one cannot know government without participating in it, and since we are a government of, by, and for the people, the best place to start would be reflecting on one’s own civic life and civic actions.</p>
 

@@ -148,17 +148,17 @@
 
 <span class="c1"># ok, but without the shouty all-caps</span>
 <span class="k">module</span> <span class="nn">MyDecree</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span> 
-    <span class="n">do_something</span> 
-  <span class="k">end</span> 
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span>
+    <span class="n">do_something</span>
+  <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="c1"># ok, but what about when it gets really complex</span>
-<span class="k">class</span> <span class="nc">MyDecree</span> 
+<span class="k">class</span> <span class="nc">MyDecree</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
-    <span class="n">new</span><span class="p">(</span><span class="n">variable</span><span class="p">).</span><span class="nf">call</span> 
+    <span class="n">new</span><span class="p">(</span><span class="n">variable</span><span class="p">).</span><span class="nf">call</span>
   <span class="k">end</span>
-  
+
   <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
     <span class="vi">@variable</span> <span class="o">=</span> <span class="n">variable</span>
   <span class="k">end</span>
@@ -183,7 +183,6 @@
 </ul>
 
 <p>Unfortunately, the moment the internals come into play, it gets messy. But I don’t think that should take away from the external perspective.</p>
-
 
   </div>
 </article>
@@ -326,7 +325,6 @@ q=verybadstuff  &lt;== oh, but with a request body
 <span class="k">end</span>
 </code></pre></div></div>
 
-
   </div>
 </article>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -376,7 +374,7 @@ q=verybadstuff  &lt;== oh, but with a request body
 
 <ul>
   <li>Batches are mutable, database-backed objects with foreign-key relationships to sets of job records.</li>
-  <li>Batches have  <code>properties</code> which use Active Job’s serializer, so they can contain and rehydrate any GlobalID object, like Active Record models.</li>
+  <li>Batches have <code>properties</code> which use Active Job’s serializer, so they can contain and rehydrate any GlobalID object, like Active Record models.</li>
   <li>Batches have callbacks, which are themselves Active Job jobs</li>
 </ul>
 
@@ -430,56 +428,56 @@ q=verybadstuff  &lt;== oh, but with a request body
 
 <blockquote>
 
-  <p>Upgrading is one of the easiest ways to find an area of Rails that can benefit from your contributions.  Fixing an issue in a recent release has a high likelihood of being merged.</p>
+  <p>Upgrading is one of the easiest ways to find an area of Rails that can benefit from your contributions. Fixing an issue in a recent release has a high likelihood of being merged.</p>
 
-  <p>Running off Rails Main is another way to find contributions to Rails.  If you don’t want to run your Main in production,   you could run it in a separate CI build.  Shopify, GitHub and Basecamp run it.</p>
+  <p>Running off Rails Main is another way to find contributions to Rails. If you don’t want to run your Main in production, you could run it in a separate CI build. Shopify, GitHub and Basecamp run it.</p>
 
-  <p>Running off Main may be harder than running off a release because features and bug fixes are  a little in flux sometimes. If you are running  off of Main, a feature added to the Main branch could be removed without deprecation. This is a worthwhile risk to take on because it lowers the overall risk of an upgrade.  When you run off Main, you’re less likely to fall behind upgrading because it becomes  part of your weekly or monthly maintenance.  Upgrading becomes routine, second nature rather  than novel and scary. Changes are easy to isolate. It’s just slightly less polished. Like I  said, I still think it’s pretty stable.</p>
+  <p>Running off Main may be harder than running off a release because features and bug fixes are a little in flux sometimes. If you are running off of Main, a feature added to the Main branch could be removed without deprecation. This is a worthwhile risk to take on because it lowers the overall risk of an upgrade. When you run off Main, you’re less likely to fall behind upgrading because it becomes part of your weekly or monthly maintenance. Upgrading becomes routine, second nature rather than novel and scary. Changes are easy to isolate. It’s just slightly less polished. Like I said, I still think it’s pretty stable.</p>
 
-  <p>Another way to find places to contribute  is look at your own applications.</p>
+  <p>Another way to find places to contribute is look at your own applications.</p>
 
   <ul>
-    <li>Do you have monkey patches on Rails code  that are fixes bugs or changing behavior?   Instead of leaving them there, upstream  the fix and delete the monkey patch.</li>
-    <li>Is there infrastructure level code that  doesn’t really pertain to your product? It’s possible this could be a great addition to  Rails. When I wrote the database in Rails, it came from GitHub’s monolith. It made perfect sense  because it was getting in the way of upgrades, didn’t expose any intellectual property, had  nothing to do with your product features and  
+    <li>Do you have monkey patches on Rails code that are fixes bugs or changing behavior? Instead of leaving them there, upstream the fix and delete the monkey patch.</li>
+    <li>Is there infrastructure level code that doesn’t really pertain to your product? It’s possible this could be a great addition to Rails. When I wrote the database in Rails, it came from GitHub’s monolith. It made perfect sense because it was getting in the way of upgrades, didn’t expose any intellectual property, had nothing to do with your product features and  
 something many applications could benefit from.</li>
     <li>Lastly and most importantly, keep showing up.</li>
   </ul>
 
-  <p>… Ultimately,  if more companies treated the framework as an extension of the application, it would  result in higher resilience and stability. Investment in Rails ensures your foundation will not crumble under the weight of your application. Treating it as an unimportant part of your application is a mistake and many, many leaders make this mistake.</p>
+  <p>… Ultimately, if more companies treated the framework as an extension of the application, it would result in higher resilience and stability. Investment in Rails ensures your foundation will not crumble under the weight of your application. Treating it as an unimportant part of your application is a mistake and many, many leaders make this mistake.</p>
 
-  <p>…leaders see funding open source risky is because they don’t actually  understand the work. … Often, leaders worry if there’s a team working in open source, other teams are going to be jealous or resentful that that team is doing “fun” work. …</p>
+  <p>…leaders see funding open source risky is because they don’t actually understand the work. … Often, leaders worry if there’s a team working in open source, other teams are going to be jealous or resentful that that team is doing “fun” work. …</p>
 
   <p>Maintainers need to make changes, deal with security incidents and also handle criticism from many people. Maintaining and contributing to open source requires a different skill set than product work. That doesn’t make it any less essential.</p>
 
-  <p>…Many product companies don’t like words like “research” and “experimental.”  They can imply work without goals. Use words like  “investment.” And demonstrate the direct value will bring. Make sure it is measurable and will  make the application and product more successful. A great example of measurable work is  a change that improves performance. If you can tie contributions to direct customer improvements, it’s easier to show leadership.</p>
+  <p>…Many product companies don’t like words like “research” and “experimental.” They can imply work without goals. Use words like “investment.” And demonstrate the direct value will bring. Make sure it is measurable and will make the application and product more successful. A great example of measurable work is a change that improves performance. If you can tie contributions to direct customer improvements, it’s easier to show leadership.</p>
 
-  <p>…As I started contributing more and more  and pealing back the layers of Rails, the impact is limitless. I started looking at how applications stretched  the boundaries of what Rails was meant to do.</p>
+  <p>…As I started contributing more and more and pealing back the layers of Rails, the impact is limitless. I started looking at how applications stretched the boundaries of what Rails was meant to do.</p>
 
   <p>…Ultimately, I want you to contribute to Rails because it’s going to enable you to build a better company and product. The benefits of investing in Rails go far beyond improving the framework.</p>
 
-  <p>Investing in Rails will build up the skills of your engineering team. They will developer better communication skills, learn to navigate criticism,  debugging skills and how the framework functions.  It will teach engineers about the inner-workings and catch bugs.</p>
+  <p>Investing in Rails will build up the skills of your engineering team. They will developer better communication skills, learn to navigate criticism, debugging skills and how the framework functions. It will teach engineers about the inner-workings and catch bugs.</p>
 
-  <p>Monkey patching is far more dangerous than I think most realize. They break  with upgrades and cause security incidents.  When you write a monkey patch, you maintain a portion of Rails code. Wouldn’t it have been   better to patch it upstream rather than taking on that risk and responsibility.</p>
+  <p>Monkey patching is far more dangerous than I think most realize. They break with upgrades and cause security incidents. When you write a monkey patch, you maintain a portion of Rails code. Wouldn’t it have been better to patch it upstream rather than taking on that risk and responsibility.</p>
 
-  <p>It will give your engineering team the skills  they need to make better technical decisions. You’re ensuring that Rails benefits your application and the company for the long-term.</p>
+  <p>It will give your engineering team the skills they need to make better technical decisions. You’re ensuring that Rails benefits your application and the company for the long-term.</p>
 
-  <p>…Contributing to Rails is only <em>not</em> essential if you don’t care about the direction the framework is headed in. We should be contributing  because we care about the changes.</p>
+  <p>…Contributing to Rails is only <em>not</em> essential if you don’t care about the direction the framework is headed in. We should be contributing because we care about the changes.</p>
 
   <p>We want to ensure our apps are upgradeable, performant and stable.</p>
 
-  <p>Investment in Rails also means you won’t have to rewrite your application in a few years because Rails no longer supports what you need. When you fail  to invest in your tools, you end up being unable to upgrade. Your engineering team is miserable. The codebase is a mess and writing features is impossible. You’re forced into a rewrite, your engineers want to write Rails and you can no longer let them do that. You have to build a bunch of features before you site falls over.</p>
+  <p>Investment in Rails also means you won’t have to rewrite your application in a few years because Rails no longer supports what you need. When you fail to invest in your tools, you end up being unable to upgrade. Your engineering team is miserable. The codebase is a mess and writing features is impossible. You’re forced into a rewrite, your engineers want to write Rails and you can no longer let them do that. You have to build a bunch of features before you site falls over.</p>
 
-  <p>It’s not Rails’ fault you made  the decision to invest elsewhere.</p>
+  <p>It’s not Rails’ fault you made the decision to invest elsewhere.</p>
 
   <p>If you build contributing into your culture, the benefits are clear:</p>
 
   <ul>
     <li>Your engineering teams’ skills will improve.</li>
-    <li>Rails will evolve with your  application because you’re helping decide how it needs to change.</li>
-    <li>Your application will be  more resilient because there’s low tech debt and your foundation is stable. Active investment  prevents your application from degrading.</li>
+    <li>Rails will evolve with your application because you’re helping decide how it needs to change.</li>
+    <li>Your application will be more resilient because there’s low tech debt and your foundation is stable. Active investment prevents your application from degrading.</li>
   </ul>
 
-  <p>Building a team to invest in Rails is  proactive. Rewriting an application is reactive. Which one do you think is better for business in the long run?</p>
+  <p>Building a team to invest in Rails is proactive. Rewriting an application is reactive. Which one do you think is better for business in the long run?</p>
 
 </blockquote>
 
@@ -529,7 +527,7 @@ something many applications could benefit from.</li>
 <p>GoodJob v2.5.0 <a href="https://github.com/bensheldon/good_job/pull/423">changed the cron locking strategy</a>. Instead of using Concurrency Control’s advisory locks, GoodJob uses a unique compound index to prevent the same cron job from being enqueued/<code>INSERT</code>ed into the database multiple times.</p>
 
 <ul>
-  <li>In addition to the existing <code>cron_key</code> column in job records, the change added a new timestamp column, <code>cron_at</code> to  store when the cron job is enqueued.</li>
+  <li>In addition to the existing <code>cron_key</code> column in job records, the change added a new timestamp column, <code>cron_at</code> to store when the cron job is enqueued.</li>
   <li>Added a unique index on <code>[cron_key, cron_at]</code> to ensure that only one job is inserted for the given key and time.</li>
   <li>Handled the expected <code>ActiveRecord::RecordNotUnique</code> when multiple cron processes try to enqueue the same cron job simultaneously and the unique index prevents the <code>INSERT</code> from taking place</li>
 </ul>
@@ -571,7 +569,7 @@ something many applications could benefit from.</li>
     <p>I read this <a href="https://harpers.org/archive/2023/01/exit-technologists-libertarianism/">Harper’s essay about working at Wired UK</a> by Hari Kunzru with the line:</p>
 
     <blockquote>
-      <p>The political economist Albert O. Hirschman famously characterized the choice that is faced by people within declining institutions as being between “voice” and “exit.” Either you speak up to change things, or you leave and look for something better.’</p>
+      <p>The political economist Albert O. Hirschman famously characterized the choice that is faced by people within declining institutions as being between “voice” and “exit.” Either you speak up to change things, or you leave and look for something better.’</p>
     </blockquote>
   </li>
   <li>
@@ -680,7 +678,7 @@ something many applications could benefit from.</li>
 <p>I played a lot of Sim Earth as a kid. It had a mode called Daisyworld based on the <a href="https://en.wikipedia.org/wiki/Gaia_hypothesis">“Gaia Hypothesis”</a>:</p>
 
 <blockquote>
-  <p>proposes that living organisms interact with their inorganic surroundings on  Earth to form a synergistic and self-regulating, complex system that helps to maintain and perpetuate the conditions for life on the planet.</p>
+  <p>proposes that living organisms interact with their inorganic surroundings on Earth to form a synergistic and self-regulating, complex system that helps to maintain and perpetuate the conditions for life on the planet.</p>
 </blockquote>
 
 <p>In Sim Earth’s Daisyworld, that was simulated by populating the Earth with different shades of flower. Darker flowers survived at lower temperatures and absorbed sunlight, warming their immediate environment; lighter flowers survived at warmer temperatures and reflecting sunlight, cooling their immediate environment. Running the simulation would, eventually, usually, lead to a dynamically changing, but still steady-state environment; in <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Examples_of_patterns">Conway terminoloy</a>: still lifes and oscillators.</p>
@@ -700,7 +698,8 @@ something many applications could benefit from.</li>
 </blockquote>
 
 <h2 id="terroir">Terroir</h2>
-<p>From Vicki Boykis’s  <a href="https://vicki.substack.com/p/the-art-of-the-long-goodbye">“The Art of the Long Goodbye”</a> :</p>
+
+<p>From Vicki Boykis’s <a href="https://vicki.substack.com/p/the-art-of-the-long-goodbye">“The Art of the Long Goodbye”</a> :</p>
 
 <blockquote>
   <p>A few years ago, I read the Southern Reach trilogy, by Jeff Van Der Meer….</p>
@@ -724,7 +723,7 @@ something many applications could benefit from.</li>
 
 <p>An example: pair programming. We were a lot of people from Pivotal labs (there it is!) with a strong belief in Extreme Programming: shared ownership, an active-closeness to the users of our software, and closeness to each other through frequent pair programming. And we went from largely in-person pairing, to remote pairing. I find pair programming to be exhausting in the best of circumstances, and the ongoing pandemic didn’t help. So we adapted our values and practices, and de-emphasized pairing and went from an expectation of “most of the time” to “a tool that’s available some of the time”. It was a stretch (aside: it wasn’t just pairing that got stretched either, the whole XP thing)</p>
 
-<p>A team is never static. People were leaving, we were hiring, teams were forming and reforming. It was tenuous for everyone, to test out the limits of inclusion and identity. And as an engineering leader, it led to a lot of tough conversations about  <em>how… we… work… together</em>. It was hard; I think we lost that cultivar.</p>
+<p>A team is never static. People were leaving, we were hiring, teams were forming and reforming. It was tenuous for everyone, to test out the limits of inclusion and identity. And as an engineering leader, it led to a lot of tough conversations about <em>how… we… work… together</em>. It was hard; I think we lost that cultivar.</p>
 
 <h2 id="oasis">Oasis</h2>
 

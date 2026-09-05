@@ -127,7 +127,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a>  version 1.4 is released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the  <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> .</p>
+    <p><a href="https://github.com/bensheldon/good_job">GoodJob</a> version 1.4 is released. GoodJob is a multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails. If you’re new to GoodJob, read the <a href="https://island94.org/2020/07/introducing-goodjob-1-0">introductory blog post</a> .</p>
 
 <p>GoodJob’s v1.4 release adds support for:</p>
 
@@ -143,22 +143,26 @@
 <p>Version 1.4’s release comes three months after v1.3 and five months after GoodJob’s initial v1.0 release.</p>
 
 <h2 id="jruby-compatibility">JRuby compatibility</h2>
+
 <p>GoodJob 1.4 adds compatibility for Ruby on Rails applications running under JRuby. GoodJob’s multithreading is built on top of <a href="https://github.com/ruby-concurrency/concurrent-ruby">ConcurrentRuby</a>, which provides consistent behavior and guarantees on all four of the main Ruby interpreters (MRI/CRuby, JRuby, Rubinius, TruffleRuby).</p>
 
 <p>A minor downside of JRuby is that JRuby’s database adapter, <a href="https://github.com/jruby/activerecord-jdbc-adapter"><code>activerecord-jdbc-adapter</code></a>, does not support Postgres LISTEN, which means GoodJob must rely on polling for new jobs under JRuby.</p>
 
 <h2 id="broader-compatibility-and-improvements">Broader compatibility and improvements</h2>
+
 <p>In addition to JRuby, GoodJob 1.4 adds compatibility for MRI 3.0, Rails 6.1, and Postgres 12+.</p>
 
 <p>GoodJob 1.4 also includes improved filtering for the Web Dashboard,.</p>
 
 <h2 id="whats-next">What’s next</h2>
+
 <p>The next version of GoodJob will add support for daemonization.</p>
 
 <h2 id="contribute">Contribute</h2>
-<p>Code, documentation, and curiosity-based contributions are welcome! Check out the  <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a> , comment on or open a Github Issue, or make a Pull Request.</p>
 
-<p>I also have a  <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a>  if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
+<p>Code, documentation, and curiosity-based contributions are welcome! Check out the <a href="https://github.com/bensheldon/good_job/projects/1">GoodJob Backlog</a> , comment on or open a Github Issue, or make a Pull Request.</p>
+
+<p>I also have a <a href="https://github.com/sponsors/bensheldon">GitHub Sponsors Profile</a> if you’re able to support GoodJob and me monetarily. It helps me stay in touch and send you project updates too.</p>
 
   </div>
 </article>

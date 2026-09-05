@@ -161,11 +161,11 @@
 
 <h3 id="making-a-renderable-work-later">Making a renderable work <em>later</em></h3>
 
-<p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">adding first-class support to Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code>  .</p>
+<p>The ViewComponent team can be really proud of <a href="https://github.com/rails/rails/pull/37919">adding first-class support to Rails</a> for a library like ViewComponent. Rails already supported views and partials and now it also supports an object that quacks like a <code>renderable</code> .</p>
 
 <p>For ViewComponent to be compatible with Turbo Broadcasting <em>later</em>, those View Components need to be serializable by Active Job. That’s because Turbo Rail’s <code>broadcast_*_later_to</code> takes the arguments it was passed and serializes them into a job so they can be run elsewhere better/faster/stronger.</p>
 
-<p>To serialize a ViewComponent, we need to collect its initialization arguments so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its  <code>initialize</code> method. To patch into that, there are a couple of different strategies I thought of taking:</p>
+<p>To serialize a ViewComponent, we need to collect its initialization arguments so that we can reconstitute it in that <em>elsewhere</em> place where the job is executed and the ViewComponent is re-initialized. To initialize a ViewComponent, you call <code>new</code> which calls its <code>initialize</code> method. To patch into that, there are a couple of different strategies I thought of taking:</p>
 
 <ul>
   <li>
@@ -179,7 +179,7 @@
   </li>
 </ul>
 
-<p>I respect that ViewComponent maintainers really want a ViewComponent to be <em>just like any other Ruby object</em> that you create with <code>new</code> and <code>initialize</code> , but it makes this particular goal, serialization, rather difficult. You can maybe see the ViewComponent maintainers ran into a few problems with initialization themselves: a collection of ViewComponents can optionally have each member initialized with an iteration number, but to do that <a href="https://github.com/ViewComponent/view_component/blob/1ed16e33ad70e45ffc08de3b68760a83d08e912e/lib/view_component/base.rb#L667-L712">ViewComponent has to introspect the <code>initialize</code> parameters</a>  to determine if the object implements the iteration parameter to decide whether to send it 🫠 That parameter introspection also means that we can’t simply prepend a redefined generic <code>initialize(*args, **kwargs)</code> because that would break the collection feature. Not great 💛</p>
+<p>I respect that ViewComponent maintainers really want a ViewComponent to be <em>just like any other Ruby object</em> that you create with <code>new</code> and <code>initialize</code> , but it makes this particular goal, serialization, rather difficult. You can maybe see the ViewComponent maintainers ran into a few problems with initialization themselves: a collection of ViewComponents can optionally have each member initialized with an iteration number, but to do that <a href="https://github.com/ViewComponent/view_component/blob/1ed16e33ad70e45ffc08de3b68760a83d08e912e/lib/view_component/base.rb#L667-L712">ViewComponent has to introspect the <code>initialize</code> parameters</a> to determine if the object implements the iteration parameter to decide whether to send it 🫠 That parameter introspection also means that we can’t simply prepend a redefined generic <code>initialize(*args, **kwargs)</code> because that would break the collection feature. Not great 💛</p>
 
 <p>So, given the compromises I’m willing to make between ergonomics and complexity and performance, given my abilities, and my experience, and what I know at this time…. I decided to simply make a new initializing class method, named <code>serializable</code>. If I want my ViewComponent to be serializable, I initialize it with <code>MyComponent.serializable(foo, bar:)</code>.</p>
 

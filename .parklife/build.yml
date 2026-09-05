@@ -4,7 +4,7 @@ config:
 paths:
   "/":
     build_path: index.html
-    etag: W/"f9801cbfdedaaed85448cae2f6547cb3"
+    etag: W/"9df1b87aeff1d45072e973f63676decf"
   "/redirects":
     build_path: redirects.html
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
@@ -16,10 +16,10 @@ paths:
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
   "/search.json":
     build_path: search.json
-    etag: W/"5bdfbf038062acabdaaead6a24823618"
+    etag: W/"e22fb97ecaf05e3fae741ace13b69f0d"
   "/feed.xml":
     build_path: feed.xml
-    etag: W/"55ea696337bd1b7b6c79310320f278a9"
+    etag: W/"acebb513771f9b880c1f1c4f83aa730c"
   "/sitemap.xml":
     build_path: sitemap.xml
     etag: W/"f9a2c72b8fdb0442ecd8f374e66ece65"
@@ -45,43 +45,43 @@ paths:
     etag: W/"3d2bfaa454d200e2db44d9882d75e827"
   "/2026/08/two-interviews-and-information-technology-thoughts":
     build_path: 2026/08/two-interviews-and-information-technology-thoughts.html
-    etag: W/"a31f45c9e87ebcfc0dcbd55f84da8280"
+    etag: W/"03bcd57f7f222c3da7cfcb7c89f4212e"
   "/2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments":
     build_path: 2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments.html
     etag: W/"483e7c8fa6a089b4157bd54aa9be8704"
   "/2026/07/running-code-when-the-ruby-on-rails-webserver-boots":
     build_path: 2026/07/running-code-when-the-ruby-on-rails-webserver-boots.html
-    etag: W/"7748c2ef0809e27c9b455d47dd083dda"
+    etag: W/"43b0b665ac6127b9e74d5d30832b9ae6"
   "/posts/tags/ruby-on-rails":
     build_path: posts/tags/ruby-on-rails.html
     etag: W/"1d325be7aa9e9be65070cef9bf617ada"
   "/2026/07/planning-badly-more-and-less":
     build_path: 2026/07/planning-badly-more-and-less.html
-    etag: W/"54d0010eee7aae83e38e8466e5ffba58"
+    etag: W/"106b17320bd4e7e638f6ee7127faa878"
   "/2026/05/one-year-of-ruby-on-rails-configuration":
     build_path: 2026/05/one-year-of-ruby-on-rails-configuration.html
-    etag: W/"7c90384a7ff267db5becc9bc2c911bec"
+    etag: W/"9187751fcad5b5fc6d3eb1f354037df3"
   "/posts/tags/ruby":
     build_path: posts/tags/ruby.html
     etag: W/"7bac523da95a88a4eab4e8859f1bc0e5"
   "/2026/03/a-bulletproof-wait_for_turbo-test-helper":
     build_path: 2026/03/a-bulletproof-wait_for_turbo-test-helper.html
-    etag: W/"a64971dd136695099a1579c2cb3b2051"
+    etag: W/"2d99a15acdca6f1253353df7b0b05480"
   "/2026/03/war":
     build_path: 2026/03/war.html
-    etag: W/"6a8e4c56299b19380676f71237403f02"
+    etag: W/"a566c4062b996fbced185fb66ff498bc"
   "/2026/02/post-your-prompts":
     build_path: 2026/02/post-your-prompts.html
-    etag: W/"b4891240189ceb1685bba38e99eee21e"
+    etag: W/"84a514c45c506889c348d6b8b429534f"
   "/2026/01/frontier-novelty":
     build_path: 2026/01/frontier-novelty.html
-    etag: W/"e109e0fa96b636c1fb2e09b7559c9326"
+    etag: W/"8b86a3dc57d4877f7cb3b183819cbafa"
   "/posts/tags/quotes":
     build_path: posts/tags/quotes.html
     etag: W/"1dbcbf08f8ad51b67c0216cea4c2e79b"
   "/posts/2":
     build_path: posts/2.html
-    etag: W/"ee9aaf72a4f8e59528aae802a134374b"
+    etag: W/"8c74dba107023628aef55c77b9f51bef"
   "/posts":
     build_path: posts.html
   "/articles/pool-soup":
@@ -170,7 +170,7 @@ paths:
     build_path: node/19.html
   "/2005/11/my-pigeons-in-a-row":
     build_path: 2005/11/my-pigeons-in-a-row.html
-    etag: W/"8ab0d17b22abd016de302f4ff388470f"
+    etag: W/"2664c38ccb0886e77b7fa06bcf0c86c4"
   "/2005/11/My-pigeons-in-a-row":
     build_path: 2005/11/My-pigeons-in-a-row.html
   "/node/18":
@@ -251,7 +251,7 @@ paths:
     build_path: articles/making-art-inkscape.html
   "/2006/03/making-art-with-inkscape":
     build_path: 2006/03/making-art-with-inkscape.html
-    etag: W/"1b52448d3d3d919dc9acdd83d44ba16b"
+    etag: W/"3599a80786c766bd93e989ef231c39f0"
   "/2006/03/Making-Art-with-Inkscape":
     build_path: 2006/03/Making-Art-with-Inkscape.html
   "/node/30":
@@ -278,7 +278,7 @@ paths:
     build_path: articles/dave-alpert-abbey.html
   "/2006/04/dave-alpert-at-the-abbey":
     build_path: 2006/04/dave-alpert-at-the-abbey.html
-    etag: W/"a50331833f3a9e2d361e03ec566d4f9d"
+    etag: W/"fcaa35fb712b2d9a37f4ddfbc0c1544a"
   "/2006/04/Dave-Alpert-at-the-Abbey":
     build_path: 2006/04/Dave-Alpert-at-the-Abbey.html
   "/node/42":
@@ -287,7 +287,7 @@ paths:
     build_path: articles/great-minds-dress-alike.html
   "/2006/04/great-minds-dress-alike":
     build_path: 2006/04/great-minds-dress-alike.html
-    etag: W/"1eda529bd89970fa2be48aa74b76ea18"
+    etag: W/"2719ee38e70bdbfa735cfcc3f5785329"
   "/2006/04/Great-Minds-Dress-Alike":
     build_path: 2006/04/Great-Minds-Dress-Alike.html
   "/node/46":
@@ -296,7 +296,7 @@ paths:
     build_path: articles/emo-lyrics-jason.html
   "/2006/05/emo-lyrics-for-jason":
     build_path: 2006/05/emo-lyrics-for-jason.html
-    etag: W/"a93326e645222d1ec3e1254144efd16e"
+    etag: W/"4746f9d3e155d28b5d0a6b3625e9f4dc"
   "/2006/05/Emo-lyrics-for-Jason":
     build_path: 2006/05/Emo-lyrics-for-Jason.html
   "/node/47":
@@ -305,7 +305,7 @@ paths:
     build_path: articles/x-salad-sandwich.html
   "/2006/05/x-salad-sandwich":
     build_path: 2006/05/x-salad-sandwich.html
-    etag: W/"7199c1d9efe5ac0c7bab76362d6671ca"
+    etag: W/"db0ca82a612860bb7353078c702aa5fa"
   "/2006/05/X-Salad-Sandwich":
     build_path: 2006/05/X-Salad-Sandwich.html
   "/node/48":
@@ -314,7 +314,7 @@ paths:
     build_path: articles/now-thats-lot-mustard.html
   "/2006/06/now-thats-a-lot-of-mustard":
     build_path: 2006/06/now-thats-a-lot-of-mustard.html
-    etag: W/"183d9bec221a20617a6f2848af20ab00"
+    etag: W/"02d4227b23cf85630ffe0d80addd9667"
   "/2006/06/Now-thats-a-lot-of-mustard":
     build_path: 2006/06/Now-thats-a-lot-of-mustard.html
   "/node/49":
@@ -323,7 +323,7 @@ paths:
     build_path: articles/san-francisco-bay.html
   "/2006/06/on-san-francisco-bay":
     build_path: 2006/06/on-san-francisco-bay.html
-    etag: W/"24594793c4c6d4671c223095af13ec8a"
+    etag: W/"9e8145b69563877deeb02ce273478925"
   "/2006/06/On-San-Francisco-Bay":
     build_path: 2006/06/On-San-Francisco-Bay.html
   "/node/54":
@@ -368,7 +368,7 @@ paths:
     build_path: articles/two-minutes-paul-and-liz.html
   "/2006/07/two-minutes-for-paul-and-liz":
     build_path: 2006/07/two-minutes-for-paul-and-liz.html
-    etag: W/"b58cb7b10a5a6002ad56b28824379005"
+    etag: W/"e3373fa54f94b841bb8c1e274f3fe430"
   "/2006/07/Two-minutes-for-Paul-and-Liz":
     build_path: 2006/07/Two-minutes-for-Paul-and-Liz.html
   "/node/59":
@@ -386,7 +386,7 @@ paths:
     build_path: articles/new-look.html
   "/2006/07/a-new-look":
     build_path: 2006/07/a-new-look.html
-    etag: W/"04b13c0ef65cb664836a61fcd4ad6129"
+    etag: W/"87ece31a1c1d5acecfb974884714eb09"
   "/2006/07/A-new-look":
     build_path: 2006/07/A-new-look.html
   "/node/61":
@@ -413,7 +413,7 @@ paths:
     build_path: articles/zandvoort.html
   "/2006/07/zandvoort":
     build_path: 2006/07/zandvoort.html
-    etag: W/"df05459d8bfc3a61670f4947a4f0b2e3"
+    etag: W/"2dbeae262f14d5c8ab52d1d89ccec3d7"
   "/2006/07/Zandvoort":
     build_path: 2006/07/Zandvoort.html
   "/node/66":
@@ -422,7 +422,7 @@ paths:
     build_path: articles/harbor-island-info.html
   "/2006/07/harbor-island-info":
     build_path: 2006/07/harbor-island-info.html
-    etag: W/"07c52266741054fc5938852b8f20c527"
+    etag: W/"66b6eb4bb3f9581331a37d29b966779e"
   "/2006/07/Harbor-Island-info":
     build_path: 2006/07/Harbor-Island-info.html
   "/node/67":
@@ -431,7 +431,7 @@ paths:
     build_path: articles/zuchini-harvest.html
   "/2006/07/zuchini-harvest":
     build_path: 2006/07/zuchini-harvest.html
-    etag: W/"4ae1151034d0b25055533e02c4d371b3"
+    etag: W/"8af7f830bfd35a0074ff2987e1859ca8"
   "/2006/07/Zuchini-harvest":
     build_path: 2006/07/Zuchini-harvest.html
   "/articles/two-two-two-yolks-one":
@@ -440,7 +440,7 @@ paths:
     build_path: node/68.html
   "/2006/07/two-two-two-yolks-in-one":
     build_path: 2006/07/two-two-two-yolks-in-one.html
-    etag: W/"0a9974d23819a9e9b2352611ff2be60f"
+    etag: W/"82e8f94b9b2f09788d09e47c0934e278"
   "/2006/07/Two-two-two-yolks-in-one":
     build_path: 2006/07/Two-two-two-yolks-in-one.html
   "/node/69":
@@ -458,7 +458,7 @@ paths:
     build_path: articles/run.html
   "/2006/07/run":
     build_path: 2006/07/run.html
-    etag: W/"2b465aa0f6a6935d3d774838d0706cf7"
+    etag: W/"0968413df87b4766ef11b4eff844f124"
   "/2006/07/Run":
     build_path: 2006/07/Run.html
   "/node/70":
@@ -476,7 +476,7 @@ paths:
     build_path: articles/canoes-mystic-river.html
   "/2006/07/canoes-on-the-mystic-river":
     build_path: 2006/07/canoes-on-the-mystic-river.html
-    etag: W/"eb0deb6fc7573bab2d575da19c7ba756"
+    etag: W/"6370ee32fade994122e51c626a2b4e9a"
   "/2006/07/Canoes-on-the-Mystic-River":
     build_path: 2006/07/Canoes-on-the-Mystic-River.html
   "/node/74":
@@ -494,7 +494,7 @@ paths:
     build_path: node/76.html
   "/2006/07/first-monday-night-write":
     build_path: 2006/07/first-monday-night-write.html
-    etag: W/"e65065a6eb22c0418d50862904fe18ba"
+    etag: W/"62ca5ac4a6e795f774f5f963d420febe"
   "/2006/07/First-Monday-Night-Write":
     build_path: 2006/07/First-Monday-Night-Write.html
   "/node/75":
@@ -503,7 +503,7 @@ paths:
     build_path: articles/making-smoothies.html
   "/2006/07/making-smoothies":
     build_path: 2006/07/making-smoothies.html
-    etag: W/"a160f9341f8c2cb93779a59459251408"
+    etag: W/"99947dbe0a5df0f08b88665f309351fd"
   "/2006/07/Making-smoothies":
     build_path: 2006/07/Making-smoothies.html
   "/articles/no-chirps-lowell":
@@ -521,7 +521,7 @@ paths:
     build_path: articles/gone-bicycling.html
   "/2006/07/gone-bicycling":
     build_path: 2006/07/gone-bicycling.html
-    etag: W/"158effcbecdb6e0b8b450e01f822b178"
+    etag: W/"89f717004a0d927e37d097e7af4027ac"
   "/2006/07/Gone-bicycling":
     build_path: 2006/07/Gone-bicycling.html
   "/node/79":
@@ -539,7 +539,7 @@ paths:
     build_path: articles/piecing-together-cambrige.html
   "/2006/07/piecing-together-cambrige":
     build_path: 2006/07/piecing-together-cambrige.html
-    etag: W/"e0894f8a32aa3ff2006611fc1e20607d"
+    etag: W/"661561ad2255dee721e664084b6dda90"
   "/2006/07/Piecing-together-Cambrige":
     build_path: 2006/07/Piecing-together-Cambrige.html
   "/node/81":
@@ -548,7 +548,7 @@ paths:
     build_path: articles/meta-photography-boston.html
   "/2006/08/meta-photography-in-boston":
     build_path: 2006/08/meta-photography-in-boston.html
-    etag: W/"03d0394e1b01c3b166429b494c3250f2"
+    etag: W/"a972bcb6c8b33520e12c8823b5e8b745"
   "/2006/08/Meta-photography-in-Boston":
     build_path: 2006/08/Meta-photography-in-Boston.html
   "/node/82":
@@ -674,7 +674,7 @@ paths:
     build_path: articles/evening-cruise-boston-harbor.html
   "/2006/09/evening-cruise-on-boston-harbor":
     build_path: 2006/09/evening-cruise-on-boston-harbor.html
-    etag: W/"7e0547334a0b5e453f028a695cad272d"
+    etag: W/"d914ea269439babadbbe3384006c734c"
   "/2006/09/Evening-cruise-on-Boston-Harbor":
     build_path: 2006/09/Evening-cruise-on-Boston-Harbor.html
   "/node/97":
@@ -683,7 +683,7 @@ paths:
     build_path: articles/rhode-island-turf-and-grapes.html
   "/2006/09/rhode-island-turf-and-grapes":
     build_path: 2006/09/rhode-island-turf-and-grapes.html
-    etag: W/"b48747587e715e713aea9194dc6d2524"
+    etag: W/"c8c7f420ff9e17bfafa68d0ef44c80c4"
   "/2006/09/Rhode-Island-Turf-and-Grapes":
     build_path: 2006/09/Rhode-Island-Turf-and-Grapes.html
   "/node/98":
@@ -787,7 +787,7 @@ paths:
     build_path: articles/denim-flashback.html
   "/2006/11/denim-flashback":
     build_path: 2006/11/denim-flashback.html
-    etag: W/"2b3f7b7ee373c32d10845c4dfd4baa61"
+    etag: W/"bd1f11f54928b592b5e9947ac86d9f1d"
   "/2006/11/Denim-flashback":
     build_path: 2006/11/Denim-flashback.html
   "/node/110":
@@ -823,7 +823,7 @@ paths:
     build_path: articles/happy-birthday-rebecca.html
   "/2006/12/happy-birthday-rebecca":
     build_path: 2006/12/happy-birthday-rebecca.html
-    etag: W/"71ae2406224c79e47c61f003bdd72419"
+    etag: W/"5fd74bfc4ee79fa5e03416896d1c65bb"
   "/2006/12/Happy-Birthday-Rebecca":
     build_path: 2006/12/Happy-Birthday-Rebecca.html
   "/node/113":
@@ -841,7 +841,7 @@ paths:
     build_path: articles/happy-holidays-2006.html
   "/2006/12/happy-holidays-2006":
     build_path: 2006/12/happy-holidays-2006.html
-    etag: W/"4a8322caa6c2b9ace6e29e9561810c0c"
+    etag: W/"50351a012f6bdb69ee8f5c5f375bdcb7"
   "/2006/12/Happy-Holidays-2006":
     build_path: 2006/12/Happy-Holidays-2006.html
   "/2007/01/bostons-best-tacos":
@@ -859,7 +859,7 @@ paths:
     build_path: articles/valentines-day-2007.html
   "/2007/02/valentines-day-2007":
     build_path: 2007/02/valentines-day-2007.html
-    etag: W/"4bcb25bb1b3f9a30f84e053a51a381de"
+    etag: W/"ae068309d80229ac749f76435441b580"
   "/2007/02/Valentines-Day-2007":
     build_path: 2007/02/Valentines-Day-2007.html
   "/node/119":
@@ -931,7 +931,7 @@ paths:
     build_path: articles/meetamericorps-still-success.html
   "/2007/04/meetamericorps-still-a-success":
     build_path: 2007/04/meetamericorps-still-a-success.html
-    etag: W/"ad463f01669803c49b550ea7990739e1"
+    etag: W/"8b84c16bf9e1782eb1564bdbec877e8c"
   "/2007/04/MeetAmeriCorps-still-a-success":
     build_path: 2007/04/MeetAmeriCorps-still-a-success.html
   "/node/127":
@@ -974,7 +974,7 @@ paths:
     build_path: articles/small-things-spring.html
   "/2007/06/small-things-of-spring":
     build_path: 2007/06/small-things-of-spring.html
-    etag: W/"eb955bf343e1a017c50946bbe2fbc218"
+    etag: W/"af0397b0ed0647e1ecc5972dc7c913e6"
   "/2007/06/Small-things-of-Spring":
     build_path: 2007/06/Small-things-of-Spring.html
   "/node/133":
@@ -1010,7 +1010,7 @@ paths:
     build_path: articles/geekout-video-maps-cable-access-tv.html
   "/2007/08/geekout-video-on-maps-for-cable-access-tv":
     build_path: 2007/08/geekout-video-on-maps-for-cable-access-tv.html
-    etag: W/"2036f683989171ef35ecd96ed9bcbad9"
+    etag: W/"b9d008a2472e3ef50825a213184d702f"
   "/2007/08/Geekout-Video-on-Maps-for-Cable-Access-TV":
     build_path: 2007/08/Geekout-Video-on-Maps-for-Cable-Access-TV.html
   "/node/137":
@@ -1063,7 +1063,7 @@ paths:
     build_path: verb-do.html
   "/2007/08/verb-to-do":
     build_path: 2007/08/verb-to-do.html
-    etag: W/"45db22c7e8ab5e76882d788049ff9845"
+    etag: W/"919f79ef62cfca94ddce2be53dab9dac"
   "/2007/08/Verb-to-do":
     build_path: 2007/08/Verb-to-do.html
   "/node/148":
@@ -1179,7 +1179,7 @@ paths:
     build_path: opinion-nonprofits.html
   "/2007/09/opinion-on-nonprofits":
     build_path: 2007/09/opinion-on-nonprofits.html
-    etag: W/"dd92303f28ec4fb746bc17b6cfb8edad"
+    etag: W/"9c3678d3fec77c248cec09a82ff932e6"
   "/2007/09/Opinion-on-Nonprofits":
     build_path: 2007/09/Opinion-on-Nonprofits.html
   "/node/156":
@@ -1224,7 +1224,7 @@ paths:
     build_path: google-relevance.html
   "/2007/10/google-relevance":
     build_path: 2007/10/google-relevance.html
-    etag: W/"2a236a39636096870cf3561c4e32062b"
+    etag: W/"fdf3b644b3ce8a7333c129e0cc9c3de5"
   "/2007/10/Google-Relevance":
     build_path: 2007/10/Google-Relevance.html
   "/node/161":
@@ -1262,7 +1262,7 @@ paths:
     build_path: articles/alternatives-nonprofit-job.html
   "/2007/10/alternatives-to-a-nonprofit-job":
     build_path: 2007/10/alternatives-to-a-nonprofit-job.html
-    etag: W/"b2e6eb1cba049059b51ba321edd9bd75"
+    etag: W/"4c381efd6a2ff5ca3ac04ed3e168abaf"
   "/2007/10/Alternatives-to-a-Nonprofit-Job":
     build_path: 2007/10/Alternatives-to-a-Nonprofit-Job.html
   "/node/165":
@@ -1327,7 +1327,7 @@ paths:
     build_path: articles/donations-and-volunteering.html
   "/2007/11/donations-and-volunteering":
     build_path: 2007/11/donations-and-volunteering.html
-    etag: W/"1c765b8c97b6e4d78f372abc1b3af539"
+    etag: W/"0ccae80f2992b712bca3640a33eb04ae"
   "/2007/11/Donations-and-Volunteering":
     build_path: 2007/11/Donations-and-Volunteering.html
   "/node/173":
@@ -1491,7 +1491,7 @@ paths:
     build_path: reading-list.html
   "/2007/12/reading-list":
     build_path: 2007/12/reading-list.html
-    etag: W/"1c138adc15a3f80fc30d2f20cb3aa8bf"
+    etag: W/"f8401c4590bd0cfbe35a7ff114a0e33b"
   "/2007/12/Reading-List":
     build_path: 2007/12/Reading-List.html
   "/node/191":
@@ -1616,7 +1616,7 @@ paths:
     build_path: capitalism-and-morality-thai-beer-and-monks.html
   "/2008/03/capitalism-and-morality-thai-beer-and-monks":
     build_path: 2008/03/capitalism-and-morality-thai-beer-and-monks.html
-    etag: W/"b5f7cc46ae877f4e393c2345eb1af623"
+    etag: W/"85a81b8ab635bca8de245b0d0381bd07"
   "/2008/03/Capitalism-and-Morality-Thai-Beer-and-Monks":
     build_path: 2008/03/Capitalism-and-Morality-Thai-Beer-and-Monks.html
   "/node/204":
@@ -1717,7 +1717,7 @@ paths:
     build_path: articles/cat-new.html
   "/2008/04/cat-new":
     build_path: 2008/04/cat-new.html
-    etag: W/"fc38e02261fda24bd005856fa94d9281"
+    etag: W/"78d9578ca0b0189e4511f005eb9de98d"
   "/2008/04/Cat-New":
     build_path: 2008/04/Cat-New.html
   "/node/217":
@@ -1774,7 +1774,7 @@ paths:
     build_path: observation/conference-notes-managing-nonprofit-technology-projects.html
   "/2008/06/conference-notes-managing-nonprofit-technology-projects":
     build_path: 2008/06/conference-notes-managing-nonprofit-technology-projects.html
-    etag: W/"3ceae496f362e516cba8487d23d58c0c"
+    etag: W/"71b01d7c00ba9a672b54ceb1352cc6f1"
   "/2008/06/Conference-notes-managing-nonprofit-technology-projects":
     build_path: 2008/06/Conference-notes-managing-nonprofit-technology-projects.html
   "/node/222":
@@ -1810,7 +1810,7 @@ paths:
     build_path: observation/7-nonprofit-challenges.html
   "/2008/06/7-nonprofit-challenges":
     build_path: 2008/06/7-nonprofit-challenges.html
-    etag: W/"5cbe24463034f5961852bd1397dcb3c2"
+    etag: W/"85b87dd82fdaa1b39b6cbec33d6bb81c"
   "/2008/06/7-Nonprofit-Challenges":
     build_path: 2008/06/7-Nonprofit-Challenges.html
   "/node/227":
@@ -1909,7 +1909,7 @@ paths:
     build_path: observation/digital-media-forensics.html
   "/2008/08/digital-media-forensics":
     build_path: 2008/08/digital-media-forensics.html
-    etag: W/"228d18d4f7bd67b48213a19798d80487"
+    etag: W/"7b00954b4d0cdd8f047c2ebfc491f4be"
   "/2008/08/Digital-Media-Forensics":
     build_path: 2008/08/Digital-Media-Forensics.html
   "/node/238":
@@ -1937,7 +1937,7 @@ paths:
     build_path: 2008/08/What-to-ask-before-building-a-website.html
   "/2008/08/are-you-ahw-or-arr":
     build_path: 2008/08/are-you-ahw-or-arr.html
-    etag: W/"b957cb69d33d723215d3adb46a9bd5be"
+    etag: W/"d3fd6961c8b12bd600dfafb56f684114"
   "/node/241":
     build_path: node/241.html
   "/observation/ahw-or-arr":
@@ -1963,7 +1963,7 @@ paths:
     build_path: observation/caring-internet.html
   "/2008/08/caring-on-the-internet":
     build_path: 2008/08/caring-on-the-internet.html
-    etag: W/"38abd1f06947103edb39138048027730"
+    etag: W/"e74554b9aaedc7fc7f53ef30a62d81b0"
   "/2008/08/Caring-on-the-Internet":
     build_path: 2008/08/Caring-on-the-Internet.html
   "/node/244":
@@ -1999,7 +1999,7 @@ paths:
     build_path: observation/failure-confidence.html
   "/2008/08/failure-of-confidence":
     build_path: 2008/08/failure-of-confidence.html
-    etag: W/"8cd5ef4789021e6aa8aa5ac502e818fd"
+    etag: W/"f6780c7279c014fd9a721c746700a596"
   "/2008/08/Failure-of-confidence":
     build_path: 2008/08/Failure-of-confidence.html
   "/node/247":
@@ -2026,7 +2026,7 @@ paths:
     build_path: articles/radio-ga-ga-2-role-nonprofits-constructing-better-world.html
   "/2008/08/radio-ga-ga-2-the-role-of-nonprofits-in-constructing-a-better-world":
     build_path: 2008/08/radio-ga-ga-2-the-role-of-nonprofits-in-constructing-a-better-world.html
-    etag: W/"41285b08d57948bb6963ad86e890575f"
+    etag: W/"a7ef30655ac05c813ce9118fca34fbb4"
   "/2008/08/Radio-Ga-Ga-2-The-role-of-nonprofits-in-constructing-a-better-world":
     build_path: 2008/08/Radio-Ga-Ga-2-The-role-of-nonprofits-in-constructing-a-better-world.html
   "/observation/get-government-job":
@@ -2235,7 +2235,7 @@ paths:
     build_path: articles/strengthening-organizations-through-community-engagement.html
   "/2008/11/strengthening-organizations-through-community-engagement":
     build_path: 2008/11/strengthening-organizations-through-community-engagement.html
-    etag: W/"34aef04e7377d101902b617a2714e7f6"
+    etag: W/"f88b619e348e7bb2eef4770adee21fe8"
   "/2008/11/Strengthening-Organizations-through-Community-Engagement":
     build_path: 2008/11/Strengthening-Organizations-through-Community-Engagement.html
   "/node/272":
@@ -2288,7 +2288,7 @@ paths:
     build_path: observation/human-measurements.html
   "/2008/12/human-measurements":
     build_path: 2008/12/human-measurements.html
-    etag: W/"eb7085a2716d4d131c4533d67dab2bef"
+    etag: W/"b823427b3b4e15f992ea9bb7417d4856"
   "/2008/12/Human-Measurements":
     build_path: 2008/12/Human-Measurements.html
   "/observation/weingarten-rights":
@@ -2297,7 +2297,7 @@ paths:
     build_path: node/278.html
   "/2009/01/weingarten-rights":
     build_path: 2009/01/weingarten-rights.html
-    etag: W/"d731b77523ddd9e04ea1a19c377ab792"
+    etag: W/"8f1d8fffd7945e141c950ef9946c6327"
   "/2009/01/Weingarten-Rights":
     build_path: 2009/01/Weingarten-Rights.html
   "/2009/01/325":
@@ -2313,29 +2313,29 @@ paths:
     build_path: 2009/01/Patterns-of-Meaning.html
   "/2009/01/using-distinctions-to-create-meaning":
     build_path: 2009/01/using-distinctions-to-create-meaning.html
-    etag: W/"3030f3abc9f3f1213033778246bb149e"
+    etag: W/"992fe19fa0f39bec6fe98377e3f6b36b"
   "/2009/01/Using-distinctions-to-create-meaning":
     build_path: 2009/01/Using-distinctions-to-create-meaning.html
   "/2009/01/Obama-Painting":
     build_path: 2009/01/Obama-Painting.html
   "/2009/01/american-commissar-my-family-archive-project":
     build_path: 2009/01/american-commissar-my-family-archive-project.html
-    etag: W/"7333aa619c43d0bd86d0c55b9915927b"
+    etag: W/"e0a0d7ad97e9149348a1460699c387a8"
   "/2009/01/American-Commissar-my-family-archive-project":
     build_path: 2009/01/American-Commissar-my-family-archive-project.html
   "/2009/01/types-of-facilitator-interventions":
     build_path: 2009/01/types-of-facilitator-interventions.html
-    etag: W/"f6a4269c83aa36bce51eaf6a3ef2d099"
+    etag: W/"f781968f96866b8daade4b756f1d4d43"
   "/2009/01/Types-of-Facilitator-Interventions":
     build_path: 2009/01/Types-of-Facilitator-Interventions.html
   "/2009/02/two-videos-for-february-1st":
     build_path: 2009/02/two-videos-for-february-1st.html
-    etag: W/"698f2260c477977e5ff2460560aa8f09"
+    etag: W/"c9b791aea18f948dc9ee65157f3d18e8"
   "/2009/02/Two-videos-for-February-1st":
     build_path: 2009/02/Two-videos-for-February-1st.html
   "/2009/02/know-your-organic-plu-by-number":
     build_path: 2009/02/know-your-organic-plu-by-number.html
-    etag: W/"06d43b2c910531fcdff56d6bec4cee0f"
+    etag: W/"c1b9e44b0ba6e3a7693658eaa6faf441"
   "/2009/02/Know-your-organic-PLU-by-number":
     build_path: 2009/02/Know-your-organic-PLU-by-number.html
   "/2009/02/notes-on-silence":
@@ -2352,32 +2352,32 @@ paths:
     build_path: 2009/02/Tips-for-researching-and-applying-to-nonprofit-jobs.html
   "/2009/02/the-ethics-of-awareness":
     build_path: 2009/02/the-ethics-of-awareness.html
-    etag: W/"395da96e3450acec55ed9e32dd04f5f8"
+    etag: W/"6f7ae6522d2db9a65d12ec67a0b37892"
   "/2009/02/The-Ethics-of-Awareness":
     build_path: 2009/02/The-Ethics-of-Awareness.html
   "/2009/02/self-language-and-consciousness":
     build_path: 2009/02/self-language-and-consciousness.html
-    etag: W/"919735b67d44796c8084e39766e9c266"
+    etag: W/"2aaf2d6ea5392bf53a2882f58a426e8c"
   "/2009/02/Self-Language-and-Consciousness":
     build_path: 2009/02/Self-Language-and-Consciousness.html
   "/2009/02/online-fundraising-please-do-it-right":
     build_path: 2009/02/online-fundraising-please-do-it-right.html
-    etag: W/"b31b6c9a3e30e631b071faf8c276c0bb"
+    etag: W/"73e8326fc4f6648845078540b66c4769"
   "/2009/02/Online-Fundraising-please-do-it-right":
     build_path: 2009/02/Online-Fundraising-please-do-it-right.html
   "/2009/02/mission-and-promise-there-is-a-difference":
     build_path: 2009/02/mission-and-promise-there-is-a-difference.html
-    etag: W/"4e85a27a3405bdd3dd8241cae7ac324d"
+    etag: W/"84c783970a1ce5b7885e981882a3f619"
   "/2009/02/Mission-and-Promise-there-is-a-difference":
     build_path: 2009/02/Mission-and-Promise-there-is-a-difference.html
   "/2009/02/the-false-metaphor-of-the-tube-for-communication":
     build_path: 2009/02/the-false-metaphor-of-the-tube-for-communication.html
-    etag: W/"c16d661da4a9e08424b0cd147bb439c7"
+    etag: W/"b48babc1748acad04ef680852e0cded0"
   "/2009/02/The-false-metaphor-of-the-tube-for-communication":
     build_path: 2009/02/The-false-metaphor-of-the-tube-for-communication.html
   "/2009/02/18-25-moving-from-becoming-to-being":
     build_path: 2009/02/18-25-moving-from-becoming-to-being.html
-    etag: W/"02a9c54240361b609f9533bd061296bc"
+    etag: W/"a0478f0e11328ac403ad4df6c1bbbd33"
   "/2009/02/18-25-moving-from-Becoming-to-Being":
     build_path: 2009/02/18-25-moving-from-Becoming-to-Being.html
   "/2009/02/existential-charters":
@@ -2387,12 +2387,12 @@ paths:
     build_path: 2009/02/Existential-Charters.html
   "/2009/02/the-purpose-of-copyright":
     build_path: 2009/02/the-purpose-of-copyright.html
-    etag: W/"f4e3bcda97b7e1c9e8152ed1204ac3db"
+    etag: W/"f85738c80fab013263340526a8ae68b9"
   "/2009/02/The-Purpose-of-Copyright":
     build_path: 2009/02/The-Purpose-of-Copyright.html
   "/2009/02/thoughts-on-nonprofit-growth-management-and-culture":
     build_path: 2009/02/thoughts-on-nonprofit-growth-management-and-culture.html
-    etag: W/"5a4aad06406e8714b8c70314ed8dd08c"
+    etag: W/"7d4423a15c851f54461b46c95fa2f972"
   "/2009/02/Thoughts-on-Nonprofit-growth-management-and-culture":
     build_path: 2009/02/Thoughts-on-Nonprofit-growth-management-and-culture.html
   "/2009/02/press-release-rhythm":
@@ -2402,7 +2402,7 @@ paths:
     build_path: 2009/02/Press-Release-Rhythm.html
   "/2009/02/meandering-thoughts-on-creativity-change-and-consciousness":
     build_path: 2009/02/meandering-thoughts-on-creativity-change-and-consciousness.html
-    etag: W/"b7da75bc6fe9928a3ee0f3551a756eb2"
+    etag: W/"b08ccc50814d2c4af21b8adaefb102cd"
   "/2009/02/Meandering-thoughts-on-creativity-change-and-consciousness":
     build_path: 2009/02/Meandering-thoughts-on-creativity-change-and-consciousness.html
   "/2009/03/Biscuit-Recipe":
@@ -2413,12 +2413,12 @@ paths:
     build_path: 2009/03/Excerpt-Sectors-of-the-US-Right---Active-in-the-Year-2001.html
   "/2009/03/double-loop-learning":
     build_path: 2009/03/double-loop-learning.html
-    etag: W/"89504a39c0e2ee64fe4fab8382eab634"
+    etag: W/"d7948355409e914542fd26c57d371bce"
   "/2009/03/Double-Loop-Learning":
     build_path: 2009/03/Double-Loop-Learning.html
   "/2009/03/quotes-on-thought-and-process":
     build_path: 2009/03/quotes-on-thought-and-process.html
-    etag: W/"cd5706d6ae873f91e9f1ac80a80fd9a3"
+    etag: W/"b877aa530fe375379de51e9b997aa168"
   "/2009/03/Quotes-on-Thought-and-Process":
     build_path: 2009/03/Quotes-on-Thought-and-Process.html
   "/2009/03/cell-phones-and-personal-computing":
@@ -2438,27 +2438,27 @@ paths:
     build_path: 2009/03/3-Fortunes.html
   "/2009/03/harnessing-inequality":
     build_path: 2009/03/harnessing-inequality.html
-    etag: W/"1116be554a1ff17bbbd32401290dbc86"
+    etag: W/"c5ee1e1b6e9c9c9e41f02de38cbe2820"
   "/2009/03/Harnessing-inequality":
     build_path: 2009/03/Harnessing-inequality.html
   "/2009/03/pratfalls-to-writing-authentically":
     build_path: 2009/03/pratfalls-to-writing-authentically.html
-    etag: W/"0daafc8442a4d93fc36e0cbde6f08be0"
+    etag: W/"f923567d72e4ef5b898a093cac20ac84"
   "/2009/03/Pratfalls-to-writing-authentically":
     build_path: 2009/03/Pratfalls-to-writing-authentically.html
   "/2009/03/satyagraha-versus-duragraha":
     build_path: 2009/03/satyagraha-versus-duragraha.html
-    etag: W/"b720341ae107a2537623da820a1cfe4a"
+    etag: W/"0475d6f4d2cdc194490e235a50a262b7"
   "/2009/03/Satyagraha-versus-Duragraha":
     build_path: 2009/03/Satyagraha-versus-Duragraha.html
   "/2009/03/example-of-the-false-metaphor-of-the-tube":
     build_path: 2009/03/example-of-the-false-metaphor-of-the-tube.html
-    etag: W/"9e432088d553e828bc029df3a9b45f2b"
+    etag: W/"bc1d5adb1bf9ac089984bbfc20a9fa6f"
   "/2009/03/Example-of-the-false-metaphor-of-the-tube":
     build_path: 2009/03/Example-of-the-false-metaphor-of-the-tube.html
   "/2009/03/lying-in-subtext-and-by-omission":
     build_path: 2009/03/lying-in-subtext-and-by-omission.html
-    etag: W/"2e651262bcb3a91b5553b2c0d944fc4c"
+    etag: W/"98cc0173012659cc4f1a318299b765c5"
   "/2009/03/Lying-in-subtext-and-by-omission":
     build_path: 2009/03/Lying-in-subtext-and-by-omission.html
   "/2009/03/current-consumption-of-currants":
@@ -2478,7 +2478,7 @@ paths:
     build_path: 2009/05/Business-rhetoric.html
   "/2009/06/political-rhetoric":
     build_path: 2009/06/political-rhetoric.html
-    etag: W/"10366b890833cf7beba654257f1b17d5"
+    etag: W/"38677fc70538947cd1900a2afc5e2470"
   "/2009/06/Political-Rhetoric":
     build_path: 2009/06/Political-Rhetoric.html
   "/2009/06/charting-work-success":
@@ -2498,7 +2498,7 @@ paths:
     build_path: 2009/06/Attributes-of-Respected-Chairs.html
   "/2009/06/judging-reality-and-experience":
     build_path: 2009/06/judging-reality-and-experience.html
-    etag: W/"316e2dece361037e5f16edbd88c24875"
+    etag: W/"a1a40dabd46b141a68a90808ce3238a8"
   "/2009/06/Judging-reality-and-experience":
     build_path: 2009/06/Judging-reality-and-experience.html
   "/2009/07/Nonprofit-Discretionary-Tests":
@@ -2519,12 +2519,12 @@ paths:
     build_path: 2009/07/Slow-Down.html
   "/2009/07/moving-day":
     build_path: 2009/07/moving-day.html
-    etag: W/"04faae12e246282eddf46e63bf82ede9"
+    etag: W/"2b7892a177f88eb00c97887b07852b83"
   "/2009/07/Moving-Day":
     build_path: 2009/07/Moving-Day.html
   "/2009/07/media-and-radical-technology":
     build_path: 2009/07/media-and-radical-technology.html
-    etag: W/"853454e8a30b85c610249b7c629f0f62"
+    etag: W/"9adaf5837376b4a4752c9e9bf88b517d"
   "/2009/07/Media-and-Radical-Technology":
     build_path: 2009/07/Media-and-Radical-Technology.html
   "/2009/07/different-strokes":
@@ -2539,7 +2539,7 @@ paths:
     build_path: 2009/08/Marketing-in-Wealth-Bondage.html
   "/2009/08/from-self-actualization-to-neo-liberalism":
     build_path: 2009/08/from-self-actualization-to-neo-liberalism.html
-    etag: W/"0e1e85b76a38f3aef48d6b2d93deecb4"
+    etag: W/"d1e6792469c85de64a499195158c6a52"
   "/2009/08/From-Self-Actualization-to-Neo-Liberalism":
     build_path: 2009/08/From-Self-Actualization-to-Neo-Liberalism.html
   "/2009/08/good-advice-to-live-by":
@@ -2569,7 +2569,7 @@ paths:
     build_path: 2009/09/REMOVED-Boston-Subway-in-Vector-Format-SVG.html
   "/2009/09/my-featured-dead-cockroach":
     build_path: 2009/09/my-featured-dead-cockroach.html
-    etag: W/"7c723c06ae2b76b92a3908a630e372dc"
+    etag: W/"4be76ccb66ab6078e1350d2be89cff7b"
   "/2009/09/My-featured-dead-cockroach":
     build_path: 2009/09/My-featured-dead-cockroach.html
   "/2009/09/technology-2-0-mapping-presentation":
@@ -2590,17 +2590,17 @@ paths:
     build_path: 2009/09/Intellectual-activity.html
   "/2009/10/but-licensed-in-how-many-dimensions":
     build_path: 2009/10/but-licensed-in-how-many-dimensions.html
-    etag: W/"a2d495134003f6e1e83736f75c6d7c5b"
+    etag: W/"456596692d10748e09f2841b2b8cf60f"
   "/2009/10/But-licensed-in-how-many-dimensions":
     build_path: 2009/10/But-licensed-in-how-many-dimensions.html
   "/2009/10/nonprofit-budgeting-scenario":
     build_path: 2009/10/nonprofit-budgeting-scenario.html
-    etag: W/"829429c8f74f71730625a273b778cf5a"
+    etag: W/"86bc083a787c494b192bfb60c07a9209"
   "/2009/10/Nonprofit-Budgeting-Scenario":
     build_path: 2009/10/Nonprofit-Budgeting-Scenario.html
   "/2009/10/janets-spiral-periodic-table":
     build_path: 2009/10/janets-spiral-periodic-table.html
-    etag: W/"d9298f6f4edc82cb15d0de89dbd07df8"
+    etag: W/"7fb845afd63654fa76163f6aac493ea8"
   "/2009/10/Janets-Spiral-Periodic-Table":
     build_path: 2009/10/Janets-Spiral-Periodic-Table.html
   "/2009/10/millenial-nonprofity-exposition":
@@ -2657,7 +2657,7 @@ paths:
     build_path: 2009/10/Social-work-is-womens-work-so-we-dont-care.html
   "/2009/10/speak-up-for-democracy":
     build_path: 2009/10/speak-up-for-democracy.html
-    etag: W/"ee22420559f8c0615b2f3b82660b4ee7"
+    etag: W/"193e13503360a55bfd3ada5238985df0"
   "/2009/10/Speak-up-for-democracy":
     build_path: 2009/10/Speak-up-for-democracy.html
   "/2009/10/teaching-through-breakage":
@@ -2694,17 +2694,17 @@ paths:
     build_path: 2009/10/Twenty-four-dollars.html
   "/2009/10/frames-for-copyright":
     build_path: 2009/10/frames-for-copyright.html
-    etag: W/"47735fd4a4ee28ae4a3c4b38dfb283fa"
+    etag: W/"676c43b7b154beccacd1819ce1731f60"
   "/2009/10/Frames-for-Copyright":
     build_path: 2009/10/Frames-for-Copyright.html
   "/2009/10/the-motion-of-gifts":
     build_path: 2009/10/the-motion-of-gifts.html
-    etag: W/"c37150bb7739c38630372ae494949848"
+    etag: W/"f1d8f6a78e54beaccb1a3a122a13cd9c"
   "/2009/10/The-motion-of-gifts":
     build_path: 2009/10/The-motion-of-gifts.html
   "/2009/10/we-participate-they-profit":
     build_path: 2009/10/we-participate-they-profit.html
-    etag: W/"19a8506ec15f881c101764c74d1c75a8"
+    etag: W/"49894312bff8e840a28973e2025bc585"
   "/2009/10/We-participate-they-profit":
     build_path: 2009/10/We-participate-they-profit.html
   "/2009/10/why-framing-matters":
@@ -2719,27 +2719,27 @@ paths:
     build_path: 2009/10/Charity-Mercy-and-Sin.html
   "/2009/10/quotidian-insights":
     build_path: 2009/10/quotidian-insights.html
-    etag: W/"ffbb75ee3e979383d06b71ad7d3dcc3e"
+    etag: W/"cc7734282261fbf44420ac09fd0791a8"
   "/2009/10/Quotidian-insights":
     build_path: 2009/10/Quotidian-insights.html
   "/2009/10/starvation-begets-starvation":
     build_path: 2009/10/starvation-begets-starvation.html
-    etag: W/"78fddaae0be5b42ace83bda28ea494f0"
+    etag: W/"7cbcbe6b31d9f7d55920fcec08e88a5e"
   "/2009/10/Starvation-begets-starvation":
     build_path: 2009/10/Starvation-begets-starvation.html
   "/2009/11/metaphor-death":
     build_path: 2009/11/metaphor-death.html
-    etag: W/"8cd3ef044df882a8865e8032e4036ed5"
+    etag: W/"0608a8ba52e1a1210b415097890e5133"
   "/2009/11/Metaphor-death":
     build_path: 2009/11/Metaphor-death.html
   "/2009/11/my-nonprofit-facebook-strategy-and-tactics":
     build_path: 2009/11/my-nonprofit-facebook-strategy-and-tactics.html
-    etag: W/"5eb932122e3ac6370f8ce0de3dca1b5b"
+    etag: W/"87b1be2f2d48967fc9a0fee639b7c3fb"
   "/2009/11/My-nonprofit-Facebook-strategy-and-tactics":
     build_path: 2009/11/My-nonprofit-Facebook-strategy-and-tactics.html
   "/2009/11/ethics-made-easy":
     build_path: 2009/11/ethics-made-easy.html
-    etag: W/"3915d7b2835a770cc75bf9635b20a006"
+    etag: W/"e7176445fbbf518fd3b2c071718de269"
   "/2009/11/Ethics-made-easy":
     build_path: 2009/11/Ethics-made-easy.html
   "/2009/11/outside-of-my-jurisdiction":
@@ -2774,7 +2774,7 @@ paths:
     build_path: 2009/11/Ace-Advertising.html
   "/2009/11/going-crazy-over-social-impact":
     build_path: 2009/11/going-crazy-over-social-impact.html
-    etag: W/"f2d8b2516c28dc4d19ad7166b62333d0"
+    etag: W/"927f01f43c3af011fae4ae32a4ff92d9"
   "/2009/11/Going-crazy-over-social-impact":
     build_path: 2009/11/Going-crazy-over-social-impact.html
   "/2009/11/three-story-intellect-model":
@@ -2789,7 +2789,7 @@ paths:
     build_path: 2009/12/Invoking-the-first-amendment.html
   "/2009/12/axemaker-conclusions":
     build_path: 2009/12/axemaker-conclusions.html
-    etag: W/"15d85f2172a00a212d592b385babf062"
+    etag: W/"1068f77ccfdb3a102c048febe73f08b3"
   "/2009/12/Axemaker-conclusions":
     build_path: 2009/12/Axemaker-conclusions.html
   "/2009/12/gatekeeper-code":
@@ -2799,7 +2799,7 @@ paths:
     build_path: 2009/12/Gatekeeper-Code.html
   "/2009/12/like-wikipedia-but-before":
     build_path: 2009/12/like-wikipedia-but-before.html
-    etag: W/"395b24b01d02c73273c3730922662907"
+    etag: W/"dc10e9f176c2343cb9974c72422cc7ac"
   "/2009/12/Like-Wikipedia-but-before":
     build_path: 2009/12/Like-Wikipedia-but-before.html
   "/2009/12/social-assistance-cynicism":
@@ -2809,7 +2809,7 @@ paths:
     build_path: 2009/12/Social-Assistance-Cynicism.html
   "/2009/12/academia-on-the-experience-of-poverty":
     build_path: 2009/12/academia-on-the-experience-of-poverty.html
-    etag: W/"63a2cb7dd691871ed7fa9d56f6e00298"
+    etag: W/"f3649d89caa256f2e172eefea1947393"
   "/2009/12/Academia-on-the-experience-of-poverty":
     build_path: 2009/12/Academia-on-the-experience-of-poverty.html
   "/2009/12/easier-drawn-than-said":
@@ -2819,12 +2819,12 @@ paths:
     build_path: 2009/12/Easier-drawn-than-said.html
   "/2009/12/transactions-vs-relationships":
     build_path: 2009/12/transactions-vs-relationships.html
-    etag: W/"da093f488821c46d95722c5f8c4f0356"
+    etag: W/"f8dc3b304acccdf617396e5a9662908e"
   "/2009/12/Transactions-vs-Relationships":
     build_path: 2009/12/Transactions-vs-Relationships.html
   "/2009/12/critical-thinking-contextualized":
     build_path: 2009/12/critical-thinking-contextualized.html
-    etag: W/"cc8e7d89cca79e3a7103ee2fee7cb0dc"
+    etag: W/"b7dfe3f7e4121518fd7caf6219a7bf16"
   "/2009/12/Critical-Thinking-contextualized":
     build_path: 2009/12/Critical-Thinking-contextualized.html
   "/2010/01/criticism-actor-network-theory":
@@ -2833,7 +2833,7 @@ paths:
     build_path: 2010/01/Criticism-of-Actor-Network-Theory.html
   "/2010/01/modern-and-post-modern-science":
     build_path: 2010/01/modern-and-post-modern-science.html
-    etag: W/"85e79c83bf567e7da7d991d6e67f105c"
+    etag: W/"6068ef5ef6de95ebcf5a4bf30f688f19"
   "/2010/01/Modern-and-post-modern-science":
     build_path: 2010/01/Modern-and-post-modern-science.html
   "/2010/01/umberto-eco-on-modernism":
@@ -2848,12 +2848,12 @@ paths:
     build_path: 2010/01/Radical-volunteerism-or-not.html
   "/2010/01/notes-of-the-first-water":
     build_path: 2010/01/notes-of-the-first-water.html
-    etag: W/"399724d8252fe577fc2833b736d226f2"
+    etag: W/"418798571a06436992fd428d98d2197a"
   "/2010/01/Notes-of-the-first-water":
     build_path: 2010/01/Notes-of-the-first-water.html
   "/2010/01/two-tales-of-island-94":
     build_path: 2010/01/two-tales-of-island-94.html
-    etag: W/"db2bf2a09b83809306d00fc262657158"
+    etag: W/"3133b7a609680df34a3ba71b49c9a21e"
   "/2010/01/Two-tales-of-Island-94":
     build_path: 2010/01/Two-tales-of-Island-94.html
   "/2010/01/american-press-subsidies":
@@ -2863,12 +2863,12 @@ paths:
     build_path: 2010/01/American-Press-Subsidies.html
   "/2010/01/the-poor-the-dead-and-god-are-easily-forgotten":
     build_path: 2010/01/the-poor-the-dead-and-god-are-easily-forgotten.html
-    etag: W/"955afc417bb877b0d21b125649211b93"
+    etag: W/"4fcfeae1410e1da0d3a3d8ed7182bf1f"
   "/2010/01/The-poor-the-dead-and-God-are-easily-forgotten":
     build_path: 2010/01/The-poor-the-dead-and-God-are-easily-forgotten.html
   "/2010/01/social-media-is-womens-work":
     build_path: 2010/01/social-media-is-womens-work.html
-    etag: W/"cb8cb2bbbab15b2168b78fc6c7b593e8"
+    etag: W/"1a6f08d4c22d0a6c317fd5fd03776025"
   "/2010/01/Social-media-is-womens-work":
     build_path: 2010/01/Social-media-is-womens-work.html
   "/2010/01/insufficient-funds":
@@ -2878,7 +2878,7 @@ paths:
     build_path: 2010/01/Insufficient-funds.html
   "/2010/01/still-ferrari-less":
     build_path: 2010/01/still-ferrari-less.html
-    etag: W/"a92275c55ffd8e2811c38b2498212a7c"
+    etag: W/"5dd33f9d846a1df61fe00dd0ca655e35"
   "/2010/01/Still-Ferrari-less":
     build_path: 2010/01/Still-Ferrari-less.html
   "/2010/01/he-thinks-im-working-on-parts-im-working-on-concepts":
@@ -2898,17 +2898,17 @@ paths:
     build_path: 2010/01/Hippostrophe.html
   "/2010/02/ethical-flexibility-for-export":
     build_path: 2010/02/ethical-flexibility-for-export.html
-    etag: W/"fe7cf157f5cf4bfdde463f984341eb5c"
+    etag: W/"a4e40f48125d69503ac8980d49e005eb"
   "/2010/02/Ethical-flexibility-for-export":
     build_path: 2010/02/Ethical-flexibility-for-export.html
   "/2010/02/criticism-for-everyone":
     build_path: 2010/02/criticism-for-everyone.html
-    etag: W/"2d94a6875b03a8c35686c44480c19549"
+    etag: W/"8c99b30bdce663d9063f8d1fc4363606"
   "/2010/02/Criticism-for-everyone":
     build_path: 2010/02/Criticism-for-everyone.html
   "/2010/02/washing-of-dishes-requires-great-peace-of-mind":
     build_path: 2010/02/washing-of-dishes-requires-great-peace-of-mind.html
-    etag: W/"9a435d0eba4f4e672a503adf8633d476"
+    etag: W/"a4794feb92e2d612796d0e63d8bba15f"
   "/2010/02/Washing-of-dishes-requires-great-peace-of-mind":
     build_path: 2010/02/Washing-of-dishes-requires-great-peace-of-mind.html
   "/2010/02/a-temperance-of-words":
@@ -2918,12 +2918,12 @@ paths:
     build_path: 2010/02/A-temperance-of-words.html
   "/2010/02/motivated-design":
     build_path: 2010/02/motivated-design.html
-    etag: W/"297c543bc90cfff7677c1dbf2bb32521"
+    etag: W/"6bb80519d3c5754348f67260142da4be"
   "/2010/02/Motivated-design":
     build_path: 2010/02/Motivated-design.html
   "/2010/02/mount-vernon-port-huron-and-sharon-statements-in-comparison":
     build_path: 2010/02/mount-vernon-port-huron-and-sharon-statements-in-comparison.html
-    etag: W/"bdf68054ff5a2b38d8f28364b2ecc06d"
+    etag: W/"078c5d7eea5f4a32617f0cbb6963122f"
   "/2010/02/Mount-Vernon-Port-Huron-and-Sharon-Statements-in-Comparison":
     build_path: 2010/02/Mount-Vernon-Port-Huron-and-Sharon-Statements-in-Comparison.html
   "/2010/02/quality-of-life-mind-and-language":
@@ -2938,7 +2938,7 @@ paths:
     build_path: 2010/02/Cleaving-the-visual-experience.html
   "/2010/02/good-enough-data":
     build_path: 2010/02/good-enough-data.html
-    etag: W/"4c6fb4f012c16aa3f2cc479936aab75e"
+    etag: W/"e04aeb4d7b338394f3d881deefa67dcd"
   "/2010/02/Good-enough-data":
     build_path: 2010/02/Good-enough-data.html
   "/2010/02/models-feedback-and-crows":
@@ -2948,7 +2948,7 @@ paths:
     build_path: 2010/02/Models-feedback-and-crows.html
   "/2010/02/laying-out-latest-layout":
     build_path: 2010/02/laying-out-latest-layout.html
-    etag: W/"7fb4c27be25eeae1bfa43acbd7800ff5"
+    etag: W/"91c91647b0d2e105eca4dc2069869d73"
   "/2010/02/Laying-out-latest-layout":
     build_path: 2010/02/Laying-out-latest-layout.html
   "/2010/03/frequency-of-occurrence-of-letters-in-english":
@@ -2958,17 +2958,17 @@ paths:
     build_path: 2010/03/Frequency-of-occurrence-of-letters-in-English.html
   "/2010/03/numerical-indifference":
     build_path: 2010/03/numerical-indifference.html
-    etag: W/"34283164776feccbec1f34c6e8818dbb"
+    etag: W/"f5328fb52a59a2c9a33734074a9800eb"
   "/2010/03/Numerical-Indifference":
     build_path: 2010/03/Numerical-Indifference.html
   "/2010/03/two-of-charts":
     build_path: 2010/03/two-of-charts.html
-    etag: W/"d4f972d29a3c595eb9d17beceada1430"
+    etag: W/"3093ccd1716390d2605d9af0f164d884"
   "/2010/03/Two-of-charts":
     build_path: 2010/03/Two-of-charts.html
   "/2010/03/a-rhetoric-for-writing-in-the-post-digital-era":
     build_path: 2010/03/a-rhetoric-for-writing-in-the-post-digital-era.html
-    etag: W/"8597e52a90f605c0a8c6e2f6bc06e063"
+    etag: W/"a3270d0646778cd82457101564bc6b73"
   "/2010/03/A-rhetoric-for-writing-in-the-post-digital-era":
     build_path: 2010/03/A-rhetoric-for-writing-in-the-post-digital-era.html
   "/2010/03/the-author-function-and-the-internet":
@@ -2992,7 +2992,7 @@ paths:
     build_path: 2010/04/Do-what-I-say.html
   "/2010/04/internships-and-the-media":
     build_path: 2010/04/internships-and-the-media.html
-    etag: W/"5a729ecfabddab052227b51845ee86d2"
+    etag: W/"a5c6fbfe27b15e7775eeeb0f34cb171a"
   "/2010/04/Internships-and-the-media":
     build_path: 2010/04/Internships-and-the-media.html
   "/2010/04/quotes-on-self":
@@ -3007,17 +3007,17 @@ paths:
     build_path: 2010/04/Leaders-and-privileged-voices.html
   "/2010/04/mendacity-in-order":
     build_path: 2010/04/mendacity-in-order.html
-    etag: W/"9983dc4d0f7c82fa0c695e86e23f6709"
+    etag: W/"4ef8ca800063495d64c85fd0de25c5ea"
   "/2010/04/Mendacity-in-order":
     build_path: 2010/04/Mendacity-in-order.html
   "/2010/04/broken-ladders":
     build_path: 2010/04/broken-ladders.html
-    etag: W/"990c11be27255193638fdfa0fd3e2cd1"
+    etag: W/"c658d4f09a6eaa1d443c5851b26db957"
   "/2010/04/Broken-ladders":
     build_path: 2010/04/Broken-ladders.html
   "/2010/04/the-economy-its-made-of-people":
     build_path: 2010/04/the-economy-its-made-of-people.html
-    etag: W/"83d4190660fb9bc0c5367ac3738c7b2c"
+    etag: W/"27d9b3a838ab66330facb4aa806d1d53"
   "/2010/04/The-Economy-its-made-of-people":
     build_path: 2010/04/The-Economy-its-made-of-people.html
   "/2010/04/principles-of-organizational-development-practice":
@@ -3031,12 +3031,12 @@ paths:
     build_path: 2010/04/I-am-now-a-Technology-of-Participation-facilitator-.html
   "/2010/04/corporate-social-distractibility":
     build_path: 2010/04/corporate-social-distractibility.html
-    etag: W/"40f8d7a39c5963d5fd4a5a595581bf04"
+    etag: W/"cc5effd50de4647ee2f010f27b449f73"
   "/2010/04/Corporate-social-distractibility":
     build_path: 2010/04/Corporate-social-distractibility.html
   "/2010/04/ethical-omissions":
     build_path: 2010/04/ethical-omissions.html
-    etag: W/"18cf80404c07aaa297c08c66e601969e"
+    etag: W/"ec13b25d71aeb8f9171d3b2b8f36a1e3"
   "/2010/04/Ethical-omissions":
     build_path: 2010/04/Ethical-omissions.html
   "/2010/05/history-is-an-art":
@@ -3050,7 +3050,7 @@ paths:
     build_path: 2010/05/JFK-accuses-media-of-sensationalism-triviality.html
   "/2010/05/a-definition-that-is-good-enough":
     build_path: 2010/05/a-definition-that-is-good-enough.html
-    etag: W/"eba094723e956d13e92f4be6c3526e8f"
+    etag: W/"ce1ee50298fe592358a89c60b8aa2722"
   "/2010/05/A-definition-that-is-good-enough":
     build_path: 2010/05/A-definition-that-is-good-enough.html
   "/2010/05/try-it-again":
@@ -3060,7 +3060,7 @@ paths:
     build_path: 2010/05/Try-it-again.html
   "/2010/05/write-first-outline-later":
     build_path: 2010/05/write-first-outline-later.html
-    etag: W/"0fdfe7b7b07ad5be79b788ef63103222"
+    etag: W/"5f61529626259765251cc8124a2a8914"
   "/2010/05/Write-first-outline-later":
     build_path: 2010/05/Write-first-outline-later.html
   "/2010/06/get-your-own":
@@ -3070,12 +3070,12 @@ paths:
     build_path: 2010/06/Get-your-own.html
   "/2010/06/goodbye-producers-forum":
     build_path: 2010/06/goodbye-producers-forum.html
-    etag: W/"b350dd993ef4954902de78ae3a7ae0af"
+    etag: W/"dfe8cbe2af636f13aaa2245a605f8473"
   "/2010/06/Goodbye-Producers-Forum":
     build_path: 2010/06/Goodbye-Producers-Forum.html
   "/2010/06/stages-of-team-development":
     build_path: 2010/06/stages-of-team-development.html
-    etag: W/"68811144bd19c4069e6052d3b34c3a15"
+    etag: W/"2420b5c3e117aa8a543f1d2145740f21"
   "/2010/06/Stages-of-team-development":
     build_path: 2010/06/Stages-of-team-development.html
   "/2010/06/forces-of-organizational-entry":
@@ -3089,7 +3089,7 @@ paths:
     build_path: 2010/06/Zen-and-Postmodern-Art.html
   "/2010/06/iphone-apps-allow-giving-just-not-charity":
     build_path: 2010/06/iphone-apps-allow-giving-just-not-charity.html
-    etag: W/"28ba94c9a9f9d3692fe72fa58156601a"
+    etag: W/"75a18a35e66101db7dd3b1c6fcf0e4df"
   "/2010/06/iPhone-apps-allow-giving-just-not-charity":
     build_path: 2010/06/iPhone-apps-allow-giving-just-not-charity.html
   "/2010/06/management-theories-and-interventions":
@@ -3104,22 +3104,22 @@ paths:
     build_path: 2010/06/Straightforward-Project-Satisfaction-and-Fulfillment.html
   "/2010/06/typology-of-social-giving-transactions":
     build_path: 2010/06/typology-of-social-giving-transactions.html
-    etag: W/"a9a6183f54e00b65b2257e1087653d32"
+    etag: W/"f4bffa55c86746bbe75b889bb27545f2"
   "/2010/06/Typology-of-Social-Giving-Transactions":
     build_path: 2010/06/Typology-of-Social-Giving-Transactions.html
   "/2010/06/fierce-editing":
     build_path: 2010/06/fierce-editing.html
-    etag: W/"f546c659897326d5c9c910e09de851f4"
+    etag: W/"f3afa98a89d2cfd7ab7a4ac62d5e2c0a"
   "/2010/06/Fierce-editing":
     build_path: 2010/06/Fierce-editing.html
   "/2010/06/typology-versus-taxonomy":
     build_path: 2010/06/typology-versus-taxonomy.html
-    etag: W/"08c11a2b0d82ffa620d446e3b75b2955"
+    etag: W/"33d880d460be6164cab7dea1ab221235"
   "/2010/06/Typology-versus-taxonomy":
     build_path: 2010/06/Typology-versus-taxonomy.html
   "/2010/06/task-identification-and-completion":
     build_path: 2010/06/task-identification-and-completion.html
-    etag: W/"47f427596e8f3e4403ebe55206a38819"
+    etag: W/"b5476140482327105ec079363bd50ae5"
   "/2010/06/Task-identification-and-completion":
     build_path: 2010/06/Task-identification-and-completion.html
   "/2010/07/Colin-Rhinesmith":
@@ -3182,12 +3182,12 @@ paths:
     build_path: 2010/09/Nonprofit-Social-Media-Literacy.html
   "/2010/09/making-language-of-meaning":
     build_path: 2010/09/making-language-of-meaning.html
-    etag: W/"3d6fc613735ed1057746213ed75c9876"
+    etag: W/"13ebfa2f32f6a38b0376ddd976f87db2"
   "/2010/09/Making-language-of-meaning":
     build_path: 2010/09/Making-language-of-meaning.html
   "/2010/09/commodity-work":
     build_path: 2010/09/commodity-work.html
-    etag: W/"d13342dacdbc2e6514117ba73dd08a79"
+    etag: W/"7d3841649dfa4eb211085d5000724c2a"
   "/2010/09/Commodity-work":
     build_path: 2010/09/Commodity-work.html
   "/2010/09/this-is-not-a-website":
@@ -3205,24 +3205,24 @@ paths:
     build_path: 2010/09/Kitchen-Consensus-Conjecture.html
   "/2010/09/mystics-poets-and-best-practices":
     build_path: 2010/09/mystics-poets-and-best-practices.html
-    etag: W/"ef70cb52296519831ae9d1c26c073c91"
+    etag: W/"16c3d7f30170b68b8760e68344674b50"
   "/2010/09/Mystics-poets-and-best-practices":
     build_path: 2010/09/Mystics-poets-and-best-practices.html
   "/2010/10/Digital-literacy-dichotomies":
     build_path: 2010/10/Digital-literacy-dichotomies.html
   "/2010/10/the-analog-divide":
     build_path: 2010/10/the-analog-divide.html
-    etag: W/"8623b0fdfd791aa7b1c2f98b0c3ba2fa"
+    etag: W/"68cdcb03b30eccceebcaa7a8c4ecb721"
   "/2010/10/The-Analog-Divide":
     build_path: 2010/10/The-Analog-Divide.html
   "/2010/10/scientific-disunity":
     build_path: 2010/10/scientific-disunity.html
-    etag: W/"9d37676d747ab92f4d8875afea8c4655"
+    etag: W/"4f1e07085e08b02d681443fce782e888"
   "/2010/10/Scientific-disunity":
     build_path: 2010/10/Scientific-disunity.html
   "/2010/10/this-image-will-save-us":
     build_path: 2010/10/this-image-will-save-us.html
-    etag: W/"d3b6e2ce0e5f0965ac7b3745b9f6826e"
+    etag: W/"2c7406ee7da2eab722ee1aaa5ce942ef"
   "/2010/10/This-image-will-save-us":
     build_path: 2010/10/This-image-will-save-us.html
   "/2010/10/dont-confuse-online-with-twitter":
@@ -3236,17 +3236,17 @@ paths:
     build_path: 2010/10/Fairly-fool-proof-whole-wheat-popovers.html
   "/2010/10/no-wonder-you-werent-good-at-it":
     build_path: 2010/10/no-wonder-you-werent-good-at-it.html
-    etag: W/"6d1d72ac4a6fc81b88ea19820dfed1b0"
+    etag: W/"3a5a1e045f39117fbf983a1d24a68b84"
   "/2010/10/No-wonder-you-werent-good-at-it":
     build_path: 2010/10/No-wonder-you-werent-good-at-it.html
   "/2010/10/when-all-you-have-is-a-hammer":
     build_path: 2010/10/when-all-you-have-is-a-hammer.html
-    etag: W/"85606eb3cad2f9592645ec2b779ef95a"
+    etag: W/"bd7a10b20f2f26c3f5ab7fa22b010f2e"
   "/2010/10/When-all-you-have-is-a-hammer":
     build_path: 2010/10/When-all-you-have-is-a-hammer.html
   "/2010/10/a-deucedly-outrag-wordlist":
     build_path: 2010/10/a-deucedly-outrag-wordlist.html
-    etag: W/"aa902a971f520ebdf10d4f0512359b36"
+    etag: W/"85ada3302dc0a466244f92e3310448c0"
   "/2010/10/A-deucedly-outrag-wordlist":
     build_path: 2010/10/A-deucedly-outrag-wordlist.html
   "/2010/10/professional-writing-sample":
@@ -3276,19 +3276,19 @@ paths:
     build_path: 2010/11/Metaphors-and-diversity.html
   "/2010/11/a-difference-of-a-map":
     build_path: 2010/11/a-difference-of-a-map.html
-    etag: W/"01f45215fa85ff76b229c2e1a88fd77d"
+    etag: W/"916e7e53b0f0fcae86769fe1cc7b172f"
   "/2010/11/A-difference-of-a-map":
     build_path: 2010/11/A-difference-of-a-map.html
   "/2010/11/goofus-gallant-mbas":
     build_path: 2010/11/goofus-gallant-mbas.html
   "/2010/11/goofus-gallant-mba":
     build_path: 2010/11/goofus-gallant-mba.html
-    etag: W/"2e11abc421c13c4e0127a3cb1a5b0df0"
+    etag: W/"71af67879ee8d36ae9f2149b8a4c220b"
   "/2010/11/Goofus-Gallant-MBA":
     build_path: 2010/11/Goofus-Gallant-MBA.html
   "/2010/11/boston-bike-crash-map":
     build_path: 2010/11/boston-bike-crash-map.html
-    etag: W/"1a6dc02a90074a8d7faa11c148fe4212"
+    etag: W/"a4a8a5b50210e400448671b632bc3f55"
   "/2010/11/Boston-Bike-Crash-Map":
     build_path: 2010/11/Boston-Bike-Crash-Map.html
   "/2010/11/accessible-leisure-through-technology":
@@ -3318,7 +3318,7 @@ paths:
     build_path: 2010/12/Blue-Ribbon-Commissions-in-Print.html
   "/2010/12/proposals-to-change-the-tax-deductibility-of-donations":
     build_path: 2010/12/proposals-to-change-the-tax-deductibility-of-donations.html
-    etag: W/"8bea2fd2ca71b9d8f52b0943fb545460"
+    etag: W/"9bf0828b4acebfccc98f7e44133a6dcc"
   "/2010/12/Proposals-to-change-the-tax-deductibility-of-donations":
     build_path: 2010/12/Proposals-to-change-the-tax-deductibility-of-donations.html
   "/2010/12/boston-bike-crash-map-in-the-news":
@@ -3328,7 +3328,7 @@ paths:
     build_path: 2010/12/Boston-Bike-Crash-Map-in-the-News.html
   "/2010/12/mediation-journal-pieces":
     build_path: 2010/12/mediation-journal-pieces.html
-    etag: W/"ae004d528711612bdc0ccb90da7e9369"
+    etag: W/"0781c4391e32d12d8f252237f0228624"
   "/2010/12/Mediation-journal-pieces":
     build_path: 2010/12/Mediation-journal-pieces.html
   "/2010/12/t-shirt":
@@ -3347,17 +3347,17 @@ paths:
     build_path: 2011/01/Adding-hyperlinks-to-print-publications.html
   "/2011/01/assessment-of-needs-assessment-needs":
     build_path: 2011/01/assessment-of-needs-assessment-needs.html
-    etag: W/"3d3358287227c2dc4fb078b93f13e53f"
+    etag: W/"55ac4447b95c9947dda8f492253b9f7f"
   "/2011/01/Assessment-of-needs-assessment-needs":
     build_path: 2011/01/Assessment-of-needs-assessment-needs.html
   "/2011/01/mediation-journal-version-0":
     build_path: 2011/01/mediation-journal-version-0.html
-    etag: W/"2f85cf9e17a6a3b392f8e0cc6fd68a2a"
+    etag: W/"7173e08b4ed74ad3a8a194a862427fe0"
   "/2011/01/Mediation-Journal-Version-0":
     build_path: 2011/01/Mediation-Journal-Version-0.html
   "/2011/01/the-benefits-of-age":
     build_path: 2011/01/the-benefits-of-age.html
-    etag: W/"efe6ce4142913218484af94472563623"
+    etag: W/"92c4aa76cd025812478234aa8baefb60"
   "/2011/01/The-benefits-of-age":
     build_path: 2011/01/The-benefits-of-age.html
   "/2011/01/adding-class-to-wordpress-linked-images":
@@ -3400,7 +3400,7 @@ paths:
     build_path: 2011/03/A-form-from-my-favorites.html
   "/2011/03/it-was-sexist-when-i-got-here":
     build_path: 2011/03/it-was-sexist-when-i-got-here.html
-    etag: W/"1e22825ca0c1ad4b058b3831a4694a7c"
+    etag: W/"517b529e2afa5ec5404e74006525b93d"
   "/2011/03/it-was-sexist-when-I-got-here":
     build_path: 2011/03/it-was-sexist-when-I-got-here.html
   "/2011/04/that-national-interest-thing":
@@ -3420,37 +3420,37 @@ paths:
     build_path: 2011/04/Social-Media-Community-Architect-and-Manager.html
   "/2011/04/shirt-sales-scraped-daily":
     build_path: 2011/04/shirt-sales-scraped-daily.html
-    etag: W/"017b8fdda3c10e131205584223c34855"
+    etag: W/"dd80e23e0ec198e80ee614cc31bd3b4b"
   "/2011/04/Shirt-sales-scraped-daily":
     build_path: 2011/04/Shirt-sales-scraped-daily.html
   "/2011/04/belief-based-design":
     build_path: 2011/04/belief-based-design.html
-    etag: W/"f6e6992d8f155c2e8a6da2e8cabde2c4"
+    etag: W/"7be70610c499b54c2a0564c9017a1a58"
   "/2011/04/Belief-based-design":
     build_path: 2011/04/Belief-based-design.html
   "/2011/05/lovingly-reimagined-progressively-remade":
     build_path: 2011/05/lovingly-reimagined-progressively-remade.html
-    etag: W/"9dec5843f6afbe4cb2a6bc5ce93d0711"
+    etag: W/"292e7b684001f791204f8aea9a9e13c2"
   "/2011/05/Lovingly-reimagined-progressively-remade":
     build_path: 2011/05/Lovingly-reimagined-progressively-remade.html
   "/2011/05/apps-off-the-approved-vendor-list":
     build_path: 2011/05/apps-off-the-approved-vendor-list.html
-    etag: W/"fd8f7e5d5c8ad2c3628a1f00a0470a16"
+    etag: W/"bde5e47148dd853771040488f7a25e9e"
   "/2011/05/Apps-off-the-approved-vendor-list":
     build_path: 2011/05/Apps-off-the-approved-vendor-list.html
   "/2011/05/reductionist-function-and-practice":
     build_path: 2011/05/reductionist-function-and-practice.html
-    etag: W/"307d0956663ff6f45308033d25f07ebd"
+    etag: W/"f453386ddd5336133117d00f426391fc"
   "/2011/05/Reductionist-function-and-practice":
     build_path: 2011/05/Reductionist-function-and-practice.html
   "/2011/05/a-reminder-that-its-still-about-power":
     build_path: 2011/05/a-reminder-that-its-still-about-power.html
-    etag: W/"4c2b9203970e5b16eba06422350568c9"
+    etag: W/"81a47acebcbe49b6acf266071013b200"
   "/2011/05/A-reminder-that-its-still-about-power":
     build_path: 2011/05/A-reminder-that-its-still-about-power.html
   "/2011/05/philanthropys-progressive-legacy":
     build_path: 2011/05/philanthropys-progressive-legacy.html
-    etag: W/"9929ae108e59b2f778c22d3ec083b991"
+    etag: W/"3cbad6f3eac75607b23c61a4a79599ce"
   "/2011/05/Philanthropys-progressive-legacy":
     build_path: 2011/05/Philanthropys-progressive-legacy.html
   "/2011/05/capturing-well-being-not-simply-access-and-speed":
@@ -3470,44 +3470,44 @@ paths:
   : build_path: 2011/05/Describe-the-basis-for-your-approach-to-this-project-How-did-you-determine-the-need-for-this-project-now-and-who-was-included-in-its-design.html
   "/2011/05/nailed-that-response":
     build_path: 2011/05/nailed-that-response.html
-    etag: W/"3b797d645b626f615553f099c2fb232d"
+    etag: W/"8fe9a52433c231709f7f0c7a2fefd912"
   "/2011/05/Nailed-that-response":
     build_path: 2011/05/Nailed-that-response.html
   "/2011/06/data-driven-content-first-design":
     build_path: 2011/06/data-driven-content-first-design.html
-    etag: W/"71fc4f6aaafe6576f9db3b3db189fcb5"
+    etag: W/"6e7443b582b50d4a54a6c514a87a4b83"
   "/2011/06/Data-driven-content-first-design":
     build_path: 2011/06/Data-driven-content-first-design.html
   "/2011/06/minimal-mass":
     build_path: 2011/06/minimal-mass.html
-    etag: W/"d42459ac2aa3c7a9916efda7ad993475"
+    etag: W/"cfb8b82e3ccc22887945988dc7fe936a"
   "/2011/06/Minimal-Mass":
     build_path: 2011/06/Minimal-Mass.html
   "/2011/06/uncrime-mapping":
     build_path: 2011/06/uncrime-mapping.html
-    etag: W/"2d30f3e73d4d8d2087f92d008c894f93"
+    etag: W/"9122f4cf346cd4ef791f124efbd38196"
   "/2011/06/Uncrime-Mapping":
     build_path: 2011/06/Uncrime-Mapping.html
   "/2011/06/Data-Leadership":
     build_path: 2011/06/Data-Leadership.html
   "/2011/06/data-divides-and-umbrellafication":
     build_path: 2011/06/data-divides-and-umbrellafication.html
-    etag: W/"05bf0e074ebac383bb0de6f9d23dc870"
+    etag: W/"93937525c70529cba0b749fcf1a304c7"
   "/2011/06/Data-divides-and-umbrellafication":
     build_path: 2011/06/Data-divides-and-umbrellafication.html
   "/2011/06/wisdom-and-discernment":
     build_path: 2011/06/wisdom-and-discernment.html
-    etag: W/"36d1b53f789df8ac66bd678fadcdc5a1"
+    etag: W/"6bd6a09e84ebf2e82c463cd1f09ff39e"
   "/2011/06/Wisdom-and-discernment":
     build_path: 2011/06/Wisdom-and-discernment.html
   "/2011/06/app-contest-submission-boilerplate":
     build_path: 2011/06/app-contest-submission-boilerplate.html
-    etag: W/"2c38c7ea3d33b299b6dfdd7c2c401a7a"
+    etag: W/"53c79e3d6ddb96112744bd142f290bac"
   "/2011/06/App-contest-submission-boilerplate":
     build_path: 2011/06/App-contest-submission-boilerplate.html
   "/2011/06/developing-intent":
     build_path: 2011/06/developing-intent.html
-    etag: W/"697a3d0668cdd799f334a8d739588ea4"
+    etag: W/"3ad957eeb0127ea4af4e93a169cf1667"
   "/2011/06/Developing-intent":
     build_path: 2011/06/Developing-intent.html
   "/2011/06/irrefutable-gerunds":
@@ -3517,12 +3517,12 @@ paths:
     build_path: 2011/06/Irrefutable-gerunds.html
   "/2011/06/print-share-not-everyone-is-a-social-media-ninja-nor-need-they-be":
     build_path: 2011/06/print-share-not-everyone-is-a-social-media-ninja-nor-need-they-be.html
-    etag: W/"c7384f0b677d33be12c06c2114f9694e"
+    etag: W/"b36cad82e3598ff540f0421c9d0ddd9a"
   "/2011/06/Print-Share-not-everyone-is-a-social-media-ninja-nor-need-they-be":
     build_path: 2011/06/Print-Share-not-everyone-is-a-social-media-ninja-nor-need-they-be.html
   "/2011/07/planning-is-timeless":
     build_path: 2011/07/planning-is-timeless.html
-    etag: W/"c9d9e69b1c0aa647ded788d36741e9f9"
+    etag: W/"17a8ee46f16ea3c57eae4ae0bfb9d690"
   "/2011/07/Planning-is-timeless":
     build_path: 2011/07/Planning-is-timeless.html
   "/2011/07/the-event-is-a-tyrant":
@@ -3532,7 +3532,7 @@ paths:
     build_path: 2011/07/The-event-is-a-tyrant.html
   "/2011/07/competitive-collaboration-or-collaborative-competition":
     build_path: 2011/07/competitive-collaboration-or-collaborative-competition.html
-    etag: W/"ffa9f5e191d57d77992e3fb762e02190"
+    etag: W/"cc158a42980390523dc4deed2f6617fc"
   "/2011/07/Competitive-Collaboration-or-Collaborative-Competition":
     build_path: 2011/07/Competitive-Collaboration-or-Collaborative-Competition.html
   "/2011/07/a-modest-web-app-proposal":
@@ -3542,7 +3542,7 @@ paths:
     build_path: 2011/07/A-modest-web-app-proposal.html
   "/2011/07/donorschoose-contest-update-consolation-prize-edition":
     build_path: 2011/07/donorschoose-contest-update-consolation-prize-edition.html
-    etag: W/"c036fe6359e52969fc3360b81e09f0db"
+    etag: W/"dd201e135a049ebb448b19443e92ea33"
   "/2011/07/DonorsChoose-Contest-Update-Consolation-Prize-Edition":
     build_path: 2011/07/DonorsChoose-Contest-Update-Consolation-Prize-Edition.html
   "/2011/07/similar-message-wider-audience":
@@ -3562,22 +3562,22 @@ paths:
     build_path: 2011/09/Where-rhetoric-is-substance.html
   "/2011/09/ambiguous-url":
     build_path: 2011/09/ambiguous-url.html
-    etag: W/"9c7c0bd866df212e3a28c41b02300e00"
+    etag: W/"65f42fe4610f38ae2fb91774d17e40c4"
   "/2011/09/Ambiguous-URL":
     build_path: 2011/09/Ambiguous-URL.html
   "/2011/09/shifting-beliefs-remaking-the-pie":
     build_path: 2011/09/shifting-beliefs-remaking-the-pie.html
-    etag: W/"2543b6032a616ed628c6f776d6394698"
+    etag: W/"92da895dd24061f0c8a6be0030f97ba2"
   "/2011/09/Shifting-beliefs-remaking-the-pie":
     build_path: 2011/09/Shifting-beliefs-remaking-the-pie.html
   "/2011/09/crime-and-data-leadership":
     build_path: 2011/09/crime-and-data-leadership.html
-    etag: W/"28f4009f44726de3f1a655aba1925eb1"
+    etag: W/"6237fdfcb50861f66950d482729a8744"
   "/2011/09/Crime-and-Data-Leadership":
     build_path: 2011/09/Crime-and-Data-Leadership.html
   "/2011/09/meet-americorps-no-more":
     build_path: 2011/09/meet-americorps-no-more.html
-    etag: W/"105ff3e3236d1676e47f6faa29ae5caa"
+    etag: W/"fcd14a8dcb05bee93f02e24555206dda"
   "/2011/09/Meet-AmeriCorps-no-more":
     build_path: 2011/09/Meet-AmeriCorps-no-more.html
   "/2011/09/project-fecundity":
@@ -3597,7 +3597,7 @@ paths:
     build_path: 2011/10/That-Californian-Ideology.html
   "/2011/10/fundraising-tool-memo-boilerplate":
     build_path: 2011/10/fundraising-tool-memo-boilerplate.html
-    etag: W/"36d96baccd10043ab52c53b579866e49"
+    etag: W/"5beb4782886e3a4aac4ab4aadde1ae28"
   "/2011/10/Fundraising-Tool-Memo-Boilerplate":
     build_path: 2011/10/Fundraising-Tool-Memo-Boilerplate.html
   "/2011/10/the-prevailing-worldview-of-the-present":
@@ -3614,7 +3614,7 @@ paths:
     build_path: 2011/10/The-work-itself-isnt-inhumane.html
   "/2011/11/literacy-is-more-than-reading":
     build_path: 2011/11/literacy-is-more-than-reading.html
-    etag: W/"b26a1006790e2eebcf05f298333694dd"
+    etag: W/"7bcf471e89c499a05f2d84c66ab16867"
   "/2011/11/Literacy-is-more-than-reading":
     build_path: 2011/11/Literacy-is-more-than-reading.html
   "/2011/11/speedgeeking-on-wordpress-filters":
@@ -3626,10 +3626,10 @@ paths:
     build_path: 2011/11/Nonprofit-Naming.html
   "/2012/01/2011-in-review":
     build_path: 2012/01/2011-in-review.html
-    etag: W/"c6ea39923d5058d0b5ba0b0810c81c40"
+    etag: W/"fa6ce1375df6cfaa798d6b7d5377ae18"
   "/2012/01/protest-shirts":
     build_path: 2012/01/protest-shirts.html
-    etag: W/"3cf8f70999e8bf54a38eca94857c2a79"
+    etag: W/"54110dd6fae6c97cba53050b2a62afa5"
   "/2012/01/Protest-shirts":
     build_path: 2012/01/Protest-shirts.html
   "/2012/02/methodological-belief":
@@ -3651,15 +3651,15 @@ paths:
     build_path: 2012/07/Hard-data-on-the-status-of-Open311.html
   "/2012/08/put-your-civics-where-your-houseplant-is":
     build_path: 2012/08/put-your-civics-where-your-houseplant-is.html
-    etag: W/"c25d6e4636bfc5f364c7f6aa0054dc6a"
+    etag: W/"d8802570423ffb5cd3ff61cbfd7e4562"
   "/2012/08/Put-Your-Civics-Where-Your-Houseplant-Is":
     build_path: 2012/08/Put-Your-Civics-Where-Your-Houseplant-Is.html
   "/2012/11/reimagining-chicagos-311-activity-with-super-mayor-emanuel":
     build_path: 2012/11/reimagining-chicagos-311-activity-with-super-mayor-emanuel.html
-    etag: W/"ef10b62bfcfb9c5e9cea9ce504fd65cb"
+    etag: W/"71211cb5d2b5bf8dcd45ef66b6f6c97b"
   "/2012/09/reimagining-chicagos-311-activity-with-super-mayor-emanuel":
     build_path: 2012/09/reimagining-chicagos-311-activity-with-super-mayor-emanuel.html
-    etag: W/"ef10b62bfcfb9c5e9cea9ce504fd65cb"
+    etag: W/"71211cb5d2b5bf8dcd45ef66b6f6c97b"
   "/2012/09/Reimagining-Chicagos-311-activity-with-Super-Mayor-Emanuel":
     build_path: 2012/09/Reimagining-Chicagos-311-activity-with-Super-Mayor-Emanuel.html
   "/2012/12/a-gentle-conceptual-introduction-to-node-js":
@@ -3680,17 +3680,17 @@ paths:
     build_path: 2013/05/Selling.html
   "/2013/06/state-of-the-shirt-2012":
     build_path: 2013/06/state-of-the-shirt-2012.html
-    etag: W/"d7a19c648e4ab714ba6e4de3159b09fc"
+    etag: W/"ef24a9cfdfcd3101cc8746a216cc5a5a"
   "/2013/06/State-of-the-Shirt-2012":
     build_path: 2013/06/State-of-the-Shirt-2012.html
   "/2013/07/meet-ravel":
     build_path: 2013/07/meet-ravel.html
-    etag: W/"dcf1ed16404e46bb105ed187c7692d08"
+    etag: W/"23905f14b145f62c7731d9eb3b85fe74"
   "/2013/07/Meet-Ravel":
     build_path: 2013/07/Meet-Ravel.html
   "/2013/09/now-exhale":
     build_path: 2013/09/now-exhale.html
-    etag: W/"b2538cb29d2007a5d584c0d06693ec0a"
+    etag: W/"1a0f7f3671da3fa3347df7254641a51f"
   "/2013/09/Now-exhale":
     build_path: 2013/09/Now-exhale.html
   "/2014/02/Rigorous-complaint":
@@ -18412,64 +18412,64 @@ paths:
     etag: W/"169646d61355236c89af7614fc12293c"
   "/2026/01/goodjob-solid-queue-sidekiq-active-job-in-2026":
     build_path: 2026/01/goodjob-solid-queue-sidekiq-active-job-in-2026.html
-    etag: W/"26fad3773c00b9e2d9cf48411123ad0f"
+    etag: W/"d4fe3a62d2d439ce6927091a7b05d921"
   "/2025/12/tricks-to-work-around-nested-form-elements-for-rails":
     build_path: 2025/12/tricks-to-work-around-nested-form-elements-for-rails.html
-    etag: W/"999a54ba37729012f9e8cae82a3c23ee"
+    etag: W/"12346b0a00e9ad2a3c2613b2c7b5d7bc"
   "/2025/10/conflicted-and-commingled":
     build_path: 2025/10/conflicted-and-commingled.html
     etag: W/"5dec745f2ad6beefc013673287903a7c"
   "/2025/10/rails-103-early-hints-could-be-better-maybe-doesn-t-matter":
     build_path: 2025/10/rails-103-early-hints-could-be-better-maybe-doesn-t-matter.html
-    etag: W/"a3a75a9fa84b3381e2648437f5783edc"
+    etag: W/"c2d7ce391a0783469aabfc82160cea94"
   "/2025/10/hanami-and-loading-code-faster":
     build_path: 2025/10/hanami-and-loading-code-faster.html
-    etag: W/"34cdea90be4c1ceff8695936cb9c9355"
+    etag: W/"aac93450d8a813e5e4a85501ad76e2b2"
   "/2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable":
     build_path: 2025/10/notes-from-building-a-who-is-doing-what-right-now-on-our-website-presence-feature-with-action-cable.html
-    etag: W/"821bcb96e0b9ea8c6d095a22ed0666bb"
+    etag: W/"08bc320022240da2d22e3ea93b9f427b"
   "/2025/10/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later":
     build_path: 2025/10/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later.html
-    etag: W/"55a0da70379775033915272ede6be2e8"
+    etag: W/"3c75f4b7958ca2dcba88e22beed74ad6"
   "/2025/09/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later":
     build_path: 2025/09/serializing-viewcomponent-for-active-job-and-turbo-broadcast-later.html
-    etag: W/"55a0da70379775033915272ede6be2e8"
+    etag: W/"3c75f4b7958ca2dcba88e22beed74ad6"
   "/2025/08/building-deterministic-reproducible-assets-with-sprockets":
     build_path: 2025/08/building-deterministic-reproducible-assets-with-sprockets.html
-    etag: W/"3cf6093b9459caa3d0d3e4ce72572f74"
+    etag: W/"20ad3a92530dc86a9e382cd8353b4cdc"
   "/2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code":
     build_path: 2025/08/everything-i-know-about-ai-learned-by-reading-the-aws-bedrock-client-ruby-sdk-code.html
-    etag: W/"90a0878dbdf2e5f67184a2f4b8e59726"
+    etag: W/"a263499611ae6cb14fad1090252f682c"
   "/2025/07/consider-thruster-with-puma-on-heroku":
     build_path: 2025/07/consider-thruster-with-puma-on-heroku.html
     etag: W/"63c0bab008da27ef6cc3416be9ffd971"
   "/2025/07/customize-rails-i18n-key-suffixes-like-md-for-markdown":
     build_path: 2025/07/customize-rails-i18n-key-suffixes-like-md-for-markdown.html
-    etag: W/"8d4b0591744b57142bbb6eabccd4483a"
+    etag: W/"b67f0b19632fb624ab16f41af084cf87"
   "/2025/07/is-everyone-ok-at-the-gemba":
     build_path: 2025/07/is-everyone-ok-at-the-gemba.html
-    etag: W/"6c77ad270f0332d1cc46fe2620509a37"
+    etag: W/"f3284c184e440e013e3149edd509452c"
   "/2025/06/recently-june-29-2025":
     build_path: 2025/06/recently-june-29-2025.html
     etag: W/"3d6c7a68e0449e0eccd2e81e82350a55"
   "/2025/06/difference-rails-plugin-extensions-gems-railties-engines":
     build_path: 2025/06/difference-rails-plugin-extensions-gems-railties-engines.html
-    etag: W/"1135e49ca412addb35734065a7ca737f"
+    etag: W/"5077e2bcde1bd932402221f28f390d73"
   "/2025/06/recently-june-8-2025":
     build_path: 2025/06/recently-june-8-2025.html
-    etag: W/"5ca0ab12b1c45f168e468dad442f347a"
+    etag: W/"3461fa78afaf9b7e14034cba125ce2fa"
   "/2025/06/a-nice-email-for-subscribers":
     build_path: 2025/06/a-nice-email-for-subscribers.html
-    etag: W/"43d81b8bf941a88b64c17f264b479aa2"
+    etag: W/"f69f710ab89959da7d6705fbdbdf0340"
   "/2025/05/recently-may-4-2025":
     build_path: 2025/05/recently-may-4-2025.html
-    etag: W/"02e9007ca15509f196984e952c3ba7a9"
+    etag: W/"9c7c7f92a811127555d0c7e291d2a87f"
   "/2025/04/recently-april-20-2025":
     build_path: 2025/04/recently-april-20-2025.html
-    etag: W/"f2f4a8037e7825219b7fdd7beb9602a1"
+    etag: W/"36bae2303410841a4cff7c9a0873338b"
   "/2025/04/recently-april-14-2025":
     build_path: 2025/04/recently-april-14-2025.html
-    etag: W/"24d9256b100490386b894c6474004213"
+    etag: W/"14f2b2b3d5d83069d08e767a5d1b50f8"
   "/2025/04/recently-april-7-2025":
     build_path: 2025/04/recently-april-7-2025.html
     etag: W/"7fc8f7d36191d340a911bb3e2d1988d2"
@@ -18478,13 +18478,13 @@ paths:
     etag: W/"0496adda0e01cb0ba208c5926b328fa1"
   "/2025/04/wide-models-and-active-record-custom-validation-contexts":
     build_path: 2025/04/wide-models-and-active-record-custom-validation-contexts.html
-    etag: W/"fbfe2b683c349b19a6978a94b4dbc5dc"
+    etag: W/"c6912a98ec7ec849992faf237f928bc8"
   "/2025/03/recently-march-26-2025":
     build_path: 2025/03/recently-march-26-2025.html
-    etag: W/"1dd4d3ee32b7cf0b5aeac8e126866aee"
+    etag: W/"0693abe51bfc404ece36635f768b97db"
   "/2025/03/recently-march-16-2025":
     build_path: 2025/03/recently-march-16-2025.html
-    etag: W/"e37465d84414c0d601fd68032b63d64a"
+    etag: W/"d1b014842d9689c99535457972dbf92e"
   "/2025/03/addressing-it-directly":
     build_path: 2025/03/addressing-it-directly.html
     etag: W/"90ace21b7a98f059f25fd5d9dd4b30b8"
@@ -18493,43 +18493,43 @@ paths:
     etag: W/"76a9b92d412f98b9e0c59141595f9ed5"
   "/2025/01/ruby-thread-contention-simply-gvl-queuing":
     build_path: 2025/01/ruby-thread-contention-simply-gvl-queuing.html
-    etag: W/"f0ae6156e0f06bb60093ddb0cf1db3b0"
+    etag: W/"5de9728d8ebd11412ec766be38b85c01"
   "/2025/01/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/01/living-parklife-with-rails-coming-from-jekyll.html
-    etag: W/"5a019520ec205c7b4f180d39f28902ca"
+    etag: W/"600da72ef46c10c6f8322a4b0c960331"
   "/2025/01/how-im-thinking-about-ai-llms":
     build_path: 2025/01/how-im-thinking-about-ai-llms.html
-    etag: W/"bff6760f09230a5c381d76ea8666ac0c"
+    etag: W/"4dcba8f4ceaf0897c208487edccf3453"
   "/2024/12/including-rails-view-helpers-concern":
     build_path: 2024/12/including-rails-view-helpers-concern.html
-    etag: W/"58568705a0f3ad60cd8f8068d37b1ae0"
+    etag: W/"ab1581b112f5dee3ffe4b1b9eb660201"
   "/2024/11/keep-your-secrets-yml-in-rails-7-2":
     build_path: 2024/11/keep-your-secrets-yml-in-rails-7-2.html
     etag: W/"54068be1f0ce4238332cce5d1af4bcb2"
   "/2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants":
     build_path: 2024/10/technical-reflection-on-disaster-relief-assistance-for-immigrants.html
-    etag: W/"477ecad887d3f40c95bc4ed54fc495f9"
+    etag: W/"ab5082d7771b426ca0e58971c43e30d7"
   "/2024/09/spectator-sport-a-brief-introduction-to-an-upcoming-rails-plugin":
     build_path: 2024/09/spectator-sport-a-brief-introduction-to-an-upcoming-rails-plugin.html
-    etag: W/"74845ff96d6aa2749578443ee3e31bfc"
+    etag: W/"ee00d6d6fd1bb79b4eadf83005561d25"
   "/2024/09/seeing-like-a-rails-and-ruby-platform-team":
     build_path: 2024/09/seeing-like-a-rails-and-ruby-platform-team.html
-    etag: W/"126c95d9033b613b2ac2f4f5f5a6c750"
+    etag: W/"e37bccc2b0c7703da2d2359fb0cdf355"
   "/2024/09/secret-to-rails-database-connection-pool-size":
     build_path: 2024/09/secret-to-rails-database-connection-pool-size.html
     etag: W/"4c819a0abe38c60d67f3c7138e6fd9c1"
   "/2024/09/the-novice-problem":
     build_path: 2024/09/the-novice-problem.html
-    etag: W/"cf752b1236c2bd476c539bf3799257d8"
+    etag: W/"9f84ca89ec17bc134bfb0b5980a062b8"
   "/2024/07/notes-from-carrierwave-to-active-storage":
     build_path: 2024/07/notes-from-carrierwave-to-active-storage.html
     etag: W/"3849300d78bb767788b6efc93ee5c032"
   "/2024/07/on-the-importance-of-rails-code-reloading":
     build_path: 2024/07/on-the-importance-of-rails-code-reloading.html
-    etag: W/"931444a1e6e42da2fdf42d27f57e4a3d"
+    etag: W/"31d4551034df44d580a42911ddbe70a8"
   "/2024/07/introducing-goodjob-v4":
     build_path: 2024/07/introducing-goodjob-v4.html
-    etag: W/"29f5e86d6051529b830f69b997ae16d1"
+    etag: W/"2f171d5eb6b7c6bab4826a7310576cd9"
   "/2024/06/rails-strict-locals-local_assigns-and-reserved-keywords":
     build_path: 2024/06/rails-strict-locals-local_assigns-and-reserved-keywords.html
     etag: W/"5dd1f4705eba07d50d97bffaa162d2ff"
@@ -18538,109 +18538,109 @@ paths:
     etag: W/"e9549da743d2d7d958553ad211fb4d90"
   "/2024/04/a-comment-on-second-systems":
     build_path: 2024/04/a-comment-on-second-systems.html
-    etag: W/"dc3ae2cc525d2641d73414b8936f0e7a"
+    etag: W/"5554f6b4f6d1747f2f61bd229d80c6e3"
   "/2024/04/a-ruby-meetup-and-3-podcasts":
     build_path: 2024/04/a-ruby-meetup-and-3-podcasts.html
-    etag: W/"8f081acc1edb9a315ba5c1ec0a03578a"
+    etag: W/"75503aa35284f6d1a47300dc8ea930ee"
   "/2024/03/rails-active-record-will-it-bind":
     build_path: 2024/03/rails-active-record-will-it-bind.html
-    etag: W/"a4b3308d47f53ba162241213e1b6d86c"
+    etag: W/"2f0b6d389bd015a8cb1da060abbe5f09"
   "/2024/03/low-effort-prototyping":
     build_path: 2024/03/low-effort-prototyping.html
     etag: W/"ef4eb85cc75cf937a5ee83d2f9a5c9a4"
   "/2024/02/farewell-brompt":
     build_path: 2024/02/farewell-brompt.html
-    etag: W/"b14fd58791e362ff74021e475d6afa63"
+    etag: W/"843568bae97d0f239fa33523e21b2b75"
   "/2024/01/replacing-devise-with-rails-has_secure_password-and-friends":
     build_path: 2024/01/replacing-devise-with-rails-has_secure_password-and-friends.html
-    etag: W/"907ca6a72071497387b602548c495dbc"
+    etag: W/"862e7f0386da573d6e9f6135ce1c85aa"
   "/2024/01/two-stories-about-technical-debt-i-guess":
     build_path: 2024/01/two-stories-about-technical-debt-i-guess.html
-    etag: W/"5db90a357b3c9e48018ca8a4b190713e"
+    etag: W/"f53ef6db1949ea5cfc54b00ffcb911ca"
   "/2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory":
     build_path: 2024/01/the-answer-is-in-your-heap-debugging-big-rails-memory.html
-    etag: W/"b8f64d92011eccdd506be9f7cef957a7"
+    etag: W/"91195691adc75a33780e00653a531c65"
   "/2024/01/trigger-github-actions-workflows-from-apple-shortcuts":
     build_path: 2024/01/trigger-github-actions-workflows-from-apple-shortcuts.html
-    etag: W/"af7da7f07a61b0535d19ac460e263566"
+    etag: W/"74de83f070f6ad02d7bc09473e25c9ab"
   "/2024/01/recently":
     build_path: 2024/01/recently.html
-    etag: W/"b8e7dd35f83783009c0411e029118dc1"
+    etag: W/"fe67537d3bad1673b4f2b0393a088166"
   "/2023/12/solid-queue-first-impressions":
     build_path: 2023/12/solid-queue-first-impressions.html
-    etag: W/"8b48cbe0f3b242954c5883cca0e877a7"
+    etag: W/"df3a10783b6d98cafb6d892b248c4370"
   "/2023/12/recently":
     build_path: 2023/12/recently.html
-    etag: W/"b8e7dd35f83783009c0411e029118dc1"
+    etag: W/"fe67537d3bad1673b4f2b0393a088166"
   "/2023/11/rails-executor-increasingly-everywhere":
     build_path: 2023/11/rails-executor-increasingly-everywhere.html
     etag: W/"759d240b26fb405d6fec81e5ca39911a"
   "/2023/10/reflections-on-good-job-for-solid-queue":
     build_path: 2023/10/reflections-on-good-job-for-solid-queue.html
-    etag: W/"a2620d8ac055e86d96adc0669766b0e6"
+    etag: W/"9ab2723ea0e8d66154a0daef84ff537b"
   "/2023/10/writing-object-shape-friendly-code-in-ruby":
     build_path: 2023/10/writing-object-shape-friendly-code-in-ruby.html
-    etag: W/"74667af352f033060c9fce2cdbdc6867"
+    etag: W/"26ad1cebd70bfb052ff45866eda5e22f"
   "/2023/09/in-defense-of-consensus":
     build_path: 2023/09/in-defense-of-consensus.html
-    etag: W/"2ecc81e0bcf97304df441f902b598b62"
+    etag: W/"38a2e14db3708d6f31923c8049b5f51d"
   "/2023/08/appropriately-using-rubys-thread-handle_interrupt":
     build_path: 2023/08/appropriately-using-rubys-thread-handle_interrupt.html
-    etag: W/"a87168eceb6ab8523da02ee12d3ca747"
+    etag: W/"8db9f7c9348b34b16facaec3278044f4"
   "/2023/08/fake-the-algorithm-til-you-make-it":
     build_path: 2023/08/fake-the-algorithm-til-you-make-it.html
-    etag: W/"6a992f9b6654744421bfb67b1a1885a2"
+    etag: W/"019c01664eb8f7680550ebf8bd453414"
   "/2023/08/how-to-isolate-i18n-configuration-in-a-rails-engine":
     build_path: 2023/08/how-to-isolate-i18n-configuration-in-a-rails-engine.html
-    etag: W/"61271523c70704daba2fedbe9eb41044"
+    etag: W/"6319abd45390fae318e09552736d235a"
   "/2023/08/recoding-america":
     build_path: 2023/08/recoding-america.html
-    etag: W/"15c7a9a1d315db9a22818f6fe174cec5"
+    etag: W/"fbdfe99b8b8bf88fa81dc2f074ed9ef6"
   "/2023/07/systems-of-utopia":
     build_path: 2023/07/systems-of-utopia.html
-    etag: W/"498e92b137dffc404133749144606347"
+    etag: W/"fd1a950bdd12fd633c76301f55b15162"
   "/2023/06/19-sales-marketing-strategies-in-19-weeks":
     build_path: 2023/06/19-sales-marketing-strategies-in-19-weeks.html
-    etag: W/"5d9c8f0ff1fcdc17632b04d370972ff1"
+    etag: W/"eaeb9435d420d689a23585b082d9846e"
   "/2023/06/rebuilding-concurrent-ruby-scheduledtask-event-and-timerset":
     build_path: 2023/06/rebuilding-concurrent-ruby-scheduledtask-event-and-timerset.html
-    etag: W/"d904973fdb997a28a9f94bcc9164b6d1"
+    etag: W/"8f5b3110a4bcd042803edd17da54963a"
   "/2023/05/whatever-you-do-don-t-autoload-rails-lib":
     build_path: 2023/05/whatever-you-do-don-t-autoload-rails-lib.html
-    etag: W/"a505bd1ce65a098e715f9042b29ae328"
+    etag: W/"e2612d273e1b92829eedfc74ea8befff"
   "/2023/04/the-constant-rabbit":
     build_path: 2023/04/the-constant-rabbit.html
-    etag: W/"fc60094259bcea95930c0b687e448316"
+    etag: W/"539e8b8537faa6987bd7a27f4def8f92"
   "/2023/04/the-dawn-of-everything":
     build_path: 2023/04/the-dawn-of-everything.html
     etag: W/"4d3def64bd69432acecf25fd4ed78efe"
   "/2023/03/how-goodjob-s-mountable-rails-engine-delivers-javascript-importmaps-and-frontend-assets":
     build_path: 2023/03/how-goodjob-s-mountable-rails-engine-delivers-javascript-importmaps-and-frontend-assets.html
-    etag: W/"fbaf406c89f5bf543528e69267fb73be"
+    etag: W/"e57756d87ea73fe6e2c89390c55bec5a"
   "/2023/03/recently-march-12-2023":
     build_path: 2023/03/recently-march-12-2023.html
     etag: W/"9931dd8ffca4a315aba684faf68ef70d"
   "/2023/02/service-object-objects-in-ruby":
     build_path: 2023/02/service-object-objects-in-ruby.html
-    etag: W/"9850727dd63b4caf83e6cae309ce61b4"
+    etag: W/"f8a83f01ecaa5e084b6e5195aa638f17"
   "/2023/02/slop-and-call":
     build_path: 2023/02/slop-and-call.html
     etag: W/"8af15d76a025b343928230854e56e900"
   "/2023/02/prevent-cdn-poisoning-from-fat-get-head-requests-in-ruby-on-rails":
     build_path: 2023/02/prevent-cdn-poisoning-from-fat-get-head-requests-in-ruby-on-rails.html
-    etag: W/"65a352582172df8387c68b8ed14b3a42"
+    etag: W/"d94c3da4e11debe413bffbae7f88d971"
   "/2023/02/introducing-goodjob-bulk-and-batch":
     build_path: 2023/02/introducing-goodjob-bulk-and-batch.html
-    etag: W/"1ca5c81cd5ccfe8daddf05f936566b75"
+    etag: W/"9b9b52d4c94c490750d346e8cfbd2c9b"
   "/2023/01/framing-open-source-contributions-at-work":
     build_path: 2023/01/framing-open-source-contributions-at-work.html
-    etag: W/"bc2c4efd5858fb76cad076868fcc0adb"
+    etag: W/"b0526caaed5012247bc61dddf6c798ad"
   "/2023/01/how-goodjob-s-cron-does-distributed-locks":
     build_path: 2023/01/how-goodjob-s-cron-does-distributed-locks.html
-    etag: W/"fb883f7299e89919ef9a1f5d19f67808"
+    etag: W/"b3970663ae4d883504a1d57a8534c1a6"
   "/2023/01/conflict-at-work":
     build_path: 2023/01/conflict-at-work.html
-    etag: W/"05661429b8fda6a589ca6d18d66b2c7a"
+    etag: W/"b53706c0e39743de6151a4cfb69b2dee"
   "/2023/01/2022-in-review":
     build_path: 2023/01/2022-in-review.html
     etag: W/"189b0ddcb9e942bb70344cad0d2ec439"
@@ -18649,13 +18649,13 @@ paths:
     etag: W/"bb784a3b248d307a8912f0737376be43"
   "/2022/11/environment-at-work":
     build_path: 2022/11/environment-at-work.html
-    etag: W/"6f375cdaa87a140749d863ba82d26027"
+    etag: W/"b56a76bb7183c9a6018d292f748ebf53"
   "/2022/11/worknotes-november-13-2022":
     build_path: 2022/11/worknotes-november-13-2022.html
     etag: W/"f768eddb4aca002c697b30b36276f89e"
   "/2022/11/synectics":
     build_path: 2022/11/synectics.html
-    etag: W/"8dbc67f8101c40477f9865d8ea6903b5"
+    etag: W/"c907a337077d4bc96eac9358f2803219"
   "/2022/10/productive-struggle":
     build_path: 2022/10/productive-struggle.html
     etag: W/"d60e81305f845614a125b9f4290df0c3"
@@ -18667,7 +18667,7 @@ paths:
     etag: W/"92ef000625a309e209059240005949d5"
   "/2022/09/persian-tahchin-inspired-crispy-chicken-rice":
     build_path: 2022/09/persian-tahchin-inspired-crispy-chicken-rice.html
-    etag: W/"62f27eaa3d194e7890924ac22e552ed4"
+    etag: W/"21b1de151387da8c25ce0576563e1795"
   "/2022/09/weeknotes-september-19-2022":
     build_path: 2022/09/weeknotes-september-19-2022.html
     etag: W/"8437769eb0ee6abdfe1b647688deb93d"
@@ -18676,10 +18676,10 @@ paths:
     etag: W/"b1ed740f8086b037dfb0058fb8001d58"
   "/2022/09/object-thinking":
     build_path: 2022/09/object-thinking.html
-    etag: W/"663f955973f4f9e9932bfd111bc36051"
+    etag: W/"0a55e96cb274c5bfc55bbb13985a2e46"
   "/2022/08/weeknotes-aug-29-2022":
     build_path: 2022/08/weeknotes-aug-29-2022.html
-    etag: W/"900b8433ddff9e12b50f35e5e8cdc42d"
+    etag: W/"6b6c9db43317c5c6dece4d49b0d2e3b7"
   "/2022/08/still-only-myself":
     build_path: 2022/08/still-only-myself.html
     etag: W/"f48c15d76fee5d10e4219ab9f3ce1399"
@@ -18688,16 +18688,16 @@ paths:
     etag: W/"2c15c87c66e939907d0ffdd7c7994395"
   "/2022/07/four-dumb-cringe-tech-interview-stories":
     build_path: 2022/07/four-dumb-cringe-tech-interview-stories.html
-    etag: W/"338286f977fcb7b794139d924a1b30cb"
+    etag: W/"4cfe38e1dbdaf4adfeb75850a69d92ee"
   "/2022/07/what-the-fuck-are-you-talking-about-the-story-of-nodetiles":
     build_path: 2022/07/what-the-fuck-are-you-talking-about-the-story-of-nodetiles.html
-    etag: W/"cce3a4881e15af6dc1b4185915583161"
+    etag: W/"dec98a82f01044bf13c32fcb6aa665eb"
   "/2022/07/were-all-just-people-here-even-platforms":
     build_path: 2022/07/were-all-just-people-here-even-platforms.html
-    etag: W/"3b502747e067dfb65aeab9ed7ae9bdad"
+    etag: W/"5980c18490ed664302cb66d7a470da2d"
   "/2022/07/worknotes:-week-7":
     build_path: 2022/07/worknotes:-week-7.html
-    etag: W/"16e7d2434113e40a11d3214afa2692f9"
+    etag: W/"f6391363bb1d4700b1c18185e733a083"
   "/2022/06/programmed-inequality-how-britain-discarded-women-technologists-and-lost-its-edge-in-computing":
     build_path: 2022/06/programmed-inequality-how-britain-discarded-women-technologists-and-lost-its-edge-in-computing.html
     etag: W/"1ca8cab33f13831857e72ca67f70e7fb"
@@ -18709,16 +18709,16 @@ paths:
     etag: W/"54b04029f5180fe061918ea467556a08"
   "/2022/05/worknotes:-week-5":
     build_path: 2022/05/worknotes:-week-5.html
-    etag: W/"3598a06c014fb84aa5e369ed693e41a4"
+    etag: W/"f0b17b33869615800035b8a0b568253f"
   "/2022/05/weeknotes-week-zero":
     build_path: 2022/05/weeknotes-week-zero.html
     etag: W/"4d305d170a6287319ff88671c1057248"
   "/2022/04/recoding-gender":
     build_path: 2022/04/recoding-gender.html
-    etag: W/"5e2d1bbf7497b41ced33ca4aca9dbd78"
+    etag: W/"1f5934b9a8de9ff34903eb1931e44bef"
   "/2022/04/science-in-the-capital":
     build_path: 2022/04/science-in-the-capital.html
-    etag: W/"adeaa068f76573f8ccbba9f9b316b833"
+    etag: W/"30776963cdd940af169ec38c85d92130"
   "/2022/03/working-the-problem":
     build_path: 2022/03/working-the-problem.html
     etag: W/"86ddcd72a7331cc1e995502d14183c0a"
@@ -18733,7 +18733,7 @@ paths:
     etag: W/"67f86eda92f3e78909890ef618a5770c"
   "/2022/03/bullshit-jobs":
     build_path: 2022/03/bullshit-jobs.html
-    etag: W/"9e80c06f793339eeffea19e6c6804568"
+    etag: W/"3861aa1a2f4373685b30e02f27199bb6"
   "/2022/03/over-rapported":
     build_path: 2022/03/over-rapported.html
     etag: W/"06ad05e7372a0435e3469e0fa19fb562"
@@ -18766,31 +18766,31 @@ paths:
     etag: W/"b57b5ce5b0eb702c1e66b990c015fa13"
   "/2021/10/behaving-like-the-character-in-a-story":
     build_path: 2021/10/behaving-like-the-character-in-a-story.html
-    etag: W/"2fd9d8b4ca21d0765eb6f75ba6d7cde1"
+    etag: W/"8e631e6d519d8acad532ae637f3f0cb7"
   "/2021/10/til:-detecting-block-returns-in-ruby-":
     build_path: 2021/10/til:-detecting-block-returns-in-ruby-.html
-    etag: W/"8c377f88a26d170fd76716b6121fa6a2"
+    etag: W/"0d0e79219ccb36636e9bd29dd972b316"
   "/2021/09/home-buyer-letter":
     build_path: 2021/09/home-buyer-letter.html
     etag: W/"975bd6c6a2f3723d225ec81b7e60d73b"
   "/2021/07/goodjob-whats-new-v1120":
     build_path: 2021/07/goodjob-whats-new-v1120.html
-    etag: W/"beb443ff479e2b7798b8322303b20051"
+    etag: W/"24001b9869b665d2bf1d057ffae3329a"
   "/2021/07/paranoid-and-reparative-readings":
     build_path: 2021/07/paranoid-and-reparative-readings.html
     etag: W/"c31d36e1869e9f23c8065047bf08013e"
   "/2021/06/goodjob-updates-v15-v19":
     build_path: 2021/06/goodjob-updates-v15-v19.html
-    etag: W/"ef364f20b92d9bc0994b2e2f571c9981"
+    etag: W/"dfc800e3aded1c0d7fff958488385045"
   "/2021/05/is-securerandom-choose-the-wrong-name-for-generating-randomized-strings-with-ruby":
     build_path: 2021/05/is-securerandom-choose-the-wrong-name-for-generating-randomized-strings-with-ruby.html
-    etag: W/"4ad9a3dfd77f317d9ed9049464672320"
+    etag: W/"02364392a26c70b1c0d29c4b46f9a1a2"
   "/2021/05/generic-advice-for-managers":
     build_path: 2021/05/generic-advice-for-managers.html
     etag: W/"87f5ff204470968dabea091813d81a17"
   "/2021/01/goodjob-1-4-jruby-compatibility-and-more":
     build_path: 2021/01/goodjob-1-4-jruby-compatibility-and-more.html
-    etag: W/"3f1aabe469109064582fe81aa14eb304"
+    etag: W/"3a09ecb05e486641ba9dcee0f76886b2"
   "/2020/11/maimonides-levels-of-charity":
     build_path: 2020/11/maimonides-levels-of-charity.html
     etag: W/"206fd61927826e99359b8a982c1b3811"
@@ -18826,25 +18826,25 @@ paths:
     etag: W/"20c769c4587e36f7e6019a43ec82c9aa"
   "/2020/09/respect-our-vendors":
     build_path: 2020/09/respect-our-vendors.html
-    etag: W/"21a6bffa4351510bc309e954a467a16d"
+    etag: W/"42ab68d9258f0e112f2797181afb613a"
   "/2020/08/goodjob-v1-2-multithreaded-queue-isolation-and-listen-notify":
     build_path: 2020/08/goodjob-v1-2-multithreaded-queue-isolation-and-listen-notify.html
-    etag: W/"71462a2fbe73053e1c65efaec87d87a6"
+    etag: W/"8156f8bbe977977ae4b87a7364bab808"
   "/2020/08/goodjob-v1-1-async-and-improved-documentation":
     build_path: 2020/08/goodjob-v1-1-async-and-improved-documentation.html
-    etag: W/"15f41511901f7df933823bc042ee30fe"
+    etag: W/"ed83e9dce3f741c7fed30ee7b80e3fc9"
   "/2020/07/introducing-goodjob-1-0":
     build_path: 2020/07/introducing-goodjob-1-0.html
-    etag: W/"a3ad37c0e0675af7a34b146a8b69ac32"
+    etag: W/"f4bd287ef83541d8874d1e648feb5561"
   "/2020/07/retail-politics":
     build_path: 2020/07/retail-politics.html
     etag: W/"dfd210cbc5fa66a6c9b4f0354e45fd7b"
   "/2020/07/engineering-operations-is-not-the-same-as-development":
     build_path: 2020/07/engineering-operations-is-not-the-same-as-development.html
-    etag: W/"e41d0d31eed469f3316b0dcb681fbede"
+    etag: W/"e50b10b21db6bb1eead1af1349747a81"
   "/2020/01/decade-in-review-2010-2019":
     build_path: 2020/01/decade-in-review-2010-2019.html
-    etag: W/"8b71c7cceb82d9329b49e727b8cde858"
+    etag: W/"d33b23ccb41cc7c508ab774b61760958"
   "/2019/12/the-water-never-goes-away":
     build_path: 2019/12/the-water-never-goes-away.html
     etag: W/"609e60d5896bc344242f604df62fcce5"
@@ -18853,16 +18853,16 @@ paths:
     etag: W/"9271c52f7f557e613885d35e74a3cb29"
   "/2019/11/deterministic-test-data-with-faker-factorybot-and-rspec":
     build_path: 2019/11/deterministic-test-data-with-faker-factorybot-and-rspec.html
-    etag: W/"c886fdf95f70883f430ac36bc90d7c4c"
+    etag: W/"31e1323fdf82a7b4e79993726a6938c5"
   "/2019/11/because-it-helps-them-to-release-software":
     build_path: 2019/11/because-it-helps-them-to-release-software.html
-    etag: W/"e91c98d0d1d695398bc359597f0ce53c"
+    etag: W/"a5ca52360c82cc060a10d8043141ba93"
   "/2019/11/the-concrete-sumo-ethics-in-software-engineering-discussion-guide":
     build_path: 2019/11/the-concrete-sumo-ethics-in-software-engineering-discussion-guide.html
-    etag: W/"c30b43ba405d2ce900c2bff1f3ebb7d2"
+    etag: W/"0fb1d1851461d8d04e9b0cc86c689c24"
   "/2019/11/public-comments-on-sunset-housing":
     build_path: 2019/11/public-comments-on-sunset-housing.html
-    etag: W/"73c84701a5a8d55ae2b3001cd362de93"
+    etag: W/"b593a2bd5912a94d22a33ad7895c3fd4"
   "/2019/10/trust-and-safety":
     build_path: 2019/10/trust-and-safety.html
     etag: W/"3f906e1c4d9b73bcda0ef473dc268992"
@@ -18886,13 +18886,13 @@ paths:
     etag: W/"f0cb8b16cab334e0cae4b5c1ad2fbf57"
   "/2019/04/weeknotes-for-april-7-2019":
     build_path: 2019/04/weeknotes-for-april-7-2019.html
-    etag: W/"5ccc3e5a255644e56f9fffa79efddf07"
+    etag: W/"aa9f79fc328a8c196dd9df4fc6b3c93a"
   "/2019/02/weeknotes-february-24-2019":
     build_path: 2019/02/weeknotes-february-24-2019.html
-    etag: W/"501d311a8985aa09c3362e562494f188"
+    etag: W/"4b1e6067862a07a287e8744a5478fd7b"
   "/2019/02/weeknotes-february-17-2019":
     build_path: 2019/02/weeknotes-february-17-2019.html
-    etag: W/"43c73734c47465a91210eff34caf2061"
+    etag: W/"479b2fd1aa57366c9a0eaddb37e4e6d1"
   "/2019/02/weeknotes-february-10-2018":
     build_path: 2019/02/weeknotes-february-10-2018.html
     etag: W/"e9f4dbab15fc0e241cd1a7cc8cee599f"
@@ -18922,7 +18922,7 @@ paths:
     etag: W/"a4782feee27fb698f48fd2a7b17e6853"
   "/2018/10/notes-from-priceonomics-workshop":
     build_path: 2018/10/notes-from-priceonomics-workshop.html
-    etag: W/"f61d7d85377bd979cfb9a048e51b0675"
+    etag: W/"b6bb36ccc13aabc73f66d3eb3e5878c3"
   "/2018/09/disfunctional-workplaces":
     build_path: 2018/09/disfunctional-workplaces.html
     etag: W/"207c23d1c2244d6e1ce71a23621bacd0"
@@ -18934,7 +18934,7 @@ paths:
     etag: W/"5d72f430d0d2b322ebe192e0468f2588"
   "/2018/08/best-practice-practices":
     build_path: 2018/08/best-practice-practices.html
-    etag: W/"92d5f1f6fc297e1c55290cd809a6d59a"
+    etag: W/"c882d6bff74ef224d81cf2e8bb430513"
   "/2018/07/the-concrete-sumo":
     build_path: 2018/07/the-concrete-sumo.html
     etag: W/"a864a428256facf785f464ee55337f81"
@@ -18943,13 +18943,13 @@ paths:
     etag: W/"e857ccd4d5616639568dbf21d0bc6ddc"
   "/2018/03/2017-professional-goals-reviewed":
     build_path: 2018/03/2017-professional-goals-reviewed.html
-    etag: W/"a5864592c3e03a13bd740115b4a27f18"
+    etag: W/"2cd16f06c312d1fff6c039fe56857b5b"
   "/2018/03/japanese-processes":
     build_path: 2018/03/japanese-processes.html
     etag: W/"579ffa80fcd8d15298fdbd5967d32f03"
   "/2018/03/if-you-replaced-accessibility-with-responsive-design-in-2018-this-is-what-youd-get":
     build_path: 2018/03/if-you-replaced-accessibility-with-responsive-design-in-2018-this-is-what-youd-get.html
-    etag: W/"b6569de27c5d622e4e066e85620dec0f"
+    etag: W/"6801f856860a663b15344e9dacb2ca8f"
   "/2018/01/to-test-god":
     build_path: 2018/01/to-test-god.html
     etag: W/"f6d9cda92013ddd6ff28d65d6a8b5d7e"
@@ -18973,7 +18973,7 @@ paths:
     etag: W/"ccad84b3d928bbbdc14fcd32b8ff8fb6"
   "/2017/04/high-school-app-advisor":
     build_path: 2017/04/high-school-app-advisor.html
-    etag: W/"41c7eaf18fe972e6ba35e7b7fcb10109"
+    etag: W/"4e68c573e894edf7df187824ca933c2e"
   "/2017/01/engeering-practice-ad-nauseam":
     build_path: 2017/01/engeering-practice-ad-nauseam.html
     etag: W/"08b64f935c95545554a2298109405b9e"
@@ -18988,7 +18988,7 @@ paths:
     etag: W/"64aed6cbe44ebd93d4ef126ae43cbaaf"
   "/2016/11/clarity-and-accuracy":
     build_path: 2016/11/clarity-and-accuracy.html
-    etag: W/"a11d90f0a207e5a96d93653dac29d7d0"
+    etag: W/"59f31a8969b6b85f7158914393cab1a1"
   "/2016/10/on-secrets":
     build_path: 2016/10/on-secrets.html
     etag: W/"05b048d3ef70d14da55528b1b82cdabe"
@@ -19000,16 +19000,16 @@ paths:
     etag: W/"49da226c840c8c951492f041a9b3c09c"
   "/2014/10/universal-prefaces":
     build_path: 2014/10/universal-prefaces.html
-    etag: W/"dd11d7a8221ebab06321b2180513ad02"
+    etag: W/"f44bd54fe7257a76ae44a6d22617aeed"
   "/2014/02/rigorous-complaint":
     build_path: 2014/02/rigorous-complaint.html
     etag: W/"4c2356a5e52746575d97e10264895542"
   "/2012/12/a-gentle-conceptual-introduction-to-nodejs":
     build_path: 2012/12/a-gentle-conceptual-introduction-to-nodejs.html
-    etag: W/"1cd5c35ec804a5287e4ddbf07dc71c7a"
+    etag: W/"863cf77c8818c347ee5149817687760c"
   "/2011/10/the-work-itself-isnt-inhumane":
     build_path: 2011/10/the-work-itself-isnt-inhumane.html
-    etag: W/"597ff3cb0baf73b1d0743469069716ee"
+    etag: W/"ee300e81d833fabac89b9a0693663b9d"
   "/2011/03/advocacy-in-print---survival-news-for-2011":
     build_path: 2011/03/advocacy-in-print---survival-news-for-2011.html
     etag: W/"7f1fb4beb79c4da1e307545f7d9b98b1"
@@ -19024,7 +19024,7 @@ paths:
     etag: W/"cb27aa152e6bbb0e4537bf02f974377e"
   "/2010/10/fairly-fool-proof-whole-wheat-popovers":
     build_path: 2010/10/fairly-fool-proof-whole-wheat-popovers.html
-    etag: W/"42eb9d1f7954dd5ca4fce26cc2066637"
+    etag: W/"2c129dee4b8fe51ad2176a9c54c974ec"
   "/2010/09/find-fresh-perspectives-at-nonprofitmillennialsorg":
     build_path: 2010/09/find-fresh-perspectives-at-nonprofitmillennialsorg.html
     etag: W/"4d1450c2e5db4c6de0db611a0ad5a7cc"
@@ -19036,25 +19036,25 @@ paths:
     etag: W/"4a9b932526f1d8cb82ce599c24561d2f"
   "/2010/04/i-am-now-a-technology-of-participation-facilitator-":
     build_path: 2010/04/i-am-now-a-technology-of-participation-facilitator-.html
-    etag: W/"87ed87a89279a780d266be4453462d0b"
+    etag: W/"92f6b31db55e7aa052b1eab9d13623a7"
   "/2010/01/criticism-of-actor-network-theory":
     build_path: 2010/01/criticism-of-actor-network-theory.html
     etag: W/"d93fb7f3055a6ed26b4281e2d0c16a96"
   "/2009/09/technology-20-mapping-presentation":
     build_path: 2009/09/technology-20-mapping-presentation.html
-    etag: W/"325470ea63263dad3ba210540f37e0c6"
+    etag: W/"8a36c3912b8951b556b422d9a8d5cf3d"
   "/2009/09/removed-boston-subway-in-vector-format-svg":
     build_path: 2009/09/removed-boston-subway-in-vector-format-svg.html
-    etag: W/"acf244e6da837f94b61591e8ed180af0"
+    etag: W/"5fa3973982ff3edf994ff4f10eb9a028"
   "/2009/08/drupal-adding-a-geocoding-failure-message-to-location-module":
     build_path: 2009/08/drupal-adding-a-geocoding-failure-message-to-location-module.html
     etag: W/"ab5749796db9b360a7cd72685fce8f72"
   "/2009/07/three-americas":
     build_path: 2009/07/three-americas.html
-    etag: W/"54d2d863a86342a71ae99fa4291ce485"
+    etag: W/"eaa6f131763c7a87b7178ed11f110c1b"
   "/2009/03/excerpt-sectors-of-the-us-right---active-in-the-year-2001":
     build_path: 2009/03/excerpt-sectors-of-the-us-right---active-in-the-year-2001.html
-    etag: W/"ce5add71978b0b5bcbb09810f129c2bb"
+    etag: W/"6320f947b66545e8341674754ef59272"
   "/2008/12/from-web-20-to-produsage":
     build_path: 2008/12/from-web-20-to-produsage.html
     etag: W/"8ccf1d5fba870455fceaa59d60df58c4"
@@ -21946,10 +21946,10 @@ paths:
     etag: W/"eb36366f20042d91ac10f0a8598f02eb"
   "/posts/1":
     build_path: posts/1.html
-    etag: W/"f9801cbfdedaaed85448cae2f6547cb3"
+    etag: W/"9df1b87aeff1d45072e973f63676decf"
   "/posts/3":
     build_path: posts/3.html
-    etag: W/"eb0a6de0a2ec88cb1c83c1a7b3966dfc"
+    etag: W/"df35308a6b37d78c87435a0f9530011b"
   "/uploads/2005/poolsoup.mp4":
     build_path: uploads/2005/poolsoup.mp4
   "/uploads/2006-03/digitalbicycle-guy.jpg":
@@ -22201,211 +22201,211 @@ paths:
     build_path: uploads/2008-08-10-Drupal-theme-override-for-Uploadmodules-attachments-list/shiny_upload.zip
   "/posts/4":
     build_path: posts/4.html
-    etag: W/"66dde88cacea41c26e82e1098db3e04e"
+    etag: W/"517ff8800631deb899c1651a0ecd82c3"
   "/posts/5":
     build_path: posts/5.html
-    etag: W/"57d88dd0615f0eb9af33231a4235609e"
+    etag: W/"088155030c00eef9c6a2ea57aa595b91"
   "/posts/6":
     build_path: posts/6.html
-    etag: W/"286013ecc0037f6fa33f15702d234324"
+    etag: W/"f6cc06a3c3d17af23ebac751fb9d7ece"
   "/posts/7":
     build_path: posts/7.html
-    etag: W/"c0664121c8eb9762796f8887c4b1b330"
+    etag: W/"bb1db77fe8cbf65d66ee863cbb9d00d8"
   "/posts/8":
     build_path: posts/8.html
-    etag: W/"bf1a034e99fe6690dc67e781008a0294"
+    etag: W/"f7f99eae26099e06132f1c0bc77c4de4"
   "/posts/9":
     build_path: posts/9.html
-    etag: W/"3f686b5916b7c74513da718548bcb574"
+    etag: W/"2598cec5bcbd0c43088da80aa6396670"
   "/posts/10":
     build_path: posts/10.html
-    etag: W/"2b90ed20dce61234cf26c862a1066737"
+    etag: W/"c5a26e8c2e4ec566ab4e8d013ddca30a"
   "/posts/11":
     build_path: posts/11.html
-    etag: W/"3397470802dfdd024d3a760a08b58ead"
+    etag: W/"6e6d4942d1341f9a50bd24b3e7bd1e33"
   "/posts/12":
     build_path: posts/12.html
-    etag: W/"743f8b1bf504756f4c6673ba8ad5f5aa"
+    etag: W/"04ba1207f9dd26ef1d4e3bf4ca26e9f6"
   "/posts/13":
     build_path: posts/13.html
-    etag: W/"06c6b927352fbfa3723d8c7d83d5a4bc"
+    etag: W/"a5fea94cab2f24105a0b4eaa30e280c4"
   "/posts/14":
     build_path: posts/14.html
-    etag: W/"f3dc4070da203ed1b20e2578f5787d55"
+    etag: W/"8c0dfe77b6f05648cb5ef645a3e88322"
   "/posts/15":
     build_path: posts/15.html
-    etag: W/"ab81a0bd4c0cee2ff37318c6e1943978"
+    etag: W/"0303a251d6e9b75359117e5b6644d31e"
   "/posts/16":
     build_path: posts/16.html
-    etag: W/"c3c9082da01f3bfbdc0a4e1e45e44686"
+    etag: W/"41a39972cd4caf55996f2da9261ea273"
   "/posts/17":
     build_path: posts/17.html
-    etag: W/"e3a1d03343ef655d9b92be71bd42bfb6"
+    etag: W/"fb1fcb38611a44265f4091a88f389c06"
   "/posts/18":
     build_path: posts/18.html
-    etag: W/"1ddf7c27b88c74a2f5b2d08ba1f403d5"
+    etag: W/"9d01100326ee6e14a331d4c8edf738de"
   "/posts/19":
     build_path: posts/19.html
-    etag: W/"db825c0df71aed1706af89fdef8d507f"
+    etag: W/"a8128eec48ccfe81518f46cf6747999f"
   "/posts/20":
     build_path: posts/20.html
-    etag: W/"ee0a8a5342b563b566be73debc3cf12e"
+    etag: W/"2fe42971657a02c3ed17102ff4c55b98"
   "/posts/21":
     build_path: posts/21.html
-    etag: W/"eb73fee1eec7a095a57dbccc1146fc57"
+    etag: W/"af5afbd5622f253d75e15ce1987607a7"
   "/posts/22":
     build_path: posts/22.html
-    etag: W/"99cb3d5166d3688e0d25a164bb58a0ac"
+    etag: W/"1cbbe5236657c648a271aa59d384fa23"
   "/posts/23":
     build_path: posts/23.html
-    etag: W/"30ca07cfd4f5d5db5b47ddd5c7471b87"
+    etag: W/"692df65265d1801a55f8cb0e0cff5906"
   "/posts/24":
     build_path: posts/24.html
-    etag: W/"7f7ca5ec473cc213e1c69dac5c2eb286"
+    etag: W/"ef39f45ef03e36327d66420df21a896e"
   "/posts/25":
     build_path: posts/25.html
-    etag: W/"1cbdb79243a3367a522bbecfbbcbc7bf"
+    etag: W/"d8673af291b209c40611ff16de91e5b5"
   "/posts/26":
     build_path: posts/26.html
-    etag: W/"98a98040f65107eb6ee1433b147c4ea5"
+    etag: W/"c044b7e1b12552d2489d23a3924632ed"
   "/posts/27":
     build_path: posts/27.html
-    etag: W/"9d75b1fcf042749d4f0182fabee23899"
+    etag: W/"03df89a55d07202a7e6bcce6af7c760b"
   "/posts/28":
     build_path: posts/28.html
-    etag: W/"a730b0b601bf44387fac0a83940852b7"
+    etag: W/"040d100224f31da49f81555195ed2d4a"
   "/posts/29":
     build_path: posts/29.html
-    etag: W/"4e71a57e7eea4f79f123c5983189c3c8"
+    etag: W/"a4a662c4fa94f6bdff21c136c0a52fb6"
   "/posts/30":
     build_path: posts/30.html
-    etag: W/"afe86ae9c44a53dbd810d8097d9d04d9"
+    etag: W/"91ee7311c382b45456c51db799791866"
   "/posts/31":
     build_path: posts/31.html
-    etag: W/"78e7f2eb4a0f49d090ad93d38aa6a526"
+    etag: W/"47f3f59590be32ad1800552581c090de"
   "/posts/32":
     build_path: posts/32.html
-    etag: W/"1637d4929a6dcd26a64ccb21ed8deac1"
+    etag: W/"ae4efe5444af4100cdc4d122c895dc3f"
   "/posts/33":
     build_path: posts/33.html
-    etag: W/"563291a498c331026ff5a1e642e6f116"
+    etag: W/"997aa10eb8d8ef5a6fb0e451f36e1729"
   "/posts/34":
     build_path: posts/34.html
-    etag: W/"c56e90cb292af0ae06df407a3cec659c"
+    etag: W/"fc8d9cc52a39c6ff88bc792656aa4b5e"
   "/posts/35":
     build_path: posts/35.html
-    etag: W/"ab848346a0a5bfda579fdc1a2a7fe969"
+    etag: W/"e65bd0fc8ca28dc47a6d7f9952798af0"
   "/posts/36":
     build_path: posts/36.html
-    etag: W/"58c3e45c521d38569a1cc0568b8d1fa7"
+    etag: W/"e4db63c5f3b2f3c34946143ba103fe69"
   "/posts/37":
     build_path: posts/37.html
-    etag: W/"f341e9b8989fca2f0ccf07d875dbc374"
+    etag: W/"615c43b842f48ea6995cee4845783f12"
   "/posts/38":
     build_path: posts/38.html
-    etag: W/"0acf077e8be513c333f982508c5a208a"
+    etag: W/"d3ae44d34e96b34dbee4c8e7a12a6d52"
   "/posts/39":
     build_path: posts/39.html
-    etag: W/"866b29158ea6cf2eb4b536acba44efeb"
+    etag: W/"8f75fe14ea0d19d555d7579a20b0df11"
   "/posts/40":
     build_path: posts/40.html
-    etag: W/"0ce0394631ae86ff738c9eb40dbe4fd5"
+    etag: W/"89fd109c0f77a8d8f4cf45e0ad24be92"
   "/posts/41":
     build_path: posts/41.html
-    etag: W/"b0d6499cfe1344d2d28385154b8389d5"
+    etag: W/"15fc22cb264fce48214956d384165098"
   "/posts/42":
     build_path: posts/42.html
-    etag: W/"c252cc3e38da48523dd2d1484817ed69"
+    etag: W/"145cc125f16a2293c10e6b51412c3d79"
   "/posts/43":
     build_path: posts/43.html
-    etag: W/"1c860a6ccbdb44f69bc5ad4fe7085d36"
+    etag: W/"e40d9cb95686faee25d2c41dfe0b4725"
   "/posts/44":
     build_path: posts/44.html
-    etag: W/"d16cc44527026530c16c00a2a5c7c35e"
+    etag: W/"403a49cfda3b177847f556ec5cdfc158"
   "/posts/45":
     build_path: posts/45.html
-    etag: W/"fa958dccf7711dcacb411d893c65ecb5"
+    etag: W/"bf33a0e24b9eb1533dc4da3a60ddac0e"
   "/posts/46":
     build_path: posts/46.html
-    etag: W/"7d9d3ebe254a502a87dca6c9db9e39dd"
+    etag: W/"d032d4c220005a27e7116130d429e937"
   "/posts/47":
     build_path: posts/47.html
-    etag: W/"18a85f3eb8fc03f8a59cb8f1014f1c47"
+    etag: W/"02ac800341d70dab3b271711edcc6b47"
   "/posts/48":
     build_path: posts/48.html
-    etag: W/"086e5a3644ab1acb8d674832a82a9689"
+    etag: W/"d7b760d5a4b43e3267c40011644e41fc"
   "/posts/49":
     build_path: posts/49.html
-    etag: W/"64953191c371728c35514c2c10becfb3"
+    etag: W/"c96bb08ab6ebcedd96e40c67d072d3f1"
   "/posts/50":
     build_path: posts/50.html
-    etag: W/"64e69f37290382ea277751517b78299a"
+    etag: W/"2c905797d0bcb39ab0edacdbc8025ce6"
   "/posts/51":
     build_path: posts/51.html
     etag: W/"bfe2ac4b769ee94e315a988a35e80de5"
   "/posts/52":
     build_path: posts/52.html
-    etag: W/"7dce5677238d1eb97604804962140f9b"
+    etag: W/"655b907977628c3db24d57de9ddf2415"
   "/posts/53":
     build_path: posts/53.html
-    etag: W/"70cc649b45c5cb7390e218189264574b"
+    etag: W/"136d2e9766ea695dbec178844e887b1e"
   "/posts/54":
     build_path: posts/54.html
-    etag: W/"ed27b690d7bdfc1a2525548eb8d2e4fb"
+    etag: W/"e76f86883c0698243d002a6e8d27777e"
   "/posts/55":
     build_path: posts/55.html
-    etag: W/"d5f3a1c1bff291b0b37d77c1a6782951"
+    etag: W/"a84d3a97b76afb18405da2ad8ad7c731"
   "/posts/56":
     build_path: posts/56.html
-    etag: W/"a50b639b2808c04a79a8a7363b130d4f"
+    etag: W/"92dab6940c63a77833eb6340bf398bbb"
   "/posts/57":
     build_path: posts/57.html
-    etag: W/"81d7fdea19a7b23f1d731c58cb02d793"
+    etag: W/"2ba11bc2abc1830b97b33b46f03ec834"
   "/posts/58":
     build_path: posts/58.html
     etag: W/"af4d0a8d9767d230ce07c64463915470"
   "/posts/59":
     build_path: posts/59.html
-    etag: W/"3bcd92cc9bd72625e446aa7680e10b48"
+    etag: W/"b57001304f61b3a609e8251ebfffcaad"
   "/posts/60":
     build_path: posts/60.html
-    etag: W/"4cbf29f5855735c196240bb9b5ea2c08"
+    etag: W/"6fcb74787473a8ca91ad282318319c8b"
   "/posts/61":
     build_path: posts/61.html
-    etag: W/"85e3cbd258a45fa8ebbc50e3e1775d96"
+    etag: W/"8228ab151939b2f242e1c8f2e46b0e2a"
   "/posts/62":
     build_path: posts/62.html
-    etag: W/"bc144ddc2fb76e86c1191e1af87c75ec"
+    etag: W/"5d391a1e1249b5533646a30fa0ffb79f"
   "/posts/63":
     build_path: posts/63.html
-    etag: W/"e2654d9e3c0993aef356e230be644c00"
+    etag: W/"6a33ec4015efd320df711420af5e596e"
   "/posts/64":
     build_path: posts/64.html
-    etag: W/"356eafeac11eeab489988aea6a144093"
+    etag: W/"44429f7ca4c7b79841e03f3819f574ea"
   "/posts/65":
     build_path: posts/65.html
-    etag: W/"ed804f7f2e7a5ef93d2324e989cea1e9"
+    etag: W/"8f6ef33f676d6d0b66e7832c67cc3280"
   "/posts/66":
     build_path: posts/66.html
-    etag: W/"35037d4c1ebe94b657229991ac671a2f"
+    etag: W/"3bac2983ab039722b311efc7f61cbda0"
   "/posts/67":
     build_path: posts/67.html
     etag: W/"ad754bbeb68f2550bd8675f6c3e8926f"
   "/posts/68":
     build_path: posts/68.html
-    etag: W/"4982de16b55c40a19a431d5ffbf7062e"
+    etag: W/"b06900ac13f6846d3a681579fd1d7e71"
   "/posts/69":
     build_path: posts/69.html
-    etag: W/"4bcd3883491d5e9363d444110a76f547"
+    etag: W/"760402e351b498af6bfbd96d158158f8"
   "/posts/70":
     build_path: posts/70.html
-    etag: W/"d4634aa3066ef0c384dc8462ab32431a"
+    etag: W/"0e84aee08f64747c3269fbe004e0ff1a"
   "/posts/71":
     build_path: posts/71.html
-    etag: W/"fb9cf8d73d7d5e2d296fd2bda7cccd86"
+    etag: W/"d688d79b02e0725d91018d1e5083a5ff"
   "/posts/72":
     build_path: posts/72.html
-    etag: W/"1f26efa00c39e71de2ad9c4635f5053f"
+    etag: W/"256f5816f7f7187dc247ac7042daeee0"
   "/posts/73":
     build_path: posts/73.html
     etag: W/"a4a228c6fb8b9f2e3fa73617c725224a"
