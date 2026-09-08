@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"b48f81101cd5cb4e3e6cbdd4ae848e3e"
+    etag: W/"eb4509e1b31d3958601ab1676f536760"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-08-27-258":
+    build_path: bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-08-27-258.html
+    etag: W/"6d3cc9de180d3e814f56fde658922f17"
   "/bookmarks/2026/09/haseebeqx-com-case-studies":
     build_path: bookmarks/2026/09/haseebeqx-com-case-studies.html
     etag: W/"29c45fab12e45e33d7bdc5570eaefe97"
