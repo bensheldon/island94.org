@@ -1,7 +1,7 @@
 ---
 title: Meet AmeriCorps no more
 date: '2011-09-21'
-tags: []
+tags: [meetamericorps]
 wp:post_type: post
 redirect_from:
 - 2011/09/meet-americorps-no-more/
