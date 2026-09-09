@@ -10,7 +10,7 @@ paths:
     etag: W/"5bbdc03cbb089e921bb4e9d7bf57c2c8"
   "/bookmarks":
     build_path: bookmarks.html
-    etag: W/"eb4509e1b31d3958601ab1676f536760"
+    etag: W/"70275a1c589722757959f083de32a177"
   "/search":
     build_path: search.html
     etag: W/"dfef525cd97cefb701e94ed1c0b5ab4b"
@@ -22,7 +22,7 @@ paths:
     etag: W/"acebb513771f9b880c1f1c4f83aa730c"
   "/sitemap.xml":
     build_path: sitemap.xml
-    etag: W/"55850707a3a35cb6b8b86c65dbca0a53"
+    etag: W/"2de9e5d0bdd030b01ffa2d0b1694ac7e"
   "/robots.txt":
     build_path: robots.txt
     etag: W/"bc3f5f94fa4fb061f9ba0cfdb5c499cf"
@@ -3707,6 +3707,9 @@ paths:
     build_path: 2025/1/how-im-thinking-about-ai-llms.html
   "/2025/1/living-parklife-with-rails-coming-from-jekyll":
     build_path: 2025/1/living-parklife-with-rails-coming-from-jekyll.html
+  "/bookmarks/2026/09/anthonyhobday-com-sideprojects-interactionconcepts":
+    build_path: bookmarks/2026/09/anthonyhobday-com-sideprojects-interactionconcepts.html
+    etag: W/"b4afee0f1a7781f33b7ef81ca1e5f256"
   "/bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-08-27-258":
     build_path: bookmarks/2026/09/statmodeling-stat-columbia-edu-2026-08-27-258.html
     etag: W/"6d3cc9de180d3e814f56fde658922f17"
